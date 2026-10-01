@@ -486,7 +486,7 @@ export function RunWorkspace(props: Props) {
            setRerunName(suggestedRunName(t(props.run!.workflow_name), language));
            setRerunOpen(true);
          }}>{t("New run")}</button>}
-         {props.run !== null && props.run.status !== "running" && !props.watching && <button type="button" className="button"
+         {props.run !== null && props.run.status !== "running" && !props.watching && !props.run.example && <button type="button" className="button"
            title={t("Go on from this run's best arrangement, journal and notes; the limits of the form are added to what it has spent")}
            disabled={props.starting}
            onClick={() => setLaunch({ workflow: props.run!.workflow, budget, name: props.run!.name ?? props.run!.run_id,
@@ -533,7 +533,7 @@ export function RunWorkspace(props: Props) {
                return <div key={item.run_id} className={item.run_id === props.run?.run_id ? "run-picker__run is-active" : "run-picker__run"}>
                  <button type="button" className="run-picker__name"
                    onClick={() => { props.onOpen(item.run_id); setRunsOpen(false); }}>
-                   <span>{name}</span>
+                   <span>{name}{item.example && <em className="run-picker__tag">{t("example")}</em>}</span>
                    <small>{runDate(item.created, language)} · <span className="run-picker__score"
                      title={t("The engine's score of the run's best arrangement, and its gap to the published record")}>
                      {item.champion?.primary == null ? t("no valid arrangement") : number(item.champion.measure ?? item.champion.primary, 4)}

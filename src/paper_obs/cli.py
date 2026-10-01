@@ -24,6 +24,7 @@ from typing import Any
 
 from paper_obs import __version__
 from paper_obs import research as research_sessions
+from paper_obs.examples import seed as seed_examples
 from paper_obs.research.bounds import leads
 from paper_obs.research.picture import submission_picture
 from paper_obs.domain import (
@@ -531,6 +532,7 @@ def _cmd_serve(args: argparse.Namespace) -> int:
     # going is one nobody can finish: closing it here is what keeps a client from waiting
     # for a turn that will never come.
     abandoned = runner.close_orphans()
+    examples = seed_examples()
 
     port = _available_port(args.host, args.port)
     address = f"http://{_browsable_host(args.host)}:{port}"
@@ -540,6 +542,8 @@ def _cmd_serve(args: argparse.Namespace) -> int:
         print("  build it with: cd apps/web && npm install && npm run build")
     if abandoned:
         print(f"  closed {len(abandoned)} run(s) a stopped lab had left going: {', '.join(abandoned)}")
+    if examples:
+        print(f"  added {len(examples)} example run(s) and session(s) to the runs folder")
     if port != args.port:
         print(f"  port {args.port} was busy, using {port} instead")
     if args.open_browser:

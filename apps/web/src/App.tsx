@@ -2456,7 +2456,7 @@ export function App() {
         guideReveal={guideStep === 5 ? "picker" : guideStep === 6 ? "catalog-list" : guideStep === 7 ? "catalog-family" : null}
       />
       {error !== null && <div className="error">{error}</div>}
-      {statisticsOpen && <StatisticsPage runs={runs} workflows={workflows} onDownload={download}
+      {statisticsOpen && <StatisticsPage runs={runs.filter((item) => !item.example)} workflows={workflows} onDownload={download}
         onClose={() => setStatisticsOpen(false)}
         onOpen={(runId) => { setStatisticsOpen(false); setRequestedMode("run"); void openRun(runId); }} />}
       <div className="workspace-shell">

@@ -130,7 +130,7 @@ def listing(problem_id: str | None = None) -> list[dict[str, Any]]:
             "session_id": document["session_id"], "name": document["name"], "agent": document["agent"],
             "status": document["status"], "created": document["created_at"], "updated": document["updated_at"],
             "problem_id": document["problem_id"], "problem_name": document["problem"].get("name", ""),
-            "submissions": len(submissions), "best": document["best"],
+            "submissions": len(submissions), "best": document["best"], "example": bool(document.get("example")),
             # Each new best as [submission index, measure, gap to the record]: how the session progressed.
             "track": [[item["index"], item["measure"], item["record_gap"]] for item in submissions if item["accepted"]],
         })

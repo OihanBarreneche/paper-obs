@@ -15,8 +15,9 @@ node_modules/
 dist/
 .vite/
 
-# Local runs and artefacts
+# Local runs and artefacts; the shipped examples are published
 runs/
+!examples/runs/
 *.writing
 out/
 *.local.json

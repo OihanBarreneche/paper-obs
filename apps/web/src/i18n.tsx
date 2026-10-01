@@ -622,7 +622,7 @@ const fr: Record<string, string> = {
   "Closest to the record": "Au plus près du record", "record beaten": "record battu", "records beaten": "records battus",
   "mean": "moyenne", "over": "sur", "comparable runs": "exécutions comparables", "Every run": "Toutes les exécutions",
   "The closest to the record come first; sort by any column, and open a run by clicking it.": "Les plus proches du record d’abord ; triez par n’importe quelle colonne et cliquez une exécution pour l’ouvrir.",
-  "Name": "Nom", "Turns": "Tours", "Duration": "Durée", "Tokens": "Tokens", "Date": "Date", "deleted": "supprimée",
+  "Name": "Nom", "Turns": "Tours", "Duration": "Durée", "Tokens": "Tokens", "Date": "Date", "deleted": "supprimée", "example": "exemple",
   "best at": "meilleur au tour", "Show all": "Tout afficher", "Show less": "Afficher moins", "Previous page": "Page précédente", "Next page": "Page suivante", "What the runs used": "Ce que les exécutions ont utilisé",
   "Workflows": "Workflows", "Problem families": "Familles de problèmes", "Problems to compare": "Problèmes à comparer", "Remove from the comparison": "Retirer de la comparaison", "Others": "Autres", "Share of": "Part de",
   "no comparable record": "aucun record comparable", "Compare the workflows": "Comparer les workflows",

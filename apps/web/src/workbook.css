@@ -255,6 +255,7 @@ body {
 .run-picker__trash:hover { color: #6e398e; text-decoration: underline; }
 .run-picker__hint { margin: 2px 8px 6px; color: var(--text-muted); font-size: 11px; }
 .run-picker__run.is-deleted .run-picker__name { color: var(--text-muted); cursor: default; }
+.run-picker__tag { margin-left: 6px; padding: 0 6px; border-radius: 999px; background: #efe8f0; color: #6e5a7b; font: normal 11px var(--sans); }
 .run-picker__run .run-picker__restore { flex: none; padding: 0 10px; color: #6e398e; font: 600 12px var(--sans); }
 .run-picker__empty { margin: 6px 8px; color: var(--text-muted); font: italic 15px var(--serif); }
 .run-picker__going { flex: none; color: #2f8a57; font: 600 11px var(--mono); }

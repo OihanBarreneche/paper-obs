@@ -178,6 +178,8 @@ def reopen(
     document = json.loads(path.read_text(encoding="utf-8"))
     if document.get("status") == "running":
         raise ValueError("this run is still going")
+    if document.get("example"):
+        raise ValueError("an example run cannot be resumed: start a run of your own")
     document.update(status="running", stopped_by=None, error=None, model=config.to_dict(),
                     settings=dict(settings or {}))
     document.setdefault("resumed", []).append({
@@ -453,6 +455,8 @@ def _line(path: Path) -> dict[str, Any] | None:
         "problem_id": document.get("problem_id", ""),
         "problem_name": (document.get("problem") or {}).get("name") or document.get("problem_id", ""),
         "status": document.get("status", ""),
+        # A run shipped with the lab (paper_obs.examples): listed, never counted in the statistics.
+        "example": bool(document.get("example")),
         "round": document.get("round", 0),
         "seconds": document.get("seconds", 0.0),
         "spend": document.get("spend", EMPTY_SPEND),

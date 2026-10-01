@@ -712,6 +712,8 @@ export type AgentRunDoc = {
   kind: string;
   format: number;
   run_id: string;
+  /** A run shipped with the lab for reading, which cannot be resumed. */
+  example?: boolean;
   /** Editable label saved with the run; older files receive a fallback on read. */
   name?: string;
   workflow: string;
@@ -791,6 +793,8 @@ export type AgentRunSummaryDoc = {
   track: [number, number | null, number | null][];
   /** Whether the run was deleted: out of the pickers, still counted in the statistics, restorable. */
   deleted: boolean;
+  /** A run shipped with the lab for reading: listed, never counted in the statistics. */
+  example: boolean;
 };
 
 /**
