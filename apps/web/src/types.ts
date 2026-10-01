@@ -493,6 +493,8 @@ export type ProviderDoc = {
   needs_key: boolean;
   /** False for an endpoint that refuses a temperature; the run then uses its default. */
   accepts_temperature: boolean;
+  /** True for a CLI signed in to a monthly subscription (Claude Code, Codex): no key, no token price. */
+  subscription: boolean;
 };
 
 /**

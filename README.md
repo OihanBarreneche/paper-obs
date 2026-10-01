@@ -58,6 +58,8 @@ On Windows, use the corresponding `.venv\Scripts\` executables, or the repositor
 
 Agent runs require a configured provider, except for a local keyless provider such as Ollama. You can enter a key in the model dialog; it is kept in this browser and never written into a run document. `PAPER_OBS_API_KEY` is a **server operator** fallback; do not set it on a server available to untrusted visitors. If you configure token prices, the UI can estimate spend. Run documents are stored under ignored `runs/`.
 
+Without API credit, the `claude-code` and `codex` providers run the workflows on a Claude or ChatGPT **subscription**: each model call starts the Claude Code or Codex CLI installed and signed in on this machine (`claude -p` with its tools off, `codex exec` read-only in an empty folder), which answers the conversation and the lab's tool schemas with a JSON reply (`paper_obs.llm.subscription`). Name the executable with `PAPER_OBS_CLAUDE_CLI` or `PAPER_OBS_CODEX_CLI` when it is not on the server's `PATH`, for example a Windows `claude.exe` used from WSL. It is slower than an API, since every call starts a process, and records tokens without a price. Driving a subscription from a program is a grey zone of the providers' terms: use it at your own judgement. The Codex adapter follows the documented `codex exec` options but has not been run against a real Codex install yet.
+
 ## Design
 
 ```text

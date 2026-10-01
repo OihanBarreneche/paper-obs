@@ -118,7 +118,7 @@ def test_the_table_ships_every_endpoint_the_lab_promises() -> None:
     """The list of providers is a contract the interface and the documentation share."""
     assert set(PROVIDERS) == {
         "deepseek", "openai", "anthropic", "openrouter", "gemini", "xai",
-        "mistral", "groq", "together", "ollama", "ollama-cloud", "custom",
+        "mistral", "groq", "together", "ollama", "ollama-cloud", "claude-code", "codex", "custom",
     }
     for name, row in PROVIDERS.items():
         assert row.name == name

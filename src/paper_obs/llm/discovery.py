@@ -15,7 +15,7 @@ import json
 import urllib.request
 from typing import Any
 
-from paper_obs.llm.models import ModelConfig
+from paper_obs.llm.models import PROVIDERS, ModelConfig
 
 #: Seconds before a discovery request is abandoned. A catalogue answers quickly or not at
 #: all, and a browser waiting on it should not wait longer than this.
@@ -55,6 +55,8 @@ def models_for(config: ModelConfig, *, api_key: str, timeout: float = TIMEOUT) -
     know, and Anthropic's native models route — the one reachable from its compatibility
     base URL — wants x-api-key rather than a bearer token.
     """
+    if PROVIDERS[config.provider].local_cli is not None:
+        return list(PROVIDERS[config.provider].models)  # a CLI lists nothing; any id may be typed
     headers = {"Accept": "application/json", "User-Agent": USER_AGENT}
     if api_key:
         headers["Authorization"] = f"Bearer {api_key}"

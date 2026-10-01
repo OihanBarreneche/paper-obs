@@ -25,9 +25,14 @@ def chat_model(config: ModelConfig, *, api_key: str | None = None) -> BaseChatMo
     unknown one declares neither, so nothing DeepSeek-shaped ever reaches it. Attribution
     headers a row declares travel as the client's default headers. A row whose endpoint
     refuses ``temperature`` gets none: LangChain drops a ``None`` from the body, so the
-    endpoint's own default applies rather than a number it answers 400 for.
+    endpoint's own default applies rather than a number it answers 400 for. A subscription row
+    is answered by its CLI instead (:mod:`paper_obs.llm.subscription`).
     """
     row = PROVIDERS[config.provider]
+    if row.local_cli is not None:
+        from .subscription import SubscriptionChat
+
+        return SubscriptionChat(cli=row.local_cli, model=config.model, reasoning_effort=config.reasoning_effort)
     body = dict(row.extra_body)
     if config.reasoning_effort is not None and row.reasoning_body is not None:
         body.update(row.reasoning_body(config.reasoning_effort))

@@ -681,6 +681,7 @@ def test_providers_lists_endpoints_and_never_a_key() -> None:
     for item in body["providers"]:
         assert set(item) == {
             "name", "base_url", "api_key_env", "models", "note", "needs_key", "accepts_temperature",
+            "subscription",
         }
     # The dialog greys the temperature out where the endpoint refuses one.
     accepts = {item["name"]: item["accepts_temperature"] for item in body["providers"]}

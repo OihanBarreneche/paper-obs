@@ -188,6 +188,8 @@ export function ProviderPanel({ open, onClose }: ProviderPanelProps) {
   const needsKey = chosen === null ? true : chosen.needs_key;
   const keyReady = chosen !== null && keyPresent[chosen.name] === true;
   const needsBaseUrl = chosen !== null && chosen.base_url === "";
+  // A subscription CLI has no key, no price per token and no model list to fetch.
+  const subscription = chosen?.subscription === true;
   // The provider table's ids come first; what the provider itself lists joins them, and any
   // other id can still be typed, so a stale default is never the only option.
   const knownModels = chosen?.models ?? [];
@@ -199,7 +201,9 @@ export function ProviderPanel({ open, onClose }: ProviderPanelProps) {
     return null;
   }
 
-  const aboutKey = keyReady
+  const aboutKey = subscription
+    ? t("Runs on the CLI signed in to your subscription on this machine: no key, no price per token.")
+    : keyReady
     ? `${t("Key configured in the environment")} (${chosen?.api_key_env}).`
     : needsKey
       ? `${t("Enter a key for")} ${chosen?.name} (${chosen?.api_key_env}).`
@@ -248,6 +252,7 @@ export function ProviderPanel({ open, onClose }: ProviderPanelProps) {
                     ...current,
                     provider: name,
                     model: next?.models[0] ?? "",
+                    ...(next?.subscription ? { priceIn: "", priceOut: "", priceCached: "" } : {}),
                   }));
                 }}
               >
@@ -308,6 +313,7 @@ export function ProviderPanel({ open, onClose }: ProviderPanelProps) {
                 />
               </label>
             )}
+            {!subscription && <>
             <label className="field">
               <span className="field__label">{t("price / M in")}</span>
               <input
@@ -350,6 +356,7 @@ export function ProviderPanel({ open, onClose }: ProviderPanelProps) {
                 }
               />
             </label>
+            </>}
             <label className="field">
               <span className="field__label">{t("temperature")}</span>
               <input
@@ -404,7 +411,7 @@ export function ProviderPanel({ open, onClose }: ProviderPanelProps) {
           {chosen !== null && <p className="muted">{t(chosen.note)}</p>}
         </div>
         <div className="modal__actions">
-          <button
+          {!subscription && <button
             type="button"
             className="button button--ghost"
             // Some catalogues answer without a key (OpenRouter's); one that needs a key says so.
@@ -412,7 +419,7 @@ export function ProviderPanel({ open, onClose }: ProviderPanelProps) {
             onClick={() => void discover()}
           >
             {t("Fetch the model list")}
-          </button>
+          </button>}
           <button type="button" className="button button--ghost" onClick={onClose}>
             {t("Close")}
           </button>

@@ -77,6 +77,13 @@ class Provider:
     of a number it would reject.
     """
 
+    local_cli: str | None = None
+    """The subscription CLI that answers instead of an endpoint, ``claude`` or ``codex``.
+
+    Such a row has no URL and no key: :mod:`paper_obs.llm.subscription` runs the CLI on this
+    machine, signed in to its owner's monthly subscription, and no per-token price applies.
+    """
+
     def to_dict(self) -> JSON:
         """Return what a client needs to offer this provider.
 
@@ -91,6 +98,7 @@ class Provider:
             "note": self.note,
             "needs_key": self.needs_key,
             "accepts_temperature": not self.omit_temperature,
+            "subscription": self.local_cli is not None,
         }
 
 
@@ -238,6 +246,35 @@ PROVIDERS: dict[str, Provider] = {
             "Its /models answers without one, so this row can be discovered."
         ),
     ),
+    # A subscription instead of API credit: a grey zone, documented in the README.
+    "claude-code": Provider(
+        name="claude-code",
+        base_url="cli://claude",
+        api_key_env="",
+        models=("sonnet", "opus", "haiku"),
+        note=(
+            "The Claude Code CLI on this machine, signed in to a Claude subscription: each call "
+            "runs 'claude -p' with its own tools off. Slower than an API and paid by the month; "
+            "PAPER_OBS_CLAUDE_CLI names the executable when it is not on the PATH."
+        ),
+        needs_key=False,
+        omit_temperature=True,
+        local_cli="claude",
+    ),
+    "codex": Provider(
+        name="codex",
+        base_url="cli://codex",
+        api_key_env="",
+        models=("gpt-6-luna", "gpt-6-sol"),
+        note=(
+            "The Codex CLI on this machine, signed in to a ChatGPT subscription: each call runs "
+            "'codex exec' read-only in an empty folder. Slower than an API and paid by the month; "
+            "PAPER_OBS_CODEX_CLI names the executable when it is not on the PATH."
+        ),
+        needs_key=False,
+        omit_temperature=True,
+        local_cli="codex",
+    ),
     "custom": Provider(
         name="custom",
         base_url="",
@@ -383,7 +420,8 @@ def key_present() -> JSON:
         "environment_key": ENVIRONMENT_KEY,
         "environment_key_set": bool(os.environ.get(ENVIRONMENT_KEY)),
         "providers": {
-            name: bool(os.environ.get(item.api_key_env)) for name, item in PROVIDERS.items()
+            name: bool(item.api_key_env and os.environ.get(item.api_key_env))
+            for name, item in PROVIDERS.items()
         },
     }
 
@@ -398,7 +436,7 @@ def resolve_api_key(config: "ModelConfig", *, provided: str | None = None) -> st
     if provided:
         return provided.strip()
     for name in (ENVIRONMENT_KEY, PROVIDERS[config.provider].api_key_env):
-        value = os.environ.get(name)
+        value = os.environ.get(name) if name else None
         if value:
             return value.strip()
     if not PROVIDERS[config.provider].needs_key:
