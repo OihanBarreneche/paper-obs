@@ -15,20 +15,7 @@ from typing import Any
 
 from paper_obs.agent_tools.engine import Workbench, describe_state, problem_facts
 from paper_obs.domain.problem import Problem
-
-#: How a published record's unit maps to a measurement the engine takes of a candidate, and
-#: whether a larger one is better. A unit that is not here is quoted as the source states it
-#: and never compared: a silent conversion would invent a comparison the source never made.
-REFERENCE_METRICS: dict[str, tuple[str, bool]] = {
-    "container side": ("container_side", False),
-    "container radius": ("container_radius", False),
-    # A scale objective has no separate measurement for its size: the engine's score is it.
-    "packing scale": ("primary", True),
-    "sum of radii": ("total_scale", True),
-    "sum of sides": ("total_scale", True),
-    "covered side": ("covered_size", True),
-    "covered radius": ("covered_size", True),
-}
+from paper_obs.domain.reference import REFERENCE_METRICS, record_gap, record_measure
 
 #: What an objective needs the agent to know and no tool reply says.
 OBJECTIVE_NOTES: dict[str, str] = {
@@ -145,35 +132,6 @@ def shape_facts(problem: Problem) -> str:
     elif period >= 360.0:
         lines.append("Rotations are degrees, counter-clockwise about the centre.")
     return " ".join(lines)
-
-
-def record_measure(reference: Any, primary: float | None, metrics: Mapping[str, Any]) -> float | None:
-    """Return the engine's measure of an arrangement in a published record's unit.
-
-    ``primary`` and ``metrics`` are an evaluation's. None where the record's unit is not one the
-    engine measures, or the evaluation lacks that measure.
-    """
-    if not isinstance(reference, Mapping):
-        return None
-    compared = REFERENCE_METRICS.get(str(reference.get("unit") or ""))
-    if compared is None:
-        return None
-    measured = primary if compared[0] == "primary" else metrics.get(compared[0])
-    return float(measured) if isinstance(measured, (int, float)) and not isinstance(measured, bool) else None
-
-
-def record_gap(reference: Any, primary: float | None, metrics: Mapping[str, Any]) -> float | None:
-    """Return how far an arrangement is from a published record, as a signed fraction of it.
-
-    Positive when the arrangement beats the record, negative when it falls short, whichever way
-    the record's unit improves. None when there is no comparable record or measure.
-    """
-    measured = record_measure(reference, primary, metrics)
-    value = reference.get("value") if isinstance(reference, Mapping) else None
-    if measured is None or not isinstance(value, (int, float)) or isinstance(value, bool) or value <= 0:
-        return None
-    larger_is_better = REFERENCE_METRICS[str(reference["unit"])][1]
-    return (measured - value) / value * (1 if larger_is_better else -1)
 
 
 def reference_section(problem: Problem, bench: Workbench) -> str:

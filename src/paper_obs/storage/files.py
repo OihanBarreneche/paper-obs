@@ -12,12 +12,26 @@ Everything else — a candidate store, the blackboard, the trace of an agentic r
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 from paper_obs.domain.candidate import Candidate
 from paper_obs.domain.problem import Problem
 from paper_obs.domain.serde import dump, load
 from paper_obs.search.baselines import Convergence
+
+
+#: Where runs are written, relative to the directory the lab is started from.
+RUNS = Path("runs")
+
+#: Names the folder runs are written to, so a test or a second lab does not share them.
+RUNS_ENVIRONMENT = "PAPER_OBS_RUNS"
+
+
+def runs_directory() -> Path:
+    """Return the folder runs are written to: the environment's, else runs/ here."""
+    override = os.environ.get(RUNS_ENVIRONMENT)
+    return Path(override) if override else Path.cwd() / RUNS
 
 
 def save_problem(problem: Problem, path: str | Path) -> Path:
@@ -57,10 +71,13 @@ def load_run(path: str | Path) -> Convergence:
 
 
 __all__ = [
+    "RUNS",
+    "RUNS_ENVIRONMENT",
     "load_candidate",
     "load_problem",
     "load_run",
     "save_candidate",
     "save_problem",
+    "runs_directory",
     "save_run",
 ]

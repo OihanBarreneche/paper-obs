@@ -50,6 +50,10 @@ cd apps/web && npm run typecheck && npm run build
 
 On a WSL environment hosted on a Google Drive mount, dependency installation and builds can be slow. Keep `.venv/`, `node_modules/` and generated files inside this repository. `paper-obs serve` binds locally by default; do not expose it on a public address unintentionally.
 
+## Research mode
+
+When the owner asks for a free research session or a record hunt, follow [research mode](docs/research-mode.md). In this mode the agent drives the search with its own programs, the engine judges every claimed arrangement, and a session records the journal.
+
 ## Current scope
 
 The engine, web editor, reference catalog, two classical baselines (`lattice` and `basin_hopping`) and four LangGraph workflows (W1–W4, the last with an optional Python sandbox) are implemented. Covering and total-perimeter families are represented, but catalog availability is not proof that a reference is current or that an algorithm can solve that family well. See [problems and catalog](docs/problems-and-catalog.md) and [strategies and runs](docs/strategies-and-runs.md). New workflows and search methods follow after controlled measurements of the existing ones. Heterogeneous per-placement shape families and 3D problems are outside the current model.

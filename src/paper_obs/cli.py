@@ -12,6 +12,7 @@ script can use them as a gate without parsing the output.
 from __future__ import annotations
 
 import argparse
+import json
 import shutil
 import socket
 import subprocess
@@ -22,6 +23,7 @@ from pathlib import Path
 from typing import Any
 
 from paper_obs import __version__
+from paper_obs import research as research_sessions
 from paper_obs.domain import (
     ARENA_FAMILIES,
     ROTATION_MODES,
@@ -204,6 +206,8 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     search.set_defaults(handler=_cmd_search)
 
+    _add_research(subparsers)
+
     serve = subparsers.add_parser("serve", help="run the web interface (needs the 'api' extra)")
     serve.add_argument("--host", default="127.0.0.1")
     serve.add_argument("--port", type=int, default=DEFAULT_PORT, help="a busy port is replaced by a free one")
@@ -212,6 +216,65 @@ def _build_parser() -> argparse.ArgumentParser:
     serve.set_defaults(handler=_cmd_serve, open_browser=True)
 
     return parser
+
+
+def _add_research(subparsers: Any) -> None:
+    """Register ``research``: the free sessions of docs/research-mode.md, answered in JSON."""
+    research = subparsers.add_parser("research", help="free research sessions: an agent searches, the lab judges and logs")
+    actions = research.add_subparsers(dest="action", required=True)
+    problem = actions.add_parser("problem", help="write a catalog problem with its published record")
+    problem.add_argument("slug", help="catalog family, such as squintri")
+    problem.add_argument("count", type=int)
+    problem.add_argument("--out", "-o", type=Path, default=None, help="default: print it")
+    start = actions.add_parser("start", help="open a session on a problem file")
+    start.add_argument("--problem", "-p", required=True, type=Path)
+    start.add_argument("--name", required=True)
+    start.add_argument("--agent", required=True, help="who searches, such as 'Claude Code · Opus 5.5'")
+    start.add_argument("--goal", default="")
+    submit = actions.add_parser("submit", help="have the engine judge an arrangement and log it")
+    submit.add_argument("session")
+    submit.add_argument("--candidate", "-c", required=True, type=Path)
+    submit.add_argument("--note", default="")
+    note = actions.add_parser("note", help="append a note to a session's journal")
+    note.add_argument("session")
+    note.add_argument("text")
+    status = actions.add_parser("status", help="print a session's best and record, or set its status")
+    status.add_argument("session")
+    status.add_argument("--set", dest="new_status", choices=research_sessions.STATUSES, default=None)
+    listing = actions.add_parser("list", help="list the sessions, newest first")
+    listing.add_argument("--problem-id", default=None)
+    research.set_defaults(handler=_cmd_research)
+
+
+def _cmd_research(args: argparse.Namespace) -> int:
+    """Run one research action and print its answer as JSON; an invalid submission exits 1."""
+    answer: Any
+    if args.action == "problem":
+        problem = research_sessions.catalog_problem(args.slug, args.count)
+        if args.out is None:
+            print(json.dumps(problem.to_dict(), indent=2, ensure_ascii=False))
+            return 0
+        answer = {"wrote": str(save_problem(problem, args.out))}
+    elif args.action == "start":
+        document = research_sessions.start(load_problem(args.problem), name=args.name, agent=args.agent, goal=args.goal)
+        folder = research_sessions.sessions_directory() / document["session_id"]
+        answer = {"session_id": document["session_id"], "folder": str(folder), "work": str(folder / "work")}
+    elif args.action == "submit":
+        entry = research_sessions.submit(args.session, load_candidate(args.candidate), args.note)
+        answer = {key: value for key, value in entry.items() if key not in ("candidate", "verdict")}
+    elif args.action == "note":
+        answer = research_sessions.add_note(args.session, args.text)
+    elif args.action == "status":
+        document = (research_sessions.set_status(args.session, args.new_status) if args.new_status
+                    else research_sessions.load(args.session))
+        reference = document["problem"].get("metadata", {}).get("reference") or {}
+        answer = {key: document[key] for key in ("session_id", "name", "agent", "status", "problem_id", "best")}
+        answer["record"] = {key: reference.get(key) for key in ("value", "unit", "note", "verified_on")} if reference else None
+        answer["submissions"] = sum(item["kind"] == "submission" for item in document["journal"])
+    else:
+        answer = research_sessions.listing(args.problem_id)
+    print(json.dumps(answer, indent=2, ensure_ascii=False))
+    return 1 if args.action == "submit" and not answer["valid"] else 0
 
 
 def _add_problem_candidate(parser: argparse.ArgumentParser) -> None:

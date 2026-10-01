@@ -8,6 +8,7 @@ This is the public, implementation-oriented documentation. It describes the curr
 | [Problems and catalog](problems-and-catalog.md) | Objectives, shapes, catalog support and reference provenance |
 | [Precision and performance](precision-and-performance.md) | Exact paths, polygon approximations, tolerances and current measurements |
 | [Strategies and runs](strategies-and-runs.md) | Baselines, the LangGraph workflows, budgets and a future solver interface |
+| [Research mode](research-mode.md) | Free sessions: an outside agent searches, the engine judges and the lab keeps the journal |
 | [Writing a workflow](writing-a-workflow.md) | The folder, `build` contract, manifest and shared helpers of an agent workflow |
 | [Development](development.md) | Installation, tests, assets, contributing and deployment boundaries |
 

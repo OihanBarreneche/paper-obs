@@ -8,7 +8,6 @@ happens, and a run that fails has to leave behind what it had reached.
 from __future__ import annotations
 
 import json
-import os
 import time
 import uuid
 from dataclasses import replace
@@ -19,7 +18,9 @@ from typing import Any
 
 from paper_obs.domain.candidate import Candidate
 from paper_obs.domain.problem import Problem
+from paper_obs.domain.reference import record_gap
 from paper_obs.domain.serde import dump
+from paper_obs.storage.files import RUNS, RUNS_ENVIRONMENT, runs_directory
 from paper_obs.llm.models import ModelConfig
 from paper_obs.llm.redaction import (
     forget,
@@ -30,17 +31,12 @@ from paper_obs.llm.redaction import (
 )
 
 from . import registry
-from .briefing import record_gap
 from .budget import Budget, Cost, Prices
 
-#: Where runs are written, relative to the directory the lab is started from.
-RUNS = Path("runs")
 #: The subfolder a deleted run moves to: out of the pickers, still counted in what the runs
 #: spent, and restorable. Removing a file from it by hand drops it from the totals.
 DELETED = "deleted"
 
-#: Names the folder runs are written to, so a test or a second lab does not share them.
-RUNS_ENVIRONMENT = "PAPER_OBS_RUNS"
 
 #: What a run document says it is, so a candidate dump in the same folder is not one.
 FILE_KIND = "agent-run"
@@ -62,12 +58,6 @@ EMPTY_SPEND: dict[str, Any] = {
     "model_seconds": 0.0,
     "cost": None,
 }
-
-
-def runs_directory() -> Path:
-    """Return the folder runs are written to: the environment's, else runs/ here."""
-    override = os.environ.get(RUNS_ENVIRONMENT)
-    return Path(override) if override else Path.cwd() / RUNS
 
 
 def new_run_id() -> str:

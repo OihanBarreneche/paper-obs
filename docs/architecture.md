@@ -20,6 +20,7 @@ Problem JSON + Candidate JSON
 | `search/` | Generate and alter candidates; run classical baselines | Can ask geometry to judge |
 | `workflows/`, `agent_tools/`, `llm/` | LangGraph control, provider calls and engine-backed tools | Optional `agents` extra |
 | `storage/` | Read and write JSON artefacts | No strategy decisions |
+| `research.py` | Free research sessions: log what an outside agent submits, judged by the engine ([research mode](research-mode.md)) | No search of its own; no LLM |
 | `api/`, `cli.py`, `apps/web/` | User controls and presentation | No independent geometric verdicts |
 
 An operator can propose an invalid candidate; `geometry.evaluate` alone decides validity and ranking. The browser receives coordinates, paths and measurements from `geometry.view` and converts world coordinates to pixels. JSON is a public contract: `to_dict` and `from_dict` explicitly preserve stored fields.
