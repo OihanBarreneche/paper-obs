@@ -321,6 +321,15 @@ def _register_routes(app: FastAPI, *, processes: bool) -> None:
         except (OSError, ValueError) as error:
             raise HTTPException(status_code=404, detail=f"unknown session {session_id!r}") from error
 
+    @app.delete("/api/research-sessions/{session_id}")
+    def delete_research_session(session_id: str) -> JSON:
+        """Move a session to ``research/deleted/``, out of the listing."""
+        try:
+            research.delete(session_id)
+        except (OSError, ValueError) as error:
+            raise HTTPException(status_code=404, detail=f"unknown session {session_id!r}") from error
+        return {"session_id": session_id, "status": "deleted"}
+
     @app.get("/api/research-sessions/{session_id}/work/{path:path}")
     def read_research_work(session_id: str, path: str) -> JSON:
         """Return a text file of a session's work/ folder, such as a program its journal names."""

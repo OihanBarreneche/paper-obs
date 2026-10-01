@@ -206,6 +206,10 @@ export const api = {
 
   researchSession: (sessionId: string) =>
     request<ResearchSessionDoc>(`/research-sessions/${encodeURIComponent(sessionId)}`),
+  deleteResearchSession: (sessionId: string) =>
+    request<{ session_id: string; status: string }>(`/research-sessions/${encodeURIComponent(sessionId)}`, {
+      method: "DELETE",
+    }),
   /** A text file of a session's work/ folder, such as a program its journal names. */
   researchWork: (sessionId: string, path: string) =>
     request<{ path: string; text: string }>(`/research-sessions/${encodeURIComponent(sessionId)}/work/${

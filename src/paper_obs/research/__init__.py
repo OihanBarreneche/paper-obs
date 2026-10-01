@@ -46,6 +46,8 @@ STEPS = ("idea", "program", "search", "dead-end", "check")
 METHODS = ("reasoning", "composition", "search", "refinement")
 #: The largest work file the interface reads back, in bytes.
 WORK_FILE_LIMIT = 200_000
+#: Where deleted sessions go, inside the sessions folder.
+DELETED = "deleted"
 #: The plural a catalog problem is named with, as the web app's cards name it.
 NOUNS = {"circle": "circles", "triangle": "triangles", "square": "squares", "pentagon": "pentagons",
          "hexagon": "hexagons", "octagon": "octagons", "tan": "tans", "domino": "dominoes", "l": "L's"}
@@ -152,6 +154,14 @@ def work_file(session_id: str, path: str) -> dict[str, str]:
     return {"path": name, "text": file.read_text(encoding="utf-8", errors="replace")}
 
 
+def delete(session_id: str) -> None:
+    """Move a session's folder, journal and work/, to ``deleted/``, where the listing no longer
+    sees it; moving it back by hand restores it."""
+    folder = _path(session_id).parent
+    (sessions_directory() / DELETED).mkdir(exist_ok=True)
+    folder.rename(sessions_directory() / DELETED / session_id)
+
+
 def listing(problem_id: str | None = None) -> list[dict[str, Any]]:
     """Return one line per session, newest first, optionally only one problem's."""
     folder = sessions_directory()
@@ -250,5 +260,5 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
-__all__ = ["FILE_KIND", "METHODS", "STATUSES", "STEPS", "add_note", "catalog_problem", "listing", "load",
+__all__ = ["FILE_KIND", "METHODS", "STATUSES", "STEPS", "add_note", "catalog_problem", "delete", "listing", "load",
            "set_status", "sessions_directory", "start", "submit", "work_file"]

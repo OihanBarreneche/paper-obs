@@ -88,7 +88,7 @@ Every submission says where its arrangement comes from:
 
 Submit each new best, and also each intermediate step that a later best builds on, even when it does not beat the session's best (a composition that a refinement then improves, for example). Then the chain from the starting point to the best arrangement is complete. Do not submit every attempt of a search: its outcome goes in a `search` note.
 
-When the search ends, set the status to `done` and write a last note on what the result owes to understanding, to composition and to search. The page draws the chain from the starting point to the best arrangement, labels each link with its method, lists the programs with their code, and shows the journal in order, with dead ends muted. Sessions written before steps and methods existed show their improvements as the chain, without labels.
+When the search ends, set the status to `done` and write a last note on what the result owes to understanding, to composition and to search. The page draws the chain from the starting point to the best arrangement, labels each link with its method, lists the programs with their code, and shows the journal in order, with dead ends muted. Sessions written before steps and methods existed show their improvements as the chain, without labels. A session that led nowhere can be deleted from the tab: its folder moves to `runs/research/deleted/`, out of the listing, and moving it back by hand restores it.
 
 The two record hunts below ship as example sessions in `examples/research/`, reconstructed afterwards from the hunt's log before steps and methods existed. `paper-obs serve` copies them into the runs folder once, as it does the example runs.
 

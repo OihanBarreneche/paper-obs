@@ -92,3 +92,12 @@ def test_the_journal_tells_each_step_and_where_each_arrangement_comes_from(runs)
         research.submit(session_id, start, builds_on=5)
     with pytest.raises(ValueError):
         research.work_file(session_id, "../session.json")
+
+
+def test_a_deleted_session_leaves_the_listing_and_keeps_its_folder(runs) -> None:
+    session_id = research.start(research.catalog_problem("squintri", 5), name="gone", agent="test")["session_id"]
+    research.delete(session_id)
+    assert research.listing() == []
+    assert (runs / "research" / "deleted" / session_id / "session.json").is_file()
+    with pytest.raises(ValueError):
+        research.delete(session_id)

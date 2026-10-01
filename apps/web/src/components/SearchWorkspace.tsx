@@ -39,7 +39,7 @@ const possibleMethods = [
 export function SearchWorkspace(props: Props) {
   const { t } = useI18n();
   const [guide, setGuide] = useState(false);
-  const sessions = useResearchSessions();
+  const [sessions, readSessions] = useResearchSessions();
   const here = sessions.filter((item) => item.problem_id === props.problem?.problem_id).length;
   const [picked, setPicked] = useState<"classical" | "free" | null>(null);
   // A problem an agent is researching opens on its sessions; otherwise on the baselines.
@@ -59,7 +59,7 @@ export function SearchWorkspace(props: Props) {
             onClick={() => setPicked("free")}>{t("Free research")} <small>{here}</small></button>
         </div>
         {tab === "free" ? <ResearchSessions sessions={sessions} problemId={props.problem?.problem_id}
-          onShow={props.onShowCandidate} onOpen={props.onOpenSession} /> : <>
+          onShow={props.onShowCandidate} onOpen={props.onOpenSession} onChange={readSessions} /> : <>
           <div className="section-heading"><h2>{t("Classical methods")}</h2>
             <button type="button" className="search-workspace__how" onClick={() => setGuide(true)}>{t("How do they work?")}</button></div>
           {guide && <BaselineGuide onClose={() => setGuide(false)} />}

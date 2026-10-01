@@ -551,6 +551,9 @@ body {
 .research-sessions__list button:hover { background: #f7f2f8; }
 .research-sessions__list small { color: #806f88; font-size: 12px; font-weight: 400; }
 .research-sessions__picker { width: 100%; margin: 0 0 12px; padding: 6px 8px; border: 1px solid #ddd3e0; border-radius: 6px; background: #fff; font: 13px var(--sans); }
+.research-sessions__head { position: relative; padding-right: 40px; }
+.research-sessions__delete { position: absolute; top: 0; right: 0; height: 30px; }
+.research-sessions__delete.run-picker__confirm { position: static; height: auto; margin-top: 8px; padding: 0; }
 .research-sessions__head h3 { margin: 0; font: 500 22px/1.2 var(--serif); color: #3f2b4d; }
 .research-sessions__head p { margin: 4px 0 0; color: #806f88; font: 13px var(--sans); }
 .research-sessions__goal { font-style: italic; }

@@ -23,8 +23,9 @@ type Submission = Extract<ResearchEntryDoc, { kind: "submission" }>;
  * Every free research session (docs/research-mode.md), read again every few seconds while
  * one is active: an outside agent writes them, the page only follows.
  */
-export function useResearchSessions(): ResearchSessionSummaryDoc[] {
+export function useResearchSessions(): [ResearchSessionSummaryDoc[], () => void] {
   const [sessions, setSessions] = useState<ResearchSessionSummaryDoc[]>([]);
+  const [reads, setReads] = useState(0);
   const active = sessions.some((item) => item.status === "active");
   useEffect(() => {
     let live = true;
@@ -32,8 +33,8 @@ export function useResearchSessions(): ResearchSessionSummaryDoc[] {
     void read();
     const timer = active ? window.setInterval(read, POLL_MS) : undefined;
     return () => { live = false; window.clearInterval(timer); };
-  }, [active]);
-  return sessions;
+  }, [active, reads]);
+  return [sessions, () => setReads((count) => count + 1)];
 }
 
 type Props = {
@@ -43,16 +44,19 @@ type Props = {
   onShow: (candidate: CandidateDoc) => void;
   /** Open a session of another problem: its problem and its best arrangement. */
   onOpen: (sessionId: string) => void;
+  /** Read the sessions again, after one was deleted. */
+  onChange: () => void;
 };
 
 /** The open problem's sessions one at a time (best, progress, journal), or every session. */
-export function ResearchSessions({ sessions, problemId, onShow, onOpen }: Props) {
+export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange }: Props) {
   const { t, number, language } = useI18n();
   const here = sessions.filter((item) => item.problem_id === problemId);
   const [scope, setScope] = useState<"problem" | "all" | null>(null);
   const [chosen, setChosen] = useState<string | null>(null);
   const [session, setSession] = useState<ResearchSessionDoc | null>(null);
   const [whole, setWhole] = useState(false);
+  const [deleting, setDeleting] = useState<"confirm" | "failed" | null>(null);
   // Without a session of its own, the problem opens on the list of every session.
   const shown = scope ?? (here.length > 0 || sessions.length === 0 ? "problem" : "all");
   const line = shown === "problem" ? here.find((item) => item.session_id === chosen) ?? here[0] : undefined;
@@ -119,6 +123,20 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen }: Props)
       <p>{line.agent || t("unnamed agent")} · <span className={`research-sessions__status is-${line.status}`}>{t(line.status)}</span>
         {" "}· {line.submissions} {t(line.submissions === 1 ? "submission" : "submissions")}</p>
       {session?.goal && <p className="research-sessions__goal">{session.goal}</p>}
+      {deleting === "confirm"
+        ? <span className="run-picker__confirm research-sessions__delete">
+            <button type="button" onClick={() => setDeleting(null)}>{t("Cancel")}</button>
+            <button type="button" className="run-picker__delete" onClick={() => {
+              setDeleting(null);
+              api.deleteResearchSession(line.session_id).then(() => { setChosen(null); onChange(); },
+                () => setDeleting("failed"));
+            }}>{t("Delete")}</button>
+          </span>
+        : <button type="button" className="run-picker__icon research-sessions__delete" title={t("Delete session")}
+            aria-label={`${t("Delete session")}: ${line.name}`} onClick={() => setDeleting("confirm")}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3m-9 0 1 13h10l1-13M10 11v6m4-6v6" /></svg>
+          </button>}
+      {deleting === "failed" && <p className="research-sessions__violation">{t("The session could not be deleted.")}</p>}
     </header>
     <dl className="research-sessions__figures">
       <div><dt>{t("Session best")}</dt><dd>{best?.measure == null ? "—" : number(best.measure, 6)}</dd></div>

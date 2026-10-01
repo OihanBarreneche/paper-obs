@@ -504,6 +504,7 @@ const fr: Record<string, string> = {
   "Free research": "Recherche libre", "Research session": "Session de recherche",
   "Sessions to show": "Sessions à afficher", "All sessions": "Toutes les sessions",
   "How this result was found": "Comment ce résultat a été trouvé", "starting point": "point de départ",
+  "Delete session": "Supprimer la session", "The session could not be deleted.": "La session n’a pas pu être supprimée.",
   "Programs written": "Programmes écrits", "This file cannot be read.": "Ce fichier ne peut pas être lu.",
   "idea": "idée", "ideas": "idées", "program": "programme", "programs": "programmes",
   "computation": "calcul", "computations": "calculs", "dead end": "impasse", "dead ends": "impasses",
