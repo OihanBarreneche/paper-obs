@@ -1,0 +1,1728 @@
+{
+  "generated": "2026-10-02",
+  "asset": "packing_equal_copies.json",
+  "catalog_generated": "2026-10-02",
+  "tolerance": 1e-06,
+  "required_decimals": 5,
+  "near_gap": 0.0001,
+  "approx_gap": 0.001,
+  "published_families": {
+    "cirinsqu": {
+      "code": "csq",
+      "url": "https://www.packomania.com/csq/csq.html"
+    },
+    "cirincir": {
+      "code": "cci",
+      "url": "https://www.packomania.com/cci/cci.html"
+    },
+    "cirinhex": {
+      "code": "chx",
+      "url": "https://www.packomania.com/chx/chx.html"
+    },
+    "cirinpen": {
+      "code": "cpt",
+      "url": "https://www.packomania.com/cpt/cpt.html"
+    }
+  },
+  "totals": {
+    "beaten": 1,
+    "differs": 2,
+    "entries_catalog": 4245,
+    "entries_checked": 94,
+    "entries_unsupported": 89,
+    "families_catalog": 107,
+    "families_checked": 6,
+    "families_unsupported": 3,
+    "level:approx": 33,
+    "level:beaten": 1,
+    "level:exact": 1,
+    "level:far": 1,
+    "level:near": 58,
+    "reproduces": 91,
+    "without_coordinates": 4062
+  },
+  "families": {
+    "cirincir": {
+      "title": "Circles in Circles",
+      "section": "Packing Equal Copies",
+      "shape": "circle",
+      "container": "circle",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "published",
+        "label": "Packomania (cci)",
+        "url": "https://www.packomania.com/cci/cci.html"
+      },
+      "entries": {
+        "1": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 1.0,
+          "unit": "container radius",
+          "measured": 1.0,
+          "gap": -0.0,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-1.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-1.json",
+          "checked_on": "2026-10-02"
+        },
+        "2": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 2.0,
+          "unit": "container radius",
+          "measured": 2.0,
+          "gap": -0.0,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-2.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-2.json",
+          "checked_on": "2026-10-02"
+        },
+        "3": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 2.154,
+          "unit": "container radius",
+          "measured": 2.1547005383792515,
+          "gap": -0.0003252267313145531,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-3.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-3.json",
+          "checked_on": "2026-10-02"
+        },
+        "4": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 2.414,
+          "unit": "container radius",
+          "measured": 2.414213562373095,
+          "gap": -8.846825728864032e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-4.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-4.json",
+          "checked_on": "2026-10-02"
+        },
+        "5": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 2.701,
+          "unit": "container radius",
+          "measured": 2.7013016167040798,
+          "gap": -0.00011166853168444575,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-5.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-5.json",
+          "checked_on": "2026-10-02"
+        },
+        "6": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.0,
+          "unit": "container radius",
+          "measured": 3.0,
+          "gap": -0.0,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-6.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-6.json",
+          "checked_on": "2026-10-02"
+        },
+        "7": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.0,
+          "unit": "container radius",
+          "measured": 3.0,
+          "gap": -0.0,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-7.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-7.json",
+          "checked_on": "2026-10-02"
+        },
+        "8": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.304,
+          "unit": "container radius",
+          "measured": 3.3047648709624866,
+          "gap": -0.00023149847532893025,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-8.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-8.json",
+          "checked_on": "2026-10-02"
+        },
+        "9": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.613,
+          "unit": "container radius",
+          "measured": 3.6131259297527527,
+          "gap": -3.4854622959512346e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-9.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-9.json",
+          "checked_on": "2026-10-02"
+        },
+        "10": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.813,
+          "unit": "container radius",
+          "measured": 3.8130256313981246,
+          "gap": -6.722108084026421e-06,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-10.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-10.json",
+          "checked_on": "2026-10-02"
+        },
+        "11": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.923,
+          "unit": "container radius",
+          "measured": 3.923804400163087,
+          "gap": -0.00020504719935945394,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-11.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-11.json",
+          "checked_on": "2026-10-02"
+        },
+        "12": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.029,
+          "unit": "container radius",
+          "measured": 4.029601930116184,
+          "gap": -0.0001493993835154386,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-12.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-12.json",
+          "checked_on": "2026-10-02"
+        },
+        "13": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.236,
+          "unit": "container radius",
+          "measured": 4.23606797749979,
+          "gap": -1.604756841124635e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-13.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-13.json",
+          "checked_on": "2026-10-02"
+        },
+        "14": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.328,
+          "unit": "container radius",
+          "measured": 4.328428554860837,
+          "gap": -9.901914529498731e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-14.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-14.json",
+          "checked_on": "2026-10-02"
+        },
+        "15": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.521,
+          "unit": "container radius",
+          "measured": 4.521356964706165,
+          "gap": -7.895702414615195e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-15.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-15.json",
+          "checked_on": "2026-10-02"
+        },
+        "16": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.615,
+          "unit": "container radius",
+          "measured": 4.615425594873194,
+          "gap": -9.221990751769387e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-16.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-16.json",
+          "checked_on": "2026-10-02"
+        },
+        "17": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.792,
+          "unit": "container radius",
+          "measured": 4.792033748310579,
+          "gap": -7.042635763565749e-06,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-17.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-17.json",
+          "checked_on": "2026-10-02"
+        },
+        "18": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.863,
+          "unit": "container radius",
+          "measured": 4.863703305156274,
+          "gap": -0.00014462372121596946,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-18.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-18.json",
+          "checked_on": "2026-10-02"
+        },
+        "19": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.863,
+          "unit": "container radius",
+          "measured": 4.863703305156274,
+          "gap": -0.00014462372121596946,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-19.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-19.json",
+          "checked_on": "2026-10-02"
+        },
+        "20": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.122,
+          "unit": "container radius",
+          "measured": 5.1223207369915285,
+          "gap": -6.261948292240719e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cci-20.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirincir-20.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "squintri": {
+      "title": "Squares in Triangles",
+      "section": "Packing Equal Copies",
+      "shape": "square",
+      "container": "triangle",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "record",
+        "label": "a construction held by the lab",
+        "url": ""
+      },
+      "entries": {
+        "38": {
+          "status": "differs",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 10.304,
+          "unit": "container side",
+          "measured": 10.301221341691353,
+          "gap": 0.0002696679259169025,
+          "source_kind": "record",
+          "files": [
+            "record-squintri-38.json"
+          ],
+          "candidate": null,
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "cirinsqu": {
+      "title": "Circles in Squares",
+      "section": "Packing Equal Copies",
+      "shape": "circle",
+      "container": "square",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "published",
+        "label": "Packomania (csq)",
+        "url": "https://www.packomania.com/csq/csq.html"
+      },
+      "entries": {
+        "1": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 2.0,
+          "unit": "container side",
+          "measured": 2.0,
+          "gap": -0.0,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-1.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-1.json",
+          "checked_on": "2026-10-02"
+        },
+        "2": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.414,
+          "unit": "container side",
+          "measured": 3.4142135623783694,
+          "gap": -6.255488528682639e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-2.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-2.json",
+          "checked_on": "2026-10-02"
+        },
+        "3": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.931,
+          "unit": "container side",
+          "measured": 3.9318516525819986,
+          "gap": -0.0002166503642835402,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-3.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-3.json",
+          "checked_on": "2026-10-02"
+        },
+        "4": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.0,
+          "unit": "container side",
+          "measured": 4.0,
+          "gap": -0.0,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-4.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-4.json",
+          "checked_on": "2026-10-02"
+        },
+        "5": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.828,
+          "unit": "container side",
+          "measured": 4.828427124735642,
+          "gap": -8.846825510388331e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-5.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-5.json",
+          "checked_on": "2026-10-02"
+        },
+        "6": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.328,
+          "unit": "container side",
+          "measured": 5.328201177364912,
+          "gap": -3.77585144353912e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-6.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-6.json",
+          "checked_on": "2026-10-02"
+        },
+        "7": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.732,
+          "unit": "container side",
+          "measured": 5.732050807569188,
+          "gap": -8.863846683078415e-06,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-7.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-7.json",
+          "checked_on": "2026-10-02"
+        },
+        "8": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.863,
+          "unit": "container side",
+          "measured": 5.863703305158145,
+          "gap": -0.00011995653388105943,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-8.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-8.json",
+          "checked_on": "2026-10-02"
+        },
+        "9": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 6.0,
+          "unit": "container side",
+          "measured": 5.999999999988001,
+          "gap": 1.9998817416914485e-12,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-9.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-9.json",
+          "checked_on": "2026-10-02"
+        },
+        "10": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 6.747,
+          "unit": "container side",
+          "measured": 6.74744152324853,
+          "gap": -6.543993605012533e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-10.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-10.json",
+          "checked_on": "2026-10-02"
+        },
+        "11": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 7.022,
+          "unit": "container side",
+          "measured": 7.022509503420538,
+          "gap": -7.25581629930717e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-11.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-11.json",
+          "checked_on": "2026-10-02"
+        },
+        "12": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 7.144,
+          "unit": "container side",
+          "measured": 7.144957554297116,
+          "gap": -0.00013403615581135262,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-12.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-12.json",
+          "checked_on": "2026-10-02"
+        },
+        "13": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 7.463,
+          "unit": "container side",
+          "measured": 7.463047828859739,
+          "gap": -6.408798035445548e-06,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-13.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-13.json",
+          "checked_on": "2026-10-02"
+        },
+        "14": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 7.732,
+          "unit": "container side",
+          "measured": 7.732050807570912,
+          "gap": -6.571077458789419e-06,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-14.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-14.json",
+          "checked_on": "2026-10-02"
+        },
+        "15": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 7.863,
+          "unit": "container side",
+          "measured": 7.863703305163997,
+          "gap": -8.944488922763055e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-15.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-15.json",
+          "checked_on": "2026-10-02"
+        },
+        "16": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 8.0,
+          "unit": "container side",
+          "measured": 8.0,
+          "gap": -0.0,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-16.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-16.json",
+          "checked_on": "2026-10-02"
+        },
+        "17": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 8.532,
+          "unit": "container side",
+          "measured": 8.53266034749436,
+          "gap": -7.739656520865923e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-17.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-17.json",
+          "checked_on": "2026-10-02"
+        },
+        "18": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 8.656,
+          "unit": "container side",
+          "measured": 8.656402354702713,
+          "gap": -4.6482752161826536e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-18.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-18.json",
+          "checked_on": "2026-10-02"
+        },
+        "19": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 8.907,
+          "unit": "container side",
+          "measured": 8.907460939325786,
+          "gap": -5.1750233051027645e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-19.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-19.json",
+          "checked_on": "2026-10-02"
+        },
+        "20": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 8.978,
+          "unit": "container side",
+          "measured": 8.978083352860407,
+          "gap": -9.284123458188352e-06,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-20.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-20.json",
+          "checked_on": "2026-10-02"
+        },
+        "21": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 9.358,
+          "unit": "container side",
+          "measured": 9.3580199588784,
+          "gap": -2.1328145329018766e-06,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-21.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-21.json",
+          "checked_on": "2026-10-02"
+        },
+        "22": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 9.463,
+          "unit": "container side",
+          "measured": 9.463845090973571,
+          "gap": -8.930476313767004e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-22.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-22.json",
+          "checked_on": "2026-10-02"
+        },
+        "23": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 9.727,
+          "unit": "container side",
+          "measured": 9.727406610292118,
+          "gap": -4.180223009326547e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-23.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-23.json",
+          "checked_on": "2026-10-02"
+        },
+        "24": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 9.863,
+          "unit": "container side",
+          "measured": 9.863703305118673,
+          "gap": -7.130742357022349e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-csq-24.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinsqu-24.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "cirinpen": {
+      "title": "Circles in Pentagons",
+      "section": "Packing Equal Copies",
+      "shape": "circle",
+      "container": "pentagon",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "published",
+        "label": "Packomania (cpt)",
+        "url": "https://www.packomania.com/cpt/cpt.html"
+      },
+      "entries": {
+        "1": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 1.453,
+          "unit": "container side",
+          "measured": 1.4530850560106274,
+          "gap": -5.8538204148217565e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-1.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-1.json",
+          "checked_on": "2026-10-02"
+        },
+        "2": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 2.689,
+          "unit": "container side",
+          "measured": 2.689153033510893,
+          "gap": -5.691093748337566e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-2.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-2.json",
+          "checked_on": "2026-10-02"
+        },
+        "3": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.015,
+          "unit": "container side",
+          "measured": 3.0158624782667687,
+          "gap": -0.0002860624433726539,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-3.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-3.json",
+          "checked_on": "2026-10-02"
+        },
+        "4": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.314,
+          "unit": "container side",
+          "measured": 3.314449564787315,
+          "gap": -0.0001356562424003735,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-4.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-4.json",
+          "checked_on": "2026-10-02"
+        },
+        "5": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.453,
+          "unit": "container side",
+          "measured": 3.4530850560098747,
+          "gap": -2.4632496343715888e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-5.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-5.json",
+          "checked_on": "2026-10-02"
+        },
+        "6": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.804,
+          "unit": "container side",
+          "measured": 3.804226065179967,
+          "gap": -5.942828074849128e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-6.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-6.json",
+          "checked_on": "2026-10-02"
+        },
+        "7": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.236,
+          "unit": "container side",
+          "measured": 4.236120736323426,
+          "gap": -2.8502437069435646e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-7.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-7.json",
+          "checked_on": "2026-10-02"
+        },
+        "8": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.564,
+          "unit": "container side",
+          "measured": 4.564580944734847,
+          "gap": -0.00012728850456771346,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-8.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-8.json",
+          "checked_on": "2026-10-02"
+        },
+        "9": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.825,
+          "unit": "container side",
+          "measured": 4.825026357961979,
+          "gap": -5.462790047513137e-06,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-9.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-9.json",
+          "checked_on": "2026-10-02"
+        },
+        "10": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.095,
+          "unit": "container side",
+          "measured": 5.095192532974354,
+          "gap": -3.778861125704024e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-10.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-10.json",
+          "checked_on": "2026-10-02"
+        },
+        "11": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.24,
+          "unit": "container side",
+          "measured": 5.2402784936594475,
+          "gap": -5.314764493269482e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-11.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-11.json",
+          "checked_on": "2026-10-02"
+        },
+        "12": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.407,
+          "unit": "container side",
+          "measured": 5.407790089343422,
+          "gap": -0.00014612342212351402,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-12.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-12.json",
+          "checked_on": "2026-10-02"
+        },
+        "13": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.651,
+          "unit": "container side",
+          "measured": 5.6517814154569646,
+          "gap": -0.00013827914651650175,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-13.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-13.json",
+          "checked_on": "2026-10-02"
+        },
+        "14": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.808,
+          "unit": "container side",
+          "measured": 5.808533024460201,
+          "gap": -9.177418391888265e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-14.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-14.json",
+          "checked_on": "2026-10-02"
+        },
+        "15": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.945,
+          "unit": "container side",
+          "measured": 5.945158603824364,
+          "gap": -2.6678523862695262e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-15.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-15.json",
+          "checked_on": "2026-10-02"
+        },
+        "16": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 6.129,
+          "unit": "container side",
+          "measured": 6.129607481432297,
+          "gap": -9.911591324802796e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-16.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-16.json",
+          "checked_on": "2026-10-02"
+        },
+        "17": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 6.419,
+          "unit": "container side",
+          "measured": 6.419436752986465,
+          "gap": -6.804065843055416e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-17.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-17.json",
+          "checked_on": "2026-10-02"
+        },
+        "18": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 6.586,
+          "unit": "container side",
+          "measured": 6.586813629662501,
+          "gap": -0.00012353927459774654,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-18.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-18.json",
+          "checked_on": "2026-10-02"
+        },
+        "19": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 6.777,
+          "unit": "container side",
+          "measured": 6.77789205051763,
+          "gap": -0.00013162911577829835,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-19.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-19.json",
+          "checked_on": "2026-10-02"
+        },
+        "20": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 6.944,
+          "unit": "container side",
+          "measured": 6.944556886386339,
+          "gap": -8.019677222623776e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-20.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-20.json",
+          "checked_on": "2026-10-02"
+        },
+        "21": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 7.107,
+          "unit": "container side",
+          "measured": 7.10726688656557,
+          "gap": -3.7552633399488955e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-21.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-21.json",
+          "checked_on": "2026-10-02"
+        },
+        "22": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 7.271,
+          "unit": "container side",
+          "measured": 7.271271704099905,
+          "gap": -3.736818868177403e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-22.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-22.json",
+          "checked_on": "2026-10-02"
+        },
+        "23": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 7.397,
+          "unit": "container side",
+          "measured": 7.397090332899114,
+          "gap": -1.2212099379985696e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-23.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-23.json",
+          "checked_on": "2026-10-02"
+        },
+        "24": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 7.534,
+          "unit": "container side",
+          "measured": 7.534389919349055,
+          "gap": -5.175462557139062e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-cpt-24.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinpen-24.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "cirinhex": {
+      "title": "Circles in Hexagons",
+      "section": "Packing Equal Copies",
+      "shape": "circle",
+      "container": "hexagon",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "published",
+        "label": "Packomania (chx)",
+        "url": "https://www.packomania.com/chx/chx.html"
+      },
+      "entries": {
+        "1": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 1.154,
+          "unit": "container side",
+          "measured": 1.1547005383785027,
+          "gap": -0.00060705232105963,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-1.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-1.json",
+          "checked_on": "2026-10-02"
+        },
+        "2": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 2.154,
+          "unit": "container side",
+          "measured": 2.1547005383781115,
+          "gap": -0.0003252267307853159,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-2.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-2.json",
+          "checked_on": "2026-10-02"
+        },
+        "3": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 2.309,
+          "unit": "container side",
+          "measured": 2.309401076759672,
+          "gap": -0.0001737014983421601,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-3.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-3.json",
+          "checked_on": "2026-10-02"
+        },
+        "4": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 2.666,
+          "unit": "container side",
+          "measured": 2.732050807572151,
+          "gap": -0.024775246651219465,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-4.json"
+          ],
+          "candidate": null,
+          "checked_on": "2026-10-02"
+        },
+        "5": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 2.999,
+          "unit": "container side",
+          "measured": 2.999355399461051,
+          "gap": -0.0001185059890132668,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-5.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-5.json",
+          "checked_on": "2026-10-02"
+        },
+        "6": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.154,
+          "unit": "container side",
+          "measured": 3.154700538377068,
+          "gap": -0.00022211108974887786,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-6.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-6.json",
+          "checked_on": "2026-10-02"
+        },
+        "7": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.154,
+          "unit": "container side",
+          "measured": 3.154700538377068,
+          "gap": -0.00022211108974887786,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-7.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-7.json",
+          "checked_on": "2026-10-02"
+        },
+        "8": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 3.709,
+          "unit": "container side",
+          "measured": 3.7094000949844252,
+          "gap": -0.00010787138970751415,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-8.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-8.json",
+          "checked_on": "2026-10-02"
+        },
+        "9": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.011,
+          "unit": "container side",
+          "measured": 4.011843395528296,
+          "gap": -0.00021027063782000564,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-9.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-9.json",
+          "checked_on": "2026-10-02"
+        },
+        "10": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.119,
+          "unit": "container side",
+          "measured": 4.119357178971543,
+          "gap": -8.671497245533525e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-10.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-10.json",
+          "checked_on": "2026-10-02"
+        },
+        "11": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.309,
+          "unit": "container side",
+          "measured": 4.309401076756223,
+          "gap": -9.307884804428099e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-11.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-11.json",
+          "checked_on": "2026-10-02"
+        },
+        "12": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.309,
+          "unit": "container side",
+          "measured": 4.309401076756223,
+          "gap": -9.307884804428099e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-12.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-12.json",
+          "checked_on": "2026-10-02"
+        },
+        "13": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.618,
+          "unit": "container side",
+          "measured": 4.618802153519344,
+          "gap": -0.0001737014983421601,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-13.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-13.json",
+          "checked_on": "2026-10-02"
+        },
+        "14": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.666,
+          "unit": "container side",
+          "measured": 4.666558430413988,
+          "gap": -0.0001196807573913079,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-14.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-14.json",
+          "checked_on": "2026-10-02"
+        },
+        "15": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.961,
+          "unit": "container side",
+          "measured": 4.961321277782356,
+          "gap": -6.476068985200564e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-15.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-15.json",
+          "checked_on": "2026-10-02"
+        },
+        "16": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 4.999,
+          "unit": "container side",
+          "measured": 4.999355399462685,
+          "gap": -7.109411135927894e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-16.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-16.json",
+          "checked_on": "2026-10-02"
+        },
+        "17": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.133,
+          "unit": "container side",
+          "measured": 5.133119424881144,
+          "gap": -2.326609802147823e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-17.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-17.json",
+          "checked_on": "2026-10-02"
+        },
+        "18": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.154,
+          "unit": "container side",
+          "measured": 5.154700538380606,
+          "gap": -0.00013592130007877756,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-18.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-18.json",
+          "checked_on": "2026-10-02"
+        },
+        "19": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.154,
+          "unit": "container side",
+          "measured": 5.154700538380606,
+          "gap": -0.00013592130007877756,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-19.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-19.json",
+          "checked_on": "2026-10-02"
+        },
+        "20": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.676,
+          "unit": "container side",
+          "measured": 5.676887316616584,
+          "gap": -0.0001563278041903002,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-20.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-20.json",
+          "checked_on": "2026-10-02"
+        },
+        "21": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 5.709,
+          "unit": "container side",
+          "measured": 5.709400094983435,
+          "gap": -7.008144744005871e-05,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-21.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-21.json",
+          "checked_on": "2026-10-02"
+        },
+        "22": {
+          "status": "reproduces",
+          "level": "exact",
+          "precise": true,
+          "published": true,
+          "promoted": true,
+          "value": 5.95175,
+          "unit": "container side",
+          "measured": 5.951749792130537,
+          "gap": 3.492577191177503e-08,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-22.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-22.json",
+          "checked_on": "2026-10-02"
+        },
+        "23": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 6.011,
+          "unit": "container side",
+          "measured": 6.011843395527343,
+          "gap": -0.00014030868862801983,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-23.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-23.json",
+          "checked_on": "2026-10-02"
+        },
+        "24": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": true,
+          "promoted": false,
+          "value": 6.117,
+          "unit": "container side",
+          "measured": 6.117620859273004,
+          "gap": -0.00010149734722974833,
+          "source_kind": "published",
+          "files": [
+            "packomania-chx-24.json"
+          ],
+          "candidate": "/catalog/candidates/published-cirinhex-24.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "taninL": {
+      "title": "Tans in L's",
+      "section": "Packing Equal Copies",
+      "shape": "tan",
+      "container": "l",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "record",
+        "label": "a construction held by the lab",
+        "url": ""
+      },
+      "entries": {
+        "26": {
+          "status": "beaten",
+          "level": "beaten",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 2.12098,
+          "unit": "container side",
+          "measured": 2.1204281051926324,
+          "gap": 0.0002602074547461567,
+          "source_kind": "record",
+          "files": [
+            "record-taninL-26.json"
+          ],
+          "candidate": null,
+          "checked_on": "2026-10-02"
+        }
+      }
+    }
+  }
+}

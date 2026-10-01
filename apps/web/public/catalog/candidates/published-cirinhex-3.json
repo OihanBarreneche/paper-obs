@@ -1,0 +1,30 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-3-in-smallest-hexagon-published",
+  "problem_id": "circles-3-in-smallest-hexagon",
+  "scale": 0.4330127018920001,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.4330127018921097,
+      "y": -0.24999999999981015
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.43301270189221946,
+      "y": -0.25
+    },
+    {
+      "shape_id": "s002",
+      "x": 1.097177904085811e-13,
+      "y": 0.49999999999981015
+    }
+  ],
+  "metadata": {
+    "published_problem_id": "packomania-chx-3",
+    "published_by": "Packomania (chx)"
+  }
+}

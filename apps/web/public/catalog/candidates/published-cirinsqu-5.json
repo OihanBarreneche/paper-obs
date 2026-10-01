@@ -1,0 +1,40 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-5-in-smallest-square-published",
+  "problem_id": "circles-5-in-smallest-square",
+  "scale": 1.0,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -1.414213562367821,
+      "y": -1.414213562367821
+    },
+    {
+      "shape_id": "s001",
+      "x": 1.414213562367821,
+      "y": -1.414213562367821
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "shape_id": "s003",
+      "x": -1.414213562367821,
+      "y": 1.414213562367821
+    },
+    {
+      "shape_id": "s004",
+      "x": 1.414213562367821,
+      "y": 1.414213562367821
+    }
+  ],
+  "metadata": {
+    "published_problem_id": "packomania-csq-5",
+    "published_by": "Packomania (csq)"
+  }
+}

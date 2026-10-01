@@ -24,7 +24,7 @@ The interface is available in French and English. The code and public documentat
 - Seeded generators and two classical baselines, `lattice` and `basin_hopping`, with convergence curves.
 - Four LangGraph workflows, from a basic agent loop to a research lab of builder and critic teams with an optional Python sandbox, with a live run trace, workflow diagram, replay, run comparison and statistics.
 - Separate **Agents** and **Search** workspaces: the former shows agent workflows, while the latter runs classical baselines and outlines future solver methods.
-- A reference catalog snapshot with 107 families and 2,847 entries. A catalog card being present does **not** imply that its reference value has been independently proved or that the current engine supports its family. The interface distinguishes these cases.
+- A reference catalog snapshot with 107 families and 3,996 entries, and a verification pass that puts each published arrangement back in front of the engine and dates the check. A catalog card being present does **not** imply that its reference value has been independently proved or that the current engine supports its family. The interface distinguishes these cases.
 
 Known limits and the meaning of a reference score are in the [documentation](docs/README.md).
 

@@ -1,0 +1,50 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-7-in-smallest-hexagon-published",
+  "problem_id": "circles-7-in-smallest-hexagon",
+  "scale": 0.3169872981080001,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -5.190292640122607e-13,
+      "y": -0.6339745962151013
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.549038105676519,
+      "y": -0.31698729810710125
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.549038105676172,
+      "y": -0.3169872981075
+    },
+    {
+      "shape_id": "s003",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "shape_id": "s004",
+      "x": 0.549038105676172,
+      "y": 0.3169872981075
+    },
+    {
+      "shape_id": "s005",
+      "x": -0.549038105676519,
+      "y": 0.31698729810710125
+    },
+    {
+      "shape_id": "s006",
+      "x": 5.190292640122607e-13,
+      "y": 0.6339745962151013
+    }
+  ],
+  "metadata": {
+    "published_problem_id": "packomania-chx-7",
+    "published_by": "Packomania (chx)"
+  }
+}

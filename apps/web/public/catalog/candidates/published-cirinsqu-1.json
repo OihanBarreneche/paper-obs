@@ -1,0 +1,20 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-1-in-smallest-square-published",
+  "problem_id": "circles-1-in-smallest-square",
+  "scale": 1.0,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.0,
+      "y": 0.0
+    }
+  ],
+  "metadata": {
+    "published_problem_id": "packomania-csq-1",
+    "published_by": "Packomania (csq)"
+  }
+}

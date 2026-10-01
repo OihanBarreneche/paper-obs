@@ -1,0 +1,20 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-1-in-smallest-hexagon-published",
+  "problem_id": "circles-1-in-smallest-hexagon",
+  "scale": 0.8660254037850003,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.0,
+      "y": 0.0
+    }
+  ],
+  "metadata": {
+    "published_problem_id": "packomania-chx-1",
+    "published_by": "Packomania (chx)"
+  }
+}

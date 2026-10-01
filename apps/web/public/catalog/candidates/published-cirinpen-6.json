@@ -1,0 +1,45 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-6-in-smallest-pentagon-published",
+  "problem_id": "circles-6-in-smallest-pentagon",
+  "scale": 0.26286555605961154,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.30901699437521923,
+      "y": -0.42532540417601994
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.30901699437521923,
+      "y": -0.42532540417601994
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.4999999999995975,
+      "y": 0.16245984811640843
+    },
+    {
+      "shape_id": "s004",
+      "x": 0.4999999999995975,
+      "y": 0.16245984811640843
+    },
+    {
+      "shape_id": "s005",
+      "x": 0.0,
+      "y": 0.5257311121192231
+    }
+  ],
+  "metadata": {
+    "published_problem_id": "packomania-cpt-6",
+    "published_by": "Packomania (cpt)"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-4-in-smallest-square-published",
+  "problem_id": "circles-4-in-smallest-square",
+  "scale": 1.0,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -1.0,
+      "y": -1.0
+    },
+    {
+      "shape_id": "s001",
+      "x": 1.0,
+      "y": -1.0
+    },
+    {
+      "shape_id": "s002",
+      "x": -1.0,
+      "y": 1.0
+    },
+    {
+      "shape_id": "s003",
+      "x": 1.0,
+      "y": 1.0
+    }
+  ],
+  "metadata": {
+    "published_problem_id": "packomania-csq-4",
+    "published_by": "Packomania (csq)"
+  }
+}

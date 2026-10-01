@@ -1,0 +1,55 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-8-in-smallest-square-published",
+  "problem_id": "circles-8-in-smallest-square",
+  "scale": 1.0,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -1.9318516525790728,
+      "y": -1.9318516525790728
+    },
+    {
+      "shape_id": "s001",
+      "x": 1.9318516525790728,
+      "y": -1.9318516525790728
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.0,
+      "y": -1.4142135623707364
+    },
+    {
+      "shape_id": "s003",
+      "x": -1.4142135623707364,
+      "y": 0.0
+    },
+    {
+      "shape_id": "s004",
+      "x": 1.4142135623707364,
+      "y": 0.0
+    },
+    {
+      "shape_id": "s005",
+      "x": 0.0,
+      "y": 1.4142135623707364
+    },
+    {
+      "shape_id": "s006",
+      "x": -1.9318516525790728,
+      "y": 1.9318516525790728
+    },
+    {
+      "shape_id": "s007",
+      "x": 1.9318516525790728,
+      "y": 1.9318516525790728
+    }
+  ],
+  "metadata": {
+    "published_problem_id": "packomania-csq-8",
+    "published_by": "Packomania (csq)"
+  }
+}

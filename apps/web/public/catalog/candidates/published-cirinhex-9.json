@@ -1,0 +1,60 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-9-in-smallest-hexagon-published",
+  "problem_id": "circles-9-in-smallest-hexagon",
+  "scale": 0.24926197296600006,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.308381715409,
+      "y": -0.5341327992136343
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.18502902924535922,
+      "y": -0.6053505057758904
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.6167634308183593,
+      "y": -0.1424354131238904
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.6167634308178452,
+      "y": -0.356088532809
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.1850290292450072,
+      "y": -0.10682655984250002
+    },
+    {
+      "shape_id": "s005",
+      "x": 0.6167634308178452,
+      "y": 0.356088532809
+    },
+    {
+      "shape_id": "s006",
+      "x": 0.12335268616435206,
+      "y": 0.2848708262472439
+    },
+    {
+      "shape_id": "s007",
+      "x": -0.6167634308183593,
+      "y": 0.1424354131238904
+    },
+    {
+      "shape_id": "s008",
+      "x": -0.308381715409,
+      "y": 0.5341327992136343
+    }
+  ],
+  "metadata": {
+    "published_problem_id": "packomania-chx-9",
+    "published_by": "Packomania (chx)"
+  }
+}

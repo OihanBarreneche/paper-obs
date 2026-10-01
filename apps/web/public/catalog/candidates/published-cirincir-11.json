@@ -1,0 +1,70 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-11-in-smallest-circle-published",
+  "problem_id": "circles-11-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -1.0,
+      "y": -2.7474774194546225
+    },
+    {
+      "shape_id": "s001",
+      "x": 1.0,
+      "y": -2.7474774194546225
+    },
+    {
+      "shape_id": "s002",
+      "x": -2.5320888862379562,
+      "y": -1.4619022000815438
+    },
+    {
+      "shape_id": "s003",
+      "x": 2.5320888862379562,
+      "y": -1.4619022000815438
+    },
+    {
+      "shape_id": "s004",
+      "x": -1.0,
+      "y": -0.17632698070846498
+    },
+    {
+      "shape_id": "s005",
+      "x": 1.0,
+      "y": -0.17632698070846498
+    },
+    {
+      "shape_id": "s006",
+      "x": -2.8793852415718164,
+      "y": 0.5077133059428725
+    },
+    {
+      "shape_id": "s007",
+      "x": 2.8793852415718164,
+      "y": 0.5077133059428725
+    },
+    {
+      "shape_id": "s008",
+      "x": 0.0,
+      "y": 1.555723826860412
+    },
+    {
+      "shape_id": "s009",
+      "x": -1.8793852415718166,
+      "y": 2.23976411351175
+    },
+    {
+      "shape_id": "s010",
+      "x": 1.8793852415718166,
+      "y": 2.23976411351175
+    }
+  ],
+  "metadata": {
+    "published_problem_id": "packomania-cci-11",
+    "published_by": "Packomania (cci)"
+  }
+}
