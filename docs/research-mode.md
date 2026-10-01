@@ -42,9 +42,21 @@ paper-obs research status <id> --set paused       # active, paused or done
 paper-obs evaluate -p problem.json -c candidate.json   # judge without logging
 ```
 
-From Python, `paper_obs.research.submit(session_id, candidate, note)` does the same as the command, and `paper_obs.geometry.engine.evaluate` judges without logging. Submit each new best rather than every attempt: a session keeps the arrangement and full verdict of improvements only, and the measure of every submission.
+From Python, `paper_obs.research.submit(session_id, candidate, note)` does the same as the command, and `paper_obs.geometry.engine.evaluate` judges without logging.
 
-Notes are what make a session readable afterwards. Write down the ideas tried, the dead ends and why, the method of each improvement, and the machine plan.
+The lab also offers three tools, none of them required. The first and the last need the `research` extra (`pip install -e ".[research]"`: SciPy and Pillow):
+
+```bash
+paper-obs research refine -p problem.json -c candidate.json -o refined.json   # close the contacts
+paper-obs research leads                                                     # entries a dissection beats
+paper-obs research picture -p problem.json -c refined.json -o 26.gif --like old26.gif
+```
+
+- **`refine`** closes an arrangement's contacts. It keeps each nearby pair apart by one fixed separating axis, keeps every copy in the arena, and maximises the scale with SLSQP, choosing the axes again until they settle. The engine then accepts the largest scale it judges valid. It covers `maximize_scale` problems with equal convex polygonal copies. A non-convex arena (an L, a frame, holes) is its convex hull minus convex obstacles, and a disc arena is its exact circle. From Python: `paper_obs.search.refine.exact_refine(problem, candidate)`.
+- **`leads`** scans the shipped catalog for entries that a construction from other entries beats. A copy can hold copies (a square holds two tans, a tan is two tans 1/√2 its size), and a container can split into containers (a triangle of side 2s is four of side s). A printed value counts at the upper end of its last digit, since it is truncated. A lead is a hint to check on the live page, not a record.
+- **`picture`** draws the arrangement for a submission. With `--like`, it copies the pixel size and colours of the picture it replaces: the corner gives the background, the most common other colour the copies, and the darkest colour the outlines. `--size`, `--rotate` and the file suffix set the rest. The owner downloads the original picture; the agent never fetches pages in bulk. Submit each new best rather than every attempt: a session keeps the arrangement and full verdict of improvements only, and the measure of every submission.
+
+Notes are what make a session readable afterwards. Write down the ideas tried, the dead ends and why, the method of each improvement, and the machine plan. The web app follows each session in **Search ▸ Free research**: its best against the record, the track of each improvement and the journal.
 
 ## 5. Before claiming a record
 
@@ -56,7 +68,7 @@ Notes are what make a session readable afterwards. Write down the ideas tried, t
 
 ## 6. Submitting to the source
 
-Only the owner contacts Erich Friedman; the agent prepares the material in `work/submission/` and never sends anything. The Packing Center asks for an email with:
+Only the owner contacts Erich Friedman; the agent prepares the material in `work/submission/`, including the picture from `paper-obs research picture`, and never sends anything. The Packing Center asks for an email with:
 
 1. a descriptive title, in a new email rather than a reply to an earlier exchange;
 2. a picture of the packing in the same orientation, colours, pixel size, file type and name as the picture it replaces, with no border or text. In the "Maximize Total Perimeter" pages, any rainbow palette in which close sizes get close colours is accepted;

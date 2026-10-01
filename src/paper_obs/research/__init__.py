@@ -36,7 +36,7 @@ STATUSES = ("active", "paused", "done")
 NOUNS = {"circle": "circles", "triangle": "triangles", "square": "squares", "pentagon": "pentagons",
          "hexagon": "hexagons", "octagon": "octagons", "tan": "tans", "domino": "dominoes", "l": "L's"}
 #: The catalog the web app ships, read by :func:`catalog_problem` in a source checkout.
-CATALOG = Path(__file__).resolve().parents[2] / "apps/web/public/catalog/packing_equal_copies.json"
+CATALOG = Path(__file__).resolve().parents[3] / "apps/web/public/catalog/packing_equal_copies.json"
 
 
 def sessions_directory() -> Path:

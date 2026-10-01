@@ -24,6 +24,8 @@ from typing import Any
 
 from paper_obs import __version__
 from paper_obs import research as research_sessions
+from paper_obs.research.bounds import leads
+from paper_obs.research.picture import submission_picture
 from paper_obs.domain import (
     ARENA_FAMILIES,
     ROTATION_MODES,
@@ -38,6 +40,7 @@ from paper_obs.geometry.engine import Evaluation, analyze, evaluate, validate
 from paper_obs.geometry.rendering import RenderOptions, render_svg
 from paper_obs.geometry.validation import Validation
 from paper_obs.search import BASELINES, Convergence, Step, convergence_svg
+from paper_obs.search.refine import exact_refine
 from paper_obs.search.operators.initialization import (
     cover_initialize,
     grid_initialize,
@@ -243,6 +246,16 @@ def _add_research(subparsers: Any) -> None:
     status.add_argument("--set", dest="new_status", choices=research_sessions.STATUSES, default=None)
     listing = actions.add_parser("list", help="list the sessions, newest first")
     listing.add_argument("--problem-id", default=None)
+    refine = actions.add_parser("refine", help="close an arrangement's contacts at the largest valid scale (needs the 'research' extra)")
+    _add_problem_candidate(refine)
+    refine.add_argument("--out", "-o", required=True, type=Path)
+    actions.add_parser("leads", help="catalog entries that a dissection of other entries beats")
+    picture = actions.add_parser("picture", help="draw an arrangement as the Packing Center's pictures (needs the 'research' extra)")
+    _add_problem_candidate(picture)
+    picture.add_argument("--out", "-o", required=True, type=Path, help="the suffix picks the format, such as .gif")
+    picture.add_argument("--like", type=Path, default=None, help="the picture it replaces: size and colours are read from it")
+    picture.add_argument("--size", type=int, nargs=2, default=None, metavar=("WIDTH", "HEIGHT"))
+    picture.add_argument("--rotate", type=float, default=0.0, help="degrees counter-clockwise, to match the page")
     research.set_defaults(handler=_cmd_research)
 
 
@@ -271,6 +284,18 @@ def _cmd_research(args: argparse.Namespace) -> int:
         answer = {key: document[key] for key in ("session_id", "name", "agent", "status", "problem_id", "best")}
         answer["record"] = {key: reference.get(key) for key in ("value", "unit", "note", "verified_on")} if reference else None
         answer["submissions"] = sum(item["kind"] == "submission" for item in document["journal"])
+    elif args.action == "refine":
+        problem = load_problem(args.problem)
+        refined = exact_refine(problem, load_candidate(args.candidate))
+        verdict = evaluate(problem, refined)
+        answer = {"wrote": str(save_candidate(refined, args.out)), "valid": verdict.valid, "scale": refined.scale,
+                  "equivalent_container_side": verdict.metrics.get("equivalent_container_side")}
+    elif args.action == "leads":
+        answer = leads(json.loads(research_sessions.CATALOG.read_text(encoding="utf-8")))
+    elif args.action == "picture":
+        answer = {"wrote": str(submission_picture(load_problem(args.problem), load_candidate(args.candidate), args.out,
+                                                  like=args.like, size=tuple(args.size) if args.size else None,
+                                                  rotate=args.rotate))}
     else:
         answer = research_sessions.listing(args.problem_id)
     print(json.dumps(answer, indent=2, ensure_ascii=False))
