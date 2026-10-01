@@ -97,12 +97,37 @@
     {
       "kind": "note",
       "at": "2026-10-01T10:30:00+00:00",
-      "text": "Session reconstituée après coup à partir du journal de la chasse aux records du 1er octobre 2026 ; les heures sont approximatives."
+      "text": "Session reconstituée après coup à partir du journal de la chasse aux records du 1er octobre 2026 ; les heures sont approximatives. Les programmes sont copiés tels qu'écrits pendant la chasse ; certains s'appuient sur un banc d'essai qui n'est pas livré : ils se lisent, ils ne se relancent pas tels quels.",
+      "step": null,
+      "path": null
     },
     {
       "kind": "note",
       "at": "2026-10-01T10:30:00+00:00",
-      "text": "Idée : des bornes par découpage, vérifiées sur toutes les tables du catalogue à la fois. Un tan se coupe en deux tans √2 fois plus petits, un carré contient deux tans, etc. : chaque relation transforme un record publié en construction pour une autre case."
+      "text": "Idée : des bornes par découpage, vérifiées sur toutes les tables du catalogue à la fois. Un tan se coupe en deux tans √2 fois plus petits, un carré contient deux tans, etc. : chaque relation transforme un record publié en construction pour une autre case.",
+      "step": "idea",
+      "path": null
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T10:48:00+00:00",
+      "text": "Bornes croisées par découpage sur toutes les tables du catalogue : une copie qui en contient d'autres, un contenant qui se découpe en contenants. Liste chaque entrée au-dessus de la meilleure borne, avec sa construction.",
+      "step": "program",
+      "path": "dissect.py"
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T10:59:00+00:00",
+      "text": "Copies convexes égales dans un L (carré englobant moins un obstacle) : SLSQP maximise l'échelle, chaque paire séparée par un axe fixe, axes re-choisis jusqu'à stabilité ; puis bissection exacte de la plus grande échelle valide.",
+      "step": "program",
+      "path": "lrefine.py"
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T11:01:00+00:00",
+      "text": "Raffine le n = 13 de Morandi lu sur sa figure, coupe chaque tan le long de sa hauteur (26 tans à √2 fois la taille du L), puis raffine à nouveau.",
+      "step": "program",
+      "path": "tan13.py"
     },
     {
       "kind": "submission",
@@ -347,7 +372,12 @@
             }
           ]
         }
-      }
+      },
+      "method": "composition",
+      "builds_on": "Morandi, n = 13 (2012)",
+      "programs": [
+        "tan13.py"
+      ]
     },
     {
       "kind": "submission",
@@ -592,17 +622,34 @@
             }
           ]
         }
-      }
+      },
+      "method": "refinement",
+      "builds_on": 0,
+      "programs": [
+        "tan13.py",
+        "lrefine.py"
+      ]
     },
     {
       "kind": "note",
       "at": "2026-10-01T11:56:00+00:00",
-      "text": "Vérifications : moteur de la plateforme (marge 1e-9) valide ; contrôle exact en fractions valide pour 2,1204282 ; page en ligne relue le 1er octobre 2026 : 2,12132."
+      "text": "Vérifications : moteur de la plateforme (marge 1e-9) valide ; contrôle exact en fractions valide pour 2,1204282 ; page en ligne relue le 1er octobre 2026 : 2,12132.",
+      "step": "check",
+      "path": null
     },
     {
       "kind": "note",
       "at": "2026-10-01T13:40:00+00:00",
-      "text": "Contre-vérification sans le moteur (fractions exactes, axes séparateurs) : aucun chevauchement, aucun tan dans l'encoche, marge minimale 1e-10, tans de côtés 1 et √2. Le gain n'est que de 0,042 % : l'ancienne figure répartit le vide en fils fins le long des coupes, la nouvelle le regroupe en quelques fentes visibles."
+      "text": "Contre-vérification sans le moteur (fractions exactes, axes séparateurs) : aucun chevauchement, aucun tan dans l'encoche, marge minimale 1e-10, tans de côtés 1 et √2. Le gain n'est que de 0,042 % : l'ancienne figure répartit le vide en fils fins le long des coupes, la nouvelle le regroupe en quelques fentes visibles.",
+      "step": "check",
+      "path": null
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T13:41:00+00:00",
+      "text": "Bilan : une composition, puis de l'optimisation locale. Le découpage du n = 13 de Morandi redonne exactement l'ancien record (3/√2) ; tout le gain (0,042 %) vient du raffinement exact, qui profite de ce que les coupes internes ne sont plus des murs. Ni idée géométrique nouvelle, ni force brute.",
+      "step": null,
+      "path": null
     }
   ],
   "best": {

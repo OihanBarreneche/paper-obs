@@ -60,17 +60,44 @@
     {
       "kind": "note",
       "at": "2026-10-01T09:40:00+00:00",
-      "text": "Session reconstituée après coup à partir du journal de la chasse aux records du 1er octobre 2026 ; les heures sont approximatives."
+      "text": "Session reconstituée après coup à partir du journal de la chasse aux records du 1er octobre 2026 ; les heures sont approximatives. Les programmes sont copiés tels qu'écrits pendant la chasse ; certains s'appuient sur un banc d'essai qui n'est pas livré : ils se lisent, ils ne se relancent pas tels quels.",
+      "step": null,
+      "path": null
     },
     {
       "kind": "note",
       "at": "2026-10-01T09:40:00+00:00",
-      "text": "Audit de la famille : les figures publiées (n = 3 à 43), relues puis raffinées exactement, retombent toutes sur leur valeur. Elles suivent des familles de constructions : k + 2/√3, k + 4/√3, k + 8/√3… et celle de David Cantrell (2002) en k + 0,30122 pour n = 8, 12, 17, 23 et 30."
+      "text": "Audit de la famille : les figures publiées (n = 3 à 43), relues puis raffinées exactement, retombent toutes sur leur valeur. Elles suivent des familles de constructions : k + 2/√3, k + 4/√3, k + 8/√3… et celle de David Cantrell (2002) en k + 0,30122 pour n = 8, 12, 17, 23 et 30.",
+      "step": "idea",
+      "path": null
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T09:40:00+00:00",
+      "text": "Avant cette session : redémarrages aléatoires, départs par blocs en coin et ruin-and-recreate n'ont pas retrouvé en 20 minutes les records récents pour n ≈ 20 à 26. D'où le choix de partir des constructions publiées plutôt que de la force brute.",
+      "step": "dead-end",
+      "path": null
     },
     {
       "kind": "note",
       "at": "2026-10-01T09:55:00+00:00",
-      "text": "Piste : le 10,304 de Costantino pour n = 38 casse ce motif ; prolongé d'un cran, le motif de Cantrell donnerait 10,30122."
+      "text": "Piste : le 10,304 de Costantino pour n = 38 casse ce motif ; prolongé d'un cran, le motif de Cantrell donnerait 10,30122.",
+      "step": "idea",
+      "path": null
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T09:57:00+00:00",
+      "text": "Relit chaque figure publiée des carrés dans un triangle (centres et angles lus sur l'image), la raffine exactement et garde les arrangements exacts des records.",
+      "step": "program",
+      "path": "exact_records.py"
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T10:06:00+00:00",
+      "text": "Construit le motif de Cantrell pour n = 38 (bande le long du côté gauche, escalier à droite, carré incliné dans le coin), puis le raffine.",
+      "step": "program",
+      "path": "build38.py"
     },
     {
       "kind": "submission",
@@ -386,17 +413,33 @@
             }
           ]
         }
-      }
+      },
+      "method": "reasoning",
+      "builds_on": "famille de Cantrell, n = 8 à 30 (2002)",
+      "programs": [
+        "build38.py"
+      ]
     },
     {
       "kind": "note",
       "at": "2026-10-01T10:15:00+00:00",
-      "text": "Vérifications : moteur de la plateforme (marge 1e-9) valide ; contrôle indépendant en fractions exactes valide ; page en ligne relue le 1er octobre 2026 : toujours 10,304."
+      "text": "Vérifications : moteur de la plateforme (marge 1e-9) valide ; contrôle indépendant en fractions exactes valide ; page en ligne relue le 1er octobre 2026 : toujours 10,304.",
+      "step": "check",
+      "path": null
     },
     {
       "kind": "note",
       "at": "2026-10-01T13:40:00+00:00",
-      "text": "Contre-vérification sans le moteur (fractions exactes, axes séparateurs) : aucun chevauchement, aucun sommet hors du triangle, marge minimale 5e-11 ; côté 10,3012213, soit 0,027 % sous 10,304."
+      "text": "Contre-vérification sans le moteur (fractions exactes, axes séparateurs) : aucun chevauchement, aucun sommet hors du triangle, marge minimale 5e-11 ; côté 10,3012213, soit 0,027 % sous 10,304.",
+      "step": "check",
+      "path": null
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T13:41:00+00:00",
+      "text": "Bilan : surtout de la compréhension. Le motif de Cantrell, repéré dans les figures publiées et prolongé d'un cran, donne déjà 10,30122 ; le raffinement ne fait que fermer les contacts. Aucune recherche automatique dans la construction.",
+      "step": null,
+      "path": null
     }
   ],
   "best": {

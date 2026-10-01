@@ -52,3 +52,8 @@ def test_the_record_hunts_are_shipped_as_sessions_that_beat_their_record(tmp_pat
         (line,) = research.listing(problem_id)
         assert line["example"] and line["status"] == "done"
         assert line["best"]["record_gap"] > 0  # beats the record the problem carries
+        # Every program the journal names is shipped and readable from the session's work/.
+        journal = research.load(line["session_id"])["journal"]
+        named = {entry["path"] for entry in journal if entry.get("step") == "program"}
+        named |= {path for entry in journal for path in entry.get("programs") or ()}
+        assert named and all(research.work_file(line["session_id"], path)["text"] for path in named)
