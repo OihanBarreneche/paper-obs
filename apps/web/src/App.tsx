@@ -730,6 +730,31 @@ export function App() {
     }
   }, [problem, showLoadedVerdict]);
 
+  /** Open a research session, loading its problem when another one is open, then its best arrangement. */
+  const openResearchSession = useCallback(async (sessionId: string) => {
+    try {
+      const session = await api.researchSession(sessionId);
+      if (problem?.problem_id !== session.problem.problem_id) {
+        forgetCurve();
+        setPast([]);
+        setFuture([]);
+        setSelected([]);
+        setProblem(session.problem);
+        setBest(null);
+        setCandidate(null);
+        setEvaluation(null);
+        setView(null);
+        setSummary(null);
+      }
+      if (session.champion !== null) {
+        showLoadedVerdict(await api.evaluate({ problem: session.problem, candidate: session.champion,
+          with_union: wantsUnion(session.problem) }));
+      }
+    } catch (cause) {
+      setSearchError(describeError(cause));
+    }
+  }, [forgetCurve, problem, showLoadedVerdict]);
+
   /**
    * Draw what the run has newly reached.
    *
@@ -2511,6 +2536,7 @@ export function App() {
         convergence={convergence} searchSummary={searchSummary} searchError={searchError}
         onRun={(baseline, budget) => void runSearch(baseline, budget)}
         onShowCandidate={(shown) => void showResearchCandidate(shown)}
+        onOpenSession={(sessionId) => void openResearchSession(sessionId)}
         evaluation={evaluation} verdictSummary={summary} best={best} problem={problem}
         view={view} busy={busy} showOrientations={showOrientations}
         onToggleOrientations={() => setShowOrientations((value) => !value)}

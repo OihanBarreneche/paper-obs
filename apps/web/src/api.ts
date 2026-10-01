@@ -199,9 +199,10 @@ export const api = {
 
   /** List the runs already written, for a picker. */
   /** The free research sessions of one problem, newest first: written by outside agents. */
-  researchSessions: async (problemId: string): Promise<ResearchSessionSummaryDoc[]> =>
+  researchSessions: async (problemId?: string): Promise<ResearchSessionSummaryDoc[]> =>
     (await request<{ sessions: ResearchSessionSummaryDoc[] }>(
-      `/research-sessions?problem_id=${encodeURIComponent(problemId)}`)).sessions,
+      problemId === undefined ? "/research-sessions"
+      : `/research-sessions?problem_id=${encodeURIComponent(problemId)}`)).sessions,
 
   researchSession: (sessionId: string) =>
     request<ResearchSessionDoc>(`/research-sessions/${encodeURIComponent(sessionId)}`),

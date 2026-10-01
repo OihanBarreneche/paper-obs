@@ -502,6 +502,7 @@ const fr: Record<string, string> = {
   "Each method proposes candidates to the same geometry engine, which judges them and records their progress.": "Chaque méthode propose des solutions au même moteur géométrique, qui les évalue et suit leur progression.",
   "Possible methods": "Méthodes envisageables",
   "Free research": "Recherche libre", "Research session": "Session de recherche",
+  "Sessions to show": "Sessions à afficher", "All sessions": "Toutes les sessions",
   "No free research session on this problem yet.": "Aucune session de recherche libre sur ce problème pour l’instant.",
   "An outside agent (Claude Code, Codex, your own scripts) opens one with": "Un agent extérieur (Claude Code, Codex, vos propres scripts) en ouvre une avec",
   "It searches as it likes; the engine judges each arrangement it submits and this page follows it.": "Il cherche comme il l’entend ; le moteur juge chaque arrangement soumis et cette page suit la session.",

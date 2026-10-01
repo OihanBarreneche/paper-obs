@@ -15,6 +15,7 @@ type Props = {
   searchError: string | null;
   onRun: (baseline: string, budget: number) => void;
   onShowCandidate: (candidate: CandidateDoc) => void;
+  onOpenSession: (sessionId: string) => void;
   canvas: ReactNode;
   evaluation: EvaluationDoc | null;
   verdictSummary: SummaryDoc | null;
@@ -38,10 +39,11 @@ const possibleMethods = [
 export function SearchWorkspace(props: Props) {
   const { t } = useI18n();
   const [guide, setGuide] = useState(false);
-  const sessions = useResearchSessions(props.problem?.problem_id);
+  const sessions = useResearchSessions();
+  const here = sessions.filter((item) => item.problem_id === props.problem?.problem_id).length;
   const [picked, setPicked] = useState<"classical" | "free" | null>(null);
   // A problem an agent is researching opens on its sessions; otherwise on the baselines.
-  const tab = picked ?? (sessions.length > 0 ? "free" : "classical");
+  const tab = picked ?? (here > 0 ? "free" : "classical");
   return <main className="run-workspace search-workspace">
     <div className="run-workspace__spread">
       <section className="run-workspace__process search-workspace__methods">
@@ -54,9 +56,10 @@ export function SearchWorkspace(props: Props) {
           <button type="button" role="tab" aria-selected={tab === "classical"}
             onClick={() => setPicked("classical")}>{t("Classical methods")}</button>
           <button type="button" role="tab" aria-selected={tab === "free"}
-            onClick={() => setPicked("free")}>{t("Free research")} <small>{sessions.length}</small></button>
+            onClick={() => setPicked("free")}>{t("Free research")} <small>{here}</small></button>
         </div>
-        {tab === "free" ? <ResearchSessions sessions={sessions} onShow={props.onShowCandidate} /> : <>
+        {tab === "free" ? <ResearchSessions sessions={sessions} problemId={props.problem?.problem_id}
+          onShow={props.onShowCandidate} onOpen={props.onOpenSession} /> : <>
           <div className="section-heading"><h2>{t("Classical methods")}</h2>
             <button type="button" className="search-workspace__how" onClick={() => setGuide(true)}>{t("How do they work?")}</button></div>
           {guide && <BaselineGuide onClose={() => setGuide(false)} />}

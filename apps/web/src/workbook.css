@@ -545,6 +545,11 @@ body {
 .research-sessions__empty p { margin: 0 0 10px; max-width: 52ch; color: #766a7e; font: 16px/1.45 var(--serif); }
 .research-sessions__empty p:first-child { font-style: italic; }
 .research-sessions__empty code, .research-sessions code { font: 13px var(--mono); color: #5e4371; }
+.research-sessions__scope { margin-bottom: 14px; }
+.research-sessions__list { margin: 0; padding: 0; list-style: none; }
+.research-sessions__list button { display: flex; flex-direction: column; gap: 3px; width: 100%; padding: 10px 4px; border: 0; border-bottom: 1px solid #e8dfeb; background: none; color: #3f2b4d; cursor: pointer; font: 500 15px/1.3 var(--sans); text-align: left; }
+.research-sessions__list button:hover { background: #f7f2f8; }
+.research-sessions__list small { color: #806f88; font-size: 12px; font-weight: 400; }
 .research-sessions__picker { width: 100%; margin: 0 0 12px; padding: 6px 8px; border: 1px solid #ddd3e0; border-radius: 6px; background: #fff; font: 13px var(--sans); }
 .research-sessions__head h3 { margin: 0; font: 500 22px/1.2 var(--serif); color: #3f2b4d; }
 .research-sessions__head p { margin: 4px 0 0; color: #806f88; font: 13px var(--sans); }

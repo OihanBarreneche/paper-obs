@@ -9,35 +9,42 @@ const POLL_MS = 5000;
 const JOURNAL_LINES = 12;
 
 /**
- * The free research sessions of one problem (docs/research-mode.md), read again every few
- * seconds while one is active: an outside agent writes them, the page only follows.
+ * Every free research session (docs/research-mode.md), read again every few seconds while
+ * one is active: an outside agent writes them, the page only follows.
  */
-export function useResearchSessions(problemId: string | undefined): ResearchSessionSummaryDoc[] {
+export function useResearchSessions(): ResearchSessionSummaryDoc[] {
   const [sessions, setSessions] = useState<ResearchSessionSummaryDoc[]>([]);
   const active = sessions.some((item) => item.status === "active");
   useEffect(() => {
-    if (!problemId) { setSessions([]); return; }
     let live = true;
-    const read = () => api.researchSessions(problemId).then((list) => { if (live) setSessions(list); }, () => undefined);
+    const read = () => api.researchSessions().then((list) => { if (live) setSessions(list); }, () => undefined);
     void read();
     const timer = active ? window.setInterval(read, POLL_MS) : undefined;
     return () => { live = false; window.clearInterval(timer); };
-  }, [problemId, active]);
+  }, [active]);
   return sessions;
 }
 
 type Props = {
+  /** Every session; the open problem's are shown one at a time, the others listed to open. */
   sessions: ResearchSessionSummaryDoc[];
+  problemId: string | undefined;
   onShow: (candidate: CandidateDoc) => void;
+  /** Open a session of another problem: its problem and its best arrangement. */
+  onOpen: (sessionId: string) => void;
 };
 
-/** One session at a time: its best against the record, its progress, and its journal. */
-export function ResearchSessions({ sessions, onShow }: Props) {
+/** The open problem's sessions one at a time (best, progress, journal), or every session. */
+export function ResearchSessions({ sessions, problemId, onShow, onOpen }: Props) {
   const { t, number, language } = useI18n();
+  const here = sessions.filter((item) => item.problem_id === problemId);
+  const [scope, setScope] = useState<"problem" | "all" | null>(null);
   const [chosen, setChosen] = useState<string | null>(null);
   const [session, setSession] = useState<ResearchSessionDoc | null>(null);
   const [whole, setWhole] = useState(false);
-  const line = sessions.find((item) => item.session_id === chosen) ?? sessions[0];
+  // Without a session of its own, the problem opens on the list of every session.
+  const shown = scope ?? (here.length > 0 || sessions.length === 0 ? "problem" : "all");
+  const line = shown === "problem" ? here.find((item) => item.session_id === chosen) ?? here[0] : undefined;
   useEffect(() => {
     if (line === undefined) { setSession(null); return; }
     let live = true;
@@ -45,24 +52,54 @@ export function ResearchSessions({ sessions, onShow }: Props) {
     return () => { live = false; };
   }, [line?.session_id, line?.updated]);
 
+  const date = (iso: string) => new Intl.DateTimeFormat(language === "fr" ? "fr-FR" : "en-GB", {
+    day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }).format(new Date(iso));
+  const gap = (value: number) => `${value > 0 ? "+" : "−"}${number(Math.abs(value) * 100, 3)} %`;
+  const scopes = <div className="run-picker__scope research-sessions__scope" role="tablist" aria-label={t("Sessions to show")}>
+    <button type="button" role="tab" aria-selected={shown === "problem"} onClick={() => setScope("problem")}>
+      {t("This problem")} <small>{here.length}</small></button>
+    <button type="button" role="tab" aria-selected={shown === "all"} onClick={() => setScope("all")}>
+      {t("All sessions")} <small>{sessions.length}</small></button>
+  </div>;
+
+  if (shown === "all") {
+    return <div className="research-sessions">
+      {scopes}
+      <ul className="research-sessions__list">
+        {sessions.map((item) => <li key={item.session_id}>
+          <button type="button" onClick={() => {
+            setChosen(item.session_id);
+            setScope("problem");
+            setWhole(false);
+            if (item.problem_id !== problemId) onOpen(item.session_id);
+          }}>
+            <span>{item.name}{item.example && <em className="run-picker__tag">{t("example")}</em>}</span>
+            <small>{t(item.problem_name)} · {date(item.created)}
+              {item.best?.measure != null && <> · {number(item.best.measure, 6)}</>}
+              {item.best?.record_gap != null && <> ({gap(item.best.record_gap)})</>}</small>
+          </button>
+        </li>)}
+      </ul>
+    </div>;
+  }
   if (line === undefined) {
     return <div className="research-sessions__empty">
+      {sessions.length > 0 && scopes}
       <p>{t("No free research session on this problem yet.")}</p>
       <p>{t("An outside agent (Claude Code, Codex, your own scripts) opens one with")} <code>paper-obs research start</code>.
         {" "}{t("It searches as it likes; the engine judges each arrangement it submits and this page follows it.")}
         {" "}{t("The method is in docs/research-mode.md.")}</p>
     </div>;
   }
-  const date = (iso: string) => new Intl.DateTimeFormat(language === "fr" ? "fr-FR" : "en-GB", {
-    day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }).format(new Date(iso));
   const reference = session?.session_id === line.session_id ? session.problem.metadata?.reference as
     { value?: number; unit?: string } | undefined : undefined;
   const best = line.best;
   const journal = session?.session_id === line.session_id ? [...session.journal].reverse() : [];
   return <div className="research-sessions">
-    {sessions.length > 1 && <select className="research-sessions__picker" value={line.session_id}
+    {scopes}
+    {here.length > 1 && <select className="research-sessions__picker" value={line.session_id}
       aria-label={t("Research session")} onChange={(event) => { setChosen(event.target.value); setWhole(false); }}>
-      {sessions.map((item) => <option key={item.session_id} value={item.session_id}>
+      {here.map((item) => <option key={item.session_id} value={item.session_id}>
         {item.name} · {date(item.created)}</option>)}
     </select>}
     <header className="research-sessions__head">
@@ -75,7 +112,7 @@ export function ResearchSessions({ sessions, onShow }: Props) {
       <div><dt>{t("Session best")}</dt><dd>{best?.measure == null ? "—" : number(best.measure, 6)}</dd></div>
       <div><dt>{t("Published record")}</dt><dd>{reference?.value == null ? "—" : number(reference.value, 6)}</dd></div>
       <div><dt>{t("Gap")}</dt><dd className={best?.record_gap != null && best.record_gap > 0 ? "is-beaten" : ""}>
-        {best?.record_gap == null ? "—" : `${best.record_gap > 0 ? "+" : "−"}${number(Math.abs(best.record_gap) * 100, 3)} %`}</dd></div>
+        {best?.record_gap == null ? "—" : gap(best.record_gap)}</dd></div>
     </dl>
     {best && <p className="research-sessions__unit">{t(best.metric.replaceAll("_", " "))}</p>}
     <Track track={line.track} record={reference?.value ?? null} />
