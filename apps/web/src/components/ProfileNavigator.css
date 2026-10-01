@@ -99,20 +99,19 @@
 .profile-catalog__config:hover { background: #f9f3fa; }
 .profile-catalog__config.is-coming { cursor: default; opacity: .72; }
 .profile-catalog__config.is-coming:hover { background: transparent; }
+/* The engine's own line about a card's arrangement: one glyph, one ink per level, so
+   the list says at a glance whether a run starts on the record or only near it. */
+.profile-catalog__config-badge { display: block; margin-top: 3px; font: 11px/1.4 var(--sans); letter-spacing: .01em; }
+.profile-catalog__config-badge[data-level="exact"] { color: #2f7a52; }
+.profile-catalog__config-badge[data-level="near"] { color: #4a6fa5; }
+.profile-catalog__config-badge[data-level="approx"] { color: #8a6a2f; }
+.profile-catalog__config-badge[data-level="far"] { color: #8a4f4f; }
 /* One published figure, at a fixed size whatever the source's own dimensions are,
    so a column of records lines up like a shelf of plates. */
 .profile-catalog__figure { display: flex; align-items: center; justify-content: center; width: 100%; height: 104px; margin-bottom: 7px; background: #f7f3f8; border: 1px solid #eee6ee; }
 .profile-catalog__figure img { display: block; width: 100%; height: 100%; object-fit: contain; padding: 5px; }
-/* A source figure is a grey or black-on-white bitmap we cannot recolour pixel by
-   pixel. The chain strips any colour left in it, lifts black a little so the
-   strokes — not only the paper — carry the hue, sepia gives it one warm tone,
-   hue-rotate turns that tone to the design's violet, and saturation deepens it.
-   The visible cost is the paper: a white background becomes a pale lavender. The
-   perimeter section takes no filter — there the colours encode shape sizes. */
-.profile-catalog__figure img.is-source,
-.profile-catalog__subfamily-picture img.is-source {
-  filter: grayscale(1) invert(0.2) sepia(1) hue-rotate(215deg) saturate(2.4) brightness(1.04) contrast(1.05);
-}
+/* The tint itself is shared: see .packing-figure--source in styles.css. The perimeter
+   section keeps its own colours and its cards simply never apply the class. */
 /* One short line for a subfamily whose every record is above the display limit. */
 .profile-catalog__hidden { max-width: 74ch; margin: 0 0 14px; color: var(--text-muted); font: italic 14px/1.5 var(--serif); }
 /* The one place the catalogue says the exact placements are mostly unknown. */

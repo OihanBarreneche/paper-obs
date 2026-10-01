@@ -18,6 +18,7 @@
 
 import { api } from "./api";
 import { withinVisibleCount } from "./catalog";
+import { loadedVerification, verificationOf } from "./verification";
 import type { ProblemReference } from "./catalog";
 import type { ObjectiveDoc, ProblemDoc, ShapeDoc, ShapeFamilyDoc } from "./types";
 
@@ -317,6 +318,10 @@ export function copyProblem(
       ? `Pack ${count} ${copyNoun(family.shape, 2)} inside a ${family.container}, maximising the sum of their ${copySum(family, true)}. ${reference}`
       : `Pack ${count} unit ${copyNoun(family.shape, 2)} inside the smallest possible ${containerWord(family.container)}. ${reference}`;
   const template = family.problem_template;
+  // The engine's own finding about this card, when the verification asset has one: an
+  // arrangement it confirmed is offered to the run, and nothing else is.
+  const checked = verificationOf(loadedVerification(), family.slug, count);
+  const candidate = checked?.candidate ? { catalog_candidate_url: checked.candidate } : {};
   if (template !== undefined) {
     if (target !== null) {
       // The template's arena belongs to the fixed reading the product no longer
@@ -328,7 +333,7 @@ export function copyProblem(
         description,
         seed: count,
         objective: { type: "maximize_covered_size", count, target },
-        metadata: { ...template.metadata, reference: copyReference(catalog, family, instance) },
+        metadata: { ...template.metadata, reference: copyReference(catalog, family, instance, count), ...candidate },
       };
       delete derived.arena;
       return derived;
@@ -340,7 +345,7 @@ export function copyProblem(
       description,
       seed: count,
       objective: withCount(template.objective, count),
-      metadata: { ...template.metadata, reference: copyReference(catalog, family, instance) },
+      metadata: { ...template.metadata, reference: copyReference(catalog, family, instance, count), ...candidate },
     };
   }
   const shape = copyShape(family, palette);
@@ -357,7 +362,7 @@ export function copyProblem(
       objective: { type: "maximize_covered_size", count, target },
       rotation: { type: "rotation_policy", mode: "free", angles: [0] },
       constraints: [],
-      metadata: { reference: copyReference(catalog, family, instance) },
+      metadata: { reference: copyReference(catalog, family, instance, count), ...candidate },
     };
   }
   return {
@@ -369,7 +374,7 @@ export function copyProblem(
     objective: { type: "minimize_container", count, container: family.container },
     rotation: { type: "rotation_policy", mode: "free", angles: [0] },
     constraints: [],
-    metadata: { reference: copyReference(catalog, family, instance) },
+    metadata: { reference: copyReference(catalog, family, instance, count), ...candidate },
   };
 }
 
@@ -396,7 +401,8 @@ function measureUnit(family: CopyFamily, symbol: string): string {
 }
 
 /** The source sentence read as a reference: construction, proof and last check. */
-function copyReference(catalog: CopyCatalog, family: CopyFamily, instance: CopyInstance): ProblemReference {
+function copyReference(catalog: CopyCatalog, family: CopyFamily, instance: CopyInstance, count: number): ProblemReference {
+  const checked = verificationOf(loadedVerification(), family.slug, count);
   const found = /Found by (.+?) in (.+?)(?:\.|$)/.exec(instance.attribution);
   const proved = /Proved by (.+?) in (.+?)(?:\.|$)/.exec(instance.attribution);
   return {
@@ -407,10 +413,14 @@ function copyReference(catalog: CopyCatalog, family: CopyFamily, instance: CopyI
     date: found?.[2] ?? "",
     proved_by: proved?.[1] ?? "",
     proof_date: proved?.[2] ?? "",
-    verified_on: catalog.generated,
+    // A date a check happened on, when one did: the entry's own, otherwise the date the
+    // catalogue's values were last read from the source pages.
+    verified_on: checked?.checked_on ?? catalog.generated,
     note: instance.formula === "" ? instance.attribution : `${instance.attribution} · ${instance.formula}`,
-    // Hotlinked, never copied: the reference panel shows the source's own figure.
+    // Hotlinked, never copied: the reference panel shows the source's own figure. A
+    // total-perimeter page colours its copies by size, so its figure keeps its colours.
     preview: copyFigureUrl(family, instance),
+    figure_tint: !isPerimeter(family),
     sources: [{ label: `${family.title} · Erich Friedman's Packing Center`, url: family.page }],
   };
 }

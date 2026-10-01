@@ -12,8 +12,21 @@ export type ProblemReference = {
   verified_on: string;
   note: string;
   preview: string;
+  /**
+   * Whether a hotlinked preview of this record takes the catalogue's own tint.
+   *
+   * Absent or true for every ordinary family. A total-perimeter family sets it false:
+   * there the colours of the published figure encode the sizes of the packed shapes,
+   * so they are information rather than decoration.
+   */
+  figure_tint?: boolean;
   sources: ReferenceSource[];
 };
+
+/** Whether a preview is the source's own bitmap rather than the lab's own drawing. */
+export function sourceFigure(url: string): boolean {
+  return /^https?:/i.test(url);
+}
 
 export type SquareRecord = {
   count: number;
@@ -348,6 +361,8 @@ export function readReference(value: unknown): ProblemReference | null {
     verified_on: typeof record.verified_on === "string" ? record.verified_on : "",
     note: typeof record.note === "string" ? record.note : "",
     preview: typeof record.preview === "string" ? record.preview : "",
+    // Absent means the shared tint, the answer for every record that predates the field.
+    figure_tint: record.figure_tint === false ? false : true,
     sources: Array.isArray(record.sources) ? record.sources.filter((source): source is ReferenceSource =>
       source !== null && typeof source === "object" && typeof source.label === "string" && typeof source.url === "string") : [],
   };

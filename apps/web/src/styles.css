@@ -7,6 +7,23 @@
  * `vector-effect="non-scaling-stroke"` attribute set by the component.
  */
 
+/*
+ * One published figure, wherever it is shown: the catalogue's own tint.
+ *
+ * A source figure is a grey or black-on-white bitmap we cannot recolour pixel by pixel.
+ * The chain strips any colour left in it, lifts black a little so the strokes -- not
+ * only the paper -- carry the hue, sepia gives it one warm tone, hue-rotate turns that
+ * tone to the design's violet, and saturation deepens it. The visible cost is the paper:
+ * a white background becomes a pale lavender. Every screen that shows a hotlinked
+ * figure applies this one class, so the catalogue, the reference panel and the run
+ * records cannot drift apart. The total-perimeter families never take it: there the
+ * colours encode the sizes of the packed shapes, and the data says so
+ * (ProblemReference.figure_tint).
+ */
+.packing-figure--source {
+  filter: grayscale(1) invert(0.2) sepia(1) hue-rotate(215deg) saturate(2.4) brightness(1.04) contrast(1.05);
+}
+
 :root {
   --bg: #0f172a;
   --surface: #172033;

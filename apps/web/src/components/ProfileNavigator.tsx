@@ -6,6 +6,8 @@ import { api } from "../api";
 import { copyConfigurations, copyFigureUrl, copyNoun, copyProblem, copyProblemId, copyable, loadCopyCatalog, loadFamilyPreviews } from "../equalCopiesCatalog";
 import type { CopyCatalog, FamilyPreview } from "../equalCopiesCatalog";
 import { useI18n } from "../i18n";
+import { gapPercent, loadVerification, verificationOf } from "../verification";
+import type { CatalogVerification, VerificationEntry } from "../verification";
 import type { ProfileCategory } from "../profileLibrary";
 import type { ExampleSummaryDoc, ProblemDoc, ShapeFamilyDoc } from "../types";
 import "./ProfileNavigator.css";
@@ -111,7 +113,7 @@ function Figure({ url, alt, tinted }: { url: string; alt: string; tinted: boolea
   const source = /^https?:/i.test(url);
   return <span className="profile-catalog__figure">
     <img src={url} alt={alt} loading="lazy" decoding="async" referrerPolicy="no-referrer"
-      className={source && tinted ? "is-source" : undefined}
+      className={source && tinted ? "packing-figure--source" : undefined}
       onError={() => setFailed(true)} />
   </span>;
 }
@@ -130,7 +132,7 @@ function FamilyPicture({ preview, shape, container, tinted }: { preview: FamilyP
     // bitmap and takes the filter, unless it belongs to the perimeter section.
     const source = preview.kind === "figure";
     return <img src={preview.url} alt="" loading="lazy" decoding="async"
-      className={source && tinted ? "is-source" : undefined}
+      className={source && tinted ? "packing-figure--source" : undefined}
       onError={() => setFailed(true)} />;
   }
   return <CopySketch shape={shape} container={container} />;
@@ -138,6 +140,28 @@ function FamilyPicture({ preview, shape, container, tinted }: { preview: FamilyP
 
 /** How a record's symbol reads as a measure; an unknown symbol keeps its letter. */
 const MEASURES: Record<string, string> = { r: "radius", s: "side", a: "area" };
+
+/**
+ * The one line a card wears when the engine has judged its arrangement.
+ *
+ * A card with no entry, or one whose only finding is a construction the lab holds, wears
+ * nothing: the interface must never present a held construction as the record. The
+ * published case is the interesting one -- what we hold is the source's own arrangement --
+ * and the gap is shown when the arrangement is the lab's own.
+ */
+function verificationBadge(
+  entry: VerificationEntry | null, t: (english: string) => string,
+): { text: string; level: string } | null {
+  if (entry === null || entry.level === "beaten" || entry.level === "none") return null;
+  if (entry.level === "exact") return { text: `✓ ${t("Exact configuration")}`, level: "exact" };
+  if (entry.published) {
+    return { text: `≈ ${t("Published configuration")} · ${t("printed too coarsely to confirm the record")}`, level: "near" };
+  }
+  const gap = entry.gap === null ? "" : ` · ${gapPercent(entry.gap)}`;
+  if (entry.level === "near") return { text: `≈ ${t("Close to the record")}${gap}`, level: "near" };
+  if (entry.level === "approx") return { text: `≈ ${t("Approximate configuration")}${gap}`, level: "approx" };
+  return { text: `· ${t("Far from the record")}${gap}`, level: "far" };
+}
 
 function CopySketch({ shape, container }: { shape: string; container: string }) {
   const positions = [[-17, -17], [17, -17], [-17, 17], [17, 17]] as const;
@@ -159,6 +183,8 @@ function CopySketch({ shape, container }: { shape: string; container: string }) 
 function CatalogConfig(props: {
   canBuild: boolean;
   installed: boolean;
+  /** The engine's own line about this card's arrangement, when it had one to judge. */
+  badge?: { text: string; level: string };
   onOpen: () => void;
   title: string;
   meta: string;
@@ -180,6 +206,7 @@ function CatalogConfig(props: {
     <Figure url={props.figure} alt={props.figureLabel} tinted={props.tintFigure} />
     <span className="profile-catalog__card-title">{props.title}</span>
     <span className="profile-catalog__card-meta">{props.meta}</span>
+    {props.badge !== undefined && <span className="profile-catalog__config-badge" data-level={props.badge.level} role="note">{props.badge.text}</span>}
     {props.caveat !== undefined && props.caveat !== "" && <span className="profile-catalog__config-caveat" role="note">{props.caveat}</span>}
     {props.formula !== "" && <span className="profile-catalog__config-formula">{props.formula}</span>}
     <span className="profile-catalog__config-attribution">{props.attribution}</span>
@@ -201,6 +228,7 @@ function CatalogConfig(props: {
  */
 function CatalogFamily(props: {
   catalog: CopyCatalog | null;
+  verification: CatalogVerification | null;
   slug: string;
   /** The navigator family this subfamily is shown under. */
   section: string;
@@ -215,6 +243,8 @@ function CatalogFamily(props: {
   const catalog = props.catalog;
   const palette = props.palette;
   const family = catalog?.families.find((entry) => entry.slug === props.slug) ?? null;
+  // What the engine checked of this subfamily, when the verification asset has it.
+  const verified = props.verification?.families[props.slug] ?? null;
   const back = <button type="button" className="profile-catalog__back" onClick={props.onBack}>← {t("All subfamilies")}</button>;
   if (catalog === null || family === null) {
     return <>{back}<div className="profile-catalog__pending"><strong>{t("Loading the catalogue…")}</strong></div></>;
@@ -228,7 +258,7 @@ function CatalogFamily(props: {
     {back}
     <div className="profile-catalog__result-heading">
       <div><span className="eyebrow">{t(props.section)}</span><h3>{t(family.title)}</h3></div>
-      <small>{number(family.instances.length)} {t("instances")} · {t("Last checked")}: {catalog.generated}</small>
+      <small>{number(family.instances.length)} {t("instances")} · {t("Last checked")}: {verified?.checked_on ?? catalog.generated}</small>
     </div>
     {family.intro && <p className="profile-catalog__intro" lang="en"><strong>{t("Source description")}:</strong> {family.intro}</p>}
     {!canBuild && <p className="profile-catalog__coming" role="note">
@@ -264,6 +294,7 @@ function CatalogFamily(props: {
           figure={copyFigureUrl(family, instance)}
           figureLabel={t("Published figure")}
           action={t(canBuild ? (installed ? "Open profile" : "Add to category") : "Coming soon")}
+          badge={verificationBadge(verificationOf(props.verification, props.slug, count), t) ?? undefined}
           tintFigure={tintFigure}
         />;
       })}
@@ -294,6 +325,7 @@ export function ProfileNavigator(props: Props) {
   const [open, setOpen] = useState(false);
   const [catalogOpen, setCatalogOpen] = useState(false);
   const [catalog, setCatalog] = useState<CopyCatalog | null>(null);
+  const [verification, setVerification] = useState<CatalogVerification | null>(null);
   const [previews, setPreviews] = useState<Record<string, FamilyPreview>>({});
   const [palette, setPalette] = useState<ShapeFamilyDoc[]>([]);
   const [catalogError, setCatalogError] = useState("");
@@ -345,10 +377,14 @@ export function ProfileNavigator(props: Props) {
       loadCopyCatalog(),
       api.shapes().then((answer) => answer.shapes).catch(() => null),
       loadFamilyPreviews().catch(() => null),
+      // What the engine has checked of the catalogue travels with it: a card's date and
+      // the arrangement the interface may open come from the same run.
+      loadVerification(),
     ])
-      .then(([loaded, shapes, manifest]) => {
+      .then(([loaded, shapes, manifest, checked]) => {
         if (!live) return;
         setCatalog(loaded);
+        setVerification(checked);
         if (shapes !== null) setPalette(shapes);
         if (manifest !== null) setPreviews(manifest.families);
       })
@@ -468,7 +504,7 @@ export function ProfileNavigator(props: Props) {
         <header><div><span className="eyebrow">PAPER OBS / {t("LIBRARY")}</span><h2>{t("Add a problem")}</h2>
           <p>{t("Choose a family, a configuration, then add it to the active category.")}</p>
           {/* One note replaces the per-card grid badge the owner found repetitive. */}
-          <p className="profile-catalog__placements" role="note">{t("The exact placements are not known for most instances: the lab opens them on a grid construction, not on the published record.")}</p>
+          <p className="profile-catalog__placements" role="note">{t("The exact placements are not known for most instances: the lab opens them on a grid construction, not on the published record, except where a card says the engine confirmed the published arrangement.")}</p>
           <a className="profile-catalog__source" href={PACKING_INDEX} target="_blank" rel="noopener noreferrer">{t("Catalog source")}: Erich Friedman's Packing Center ↗</a></div>
           <button type="button" className="button" onClick={() => setCatalogOpen(false)}>{t("Close")}</button></header>
         <div className="profile-catalog__columns">
@@ -572,7 +608,7 @@ export function ProfileNavigator(props: Props) {
                   action={t(installed ? "Open profile" : "Add to category")}
                 />;
               })}</div>
-            </> : <CatalogFamily catalog={catalog} slug={subfamily} section={family} palette={palette}
+            </> : <CatalogFamily catalog={catalog} verification={verification} slug={subfamily} section={family} palette={palette}
               localProblems={props.localProblems} categoryProblemIds={current?.problemIds ?? []}
               onAdd={props.onAddProblem} onBack={() => setSubfamily(null)} onClose={() => setCatalogOpen(false)} />}
           </section>

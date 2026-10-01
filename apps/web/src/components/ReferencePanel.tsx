@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { sourceFigure } from "../catalog";
 import type { ProblemReference } from "../catalog";
 import { useI18n } from "../i18n";
 import "./ReferencePanel.css";
@@ -30,6 +31,8 @@ export function ReferencePanel({ problemId, reference, candidateOrigin, onChange
     return () => document.removeEventListener("keydown", close);
   }, [viewing]);
   const value = reference ?? EMPTY;
+  // One tint for every plate the app shows, and never for a total-perimeter figure.
+  const tinted = value.figure_tint !== false && sourceFigure(value.preview);
   const hasData = value.status !== "none" || value.value !== null || Boolean(value.author || value.proved_by || value.note || value.sources.length);
   const update = (patch: Partial<ProblemReference>) => onChange({ ...value, ...patch });
   return <section className="panel__section reference-panel">
@@ -39,7 +42,8 @@ export function ReferencePanel({ problemId, reference, candidateOrigin, onChange
     {!editing && hasData && <div className="reference-panel__body">
       {value.preview && <button type="button" className="reference-panel__preview-button"
         aria-label={t("Enlarge reference image")} onClick={() => setViewing(true)}>
-        <img className="reference-panel__preview" src={value.preview} alt={t("Published packing preview")} />
+        <img className={tinted ? "reference-panel__preview packing-figure--source" : "reference-panel__preview"}
+          src={value.preview} alt={t("Published packing preview")} />
       </button>}
       <div className="reference-panel__facts">
         {value.status !== "none" && <span className="reference-panel__status">{t(value.status === "proved" ? "Proved optimum" : "Best known")}</span>}
@@ -90,7 +94,8 @@ export function ReferencePanel({ problemId, reference, candidateOrigin, onChange
       <div className="reference-viewer__sheet">
         <div className="reference-viewer__heading"><h2>{t("Reference image")}</h2>
           <button type="button" onClick={() => setViewing(false)} aria-label={t("Close")}>×</button></div>
-        <img src={value.preview} alt={t("Published packing preview")} />
+        <img src={value.preview} alt={t("Published packing preview")}
+          className={tinted ? "packing-figure--source" : undefined} />
         <p>{t("Published construction")}{value.status !== "none" ? ` · ${t(value.status === "proved" ? "Proved optimum" : "Best known")}` : ""}</p>
       </div>
     </div>, document.body)}
