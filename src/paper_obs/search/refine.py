@@ -22,15 +22,13 @@ it inside its old outline, so validity is monotone in the scale. Needs scipy (th
 from __future__ import annotations
 
 import numpy as np
-import shapely
-from shapely.geometry import Polygon
 
-from paper_obs.domain.arena import Disk
 from paper_obs.domain.candidate import Candidate
 from paper_obs.domain.constraints import RotationMode
 from paper_obs.domain.objectives import MaximizeScale
 from paper_obs.domain.problem import Problem
 from paper_obs.geometry.engine import evaluate
+from paper_obs.geometry.exact_check import convex_parts
 
 #: Copies whose centres are closer than this many circumradii get a separating axis.
 REACH = 2.3
@@ -124,22 +122,11 @@ def _normals(polygon: np.ndarray) -> np.ndarray:
 
 def _container(problem: Problem):
     """Return the hull as half-planes (normals, offsets), the convex obstacles, and a disc radius."""
-    shape = problem.arena.shape
-    if isinstance(shape, Disk):
-        return None, [], shape.radius
-    region = problem.arena.geometry
-    hull = shapely.geometry.polygon.orient(region.convex_hull, 1)
-    corners = np.asarray(hull.exterior.coords)[:-1]
+    corners, obstacles, radius = convex_parts(problem.arena)
+    if corners is None:
+        return None, [], radius
     normals = _normals(corners)
-    pieces = []
-    for piece in getattr(hull.difference(region), "geoms", [hull.difference(region)]):
-        if piece.area < 1e-12:
-            continue
-        convex = piece.convex_hull.area - piece.area < 1e-12
-        triangles = [piece] if convex else shapely.constrained_delaunay_triangles(piece).geoms
-        pieces += [np.asarray(shapely.geometry.polygon.orient(Polygon(item.exterior), 1).exterior.coords)[:-1]
-                   for item in triangles]
-    return (normals, (normals * corners).sum(1)), pieces, None
+    return (normals, (normals * corners).sum(1)), obstacles, None
 
 
 def _choose_axes(v, x, th, t, local, normals, support, obstacles, turned):

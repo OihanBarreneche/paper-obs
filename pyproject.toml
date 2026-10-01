@@ -27,8 +27,8 @@ api = ["fastapi>=0.115", "uvicorn>=0.32"]
 # The workflows are LangGraph graphs, and their agents reach a provider through
 # LangChain. The engine itself needs none of it.
 agents = ["langchain>=1.0", "langgraph>=1.0", "langchain-openai>=1.0"]
-# Research mode's tools: exact refinement (scipy) and submission pictures (Pillow).
-research = ["scipy>=1.11", "pillow>=10"]
+# Research mode's tools: exact refinement (scipy) and submission pictures (resvg, Pillow).
+research = ["scipy>=1.11", "pillow>=10", "resvg-py>=0.5"]
 dev = ["pytest>=8", "httpx>=0.27"]
 
 [project.scripts]

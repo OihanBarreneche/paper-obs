@@ -38,6 +38,7 @@ from paper_obs.domain.candidate import Candidate
 from paper_obs.domain.serde import dump
 from paper_obs.geometry.bounds import scale_bounds
 from paper_obs.geometry.engine import Evaluation, analyze, evaluate, validate
+from paper_obs.geometry.exact_check import exact_check
 from paper_obs.geometry.rendering import RenderOptions, render_svg
 from paper_obs.geometry.validation import Validation
 from paper_obs.search import BASELINES, Convergence, Step, convergence_svg
@@ -250,6 +251,8 @@ def _add_research(subparsers: Any) -> None:
     refine = actions.add_parser("refine", help="close an arrangement's contacts at the largest valid scale (needs the 'research' extra)")
     _add_problem_candidate(refine)
     refine.add_argument("--out", "-o", required=True, type=Path)
+    verify = actions.add_parser("verify", help="judge an arrangement again in exact rational arithmetic")
+    _add_problem_candidate(verify)
     actions.add_parser("leads", help="catalog entries that a dissection of other entries beats")
     picture = actions.add_parser("picture", help="draw an arrangement as the Packing Center's pictures (needs the 'research' extra)")
     _add_problem_candidate(picture)
@@ -261,7 +264,7 @@ def _add_research(subparsers: Any) -> None:
 
 
 def _cmd_research(args: argparse.Namespace) -> int:
-    """Run one research action and print its answer as JSON; an invalid submission exits 1."""
+    """Run one research action and print its answer as JSON; an invalid submission or check exits 1."""
     answer: Any
     if args.action == "problem":
         problem = research_sessions.catalog_problem(args.slug, args.count)
@@ -291,6 +294,10 @@ def _cmd_research(args: argparse.Namespace) -> int:
         verdict = evaluate(problem, refined)
         answer = {"wrote": str(save_candidate(refined, args.out)), "valid": verdict.valid, "scale": refined.scale,
                   "equivalent_container_side": verdict.metrics.get("equivalent_container_side")}
+    elif args.action == "verify":
+        problem, candidate = load_problem(args.problem), load_candidate(args.candidate)
+        answer = {**exact_check(problem, candidate), "scale": candidate.scale,
+                  "equivalent_container_side": evaluate(problem, candidate).metrics.get("equivalent_container_side")}
     elif args.action == "leads":
         answer = leads(json.loads(research_sessions.CATALOG.read_text(encoding="utf-8")))
     elif args.action == "picture":
@@ -300,7 +307,7 @@ def _cmd_research(args: argparse.Namespace) -> int:
     else:
         answer = research_sessions.listing(args.problem_id)
     print(json.dumps(answer, indent=2, ensure_ascii=False))
-    return 1 if args.action == "submit" and not answer["valid"] else 0
+    return 1 if args.action in ("submit", "verify") and not answer["valid"] else 0
 
 
 def _add_problem_candidate(parser: argparse.ArgumentParser) -> None:

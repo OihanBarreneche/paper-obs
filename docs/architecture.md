@@ -16,7 +16,7 @@ Problem JSON + Candidate JSON
 | Layer | Responsibility | Import boundary |
 | --- | --- | --- |
 | `src/paper_obs/domain/` | Shapes, arenas, objectives, constraints, placements, JSON serialization and seeded generation | Pure data; no UI or LLM |
-| `geometry/` | Compile geometry, judge validity, score, measure, analyze gaps, build a view and render SVG | Deterministic; no UI or LLM |
+| `geometry/` | Compile geometry, judge validity, score, measure, analyze gaps, build a view and render SVG; an exact rational check for claimed records (`exact_check.py`) | Deterministic; no UI or LLM |
 | `search/` | Generate and alter candidates; run classical baselines; exact contact refinement (`refine.py`, optional `research` extra) | Can ask geometry to judge |
 | `workflows/`, `agent_tools/`, `llm/` | LangGraph control, provider calls and engine-backed tools | Optional `agents` extra |
 | `storage/` | Read and write JSON artefacts | No strategy decisions |
@@ -27,7 +27,7 @@ An operator can propose an invalid candidate; `geometry.evaluate` alone decides 
 
 The video-facing workflow is intentionally small. Read `workflows/basic_agent_loop/state.py`, `graph.py`, `prompts/placer.md`, `manifest.json`, then `agent_tools/engine.py`. A *turn* is one pass of a fresh agent over the geometry tools, which share one `Workbench`: the arrangement under work, the run's best and the turn's best. `graph.py` is what decides whether the run takes another, and `workflows/session.py` turns a finished turn into the run's step; provider details and the run monitor also live outside the teaching files. The second workflow, `workflows/strategist_executor/`, reads the same way; what the turn-based workflows share (the closing reply, the per-turn allowance, the rule that ends a run) is in `workflows/turns.py`.
 
-The API accepts full problem and candidate documents for engine requests. The Python package needs only NumPy and Shapely; FastAPI, the agent stack and research mode's tools (SciPy, Pillow) are optional extras. A built React frontend is served separately by the local API server.
+The API accepts full problem and candidate documents for engine requests. The Python package needs only NumPy and Shapely; FastAPI, the agent stack and research mode's tools (SciPy, Pillow, resvg) are optional extras. A built React frontend is served separately by the local API server.
 
 ## Extension points
 

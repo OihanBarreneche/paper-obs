@@ -42,33 +42,35 @@ paper-obs research status <id> --set paused       # active, paused or done
 paper-obs evaluate -p problem.json -c candidate.json   # judge without logging
 ```
 
-From Python, `paper_obs.research.submit(session_id, candidate, note)` does the same as the command, and `paper_obs.geometry.engine.evaluate` judges without logging.
+From Python, `paper_obs.research.submit(session_id, candidate, note)` does the same as the command, and `paper_obs.geometry.engine.evaluate` judges without logging. Submit each new best rather than every attempt: a session keeps the arrangement and full verdict of improvements only, and the measure of every submission.
 
-The lab also offers three tools, none of them required. The first and the last need the `research` extra (`pip install -e ".[research]"`: SciPy and Pillow):
+The lab also offers four tools, none of them required. `refine` and `picture` need the `research` extra (`pip install -e ".[research]"`: SciPy, Pillow and resvg):
 
 ```bash
 paper-obs research refine -p problem.json -c candidate.json -o refined.json   # close the contacts
+paper-obs research verify -p problem.json -c refined.json                    # judge again, exactly
 paper-obs research leads                                                     # entries a dissection beats
 paper-obs research picture -p problem.json -c refined.json -o 26.gif --like old26.gif
 ```
 
 - **`refine`** closes an arrangement's contacts. It keeps each nearby pair apart by one fixed separating axis, keeps every copy in the arena, and maximises the scale with SLSQP, choosing the axes again until they settle. The engine then accepts the largest scale it judges valid. It covers `maximize_scale` problems with equal convex polygonal copies. A non-convex arena (an L, a frame, holes) is its convex hull minus convex obstacles, and a disc arena is its exact circle. From Python: `paper_obs.search.refine.exact_refine(problem, candidate)`.
 - **`leads`** scans the shipped catalog for entries that a construction from other entries beats. A copy can hold copies (a square holds two tans, a tan is two tans 1/√2 its size), and a container can split into containers (a triangle of side 2s is four of side s). A printed value counts at the upper end of its last digit, since it is truncated. A lead is a hint to check on the live page, not a record.
-- **`picture`** draws the arrangement for a submission. With `--like`, it copies the pixel size and colours of the picture it replaces: the corner gives the background, the most common other colour the copies, and the darkest colour the outlines. `--size`, `--rotate` and the file suffix set the rest. The owner downloads the original picture; the agent never fetches pages in bulk. Submit each new best rather than every attempt: a session keeps the arrangement and full verdict of improvements only, and the measure of every submission.
+- **`verify`** judges the arrangement again on a code path of its own (`paper_obs.geometry.exact_check`): every corner becomes an exact fraction, and the separating-axis theorem decides overlaps and containment in rational arithmetic, with no tolerance. It reports the overlapping pairs, the copies out and the smallest margins, and exits 1 when the arrangement is invalid.
+- **`picture`** draws the arrangement for a submission as an SVG, written beside the picture, then renders it with resvg in the format the file name asks for. With `--like`, it copies the picture it replaces: its pixel size; crisp edges in its exact palette when it has a handful of colours, anti-aliased edges otherwise; a transparent outside when it has one; white as empty space, the most common other colour for the copies and the darkest for the lines. `--size`, `--rotate` and the file suffix set the rest. The owner downloads the original picture; the agent never fetches pages in bulk.
 
 Notes are what make a session readable afterwards. Write down the ideas tried, the dead ends and why, the method of each improvement, and the machine plan. The web app follows each session in **Search ▸ Free research**: its best against the record, the track of each improvement and the journal. The two record hunts below ship as example sessions in `examples/research/`, reconstructed afterwards from the hunt's log, and `paper-obs serve` copies them into the runs folder once, as it does the example runs.
 
 ## 5. Before claiming a record
 
 1. The engine judges the arrangement valid when it is submitted. Keep a small safety margin, for example a scale shrunk by `1e-9` relative, so that a contact closed exactly by an optimiser stays legal.
-2. Check independently when possible, for instance with exact rational arithmetic on the vertices.
+2. Check independently: `paper-obs research verify` decides in exact rational arithmetic, apart from the engine's predicates.
 3. Published values are truncated, so `1.499+` means at least 1.499. A claim must be strictly better than the printed digits.
 4. Re-read the live page on the day of the claim, and note the date in the session.
 5. Keep the code that produced the result in `work/`, and summarise the method in a note.
 
 ## 6. Submitting to the source
 
-Only the owner contacts Erich Friedman; the agent prepares the material in `work/submission/`, including the picture from `paper-obs research picture`, and never sends anything. The Packing Center asks for an email with:
+Only the owner contacts Erich Friedman; the agent prepares the material in a private folder (the owner's is `.private/submissions/`, ignored by Git) and never sends anything. Keep it to the essentials, since the owner writes the email: per record the page, the count, the previous and new values, a one-line method, the picture from `paper-obs research picture`, the candidate and the `verify` output. The Packing Center asks for an email with:
 
 1. a descriptive title, in a new email rather than a reply to an earlier exchange;
 2. a picture of the packing in the same orientation, colours, pixel size, file type and name as the picture it replaces, with no border or text. In the "Maximize Total Perimeter" pages, any rainbow palette in which close sizes get close colours is accepted;

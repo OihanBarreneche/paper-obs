@@ -63,18 +63,20 @@ def test_the_shipped_catalog_can_be_scanned() -> None:
         assert lead["bound"] < lead["published"] and lead["construction"]
 
 
-def test_a_submission_picture_copies_the_size_and_colours_of_the_one_it_replaces(tmp_path) -> None:
+def test_a_submission_picture_copies_the_size_palette_and_transparency_of_the_one_it_replaces(tmp_path) -> None:
+    pytest.importorskip("resvg_py")
     image_module = pytest.importorskip("PIL.Image")
-    original = image_module.new("RGB", (120, 90), (255, 255, 255))
-    original.paste((255, 0, 0), (10, 10, 60, 60))
-    original.paste((0, 0, 0), (0, 70, 120, 72))
-    original.save(tmp_path / "old.gif")
+    original = image_module.new("RGBA", (120, 90), (0, 0, 0, 0))  # a transparent outside
+    original.paste((255, 255, 255, 255), (0, 0, 100, 90))
+    original.paste((240, 224, 240, 255), (10, 10, 60, 60))
+    original.paste((0, 0, 0, 255), (0, 70, 100, 72))
+    original.save(tmp_path / "26.gif")
     from paper_obs.research.picture import submission_picture
 
-    problem = research.catalog_problem("squindom", 2)
-    path = submission_picture(problem, grid_initialize(problem), tmp_path / "new.gif", like=tmp_path / "old.gif")
+    problem = research.catalog_problem("taninL", 6)
+    path = submission_picture(problem, grid_initialize(problem), tmp_path / "new" / "26.gif", like=tmp_path / "26.gif")
+    assert path.with_suffix(".svg").read_text(encoding="utf-8").startswith("<svg")
     with image_module.open(path) as drawn:
-        rgb = drawn.convert("RGB")
-        assert drawn.size == (120, 90)
-        colours = {colour for _, colour in rgb.getcolors()}
-        assert (255, 255, 255) in colours and (255, 0, 0) in colours and (0, 0, 0) in colours
+        assert drawn.size == (120, 90) and "transparency" in drawn.info
+        colours = {colour[:3] for _, colour in drawn.convert("RGBA").getcolors() if colour[3] == 255}
+    assert colours <= {(255, 255, 255), (240, 224, 240), (0, 0, 0)} and len(colours) == 3
