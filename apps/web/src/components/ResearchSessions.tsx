@@ -66,7 +66,7 @@ export function ResearchSessions({ sessions, onShow }: Props) {
         {item.name} · {date(item.created)}</option>)}
     </select>}
     <header className="research-sessions__head">
-      <h3>{line.name}</h3>
+      <h3>{line.name}{line.example && <em className="run-picker__tag">{t("example")}</em>}</h3>
       <p>{line.agent || t("unnamed agent")} · <span className={`research-sessions__status is-${line.status}`}>{t(line.status)}</span>
         {" "}· {line.submissions} {t(line.submissions === 1 ? "submission" : "submissions")}</p>
       {session?.goal && <p className="research-sessions__goal">{session.goal}</p>}

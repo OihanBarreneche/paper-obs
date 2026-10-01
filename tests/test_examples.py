@@ -6,7 +6,7 @@ import json
 
 import pytest
 
-from paper_obs import examples
+from paper_obs import examples, research
 from paper_obs.llm.models import ModelConfig
 from paper_obs.workflows import runner
 
@@ -42,3 +42,13 @@ def test_an_example_cannot_be_resumed(tmp_path) -> None:
     run_id = runner.listing(runs)[0]["run_id"]
     with pytest.raises(ValueError, match="example"):
         runner.reopen(run_id, config=ModelConfig(provider="deepseek", model="deepseek-flash"), directory=runs)
+
+
+def test_the_record_hunts_are_shipped_as_sessions_that_beat_their_record(tmp_path, monkeypatch) -> None:
+    runs = tmp_path / "runs"
+    monkeypatch.setenv("PAPER_OBS_RUNS", str(runs))
+    examples.seed(runs)
+    for problem_id in ("squares-38-in-smallest-triangle", "tans-26-in-smallest-l"):
+        (line,) = research.listing(problem_id)
+        assert line["example"] and line["status"] == "done"
+        assert line["best"]["record_gap"] > 0  # beats the record the problem carries

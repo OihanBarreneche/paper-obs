@@ -760,6 +760,8 @@ export type ResearchSessionSummaryDoc = {
   session_id: string; name: string; agent: string; status: string; created: string; updated: string;
   problem_id: string; problem_name: string; submissions: number; best: ResearchBestDoc | null;
   track: [number, number | null, number | null][];
+  /** A session shipped with the lab for reading, such as a record hunt reconstructed afterwards. */
+  example: boolean;
 };
 
 export type ResearchSessionDoc = {

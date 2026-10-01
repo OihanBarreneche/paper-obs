@@ -1,0 +1,651 @@
+{
+  "kind": "research-session",
+  "format": 1,
+  "session_id": "res-example-squintri-38",
+  "created_at": "2026-10-01T09:40:00+00:00",
+  "updated_at": "2026-10-01T13:40:00+00:00",
+  "name": "38 carrés dans un triangle · motif de Cantrell prolongé",
+  "agent": "Claude Code · Opus 5.5 (effort max)",
+  "goal": "battre 10,304 (Gianluca Costantino, avril 2026)",
+  "status": "done",
+  "problem_id": "squares-38-in-smallest-triangle",
+  "problem": {
+    "problem_id": "squares-38-in-smallest-triangle",
+    "name": "38 squares in the smallest triangle",
+    "description": "Pack 38 unit squares inside the smallest possible triangle.",
+    "seed": 38,
+    "shape": {
+      "type": "regular_polygon",
+      "sides": 4,
+      "side": 1.0
+    },
+    "objective": {
+      "type": "maximize_scale",
+      "count": 38
+    },
+    "rotation": {
+      "type": "rotation_policy",
+      "mode": "free",
+      "angles": [
+        0.0
+      ]
+    },
+    "constraints": [],
+    "metadata": {
+      "reference": {
+        "status": "best_known",
+        "value": 10.304,
+        "unit": "container side",
+        "note": "Found by Gianluca Costantino in April 2026",
+        "verified_on": "2026-10-01",
+        "preview": "https://erich-friedman.github.io/packing/squintri/ts38.gif",
+        "sources": [
+          {
+            "label": "Squares in Triangles · Erich Friedman's Packing Center",
+            "url": "https://erich-friedman.github.io/packing/squintri/"
+          }
+        ]
+      }
+    },
+    "arena": {
+      "name": "",
+      "shape": {
+        "type": "regular_ngon",
+        "sides": 3,
+        "circumradius": 0.5773502691896258
+      }
+    }
+  },
+  "journal": [
+    {
+      "kind": "note",
+      "at": "2026-10-01T09:40:00+00:00",
+      "text": "Session reconstituée après coup à partir du journal de la chasse aux records du 1er octobre 2026 ; les heures sont approximatives."
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T09:40:00+00:00",
+      "text": "Audit de la famille : les figures publiées (n = 3 à 43), relues puis raffinées exactement, retombent toutes sur leur valeur. Elles suivent des familles de constructions : k + 2/√3, k + 4/√3, k + 8/√3… et celle de David Cantrell (2002) en k + 0,30122 pour n = 8, 12, 17, 23 et 30."
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T09:55:00+00:00",
+      "text": "Piste : le 10,304 de Costantino pour n = 38 casse ce motif ; prolongé d'un cran, le motif de Cantrell donnerait 10,30122."
+    },
+    {
+      "kind": "submission",
+      "at": "2026-10-01T10:07:00+00:00",
+      "index": 0,
+      "note": "Motif de Cantrell prolongé : la bande le long du côté gauche gagne un carré par colonne (8 + 6), l'escalier de droite une rangée (6, 5, 4, 3, 2, 1), le coin au carré incliné de 18,98° ne change pas ; puis raffinement exact (SLSQP sur les contacts).",
+      "valid": true,
+      "primary": 0.09707586768889002,
+      "measure": 10.301221341691353,
+      "metric": "container side",
+      "record_gap": 0.0002696679259169025,
+      "accepted": true,
+      "violations": [],
+      "candidate": {
+        "kind": "candidate",
+        "candidate_id": "record-squintri-38",
+        "problem_id": "squares-38-in-smallest-triangle",
+        "scale": 0.09707586768889002,
+        "origin": "research",
+        "generation": 0,
+        "parents": [],
+        "placements": [
+          {
+            "shape_id": "s000",
+            "x": -0.39491537312169256,
+            "y": -0.2392829330653137
+          },
+          {
+            "shape_id": "s001",
+            "x": -0.2839172728228151,
+            "y": -0.226989468305322,
+            "rotation": 18.980475972111382
+          },
+          {
+            "shape_id": "s002",
+            "x": -0.1870399190068256,
+            "y": -0.16976040585768745,
+            "rotation": 3.2723156507445936e-13
+          },
+          {
+            "shape_id": "s003",
+            "x": -0.3500228095978629,
+            "y": -0.12598288862784593,
+            "rotation": 59.99999999999991
+          },
+          {
+            "shape_id": "s004",
+            "x": -0.3014848757048796,
+            "y": -0.041912721030779726,
+            "rotation": 60.00000000000002
+          },
+          {
+            "shape_id": "s005",
+            "x": -0.2529469418118963,
+            "y": 0.042157446566286255,
+            "rotation": 60.000000000000085
+          },
+          {
+            "shape_id": "s006",
+            "x": -0.20440839975669783,
+            "y": 0.12622726304073412,
+            "rotation": 60.00000000000007
+          },
+          {
+            "shape_id": "s007",
+            "x": -0.15586939801351127,
+            "y": 0.21029681411419784,
+            "rotation": 60.00000000000011
+          },
+          {
+            "shape_id": "s008",
+            "x": -0.10733314013010874,
+            "y": 0.29436794935584676,
+            "rotation": 60.00000000000029
+          },
+          {
+            "shape_id": "s009",
+            "x": -0.05879520623996356,
+            "y": 0.37843811695455154,
+            "rotation": 60.000000000000135
+          },
+          {
+            "shape_id": "s010",
+            "x": -0.01025727234698066,
+            "y": 0.46250828455161797,
+            "rotation": 60.000000000000135
+          },
+          {
+            "shape_id": "s011",
+            "x": -0.1969001634138518,
+            "y": -0.054918421219679804,
+            "rotation": 59.99999999999991
+          },
+          {
+            "shape_id": "s012",
+            "x": -0.14836161260321912,
+            "y": 0.029151390199815365,
+            "rotation": 59.99999999999988
+          },
+          {
+            "shape_id": "s013",
+            "x": -0.09982261086002572,
+            "y": 0.11322094127327538,
+            "rotation": 59.99999999999999
+          },
+          {
+            "shape_id": "s014",
+            "x": -0.05128390487565198,
+            "y": 0.19729066310316945,
+            "rotation": 60.00000000000001
+          },
+          {
+            "shape_id": "s015",
+            "x": -0.0027484278340627792,
+            "y": 0.2813622491640494,
+            "rotation": 59.99999999999991
+          },
+          {
+            "shape_id": "s016",
+            "x": 0.04578950605106385,
+            "y": 0.3654324167656517,
+            "rotation": 60.00000000000001
+          },
+          {
+            "shape_id": "s017",
+            "x": -0.08996405122085883,
+            "y": -0.2401371957080366,
+            "rotation": 1.6298062355694827e-13
+          },
+          {
+            "shape_id": "s018",
+            "x": 0.007111816565107314,
+            "y": -0.2401371957080405,
+            "rotation": 2.0252950496333746e-13
+          },
+          {
+            "shape_id": "s019",
+            "x": 0.10418768435107362,
+            "y": -0.24013719570805842,
+            "rotation": 2.323607805137847e-13
+          },
+          {
+            "shape_id": "s020",
+            "x": 0.20126355213703995,
+            "y": -0.24013719570803,
+            "rotation": 8.112160092591802e-14
+          },
+          {
+            "shape_id": "s021",
+            "x": 0.2983394199230064,
+            "y": -0.2401371957080359,
+            "rotation": 1.1338447202650532e-14
+          },
+          {
+            "shape_id": "s022",
+            "x": 0.3954152877089727,
+            "y": -0.24013720070183,
+            "rotation": -1.555686142693986e-14
+          },
+          {
+            "shape_id": "s023",
+            "x": -0.08996296211157913,
+            "y": -0.14298541148894514,
+            "rotation": -0.0011639513221185387
+          },
+          {
+            "shape_id": "s024",
+            "x": 0.007114762345684575,
+            "y": -0.1429905904211368,
+            "rotation": -0.00033610029242155164
+          },
+          {
+            "shape_id": "s025",
+            "x": 0.1041908920000723,
+            "y": -0.1429913360027627,
+            "rotation": -2.6987597343603578e-05
+          },
+          {
+            "shape_id": "s026",
+            "x": 0.20126680673280303,
+            "y": -0.1429913808739759,
+            "rotation": 2.8422238115974217e-05
+          },
+          {
+            "shape_id": "s027",
+            "x": 0.2983429686015025,
+            "y": -0.14299035706159252,
+            "rotation": 0.00037556354984286333
+          },
+          {
+            "shape_id": "s028",
+            "x": -0.04230901966703527,
+            "y": -0.0459103601614734,
+            "rotation": -0.001337404307522774
+          },
+          {
+            "shape_id": "s029",
+            "x": 0.05476965466888227,
+            "y": -0.04591500217323872,
+            "rotation": -0.00033610029262522227
+          },
+          {
+            "shape_id": "s030",
+            "x": 0.1518457843257543,
+            "y": -0.04591549065774922,
+            "rotation": -2.6987597619511696e-05
+          },
+          {
+            "shape_id": "s031",
+            "x": 0.24892199314097527,
+            "y": -0.045914813212762466,
+            "rotation": 0.000375568172633481
+          },
+          {
+            "shape_id": "s032",
+            "x": 0.007480814547211353,
+            "y": 0.051164351844684604,
+            "rotation": -0.0013361839001526617
+          },
+          {
+            "shape_id": "s033",
+            "x": 0.10456006746950512,
+            "y": 0.05116064714604756,
+            "rotation": -0.0002492217558103397
+          },
+          {
+            "shape_id": "s034",
+            "x": 0.20163726342674124,
+            "y": 0.05116074833049033,
+            "rotation": 0.0003712026618786274
+          },
+          {
+            "shape_id": "s035",
+            "x": 0.054805648304784675,
+            "y": 0.14823912152591642,
+            "rotation": -0.0013364133438005905
+          },
+          {
+            "shape_id": "s036",
+            "x": 0.15188621861888835,
+            "y": 0.14823656423884576,
+            "rotation": 5.197172254883251e-05
+          },
+          {
+            "shape_id": "s037",
+            "x": 0.10904834450223974,
+            "y": 0.24531679644215237,
+            "rotation": -0.0013330703585322295
+          }
+        ],
+        "metadata": {}
+      },
+      "verdict": {
+        "problem_id": "squares-38-in-smallest-triangle",
+        "candidate_id": "record-squintri-38",
+        "valid": true,
+        "score": {
+          "primary": 0.09707586768889002,
+          "label": "common_scale",
+          "secondary": {
+            "shape_area": 0.009423724087550885,
+            "inradius": 0.04853793384444502,
+            "circumradius": 0.0686430043323822,
+            "n_shapes": 38.0
+          }
+        },
+        "metrics": {
+          "n_shapes": 38.0,
+          "packed_area": 0.3581015153269334,
+          "covered_area": 0.3581015153269334,
+          "arena_area": 0.43301270189221946,
+          "void_area": 0.07491118656528606,
+          "density": 0.8270000250848714,
+          "boundary_contacts": 15.0,
+          "total_scale": 3.688882972177821,
+          "total_perimeter": 14.755531888711284,
+          "max_scale": 0.09707586768889002,
+          "min_scale": 0.09707586768889002,
+          "equivalent_container_side": 10.301221341691353
+        },
+        "promoted_metric": "common_scale",
+        "validation": {
+          "valid": true,
+          "severity": 0.0,
+          "results": [
+            {
+              "constraint": "arena_containment",
+              "valid": true,
+              "severity": 0.0,
+              "message": "all 38 shapes are inside the arena",
+              "violations": []
+            },
+            {
+              "constraint": "non_overlap",
+              "valid": true,
+              "severity": 0.0,
+              "message": "no two shapes overlap",
+              "violations": []
+            },
+            {
+              "constraint": "rotation_policy",
+              "valid": true,
+              "severity": 0.0,
+              "message": "all rotations follow the free policy",
+              "violations": []
+            },
+            {
+              "constraint": "required_shape_count",
+              "valid": true,
+              "severity": 0.0,
+              "message": "38 shapes as required",
+              "violations": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T10:15:00+00:00",
+      "text": "Vérifications : moteur de la plateforme (marge 1e-9) valide ; contrôle indépendant en fractions exactes valide ; page en ligne relue le 1er octobre 2026 : toujours 10,304."
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T13:40:00+00:00",
+      "text": "Contre-vérification sans le moteur (fractions exactes, axes séparateurs) : aucun chevauchement, aucun sommet hors du triangle, marge minimale 5e-11 ; côté 10,3012213, soit 0,027 % sous 10,304."
+    }
+  ],
+  "best": {
+    "at": "2026-10-01T10:07:00+00:00",
+    "index": 0,
+    "measure": 10.301221341691353,
+    "metric": "container side",
+    "record_gap": 0.0002696679259169025,
+    "primary": 0.09707586768889002
+  },
+  "champion": {
+    "kind": "candidate",
+    "candidate_id": "record-squintri-38",
+    "problem_id": "squares-38-in-smallest-triangle",
+    "scale": 0.09707586768889002,
+    "origin": "research",
+    "generation": 0,
+    "parents": [],
+    "placements": [
+      {
+        "shape_id": "s000",
+        "x": -0.39491537312169256,
+        "y": -0.2392829330653137
+      },
+      {
+        "shape_id": "s001",
+        "x": -0.2839172728228151,
+        "y": -0.226989468305322,
+        "rotation": 18.980475972111382
+      },
+      {
+        "shape_id": "s002",
+        "x": -0.1870399190068256,
+        "y": -0.16976040585768745,
+        "rotation": 3.2723156507445936e-13
+      },
+      {
+        "shape_id": "s003",
+        "x": -0.3500228095978629,
+        "y": -0.12598288862784593,
+        "rotation": 59.99999999999991
+      },
+      {
+        "shape_id": "s004",
+        "x": -0.3014848757048796,
+        "y": -0.041912721030779726,
+        "rotation": 60.00000000000002
+      },
+      {
+        "shape_id": "s005",
+        "x": -0.2529469418118963,
+        "y": 0.042157446566286255,
+        "rotation": 60.000000000000085
+      },
+      {
+        "shape_id": "s006",
+        "x": -0.20440839975669783,
+        "y": 0.12622726304073412,
+        "rotation": 60.00000000000007
+      },
+      {
+        "shape_id": "s007",
+        "x": -0.15586939801351127,
+        "y": 0.21029681411419784,
+        "rotation": 60.00000000000011
+      },
+      {
+        "shape_id": "s008",
+        "x": -0.10733314013010874,
+        "y": 0.29436794935584676,
+        "rotation": 60.00000000000029
+      },
+      {
+        "shape_id": "s009",
+        "x": -0.05879520623996356,
+        "y": 0.37843811695455154,
+        "rotation": 60.000000000000135
+      },
+      {
+        "shape_id": "s010",
+        "x": -0.01025727234698066,
+        "y": 0.46250828455161797,
+        "rotation": 60.000000000000135
+      },
+      {
+        "shape_id": "s011",
+        "x": -0.1969001634138518,
+        "y": -0.054918421219679804,
+        "rotation": 59.99999999999991
+      },
+      {
+        "shape_id": "s012",
+        "x": -0.14836161260321912,
+        "y": 0.029151390199815365,
+        "rotation": 59.99999999999988
+      },
+      {
+        "shape_id": "s013",
+        "x": -0.09982261086002572,
+        "y": 0.11322094127327538,
+        "rotation": 59.99999999999999
+      },
+      {
+        "shape_id": "s014",
+        "x": -0.05128390487565198,
+        "y": 0.19729066310316945,
+        "rotation": 60.00000000000001
+      },
+      {
+        "shape_id": "s015",
+        "x": -0.0027484278340627792,
+        "y": 0.2813622491640494,
+        "rotation": 59.99999999999991
+      },
+      {
+        "shape_id": "s016",
+        "x": 0.04578950605106385,
+        "y": 0.3654324167656517,
+        "rotation": 60.00000000000001
+      },
+      {
+        "shape_id": "s017",
+        "x": -0.08996405122085883,
+        "y": -0.2401371957080366,
+        "rotation": 1.6298062355694827e-13
+      },
+      {
+        "shape_id": "s018",
+        "x": 0.007111816565107314,
+        "y": -0.2401371957080405,
+        "rotation": 2.0252950496333746e-13
+      },
+      {
+        "shape_id": "s019",
+        "x": 0.10418768435107362,
+        "y": -0.24013719570805842,
+        "rotation": 2.323607805137847e-13
+      },
+      {
+        "shape_id": "s020",
+        "x": 0.20126355213703995,
+        "y": -0.24013719570803,
+        "rotation": 8.112160092591802e-14
+      },
+      {
+        "shape_id": "s021",
+        "x": 0.2983394199230064,
+        "y": -0.2401371957080359,
+        "rotation": 1.1338447202650532e-14
+      },
+      {
+        "shape_id": "s022",
+        "x": 0.3954152877089727,
+        "y": -0.24013720070183,
+        "rotation": -1.555686142693986e-14
+      },
+      {
+        "shape_id": "s023",
+        "x": -0.08996296211157913,
+        "y": -0.14298541148894514,
+        "rotation": -0.0011639513221185387
+      },
+      {
+        "shape_id": "s024",
+        "x": 0.007114762345684575,
+        "y": -0.1429905904211368,
+        "rotation": -0.00033610029242155164
+      },
+      {
+        "shape_id": "s025",
+        "x": 0.1041908920000723,
+        "y": -0.1429913360027627,
+        "rotation": -2.6987597343603578e-05
+      },
+      {
+        "shape_id": "s026",
+        "x": 0.20126680673280303,
+        "y": -0.1429913808739759,
+        "rotation": 2.8422238115974217e-05
+      },
+      {
+        "shape_id": "s027",
+        "x": 0.2983429686015025,
+        "y": -0.14299035706159252,
+        "rotation": 0.00037556354984286333
+      },
+      {
+        "shape_id": "s028",
+        "x": -0.04230901966703527,
+        "y": -0.0459103601614734,
+        "rotation": -0.001337404307522774
+      },
+      {
+        "shape_id": "s029",
+        "x": 0.05476965466888227,
+        "y": -0.04591500217323872,
+        "rotation": -0.00033610029262522227
+      },
+      {
+        "shape_id": "s030",
+        "x": 0.1518457843257543,
+        "y": -0.04591549065774922,
+        "rotation": -2.6987597619511696e-05
+      },
+      {
+        "shape_id": "s031",
+        "x": 0.24892199314097527,
+        "y": -0.045914813212762466,
+        "rotation": 0.000375568172633481
+      },
+      {
+        "shape_id": "s032",
+        "x": 0.007480814547211353,
+        "y": 0.051164351844684604,
+        "rotation": -0.0013361839001526617
+      },
+      {
+        "shape_id": "s033",
+        "x": 0.10456006746950512,
+        "y": 0.05116064714604756,
+        "rotation": -0.0002492217558103397
+      },
+      {
+        "shape_id": "s034",
+        "x": 0.20163726342674124,
+        "y": 0.05116074833049033,
+        "rotation": 0.0003712026618786274
+      },
+      {
+        "shape_id": "s035",
+        "x": 0.054805648304784675,
+        "y": 0.14823912152591642,
+        "rotation": -0.0013364133438005905
+      },
+      {
+        "shape_id": "s036",
+        "x": 0.15188621861888835,
+        "y": 0.14823656423884576,
+        "rotation": 5.197172254883251e-05
+      },
+      {
+        "shape_id": "s037",
+        "x": 0.10904834450223974,
+        "y": 0.24531679644215237,
+        "rotation": -0.0013330703585322295
+      }
+    ],
+    "metadata": {}
+  },
+  "example": true,
+  "reconstructed": true
+}

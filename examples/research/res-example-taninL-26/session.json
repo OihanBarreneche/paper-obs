@@ -1,0 +1,786 @@
+{
+  "kind": "research-session",
+  "format": 1,
+  "session_id": "res-example-taninL-26",
+  "created_at": "2026-10-01T10:30:00+00:00",
+  "updated_at": "2026-10-01T13:40:00+00:00",
+  "name": "26 tans dans un L · pavage de Morandi coupé puis raffiné",
+  "agent": "Claude Code · Opus 5.5 (effort max)",
+  "goal": "battre 2,12132 (Maurizio Morandi, septembre 2026)",
+  "status": "done",
+  "problem_id": "tans-26-in-smallest-l",
+  "problem": {
+    "problem_id": "tans-26-in-smallest-l",
+    "name": "26 tans in the smallest L",
+    "description": "Pack 26 unit tans inside the smallest possible L.",
+    "seed": 26,
+    "shape": {
+      "type": "custom_polygon",
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "objective": {
+      "type": "maximize_scale",
+      "count": 26
+    },
+    "rotation": {
+      "type": "rotation_policy",
+      "mode": "free",
+      "angles": [
+        0.0
+      ]
+    },
+    "constraints": [],
+    "metadata": {
+      "reference": {
+        "status": "best_known",
+        "value": 2.12132,
+        "unit": "container side",
+        "note": "Found by Maurizio Morandi in September 2026 · 3/√2",
+        "verified_on": "2026-10-01",
+        "preview": "https://erich-friedman.github.io/packing/taninL/26.gif",
+        "sources": [
+          {
+            "label": "Tans in L's · Erich Friedman's Packing Center",
+            "url": "https://erich-friedman.github.io/packing/taninL/"
+          }
+        ]
+      }
+    },
+    "arena": {
+      "name": "",
+      "shape": {
+        "type": "polygon",
+        "points": [
+          [
+            -0.8333333333333334,
+            -0.8333333333333334
+          ],
+          [
+            1.1666666666666665,
+            -0.8333333333333334
+          ],
+          [
+            1.1666666666666665,
+            0.16666666666666663
+          ],
+          [
+            0.16666666666666663,
+            0.16666666666666663
+          ],
+          [
+            0.16666666666666663,
+            1.1666666666666665
+          ],
+          [
+            -0.8333333333333334,
+            1.1666666666666665
+          ]
+        ]
+      },
+      "reference_length": 1.0
+    }
+  },
+  "journal": [
+    {
+      "kind": "note",
+      "at": "2026-10-01T10:30:00+00:00",
+      "text": "Session reconstituée après coup à partir du journal de la chasse aux records du 1er octobre 2026 ; les heures sont approximatives."
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T10:30:00+00:00",
+      "text": "Idée : des bornes par découpage, vérifiées sur toutes les tables du catalogue à la fois. Un tan se coupe en deux tans √2 fois plus petits, un carré contient deux tans, etc. : chaque relation transforme un record publié en construction pour une autre case."
+    },
+    {
+      "kind": "submission",
+      "at": "2026-10-01T11:02:00+00:00",
+      "index": 0,
+      "note": "Le n = 13 de Morandi (2012, côté 1,4999998) agrandi de √2, chaque tan coupé le long de sa hauteur : 26 tans à 2,1213201, la construction du record actuel (3/√2).",
+      "valid": true,
+      "primary": 0.47140458120278045,
+      "measure": 2.121320071706808,
+      "metric": "container side",
+      "record_gap": -3.380291895937995e-08,
+      "accepted": true,
+      "violations": [],
+      "candidate": {
+        "kind": "candidate",
+        "candidate_id": "c-morandi-doubled",
+        "problem_id": "tans-26-in-smallest-l",
+        "scale": 0.47140458120278045,
+        "origin": "research",
+        "generation": 0,
+        "parents": [],
+        "placements": [
+          {
+            "shape_id": "s000",
+            "x": -0.47647721953791977,
+            "y": 0.6259200449564052,
+            "rotation": -132.5416509289316
+          },
+          {
+            "shape_id": "s001",
+            "x": -0.7080267579957921,
+            "y": 0.8384059711970674,
+            "rotation": 137.45834907106843
+          },
+          {
+            "shape_id": "s002",
+            "x": -0.15045995208111207,
+            "y": 1.0070420350597904,
+            "rotation": -90.04462072671596
+          },
+          {
+            "shape_id": "s003",
+            "x": -0.4647295778955599,
+            "y": 1.0072867815671724,
+            "rotation": 179.95537927328405
+          },
+          {
+            "shape_id": "s004",
+            "x": 0.009531806108604823,
+            "y": 0.5381272244344194,
+            "rotation": 180.0
+          },
+          {
+            "shape_id": "s005",
+            "x": 0.009531806108604712,
+            "y": 0.8523969455505428,
+            "rotation": 90.0
+          },
+          {
+            "shape_id": "s006",
+            "x": -0.5000522189188852,
+            "y": 0.3893591215836866,
+            "rotation": 44.973069476894814
+          },
+          {
+            "shape_id": "s007",
+            "x": -0.2779344428412339,
+            "y": 0.16703244491009384,
+            "rotation": -45.02693052310519
+          },
+          {
+            "shape_id": "s008",
+            "x": 0.16666654481474308,
+            "y": -0.055555474429097584,
+            "rotation": -135.00000310038743
+          },
+          {
+            "shape_id": "s009",
+            "x": -0.055555694083188945,
+            "y": 0.1666667885186014,
+            "rotation": 134.99999689961257
+          },
+          {
+            "shape_id": "s010",
+            "x": -0.4999477686209147,
+            "y": -0.055398976766331876,
+            "rotation": -135.02693052310522
+          },
+          {
+            "shape_id": "s011",
+            "x": -0.7220655446985661,
+            "y": 0.16692769990726097,
+            "rotation": 134.9730694768948
+          },
+          {
+            "shape_id": "s012",
+            "x": 0.8523969455505428,
+            "y": 0.009531806108604712,
+            "rotation": -90.0
+          },
+          {
+            "shape_id": "s013",
+            "x": 0.5381272244344194,
+            "y": 0.009531806108604712,
+            "rotation": 180.0
+          },
+          {
+            "shape_id": "s014",
+            "x": 1.005201331872939,
+            "y": -0.4679565682085472,
+            "rotation": 179.843251380664
+          },
+          {
+            "shape_id": "s015",
+            "x": 1.0060611034626334,
+            "y": -0.15368802316590446,
+            "rotation": 89.84325138066397
+          },
+          {
+            "shape_id": "s016",
+            "x": 0.8384059711970674,
+            "y": -0.7080267579957923,
+            "rotation": -137.45834907106843
+          },
+          {
+            "shape_id": "s017",
+            "x": 0.625920044956405,
+            "y": -0.47647721953792,
+            "rotation": 132.5416509289316
+          },
+          {
+            "shape_id": "s018",
+            "x": -0.4996655680250944,
+            "y": -0.27792105369942877,
+            "rotation": 45.02463082383125
+          },
+          {
+            "shape_id": "s019",
+            "x": -0.2773478067437587,
+            "y": -0.500047753196047,
+            "rotation": -44.975369176168755
+          },
+          {
+            "shape_id": "s020",
+            "x": 0.16724697004525602,
+            "y": -0.2777986599090352,
+            "rotation": 45.003601518019245
+          },
+          {
+            "shape_id": "s021",
+            "x": 0.38948318905251555,
+            "y": -0.5000069418693693,
+            "rotation": -44.99639848198077
+          },
+          {
+            "shape_id": "s022",
+            "x": -0.4999999569491094,
+            "y": -0.7222222078719253,
+            "rotation": -135.0
+          },
+          {
+            "shape_id": "s023",
+            "x": -0.7222222078719254,
+            "y": -0.49999995694910926,
+            "rotation": 135.0
+          },
+          {
+            "shape_id": "s024",
+            "x": 0.16723299625323207,
+            "y": -0.7222012553062407,
+            "rotation": -134.99639848198078
+          },
+          {
+            "shape_id": "s025",
+            "x": -0.05500322275402736,
+            "y": -0.4999929733459068,
+            "rotation": 135.00360151801925
+          }
+        ],
+        "metadata": {}
+      },
+      "verdict": {
+        "problem_id": "tans-26-in-smallest-l",
+        "candidate_id": "c-morandi-doubled",
+        "valid": true,
+        "score": {
+          "primary": 0.47140458120278045,
+          "label": "common_scale",
+          "secondary": {
+            "shape_area": 0.11111113958948442,
+            "inradius": 0.1111111253502969,
+            "circumradius": 0.35136422949141227,
+            "n_shapes": 26.0
+          }
+        },
+        "metrics": {
+          "n_shapes": 26.0,
+          "packed_area": 2.888889629326596,
+          "covered_area": 2.888889629326596,
+          "arena_area": 3.0,
+          "void_area": 0.11111037067340401,
+          "density": 0.962963209775532,
+          "boundary_contacts": 17.0,
+          "total_scale": 12.256519111272292,
+          "total_perimeter": 41.84637377719089,
+          "max_scale": 0.47140458120278045,
+          "min_scale": 0.47140458120278045,
+          "equivalent_container_side": 2.121320071706808
+        },
+        "promoted_metric": "common_scale",
+        "validation": {
+          "valid": true,
+          "severity": 0.0,
+          "results": [
+            {
+              "constraint": "arena_containment",
+              "valid": true,
+              "severity": 0.0,
+              "message": "all 26 shapes are inside the arena",
+              "violations": []
+            },
+            {
+              "constraint": "non_overlap",
+              "valid": true,
+              "severity": 0.0,
+              "message": "no two shapes overlap",
+              "violations": []
+            },
+            {
+              "constraint": "rotation_policy",
+              "valid": true,
+              "severity": 0.0,
+              "message": "all rotations follow the free policy",
+              "violations": []
+            },
+            {
+              "constraint": "required_shape_count",
+              "valid": true,
+              "severity": 0.0,
+              "message": "26 shapes as required",
+              "violations": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "submission",
+      "at": "2026-10-01T11:29:00+00:00",
+      "index": 1,
+      "note": "Raffinement exact des 26 tans dans le L (SLSQP sur les contacts, le L vu comme son carré englobant moins un obstacle) : les coupes internes ne sont plus des murs, les tans se décalent un peu.",
+      "valid": true,
+      "primary": 0.471602879414369,
+      "measure": 2.1204281051926324,
+      "metric": "container side",
+      "record_gap": 0.0004204433123562265,
+      "accepted": true,
+      "violations": [],
+      "candidate": {
+        "kind": "candidate",
+        "candidate_id": "record-taninL-26",
+        "problem_id": "tans-26-in-smallest-l",
+        "scale": 0.471602879414369,
+        "origin": "research",
+        "generation": 0,
+        "parents": [],
+        "placements": [
+          {
+            "shape_id": "s000",
+            "x": -0.4454088779170869,
+            "y": 0.6131568440274725,
+            "rotation": -134.99112765023006
+          },
+          {
+            "shape_id": "s001",
+            "x": -0.695312740153221,
+            "y": 0.8433850171363112,
+            "rotation": 139.68443465456156
+          },
+          {
+            "shape_id": "s002",
+            "x": -0.14779006793207805,
+            "y": 1.0094657067046757,
+            "rotation": -90.0
+          },
+          {
+            "shape_id": "s003",
+            "x": -0.462240667064131,
+            "y": 1.009441368048415,
+            "rotation": 180.00887151234545
+          },
+          {
+            "shape_id": "s004",
+            "x": 0.009456571191012397,
+            "y": 0.5378719620669011,
+            "rotation": 179.9966702392468
+          },
+          {
+            "shape_id": "s005",
+            "x": 0.009447435411886085,
+            "y": 0.85227388305274,
+            "rotation": 89.99667023924684
+          },
+          {
+            "shape_id": "s006",
+            "x": -0.5000538035961055,
+            "y": 0.3903038134159481,
+            "rotation": 44.90023086000918
+          },
+          {
+            "shape_id": "s007",
+            "x": -0.2781255292252318,
+            "y": 0.16760130268323914,
+            "rotation": -45.09976913999085
+          },
+          {
+            "shape_id": "s008",
+            "x": 0.1659250841737634,
+            "y": -0.05490748043674809,
+            "rotation": -134.99999999999997
+          },
+          {
+            "shape_id": "s009",
+            "x": -0.05580811440781497,
+            "y": 0.16837553728438903,
+            "rotation": 134.90023086000917
+          },
+          {
+            "shape_id": "s010",
+            "x": -0.4997193431817977,
+            "y": -0.05565035701375032,
+            "rotation": -135.07250395117816
+          },
+          {
+            "shape_id": "s011",
+            "x": -0.721680575618717,
+            "y": 0.16707667967531858,
+            "rotation": 134.91494971647552
+          },
+          {
+            "shape_id": "s012",
+            "x": 0.8522955901898667,
+            "y": 0.009404034933392036,
+            "rotation": -89.98876054722916
+          },
+          {
+            "shape_id": "s013",
+            "x": 0.5378936581674197,
+            "y": 0.009434872331341437,
+            "rotation": 180.01123945277084
+          },
+          {
+            "shape_id": "s014",
+            "x": 1.009383486057469,
+            "y": -0.4624866607209746,
+            "rotation": 179.97002490119309
+          },
+          {
+            "shape_id": "s015",
+            "x": 1.0094657067046753,
+            "y": -0.1479202776450148,
+            "rotation": 89.99999999999997
+          },
+          {
+            "shape_id": "s016",
+            "x": 0.8433401634248773,
+            "y": -0.695417847015462,
+            "rotation": -139.66580767151032
+          },
+          {
+            "shape_id": "s017",
+            "x": 0.6132620296939598,
+            "y": -0.4456659815323026,
+            "rotation": 134.97001637088468
+          },
+          {
+            "shape_id": "s018",
+            "x": -0.499068861165426,
+            "y": -0.27822797973004176,
+            "rotation": 44.97244092557666
+          },
+          {
+            "shape_id": "s019",
+            "x": -0.27601497203303726,
+            "y": -0.499806310963122,
+            "rotation": -45.027559074423344
+          },
+          {
+            "shape_id": "s020",
+            "x": 0.16877687395571994,
+            "y": -0.2772232100330658,
+            "rotation": 45.00000000000006
+          },
+          {
+            "shape_id": "s021",
+            "x": 0.3907718042425644,
+            "y": -0.4998597389388568,
+            "rotation": -45.00000000000001
+          },
+          {
+            "shape_id": "s022",
+            "x": -0.49985973893885677,
+            "y": -0.7221754685351746,
+            "rotation": -135.0
+          },
+          {
+            "shape_id": "s023",
+            "x": -0.7221754685351744,
+            "y": -0.4998597389388565,
+            "rotation": 135.00000000000006
+          },
+          {
+            "shape_id": "s024",
+            "x": 0.1684560746462468,
+            "y": -0.7221754685351746,
+            "rotation": -135.0
+          },
+          {
+            "shape_id": "s025",
+            "x": -0.05353885564059768,
+            "y": -0.4995389396293836,
+            "rotation": 135.0
+          }
+        ],
+        "metadata": {}
+      },
+      "verdict": {
+        "problem_id": "tans-26-in-smallest-l",
+        "candidate_id": "record-taninL-26",
+        "valid": true,
+        "score": {
+          "primary": 0.471602879414369,
+          "label": "common_scale",
+          "secondary": {
+            "shape_area": 0.11120463793596194,
+            "inradius": 0.1111578646870007,
+            "circumradius": 0.35151203225172184,
+            "n_shapes": 26.0
+          }
+        },
+        "metrics": {
+          "n_shapes": 26.0,
+          "packed_area": 2.891320586335012,
+          "covered_area": 2.891320586335011,
+          "arena_area": 3.0,
+          "void_area": 0.1086794136649889,
+          "density": 0.963773528778337,
+          "boundary_contacts": 19.0,
+          "total_scale": 12.261674864773594,
+          "total_perimeter": 41.863976620719285,
+          "max_scale": 0.471602879414369,
+          "min_scale": 0.471602879414369,
+          "equivalent_container_side": 2.1204281051926324
+        },
+        "promoted_metric": "common_scale",
+        "validation": {
+          "valid": true,
+          "severity": 0.0,
+          "results": [
+            {
+              "constraint": "arena_containment",
+              "valid": true,
+              "severity": 0.0,
+              "message": "all 26 shapes are inside the arena",
+              "violations": []
+            },
+            {
+              "constraint": "non_overlap",
+              "valid": true,
+              "severity": 0.0,
+              "message": "no two shapes overlap",
+              "violations": []
+            },
+            {
+              "constraint": "rotation_policy",
+              "valid": true,
+              "severity": 0.0,
+              "message": "all rotations follow the free policy",
+              "violations": []
+            },
+            {
+              "constraint": "required_shape_count",
+              "valid": true,
+              "severity": 0.0,
+              "message": "26 shapes as required",
+              "violations": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T11:56:00+00:00",
+      "text": "Vérifications : moteur de la plateforme (marge 1e-9) valide ; contrôle exact en fractions valide pour 2,1204282 ; page en ligne relue le 1er octobre 2026 : 2,12132."
+    },
+    {
+      "kind": "note",
+      "at": "2026-10-01T13:40:00+00:00",
+      "text": "Contre-vérification sans le moteur (fractions exactes, axes séparateurs) : aucun chevauchement, aucun tan dans l'encoche, marge minimale 1e-10, tans de côtés 1 et √2. Le gain n'est que de 0,042 % : l'ancienne figure répartit le vide en fils fins le long des coupes, la nouvelle le regroupe en quelques fentes visibles."
+    }
+  ],
+  "best": {
+    "at": "2026-10-01T11:29:00+00:00",
+    "index": 1,
+    "measure": 2.1204281051926324,
+    "metric": "container side",
+    "record_gap": 0.0004204433123562265,
+    "primary": 0.471602879414369
+  },
+  "champion": {
+    "kind": "candidate",
+    "candidate_id": "record-taninL-26",
+    "problem_id": "tans-26-in-smallest-l",
+    "scale": 0.471602879414369,
+    "origin": "research",
+    "generation": 0,
+    "parents": [],
+    "placements": [
+      {
+        "shape_id": "s000",
+        "x": -0.4454088779170869,
+        "y": 0.6131568440274725,
+        "rotation": -134.99112765023006
+      },
+      {
+        "shape_id": "s001",
+        "x": -0.695312740153221,
+        "y": 0.8433850171363112,
+        "rotation": 139.68443465456156
+      },
+      {
+        "shape_id": "s002",
+        "x": -0.14779006793207805,
+        "y": 1.0094657067046757,
+        "rotation": -90.0
+      },
+      {
+        "shape_id": "s003",
+        "x": -0.462240667064131,
+        "y": 1.009441368048415,
+        "rotation": 180.00887151234545
+      },
+      {
+        "shape_id": "s004",
+        "x": 0.009456571191012397,
+        "y": 0.5378719620669011,
+        "rotation": 179.9966702392468
+      },
+      {
+        "shape_id": "s005",
+        "x": 0.009447435411886085,
+        "y": 0.85227388305274,
+        "rotation": 89.99667023924684
+      },
+      {
+        "shape_id": "s006",
+        "x": -0.5000538035961055,
+        "y": 0.3903038134159481,
+        "rotation": 44.90023086000918
+      },
+      {
+        "shape_id": "s007",
+        "x": -0.2781255292252318,
+        "y": 0.16760130268323914,
+        "rotation": -45.09976913999085
+      },
+      {
+        "shape_id": "s008",
+        "x": 0.1659250841737634,
+        "y": -0.05490748043674809,
+        "rotation": -134.99999999999997
+      },
+      {
+        "shape_id": "s009",
+        "x": -0.05580811440781497,
+        "y": 0.16837553728438903,
+        "rotation": 134.90023086000917
+      },
+      {
+        "shape_id": "s010",
+        "x": -0.4997193431817977,
+        "y": -0.05565035701375032,
+        "rotation": -135.07250395117816
+      },
+      {
+        "shape_id": "s011",
+        "x": -0.721680575618717,
+        "y": 0.16707667967531858,
+        "rotation": 134.91494971647552
+      },
+      {
+        "shape_id": "s012",
+        "x": 0.8522955901898667,
+        "y": 0.009404034933392036,
+        "rotation": -89.98876054722916
+      },
+      {
+        "shape_id": "s013",
+        "x": 0.5378936581674197,
+        "y": 0.009434872331341437,
+        "rotation": 180.01123945277084
+      },
+      {
+        "shape_id": "s014",
+        "x": 1.009383486057469,
+        "y": -0.4624866607209746,
+        "rotation": 179.97002490119309
+      },
+      {
+        "shape_id": "s015",
+        "x": 1.0094657067046753,
+        "y": -0.1479202776450148,
+        "rotation": 89.99999999999997
+      },
+      {
+        "shape_id": "s016",
+        "x": 0.8433401634248773,
+        "y": -0.695417847015462,
+        "rotation": -139.66580767151032
+      },
+      {
+        "shape_id": "s017",
+        "x": 0.6132620296939598,
+        "y": -0.4456659815323026,
+        "rotation": 134.97001637088468
+      },
+      {
+        "shape_id": "s018",
+        "x": -0.499068861165426,
+        "y": -0.27822797973004176,
+        "rotation": 44.97244092557666
+      },
+      {
+        "shape_id": "s019",
+        "x": -0.27601497203303726,
+        "y": -0.499806310963122,
+        "rotation": -45.027559074423344
+      },
+      {
+        "shape_id": "s020",
+        "x": 0.16877687395571994,
+        "y": -0.2772232100330658,
+        "rotation": 45.00000000000006
+      },
+      {
+        "shape_id": "s021",
+        "x": 0.3907718042425644,
+        "y": -0.4998597389388568,
+        "rotation": -45.00000000000001
+      },
+      {
+        "shape_id": "s022",
+        "x": -0.49985973893885677,
+        "y": -0.7221754685351746,
+        "rotation": -135.0
+      },
+      {
+        "shape_id": "s023",
+        "x": -0.7221754685351744,
+        "y": -0.4998597389388565,
+        "rotation": 135.00000000000006
+      },
+      {
+        "shape_id": "s024",
+        "x": 0.1684560746462468,
+        "y": -0.7221754685351746,
+        "rotation": -135.0
+      },
+      {
+        "shape_id": "s025",
+        "x": -0.05353885564059768,
+        "y": -0.4995389396293836,
+        "rotation": 135.0
+      }
+    ],
+    "metadata": {}
+  },
+  "example": true,
+  "reconstructed": true
+}
