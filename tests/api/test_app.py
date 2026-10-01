@@ -65,6 +65,11 @@ def test_research_sessions_are_listed_by_problem_and_read_back(monkeypatch: pyte
     assert CLIENT.get("/api/research-sessions", params={"problem_id": "other"}).json()["sessions"] == []
     assert CLIENT.get(f"/api/research-sessions/{session['session_id']}").json()["name"] == "api"
     assert CLIENT.get("/api/research-sessions/res-missing").status_code == 404
+    folder = tmp_path / "research" / session["session_id"]
+    (folder / "work" / "seed.py").write_text("print(1)\n", encoding="utf-8")
+    base = f"/api/research-sessions/{session['session_id']}/work"
+    assert CLIENT.get(f"{base}/seed.py").json() == {"path": "seed.py", "text": "print(1)\n"}
+    assert CLIENT.get(f"{base}/..%2Fsession.json").status_code == 404
 
 
 def _example(problem_id: str = "circle-25-in-square") -> dict:

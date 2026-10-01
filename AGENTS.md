@@ -52,7 +52,7 @@ On a WSL environment hosted on a Google Drive mount, dependency installation and
 
 ## Research mode
 
-When the owner asks for a free research session or a record hunt, follow [research mode](docs/research-mode.md). In this mode the agent drives the search with its own programs, the engine judges every claimed arrangement, and a session records the journal.
+When the owner asks for a free research session or a record hunt, follow [research mode](docs/research-mode.md). In this mode the agent drives the search with its own programs, the engine judges every claimed arrangement, and a session records the journal. Keep that journal as you go, with the steps and submission methods of its section 4, so the owner can follow the search live in the web app.
 
 ## Current scope
 

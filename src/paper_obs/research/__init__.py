@@ -6,6 +6,11 @@ its own programs, logs and notes. The agent drives: it submits arrangements, whi
 engine judges, and writes notes. Nothing here searches, schedules or limits the agent; the
 contract it follows is docs/research-mode.md.
 
+The journal tells how a result was found. Each note names its step (an idea, a program
+written in ``work/``, a computation, a dead end, a check), and each submission its method
+and what it builds on, so a reader can follow the chain from a starting point to the best
+arrangement and tell understanding from composition and from search.
+
 A submission is measured in the unit of the record the problem carries when there is one
 (the container side, for most catalog problems), so every number a session shows can be
 compared with the published value as it is.
@@ -32,6 +37,15 @@ FILE_KIND = "research-session"
 FILE_FORMAT = 1
 #: The statuses an agent can give its session.
 STATUSES = ("active", "paused", "done")
+#: What a note records: an understanding or a lead, a program written in work/, a computation
+#: launched or ended, an approach dropped, a verification.
+STEPS = ("idea", "program", "search", "dead-end", "check")
+#: Where a submitted arrangement comes from: built from an understanding of the problem,
+#: assembled from known arrangements, found by an automatic search, or a local optimisation
+#: that keeps an earlier arrangement's structure.
+METHODS = ("reasoning", "composition", "search", "refinement")
+#: The largest work file the interface reads back, in bytes.
+WORK_FILE_LIMIT = 200_000
 #: The plural a catalog problem is named with, as the web app's cards name it.
 NOUNS = {"circle": "circles", "triangle": "triangles", "square": "squares", "pentagon": "pentagons",
          "hexagon": "hexagons", "octagon": "octagons", "tan": "tans", "domino": "dominoes", "l": "L's"}
@@ -66,13 +80,22 @@ def load(session_id: str) -> dict[str, Any]:
     return json.loads(_path(session_id).read_text(encoding="utf-8"))
 
 
-def submit(session_id: str, candidate: Candidate, note: str = "") -> dict[str, Any]:
+def submit(session_id: str, candidate: Candidate, note: str = "", *, method: str | None = None,
+           builds_on: int | str | None = None, programs: tuple[str, ...] | list[str] = ()) -> dict[str, Any]:
     """Judge an arrangement, log it, keep it if it beats the session's best; return the entry.
 
+    ``method`` is one of :data:`METHODS`; ``builds_on`` the index of an earlier submission or
+    a short text naming an outside source; ``programs`` the work/ files that produced it.
     Only an improvement keeps its arrangement and full verdict in the journal, so a search
     that submits often does not bloat the file; every submission keeps its measure.
     """
     document = load(session_id)
+    index = sum(item["kind"] == "submission" for item in document["journal"])
+    if method is not None and method not in METHODS:
+        raise ValueError(f"method must be one of {', '.join(METHODS)}")
+    if isinstance(builds_on, int) and not 0 <= builds_on < index:
+        raise ValueError(f"no earlier submission {builds_on}: indexes run from 0 to {index - 1}")
+    programs = [_work(session_id, path)[1] for path in programs]
     problem = Problem.from_dict(document["problem"])
     verdict = evaluate(problem, candidate)
     champion = document["champion"]
@@ -80,8 +103,9 @@ def submit(session_id: str, candidate: Candidate, note: str = "") -> dict[str, A
         champion is None or verdict.is_better_than(evaluate(problem, Candidate.from_dict(champion))))
     measure, metric = _measure(problem, verdict)
     entry = {
-        "kind": "submission", "at": _now(), "index": sum(item["kind"] == "submission" for item in document["journal"]),
-        "note": note.strip(), "valid": verdict.valid, "primary": verdict.primary, "measure": measure, "metric": metric,
+        "kind": "submission", "at": _now(), "index": index, "note": note.strip(),
+        "method": method, "builds_on": builds_on.strip() if isinstance(builds_on, str) else builds_on,
+        "programs": programs, "valid": verdict.valid, "primary": verdict.primary, "measure": measure, "metric": metric,
         "record_gap": record_gap(problem.metadata.get("reference"), verdict.primary, verdict.metrics),
         "accepted": accepted, "violations": [str(item) for item in verdict.validation.violations[:3]],
         "candidate": candidate.to_dict() if accepted else None,
@@ -95,10 +119,16 @@ def submit(session_id: str, candidate: Candidate, note: str = "") -> dict[str, A
     return entry
 
 
-def add_note(session_id: str, text: str) -> dict[str, Any]:
-    """Append a note (an idea, a dead end, a method, a machine plan) and return it."""
+def add_note(session_id: str, text: str, step: str | None = None, path: str | None = None) -> dict[str, Any]:
+    """Append a note and return it: ``step`` is one of :data:`STEPS`, or none for context such
+    as the machine plan; ``path`` names a file in work/, which a ``program`` note requires."""
+    if step is not None and step not in STEPS:
+        raise ValueError(f"step must be one of {', '.join(STEPS)}")
+    if step == "program" and not path:
+        raise ValueError("a program note names its file in work/")
     document = load(session_id)
-    entry = {"kind": "note", "at": _now(), "text": text.strip()}
+    entry = {"kind": "note", "at": _now(), "text": text.strip(), "step": step,
+             "path": _work(session_id, path)[1] if path else None}
     document["journal"].append(entry)
     _write(document)
     return entry
@@ -112,6 +142,14 @@ def set_status(session_id: str, status: str) -> dict[str, Any]:
     document["status"] = status
     _write(document)
     return document
+
+
+def work_file(session_id: str, path: str) -> dict[str, str]:
+    """Return a text file of the session's work/ folder, such as a program a note names."""
+    file, name = _work(session_id, path)
+    if file.stat().st_size > WORK_FILE_LIMIT:
+        raise ValueError(f"{name} is larger than {WORK_FILE_LIMIT} bytes")
+    return {"path": name, "text": file.read_text(encoding="utf-8", errors="replace")}
 
 
 def listing(problem_id: str | None = None) -> list[dict[str, Any]]:
@@ -193,6 +231,16 @@ def _path(session_id: str) -> Path:
     return path
 
 
+def _work(session_id: str, path: str) -> tuple[Path, str]:
+    """Return a file of the session's work/ folder and its name relative to that folder; a
+    path that leaves the folder, through ``..`` or a link, or names no file raises ValueError."""
+    work = (_path(session_id).parent / "work").resolve()
+    file = (work / path).resolve()
+    if not file.is_relative_to(work) or not file.is_file():
+        raise ValueError(f"{path!r} is not a file of the session's work folder")
+    return file, file.relative_to(work).as_posix()
+
+
 def _write(document: dict[str, Any]) -> None:
     document["updated_at"] = _now()
     dump(document, sessions_directory() / document["session_id"] / "session.json")
@@ -202,5 +250,5 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
-__all__ = ["FILE_KIND", "STATUSES", "add_note", "catalog_problem", "listing", "load", "set_status",
-           "sessions_directory", "start", "submit"]
+__all__ = ["FILE_KIND", "METHODS", "STATUSES", "STEPS", "add_note", "catalog_problem", "listing", "load",
+           "set_status", "sessions_directory", "start", "submit", "work_file"]

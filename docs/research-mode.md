@@ -25,7 +25,9 @@ paper-obs research start -p problem.json --name "38 squares, Cantrell extension"
 
 The answer gives the session id and its folder, `runs/research/<id>/`. The folder holds `session.json`, which the lab writes, and `work/`, which belongs to the agent: put programs, logs, seeds and intermediate files there. The runs folder is ignored by Git, so nothing in it is published by accident.
 
-## 4. Search freely, submit improvements
+Open the session before the first computation, so the owner can follow the whole search.
+
+## 4. Search freely, keep the journal
 
 Candidates are the lab's JSON: `problem_id`, `scale` and `placements`, each with `shape_id`, `x`, `y` and `rotation` in degrees. They are written in the problem's own frame:
 
@@ -35,14 +37,14 @@ Candidates are the lab's JSON: `problem_id`, `scale` and `placements`, each with
 Useful commands:
 
 ```bash
-paper-obs research submit <id> -c candidate.json --note "LNS from the x.301 seed"   # judged; exits 1 when invalid
-paper-obs research note <id> "corner seeds never beat 7.6188 in 20 min: dropped"
+paper-obs research submit <id> -c candidate.json --method search --from 3 --program lns.py --note "LNS from the x.301 seed"
+paper-obs research note <id> --step dead-end "corner seeds never beat 7.6188 in 20 min on 8 processes: dropped"
 paper-obs research status <id>                    # best so far and the record
 paper-obs research status <id> --set paused       # active, paused or done
 paper-obs evaluate -p problem.json -c candidate.json   # judge without logging
 ```
 
-From Python, `paper_obs.research.submit(session_id, candidate, note)` does the same as the command, and `paper_obs.geometry.engine.evaluate` judges without logging. Submit each new best rather than every attempt: a session keeps the arrangement and full verdict of improvements only, and the measure of every submission.
+A submission is judged, and the command exits 1 when the arrangement is invalid. From Python, `paper_obs.research.submit(session_id, candidate, note, method=..., builds_on=..., programs=[...])` and `paper_obs.research.add_note(session_id, text, step, path)` do the same as the commands, and `paper_obs.geometry.engine.evaluate` judges without logging. A session keeps the arrangement and full verdict of improvements only, and the measure of every submission.
 
 The lab also offers four tools, none of them required. `refine` and `picture` need the `research` extra (`pip install -e ".[research]"`: SciPy, Pillow and resvg):
 
@@ -58,7 +60,37 @@ paper-obs research picture -p problem.json -c refined.json -o 26.gif --like old2
 - **`verify`** judges the arrangement again on a code path of its own (`paper_obs.geometry.exact_check`): every corner becomes an exact fraction, and the separating-axis theorem decides overlaps and containment in rational arithmetic, with no tolerance. It reports the overlapping pairs, the copies out and the smallest margins, and exits 1 when the arrangement is invalid.
 - **`picture`** draws the arrangement for a submission as an SVG, written beside the picture, then renders it with resvg in the format the file name asks for. With `--like`, it copies the picture it replaces: its pixel size; crisp edges in its exact palette when it has a handful of colours, anti-aliased edges otherwise; a transparent outside when it has one; white as empty space, the most common other colour for the copies and the darkest for the lines. `--size`, `--rotate` and the file suffix set the rest. The owner downloads the original picture; the agent never fetches pages in bulk.
 
-Notes are what make a session readable afterwards. Write down the ideas tried, the dead ends and why, the method of each improvement, and the machine plan. The web app follows each session in **Search ▸ Free research**: its best against the record, the track of each improvement and the journal. The two record hunts below ship as example sessions in `examples/research/`, reconstructed afterwards from the hunt's log, and `paper-obs serve` copies them into the runs folder once, as it does the example runs.
+### The journal
+
+The owner follows a session live in **Search ▸ Free research**, which reads it again every five seconds. Afterwards, the owner reads it to understand how a result was found: by understanding the problem, by composing known arrangements, or by searching. Write each entry when it happens, never reconstructed at the end. Keep it to one or two sentences with the numbers that matter.
+
+Every note names its step with `--step`:
+
+| Step | When to write it | What it says |
+| --- | --- | --- |
+| `idea` | You understand something or see a lead: a pattern, a symmetry, a dissection. | What you understood, and why it could beat the record. |
+| `program` | You write or substantially change a program in `work/`. Name it with `--path`, relative to `work/`. | What it reads, what it computes and what it gives, in one sentence. |
+| `search` | You launch a computation of more than a minute, and again when it ends. | Which program, on how many processes, for how long, and what came out. |
+| `dead-end` | You drop an approach. | What was tried, for how long, the best it reached, and why it is dropped. |
+| `check` | You verify a result. | Engine, `verify` margins, the live page and the date it was read. |
+
+A note without a step gives context, such as the machine plan.
+
+Every submission says where its arrangement comes from:
+
+- `--method` is one of four:
+  - `reasoning`: built from an understanding of the problem, such as a construction family extended by one step, a symmetric construction or a pattern computed in closed form;
+  - `composition`: assembled from published or earlier arrangements, by dissection, scaling or juxtaposition, without searching;
+  - `search`: found by an automatic exploration with randomness or enumeration, such as random restarts, LNS, basin hopping or brute force;
+  - `refinement`: a local optimisation that keeps an earlier arrangement's structure, such as closing contacts with SLSQP.
+- `--from` gives what it starts from: the `index` of an earlier submission, as `submit` printed it, or a short text naming an outside source, such as `"Morandi's n = 13 (2012)"`.
+- `--program` names each `work/` program that produced it; repeat it for several.
+
+Submit each new best, and also each intermediate step that a later best builds on, even when it does not beat the session's best (a composition that a refinement then improves, for example). Then the chain from the starting point to the best arrangement is complete. Do not submit every attempt of a search: its outcome goes in a `search` note.
+
+When the search ends, set the status to `done` and write a last note on what the result owes to understanding, to composition and to search. The page draws the chain from the starting point to the best arrangement, labels each link with its method, lists the programs with their code, and shows the journal in order, with dead ends muted. Sessions written before steps and methods existed show their improvements as the chain, without labels.
+
+The two record hunts below ship as example sessions in `examples/research/`, reconstructed afterwards from the hunt's log before steps and methods existed. `paper-obs serve` copies them into the runs folder once, as it does the example runs.
 
 ## 5. Before claiming a record
 
@@ -66,7 +98,7 @@ Notes are what make a session readable afterwards. Write down the ideas tried, t
 2. Check independently: `paper-obs research verify` decides in exact rational arithmetic, apart from the engine's predicates.
 3. Published values are truncated, so `1.499+` means at least 1.499. A claim must be strictly better than the printed digits.
 4. Re-read the live page on the day of the claim, and note the date in the session.
-5. Keep the code that produced the result in `work/`, and summarise the method in a note.
+5. Keep the code that produced the result in `work/`, with a `program` note for each file and the `--program` of each submission.
 
 ## 6. Submitting to the source
 

@@ -63,3 +63,32 @@ def test_the_command_line_answers_in_json(runs, tmp_path, capsys) -> None:
     assert main(["research", "status", session_id, "--set", "paused"]) == 0
     status = json.loads(capsys.readouterr().out)
     assert status["status"] == "paused" and status["record"]["unit"] == "container side"
+    assert main(["research", "note", session_id, "corner seeds stall at 7.62", "--step", "dead-end"]) == 0
+    assert json.loads(capsys.readouterr().out)["step"] == "dead-end"
+
+
+def test_the_journal_tells_each_step_and_where_each_arrangement_comes_from(runs) -> None:
+    problem = research.catalog_problem("squintri", 5)
+    session_id = research.start(problem, name="steps", agent="test")["session_id"]
+    (runs / "research" / session_id / "work" / "grid.py").write_text("print('grid')\n", encoding="utf-8")
+
+    research.add_note(session_id, "a grid is a fair first start", step="idea")
+    program = research.add_note(session_id, "places the squares on a grid", step="program", path="./grid.py")
+    assert program["step"] == "program" and program["path"] == "grid.py"
+    start = grid_initialize(problem)
+    first = research.submit(session_id, start, method="reasoning", builds_on="a square grid", programs=["grid.py"])
+    again = research.submit(session_id, start, method="refinement", builds_on=0)
+    assert (first["method"], first["builds_on"], first["programs"]) == ("reasoning", "a square grid", ["grid.py"])
+    assert (again["method"], again["builds_on"], again["programs"]) == ("refinement", 0, [])
+    assert research.work_file(session_id, "grid.py") == {"path": "grid.py", "text": "print('grid')\n"}
+
+    with pytest.raises(ValueError):
+        research.add_note(session_id, "no file named", step="program")
+    with pytest.raises(ValueError):
+        research.add_note(session_id, "outside work/", step="program", path="../session.json")
+    with pytest.raises(ValueError):
+        research.submit(session_id, start, method="luck")
+    with pytest.raises(ValueError):
+        research.submit(session_id, start, builds_on=5)
+    with pytest.raises(ValueError):
+        research.work_file(session_id, "../session.json")

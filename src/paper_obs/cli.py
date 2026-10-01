@@ -240,9 +240,17 @@ def _add_research(subparsers: Any) -> None:
     submit.add_argument("session")
     submit.add_argument("--candidate", "-c", required=True, type=Path)
     submit.add_argument("--note", default="")
+    submit.add_argument("--method", choices=research_sessions.METHODS, default=None,
+                        help="where the arrangement comes from (docs/research-mode.md)")
+    submit.add_argument("--from", dest="builds_on", default=None,
+                        help="the index of the submission it builds on, or the outside source it starts from")
+    submit.add_argument("--program", dest="programs", action="append", default=[],
+                        help="a program in work/ that produced it; repeat for several")
     note = actions.add_parser("note", help="append a note to a session's journal")
     note.add_argument("session")
     note.add_argument("text")
+    note.add_argument("--step", choices=research_sessions.STEPS, default=None, help="what the note records")
+    note.add_argument("--path", default=None, help="the file in work/ a program note describes")
     status = actions.add_parser("status", help="print a session's best and record, or set its status")
     status.add_argument("session")
     status.add_argument("--set", dest="new_status", choices=research_sessions.STATUSES, default=None)
@@ -277,10 +285,12 @@ def _cmd_research(args: argparse.Namespace) -> int:
         folder = research_sessions.sessions_directory() / document["session_id"]
         answer = {"session_id": document["session_id"], "folder": str(folder), "work": str(folder / "work")}
     elif args.action == "submit":
-        entry = research_sessions.submit(args.session, load_candidate(args.candidate), args.note)
+        builds_on = int(args.builds_on) if args.builds_on and args.builds_on.isdigit() else args.builds_on
+        entry = research_sessions.submit(args.session, load_candidate(args.candidate), args.note,
+                                         method=args.method, builds_on=builds_on, programs=args.programs)
         answer = {key: value for key, value in entry.items() if key not in ("candidate", "verdict")}
     elif args.action == "note":
-        answer = research_sessions.add_note(args.session, args.text)
+        answer = research_sessions.add_note(args.session, args.text, args.step, args.path)
     elif args.action == "status":
         document = (research_sessions.set_status(args.session, args.new_status) if args.new_status
                     else research_sessions.load(args.session))

@@ -321,6 +321,14 @@ def _register_routes(app: FastAPI, *, processes: bool) -> None:
         except (OSError, ValueError) as error:
             raise HTTPException(status_code=404, detail=f"unknown session {session_id!r}") from error
 
+    @app.get("/api/research-sessions/{session_id}/work/{path:path}")
+    def read_research_work(session_id: str, path: str) -> JSON:
+        """Return a text file of a session's work/ folder, such as a program its journal names."""
+        try:
+            return research.work_file(session_id, path)
+        except (OSError, ValueError) as error:
+            raise HTTPException(status_code=404, detail=str(error)) from error
+
     @app.get("/api/agent-runs/{run_id}")
     def read_agent_run(run_id: str) -> JSON:
         """Return one run: what it was asked, every turn it took, and what it reached.
