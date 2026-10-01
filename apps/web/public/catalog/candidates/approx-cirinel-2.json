@@ -1,0 +1,39 @@
+{
+  "kind": "candidate",
+  "candidate_id": "c-21317f4b43",
+  "problem_id": "circles-2-in-smallest-ellipse",
+  "scale": 0.8660553184268065,
+  "origin": "source-derived-approximation",
+  "generation": 1,
+  "parents": [
+    "circles-2-in-smallest-ellipse-figure"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.8660639644485522,
+      "y": 0.00015865153916926536
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.8660639644485522,
+      "y": -0.00015865153916926536
+    }
+  ],
+  "metadata": {
+    "figure": "cirinel-e2.gif",
+    "detected_radius_px": 58.04520074654964,
+    "explained_ink": 0.6134,
+    "detected_centres": [
+      [
+        180.89,
+        71.08
+      ],
+      [
+        64.9,
+        71.1
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}

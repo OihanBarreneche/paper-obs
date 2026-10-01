@@ -538,12 +538,14 @@ def verify_family(
             entry["note"] = best["note"]
         if target is not None:
             entry["candidate"] = f"/catalog/candidates/{target.name}"
-        elif best["kind"] in {"seed", "approx"} and level in {"exact", "near", "approx"}:
+        elif best["kind"] in {"seed", "approx"}:
             # A seed or a reconstruction is already a candidate of this very problem, so it
-            # can be opened as it stands. An archive file is not -- it is only ever offered
-            # through the reading this script settles -- and neither is a construction the
-            # lab holds: until the owner promotes one, the interface must not present it as
-            # the family's record.
+            # can be opened as it stands, however far its own gap is: a reading a tenth of a
+            # percent off its record is still a better place to start than a grid, and the
+            # entry carries the gap that says so. An archive file is not offered this way --
+            # it is only ever offered through the reading this script settles -- and neither
+            # is a construction the lab holds: until the owner promotes one, the interface
+            # must not present it as the family's record.
             entry["candidate"] = f"/catalog/candidates/{best['file']}"
         entries[str(count)] = entry
         tallies[status] += 1

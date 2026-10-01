@@ -1,0 +1,66 @@
+{
+  "kind": "candidate",
+  "candidate_id": "c-d7f462b9ea",
+  "problem_id": "circles-5-in-smallest-l",
+  "scale": 0.16387380504574472,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-8c89394d17"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.08054047312826268,
+      "y": 0.3887231337600848
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.21485670261605344,
+      "y": 0.08976218602162804
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.20039537055144038,
+      "y": -0.23804255258522608
+    },
+    {
+      "shape_id": "s003",
+      "x": 0.3878013888267476,
+      "y": -0.2107450639993672
+    },
+    {
+      "shape_id": "s004",
+      "x": 0.08702695259265185,
+      "y": -0.08054047235314554
+    }
+  ],
+  "metadata": {
+    "figure": "cirinl-5.gif",
+    "detected_radius_px": 28.856237440722612,
+    "explained_ink": 0.626,
+    "detected_centres": [
+      [
+        53.93,
+        28.32
+      ],
+      [
+        28.17,
+        79.75
+      ],
+      [
+        34.1,
+        136.79
+      ],
+      [
+        136.8,
+        136.89
+      ],
+      [
+        85.54,
+        111.25
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}

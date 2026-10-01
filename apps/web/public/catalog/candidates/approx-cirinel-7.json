@@ -1,0 +1,84 @@
+{
+  "kind": "candidate",
+  "candidate_id": "c-b5cf62d47f",
+  "problem_id": "circles-7-in-smallest-ellipse",
+  "scale": 0.3600050773636845,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-64b7c710f5"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.3654626821795714,
+      "y": -0.6216138425623757
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.3651706191481049,
+      "y": -0.6216447576714152
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.7339471464993248,
+      "y": 0.0001678674969909942
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.3655592049745782,
+      "y": 0.6215095866739018
+    },
+    {
+      "shape_id": "s004",
+      "x": 0.36499292842960446,
+      "y": 0.6216635663782556
+    },
+    {
+      "shape_id": "s005",
+      "x": -0.7345645546044813,
+      "y": 0.0001545073397264524
+    },
+    {
+      "shape_id": "s006",
+      "x": -0.0002639532950923961,
+      "y": 0.0005858022809077585
+    }
+  ],
+  "metadata": {
+    "figure": "cirinel-e7.gif",
+    "detected_radius_px": 40.88254305663457,
+    "explained_ink": 0.7488,
+    "detected_centres": [
+      [
+        80.92,
+        192.05
+      ],
+      [
+        162.24,
+        192.02
+      ],
+      [
+        202.85,
+        121.69
+      ],
+      [
+        80.93,
+        51.26
+      ],
+      [
+        162.21,
+        51.26
+      ],
+      [
+        40.26,
+        121.66
+      ],
+      [
+        121.6,
+        121.68
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}

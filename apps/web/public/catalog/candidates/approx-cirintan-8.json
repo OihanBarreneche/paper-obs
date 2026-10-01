@@ -1,0 +1,93 @@
+{
+  "kind": "candidate",
+  "candidate_id": "c-346d8040f6",
+  "problem_id": "circles-8-in-smallest-tan",
+  "scale": 0.1146355026912008,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-8042165c46"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.21734452186399203,
+      "y": -0.21710103903828798
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.16704962319869854,
+      "y": 0.004060207990065196
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.055352437460728515,
+      "y": -0.054163224841647345
+    },
+    {
+      "shape_id": "s003",
+      "x": 0.10734122038208023,
+      "y": -0.2186978306421325
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.20743904232053714,
+      "y": 0.37559393179971184
+    },
+    {
+      "shape_id": "s005",
+      "x": 0.003126517367901216,
+      "y": 0.16808773333007862
+    },
+    {
+      "shape_id": "s006",
+      "x": -0.21858372502632853,
+      "y": 0.10860445254762809
+    },
+    {
+      "shape_id": "s007",
+      "x": 0.374153440118527,
+      "y": -0.20503340509424064
+    }
+  ],
+  "metadata": {
+    "figure": "cirintan-8.gif",
+    "detected_radius_px": 22.019743637406542,
+    "explained_ink": 0.7128,
+    "detected_centres": [
+      [
+        21.91,
+        168.09
+      ],
+      [
+        94.87,
+        125.92
+      ],
+      [
+        52.93,
+        137.07
+      ],
+      [
+        83.69,
+        168.05
+      ],
+      [
+        21.92,
+        52.88
+      ],
+      [
+        64.18,
+        95.19
+      ],
+      [
+        22.03,
+        106.37
+      ],
+      [
+        137.18,
+        168.11
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}

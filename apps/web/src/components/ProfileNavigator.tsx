@@ -159,8 +159,9 @@ function verificationBadge(
   }
   const gap = entry.gap === null ? "" : ` · ${gapPercent(entry.gap)}`;
   if (entry.level === "near") return { text: `≈ ${t("Close to the record")}${gap}`, level: "near" };
-  if (entry.level === "approx") return { text: `≈ ${t("Approximate configuration")}${gap}`, level: "approx" };
-  return { text: `· ${t("Far from the record")}${gap}`, level: "far" };
+  // A far reading is still an approximation, and is labelled as one: the gap beside it is
+  // what tells the two apart, not a word of its own.
+  return { text: `≈ ${t("Approximate configuration")}${gap}`, level: entry.level === "approx" ? "approx" : "far" };
 }
 
 function CopySketch({ shape, container }: { shape: string; container: string }) {

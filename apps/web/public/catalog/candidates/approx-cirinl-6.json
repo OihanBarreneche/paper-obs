@@ -1,0 +1,75 @@
+{
+  "kind": "candidate",
+  "candidate_id": "c-b856e5208b",
+  "problem_id": "circles-6-in-smallest-l",
+  "scale": 0.15558133871716562,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-8ea35e7c5f"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.026392624211765407,
+      "y": -0.027170224185494952
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.17890306390349867,
+      "y": -0.261085327045752
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.2471294149699982,
+      "y": -0.24695143597805658
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.07237149260550743,
+      "y": 0.42486163593124227
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.26106976742277854,
+      "y": 0.17721077835126534
+    },
+    {
+      "shape_id": "s005",
+      "x": 0.42655371447497914,
+      "y": -0.07236719987348243
+    }
+  ],
+  "metadata": {
+    "figure": "cirinl-6.gif",
+    "detected_radius_px": 25.982992106196406,
+    "explained_ink": 0.6545,
+    "detected_centres": [
+      [
+        64.26,
+        100.81
+      ],
+      [
+        98.3,
+        139.63
+      ],
+      [
+        25.26,
+        139.77
+      ],
+      [
+        56.8,
+        25.57
+      ],
+      [
+        25.34,
+        66.64
+      ],
+      [
+        139.48,
+        108.35
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "candidate",
+  "candidate_id": "c-bedd8c7b8d",
+  "problem_id": "circles-2-in-smallest-tan",
+  "scale": 0.2069036289465193,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-39ce70b9f4"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.12622248567848715,
+      "y": 0.16644521876383303
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.16677689993241868,
+      "y": -0.12642970232374454
+    }
+  ],
+  "metadata": {
+    "figure": "cirintan-2.gif",
+    "detected_radius_px": 39.47606716694789,
+    "explained_ink": 0.4928,
+    "detected_centres": [
+      [
+        39.59,
+        95.16
+      ],
+      [
+        94.86,
+        150.46
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}

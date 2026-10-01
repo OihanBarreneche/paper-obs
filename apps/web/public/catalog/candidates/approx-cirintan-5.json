@@ -1,0 +1,66 @@
+{
+  "kind": "candidate",
+  "candidate_id": "c-d7dddbd046",
+  "problem_id": "circles-5-in-smallest-tan",
+  "scale": 0.13834844319366407,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-82105d1c9b"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.19124473541540354,
+      "y": 0.04149936349842956
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.09232956000017196,
+      "y": 0.044442077238865986
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.18099386485150723,
+      "y": 0.31833186823362286
+    },
+    {
+      "shape_id": "s003",
+      "x": 0.32543546506311305,
+      "y": -0.1944513745743368
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.04706633058093352,
+      "y": -0.19498489045185377
+    }
+  ],
+  "metadata": {
+    "figure": "cirintan-5.gif",
+    "detected_radius_px": 26.80168792501869,
+    "explained_ink": 0.6383,
+    "detected_centres": [
+      [
+        26.99,
+        117.81
+      ],
+      [
+        80.03,
+        117.83
+      ],
+      [
+        26.88,
+        64.68
+      ],
+      [
+        126.34,
+        163.96
+      ],
+      [
+        53.63,
+        163.85
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}

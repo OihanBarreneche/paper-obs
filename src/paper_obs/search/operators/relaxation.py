@@ -106,6 +106,51 @@ def _largest_valid(
     return low
 
 
+def fit_layout_scale(
+    problem: Problem,
+    candidate: Candidate,
+    *,
+    upper: float | None = None,
+    iterations: int = 32,
+    origin: str = "fit_layout_scale",
+) -> Candidate:
+    """Return the same layout, enlarged about the origin, at the largest accepted scale.
+
+    increase_scale grows the shapes about their anchors, which is what a search wants: the
+    layout is the finding and the size is what is missing. A layout read off a drawing is
+    the other way round -- the drawing fixes the arrangement only up to a factor, so its
+    anchors have to move with the scale. The predicate stays monotone: a layout that
+    overflows or overlaps at one scale does the same at any larger one.
+    """
+    if not validate(problem, candidate).valid:
+        return candidate
+
+    def at(value: float) -> Candidate:
+        factor = value / candidate.scale
+        return candidate.derive(
+            scale=value,
+            placements=tuple(
+                replace(item, x=item.x * factor, y=item.y * factor)
+                for item in candidate.placements
+            ),
+            origin=origin,
+        )
+
+    def accepts(value: float) -> bool:
+        return validate(problem, at(value)).valid
+
+    low = candidate.scale
+    high = scale_bounds(problem).high if upper is None else upper
+    if high <= low:
+        high = low * 2.0
+    while high < 1e6 and accepts(high):
+        low, high = high, high * 2.0
+    if high >= 1e6:
+        return candidate
+    retained = _largest_valid(low, high, accepts, iterations)
+    return candidate if retained <= candidate.scale else at(retained)
+
+
 def grow_sizes(
     problem: Problem,
     candidate: Candidate,

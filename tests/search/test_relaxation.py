@@ -26,6 +26,7 @@ from paper_obs.geometry import evaluate, scale_bounds
 from paper_obs.search import (
     compact,
     contract_scale,
+    fit_layout_scale,
     grid_initialize,
     grow_sizes,
     increase_scale,
@@ -280,3 +281,49 @@ def test_a_factor_outside_the_unit_interval_is_refused() -> None:
     for factor in (0.0, 1.0, 1.5):
         with pytest.raises(ValueError, match="factor must be in"):
             contract_scale(problem, grid, factor=factor)
+
+
+def _layout_problem() -> Problem:
+    """Four unit discs in a 4 x 4 square: a 2 x 2 layout reaches scale 1 exactly."""
+    return Problem(
+        "layout-square",
+        Arena.rectangle(4.0, 4.0),
+        Circle(),
+        MaximizeScale(count=4),
+        seed=1,
+    )
+
+
+def test_fit_layout_scale_grows_a_layout_about_the_origin() -> None:
+    """The anchors move with the scale: this fits a layout, not a set of copies."""
+    problem = _layout_problem()
+    corners = ((-1.0, -1.0), (1.0, -1.0), (-1.0, 1.0), (1.0, 1.0))
+    seeded = Candidate(
+        "reading",
+        problem.problem_id,
+        scale=0.25,
+        placements=tuple(
+            Placement(f"s{index:03d}", x * 0.25, y * 0.25) for index, (x, y) in enumerate(corners)
+        ),
+    )
+    assert evaluate(problem, seeded).valid
+    grown = fit_layout_scale(problem, seeded)
+    after = evaluate(problem, grown)
+    assert after.valid
+    assert after.primary > evaluate(problem, seeded).primary
+    # Growing the layout as one keeps the reading: the far corner is still the far corner.
+    assert grown.placements[3].x == pytest.approx(grown.placements[3].y, rel=1e-9)
+    assert grown.placements[3].x > grown.placements[0].x
+
+
+def test_fit_layout_scale_leaves_an_invalid_layout_alone() -> None:
+    """No scale is known to be good for a broken reading, so none is guessed."""
+    problem = _layout_problem()
+    overlapping = Candidate(
+        "overlapping",
+        problem.problem_id,
+        scale=0.5,
+        placements=(Placement("s000", 0.0, 0.0), Placement("s001", 0.2, 0.0)),
+    )
+    assert not evaluate(problem, overlapping).valid
+    assert fit_layout_scale(problem, overlapping) is overlapping

@@ -1,0 +1,75 @@
+{
+  "kind": "candidate",
+  "candidate_id": "c-55af1f26df",
+  "problem_id": "circles-6-in-smallest-triangle",
+  "scale": 0.13391138175497172,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-119d712b53"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.268035097161505,
+      "y": -0.15472290081570517
+    },
+    {
+      "shape_id": "s001",
+      "x": -6.509208023552287e-06,
+      "y": -0.15476375283984126
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.1340622930099351,
+      "y": 0.07732480280728866
+    },
+    {
+      "shape_id": "s003",
+      "x": -8.196847972945578e-06,
+      "y": 0.3095133083225313
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.2680586836964732,
+      "y": -0.15476375283984115
+    },
+    {
+      "shape_id": "s005",
+      "x": -0.13395726758925638,
+      "y": 0.07750671217199076
+    }
+  ],
+  "metadata": {
+    "figure": "cirintri-ct6.gif",
+    "detected_radius_px": 22.862441692314466,
+    "explained_ink": 0.7236,
+    "detected_centres": [
+      [
+        134.22,
+        128.17
+      ],
+      [
+        89.33,
+        128.14
+      ],
+      [
+        111.85,
+        89.26
+      ],
+      [
+        89.28,
+        50.23
+      ],
+      [
+        44.39,
+        128.15
+      ],
+      [
+        66.98,
+        89.18
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}

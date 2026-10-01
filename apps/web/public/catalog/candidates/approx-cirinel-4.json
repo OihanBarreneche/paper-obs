@@ -1,0 +1,57 @@
+{
+  "kind": "candidate",
+  "candidate_id": "c-a680ff68dc",
+  "problem_id": "circles-4-in-smallest-ellipse",
+  "scale": 0.5000479503319489,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-9e5247d55b"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.00036209067700803614,
+      "y": 0.4999685670133184
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.8826218456761508,
+      "y": 0.00037242405410940456
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.0003396103123584956,
+      "y": -0.500166475491533
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.8930634946204539,
+      "y": 0.0006300816429405456
+    }
+  ],
+  "metadata": {
+    "figure": "cirinel-e4.gif",
+    "detected_radius_px": 47.621906930293896,
+    "explained_ink": 0.6931,
+    "detected_centres": [
+      [
+        129.59,
+        47.75
+      ],
+      [
+        211.76,
+        95.06
+      ],
+      [
+        129.6,
+        142.31
+      ],
+      [
+        47.56,
+        95.06
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}

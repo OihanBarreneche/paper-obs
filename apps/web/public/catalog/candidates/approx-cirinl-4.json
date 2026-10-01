@@ -1,0 +1,57 @@
+{
+  "kind": "candidate",
+  "candidate_id": "c-ed449015dc",
+  "problem_id": "circles-4-in-smallest-l",
+  "scale": 0.18834826078072475,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-9e467c425d"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.10731952106308257,
+      "y": 0.39463081972808567
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.3949850725526085,
+      "y": -0.10501492744739144
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.03863352290159149,
+      "y": -0.22831840588594193
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.22831840588594193,
+      "y": 0.03752842278994315
+    }
+  ],
+  "metadata": {
+    "figure": "cirinl-4.gif",
+    "detected_radius_px": 31.519693895922615,
+    "explained_ink": 0.5936,
+    "detected_centres": [
+      [
+        51.54,
+        30.92
+      ],
+      [
+        134.14,
+        113.57
+      ],
+      [
+        75.07,
+        134.37
+      ],
+      [
+        30.7,
+        89.97
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}

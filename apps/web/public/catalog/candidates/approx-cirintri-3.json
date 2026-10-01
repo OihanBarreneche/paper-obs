@@ -1,0 +1,48 @@
+{
+  "kind": "candidate",
+  "candidate_id": "c-383a83b323",
+  "problem_id": "circles-3-in-smallest-triangle",
+  "scale": 0.18295103456238027,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-700e0583a8"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.18311951331393914,
+      "y": -0.10572410085216322
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.18311951343316293,
+      "y": -0.10572410003243264
+    },
+    {
+      "shape_id": "s002",
+      "x": 3.6245009727905364e-10,
+      "y": 0.21144820069264733
+    }
+  ],
+  "metadata": {
+    "figure": "cirintri-ct3.gif",
+    "detected_radius_px": 30.98177176926338,
+    "explained_ink": 0.6176,
+    "detected_centres": [
+      [
+        120.05,
+        119.98
+      ],
+      [
+        58.7,
+        119.99
+      ],
+      [
+        89.35,
+        66.8
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}
