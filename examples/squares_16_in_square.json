@@ -1,0 +1,31 @@
+{
+  "problem_id": "squares-16-in-square",
+  "name": "16 squares in a square",
+  "description": "16 axis-aligned unit squares in a 10 x 10 square. A perfect packing exists at scale 2.5, which makes this instance a check on the polygon predicates and on the density metric. The solution loaded by default is the 4 x 4 grid at scale 2.5, a perfect packing: density 1, void 0.",
+  "seed": 660,
+  "arena": {
+    "name": "square",
+    "shape": {
+      "type": "rect",
+      "width": 10.0,
+      "height": 10.0
+    }
+  },
+  "shape": {
+    "type": "regular_polygon",
+    "sides": 4,
+    "side": 1.0
+  },
+  "objective": {
+    "type": "maximize_scale",
+    "count": 16
+  },
+  "rotation": {
+    "type": "rotation_policy",
+    "mode": "fixed",
+    "angles": [
+      0.0
+    ]
+  },
+  "constraints": []
+}

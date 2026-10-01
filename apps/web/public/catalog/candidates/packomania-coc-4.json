@@ -1,0 +1,32 @@
+{
+  "kind": "candidate",
+  "candidate_id": "packomania-coc-4-published",
+  "problem_id": "packomania-coc-4",
+  "scale": 0.40054381631,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.216772751325,
+      "y": -0.523335716201
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.523335716201,
+      "y": -0.216772751325
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.523335716201,
+      "y": 0.216772751325
+    },
+    {
+      "shape_id": "s003",
+      "x": 0.216772751325,
+      "y": 0.523335716201
+    }
+  ],
+  "metadata": {}
+}

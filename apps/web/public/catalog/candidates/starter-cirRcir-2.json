@@ -1,0 +1,25 @@
+{
+  "candidate_id": "starter-cirRcir-2",
+  "problem_id": "circles-2-total-perimeter-in-circle",
+  "scale": 1,
+  "origin": "source-derived",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0,
+      "y": -0.3333333333333333,
+      "scale": 0.6666666666666666
+    },
+    {
+      "shape_id": "s001",
+      "x": 0,
+      "y": 0.6666666666666666,
+      "scale": 0.3333333333333333
+    }
+  ],
+  "metadata": {
+    "source": "https://erich-friedman.github.io/packing/cirRcir/"
+  }
+}

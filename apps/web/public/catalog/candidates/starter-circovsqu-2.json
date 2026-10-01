@@ -1,0 +1,23 @@
+{
+  "candidate_id": "starter-circovsqu-2",
+  "problem_id": "circles-2-covering-square",
+  "scale": 1,
+  "origin": "source-derived",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.4472135954999579,
+      "y": 0
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.4472135954999579,
+      "y": 0
+    }
+  ],
+  "metadata": {
+    "source": "https://erich-friedman.github.io/packing/circovsqu/"
+  }
+}

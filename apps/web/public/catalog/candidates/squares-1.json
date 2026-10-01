@@ -1,0 +1,16 @@
+{
+  "candidate_id": "squares-1-published",
+  "problem_id": "squares-1-in-smallest-square",
+  "scale": 1,
+  "origin": "published",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.5,
+      "y": 0.5
+    }
+  ],
+  "metadata": {}
+}

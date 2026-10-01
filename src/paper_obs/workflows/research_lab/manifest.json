@@ -1,0 +1,124 @@
+{
+  "name": "W4 · Research lab",
+  "description": "Each turn, a planner proposes distinct ideas; teams build them in parallel, a critic attacks each result, the builder answers, and the engine keeps the best valid result.",
+  "parameters": [
+    {"name": "rounds", "label": "Maximum turns", "type": "integer", "default": 0, "help": "Turns the run may take; a dash means no ceiling"},
+    {"name": "teams", "label": "Teams per turn", "type": "integer", "default": 3, "help": "Teams started in parallel each turn, one per idea: a builder and a critic each"},
+    {"name": "reply_limit", "label": "Model replies per turn", "type": "integer", "default": 9, "help": "Model replies each builder may make before the critique; a dash means no ceiling"},
+    {"name": "tool_limit", "label": "Tool calls per turn", "type": "integer", "default": 12, "help": "Tool calls each builder may make before the critique; a dash means no ceiling"},
+    {"name": "sandbox", "label": "Python sandbox", "type": "flag", "default": 1, "help": "Builders may run Python programs in an isolated sandbox to compute positions; needs Deno"},
+    {"name": "stall_limit", "label": "Turns without progress before stopping", "type": "integer", "default": 4, "help": "Turns in a row that may improve nothing before the run ends; a dash means no such stop"},
+    {"name": "share_reference", "label": "Tell the agent the published record", "type": "flag", "default": 0, "help": "A comparison point, not a target; this changes nothing else about the run."},
+    {"name": "seconds", "label": "Maximum total duration", "type": "duration", "default": 0, "help": "Maximum total run time; zero or a dash means no deadline"}
+  ],
+  "nodes": [
+    {
+      "id": "planner", "label": "Planner", "kind": "agent", "tools": false,
+      "help": "Reflects on the last turn and its critiques, and proposes one distinct idea per team",
+      "details": [
+        "It reads the problem, the run's best arrangement, the journal of every turn and each team's report: what was built, what its critic found, and whether the critique paid off.",
+        "It has no tools: its one answer is a structured list of ideas, one per team, each with where it starts."
+      ]
+    },
+    {
+      "id": "team:build", "label": "Builder", "kind": "agent", "parallel": "teams",
+      "help": "Each team builds its idea on its own board",
+      "details": [
+        "LangGraph's Send starts one team per idea, and the teams run at the same time. A team is a small graph of its own: build, critique, revise.",
+        "The builder is an agent with the engine's tools. With the sandbox on, it can also write Python programs that compute positions instead of guessing them; the engine judges what they return.",
+        "The sandbox is LangChain's Pyodide runner: Python compiled to WebAssembly, run by Deno, with no access to the lab's files or to the network."
+      ]
+    },
+    {
+      "id": "team:critique", "label": "Critic", "kind": "agent", "parallel": "teams", "tools": false,
+      "help": "Attacks the builder's best arrangement and names one move",
+      "details": [
+        "A second agent that can only read the arrangement: its state, its empty regions, a shape's neighbourhood.",
+        "It answers a structured critique: the weakest point, the engine's numbers that show it, and one concrete move for the builder."
+      ]
+    },
+    {
+      "id": "team:revise", "label": "Revision", "kind": "agent", "parallel": "teams",
+      "help": "The builder answers the critique in its own conversation",
+      "details": [
+        "The builder takes up its conversation where it left it, with the critique added, and a short allowance of its own.",
+        "It tries the move and polishes; the critique paid off when the engine finds the answer better than the builder's best before it."
+      ]
+    },
+    {
+      "id": "select", "label": "Engine's choice", "kind": "engine",
+      "help": "Keeps the best valid arrangement any team reached",
+      "details": [
+        "No model decides here: the engine ranks every arrangement the teams produced, and the run keeps the best valid one.",
+        "Each team's turn is recorded with its builder's and critic's replies told apart, its critique, and whether the critique paid off."
+      ]
+    },
+    {
+      "id": "route", "label": "End the run?", "kind": "route",
+      "help": "Too many turns in a row improve nothing, or a ceiling is reached",
+      "details": [
+        "Ceilings: turns, replies, tool calls, time and cost, for the whole run.",
+        "Otherwise the planner proposes new ideas from the run's best arrangement, the journal and the reports, never from a conversation."
+      ]
+    }
+  ],
+  "edges": [
+    {"from": "planner", "to": "team:build", "label": ""},
+    {"from": "team:build", "to": "team:critique", "label": ""},
+    {"from": "team:critique", "to": "team:revise", "label": ""},
+    {"from": "team:revise", "to": "select", "label": ""},
+    {"from": "select", "to": "route", "label": ""},
+    {"from": "route", "to": "planner", "label": "again"},
+    {"from": "route", "to": "end", "label": "done"}
+  ],
+  "translations": {
+    "fr": {
+      "W4 · Research lab": "W4 · Laboratoire de recherche",
+      "Each turn, a planner proposes distinct ideas; teams build them in parallel, a critic attacks each result, the builder answers, and the engine keeps the best valid result.": "À chaque tour, un planificateur propose des idées distinctes ; des équipes les construisent en parallèle, un critique attaque chaque résultat, le constructeur répond, et le moteur garde le meilleur résultat valide.",
+      "Maximum turns": "Tours max",
+      "Turns the run may take; a dash means no ceiling": "Tours que l’exécution peut prendre ; un tiret signifie aucune limite",
+      "Teams per turn": "Équipes par tour",
+      "Teams started in parallel each turn, one per idea: a builder and a critic each": "Équipes lancées en parallèle à chaque tour, une par idée : chacune a un constructeur et un critique",
+      "Model replies per turn": "Réponses du modèle par tour",
+      "Model replies each builder may make before the critique; a dash means no ceiling": "Réponses que chaque constructeur peut faire avant la critique ; un tiret signifie aucune limite",
+      "Tool calls per turn": "Appels d’outils par tour",
+      "Tool calls each builder may make before the critique; a dash means no ceiling": "Appels d’outils que chaque constructeur peut faire avant la critique ; un tiret signifie aucune limite",
+      "Python sandbox": "Bac à sable Python",
+      "Builders may run Python programs in an isolated sandbox to compute positions; needs Deno": "Les constructeurs peuvent exécuter des programmes Python dans un bac à sable isolé pour calculer les positions ; nécessite Deno",
+      "Turns without progress before stopping": "Tours sans progrès avant l’arrêt",
+      "Turns in a row that may improve nothing before the run ends; a dash means no such stop": "Tours consécutifs sans amélioration avant la fin de l’exécution ; un tiret désactive cet arrêt",
+      "Tell the agent the published record": "Indiquer le record publié à l’agent",
+      "A comparison point, not a target; this changes nothing else about the run.": "Un point de comparaison, pas un objectif ; cela ne change rien d’autre à l’exécution.",
+      "Maximum total duration": "Durée totale max",
+      "Maximum total run time; zero or a dash means no deadline": "Durée maximale de l’exécution ; zéro ou un tiret signifie aucune échéance",
+      "Planner": "Planificateur",
+      "Reflects on the last turn and its critiques, and proposes one distinct idea per team": "Tire les leçons du dernier tour et de ses critiques, et propose une idée distincte par équipe",
+      "It reads the problem, the run's best arrangement, the journal of every turn and each team's report: what was built, what its critic found, and whether the critique paid off.": "Il lit le problème, le meilleur arrangement de l’exécution, le journal de chaque tour et le rapport de chaque équipe : ce qui a été construit, ce que son critique a trouvé, et si la critique a payé.",
+      "It has no tools: its one answer is a structured list of ideas, one per team, each with where it starts.": "Il n’a pas d’outils : sa seule réponse est une liste structurée d’idées, une par équipe, chacune avec son point de départ.",
+      "Builder": "Constructeur",
+      "Each team builds its idea on its own board": "Chaque équipe construit son idée sur son propre plateau",
+      "LangGraph's Send starts one team per idea, and the teams run at the same time. A team is a small graph of its own: build, critique, revise.": "Le Send de LangGraph lance une équipe par idée, et les équipes travaillent en même temps. Une équipe est un petit graphe à elle seule : construire, critiquer, réviser.",
+      "The builder is an agent with the engine's tools. With the sandbox on, it can also write Python programs that compute positions instead of guessing them; the engine judges what they return.": "Le constructeur est un agent muni des outils du moteur. Avec le bac à sable, il peut aussi écrire des programmes Python qui calculent les positions au lieu de les deviner ; le moteur juge ce qu’ils renvoient.",
+      "The sandbox is LangChain's Pyodide runner: Python compiled to WebAssembly, run by Deno, with no access to the lab's files or to the network.": "Le bac à sable est l’exécuteur Pyodide de LangChain : Python compilé en WebAssembly, exécuté par Deno, sans accès aux fichiers du labo ni au réseau.",
+      "Critic": "Critique",
+      "Attacks the builder's best arrangement and names one move": "Attaque le meilleur arrangement du constructeur et propose un mouvement",
+      "A second agent that can only read the arrangement: its state, its empty regions, a shape's neighbourhood.": "Un second agent qui peut seulement lire l’arrangement : son état, ses zones vides, le voisinage d’une forme.",
+      "It answers a structured critique: the weakest point, the engine's numbers that show it, and one concrete move for the builder.": "Il répond par une critique structurée : le point le plus faible, les chiffres du moteur qui le montrent, et un mouvement concret pour le constructeur.",
+      "Revision": "Révision",
+      "The builder answers the critique in its own conversation": "Le constructeur répond à la critique dans sa propre conversation",
+      "The builder takes up its conversation where it left it, with the critique added, and a short allowance of its own.": "Le constructeur reprend sa conversation là où il l’avait laissée, avec la critique en plus, et une petite allocation à lui.",
+      "It tries the move and polishes; the critique paid off when the engine finds the answer better than the builder's best before it.": "Il essaie le mouvement et polit ; la critique a payé quand le moteur juge la réponse meilleure que le meilleur arrangement du constructeur avant elle.",
+      "Engine's choice": "Choix du moteur",
+      "Keeps the best valid arrangement any team reached": "Garde le meilleur arrangement valide atteint par une équipe",
+      "No model decides here: the engine ranks every arrangement the teams produced, and the run keeps the best valid one.": "Aucun modèle ne décide ici : le moteur classe tous les arrangements produits par les équipes, et l’exécution garde le meilleur valide.",
+      "Each team's turn is recorded with its builder's and critic's replies told apart, its critique, and whether the critique paid off.": "Le tour de chaque équipe est enregistré avec les réponses du constructeur et du critique distinguées, sa critique, et si la critique a payé.",
+      "End the run?": "Fin de l’exécution ?",
+      "Too many turns in a row improve nothing, or a ceiling is reached": "Trop de tours consécutifs sans amélioration, ou un plafond atteint",
+      "Ceilings: turns, replies, tool calls, time and cost, for the whole run.": "Plafonds : tours, réponses, appels d’outils, temps et coût, pour toute l’exécution.",
+      "Otherwise the planner proposes new ideas from the run's best arrangement, the journal and the reports, never from a conversation.": "Sinon, le planificateur propose de nouvelles idées à partir du meilleur arrangement, du journal et des rapports, jamais d’une conversation.",
+      "team": "équipe",
+      "builder": "constructeur",
+      "critic": "critique"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "name": "W3 · Parallel exploration",
+  "description": "Each turn, a strategist proposes distinct ideas; explorers build them in parallel, and the engine keeps the best valid result.",
+  "parameters": [
+    {"name": "rounds", "label": "Maximum turns", "type": "integer", "default": 0, "help": "Turns the run may take; a dash means no ceiling"},
+    {"name": "explorers", "label": "Explorers per turn", "type": "integer", "default": 3, "help": "Explorers started in parallel each turn, one per idea"},
+    {"name": "reply_limit", "label": "Model replies per turn", "type": "integer", "default": 9, "help": "Model replies each explorer may make in a turn; a dash means no ceiling"},
+    {"name": "tool_limit", "label": "Tool calls per turn", "type": "integer", "default": 12, "help": "Tool calls each explorer may make in a turn; a dash means no ceiling"},
+    {"name": "stall_limit", "label": "Turns without progress before stopping", "type": "integer", "default": 4, "help": "Turns in a row that may improve nothing before the run ends; a dash means no such stop"},
+    {"name": "share_reference", "label": "Tell the agent the published record", "type": "flag", "default": 0, "help": "A comparison point, not a target; this changes nothing else about the run."},
+    {"name": "seconds", "label": "Maximum total duration", "type": "duration", "default": 0, "help": "Maximum total run time; zero or a dash means no deadline"}
+  ],
+  "nodes": [
+    {"id": "strategist", "label": "Strategist", "kind": "agent", "tools": false, "help": "Reflects on the last turn and proposes one distinct idea per explorer",
+     "details": [
+       "It reads the problem, the run's best arrangement, the journal of every turn and the explorers' last reports.",
+       "It has no tools: its one answer is a structured list of ideas, one per explorer, sharing nothing with each other, each with where it starts."
+     ]},
+    {"id": "explorer", "label": "Explorer", "kind": "agent", "parallel": "explorers", "help": "Build the ideas in parallel, each on its own board",
+     "details": [
+       "LangGraph's Send starts one explorer per idea, and they run at the same time.",
+       "Each is a fresh agent with the engine's tools, working on its own board, so no explorer disturbs another.",
+       "The strategist chooses where each starts: a copy of the run's best arrangement to refine, or an empty board for a new topology.",
+       "When its allowance runs out, its last reply is asked for without tools: it is its report to the strategist."
+     ]},
+    {"id": "select", "label": "Engine's choice", "kind": "engine", "help": "Keeps the best valid arrangement any explorer reached",
+     "details": [
+       "No model decides here: the engine ranks every arrangement the explorers produced, and the run keeps the best valid one.",
+       "The turn is recorded once, with every explorer's tool calls told apart by name."
+     ]},
+    {"id": "route", "label": "End the run?", "kind": "route", "help": "Too many turns in a row improve nothing, or a ceiling is reached",
+     "details": [
+       "Ceilings: turns, replies, tool calls, time and cost, for the whole run.",
+       "Otherwise the strategist proposes new ideas from the run's best arrangement, the journal and the reports, never from a conversation."
+     ]}
+  ],
+  "edges": [
+    {"from": "strategist", "to": "explorer", "label": ""},
+    {"from": "explorer", "to": "select", "label": ""},
+    {"from": "select", "to": "route", "label": ""},
+    {"from": "route", "to": "strategist", "label": "again"},
+    {"from": "route", "to": "end", "label": "done"}
+  ],
+  "translations": {"fr": {
+    "W3 · Parallel exploration": "W3 · Exploration parallèle",
+    "Each turn, a strategist proposes distinct ideas; explorers build them in parallel, and the engine keeps the best valid result.": "À chaque tour, un stratège propose des idées distinctes ; des explorateurs les construisent en parallèle, et le moteur garde le meilleur résultat valide.",
+    "Maximum turns": "Tours max",
+    "Turns the run may take; a dash means no ceiling": "Tours que l’exécution peut prendre ; un tiret signifie aucune limite",
+    "Explorers per turn": "Explorateurs par tour",
+    "Explorers started in parallel each turn, one per idea": "Explorateurs lancés en parallèle à chaque tour, un par idée",
+    "Model replies per turn": "Réponses du modèle par tour",
+    "Model replies each explorer may make in a turn; a dash means no ceiling": "Réponses du modèle que chaque explorateur peut produire dans un tour ; un tiret signifie aucune limite",
+    "Tool calls per turn": "Outils par tour",
+    "Tool calls each explorer may make in a turn; a dash means no ceiling": "Appels d’outils que chaque explorateur peut faire dans un tour ; un tiret signifie aucune limite",
+    "Turns without progress before stopping": "Tours sans progrès avant l’arrêt",
+    "Turns in a row that may improve nothing before the run ends; a dash means no such stop": "Tours d’affilée qui peuvent ne rien améliorer avant la fin de l’exécution ; un tiret supprime cet arrêt",
+    "Tell the agent the published record": "Indiquer à l’agent le record publié",
+    "A comparison point, not a target; this changes nothing else about the run.": "Un point de comparaison, pas une cible ; cela ne change rien d’autre dans l’exécution.",
+    "Maximum total duration": "Durée maximale totale",
+    "Maximum total run time; zero or a dash means no deadline": "Durée totale maximale de l’exécution ; zéro ou un tiret signifie aucune échéance",
+    "Strategist": "Stratège",
+    "Reflects on the last turn and proposes one distinct idea per explorer": "Tire le bilan du dernier tour et propose une idée distincte par explorateur",
+    "It reads the problem, the run's best arrangement, the journal of every turn and the explorers' last reports.": "Il lit le problème, le meilleur arrangement de l’exécution, le journal de chaque tour et les derniers comptes rendus des explorateurs.",
+    "It has no tools: its one answer is a structured list of ideas, one per explorer, sharing nothing with each other, each with where it starts.": "Il n’a pas d’outils : sa seule réponse est une liste structurée d’idées, une par explorateur, sans rien de commun entre elles, chacune avec son point de départ.",
+    "Explorer": "Explorateur",
+    "Build the ideas in parallel, each on its own board": "Construisent les idées en parallèle, chacun sur son propre plateau",
+    "LangGraph's Send starts one explorer per idea, and they run at the same time.": "Le Send de LangGraph lance un explorateur par idée, et ils tournent en même temps.",
+    "Each is a fresh agent with the engine's tools, working on its own board, so no explorer disturbs another.": "Chacun est un agent neuf avec les outils du moteur, qui travaille sur son propre plateau : aucun explorateur ne gêne les autres.",
+    "The strategist chooses where each starts: a copy of the run's best arrangement to refine, or an empty board for a new topology.": "Le stratège choisit d’où part chacun : une copie du meilleur arrangement à affiner, ou un plateau vide pour une nouvelle topologie.",
+    "When its allowance runs out, its last reply is asked for without tools: it is its report to the strategist.": "Quand son allocation est épuisée, sa dernière réponse est demandée sans outils : c’est son compte rendu au stratège.",
+    "Engine's choice": "Choix du moteur",
+    "Keeps the best valid arrangement any explorer reached": "Garde le meilleur arrangement valide atteint par un explorateur",
+    "No model decides here: the engine ranks every arrangement the explorers produced, and the run keeps the best valid one.": "Aucun modèle ne décide ici : le moteur classe chaque arrangement produit par les explorateurs, et l’exécution garde le meilleur valide.",
+    "The turn is recorded once, with every explorer's tool calls told apart by name.": "Le tour est enregistré une seule fois, les appels d’outils de chaque explorateur étant distingués par leur nom.",
+    "End the run?": "Arrêter ?",
+    "Too many turns in a row improve nothing, or a ceiling is reached": "Trop de tours d’affilée n’améliorent rien, ou une limite est atteinte",
+    "Ceilings: turns, replies, tool calls, time and cost, for the whole run.": "Plafonds : tours, réponses, appels d’outils, durée et coût, pour toute l’exécution.",
+    "Otherwise the strategist proposes new ideas from the run's best arrangement, the journal and the reports, never from a conversation.": "Sinon le stratège propose de nouvelles idées depuis le meilleur arrangement, le journal et les comptes rendus, jamais depuis une conversation.",
+    "explorer": "explorateur"
+  }}
+}

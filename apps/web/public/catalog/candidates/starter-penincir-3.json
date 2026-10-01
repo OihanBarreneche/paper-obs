@@ -1,0 +1,31 @@
+{
+  "candidate_id": "starter-penincir-3",
+  "problem_id": "pentagons-3-in-smallest-circle",
+  "scale": 1,
+  "origin": "source-derived-approximation",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.73519331827,
+      "y": 0.428917542695,
+      "rotation": 23.76506322
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.82313787753,
+      "y": 0.21616045505,
+      "rotation": 104.64983054
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.11083975061,
+      "y": -0.844118611495,
+      "rotation": -7.46680242
+    }
+  ],
+  "metadata": {
+    "source": "https://erich-friedman.github.io/packing/penincir/"
+  }
+}

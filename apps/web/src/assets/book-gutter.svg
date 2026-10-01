@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 900" preserveAspectRatio="none">
+  <defs><linearGradient id="fold" x1="0" x2="1"><stop offset="0" stop-color="#fffdfb" stop-opacity="0"/><stop offset=".22" stop-color="#d5c7d8" stop-opacity=".18"/><stop offset=".36" stop-color="#fffdfb" stop-opacity=".9"/><stop offset=".50" stop-color="#69556e" stop-opacity=".27"/><stop offset=".64" stop-color="#fffdfb" stop-opacity=".9"/><stop offset=".79" stop-color="#d2c4d6" stop-opacity=".2"/><stop offset="1" stop-color="#fffdfb" stop-opacity="0"/></linearGradient></defs>
+  <path d="M0 0H64V900H0Z" fill="url(#fold)"/>
+  <path d="M31 0C30 119 33 226 31 337S32 531 30 637 33 821 31 900" fill="none" stroke="#6c5b71" stroke-opacity=".27" stroke-width="1.4"/>
+  <path d="M29 0C28 177 30 317 29 474S28 739 29 900M34 0C33 147 35 301 34 461S35 762 34 900" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.1"/>
+</svg>

@@ -1,0 +1,25 @@
+{
+  "problem_id": "squares-5-in-smallest-square",
+  "name": "5 squares in the smallest square",
+  "description": "The smallest square containing 5 unit squares, read directly: the shapes are placed freely and the container is what the engine measures around them. The optimum is 2 + sqrt(2)/2 = 2.70710678118654, proved by Frits Gobel in 1979 (Friedman's packing pages), and it is a rigid packing: four squares in the corners and one turned 45 degrees in the middle. The direct reading scores 1/side, which is the common scale the same instance scores read the other way round on a unit arena. The solution loaded by default is Goebel's rigid packing: four squares in the corners and one turned 45 degrees, whose side is 2 + sqrt(2)/2 exactly.",
+  "seed": 5,
+  "shape": {
+    "type": "regular_polygon",
+    "sides": 4,
+    "side": 1.0
+  },
+  "objective": {
+    "type": "minimize_container",
+    "count": 5,
+    "container": "square"
+  },
+  "rotation": {
+    "type": "rotation_policy",
+    "mode": "free",
+    "angles": [
+      0.0
+    ]
+  },
+  "constraints": [],
+  "metadata": {}
+}

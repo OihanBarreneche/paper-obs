@@ -1,0 +1,32 @@
+{
+  "kind": "candidate",
+  "candidate_id": "packomania-ccq-4-published",
+  "problem_id": "packomania-ccq-4",
+  "scale": 0.20560464675956822,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.7673269879789604,
+      "y": 0.20560464675956822
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.21089768056293268,
+      "y": 0.22599577034203727
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.5617223412193921,
+      "y": 0.5617223412193921
+    },
+    {
+      "shape_id": "s003",
+      "x": 0.20560464675956822,
+      "y": 0.7673269879789604
+    }
+  ],
+  "metadata": {}
+}

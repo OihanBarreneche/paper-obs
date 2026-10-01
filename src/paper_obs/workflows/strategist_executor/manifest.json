@@ -1,0 +1,69 @@
+{
+  "name": "W2 · Strategist and executor",
+  "description": "Each turn, a strategist reflects on the last attempt and chooses one idea; a fresh executor builds it with the engine's tools and reports back.",
+  "parameters": [
+    {"name": "rounds", "label": "Maximum turns", "type": "integer", "default": 0, "help": "Turns the run may take; a dash means no ceiling"},
+    {"name": "reply_limit", "label": "Model replies per turn", "type": "integer", "default": 9, "help": "Model replies one turn may make; a dash means no ceiling"},
+    {"name": "tool_limit", "label": "Tool calls per turn", "type": "integer", "default": 12, "help": "Tool calls one turn may make; a dash means no ceiling"},
+    {"name": "stall_limit", "label": "Turns without progress before stopping", "type": "integer", "default": 4, "help": "Turns in a row that may improve nothing before the run ends; a dash means no such stop"},
+    {"name": "share_reference", "label": "Tell the agent the published record", "type": "flag", "default": 0, "help": "A comparison point, not a target; this changes nothing else about the run."},
+    {"name": "seconds", "label": "Maximum total duration", "type": "duration", "default": 0, "help": "Maximum total run time; zero or a dash means no deadline"}
+  ],
+  "nodes": [
+    {"id": "strategist", "label": "Strategist", "kind": "agent", "tools": false, "help": "Reflects on the last attempt and chooses the idea this turn builds",
+     "details": [
+       "It reads the problem, the run's best arrangement with its verdict, the journal of every turn, the executor's last report and its own last plan.",
+       "It has no tools: its one answer is a structured plan — a reflection on the last attempt, one idea, and a few steps.",
+       "It keeps an idea while it gains, and chooses one that shares nothing with it when the gains flatten.",
+     "It describes the idea by contacts and orientations rather than coordinates, and chooses where the executor starts: the run's best arrangement, or the one the last turn reached when that idea was still gaining."
+     ]},
+    {"id": "executor", "label": "Executor", "kind": "agent", "help": "Builds the plan with the engine's tools, then reports what came of it",
+     "details": [
+       "A fresh agent opens on the plan and the arrangement the strategist chose, and calls the engine's tools to build it.",
+       "The engine judges every arrangement a tool produces; the turn keeps the best valid one it reached.",
+       "When its allowance runs out, its last reply is asked for without tools: it is the report the strategist reads next."
+     ]},
+    {"id": "route", "label": "End the run?", "kind": "route", "help": "The executor gives up, too many turns in a row improve nothing, or a ceiling is reached",
+     "details": [
+       "Ceilings: turns, replies, tool calls, time and cost, for the whole run.",
+       "Otherwise the strategist plans again from the run's best arrangement, the journal and the last report, never from a conversation."
+     ]}
+  ],
+  "edges": [
+    {"from": "strategist", "to": "executor", "label": ""},
+    {"from": "executor", "to": "route", "label": ""},
+    {"from": "route", "to": "strategist", "label": "again"},
+    {"from": "route", "to": "end", "label": "done"}
+  ],
+  "translations": {"fr": {
+    "W2 · Strategist and executor": "W2 · Stratège et exécutant",
+    "Each turn, a strategist reflects on the last attempt and chooses one idea; a fresh executor builds it with the engine's tools and reports back.": "À chaque tour, un stratège tire le bilan de la dernière tentative et choisit une idée ; un exécutant neuf la construit avec les outils du moteur et rend compte.",
+    "Maximum turns": "Tours max",
+    "Turns the run may take; a dash means no ceiling": "Tours que l’exécution peut prendre ; un tiret signifie aucune limite",
+    "Model replies per turn": "Réponses du modèle par tour",
+    "Model replies one turn may make; a dash means no ceiling": "Réponses du modèle qu’un tour peut produire ; un tiret signifie aucune limite",
+    "Tool calls per turn": "Outils par tour",
+    "Tool calls one turn may make; a dash means no ceiling": "Appels d’outils qu’un tour peut faire ; un tiret signifie aucune limite",
+    "Turns without progress before stopping": "Tours sans progrès avant l’arrêt",
+    "Turns in a row that may improve nothing before the run ends; a dash means no such stop": "Tours d’affilée qui peuvent ne rien améliorer avant la fin de l’exécution ; un tiret supprime cet arrêt",
+    "Tell the agent the published record": "Indiquer à l’agent le record publié",
+    "A comparison point, not a target; this changes nothing else about the run.": "Un point de comparaison, pas une cible ; cela ne change rien d’autre dans l’exécution.",
+    "Maximum total duration": "Durée maximale totale",
+    "Maximum total run time; zero or a dash means no deadline": "Durée totale maximale de l’exécution ; zéro ou un tiret signifie aucune échéance",
+    "Strategist": "Stratège",
+    "Reflects on the last attempt and chooses the idea this turn builds": "Tire le bilan de la dernière tentative et choisit l’idée que ce tour construit",
+    "It reads the problem, the run's best arrangement with its verdict, the journal of every turn, the executor's last report and its own last plan.": "Il lit le problème, le meilleur arrangement de l’exécution avec son verdict, le journal de chaque tour, le dernier compte rendu de l’exécutant et son propre dernier plan.",
+    "It has no tools: its one answer is a structured plan — a reflection on the last attempt, one idea, and a few steps.": "Il n’a pas d’outils : sa seule réponse est un plan structuré — un bilan de la dernière tentative, une idée et quelques étapes.",
+    "It describes the idea by contacts and orientations rather than coordinates, and chooses where the executor starts: the run's best arrangement, or the one the last turn reached when that idea was still gaining.": "Il décrit l’idée par ses contacts et ses orientations plutôt que par des coordonnées, et choisit d’où part l’exécutant : le meilleur arrangement, ou celui atteint au tour précédent quand cette idée progressait encore.",
+    "It keeps an idea while it gains, and chooses one that shares nothing with it when the gains flatten.": "Il garde une idée tant qu’elle progresse, et en choisit une sans rien de commun quand les gains s’aplatissent.",
+    "Executor": "Exécutant",
+    "Builds the plan with the engine's tools, then reports what came of it": "Construit le plan avec les outils du moteur, puis rend compte du résultat",
+    "A fresh agent opens on the plan and the arrangement the strategist chose, and calls the engine's tools to build it.": "Un agent neuf s’ouvre sur le plan et le meilleur arrangement de l’exécution, et appelle les outils du moteur pour le construire.",
+    "The engine judges every arrangement a tool produces; the turn keeps the best valid one it reached.": "Le moteur juge chaque disposition produite par un outil ; le tour garde la meilleure disposition valide atteinte.",
+    "When its allowance runs out, its last reply is asked for without tools: it is the report the strategist reads next.": "Quand son allocation est épuisée, sa dernière réponse est demandée sans outils : c’est le compte rendu que le stratège lira ensuite.",
+    "End the run?": "Arrêter ?",
+    "The executor gives up, too many turns in a row improve nothing, or a ceiling is reached": "L’exécutant abandonne, trop de tours d’affilée n’améliorent rien, ou une limite est atteinte",
+    "Ceilings: turns, replies, tool calls, time and cost, for the whole run.": "Plafonds : tours, réponses, appels d’outils, durée et coût, pour toute l’exécution.",
+    "Otherwise the strategist plans again from the run's best arrangement, the journal and the last report, never from a conversation.": "Sinon le stratège planifie à nouveau depuis le meilleur arrangement, le journal et le dernier compte rendu, jamais depuis une conversation."
+  }}
+}

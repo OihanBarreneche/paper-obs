@@ -1,0 +1,32 @@
+{
+  "kind": "candidate",
+  "candidate_id": "packomania-csq-4-published",
+  "problem_id": "packomania-csq-4",
+  "scale": 1.0,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -1.0,
+      "y": -1.0
+    },
+    {
+      "shape_id": "s001",
+      "x": 1.0,
+      "y": -1.0
+    },
+    {
+      "shape_id": "s002",
+      "x": -1.0,
+      "y": 1.0
+    },
+    {
+      "shape_id": "s003",
+      "x": 1.0,
+      "y": 1.0
+    }
+  ],
+  "metadata": {}
+}

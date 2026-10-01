@@ -1,0 +1,10 @@
+.notes-panel__heading { display: flex; justify-content: space-between; align-items: baseline; }
+.notes-panel__heading button { border: 0; border-bottom: 1px solid #b98eca; background: none; color: #80519a; cursor: pointer; font: 12px var(--sans); }
+.notes-panel__tools { display: flex; gap: 5px; margin: 0 0 6px; }
+.notes-panel__tools button { min-width: 28px; padding: 4px 7px; background: #f8f4f9; border: 1px solid #ddd0e0; color: #6d537b; cursor: pointer; font: 12px var(--sans); }
+.notes-panel textarea { display: block; width: 100%; min-height: 110px; resize: vertical; padding: 9px; border: 1px solid #ded3e1; background-color: #fffefc; background-image: linear-gradient(#9a85a50a 1px, transparent 1px); background-size: 100% 26px; color: var(--text); font: 13px/1.55 var(--sans); }
+.notes-panel__preview { min-height: 110px; padding: 5px 0; border-top: 1px solid #e6dce8; }
+.notes-panel__preview h3 { margin: 6px 0; font: 600 23px var(--serif); }
+.notes-panel__preview h4 { margin: 6px 0; font: 600 18px var(--serif); }
+.notes-panel__preview p { margin: 4px 0; line-height: 1.5; }
+.notes-panel > small { display: block; margin-top: 6px; color: #9b8e9f; }

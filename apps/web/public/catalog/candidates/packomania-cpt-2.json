@@ -1,0 +1,22 @@
+{
+  "kind": "candidate",
+  "candidate_id": "packomania-cpt-2-published",
+  "problem_id": "packomania-cpt-2",
+  "scale": 0.437152698242,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.437152698242,
+      "y": 0.14203952192
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.437152698242,
+      "y": 0.14203952192
+    }
+  ],
+  "metadata": {}
+}

@@ -1,0 +1,193 @@
+{
+  "source": "https://erich-friedman.github.io/packing/index.html",
+  "base": "https://erich-friedman.github.io/packing/",
+  "generated": "2026-09-27",
+  "families": [
+    {
+      "slug": "peninsqu",
+      "page": "https://erich-friedman.github.io/packing/peninsqu/",
+      "title": "Pentagons in Squares",
+      "shape": "pentagon",
+      "container": "square",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "pentagon-1-in-smallest-square",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "regular_polygon",
+          "sides": 5,
+          "side": 1.0
+        },
+        "objective": {
+          "type": "minimize_container",
+          "count": 1,
+          "container": "square"
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {}
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n unit pentagons packed inside the smallest known square (with side s).",
+      "instances": [
+        {
+          "counts": [
+            5
+          ],
+          "value": 3.54903,
+          "formula": "",
+          "symbol": "s",
+          "status": "best_known",
+          "attribution": "Found by Jonathan Viquerat in April 2026",
+          "figure": "5.png"
+        },
+        {
+          "counts": [
+            8
+          ],
+          "value": 4.3819,
+          "formula": "",
+          "symbol": "s",
+          "status": "best_known",
+          "attribution": "Found by Aristotle Papowitz in July 2026",
+          "figure": "8.png"
+        },
+        {
+          "counts": [
+            12
+          ],
+          "value": 5.23221,
+          "formula": "",
+          "symbol": "s",
+          "status": "best_known",
+          "attribution": "Found by Timo Berthold et al in May 2026",
+          "figure": "12.png"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Equal Copies"
+    },
+    {
+      "slug": "cirRcir",
+      "page": "https://erich-friedman.github.io/packing/cirRcir/",
+      "title": "Circles in Circles",
+      "shape": "circle",
+      "container": "circle",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "circle-1-total-perimeter-in-circle",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "circle",
+          "radius": 1.0
+        },
+        "objective": {
+          "type": "maximize_total_perimeter",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "disk",
+            "radius": 1.0
+          }
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n circles with the largest possible sum of radii packed inside a unit circle.",
+      "instances": [
+        {
+          "counts": [
+            5
+          ],
+          "value": 1.86684,
+          "formula": "",
+          "symbol": "r",
+          "status": "best_known",
+          "attribution": "Found by Haowei Lin in July 2026",
+          "figure": "5.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Copies to Maximize Total Perimeter"
+    },
+    {
+      "slug": "sqcovcir",
+      "page": "https://erich-friedman.github.io/packing/sqcovcir/",
+      "title": "Squares Covering Circles",
+      "shape": "square",
+      "container": "circle",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "square-1-covering-circle",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "regular_polygon",
+          "sides": 4,
+          "side": 1.0
+        },
+        "objective": {
+          "type": "cover_region",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "disk",
+            "radius": 1.0
+          }
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n unit squares covering the largest known circle (of radius r).",
+      "instances": [
+        {
+          "counts": [
+            7
+          ],
+          "value": 1.24188,
+          "formula": "",
+          "symbol": "r",
+          "status": "best_known",
+          "attribution": "Found by Abdulfayyod Mukhamedov in September 2026",
+          "figure": "scc7.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Covering"
+    }
+  ]
+}

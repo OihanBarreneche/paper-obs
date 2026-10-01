@@ -1,0 +1,74 @@
+/*
+ * The composed-shape library: one editable tile per shape the browser holds.
+ */
+
+.modal__panel--library {
+  width: min(740px, 100%);
+}
+
+.shape-library__empty {
+  padding: 6px 24px 20px;
+}
+
+.shape-library__list {
+  list-style: none;
+  margin: 0;
+  padding: 0 24px;
+}
+
+.shape-library__card {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* The same engine outline as the composer's preview, at tile size. */
+.shape-library__thumb {
+  display: block;
+  width: 104px;
+  height: 76px;
+  background-color: #fffcfb;
+  background-image: linear-gradient(#8d78991e 1px, transparent 1px), linear-gradient(90deg, #8d78991e 1px, transparent 1px);
+  background-size: 18px 18px;
+  border: 1px solid var(--border);
+}
+
+.shape-library__info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.shape-library__info strong {
+  font: 500 18px var(--serif);
+}
+
+.shape-library__info span {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.shape-library__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 620px) {
+  .shape-library__card {
+    grid-template-columns: 84px minmax(0, 1fr);
+  }
+  .shape-library__thumb {
+    width: 84px;
+    height: 64px;
+  }
+  .shape-library__actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "problem_id": "squares-17-in-smallest-square",
+  "name": "17 squares in the smallest square",
+  "description": "The smallest square containing 17 unit squares, read directly. The best known side is 4.67553009360455 (Bidwell 1998, on Hamalainen's 1980 packing), the smallest case whose best known packing holds squares at three different angles; no proof of optimality is known, only the 18th-degree polynomial that fixes the side of that packing. This is the twin of 'squares-17-in-unit-square': the same instance read the other way round, scoring the same number, since the score here is the reciprocal of the side and the score there is the common scale of a unit arena. The solution loaded by default is the published packing itself: its 17 centres were reconstructed from the exact parametric construction in square-17.svg (the entities s, a, b, x1, v0, u1, u2, x3, y4, r5), which is why the engine measures the published side to the last bit and reports no violation.",
+  "seed": 17,
+  "shape": {
+    "type": "regular_polygon",
+    "sides": 4,
+    "side": 1.0
+  },
+  "objective": {
+    "type": "minimize_container",
+    "count": 17,
+    "container": "square"
+  },
+  "rotation": {
+    "type": "rotation_policy",
+    "mode": "free",
+    "angles": [
+      0.0
+    ]
+  },
+  "constraints": [],
+  "metadata": {}
+}

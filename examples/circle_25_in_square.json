@@ -1,0 +1,30 @@
+{
+  "problem_id": "circle-25-in-square",
+  "name": "25 circles in a square",
+  "description": "The reference instance: 25 identical circles, as large as possible, in a 10 x 10 square. The 5 x 5 grid is optimal here, so any search that beats scale 2.0 is wrong. The solution loaded by default is the 5 x 5 grid at scale 2, which is optimal for this instance: any score above it would be an engine bug.",
+  "seed": 39182,
+  "arena": {
+    "name": "square",
+    "shape": {
+      "type": "rect",
+      "width": 10.0,
+      "height": 10.0
+    }
+  },
+  "shape": {
+    "type": "circle",
+    "radius": 0.5
+  },
+  "objective": {
+    "type": "maximize_scale",
+    "count": 25
+  },
+  "rotation": {
+    "type": "rotation_policy",
+    "mode": "fixed",
+    "angles": [
+      0.0
+    ]
+  },
+  "constraints": []
+}

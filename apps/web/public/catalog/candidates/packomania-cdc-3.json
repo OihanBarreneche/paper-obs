@@ -1,0 +1,27 @@
+{
+  "kind": "candidate",
+  "candidate_id": "packomania-cdc-3-published",
+  "problem_id": "packomania-cdc-3",
+  "scale": 0.44667227211,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.243318090365,
+      "y": -0.44667227211
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.530340979262,
+      "y": -0.0
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.243318090365,
+      "y": 0.44667227211
+    }
+  ],
+  "metadata": {}
+}

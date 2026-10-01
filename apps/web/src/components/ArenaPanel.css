@@ -1,0 +1,97 @@
+/*
+ * The button rows of the arena panel: the actions of one part, and the row that
+ * finishes or abandons the polygon being drawn. A part is created by the canvas's
+ * right-click menu, so there is no add row here.
+ */
+
+.builder-actions,
+.builder-draw {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+/*
+ * One dimension of a rectangle: the label, the bar that drags it, and the number
+ * that pins it down. Both dimensions are drawn as the same row, so they read as a
+ * pair, and the bars line up because the labels are held to one width.
+ */
+
+.size {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.size__label {
+  flex: 0 0 52px;
+  color: var(--text-muted);
+}
+
+/*
+ * The shared stylesheet gives a range the full width of its line; in this row it
+ * takes what is left of it instead, and the number keeps its own width.
+ */
+.size .input[type="range"] {
+  flex: 1 1 40px;
+  width: auto;
+}
+
+/* The switch that ties the two rows together, under them. */
+.part > .checkbox {
+  margin: 8px 0 2px;
+}
+
+/*
+ * One part is a card whose head is a band across its top, rather than a hairline
+ * between two cards: the instance's number and its name stand on the strip, so
+ * the eye lands on which part a card is before reading any of its fields. The
+ * band is scoped to this panel's own list, so the shared `.part__head` rule keeps
+ * serving any other host unchanged.
+ *
+ * The band bleeds to the card's edges, which is why its negative margins match the
+ * card padding set here.
+ */
+.parts .part {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.part .part__head {
+  justify-content: flex-start;
+  gap: 8px;
+  margin: -8px -8px 8px;
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--border);
+  border-radius: var(--radius) var(--radius) 0 0;
+  /* A raised tint, with the flat surface standing in for a browser that cannot
+     mix colours: the second declaration is dropped and the first remains. */
+  background: var(--surface-2);
+  background: color-mix(in srgb, var(--accent) 16%, var(--surface));
+  box-shadow: inset 0 1px rgb(255 255 255 / 45%);
+}
+
+/* The number is the band's own mark, so it reads before the name beside it. */
+.part .part__index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font: 600 11px/1 var(--mono);
+}
+
+.part .part__label {
+  min-width: 0;
+  color: var(--text);
+  font: 600 13px/1.2 var(--sans);
+  overflow-wrap: anywhere;
+}

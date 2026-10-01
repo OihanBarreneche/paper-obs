@@ -1,0 +1,16 @@
+/* The guide borrows the tool viewer's window, header and tabs; only its body is its own. */
+.baseline-guide { height: auto; max-height: min(840px, calc(100dvh - 2 * clamp(14px, 3vw, 44px))); }
+.baseline-guide__body { overflow-y: auto; padding-top: 14px; font: 15px/1.55 var(--serif); }
+.baseline-guide__body > p { max-width: 72ch; margin: 0 0 8px; }
+.baseline-guide__role { color: #8b6d9a; font-style: italic; }
+.baseline-guide__steps { display: grid; gap: 12px; margin: 16px 0 14px; padding: 0; list-style: none; counter-reset: step; }
+.baseline-guide__steps li { display: grid; grid-template-columns: minmax(0, 1fr) 250px; align-items: center; gap: 24px; padding: 12px 16px; background: #fbf7fb; border-left: 3px solid #a474b4; counter-increment: step; }
+.baseline-guide__steps h3 { margin: 0 0 4px; color: #503560; font: 600 13px var(--sans); }
+.baseline-guide__steps h3::before { content: counter(step) ". "; color: #a474b4; }
+.baseline-guide__steps p { margin: 0; }
+.baseline-guide__steps figure { margin: 0; }
+.baseline-guide__steps svg { display: block; width: 100%; height: auto; }
+.baseline-guide__steps svg text { fill: #786a83; font: 11px var(--sans); }
+@media (max-width: 720px) {
+  .baseline-guide__steps li { grid-template-columns: 1fr; }
+}

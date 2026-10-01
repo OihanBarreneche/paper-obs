@@ -1,0 +1,70 @@
+/*
+ * The dialog that imports a pasted solution.
+ *
+ * It is not a section of the problem editor: importing is what one does *in* a
+ * problem, from the toolbar, once the problem exists. The panel is wider than
+ * the form's other dialogs because the paste is a column of numbers, and the
+ * paste box is resizable in both directions and fills its width — a long list of
+ * coordinates is unreadable in a narrow field, and the owner asked for the
+ * horizontal edge too.
+ */
+
+.modal__panel.import-panel {
+  width: min(760px, calc(100vw - 32px));
+  padding: 24px 28px 0;
+  border-radius: 5px;
+}
+
+.import-panel > .panel__title { margin-bottom: 6px; font-size: 29px; }
+.import-panel__formats { display: flex; gap: 16px; margin: 10px 0 18px; border-bottom: 1px solid #d9cbdc; }
+.import-panel__formats button { padding: 8px 2px; border: 0; border-bottom: 2px solid transparent; background: none; color: #76677d; cursor: pointer; }
+.import-panel__formats button.is-active { border-color: #87529c; color: #603675; }
+.import-panel__paste-label[for="import-candidate-file"] { margin-top: 10px; }
+#import-candidate-file { display: block; margin-bottom: 16px; }
+.import-panel > .muted { margin: 0 0 20px; max-width: 66ch; line-height: 1.5; }
+.import-panel .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px 20px; margin-bottom: 20px; }
+.import-panel .field { display: block; margin: 0; }
+.import-panel .field__label, .import-panel__paste-label { display: block; margin-bottom: 5px; color: #665370; font: 600 11px var(--sans); letter-spacing: .02em; }
+.import-panel .field .select, .import-panel .field .input { width: 100%; max-width: none; }
+.import-panel__paste-label { margin-bottom: 7px; }
+.import-panel .modal__actions { margin: 17px -28px 0; padding: 14px 28px; }
+@media (max-width: 600px) {
+  .modal__panel.import-panel { padding: 18px 17px 0; }
+  .import-panel .grid-2 { grid-template-columns: 1fr; }
+  .import-panel .modal__actions { margin-right: -17px; margin-left: -17px; padding: 13px 17px; }
+}
+
+.modal__panel.import-panel .input.import-panel__text {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: 160px;
+  resize: vertical;
+  padding: 12px 14px;
+  border-color: #cbbdcc;
+  background-color: #fffefd;
+  background-image: linear-gradient(#a997ad0d 1px, transparent 1px);
+  background-size: 100% 25px;
+  font: 13px/25px var(--mono);
+}
+
+.import-panel__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.import-panel__count,
+.import-panel__error {
+  font-family: var(--mono);
+}
+
+.import-panel__count {
+  color: var(--text-muted);
+}
+
+.import-panel__error {
+  color: var(--invalid);
+}

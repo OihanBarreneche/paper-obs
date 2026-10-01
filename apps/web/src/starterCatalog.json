@@ -1,0 +1,611 @@
+{
+  "source": "https://erich-friedman.github.io/packing/index.html",
+  "base": "https://erich-friedman.github.io/packing/",
+  "generated": "2026-09-27",
+  "families": [
+    {
+      "slug": "cirincir",
+      "page": "https://erich-friedman.github.io/packing/cirincir/",
+      "title": "Circles in Circles",
+      "shape": "circle",
+      "container": "circle",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "circle-1-in-smallest-circle",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "circle",
+          "radius": 1.0
+        },
+        "objective": {
+          "type": "minimize_container",
+          "count": 1,
+          "container": "circle"
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {}
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n unit circles packed inside the smallest known circle (of radius r).",
+      "instances": [
+        {
+          "counts": [
+            3
+          ],
+          "value": 2.154,
+          "formula": "1 + 2 / √3",
+          "symbol": "r",
+          "status": "proved",
+          "attribution": "Trivial",
+          "figure": "ccc3.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Equal Copies"
+    },
+    {
+      "slug": "triinsqu",
+      "page": "https://erich-friedman.github.io/packing/triinsqu/",
+      "title": "Triangles in Squares",
+      "shape": "triangle",
+      "container": "square",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "triangle-1-in-smallest-square",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "regular_polygon",
+          "sides": 3,
+          "side": 1.0
+        },
+        "objective": {
+          "type": "minimize_container",
+          "count": 1,
+          "container": "square"
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {}
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n equilateral triangles with side 1 packed inside the smallest known square (of side length s).",
+      "instances": [
+        {
+          "counts": [
+            2
+          ],
+          "value": 1.224,
+          "formula": "√6/2",
+          "symbol": "s",
+          "status": "proved",
+          "attribution": "Trivial",
+          "figure": "t2.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Equal Copies"
+    },
+    {
+      "slug": "penincir",
+      "page": "https://erich-friedman.github.io/packing/penincir/",
+      "title": "Pentagons in Circles",
+      "shape": "pentagon",
+      "container": "circle",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "pentagon-1-in-smallest-circle",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "regular_polygon",
+          "sides": 5,
+          "side": 1.0
+        },
+        "objective": {
+          "type": "minimize_container",
+          "count": 1,
+          "container": "circle"
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {}
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n unit pentagons packed inside the smallest known circle (with radius r).",
+      "instances": [
+        {
+          "counts": [
+            3
+          ],
+          "value": 1.61803,
+          "formula": "(1+√5)/2",
+          "symbol": "r",
+          "status": "proved",
+          "attribution": "Trivial",
+          "figure": "3.png"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Equal Copies"
+    },
+    {
+      "slug": "hexinsqu",
+      "page": "https://erich-friedman.github.io/packing/hexinsqu/",
+      "title": "Hexagons in Squares",
+      "shape": "hexagon",
+      "container": "square",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "hexagon-1-in-smallest-square",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "regular_polygon",
+          "sides": 6,
+          "side": 1.0
+        },
+        "objective": {
+          "type": "minimize_container",
+          "count": 1,
+          "container": "square"
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {}
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n unit hexagons packed inside the smallest known square (with side s).",
+      "instances": [
+        {
+          "counts": [
+            4
+          ],
+          "value": 3.725,
+          "formula": "(7–√3)/√2",
+          "symbol": "s",
+          "status": "best_known",
+          "attribution": "Found by Maurizio Morandi in March 2026",
+          "figure": "4.png"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Equal Copies"
+    },
+    {
+      "slug": "squintri",
+      "page": "https://erich-friedman.github.io/packing/squintri/",
+      "title": "Squares in Triangles",
+      "shape": "square",
+      "container": "triangle",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "square-1-in-smallest-triangle",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "regular_polygon",
+          "sides": 4,
+          "side": 1.0
+        },
+        "objective": {
+          "type": "maximize_scale",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "regular_ngon",
+            "sides": 3,
+            "circumradius": 0.5773502691896258
+          }
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n unit squares packed inside the smallest known equilateral triangles (of side length s).",
+      "instances": [
+        {
+          "counts": [
+            2
+          ],
+          "value": 3.1547005383792515,
+          "formula": "2 + 2 / √3",
+          "symbol": "s",
+          "status": "proved",
+          "attribution": "Trivial",
+          "figure": "ts2.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Equal Copies"
+    },
+    {
+      "slug": "cirRcir",
+      "page": "https://erich-friedman.github.io/packing/cirRcir/",
+      "title": "Circles in Circles",
+      "shape": "circle",
+      "container": "circle",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "circle-1-total-perimeter-in-circle",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "circle",
+          "radius": 1.0
+        },
+        "objective": {
+          "type": "maximize_total_perimeter",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "disk",
+            "radius": 1.0
+          }
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n circles with the largest possible sum of radii packed inside a unit circle.",
+      "instances": [
+        {
+          "counts": [
+            2
+          ],
+          "value": 1.0,
+          "formula": "",
+          "symbol": "r",
+          "status": "proved",
+          "attribution": "Trivial. A continuum of solutions",
+          "figure": "2.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Copies to Maximize Total Perimeter"
+    },
+    {
+      "slug": "cirRsqu",
+      "page": "https://erich-friedman.github.io/packing/cirRsqu/",
+      "title": "Circles in Squares",
+      "shape": "circle",
+      "container": "square",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "circle-1-total-perimeter-in-square",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "circle",
+          "radius": 1.0
+        },
+        "objective": {
+          "type": "maximize_total_perimeter",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "rect",
+            "width": 1.0,
+            "height": 1.0
+          }
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n circles with the largest possible sum of radii packed inside a unit square.",
+      "instances": [
+        {
+          "counts": [
+            2
+          ],
+          "value": 0.585,
+          "formula": "2 – √2",
+          "symbol": "r",
+          "status": "proved",
+          "attribution": "Trivial. A continuum of solutions",
+          "figure": "2.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Copies to Maximize Total Perimeter"
+    },
+    {
+      "slug": "triRsqu",
+      "page": "https://erich-friedman.github.io/packing/triRsqu/",
+      "title": "Triangles in Squares",
+      "shape": "triangle",
+      "container": "square",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "triangle-1-total-perimeter-in-square",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "regular_polygon",
+          "sides": 3,
+          "side": 1.0
+        },
+        "objective": {
+          "type": "maximize_total_perimeter",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "rect",
+            "width": 1.0,
+            "height": 1.0
+          }
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n equilateral triangles packed inside a unit square, so that the total sum of the sides of the triangles is as large as possible.",
+      "instances": [
+        {
+          "counts": [
+            2
+          ],
+          "value": 1.63299,
+          "formula": "2√6/3",
+          "symbol": "s",
+          "status": "proved",
+          "attribution": "Trivial. A continuum of solutions",
+          "figure": "2.png"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Copies to Maximize Total Perimeter"
+    },
+    {
+      "slug": "circovcir",
+      "page": "https://erich-friedman.github.io/packing/circovcir/",
+      "title": "Circles Covering Circles",
+      "shape": "circle",
+      "container": "circle",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "circle-1-covering-circle",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "circle",
+          "radius": 1.0
+        },
+        "objective": {
+          "type": "cover_region",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "disk",
+            "radius": 1.0
+          }
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n unit circles covering the largest known circle (of radius r ).",
+      "instances": [
+        {
+          "counts": [
+            3
+          ],
+          "value": 1.154,
+          "formula": "2 / √3",
+          "symbol": "r",
+          "status": "proved",
+          "attribution": "Trivial",
+          "figure": "3.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Covering"
+    },
+    {
+      "slug": "circovsqu",
+      "page": "https://erich-friedman.github.io/packing/circovsqu/",
+      "title": "Circles Covering Squares",
+      "shape": "circle",
+      "container": "square",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "circle-1-covering-square",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "circle",
+          "radius": 1.0
+        },
+        "objective": {
+          "type": "cover_region",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "rect",
+            "width": 1.0,
+            "height": 1.0
+          }
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n unit circles covering the largest known square (of side s ).",
+      "instances": [
+        {
+          "counts": [
+            2
+          ],
+          "value": 1.788,
+          "formula": "4 / √5",
+          "symbol": "s",
+          "status": "proved",
+          "attribution": "Trivial",
+          "figure": "2.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Covering"
+    },
+    {
+      "slug": "squcosqu",
+      "page": "https://erich-friedman.github.io/packing/squcosqu/",
+      "title": "Squares Covering Squares",
+      "shape": "square",
+      "container": "square",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "square-1-covering-square",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "regular_polygon",
+          "sides": 4,
+          "side": 1.0
+        },
+        "objective": {
+          "type": "cover_region",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "rect",
+            "width": 1.0,
+            "height": 1.0
+          }
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "The source publishes the AREA A of the largest square the copies cover; the template's promoted covered_size is the side of that square at unit copies, so A = covered_size ** 2.",
+      "intro": "The following pictures show n unit squares covering the largest known square (of area A).",
+      "instances": [
+        {
+          "counts": [
+            3
+          ],
+          "value": 1.61803,
+          "formula": "1/2 + √5/2",
+          "symbol": "a",
+          "status": "best_known",
+          "attribution": "Found by Dudeney in 1931",
+          "figure": "scs3.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Covering"
+    }
+  ],
+  "warnings": []
+}

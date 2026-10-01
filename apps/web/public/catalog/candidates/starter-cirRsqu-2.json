@@ -1,0 +1,25 @@
+{
+  "candidate_id": "starter-cirRsqu-2",
+  "problem_id": "circles-2-total-perimeter-in-square",
+  "scale": 1,
+  "origin": "source-derived",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.08500000000000002,
+      "y": -0.08500000000000002,
+      "scale": 0.415
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.3292135623730951,
+      "y": 0.3292135623730951,
+      "scale": 0.17078643762690487
+    }
+  ],
+  "metadata": {
+    "source": "https://erich-friedman.github.io/packing/cirRsqu/"
+  }
+}

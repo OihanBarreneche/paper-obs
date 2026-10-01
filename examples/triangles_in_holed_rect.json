@@ -1,0 +1,38 @@
+{
+  "problem_id": "triangles-in-holed-rect",
+  "name": "Unit triangles in a holed rectangle",
+  "description": "How many unit equilateral triangles fit in a 10 x 10 square with a round hole in the middle? The fixed-scale objective of the spec, on a composite arena. The solution loaded by default is the best arrangement this lab's own local search finds, not a published one: it is the number to beat, and the composite arena is what it exercises.",
+  "seed": 8042,
+  "arena": {
+    "name": "square with a hole",
+    "shape": {
+      "type": "difference",
+      "left": {
+        "type": "rect",
+        "width": 10.0,
+        "height": 10.0
+      },
+      "right": {
+        "type": "disk",
+        "radius": 1.5
+      }
+    }
+  },
+  "shape": {
+    "type": "regular_polygon",
+    "sides": 3,
+    "side": 1.0
+  },
+  "objective": {
+    "type": "maximize_count",
+    "scale": 1.0
+  },
+  "rotation": {
+    "type": "rotation_policy",
+    "mode": "free",
+    "angles": [
+      0.0
+    ]
+  },
+  "constraints": []
+}

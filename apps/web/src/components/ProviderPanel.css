@@ -1,0 +1,23 @@
+/* The model dialog. */
+
+.provider-panel__error {
+  margin: 8px 0 0;
+  color: var(--danger, #ff7a7a);
+  font-size: 12px;
+}
+
+/* The model list, the field for a typed id and the count of listed ids, stacked. */
+.provider-panel__model {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.provider-panel__typed { margin-top: 6px; }
+
+.provider-panel__listed {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 12px;
+}

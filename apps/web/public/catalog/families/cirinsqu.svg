@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <title>packomania-csq-9 — packomania-csq-9-published</title>
+  <rect x="0" y="0" width="320" height="320" fill="#fffdfb"/>
+  <g transform="translate(160 160) scale(50 -50)">
+  <path d="M 3 -3 L 3 3 L -3 3 L -3 -3 Z" fill="#f6f1fa" fill-rule="evenodd" stroke="#6f607b" stroke-width="0.032"/>
+  <circle cx="-2" cy="-2" r="1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.016"/>
+  <circle cx="0" cy="-2" r="1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.016"/>
+  <circle cx="2" cy="-2" r="1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.016"/>
+  <circle cx="-2" cy="0" r="1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.016"/>
+  <circle cx="0" cy="0" r="1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.016"/>
+  <circle cx="2" cy="0" r="1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.016"/>
+  <circle cx="-2" cy="2" r="1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.016"/>
+  <circle cx="0" cy="2" r="1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.016"/>
+  <circle cx="2" cy="2" r="1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.016"/>
+  </g>
+</svg>

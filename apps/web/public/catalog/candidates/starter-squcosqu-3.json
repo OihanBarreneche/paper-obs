@@ -1,0 +1,30 @@
+{
+  "candidate_id": "starter-squcosqu-3",
+  "problem_id": "squares-3-covering-square",
+  "scale": 1,
+  "origin": "source-derived-approximation",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.1360098247570345,
+      "y": -0.1360098247570345
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.06607525,
+      "y": 0.55190029,
+      "rotation": 51.81466912
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.55222079,
+      "y": -0.06638997,
+      "rotation": 38.21027663
+    }
+  ],
+  "metadata": {
+    "source": "https://erich-friedman.github.io/packing/squcosqu/"
+  }
+}

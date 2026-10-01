@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv-win/
+.uv-cache/
+*.egg-info/
+.pytest_cache/
+.pytest-tmp/
+.coverage
+htmlcov/
+
+# Node (frontend, apps/web)
+node_modules/
+dist/
+.vite/
+
+# Local runs and artefacts
+runs/
+*.writing
+out/
+*.local.json
+.private/
+# Catalog builders and their tests: the maintainers' tools, not part of the lab
+scripts/
+
+# Secrets (LLM providers)
+.env
+.env.*
+!.env.example
+
+# Python sandbox: Deno, its cache and Pyodide (local only)
+.sandbox/

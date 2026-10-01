@@ -1,0 +1,37 @@
+{
+  "kind": "candidate",
+  "candidate_id": "packomania-crc_100-5-published",
+  "problem_id": "packomania-crc_100-5",
+  "scale": 0.5,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -3.5999999999999996,
+      "y": 0.0
+    },
+    {
+      "shape_id": "s001",
+      "x": -1.7999999999999998,
+      "y": 0.0
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "shape_id": "s003",
+      "x": 1.7999999999999998,
+      "y": 0.0
+    },
+    {
+      "shape_id": "s004",
+      "x": 3.5999999999999996,
+      "y": 0.0
+    }
+  ],
+  "metadata": {}
+}

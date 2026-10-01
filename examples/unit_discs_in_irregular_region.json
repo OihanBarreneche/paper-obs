@@ -1,0 +1,94 @@
+{
+  "problem_id": "unit-discs-in-irregular-region",
+  "name": "Maximum unit discs in an irregular region",
+  "description": "Pack as many discs of diameter 1 as possible in the fixed composite arena. Each valid additional disc improves the score; the disc size never changes.",
+  "seed": 30,
+  "shape": {
+    "type": "circle",
+    "radius": 0.5
+  },
+  "objective": {
+    "type": "maximize_count",
+    "scale": 1.0
+  },
+  "rotation": {
+    "type": "rotation_policy",
+    "mode": "fixed",
+    "angles": [
+      0.0
+    ]
+  },
+  "constraints": [],
+  "metadata": {},
+  "arena": {
+    "name": "irregular",
+    "shape": {
+      "type": "difference",
+      "left": {
+        "type": "difference",
+        "left": {
+          "type": "union",
+          "left": {
+            "type": "union",
+            "left": {
+              "type": "union",
+              "left": {
+                "type": "rect",
+                "width": 8.0,
+                "height": 8.0
+              },
+              "right": {
+                "type": "translate",
+                "shape": {
+                  "type": "rect",
+                  "width": 4.0,
+                  "height": 3.0
+                },
+                "dx": 0.0,
+                "dy": 5.0
+              }
+            },
+            "right": {
+              "type": "translate",
+              "shape": {
+                "type": "rect",
+                "width": 3.0,
+                "height": 2.0
+              },
+              "dx": -3.5,
+              "dy": 1.0
+            }
+          },
+          "right": {
+            "type": "translate",
+            "shape": {
+              "type": "disk",
+              "radius": 1.2
+            },
+            "dx": 3.2,
+            "dy": 2.2
+          }
+        },
+        "right": {
+          "type": "translate",
+          "shape": {
+            "type": "disk",
+            "radius": 1.4
+          },
+          "dx": -2.5,
+          "dy": -2.5
+        }
+      },
+      "right": {
+        "type": "translate",
+        "shape": {
+          "type": "rect",
+          "width": 3.0,
+          "height": 3.0
+        },
+        "dx": 3.0,
+        "dy": -3.0
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "candidate",
+  "candidate_id": "packomania-cno-3-published",
+  "problem_id": "packomania-cno-3",
+  "scale": 0.450678162524,
+  "origin": "published-packomania",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.450678162523,
+      "y": -0.260199158451
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.450678162523,
+      "y": -0.260199158451
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.0,
+      "y": 0.520398316902
+    }
+  ],
+  "metadata": {}
+}

@@ -1,0 +1,50 @@
+.tool-viewer__overlay { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: clamp(14px, 3vw, 44px); background: #1e1529a8; }
+.tool-viewer { display: flex; flex-direction: column; width: min(1080px, 100%); height: min(760px, calc(100dvh - 2 * clamp(14px, 3vw, 44px))); padding: 19px 23px; background: #fffdfb; box-shadow: 0 30px 90px #180f2366; border: 1px solid #cfbdd2; color: #3d2d48; }
+.tool-viewer__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding-bottom: 9px; background: url("../assets/pencil-rule.svg") bottom / 100% 5px no-repeat; }
+.tool-viewer__header h2 { margin: 0; font: 500 29px var(--serif); }
+.tool-viewer__header p { margin: 4px 0 0; color: #786a83; font: 13px var(--sans); }
+.tool-viewer__header button { border: 0; background: none; color: #644776; cursor: pointer; font-size: 27px; line-height: 1; }
+.tool-viewer__filters { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 0; border-bottom: 1px solid #e6dde8; }
+.tool-viewer__filters button { border: 1px solid #dbc9dd; background: #fffaf7; color: #684b77; padding: 4px 10px; cursor: pointer; font: 12px var(--sans); }
+.tool-viewer__filters button[aria-selected="true"] { background: #f3e7f4; border-color: #a474b4; color: #503560; font-weight: 600; }
+.tool-viewer__filters small { color: #8b6d9a; font-weight: 400; }
+.tool-viewer__body { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(170px, 230px) minmax(0, 1fr); gap: 0 22px; padding-top: 12px; }
+.tool-viewer__list { overflow-y: auto; display: flex; flex-direction: column; gap: 2px; padding-right: 8px; border-right: 1px solid #e6dde8; }
+.tool-viewer__count { margin: 0 0 6px; color: #8b7a96; font: 11px var(--sans); text-transform: uppercase; letter-spacing: .06em; }
+.tool-viewer__list button { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; border: 0; border-left: 3px solid transparent; background: none; padding: 5px 8px; text-align: left; cursor: pointer; color: #3d2d48; }
+.tool-viewer__list button:hover { background: #faf3fa; }
+.tool-viewer__list button[aria-selected="true"] { background: #f3e7f4; border-left-color: #a474b4; }
+.tool-viewer__list button:focus-visible { outline: 2px solid #a474b4; outline-offset: -2px; }
+.tool-viewer__list code { font: 13px var(--mono); }
+.tool-viewer__list small { color: #8b7a96; font: 11px var(--sans); }
+.tool-viewer__list .tool-viewer__absent { opacity: .45; }
+.tool-viewer__detail { overflow-y: auto; min-width: 0; padding-right: 6px; font: 15px/1.55 var(--serif); }
+.tool-viewer__detail h3 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin: 2px 0 10px; }
+.tool-viewer__detail h3 code { font: 600 21px var(--mono); color: #503560; }
+.tool-viewer__detail h3 span { color: #8b6d9a; font: italic 400 16px var(--serif); }
+.tool-viewer__detail h4 { margin: 18px 0 6px; font: 600 12px var(--sans); text-transform: uppercase; letter-spacing: .06em; color: #7e638e; }
+.tool-viewer__detail p { margin: 0 0 8px; }
+.tool-viewer__detail code { font-family: var(--mono); font-size: .9em; }
+.tool-viewer__warning { color: #9a5a2d; font: 13px var(--sans); }
+.tool-viewer__facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 12px 0 0; font: 13px var(--sans); color: #675a70; }
+.tool-viewer__facts dt { font-weight: 600; color: #503560; }
+.tool-viewer__facts dd { margin: 0; }
+.tool-viewer__arguments { width: 100%; border-collapse: collapse; font: 13px var(--sans); }
+.tool-viewer__arguments th, .tool-viewer__arguments td { padding: 5px 8px; border-bottom: 1px solid #efe6ef; text-align: left; vertical-align: top; }
+.tool-viewer__arguments th { font-weight: 400; white-space: nowrap; }
+.tool-viewer__arguments td:nth-child(2) { color: #7e638e; }
+.tool-viewer__arguments td:nth-child(3) { white-space: nowrap; color: #786a83; }
+.tool-viewer__empty { color: #8b7a96; font: italic 13px var(--sans); }
+.tool-viewer__example { margin-top: 18px; padding: 10px 14px; background: #fbf7fb; border-left: 3px solid #a474b4; }
+.tool-viewer__example summary { cursor: pointer; font: 600 12px var(--sans); text-transform: uppercase; letter-spacing: .06em; color: #7e638e; }
+.tool-viewer__example p { margin: 10px 0 4px; }
+.tool-viewer__example h5 { margin: 12px 0 4px; font: 600 12px var(--sans); color: #675a70; }
+.tool-viewer__example pre { max-height: 280px; overflow: auto; margin: 0; padding: 10px; background: #fffdfb; border: 1px solid #efe6ef; font: 12px/1.4 var(--mono); color: #3d2d48; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tool-viewer__example img { display: block; max-width: min(100%, 360px); margin-top: 10px; border: 1px solid #e6dde8; }
+.tool-viewer__schema { margin-top: 16px; font: 12px var(--sans); color: #786a83; }
+.tool-viewer__schema summary { cursor: pointer; }
+.tool-viewer__schema pre { max-height: 260px; overflow: auto; margin: 8px 0 0; padding: 10px; background: #faf6fa; border: 1px solid #efe6ef; font: 12px/1.4 var(--mono); color: #3d2d48; }
+@media (max-width: 720px) {
+  .tool-viewer__body { grid-template-columns: 1fr; grid-template-rows: minmax(120px, 30%) 1fr; gap: 12px; }
+  .tool-viewer__list { border-right: 0; border-bottom: 1px solid #e6dde8; padding-right: 0; }
+}

@@ -1,0 +1,74 @@
+/*
+ * The menu's own stylesheet: a compact card, one entry to a line.
+ *
+ * The entries stack, always: no entry is ever laid out beside another, so the menu
+ * reads as the list it is rather than as several lines of wrapped names. A name
+ * keeps its line however long it is, and the card grows to hold the longest of
+ * them — a two-line entry would be the same mistake the owner pointed at. The two
+ * shapes that carry numbers, the regular polygon and the ellipse, keep their narrow
+ * fields beside the name on that same line.
+ *
+ * The card holds two classes on its own rule because the shared stylesheet
+ * declares `.create-menu` too, and the two files reach the page in whatever order
+ * the bundler collects them: naming the card twice is what makes these the numbers
+ * that stand. A right-click menu is a list of short names; a menu wider than the
+ * longest of them would cover the drawing it was opened on.
+ */
+.create-menu.create-menu {
+  min-width: 188px;
+  max-width: min(360px, calc(100vw - 24px));
+  gap: 2px;
+  padding: 6px;
+}
+
+.create-menu.create-menu .create-menu__title {
+  margin: 0 0 2px;
+  font-size: 11px;
+}
+
+.create-menu.create-menu .create-menu__heading {
+  margin: 4px 0 0;
+  font-size: 10px;
+}
+
+.create-menu.create-menu .create-menu__item {
+  padding: 4px 8px;
+}
+
+/*
+ * The shared stylesheet's group is a column already; this names the card twice so
+ * the tighter gap stands wherever the shared rule lands.
+ */
+.create-menu.create-menu .create-menu__group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* A label and a heading stay on their line; the card, not the text, takes the width. */
+.create-menu.create-menu .create-menu__label,
+.create-menu.create-menu .create-menu__heading,
+.create-menu.create-menu .create-menu__title {
+  white-space: nowrap;
+}
+
+/*
+ * An entry that carries numbers keeps its name and its fields on one line: the
+ * name takes what is left, the fields keep their own narrow width, and nothing
+ * wraps under the line.
+ */
+.create-menu__entry {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 6px;
+}
+
+.create-menu__entry .create-menu__item {
+  flex: 1 1 auto;
+}
+
+.create-menu__entry .input--narrow {
+  flex: 0 0 auto;
+  width: 52px;
+}

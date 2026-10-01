@@ -1,0 +1,128 @@
+.profile-picker { position: relative; display: flex; min-width: 0; flex: 1; }
+.profile-picker__trigger { display: flex; align-items: center; min-width: 0; flex: 1; gap: 9px; padding: 9px 12px; min-height: 42px; border: 1px solid #5a4868; border-right: 0; background: #392a4e; color: #f9f4fb; font: 12px var(--sans); cursor: pointer; text-align: left; }
+.profile-picker__category-name { flex: none; max-width: 44%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #ddafd6; padding-right: 10px; border-right: 1px solid #857092; }
+.profile-picker__trigger strong { min-width: 0; flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: 500; }
+.profile-picker__edit-trigger { display: grid; place-items: center; width: 42px; flex: none; border: 1px solid #5a4868; border-left: 1px solid #857092; background: #392a4e; color: #e7c8eb; cursor: pointer; }
+.profile-picker__edit-trigger:hover:not(:disabled) { background: #544064; }
+.profile-picker__edit-trigger:disabled { opacity: .45; cursor: default; }
+.profile-picker svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.profile-picker__popover { position: absolute; top: calc(100% + 8px); left: 0; z-index: 30; display: grid; grid-template-columns: 190px minmax(280px, 1fr); width: min(640px, calc(100vw - 28px)); max-height: min(62vh, 540px); background: #fffdfb; box-shadow: 0 22px 55px #23182f55; border: 1px solid #d8c9dd; color: var(--text); }
+.profile-picker__popover h3 { margin: 0 0 10px; color: #695773; font: 600 11px var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.profile-picker__categories, .profile-picker__profiles { min-width: 0; overflow-y: auto; padding: 17px; }
+.profile-picker__categories { border-right: 1px solid #e4dbe6; background: #faf7fa; }
+.profile-picker__popover button { display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 8px; padding: 9px 8px; border: 0; border-bottom: 1px solid #e9e3ea; background: transparent; text-align: left; color: var(--text); cursor: pointer; font: 13px var(--sans); }
+.profile-picker__popover button:hover, .profile-picker__popover button.is-active { background: #f2e9f6; color: #6e398e; }
+.profile-picker__popover button span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.profile-picker__popover small { color: #9a819f; font: 11px var(--mono); }
+.profile-picker__popover .profile-picker__add { margin-top: 10px; color: #80519a; border-top: 1px solid #d9cedb; }
+.profile-picker__profiles-heading { display: flex; align-items: start; justify-content: space-between; gap: 10px; }
+.profile-picker__profiles-heading h3 { margin-top: 8px; }
+.profile-picker__popover .profile-picker__dots { width: auto; padding: 0 7px; border: 0; font-size: 22px; line-height: 1; }
+.profile-picker__category-menu { padding: 8px; margin-bottom: 8px; background: #f6eff7; border: 1px solid #e4d5e8; font-size: 12px; }
+.profile-picker__category-menu span { display: block; padding: 4px 6px; }
+.profile-picker__category-menu .profile-picker__delete { color: #a13258; }
+.profile-picker__category-menu form { display: grid; gap: 5px; }
+.profile-picker__category-menu form label { color: #695773; }
+.profile-picker__category-menu form input { width: 100%; min-width: 0; padding: 7px; border: 1px solid #cbb7d1; background: #fffdfb; color: var(--text); }
+.profile-picker__profile { display: flex; align-items: stretch; border-bottom: 1px solid #e9e3ea; }
+.profile-picker__profile:hover, .profile-picker__profile.is-active { background: #f2e9f6; }
+.profile-picker__popover .profile-picker__profile button { border: 0; background: transparent; }
+.profile-picker__popover .profile-picker__profile-name { min-width: 0; flex: 1; padding-left: 8px; }
+.profile-picker__popover .profile-picker__icon { width: 34px; flex: none; justify-content: center; color: #796487; }
+.profile-picker__popover .profile-picker__icon:hover { color: #6e398e; }
+.profile-picker__profiles p { color: var(--text-muted); font: italic 16px var(--serif); }
+.profile-picker__new { display: flex; gap: 5px; margin-top: 10px; }
+.profile-picker__new input { width: 100%; min-width: 0; padding: 5px; border: 1px solid #cbb7d1; }
+.profile-picker__new button { width: auto; padding: 5px; border: 1px solid #cbb7d1; }
+
+.profile-catalog { position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center; padding: 30px; color: var(--text); }
+.profile-catalog__backdrop { position: absolute; inset: 0; background: #201628a6; }
+.profile-catalog__sheet { position: relative; display: flex; flex-direction: column; width: min(1420px, 100%); height: min(890px, 100%); background: #fffdfb; box-shadow: 0 30px 90px #1a0c2b66; border: 1px solid #cab8d3; }
+.profile-catalog__sheet > header { display: flex; justify-content: space-between; align-items: start; gap: 20px; padding: 20px 28px 16px; border-bottom: 1px solid #dbd0df; }
+.profile-catalog__sheet h2 { margin: 3px 0; font: 500 35px var(--serif); }
+.profile-catalog__sheet header p { margin: 0; color: var(--text-muted); }
+.profile-catalog__columns { display: grid; grid-template-columns: 220px minmax(0,1fr); min-height: 0; flex: 1; }
+.profile-catalog__columns > nav { display: flex; flex-direction: column; padding: 21px 16px; border-right: 1px solid #e4dbe6; background: #faf8fa; }
+.profile-catalog__columns h3 { margin: 0 0 16px; font: 500 23px var(--serif); }
+.profile-catalog__columns nav button { display: flex; justify-content: space-between; width: 100%; padding: 11px 8px; border: 0; border-bottom: 1px solid #e7e0e8; background: transparent; text-align: left; cursor: pointer; color: #45394c; font: 13px var(--sans); }
+.profile-catalog__columns nav button:hover, .profile-catalog__columns nav button.is-active { background: #f2e9f6; color: #6d3b8c; }
+.profile-catalog__columns nav small { margin-left: 8px; color: #a192a8; font-size: 10px; }
+/* The two catalogue filters: one horizontal, right-aligned row on the family list's
+   header line. The row is rendered only at that level, so it is absent inside a
+   subfamily. */
+.profile-catalog__filters { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px; margin-bottom: 10px; }
+.profile-catalog__filter { display: flex; align-items: center; gap: 5px; }
+.profile-catalog__filter span { color: #8c699c; font: 11px var(--sans); text-transform: uppercase; letter-spacing: .05em; }
+.profile-catalog__filter select { padding: 5px 7px; border: 1px solid #cbb7d1; background: #fffdfb; color: var(--text); font: 13px var(--sans); }
+.profile-catalog__filters .profile-catalog__filter-count { display: flex; align-items: center; gap: 8px; margin-left: 0; color: #756b79; font: 11px var(--mono); }
+.profile-catalog__filter-reset { width: auto; padding: 2px 6px; border: 1px solid #cbb7d1; background: #fffdfb; color: #744692; cursor: pointer; font: 11px var(--sans); }
+.profile-catalog__filter-reset:hover { background: #f2e9f6; }
+.profile-catalog__custom-entry { margin-top: auto; padding-top: 22px; border-top: 1px solid #d9cedb; }
+.profile-catalog__custom-entry h3 { margin: 0 0 4px; font-size: 20px; }
+.profile-catalog__columns nav .profile-catalog__custom-entry button { color: #7b4c91; }
+.profile-catalog__results { min-width: 0; min-height: 0; overflow-y: auto; padding: 20px 26px 28px; background-color: #fffdfb; background-image: linear-gradient(#9a85a509 1px, transparent 1px), linear-gradient(90deg, #9a85a509 1px, transparent 1px); background-size: 24px 24px; }
+.profile-catalog__result-heading { display: flex; justify-content: space-between; align-items: end; border-bottom: 1px solid #ddd0e0; margin-bottom: 18px; }
+.profile-catalog__result-heading h3 { margin: 5px 0 9px; }
+.profile-catalog__result-heading small { margin-bottom: 12px; color: var(--text-muted); }
+.profile-catalog__overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); align-content: start; gap: 18px; }
+.profile-catalog__subfamily { display: flex; flex-direction: column; min-width: 0; padding: 0 0 12px; border: 0; border-bottom: 2px solid #d9c7db; background: #fffdfbcc; color: var(--text); text-align: left; cursor: pointer; }
+.profile-catalog__subfamily:hover, .profile-catalog__subfamily:focus-visible { background: #f8eff9; border-color: #9865aa; outline-offset: 3px; }
+/* The picture is centred and clipped by its own box: a percentage height on a
+   grid item does not resolve against the auto row it sizes, so the sketch used
+   to grow past the tile and overlap the name underneath. */
+.profile-catalog__subfamily-picture { display: flex; align-items: center; justify-content: center; height: clamp(145px, 22vh, 210px); overflow: hidden; background: #faf7fa; background-image: linear-gradient(#9a85a50d 1px, transparent 1px), linear-gradient(90deg, #9a85a50d 1px, transparent 1px); background-size: 20px 20px; }
+.profile-catalog__subfamily-picture svg { width: min(100%, 230px); max-height: 100%; fill: #c9c6cc; stroke: #6f6a75; stroke-width: 1.5; }
+/* The generated preview is an asset, not an inline sketch: it is framed, and a
+   source figure among the tiles takes the same filter as a record's figure. */
+.profile-catalog__subfamily-picture img { display: block; max-width: 100%; max-height: 100%; padding: 6px; }
+.profile-catalog__subfamily-picture svg .catalog-sketch__boundary { fill: none; stroke: #564862; stroke-width: 2.2; stroke-dasharray: 3 2 21 1; }
+.profile-catalog__subfamily-name { padding: 12px 11px 3px; font: 500 23px/1.1 var(--serif); }
+.profile-catalog__subfamily-meta { display: flex; justify-content: space-between; width: 100%; padding: 2px 11px; color: #8c699c; font: 12px var(--sans); }
+.profile-catalog__back { border: 0; background: none; color: #744692; cursor: pointer; margin: 0 0 15px; padding: 4px 0; font: 13px var(--sans); }
+.profile-catalog__back:hover { text-decoration: underline; }
+.profile-catalog__card-title { margin-top: 7px; font: 500 20px var(--serif); }
+.profile-catalog__card-meta { color: #756b79; font: 11px/1.5 var(--mono); }
+.profile-catalog__card-action { margin-top: auto; padding-top: 7px; color: #80519a; font: 600 11px var(--sans); }
+.profile-catalog__pending { margin: 20px 0; padding: 20px 0; border-top: 1px solid #ded3e2; }
+.profile-catalog__pending strong { font: 500 23px var(--serif); }
+.profile-catalog__pending p { max-width: 55ch; color: var(--text-muted); }
+.profile-catalog__import { display: flex; flex-direction: column; align-items: start; gap: 12px; max-width: 690px; }
+.profile-catalog__import h3 { margin: 0; }
+.profile-catalog__import p { margin: 0 0 8px; color: var(--text-muted); }
+.profile-catalog__import label { color: #65506e; font: 600 12px var(--sans); }
+.profile-catalog__import textarea { width: 100%; max-width: 100%; min-height: 220px; resize: vertical; font: 12px/1.5 var(--mono); }
+.profile-catalog__import .profile-catalog__import-error { color: var(--invalid); }
+.profile-catalog__intro { max-width: 74ch; margin: 0 0 14px; color: var(--text-muted); font: 13px/1.5 var(--sans); }
+.profile-catalog__coming { margin: 0 0 16px; padding: 9px 12px; border-left: 3px solid #b98fce; background: #f7effa; color: #5c4a66; font: 13px/1.5 var(--sans); }
+.profile-catalog__configs { display: grid; grid-template-columns: repeat(auto-fill, minmax(235px, 1fr)); gap: 0 22px; }
+.profile-catalog__config { display: flex; flex-direction: column; min-width: 0; padding: 12px 8px 15px; border: 0; border-bottom: 1px solid #dfd3e2; background: transparent; text-align: left; color: var(--text); cursor: pointer; }
+.profile-catalog__config:hover { background: #f9f3fa; }
+.profile-catalog__config.is-coming { cursor: default; opacity: .72; }
+.profile-catalog__config.is-coming:hover { background: transparent; }
+/* One published figure, at a fixed size whatever the source's own dimensions are,
+   so a column of records lines up like a shelf of plates. */
+.profile-catalog__figure { display: flex; align-items: center; justify-content: center; width: 100%; height: 104px; margin-bottom: 7px; background: #f7f3f8; border: 1px solid #eee6ee; }
+.profile-catalog__figure img { display: block; width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+/* A source figure is a grey or black-on-white bitmap we cannot recolour pixel by
+   pixel. The chain strips any colour left in it, lifts black a little so the
+   strokes — not only the paper — carry the hue, sepia gives it one warm tone,
+   hue-rotate turns that tone to the design's violet, and saturation deepens it.
+   The visible cost is the paper: a white background becomes a pale lavender. The
+   perimeter section takes no filter — there the colours encode shape sizes. */
+.profile-catalog__figure img.is-source,
+.profile-catalog__subfamily-picture img.is-source {
+  filter: grayscale(1) invert(0.2) sepia(1) hue-rotate(215deg) saturate(2.4) brightness(1.04) contrast(1.05);
+}
+/* One short line for a subfamily whose every record is above the display limit. */
+.profile-catalog__hidden { max-width: 74ch; margin: 0 0 14px; color: var(--text-muted); font: italic 14px/1.5 var(--serif); }
+/* The one place the catalogue says the exact placements are mostly unknown. */
+.profile-catalog__placements { max-width: 74ch; margin: 6px 0 0; color: #6b5577; font: 12px/1.5 var(--sans); }
+/* A launchable record whose published number the engine cannot read back: a quiet
+   line in a warmer ink, so it is seen and never mistaken for one. The repetitive
+   "grid, not the record" badge is gone: the panel header says it once instead. */
+.profile-catalog__config-caveat { display: block; margin-top: 4px; padding: 2px 7px; border-left: 2px solid #c98a3f; background: #fdf1e1; color: #7a5326; font: 11px/1.45 var(--sans); }
+.profile-catalog__config-formula { color: #8a7c92; font: 11px/1.5 var(--mono); overflow-wrap: anywhere; }
+.profile-catalog__config-attribution { margin-top: 3px; color: #6d6472; font: italic 12px/1.4 var(--serif); overflow-wrap: anywhere; }
+.profile-catalog__subfamily-meta span:first-child { font: 11px var(--mono); }
+@media (max-width: 900px) { .profile-catalog__columns { grid-template-columns: 170px minmax(0,1fr); } }
+@media (max-width: 620px) { .profile-catalog { padding: 0; } .profile-catalog__sheet { height: 100%; } .profile-catalog__columns { display: block; overflow-y: auto; } .profile-catalog__columns > nav { padding: 12px 16px; } .profile-catalog__columns nav button { display: inline-flex; width: auto; margin-right: 8px; } .profile-picker__popover { grid-template-columns: 130px minmax(0,1fr); } }

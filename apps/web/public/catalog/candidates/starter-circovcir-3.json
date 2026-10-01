@@ -1,0 +1,28 @@
+{
+  "candidate_id": "starter-circovcir-3",
+  "problem_id": "circles-3-covering-circle",
+  "scale": 1,
+  "origin": "source-derived",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.5773502691896258,
+      "y": 0
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.2886751345948129,
+      "y": 0.5
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.2886751345948129,
+      "y": -0.5
+    }
+  ],
+  "metadata": {
+    "source": "https://erich-friedman.github.io/packing/circovcir/"
+  }
+}

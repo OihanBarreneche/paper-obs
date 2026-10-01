@@ -1,0 +1,32 @@
+{
+  "problem_id": "squares-17-in-unit-square",
+  "name": "17 squares in a unit square",
+  "description": "The smallest square containing 17 unit squares, read the other way round: the arena is a unit square, so a common scale s means the shapes can be of side s, and the box being minimised has side 1/s. The solution loaded by default is that same published packing, scaled by 1/s and moved into this arena's frame; it scores exactly what the direct reading of the instance scores, which is the point of the pair.",
+  "seed": 17,
+  "arena": {
+    "name": "",
+    "shape": {
+      "type": "rect",
+      "width": 1.0,
+      "height": 1.0
+    }
+  },
+  "shape": {
+    "type": "regular_polygon",
+    "sides": 4,
+    "side": 1.0
+  },
+  "objective": {
+    "type": "maximize_scale",
+    "count": 17
+  },
+  "rotation": {
+    "type": "rotation_policy",
+    "mode": "free",
+    "angles": [
+      0.0
+    ]
+  },
+  "constraints": [],
+  "metadata": {}
+}

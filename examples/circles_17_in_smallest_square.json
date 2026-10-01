@@ -1,0 +1,24 @@
+{
+  "problem_id": "circles-17-in-smallest-square",
+  "name": "17 circles in the smallest square",
+  "description": "The smallest square containing 17 circles of radius 1, read directly. Friedman publishes the side as 8.532+ for this family (proved optimal by Peikert in 1991), and Packomania prints the coordinates: its table normalises the container to a unit square, in which a circle of this packing has radius 0.117196742783, so the side of the smallest square holding circles of radius 1 is its reciprocal, 8.53266034749436. The shapes are stated as a radius rather than a diameter because that is the normalisation both sources use: read with circles of diameter 1, the same packing's side is 8.53266034749436 / 2. The solution loaded by default is Packomania's printed centre list, scaled by the reciprocal of its printed radius and centred as that file is, so the engine measures the published side to the last bit.",
+  "seed": 17,
+  "shape": {
+    "type": "circle",
+    "radius": 1.0
+  },
+  "objective": {
+    "type": "minimize_container",
+    "count": 17,
+    "container": "square"
+  },
+  "rotation": {
+    "type": "rotation_policy",
+    "mode": "fixed",
+    "angles": [
+      0.0
+    ]
+  },
+  "constraints": [],
+  "metadata": {}
+}

@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "paper-obs"
+version = "0.1.0"
+description = "Paper Obs: a geometric research lab for comparing human, heuristic and agentic search"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["packing", "geometry", "multi-agent", "llm", "search", "optimization"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.26",
+    "shapely>=2.0",
+]
+
+[project.optional-dependencies]
+# The engine needs nothing beyond numpy and shapely; the web interface is an
+# optional extra so that `pip install paper-obs` stays small.
+api = ["fastapi>=0.115", "uvicorn>=0.32"]
+# The workflows are LangGraph graphs, and their agents reach a provider through
+# LangChain. The engine itself needs none of it.
+agents = ["langchain>=1.0", "langgraph>=1.0", "langchain-openai>=1.0"]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[project.scripts]
+paper-obs = "paper_obs.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/paper_obs"]
+
+# The example problems live at the root of the repository, where a human expects
+# them, and are also shipped inside the distribution so that an installed lab can
+# still list them. The mapping is recursive, so the arrangements under
+# `examples/candidates/` travel with them: naming that subdirectory a second time
+# put every candidate in the wheel twice, which hatchling refuses outright.
+[tool.hatch.build.targets.wheel.force-include]
+"examples" = "paper_obs/examples"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

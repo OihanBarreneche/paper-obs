@@ -1,0 +1,23 @@
+{
+  "candidate_id": "starter-squintri-2",
+  "problem_id": "squares-2-in-smallest-triangle",
+  "scale": 0.3169872981077807,
+  "origin": "source-derived",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.15849364905389035,
+      "y": -0.13018148554092251
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.15849364905389035,
+      "y": -0.13018148554092251
+    }
+  ],
+  "metadata": {
+    "source": "https://erich-friedman.github.io/packing/squintri/"
+  }
+}

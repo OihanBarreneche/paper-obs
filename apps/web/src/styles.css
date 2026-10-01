@@ -1,0 +1,639 @@
+/*
+ * One stylesheet for the whole interface, so that every component shares the
+ * same vocabulary of class names rather than inventing its own colours.
+ *
+ * The canvas lives in a flipped group (mathematical orientation, +y upwards),
+ * which is why the stroke widths below are always paired with a
+ * `vector-effect="non-scaling-stroke"` attribute set by the component.
+ */
+
+:root {
+  --bg: #0f172a;
+  --surface: #172033;
+  --surface-2: #1f2a40;
+  --border: #2c3a55;
+  --text: #e5eaf3;
+  --text-muted: #93a1bb;
+  --accent: #60a5fa;
+  --accent-strong: #3b82f6;
+  --valid: #34d399;
+  --invalid: #f87171;
+
+  --arena-fill: #f3f4f6;
+  --arena-stroke: #0b1120;
+  --shape-fill: #93c5fd;
+  --shape-stroke: #1d4ed8;
+  --violation-fill: #fecaca;
+  --violation-stroke: #b91c1c;
+
+  --radius: 6px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* ---------------------------------------------------------------- layout */
+
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+/*
+ * The panel is a share of the window, not a width in pixels: on a wide screen
+ * a column sized for a laptop leaves a third of the window empty, and the
+ * numbers on the right are what a comparison is made of.
+ */
+.app__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(320px, 24vw, 620px);
+  min-height: 0;
+}
+
+.canvas-host {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  min-width: 0;
+  overflow: auto;
+  background: radial-gradient(circle at 50% 40%, #16203a 0%, var(--bg) 70%);
+}
+
+.panel {
+  border-left: 1px solid var(--border);
+  background: var(--surface);
+  overflow-y: auto;
+  padding: 0 0 24px;
+}
+
+/* --------------------------------------------------------------- toolbar */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.toolbar__title {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.toolbar__title span {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.toolbar__group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toolbar__scale {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 220px;
+}
+
+.toolbar__scale output {
+  font-family: var(--mono);
+  min-width: 72px;
+  text-align: right;
+}
+
+/* -------------------------------------------------------------- controls */
+
+.button {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
+
+.button:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button--primary {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: #07122a;
+  font-weight: 600;
+}
+
+.button--ghost {
+  background: transparent;
+}
+
+.button--danger:hover:not(:disabled) {
+  border-color: var(--invalid);
+  color: var(--invalid);
+}
+
+.select,
+.input {
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  max-width: 190px;
+}
+
+.input {
+  font-family: var(--mono);
+  width: 100%;
+}
+
+.input--narrow {
+  width: 84px;
+}
+
+.input[type="range"] {
+  padding: 0;
+  border: none;
+  background: none;
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.field__label {
+  color: var(--text-muted);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+/* The busy label keeps its place whether or not it is showing, so that the
+   controls after it never move. */
+.busy {
+  min-width: 5.5em;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.busy--hidden {
+  visibility: hidden;
+}
+
+/* ------------------------------------------------------------- hero score */
+
+.hero {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.hero__value {
+  font-family: var(--mono);
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+.hero__label {
+  color: var(--text-muted);
+  font-family: var(--mono);
+}
+
+/* ------------------------------------------------------------ arena parts */
+
+.arena-canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background: #ffffff;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 45%);
+  touch-action: none;
+}
+
+.arena-part {
+  fill: rgb(96 165 250 / 22%);
+  stroke: var(--accent-strong);
+  stroke-width: 1;
+  stroke-dasharray: 3 2;
+  vector-effect: non-scaling-stroke;
+  cursor: move;
+}
+
+.arena-part--base {
+  fill: rgb(96 165 250 / 12%);
+}
+
+.arena-part--cut {
+  fill: rgb(248 113 113 / 18%);
+  stroke: var(--invalid);
+}
+
+.arena-part--selected {
+  stroke-width: 2.5;
+  stroke-dasharray: none;
+}
+
+.arena-part--context {
+  fill: rgb(29 78 216 / 12%);
+  stroke: none;
+  pointer-events: none;
+}
+
+.parts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.part {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  cursor: pointer;
+}
+
+.part--selected {
+  border-color: var(--accent);
+}
+
+.part__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.part__label {
+  font-size: 13px;
+}
+
+.part__index {
+  font-family: var(--mono);
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------------------- canvas */
+
+.canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background: #ffffff;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 45%);
+  touch-action: none;
+}
+
+.canvas--dragging {
+  cursor: grabbing;
+}
+
+.arena {
+  fill: var(--arena-fill);
+  fill-rule: evenodd;
+  stroke: var(--arena-stroke);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.shape {
+  fill: var(--shape-fill);
+  stroke: var(--shape-stroke);
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+  cursor: grab;
+}
+
+.shape--invalid {
+  fill: var(--violation-fill);
+  stroke: var(--violation-stroke);
+}
+
+.shape--selected {
+  stroke: var(--accent-strong);
+  stroke-width: 2.5;
+  cursor: grabbing;
+}
+
+/*
+ * The control that turns the selection: a circular arrow standing just outside
+ * the selection's box, at the middle of its right edge. The component places and
+ * sizes it in screen pixels, so it is the same size, and the same small gap away,
+ * whatever the window is magnified to.
+ */
+.turn-grip {
+  cursor: grab;
+}
+
+/*
+ * The arrow, and the whole of the control — there is nothing under it any more,
+ * so the stroke is what has to read: on the white picture, on a shape's own fill
+ * and on the canvas behind the frame. The accent is the colour the disc carried,
+ * and three screen pixels of it, round-ended, is what makes it stand out without
+ * a second element.
+ */
+.turn-grip__mark {
+  fill: none;
+  stroke: var(--accent-strong);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+/*
+ * The band a press has to land in: the arrow's stroke is only three pixels wide,
+ * so a hand a few pixels off it would miss, and this transparent circle — whose
+ * own stroke is the band — answers for it. `pointer-events: stroke` is what makes
+ * an unpainted stroke take a press, and its width, which is the tolerance itself,
+ * is set by the component in the arrow's own frame, where a unit is the arrow's
+ * radius in screen pixels. Nothing of it is drawn; the arrow is unchanged.
+ */
+.turn-grip__hit {
+  fill: none;
+  stroke: transparent;
+  pointer-events: stroke;
+}
+
+.turn-grip__core {
+  fill: transparent;
+  pointer-events: all;
+}
+
+/*
+ * The resize handle on a selected copy of a family whose copies carry their own
+ * size: the arena canvas' own corner-grip idiom, at the bottom-right of the
+ * copy's box. The component sizes it in screen pixels, so it stays the same size
+ * and the same small gap away whatever the window is magnified to, and its drag
+ * sends the same local-scale edit as the inspector's slider.
+ */
+.shape-scale-grip {
+  fill: var(--accent-strong);
+  cursor: nwse-resize;
+}
+
+/* ----------------------------------------------------------------- panel */
+
+.panel__section {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel__title {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.readout {
+  font-family: var(--mono);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.status--valid {
+  background: rgb(52 211 153 / 15%);
+  color: var(--valid);
+}
+
+.status--invalid {
+  background: rgb(248 113 113 / 15%);
+  color: var(--invalid);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 10px;
+  font-family: var(--mono);
+}
+
+.metrics dt {
+  color: var(--text-muted);
+}
+
+.metrics dd {
+  margin: 0;
+  text-align: right;
+}
+
+.violations {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.violation {
+  padding: 6px 8px;
+  border-left: 3px solid var(--invalid);
+  background: var(--surface-2);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 13px;
+}
+
+.violation__kind {
+  font-family: var(--mono);
+  color: var(--invalid);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.error {
+  padding: 8px 14px;
+  background: rgb(248 113 113 / 12%);
+  border-bottom: 1px solid var(--invalid);
+  color: var(--invalid);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+/* ----------------------------------------------------------------- modal */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(5 10 22 / 70%);
+  padding: 12px;
+}
+
+.modal__panel {
+  width: min(620px, 100%);
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 55%);
+}
+
+.modal__body {
+  padding: 14px 16px;
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+
+/* ------------------------------------------------------- canvas window */
+
+/*
+ * The zoom control and the menu a click on the background opens are both
+ * positioned against `.canvas-host`, which is declared with the rest of the
+ * layout above.
+ */
+.button--small {
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.zoom {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgb(23 32 51 / 92%);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 35%);
+}
+
+/* ---------------------------------------------------------- create menu */
+
+.create-menu__veil {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+}
+
+.create-menu {
+  position: fixed;
+  z-index: 31;
+  min-width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 18px 40px rgb(0 0 0 / 50%);
+}
+
+.create-menu__title {
+  margin: 0 0 2px;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.create-menu__group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.create-menu__heading {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.create-menu__item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  text-align: left;
+}
+
+.create-menu__hint {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-family: var(--mono);
+}
+

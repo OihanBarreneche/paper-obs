@@ -1,0 +1,29 @@
+{
+  "problem_id": "circles-19-in-disk",
+  "name": "19 circles in a disk",
+  "description": "19 circles packed in a disk of radius 5. The hexagonal lattice is the natural first guess, but the wall is curved, so a tight answer needs a search that moves shapes rather than only resizing them. The solution loaded by default is the best arrangement this lab's own local search finds, not a published one: no coordinate list is published for this instance, so the shipped score is a number to beat rather than a record.",
+  "seed": 1207,
+  "arena": {
+    "name": "disk",
+    "shape": {
+      "type": "disk",
+      "radius": 5.0
+    }
+  },
+  "shape": {
+    "type": "circle",
+    "radius": 0.5
+  },
+  "objective": {
+    "type": "maximize_scale",
+    "count": 19
+  },
+  "rotation": {
+    "type": "rotation_policy",
+    "mode": "free",
+    "angles": [
+      0.0
+    ]
+  },
+  "constraints": []
+}

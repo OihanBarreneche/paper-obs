@@ -1,0 +1,81 @@
+/*
+ * What the arena canvas draws that no other component does: the corner grip that
+ * resizes a part, the turn grip that rotates one, the vertices of a polygon being
+ * drawn, and the pair of buttons that finishes one where it is being drawn.
+ */
+
+/*
+ * The grip is sized in screen pixels by the component, so it stays grabbable
+ * whatever the arena's own scale is.
+ */
+.arena-grip {
+  fill: var(--accent-strong);
+  cursor: nwse-resize;
+}
+
+/*
+ * The turn grip: a circular arrow standing just outside the part it turns, at the
+ * middle of the right edge of the part's own box. Nothing stands under it and
+ * nothing joins it to the part — the arrow is the whole control, and its own
+ * stroke is what carries it. The component sizes and places it in screen pixels,
+ * so it is the same size, and the same small gap away, whatever the window is
+ * magnified to — and it wears the same colours as the shapes canvas' own turn
+ * grip, so the two canvases turn the same way.
+ */
+.arena-turn-grip {
+  cursor: grab;
+}
+
+.arena-turn-grip__mark {
+  fill: none;
+  stroke: var(--accent-strong);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+/*
+ * The band a press has to land in: the arrow's stroke is only three pixels wide,
+ * so a hand a few pixels off it would miss, and this transparent circle — whose
+ * own stroke is the band — answers for it. `pointer-events: stroke` is what makes
+ * an unpainted stroke take a press, and its width, which is the tolerance itself,
+ * is set by the component in the arrow's own frame, where a unit is the arrow's
+ * radius in screen pixels. Nothing of it is drawn; the arrow is unchanged.
+ */
+.arena-turn-grip__hit {
+  fill: none;
+  stroke: transparent;
+  pointer-events: stroke;
+}
+
+.arena-turn-grip__core {
+  fill: transparent;
+  pointer-events: all;
+}
+
+.arena-vertex {
+  fill: var(--accent-strong);
+  pointer-events: none;
+}
+
+/*
+ * The polygon being drawn is a region, not a finished part: the same outline, with
+ * the fill held back so the parts underneath stay readable while it is placed.
+ */
+.arena-part--drawing {
+  fill: rgb(96 165 250 / 10%);
+}
+
+/* The buttons that finish a drawing: where the last vertex is, not across the room. */
+.arena-finish {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgb(23 32 51 / 92%);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 35%);
+}

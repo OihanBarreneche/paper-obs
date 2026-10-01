@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <title>5 squares in the smallest square — squares-5-published</title>
+  <rect x="0" y="0" width="320" height="320" fill="#fffdfb"/>
+  <g transform="translate(8 312) scale(112.3 -112.3)">
+  <path d="M 2.707 0 L 2.707 2.707 L 0 2.707 L 0 0 Z" fill="#f6f1fa" fill-rule="evenodd" stroke="#6f607b" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+  <polygon points="1,2.707 0,2.707 -1.11e-16,1.707 1,1.707" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2.707,2.707 1.707,2.707 1.707,1.707 2.707,1.707" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1,1 0,1 -1.11e-16,0 1,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2.707,1 1.707,1 1.707,0 2.707,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1.354,2.061 0.6464,1.354 1.354,0.6464 2.061,1.354" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  </g>
+</svg>

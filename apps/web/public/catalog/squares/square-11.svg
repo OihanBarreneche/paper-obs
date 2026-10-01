@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <title>11 squares in the smallest square — squares-11-published</title>
+  <rect x="0" y="0" width="320" height="320" fill="#fffdfb"/>
+  <g transform="translate(8 312) scale(78.41 -78.41)">
+  <path d="M 3.877 0 L 3.877 3.877 L -2.22e-16 3.877 L -2.22e-16 0 Z" fill="#f6f1fa" fill-rule="evenodd" stroke="#6f607b" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+  <polygon points="1,1 0,1 -1.11e-16,0 1,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1,3.877 0,3.877 -1.11e-16,2.877 1,2.877" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="3.877,3.033 2.877,3.033 2.877,2.033 3.877,2.033" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2.877,1 1.877,1 1.877,0 2.877,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="3.877,1 2.877,1 2.877,0 3.877,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="3.877,2 2.877,2 2.877,1 3.877,1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1.393,1.977 0.748,1.213 1.512,0.5676 2.157,1.332" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="0.6452,2.641 -1.11e-16,1.877 0.764,1.232 1.409,1.996" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2.129,2.664 1.484,1.9 2.248,1.255 2.893,2.019" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1.381,3.328 0.736,2.564 1.5,1.919 2.145,2.683" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2.281,3.877 1.636,3.113 2.4,2.468 3.045,3.232" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  </g>
+</svg>

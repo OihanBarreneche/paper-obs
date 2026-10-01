@@ -1,0 +1,556 @@
+{
+  "source": "scripts/build_subfamily_previews.py",
+  "generated": "2026-09-27",
+  "window": [
+    5,
+    15
+  ],
+  "preferred_count": 9,
+  "families": {
+    "cirincir": {
+      "kind": "rendered",
+      "count": 9,
+      "url": "/catalog/families/cirincir.svg",
+      "packomania": "cci"
+    },
+    "triincir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triincir/tc9.gif"
+    },
+    "squincir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squincir/9.gif"
+    },
+    "penincir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/penincir/9.png"
+    },
+    "hexincir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/hexincir/9.png"
+    },
+    "octincir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/octincir/9.png"
+    },
+    "tanincir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/tanincir/9.gif"
+    },
+    "domincir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/domincir/9.png"
+    },
+    "lincir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/lincir/9.gif"
+    },
+    "cirintri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/cirintri/ct9.gif"
+    },
+    "triintri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triintri/tt9.gif"
+    },
+    "squintri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squintri/ts9.gif"
+    },
+    "penintri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/penintri/9.png"
+    },
+    "hexintri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/hexintri/9.gif"
+    },
+    "octintri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/octintri/9.png"
+    },
+    "tanintri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/tanintri/9.png"
+    },
+    "domintri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/domintri/9.png"
+    },
+    "Lintri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/Lintri/9.png"
+    },
+    "cirinsqu": {
+      "kind": "rendered",
+      "count": 9,
+      "url": "/catalog/families/cirinsqu.svg",
+      "packomania": "csq"
+    },
+    "triinsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triinsqu/t9.gif"
+    },
+    "peninsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/peninsqu/9.png"
+    },
+    "hexinsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/hexinsqu/9.png"
+    },
+    "octinsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/octinsqu/9.png"
+    },
+    "taninsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/taninsqu/9.gif"
+    },
+    "dominsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/dominsqu/9.png"
+    },
+    "linsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/linsqu/9.gif"
+    },
+    "cirinpen": {
+      "kind": "rendered",
+      "count": 9,
+      "url": "/catalog/families/cirinpen.svg",
+      "packomania": "cpt"
+    },
+    "triinpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triinpen/9.gif"
+    },
+    "squinpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squinpen/9.gif"
+    },
+    "peninpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/peninpen/9.png"
+    },
+    "hexinpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/hexinpen/9.png"
+    },
+    "octinpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/octinpen/9.png"
+    },
+    "taninpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/taninpen/9.png"
+    },
+    "dominpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/dominpen/9.png"
+    },
+    "Linpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/Linpen/9.png"
+    },
+    "cirinhex": {
+      "kind": "rendered",
+      "count": 9,
+      "url": "/catalog/families/cirinhex.svg",
+      "packomania": "chx"
+    },
+    "triinhex": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triinhex/9.gif"
+    },
+    "squinhex": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squinhex/9.png"
+    },
+    "peninhex": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/peninhex/9.png"
+    },
+    "hexinhex": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/hexinhex/9.gif"
+    },
+    "octinhex": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/octinhex/9.png"
+    },
+    "taninhex": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/taninhex/9.png"
+    },
+    "dominhex": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/dominhex/9.png"
+    },
+    "Linhex": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/Linhex/9.png"
+    },
+    "triinoct": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triinoct/9.gif"
+    },
+    "squinoct": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squinoct/9.gif"
+    },
+    "peninoct": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/peninoct/9.png"
+    },
+    "hexinoct": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/hexinoct/9.png"
+    },
+    "octinoct": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/octinoct/9.gif"
+    },
+    "taninoct": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/taninoct/9.gif"
+    },
+    "dominoct": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/dominoct/9.png"
+    },
+    "Linoct": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/Linoct/9.png"
+    },
+    "cirintan": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/cirintan/9.gif"
+    },
+    "triintan": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triintan/9.png"
+    },
+    "squintan": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squintan/9.gif"
+    },
+    "penintan": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/penintan/9.png"
+    },
+    "hexintan": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/hexintan/9.png"
+    },
+    "octintan": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/octintan/9.png"
+    },
+    "tanintan": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/tanintan/9.gif"
+    },
+    "domintan": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/domintan/9.png"
+    },
+    "Lintan": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/Lintan/9.gif"
+    },
+    "triindom": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triindom/9.png"
+    },
+    "squindom": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squindom/9.gif"
+    },
+    "penindom": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/penindom/9.png"
+    },
+    "hexindom": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/hexindom/9.png"
+    },
+    "octindom": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/octindom/9.png"
+    },
+    "tanindom": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/tanindom/9.png"
+    },
+    "domindom": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/domindom/9.gif"
+    },
+    "Lindom": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/Lindom/10.gif"
+    },
+    "cirinl": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/cirinl/9.gif"
+    },
+    "triinL": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triinL/9.png"
+    },
+    "squinl": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squinl/12.gif"
+    },
+    "peninL": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/peninL/9.png"
+    },
+    "hexinL": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/hexinL/9.png"
+    },
+    "octinL": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/octinL/9.png"
+    },
+    "taninL": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/taninL/9.gif"
+    },
+    "dominL": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/dominL/9.gif"
+    },
+    "LinL": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/LinL/9.gif"
+    },
+    "cirinel": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/cirinel/e9.gif"
+    },
+    "cirinttt": {
+      "kind": "figure",
+      "count": 8,
+      "url": "https://erich-friedman.github.io/packing/cirinttt/c8.gif"
+    },
+    "cirRcir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/cirRcir/9.gif"
+    },
+    "triRcir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triRcir/9.png"
+    },
+    "squRcir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squRcir/9.gif"
+    },
+    "penRcir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/penRcir/9.png"
+    },
+    "cirRtri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/cirRtri/9.gif"
+    },
+    "squRtri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squRtri/9.gif"
+    },
+    "penRtri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/penRtri/9.png"
+    },
+    "cirRell": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/cirRell/9.gif"
+    },
+    "cirRsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/cirRsqu/9.gif"
+    },
+    "triRsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triRsqu/9.png"
+    },
+    "penRsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/penRsqu/9.png"
+    },
+    "cirRrec": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/cirRrec/9.gif"
+    },
+    "cirRpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/cirRpen/9.png"
+    },
+    "triRpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/triRpen/9.png"
+    },
+    "squRpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squRpen/9.png"
+    },
+    "penRpen": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/penRpen/9.png"
+    },
+    "domino": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/domino/ds9.gif"
+    },
+    "clinsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/clinsqu/ls9.gif"
+    },
+    "tricovtri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/tricovtri/tct9.gif"
+    },
+    "tricovcir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/tricovcir/tcc9.gif"
+    },
+    "tricosqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/tricosqu/tcs9.gif"
+    },
+    "squcotri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/squcotri/sct9.gif"
+    },
+    "sqcovcir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/sqcovcir/scc9.gif"
+    },
+    "squcosqu": {
+      "kind": "figure",
+      "count": 8,
+      "url": "https://erich-friedman.github.io/packing/squcosqu/scs8.gif"
+    },
+    "circovtri": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/circovtri/9.gif"
+    },
+    "circovcir": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/circovcir/9.gif"
+    },
+    "circovsqu": {
+      "kind": "figure",
+      "count": 9,
+      "url": "https://erich-friedman.github.io/packing/circovsqu/9.gif"
+    },
+    "squinsqu": {
+      "kind": "rendered",
+      "count": 7,
+      "url": "/catalog/families/squinsqu.svg",
+      "squares": 7
+    }
+  }
+}

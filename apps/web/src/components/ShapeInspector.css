@@ -1,0 +1,52 @@
+/*
+ * The paint row of the shape panel: the colours the selection can take.
+ *
+ * The row itself is the shared `.field`, so its label lines up with every other
+ * label of the panel; only what a swatch looks like belongs here.
+ */
+
+.paint {
+  display: grid;
+  grid-template-columns: repeat(7, 18px);
+  justify-content: end;
+  gap: 6px;
+}
+
+/* A swatch carries its colour and nothing else: the label is what a screen reader
+   and a tooltip read, and the background is set inline from the palette's value. */
+.paint__swatch {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* The colour in hand, marked by a thicker border in the text colour: a mark made of
+   the border alone, so it cannot be read as another hue. */
+.paint__swatch--current {
+  border: 2px solid var(--text);
+}
+
+/* The theme entry: the one swatch with no colour of its own, drawn as the stylesheet
+   draws a colourless control — a stroke through an empty square. */
+.paint__swatch--theme {
+  background:
+    linear-gradient(
+      135deg,
+      transparent 44%,
+      var(--text-muted) 44%,
+      var(--text-muted) 56%,
+      transparent 56%
+    ),
+    var(--surface-2);
+}
+
+/* "paint every shape" is a whole-arrangement action, not one of the fields beside
+   it, so it takes its own line instead of competing with the swatches for one. */
+.paint__all {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+}
