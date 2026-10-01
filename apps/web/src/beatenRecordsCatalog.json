@@ -1,0 +1,65 @@
+{
+  "source": "https://erich-friedman.github.io/packing/index.html",
+  "base": "https://erich-friedman.github.io/packing/",
+  "generated": "2026-09-27",
+  "families": [
+    {
+      "slug": "squintri",
+      "page": "https://erich-friedman.github.io/packing/squintri/",
+      "title": "Squares in Triangles",
+      "shape": "square",
+      "container": "triangle",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "square-1-in-smallest-triangle",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "regular_polygon",
+          "sides": 4,
+          "side": 1.0
+        },
+        "objective": {
+          "type": "maximize_scale",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "regular_ngon",
+            "sides": 3,
+            "circumradius": 0.5773502691896258
+          }
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n unit squares packed inside the smallest known equilateral triangles (of side length s).",
+      "instances": [
+        {
+          "counts": [
+            38
+          ],
+          "value": 10.304,
+          "formula": "",
+          "symbol": "s",
+          "status": "best_known",
+          "attribution": "Found by Gianluca Costantino in April 2026",
+          "figure": "ts38.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Equal Copies"
+    }
+  ]
+}

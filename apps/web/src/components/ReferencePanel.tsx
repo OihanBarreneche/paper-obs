@@ -50,6 +50,7 @@ export function ReferencePanel({ problemId, reference, candidateOrigin, onChange
       </div>
       {value.note && <p className="reference-panel__note">{t(value.note)}</p>}
       {candidateOrigin === "source-derived-approximation" && <p className="reference-panel__approximation">{t("Loaded arrangement approximates the published figure; compare its measurements with the reference.")}</p>}
+      {candidateOrigin === "beaten-record" && <p className="reference-panel__record">{t("The loaded arrangement beats this published record: the figure and value above are the previous record, the verdict is the engine's measurement of the new one.")}</p>}
       {value.sources.length > 0 && <ul className="reference-panel__sources">{value.sources.map((source, index) => {
         const href = externalUrl(source.url);
         return href && <li key={index}><a href={href} target="_blank" rel="noopener noreferrer">{source.label} ↗</a></li>;
