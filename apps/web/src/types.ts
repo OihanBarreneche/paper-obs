@@ -747,10 +747,12 @@ export type AgentRunDoc = {
  * wrote, or an arrangement it submitted and the engine judged. Only an improvement keeps its
  * arrangement. `metric` is the record's unit, or the engine metric without a record. */
 export type ResearchEntryDoc =
-  | { kind: "note"; at: string; text: string }
+  // step, path, method, builds_on and programs are absent from sessions written before them.
+  | { kind: "note"; at: string; text: string; step?: string | null; path?: string | null }
   | { kind: "submission"; at: string; index: number; note: string; valid: boolean; primary: number;
       measure: number | null; metric: string; record_gap: number | null; accepted: boolean;
-      violations: string[]; candidate: CandidateDoc | null };
+      violations: string[]; candidate: CandidateDoc | null;
+      method?: string | null; builds_on?: number | string | null; programs?: string[] };
 
 export type ResearchBestDoc = { at: string; index: number; measure: number | null; metric: string;
   record_gap: number | null; primary: number };

@@ -5,8 +5,19 @@ import type { CandidateDoc, ResearchEntryDoc, ResearchSessionDoc, ResearchSessio
 
 /** How often an open session is read again while an agent may still be writing it. */
 const POLL_MS = 5000;
-/** Journal lines shown before "show the whole journal". */
+/** The latest journal lines shown before "show the whole journal". */
 const JOURNAL_LINES = 12;
+/** What a note records, singular and plural, in the order of docs/research-mode.md. */
+const STEPS: Record<string, [string, string]> = {
+  idea: ["idea", "ideas"], program: ["program", "programs"], search: ["computation", "computations"],
+  "dead-end": ["dead end", "dead ends"], check: ["check", "checks"],
+};
+/** Where a submitted arrangement comes from. */
+const METHODS: Record<string, string> = {
+  reasoning: "reasoning", composition: "composition", search: "automatic search", refinement: "local refinement",
+};
+
+type Submission = Extract<ResearchEntryDoc, { kind: "submission" }>;
 
 /**
  * Every free research session (docs/research-mode.md), read again every few seconds while
@@ -94,7 +105,8 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen }: Props)
   const reference = session?.session_id === line.session_id ? session.problem.metadata?.reference as
     { value?: number; unit?: string } | undefined : undefined;
   const best = line.best;
-  const journal = session?.session_id === line.session_id ? [...session.journal].reverse() : [];
+  const journal = session?.session_id === line.session_id ? session.journal : [];
+  const hidden = whole ? 0 : Math.max(0, journal.length - JOURNAL_LINES);
   return <div className="research-sessions">
     {scopes}
     {here.length > 1 && <select className="research-sessions__picker" value={line.session_id}
@@ -118,25 +130,112 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen }: Props)
     <Track track={line.track} record={reference?.value ?? null} />
     <button type="button" className="research-sessions__show" disabled={!session?.champion}
       onClick={() => session?.champion && onShow(session.champion)}>{t("Show the best arrangement")}</button>
+    <HowFound journal={journal} bestIndex={best?.index} />
+    <Programs sessionId={line.session_id} journal={journal} />
     <h4>{t("Journal")}</h4>
     {journal.length === 0 && <p className="research-sessions__quiet">{t("Nothing written yet.")}</p>}
-    <ol className="research-sessions__journal">
-      {(whole ? journal : journal.slice(0, JOURNAL_LINES)).map((entry, index) =>
-        <JournalLine key={`${entry.at}-${index}`} entry={entry} when={date(entry.at)} />)}
-    </ol>
-    {!whole && journal.length > JOURNAL_LINES && <button type="button" className="search-workspace__how"
+    {hidden > 0 && <button type="button" className="search-workspace__how"
       onClick={() => setWhole(true)}>{t("Show the whole journal")} ({journal.length})</button>}
+    <ol className="research-sessions__journal">
+      {journal.slice(hidden).map((entry, index) =>
+        <JournalLine key={`${entry.at}-${hidden + index}`} entry={entry} when={date(entry.at)} />)}
+    </ol>
   </div>;
+}
+
+/**
+ * The submissions that led to the best arrangement, from its starting point: each one's
+ * `builds_on` followed back or, when the best names none, every improvement in turn (as in
+ * sessions written before submissions named what they build on).
+ */
+function chainTo(journal: ResearchEntryDoc[], bestIndex: number | undefined): Submission[] {
+  const submissions = journal.filter((entry): entry is Submission => entry.kind === "submission");
+  const best = submissions.find((entry) => entry.index === bestIndex);
+  if (best === undefined) return [];
+  if (best.builds_on == null) return submissions.filter((entry) => entry.accepted);
+  const chain = [best];
+  for (let from: Submission["builds_on"] = best.builds_on; typeof from === "number" && from < chain[0]!.index;) {
+    const earlier = submissions.find((entry) => entry.index === from);
+    if (earlier === undefined) break;
+    chain.unshift(earlier);
+    from = earlier.builds_on;
+  }
+  return chain;
+}
+
+/** How the best arrangement was reached, each link labelled with its method, then what the journal records. */
+function HowFound({ journal, bestIndex }: { journal: ResearchEntryDoc[]; bestIndex: number | undefined }) {
+  const { t, number } = useI18n();
+  const chain = chainTo(journal, bestIndex);
+  if (chain.length === 0) return null;
+  const start = chain[0]!.builds_on;
+  const tally = Object.entries(STEPS).map(([step, names]) =>
+    [journal.filter((entry) => entry.kind === "note" && entry.step === step).length, names] as const)
+    .filter(([count]) => count > 0);
+  return <>
+    <h4>{t("How this result was found")}</h4>
+    <ol className="research-sessions__chain">
+      {typeof start === "string" && start && <li className="is-start"><small>{t("starting point")}</small><p>{start}</p></li>}
+      {chain.map((entry) => <li key={entry.index}>
+        <small>#{entry.index + 1}<MethodTag method={entry.method} /></small>
+        <p><strong>{entry.measure == null ? "—" : number(entry.measure, 6)}</strong>{entry.note && <> · {entry.note}</>}</p>
+      </li>)}
+    </ol>
+    {tally.length > 0 && <p className="research-sessions__tally">
+      {tally.map(([count, names]) => `${count} ${t(names[count === 1 ? 0 : 1])}`).join(" · ")}</p>}
+  </>;
+}
+
+/** The programs the agent wrote in work/, with what their notes say; a click reads one's code. */
+function Programs({ sessionId, journal }: { sessionId: string; journal: ResearchEntryDoc[] }) {
+  const { t } = useI18n();
+  const [open, setOpen] = useState<string | null>(null);
+  const [code, setCode] = useState<string | null>(null);
+  useEffect(() => {
+    setCode(null);
+    if (open === null) return;
+    let live = true;
+    api.researchWork(sessionId, open).then((file) => { if (live) setCode(file.text); },
+      () => { if (live) setCode(t("This file cannot be read.")); });
+    return () => { live = false; };
+  }, [sessionId, open]);
+  // The latest note on a program describes it; a program a submission names without a note still shows.
+  const programs = new Map<string, string>();
+  for (const entry of journal) {
+    if (entry.kind === "note" && entry.step === "program" && entry.path) programs.set(entry.path, entry.text);
+    if (entry.kind === "submission") (entry.programs ?? []).forEach((path) => programs.set(path, programs.get(path) ?? ""));
+  }
+  if (programs.size === 0) return null;
+  return <>
+    <h4>{t("Programs written")}</h4>
+    <ul className="research-sessions__programs">
+      {[...programs].map(([path, text]) => <li key={path}>
+        <button type="button" aria-expanded={open === path} onClick={() => setOpen(open === path ? null : path)}>
+          <code>{path}</code></button>
+        {text && <p>{text}</p>}
+        {open === path && <pre className="research-sessions__code">{code ?? "…"}</pre>}
+      </li>)}
+    </ul>
+  </>;
+}
+
+function MethodTag({ method }: { method?: string | null }) {
+  const { t } = useI18n();
+  return method ? <> · <span className={`research-sessions__method is-${method}`}>{t(METHODS[method] ?? method)}</span></> : null;
 }
 
 function JournalLine({ entry, when }: { entry: ResearchEntryDoc; when: string }) {
   const { t, number } = useI18n();
   if (entry.kind === "note") {
-    return <li className="research-sessions__note"><small>{when}</small><p>{entry.text}</p></li>;
+    const step = entry.step ? STEPS[entry.step] : undefined;
+    return <li className={entry.step ? `research-sessions__note is-${entry.step}` : "research-sessions__note"}>
+      <small>{when}{step && <> · <span className="research-sessions__step">{t(step[0])}</span></>}
+        {entry.path && <> · <code>{entry.path}</code></>}</small>
+      <p>{entry.text}</p></li>;
   }
   const verdict = entry.accepted ? t("new best") : entry.valid ? t("not better") : t("invalid");
   return <li className={entry.accepted ? "research-sessions__submission is-best" : "research-sessions__submission"}>
-    <small>{when} · #{entry.index + 1}</small>
+    <small>{when} · #{entry.index + 1}<MethodTag method={entry.method} /></small>
     <p><strong>{entry.measure == null ? "—" : number(entry.measure, 6)}</strong> · {verdict}
       {entry.note && <> · {entry.note}</>}</p>
     {!entry.valid && entry.violations.length > 0 && <p className="research-sessions__violation">{entry.violations[0]}</p>}
