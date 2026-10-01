@@ -718,6 +718,18 @@ export function App() {
     [problem, showLoadedVerdict],
   );
 
+  /** Open a research session's best arrangement on the canvas, judged again by the engine. */
+  const showResearchCandidate = useCallback(async (shown: CandidateDoc) => {
+    if (problem === null) {
+      return;
+    }
+    try {
+      showLoadedVerdict(await api.evaluate({ problem, candidate: shown, with_union: wantsUnion(problem) }));
+    } catch (cause) {
+      setSearchError(describeError(cause));
+    }
+  }, [problem, showLoadedVerdict]);
+
   /**
    * Draw what the run has newly reached.
    *
@@ -2498,6 +2510,7 @@ export function App() {
         baselines={searchAvailable ? searchStrategies : []}
         convergence={convergence} searchSummary={searchSummary} searchError={searchError}
         onRun={(baseline, budget) => void runSearch(baseline, budget)}
+        onShowCandidate={(shown) => void showResearchCandidate(shown)}
         evaluation={evaluation} verdictSummary={summary} best={best} problem={problem}
         view={view} busy={busy} showOrientations={showOrientations}
         onToggleOrientations={() => setShowOrientations((value) => !value)}

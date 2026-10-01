@@ -19,6 +19,8 @@ import type {
   InitRequest,
   ProblemDoc,
   ProviderModelsDoc,
+  ResearchSessionDoc,
+  ResearchSessionSummaryDoc,
   SearchResponseDoc,
   ProvidersDoc,
   ShapeFamilyDoc,
@@ -196,6 +198,14 @@ export const api = {
     request<WorkflowToolsDoc>(`/workflows/${encodeURIComponent(workflowId)}/tools`),
 
   /** List the runs already written, for a picker. */
+  /** The free research sessions of one problem, newest first: written by outside agents. */
+  researchSessions: async (problemId: string): Promise<ResearchSessionSummaryDoc[]> =>
+    (await request<{ sessions: ResearchSessionSummaryDoc[] }>(
+      `/research-sessions?problem_id=${encodeURIComponent(problemId)}`)).sessions,
+
+  researchSession: (sessionId: string) =>
+    request<ResearchSessionDoc>(`/research-sessions/${encodeURIComponent(sessionId)}`),
+
   agentRuns: async (): Promise<AgentRunSummaryDoc[]> =>
     (await request<{ runs: AgentRunSummaryDoc[] }>("/agent-runs")).runs,
 

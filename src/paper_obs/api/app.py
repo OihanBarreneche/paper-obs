@@ -31,6 +31,7 @@ from fastapi.responses import JSONResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 
 from paper_obs import __version__
+from paper_obs import research
 from paper_obs.agent_tools.engine import worker_processes
 from paper_obs.domain.arena import Arena, ArenaPart, ArenaShape, arena_from_parts, part
 from paper_obs.domain.candidate import Candidate
@@ -302,6 +303,23 @@ def _register_routes(app: FastAPI, *, processes: bool) -> None:
     def list_agent_runs() -> JSON:
         """List the runs already written, for a run picker."""
         return {"runs": runner.listing()}
+
+    @app.get("/api/research-sessions")
+    def list_research_sessions(problem_id: str | None = None) -> JSON:
+        """List the free research sessions (docs/research-mode.md), optionally one problem's."""
+        return {"sessions": research.listing(problem_id)}
+
+    @app.get("/api/research-sessions/{session_id}")
+    def read_research_session(session_id: str) -> JSON:
+        """Return one session: its problem, its journal and the best arrangement so far.
+
+        Read-only: a session is written by the agent that runs it, through the command line
+        or the Python module, never by the interface.
+        """
+        try:
+            return research.load(session_id)
+        except (OSError, ValueError) as error:
+            raise HTTPException(status_code=404, detail=f"unknown session {session_id!r}") from error
 
     @app.get("/api/agent-runs/{run_id}")
     def read_agent_run(run_id: str) -> JSON:

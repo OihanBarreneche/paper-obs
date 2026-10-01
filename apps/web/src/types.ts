@@ -739,6 +739,31 @@ export type AgentRunDoc = {
 };
 
 /** One line of the run listing, enough to pick a past run without reading it. */
+/** One line of a free research session's journal (docs/research-mode.md): a note the agent
+ * wrote, or an arrangement it submitted and the engine judged. Only an improvement keeps its
+ * arrangement. `metric` is the record's unit, or the engine metric without a record. */
+export type ResearchEntryDoc =
+  | { kind: "note"; at: string; text: string }
+  | { kind: "submission"; at: string; index: number; note: string; valid: boolean; primary: number;
+      measure: number | null; metric: string; record_gap: number | null; accepted: boolean;
+      violations: string[]; candidate: CandidateDoc | null };
+
+export type ResearchBestDoc = { at: string; index: number; measure: number | null; metric: string;
+  record_gap: number | null; primary: number };
+
+/** A session as the picker lists it; `track` holds each new best as [submission, measure, gap]. */
+export type ResearchSessionSummaryDoc = {
+  session_id: string; name: string; agent: string; status: string; created: string; updated: string;
+  problem_id: string; problem_name: string; submissions: number; best: ResearchBestDoc | null;
+  track: [number, number | null, number | null][];
+};
+
+export type ResearchSessionDoc = {
+  session_id: string; name: string; agent: string; goal: string; status: string;
+  created_at: string; updated_at: string; problem_id: string; problem: ProblemDoc;
+  journal: ResearchEntryDoc[]; best: ResearchBestDoc | null; champion: CandidateDoc | null;
+};
+
 export type AgentRunSummaryDoc = {
   run_id: string;
   /** When the run was written, in UTC: what a picker sorts a history by. */

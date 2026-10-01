@@ -53,6 +53,20 @@ def test_a_run_read_while_its_stop_is_pending_says_so(monkeypatch: pytest.Monkey
         CLIENT.app.state.active_runs.pop("run-pending", None)
 
 
+def test_research_sessions_are_listed_by_problem_and_read_back(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    """The interface reads the sessions an outside agent writes; an unknown one is a 404."""
+    from paper_obs import research
+
+    monkeypatch.setenv("PAPER_OBS_RUNS", str(tmp_path))
+    problem = research.catalog_problem("squintri", 5)
+    session = research.start(problem, name="api", agent="test")
+    lines = CLIENT.get("/api/research-sessions", params={"problem_id": problem.problem_id}).json()["sessions"]
+    assert [line["session_id"] for line in lines] == [session["session_id"]]
+    assert CLIENT.get("/api/research-sessions", params={"problem_id": "other"}).json()["sessions"] == []
+    assert CLIENT.get(f"/api/research-sessions/{session['session_id']}").json()["name"] == "api"
+    assert CLIENT.get("/api/research-sessions/res-missing").status_code == 404
+
+
 def _example(problem_id: str = "circle-25-in-square") -> dict:
     """Return one shipped problem document, as a client would fetch it."""
     return CLIENT.get(f"/api/examples/{problem_id}").json()["problem"]
