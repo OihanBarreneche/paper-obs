@@ -268,6 +268,8 @@ function coverTargetFromArena(arena: ArenaDoc | undefined): CoverTarget | null {
 
 /** Put an engine-authored arena document into the form's arena fields. */
 function applyArenaFields(state: FormState, arena: ArenaDoc | null): void {
+  // Remembered whatever the kind, so an untouched arena keeps the length it declares.
+  state.arenaLoaded = arena;
   const shape = arena?.shape;
   if (shape === undefined) {
     state.arenaKind = "rect";
@@ -288,7 +290,6 @@ function applyArenaFields(state: FormState, arena: ArenaDoc | null): void {
     // document is the only honest answer: flattening it here would destroy work
     // the form never displayed.
     state.arenaKind = "keep";
-    state.arenaLoaded = { name: arena?.name ?? "arena", shape };
   }
 }
 
@@ -515,10 +516,16 @@ function buildProblem(state: FormState, family: ShapeFamilyDoc | null): ProblemD
   // An objective that measures its own region must not be handed an arena: the
   // engine refuses the pair, and it is right to — the region is what it computes.
   if (objective.type !== "minimize_container" && objective.type !== "maximize_covered_size") {
+    const shape = buildArena(state);
     problem.arena =
       state.arenaKind === "keep"
-        ? { name: state.arenaLoaded?.name ?? "arena", shape: buildArena(state) }
-        : { name: state.arenaKind, shape: buildArena(state) };
+        ? { name: state.arenaLoaded?.name ?? "arena", shape }
+        : { name: state.arenaKind, shape };
+    // The published length describes the loaded container; an edited outline drops it.
+    const loaded = state.arenaLoaded;
+    if (loaded?.reference_length !== undefined && JSON.stringify(loaded.shape) === JSON.stringify(shape)) {
+      problem.arena.reference_length = loaded.reference_length;
+    }
   }
   return problem;
 }

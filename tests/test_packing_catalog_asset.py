@@ -441,3 +441,33 @@ def test_a_within_family_duplicate_count_is_qualified_by_its_figure() -> None:
     # A count printed beside a single figure keeps the historical identifier.
     four = next(record for record in family["instances"] if 4 in record["counts"])
     assert copy_problem_id(family, 4, four["figure"]) == "dominoes-4-in-smallest-square"
+
+
+def test_every_fixed_container_reports_the_side_its_page_prints() -> None:
+    """Each maximize_scale template states the length its published number measures.
+
+    A regular polygon reads its side from its geometry; every other container
+    declares ``reference_length``. The L is measured by its short side except on the
+    pages that say "long side", and the declared length is the side the page names:
+    the shortest edge of the outline, or the longest.
+    """
+    from paper_obs.domain import Arena, RegularNGon
+
+    checked = 0
+    for family in asset()["families"]:
+        template = family.get("problem_template")
+        if family["section"] != "Packing Equal Copies" or template is None:
+            continue
+        if template["objective"]["type"] != "maximize_scale" or family["container"] == "ellipse":
+            continue
+        arena = Arena.from_dict(template["arena"])
+        if isinstance(arena.shape, RegularNGon):
+            continue
+        assert arena.reference_length == 1.0, family["slug"]
+        if family["container"] == "l":
+            points = template["arena"]["shape"]["points"]
+            edges = [math.dist(points[k], points[k - 1]) for k in range(len(points))]
+            printed = max(edges) if "long side" in family["intro"] else min(edges)
+            assert printed == pytest.approx(1.0), family["slug"]
+        checked += 1
+    assert checked >= 20

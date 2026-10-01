@@ -729,7 +729,7 @@ const COPY_TITLE_CONTAINERS: Record<string, string> = {
   Ellipses: "une ellipse",
 };
 const COPY_TITLE = /^(Circles|Triangles|Squares|Pentagons|Hexagons|Octagons|Tans|Dominoes|L's) in (Circles|Triangles|Squares|Pentagons|Hexagons|Octagons|Tans|Dominoes|L's|Ellipses)$/;
-const COPY_NAME = /^(\d+) ([A-Za-z']+) in the smallest ([a-z]+)$/;
+const COPY_NAME = /^(\d+) ([A-Za-z']+) in the smallest ([A-Za-z]+)$/;
 /** A generated total-perimeter name also names the fixed container. */
 const PERIMETER_NAME = /^(\d+) ([A-Za-z']+)(?: in an? ([a-z]+))? with the largest total (radius|side)$/;
 /** A generated covering name: "3 circles covering the largest square". */

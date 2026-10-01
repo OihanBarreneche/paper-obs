@@ -82,7 +82,8 @@ export function defaultLibrary(): ProfileLibrary {
 
 export function readLibrary(): ProfileLibrary {
   try {
-    const saved = JSON.parse(window.localStorage.getItem(STORAGE_KEY) ?? "null") as (Partial<ProfileLibrary> & { builtIns?: unknown }) | null;
+    const saved = JSON.parse(window.localStorage.getItem(STORAGE_KEY) ?? "null") as
+      (Partial<ProfileLibrary> & { builtIns?: unknown; offeredRecords?: unknown }) | null;
     if (!saved || !Array.isArray(saved.categories) || !saved.problems || typeof saved.problems !== "object") {
       return defaultLibrary();
     }
@@ -94,15 +95,30 @@ export function readLibrary(): ProfileLibrary {
     const seen = Array.isArray(saved.builtIns) ? saved.builtIns : BUILT_IN_IDS.slice(0, FIRST_BUILT_INS);
     const added = defaults.categories.filter((category) => !seen.includes(category.id)
       && !categories.some((item) => item.id === category.id));
-    return { categories: [...categories, ...added], problems: { ...defaults.problems, ...saved.problems as Record<string, ProblemDoc> } };
+    // A record beaten after the library was saved joins its category once, like a new
+    // built-in category; one the user removed stays away.
+    const offered = Array.isArray(saved.offeredRecords) ? saved.offeredRecords : [];
+    const records = defaults.categories.find((category) => category.id === RECORDS_CATEGORY_ID)?.problemIds ?? [];
+    const fresh = records.filter((id) => !offered.includes(id));
+    const merged = categories.map((category) => category.id !== RECORDS_CATEGORY_ID ? category
+      : { ...category, problemIds: [...category.problemIds, ...fresh.filter((id) => !category.problemIds.includes(id))] });
+    // A record's document is generated, not curated: the shipped one (its reference
+    // re-read on the page) replaces whatever copy the browser saved.
+    const shipped = Object.fromEntries(records.flatMap((id) => {
+      const problem = defaults.problems[id];
+      return problem === undefined ? [] : [[id, problem] as const];
+    }));
+    return { categories: [...merged, ...added],
+      problems: { ...defaults.problems, ...saved.problems as Record<string, ProblemDoc>, ...shipped } };
   } catch {
     return defaultLibrary();
   }
 }
 
 export function saveLibrary(library: ProfileLibrary): void {
-  // Whatever is saved has been offered every current built-in category.
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...library, builtIns: BUILT_IN_IDS }));
+  // Whatever is saved has been offered every current built-in category and record.
+  const records = defaultLibrary().categories.find((category) => category.id === RECORDS_CATEGORY_ID)?.problemIds ?? [];
+  window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...library, builtIns: BUILT_IN_IDS, offeredRecords: records }));
 }
 
 export function includeProfile(library: ProfileLibrary, categoryId: string, problem: ProblemDoc | string): ProfileLibrary {

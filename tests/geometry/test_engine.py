@@ -184,6 +184,28 @@ def test_scale_bounds_are_degenerate_when_the_scale_is_fixed(circle_problem) -> 
     assert bounds.low == bounds.high == 2.0
 
 
+def test_a_declared_length_gives_any_fixed_arena_an_equivalent_side() -> None:
+    """An L arena of short side 1 holding three squares at scale 1/2 reads as an L of side 2.
+
+    The scale is what the engine optimises; the published number is the container
+    around unit copies, the declared length divided by the scale. An arena that
+    declares no length (and is no regular polygon) has no such reading.
+    """
+    outline = [(0.0, 0.0), (2.0, 0.0), (2.0, 1.0), (1.0, 1.0), (1.0, 2.0), (0.0, 2.0)]
+    square = RegularPolygon(sides=4, side=1.0)
+    placements = tuple(Placement(f"s{i}", x, y) for i, (x, y) in enumerate([(0.5, 0.5), (1.5, 0.5), (0.5, 1.5)]))
+    candidate = Candidate(candidate_id="l", problem_id="l", scale=0.5, placements=placements)
+
+    def problem(arena: Arena) -> Problem:
+        return Problem(problem_id="l", arena=arena, shape=square, objective=MaximizeScale(count=3))
+
+    measured = evaluate(problem(Arena(shape=Arena.polygon(outline).shape, reference_length=1.0)), candidate)
+    assert measured.valid
+    assert measured.metrics["equivalent_container_side"] == pytest.approx(2.0)
+    plain = evaluate(problem(Arena.polygon(outline)), candidate)
+    assert "equivalent_container_side" not in plain.metrics
+
+
 def test_the_container_is_the_longest_side_of_the_arrangement() -> None:
     """A minimal-enclosure region is measured, not given: the box, made square on its longest side.
 

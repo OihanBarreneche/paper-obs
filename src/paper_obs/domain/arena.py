@@ -390,9 +390,17 @@ class Arena:
 
     shape: ArenaShape
     name: str = ""
+    #: The length a published size of this container measures, in arena units: the leg
+    #: of a tan, the short side of a domino or an L. A copy scale ``k`` then stands for
+    #: the container ``reference_length / k`` around unit copies. ``None`` when the
+    #: arena is not one size of a family of similar containers; a regular polygon needs
+    #: none, its side is read from its own geometry.
+    reference_length: float | None = None
     geometry: BaseGeometry = field(init=False, repr=False, compare=False)
 
     def __post_init__(self) -> None:
+        if self.reference_length is not None and not self.reference_length > 0.0:
+            raise ValueError(f"reference_length must be positive, got {self.reference_length!r}")
         geometry = polygonal(self.shape.build(), context=f"arena ({self.shape.describe()})")
         if not geometry.is_valid:
             raise ValueError(f"invalid arena geometry: {explain_validity(geometry)}")
@@ -499,15 +507,24 @@ class Arena:
     # -- serialisation --------------------------------------------------------
 
     def to_dict(self) -> JSON:
-        """Return the JSON representation: the arena tree, not the compiled geometry."""
-        return {"name": self.name, "shape": jsonable(self.shape)}
+        """Return the JSON representation: the arena tree, not the compiled geometry.
+
+        ``reference_length`` is written only when set, so an arena without one keeps
+        the representation it always had.
+        """
+        data: JSON = {"name": self.name, "shape": jsonable(self.shape)}
+        if self.reference_length is not None:
+            data["reference_length"] = self.reference_length
+        return data
 
     @staticmethod
     def from_dict(data: JSON) -> Arena:
         """Rebuild an arena from its JSON representation."""
+        length = data.get("reference_length")
         return Arena(
             shape=ArenaShape.from_dict(require(data, "shape", "arena")),
             name=str(data.get("name", "")),
+            reference_length=None if length is None else as_float(length, "arena.reference_length"),
         )
 
     def describe(self) -> str:

@@ -128,18 +128,19 @@ def compute_metrics(facts: Facts, *, contact_tolerance: float = CONTACT_TOLERANC
         "min_scale": min(scales, default=0.0),
         **facts.container,
     }
-    # Catalog pages often state the side of the smallest container, while the
-    # engine optimizes copy scale in a fixed unit regular polygon. Report the
-    # equivalent unscaled side so the UI can compare the same units directly.
+    # Catalog pages often state the size of the smallest container, while the
+    # engine optimizes copy scale in a fixed arena. Report the equivalent unscaled
+    # size so the UI can compare the same units directly: the length the arena
+    # declares (a tan's leg, an L's short side), or a regular polygon's own side.
+    arena = facts.problem.arena
     if (isinstance(facts.problem.objective, MaximizeScale)
-            and facts.problem.arena is not None
-            and isinstance(facts.problem.arena.shape, RegularNGon)
+            and arena is not None
             and facts.candidate.scale > 0.0):
-        polygon = facts.problem.arena.shape
-        metrics["equivalent_container_side"] = (
-            2.0 * polygon.circumradius * math.sin(math.pi / polygon.sides)
-            / facts.candidate.scale
-        )
+        length = arena.reference_length
+        if length is None and isinstance(arena.shape, RegularNGon):
+            length = 2.0 * arena.shape.circumradius * math.sin(math.pi / arena.shape.sides)
+        if length is not None:
+            metrics["equivalent_container_side"] = length / facts.candidate.scale
     covered = covered_circle_radius(facts)
     if covered is not None:
         metrics[COVERED_CIRCLE] = covered

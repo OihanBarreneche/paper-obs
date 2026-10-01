@@ -19,7 +19,10 @@ export type ArenaNodeDoc =
   | { type: "polygon"; points: Point[] }
   | { type: "union" | "difference" | "intersection"; left: ArenaNodeDoc; right: ArenaNodeDoc };
 
-export type ArenaDoc = { name: string; shape: ArenaNodeDoc };
+/** `reference_length`: the length a published size of this container measures (a
+ * tan's leg, an L's short side), in arena units; the engine then reports the
+ * equivalent container side around unit copies. */
+export type ArenaDoc = { name: string; shape: ArenaNodeDoc; reference_length?: number };
 
 export type ShapeDoc =
   | { type: "circle"; radius: number }

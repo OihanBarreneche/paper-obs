@@ -91,6 +91,19 @@ def test_arena_tree_is_what_gets_serialised() -> None:
     assert arena.shape.describe() == "(rectangle 10 x 10 minus disk of radius 2)"
 
 
+def test_a_reference_length_round_trips_and_is_omitted_when_unset() -> None:
+    """The declared published length travels in JSON; an arena without one keeps its old form."""
+    measured = Arena(shape=Arena.rectangle(2.0, 1.0).shape, reference_length=1.0)
+    assert Arena.from_dict(measured.to_dict()).reference_length == 1.0
+    assert "reference_length" not in Arena.rectangle(2.0, 1.0).to_dict()
+    assert Arena.from_dict(Arena.rectangle(2.0, 1.0).to_dict()).reference_length is None
+
+
+def test_a_non_positive_reference_length_is_refused() -> None:
+    with pytest.raises(ValueError, match="reference_length"):
+        Arena(shape=Arena.rectangle(2.0, 1.0).shape, reference_length=0.0)
+
+
 # -- the ellipse ------------------------------------------------------------
 
 

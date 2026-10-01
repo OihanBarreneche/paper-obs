@@ -181,6 +181,11 @@ export function copyProblemId(family: CopyFamily, count: number, figure = ""): s
   return printed.length > 1 && stem !== "" ? `${identity}-figure-${stem}` : identity;
 }
 
+/** A container as a sentence prints it: the collection's "l" is the letter L. */
+function containerWord(container: string): string {
+  return container === "l" ? "L" : container;
+}
+
 /** A figure file name without its extension, for an identifier that must stay unique. */
 function figureStem(figure: string): string {
   return figure.replace(/\.[^./]*$/, "");
@@ -296,7 +301,7 @@ export function copyProblem(
     ? `${count} ${copyNoun(family.shape, count)} covering the largest ${family.container}`
     : perimeter
       ? `${count} ${copyNoun(family.shape, count)} in ${family.container === "ellipse" ? "an" : "a"} ${family.container} with the largest total ${copySum(family, false)}`
-      : `${count} ${copyNoun(family.shape, count)} in the smallest ${family.container}`;
+      : `${count} ${copyNoun(family.shape, count)} in the smallest ${containerWord(family.container)}`;
   // A record the source printed without a readable number describes its formula
   // instead: the problem is still built, and nothing claims a value we do not have.
   const reference = instance.value === null
@@ -310,7 +315,7 @@ export function copyProblem(
     ? `Measure the largest ${family.container} contained in the union of ${count} unit ${copyNoun(family.shape, 2)}. ${reference}`
     : perimeter
       ? `Pack ${count} ${copyNoun(family.shape, 2)} inside a ${family.container}, maximising the sum of their ${copySum(family, true)}. ${reference}`
-      : `Pack ${count} unit ${copyNoun(family.shape, 2)} inside the smallest possible ${family.container}. ${reference}`;
+      : `Pack ${count} unit ${copyNoun(family.shape, 2)} inside the smallest possible ${containerWord(family.container)}. ${reference}`;
   const template = family.problem_template;
   if (template !== undefined) {
     if (target !== null) {
