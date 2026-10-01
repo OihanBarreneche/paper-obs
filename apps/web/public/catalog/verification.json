@@ -26,20 +26,23 @@
   },
   "totals": {
     "beaten": 1,
-    "differs": 2,
+    "below": 1,
+    "differs": 3,
     "entries_catalog": 4245,
-    "entries_checked": 94,
+    "entries_checked": 104,
     "entries_unsupported": 89,
     "families_catalog": 107,
-    "families_checked": 6,
+    "families_checked": 15,
     "families_unsupported": 3,
-    "level:approx": 33,
+    "level:approx": 38,
     "level:beaten": 1,
-    "level:exact": 1,
-    "level:far": 1,
-    "level:near": 58,
-    "reproduces": 91,
-    "without_coordinates": 4062
+    "level:exact": 2,
+    "level:far": 2,
+    "level:near": 60,
+    "level:none": 1,
+    "reproduces": 98,
+    "unmeasurable": 1,
+    "without_coordinates": 4052
   },
   "families": {
     "cirincir": {
@@ -100,7 +103,8 @@
           "gap": -0.0003252267313145531,
           "source_kind": "published",
           "files": [
-            "packomania-cci-3.json"
+            "packomania-cci-3.json",
+            "starter-cirincir-3.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-3.json",
           "checked_on": "2026-10-02"
@@ -396,6 +400,37 @@
         }
       }
     },
+    "penincir": {
+      "title": "Pentagons in Circles",
+      "section": "Packing Equal Copies",
+      "shape": "pentagon",
+      "container": "circle",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "seed",
+        "label": "the lab's own seed",
+        "url": ""
+      },
+      "entries": {
+        "3": {
+          "status": "below",
+          "level": "approx",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 1.61803,
+          "unit": "container radius",
+          "measured": 1.6187186783586687,
+          "gap": -0.000425627682223811,
+          "source_kind": "seed",
+          "files": [
+            "starter-penincir-3.json"
+          ],
+          "candidate": "/catalog/candidates/starter-penincir-3.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
     "squintri": {
       "title": "Squares in Triangles",
       "section": "Packing Equal Copies",
@@ -408,6 +443,23 @@
         "url": ""
       },
       "entries": {
+        "2": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 3.154,
+          "unit": "container side",
+          "measured": 3.1547005383792515,
+          "gap": -0.00022211109044120082,
+          "source_kind": "seed",
+          "files": [
+            "starter-squintri-2.json"
+          ],
+          "candidate": "/catalog/candidates/starter-squintri-2.json",
+          "checked_on": "2026-10-02"
+        },
         "38": {
           "status": "differs",
           "level": "approx",
@@ -845,6 +897,68 @@
             "packomania-csq-24.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-24.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "triinsqu": {
+      "title": "Triangles in Squares",
+      "section": "Packing Equal Copies",
+      "shape": "triangle",
+      "container": "square",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "seed",
+        "label": "the lab's own seed",
+        "url": ""
+      },
+      "entries": {
+        "2": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 1.224,
+          "unit": "container side",
+          "measured": 1.224744871391589,
+          "gap": -0.0006085550584877155,
+          "source_kind": "seed",
+          "files": [
+            "starter-triinsqu-2.json"
+          ],
+          "candidate": "/catalog/candidates/starter-triinsqu-2.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "hexinsqu": {
+      "title": "Hexagons in Squares",
+      "section": "Packing Equal Copies",
+      "shape": "hexagon",
+      "container": "square",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "seed",
+        "label": "the lab's own seed",
+        "url": ""
+      },
+      "entries": {
+        "4": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 3.725,
+          "unit": "container side",
+          "measured": 3.725002596914244,
+          "gap": -6.971581863330733e-07,
+          "source_kind": "seed",
+          "files": [
+            "starter-hexinsqu-4.json"
+          ],
+          "candidate": "/catalog/candidates/starter-hexinsqu-4.json",
           "checked_on": "2026-10-02"
         }
       }
@@ -1720,6 +1834,192 @@
             "record-taninL-26.json"
           ],
           "candidate": null,
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "cirRcir": {
+      "title": "Circles in Circles",
+      "section": "Packing Copies to Maximize Total Perimeter",
+      "shape": "circle",
+      "container": "circle",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "seed",
+        "label": "the lab's own seed",
+        "url": ""
+      },
+      "entries": {
+        "2": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 1.0,
+          "unit": "sum of radii",
+          "measured": 1.0,
+          "gap": 0.0,
+          "source_kind": "seed",
+          "files": [
+            "starter-cirRcir-2.json"
+          ],
+          "candidate": "/catalog/candidates/starter-cirRcir-2.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "cirRsqu": {
+      "title": "Circles in Squares",
+      "section": "Packing Copies to Maximize Total Perimeter",
+      "shape": "circle",
+      "container": "square",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "seed",
+        "label": "the lab's own seed",
+        "url": ""
+      },
+      "entries": {
+        "2": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 0.585,
+          "unit": "sum of radii",
+          "measured": 0.5857864376269049,
+          "gap": 0.001344337823769043,
+          "source_kind": "seed",
+          "files": [
+            "starter-cirRsqu-2.json"
+          ],
+          "candidate": null,
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "triRsqu": {
+      "title": "Triangles in Squares",
+      "section": "Packing Copies to Maximize Total Perimeter",
+      "shape": "triangle",
+      "container": "square",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "seed",
+        "label": "the lab's own seed",
+        "url": ""
+      },
+      "entries": {
+        "2": {
+          "status": "reproduces",
+          "level": "exact",
+          "precise": true,
+          "published": false,
+          "promoted": true,
+          "value": 1.63299,
+          "unit": "sum of sides",
+          "measured": 1.632993161855452,
+          "gap": 1.9362368735432103e-06,
+          "source_kind": "seed",
+          "files": [
+            "starter-triRsqu-2.json"
+          ],
+          "candidate": "/catalog/candidates/starter-triRsqu-2.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "squcosqu": {
+      "title": "Squares Covering Squares",
+      "section": "Covering",
+      "shape": "square",
+      "container": "square",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "seed",
+        "label": "the lab's own seed",
+        "url": ""
+      },
+      "entries": {
+        "3": {
+          "status": "unmeasurable",
+          "level": "none",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 1.61803,
+          "unit": "covered area",
+          "measured": null,
+          "gap": null,
+          "source_kind": "seed",
+          "files": [
+            "starter-squcosqu-3.json"
+          ],
+          "candidate": null,
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "circovcir": {
+      "title": "Circles Covering Circles",
+      "section": "Covering",
+      "shape": "circle",
+      "container": "circle",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "seed",
+        "label": "the lab's own seed",
+        "url": ""
+      },
+      "entries": {
+        "3": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 1.154,
+          "unit": "covered radius",
+          "measured": 1.1547352604781038,
+          "gap": 0.0006371407955839733,
+          "source_kind": "seed",
+          "files": [
+            "starter-circovcir-3.json"
+          ],
+          "candidate": "/catalog/candidates/starter-circovcir-3.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "circovsqu": {
+      "title": "Circles Covering Squares",
+      "section": "Covering",
+      "shape": "circle",
+      "container": "square",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "seed",
+        "label": "the lab's own seed",
+        "url": ""
+      },
+      "entries": {
+        "2": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 1.788,
+          "unit": "covered side",
+          "measured": 1.788922628084816,
+          "gap": 0.0005160112331185817,
+          "source_kind": "seed",
+          "files": [
+            "starter-circovsqu-2.json"
+          ],
+          "candidate": "/catalog/candidates/starter-circovsqu-2.json",
           "checked_on": "2026-10-02"
         }
       }

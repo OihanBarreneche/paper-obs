@@ -139,8 +139,14 @@ PUBLISHED_FAMILIES = {
 
 #: The candidate files a catalogue entry may be judged from, in the order they win: the
 #: source's own coordinates first, then a construction, then a seed, then a
-#: reconstruction. Each names one file of the candidates directory.
-SOURCE_KINDS = ("published", "record", "seed", "approx")
+#: reconstruction. Each names the prefix of the files it is stored under.
+SOURCE_PREFIXES = {
+    "published": "packomania",
+    "record": "record",
+    "seed": "starter",
+    "approx": "approx",
+}
+SOURCE_KINDS = tuple(SOURCE_PREFIXES)
 
 #: The Packomania page a family's coordinates come from.
 PACKOMANIA_PAGE = "https://www.packomania.com/{code}/{code}.html"
@@ -347,7 +353,10 @@ def candidate_files(slug: str, count: int) -> list[tuple[str, str]]:
     code = PUBLISHED_FAMILIES.get(slug)
     if code:
         names.append(("published", f"packomania-{code}-{count}.json"))
-    names.extend((kind, f"{kind}-{slug}-{count}.json") for kind in ("record", "seed", "approx"))
+    names.extend(
+        (kind, f"{SOURCE_PREFIXES[kind]}-{slug}-{count}.json")
+        for kind in ("record", "seed", "approx")
+    )
     return names
 
 
