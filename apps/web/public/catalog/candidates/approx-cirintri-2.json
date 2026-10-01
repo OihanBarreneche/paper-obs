@@ -1,12 +1,12 @@
 {
   "kind": "candidate",
-  "candidate_id": "c-a3abe78127",
+  "candidate_id": "circles-2-in-smallest-triangle-figure",
   "problem_id": "circles-2-in-smallest-triangle",
   "scale": 0.16080744124456797,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-5fbb03d665"
+    "c-3e66d1a4fd"
   ],
   "placements": [
     {

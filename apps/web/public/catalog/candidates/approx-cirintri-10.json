@@ -1,12 +1,12 @@
 {
   "kind": "candidate",
-  "candidate_id": "c-bc2420e05a",
+  "candidate_id": "circles-10-in-smallest-triangle-figure",
   "problem_id": "circles-10-in-smallest-triangle",
   "scale": 0.10546046802666682,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-531c854585"
+    "c-3963180ecf"
   ],
   "placements": [
     {

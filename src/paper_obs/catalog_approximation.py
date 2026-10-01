@@ -351,8 +351,12 @@ def reconstruct(problem, path: Path, count: int) -> tuple[Candidate, dict[str, A
     if fitted is None:
         return None
     scale, candidate = fitted
+    # The local search hands back a child with a fresh identifier, which would make two runs
+    # of the same reading two different documents. A reading is a function of a drawing, so
+    # its identifier says which card it belongs to and nothing else.
     candidate = replace(
         candidate,
+        candidate_id=f"{problem.problem_id}-figure",
         metadata={
             "figure": path.name,
             "detected_radius_px": radius,

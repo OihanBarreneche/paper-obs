@@ -1,12 +1,12 @@
 {
   "kind": "candidate",
-  "candidate_id": "c-45c1895c2f",
+  "candidate_id": "circles-9-in-smallest-triangle-figure",
   "problem_id": "circles-9-in-smallest-triangle",
   "scale": 0.09875717945353937,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-e955b1d744"
+    "c-042ee4a29a"
   ],
   "placements": [
     {
