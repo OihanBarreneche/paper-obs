@@ -1,0 +1,56 @@
+{
+  "kind": "candidate",
+  "candidate_id": "L's-3-in-smallest-circle-figure",
+  "problem_id": "L's-3-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-135fc8f0ee"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.11767455230984693,
+      "y": 1.0805497097009134,
+      "rotation": 256.3316441635904
+    },
+    {
+      "shape_id": "s001",
+      "x": 1.0271464473336034,
+      "y": -0.6730528621234211,
+      "rotation": 644.9642793686444
+    },
+    {
+      "shape_id": "s002",
+      "x": -1.1448209996434506,
+      "y": -0.4074968475774902,
+      "rotation": 359.859542901407
+    }
+  ],
+  "metadata": {
+    "figure": "lincir-3.gif",
+    "detected_size_px": 37.17,
+    "detected_turns": [
+      270.0,
+      359.0,
+      89.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        0.248,
+        1.129
+      ],
+      [
+        0.735,
+        -0.566
+      ],
+      [
+        -0.983,
+        -0.563
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-6-in-smallest-circle-figure",
+  "problem_id": "circles-6-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 23,
+  "parents": [
+    "c-3bb2575514"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.9998591484677016,
+      "y": 1.7316503909542256
+    },
+    {
+      "shape_id": "s001",
+      "x": 1.0001408157820448,
+      "y": 1.7320250748648853
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.9997592053207086,
+      "y": -1.731477257731321
+    },
+    {
+      "shape_id": "s003",
+      "x": -1.000240663918227,
+      "y": -1.7321981605815646
+    },
+    {
+      "shape_id": "s004",
+      "x": -2.000269007941973,
+      "y": -0.00016371850551673145
+    },
+    {
+      "shape_id": "s005",
+      "x": 2.0004687992251484,
+      "y": 0.00016367099929021152
+    }
+  ],
+  "metadata": {
+    "figure": "cirincir-ccc6.gif",
+    "detected_size_px": 34.05,
+    "detected_turns": [],
+    "explained_ink": 0.7314,
+    "detected_layout": [
+      [
+        -0.995,
+        1.728
+      ],
+      [
+        0.995,
+        1.728
+      ],
+      [
+        0.995,
+        -1.726
+      ],
+      [
+        -0.995,
+        -1.727
+      ],
+      [
+        -1.995,
+        -0.001
+      ],
+      [
+        1.995,
+        -0.001
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

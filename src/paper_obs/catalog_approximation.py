@@ -125,6 +125,12 @@ SEPARATION_SLACK = 1e-5
 #: approximate. Zero disables it.
 POLISH_STEPS = 60
 
+#: The number of copies a reading may have and still be refined to the full step count.
+#: One step repairs the whole arrangement, so the cost of a step grows with the number of
+#: copies while what it buys does not: a reading of three copies is refined to the end, a
+#: reading of fifty gets enough steps to settle rather than a minute of them.
+POLISH_FREE_COPIES = 8
+
 #: The placements a reading is tried at before the best is kept, in copy sizes. A drawing
 #: shows its arrangement where the artist put it, and the engine only ever scales a layout
 #: about the origin, so where a reading sits inside the container is a question the search
@@ -137,6 +143,12 @@ SHIFT_STEP = 0.2
 #: engine builds itself is as good, and keeping the file would only make the catalogue's own
 #: badges worse. Nothing is written for such a reading, and the run says so.
 MAX_GAP = 0.1
+
+
+def polish_steps(count: int) -> int:
+    """Return the local-search steps a reading of this many copies is worth."""
+    scaled = POLISH_STEPS * POLISH_FREE_COPIES // max(count, 1)
+    return max(8, min(POLISH_STEPS, scaled))
 
 
 def module_message(error: ImportError) -> str:
@@ -435,17 +447,28 @@ def equal_regions(regions: list[np.ndarray], count: int) -> list[np.ndarray] | N
     corners of the container vary with the arrangement, while every copy's inside is the
     same shape at the same size.
     """
-    best: tuple[float, list[np.ndarray]] | None = None
-    for region in regions:
-        area = float(len(region))
-        group = [other for other in regions if abs(len(other) - area) <= AREA_TOLERANCE * area]
-        if len(group) != count:
+    if len(regions) < count:
+        return None
+    areas = np.array([len(region) for region in regions], dtype=float)
+    order = np.argsort(areas)
+    ordered = areas[order]
+    # The regions of one area are a contiguous run of the sorted areas, so the run that holds
+    # a region and everything within tolerance of it is two binary searches rather than a
+    # sweep. A drawing of many copies has thousands of regions -- every pocket between them
+    # is one -- and comparing each with each is what used to stall a whole family.
+    best: tuple[float, np.ndarray] | None = None
+    for area in ordered:
+        low = int(np.searchsorted(ordered, area * (1.0 - AREA_TOLERANCE), side="left"))
+        high = int(np.searchsorted(ordered, area * (1.0 + AREA_TOLERANCE), side="right"))
+        if high - low != count:
             continue
-        areas = np.array([len(item) for item in group], dtype=float)
-        spread = float(areas.std() / areas.mean())
+        run = ordered[low:high]
+        spread = float(run.std() / run.mean())
         if best is None or spread < best[0]:
-            best = (spread, group)
-    return None if best is None else best[1]
+            best = (spread, order[low:high])
+    if best is None:
+        return None
+    return [regions[int(index)] for index in best[1]]
 
 
 def base_outline(problem) -> np.ndarray:
@@ -742,7 +765,9 @@ def fitted_scale(
                 best = grown
     if best is None:
         return None
-    polished = polish(problem, best, iterations=POLISH_STEPS, origin="source-derived-approximation")
+    polished = polish(
+        problem, best, iterations=polish_steps(best.n_shapes), origin="source-derived-approximation"
+    )
     if evaluate(problem, polished).valid and polished.scale >= best.scale:
         best = polished
     if not evaluate(problem, best).valid:
@@ -774,7 +799,9 @@ def derived_reading(
     if not evaluate(problem, settled).valid:
         return None
     unit = settled
-    polished = polish(problem, unit, iterations=POLISH_STEPS, origin="source-derived-approximation")
+    polished = polish(
+        problem, unit, iterations=polish_steps(unit.n_shapes), origin="source-derived-approximation"
+    )
     best = unit
     if evaluate(problem, polished).valid and evaluate(problem, polished).is_better_than(
         evaluate(problem, unit)

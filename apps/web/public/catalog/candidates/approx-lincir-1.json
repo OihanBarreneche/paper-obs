@@ -1,0 +1,32 @@
+{
+  "kind": "candidate",
+  "candidate_id": "L's-1-in-smallest-circle-figure",
+  "problem_id": "L's-1-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.0,
+      "y": -0.0,
+      "rotation": 46.0
+    }
+  ],
+  "metadata": {
+    "figure": "lincir-1.gif",
+    "detected_size_px": 48.61,
+    "detected_turns": [
+      46.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        0.0,
+        -0.0
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

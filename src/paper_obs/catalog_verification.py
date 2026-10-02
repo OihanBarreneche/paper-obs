@@ -374,35 +374,42 @@ def measure_of(reference: dict[str, Any], verdict: Any) -> float | None:
     return None
 
 
-def judge(problem: Problem, candidate: Candidate, reference: dict[str, Any]) -> dict[str, Any]:
-    """Return one candidate's verdict against a card's published record."""
+def judge(
+    problem: Problem, candidate: Candidate, reference: dict[str, Any]
+) -> tuple[dict[str, Any], Any]:
+    """Return one candidate's verdict against a card's published record, and the verdict.
+
+    The verdict travels with the entry so callers can rank two candidates with the engine's
+    own comparison: which way is better is the objective's business, and a caller that
+    compared measurements itself would get a smallest-container family backwards.
+    """
     entry: dict[str, Any] = {"valid": None, "measured": None, "gap": None, "status": "error"}
     try:
         verdict = evaluate(problem, candidate)
     except Exception as error:  # the engine is the judge; a refusal is a finding
         entry["status"] = "error"
         entry["note"] = str(error)
-        return entry
+        return entry, None
     entry["valid"] = verdict.valid
     if not verdict.valid:
         entry["status"] = "invalid"
         entry["note"] = verdict.validation.summary()
-        return entry
+        return entry, verdict
     measured = measure_of(reference, verdict)
     if measured is None:
         entry["status"] = "unmeasurable"
-        return entry
+        return entry, verdict
     entry["measured"] = measured
     value = reference.get("value")
     if not isinstance(value, (int, float)) or isinstance(value, bool) or value <= 0:
         entry["status"] = "no_value"
-        return entry
+        return entry, verdict
     larger_is_better = REFERENCE_METRICS[str(reference["unit"])][1]
     status, gap, precise = classify(float(value), measured, larger_is_better)
     entry["status"] = status
     entry["gap"] = gap
     entry["precise"] = precise
-    return entry
+    return entry, verdict
 
 
 def level_of(status: str, gap: float | None, value: Any) -> str:
@@ -457,6 +464,7 @@ def verify_family(
         problem: Problem | None = None
         reference: dict[str, Any] = {}
         best: dict[str, Any] | None = None
+        best_evaluation: Any = None
         files: list[str] = []
         for kind, name, path in found:
             files.append(name)
@@ -487,18 +495,18 @@ def verify_family(
                     best = None
                     break
                 candidate = aligned(problem, candidate, factor, frame_angle(problem), note)
-            verdict = judge(problem, candidate, reference)
+            verdict, evaluation = judge(problem, candidate, reference)
             verdict["kind"] = kind
             verdict["file"] = name
             verdict["candidate"] = candidate
-            if verdict.get("status") == "invalid":
-                verdict["note"] = verdict.get("note", "")
-            improved = best is None or (verdict["valid"], verdict["measured"] or 0.0) > (
-                best["valid"],
-                best["measured"] or 0.0,
+            # The engine's own comparison decides which candidate a card holds: a family
+            # whose container is measured is better the smaller it is, and comparing the two
+            # measurements here would have preferred the larger one.
+            improved = evaluation is not None and (
+                best_evaluation is None or evaluation.is_better_than(best_evaluation)
             )
-            if improved:
-                best = verdict
+            if best is None or improved:
+                best, best_evaluation = verdict, evaluation
         if best is None:
             if str(count) not in entries:
                 entries[str(count)] = {

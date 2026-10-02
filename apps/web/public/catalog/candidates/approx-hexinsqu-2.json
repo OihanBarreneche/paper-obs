@@ -6,38 +6,38 @@
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-5e56d2baa3"
+    "c-549f272dcc"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": 0.6755493169379846,
-      "y": 0.6678116102796376,
-      "rotation": 1.4784686631075061
+      "x": -0.6706426107143828,
+      "y": -0.6268281849710605,
+      "rotation": 41.8605902303232
     },
     {
       "shape_id": "s001",
-      "x": -0.6755493169379844,
-      "y": -0.6678116102796376,
-      "rotation": 34.29383435333358
+      "x": 0.670642610714383,
+      "y": 0.6268281849710605,
+      "rotation": -2.323113690364532
     }
   ],
   "metadata": {
     "figure": "hexinsqu-2.png",
     "detected_size_px": 58.32,
     "detected_turns": [
-      9.0,
-      13.0
+      13.0,
+      9.0
     ],
     "explained_ink": 1.0,
     "detected_layout": [
       [
-        0.615,
-        0.633
-      ],
-      [
         -0.615,
         -0.633
+      ],
+      [
+        0.615,
+        0.633
       ]
     ],
     "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"

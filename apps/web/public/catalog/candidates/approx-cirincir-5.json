@@ -1,0 +1,67 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-5-in-smallest-circle-figure",
+  "problem_id": "circles-5-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 14,
+  "parents": [
+    "c-166d5293af"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.5248509102097906,
+      "y": -1.6173901944106654
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.5262398107453754,
+      "y": 1.6161227626979935
+    },
+    {
+      "shape_id": "s002",
+      "x": -1.3768824131821875,
+      "y": 1.0012034190142542
+    },
+    {
+      "shape_id": "s003",
+      "x": -1.37708019456883,
+      "y": -0.998796570846148
+    },
+    {
+      "shape_id": "s004",
+      "x": 1.7028718867958523,
+      "y": -0.0011394164554330711
+    }
+  ],
+  "metadata": {
+    "figure": "cirincir-ccc5.gif",
+    "detected_size_px": 37.85,
+    "detected_turns": [],
+    "explained_ink": 0.7151,
+    "detected_layout": [
+      [
+        0.522,
+        -1.613
+      ],
+      [
+        0.523,
+        1.612
+      ],
+      [
+        -1.372,
+        1.001
+      ],
+      [
+        -1.372,
+        -0.998
+      ],
+      [
+        1.699,
+        -0.001
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

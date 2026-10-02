@@ -1,0 +1,49 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-3-in-smallest-circle-figure",
+  "problem_id": "circles-3-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-f3fdfe5797"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.5778893313759861,
+      "y": -1.0016626080048658
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.5786062247696843,
+      "y": 1.0011964836941978
+    },
+    {
+      "shape_id": "s002",
+      "x": 1.1564955561456707,
+      "y": 0.00046612431066691466
+    }
+  ],
+  "metadata": {
+    "figure": "cirincir-ccc3.gif",
+    "detected_size_px": 47.48,
+    "detected_turns": [],
+    "explained_ink": 0.6405,
+    "detected_layout": [
+      [
+        -0.576,
+        -0.996
+      ],
+      [
+        -0.576,
+        0.995
+      ],
+      [
+        1.152,
+        0.001
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}
