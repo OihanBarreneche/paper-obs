@@ -27,22 +27,22 @@
   "totals": {
     "beaten": 1,
     "below": 52,
-    "differs": 68,
+    "differs": 69,
     "entries_catalog": 4245,
-    "entries_checked": 235,
+    "entries_checked": 236,
     "entries_unsupported": 89,
     "families_catalog": 107,
-    "families_checked": 28,
+    "families_checked": 29,
     "families_unsupported": 3,
     "level:approx": 53,
     "level:beaten": 1,
     "level:exact": 2,
-    "level:far": 107,
+    "level:far": 108,
     "level:near": 67,
     "level:none": 5,
     "reproduces": 109,
     "unmeasurable": 5,
-    "without_coordinates": 3921
+    "without_coordinates": 3920
   },
   "families": {
     "cirincir": {
@@ -4257,6 +4257,35 @@
             "starter-cirRcir-2.json"
           ],
           "candidate": "/catalog/candidates/starter-cirRcir-2.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "squRcir": {
+      "title": "Squares in Circles",
+      "section": "Packing Copies to Maximize Total Perimeter",
+      "shape": "square",
+      "container": "circle",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "figure"
+      },
+      "entries": {
+        "13": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 5.72,
+          "unit": "sum of sides",
+          "measured": 5.60619441050579,
+          "gap": -0.01989608207940735,
+          "source_kind": "approx",
+          "files": [
+            "approx-squRcir-13.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squRcir-13.json",
           "checked_on": "2026-10-02"
         }
       }

@@ -19,6 +19,7 @@ from paper_obs.domain import (
     Arena,
     Candidate,
     Circle,
+    MaximizeTotalPerimeter,
     MinimizeContainer,
     MaximizeScale,
     Placement,
@@ -260,3 +261,47 @@ def test_a_derived_container_is_measured_from_the_reading(tmp_path: Path):
     # Four unit squares in a two-by-two block need a square of side two, and the engine reads
     # that back from the arrangement the drawing shows rather than from anything printed.
     assert verdict.metrics["container_side"] == pytest.approx(2.0, rel=0.15)
+
+#: The drawing of two squares that differ in size: side by side, each this many pixels, with
+#: nothing drawn around them. A total-perimeter page draws copies of different sizes, so the
+#: copies are what has to be told from the space between them, and here there is no space.
+VARIED_SIDE = 50.0
+
+
+def total_perimeter_problem() -> Problem:
+    """Two unit squares in a unit square, their sides added up and maximised."""
+    return Problem(
+        "two-squares-total-perimeter",
+        Arena.rectangle(1.0, 1.0),
+        RegularPolygon(sides=4, side=1.0),
+        MaximizeTotalPerimeter(count=2),
+        rotation=RotationPolicy(mode=RotationMode.FREE),
+        seed=1,
+    )
+
+
+def draw_two_squares(path: Path) -> None:
+    """Draw two squares of equal size, their sides touching."""
+    from PIL import Image, ImageDraw
+
+    image = Image.new("L", (200, 200), 255)
+    draw = ImageDraw.Draw(image)
+    side = VARIED_SIDE
+    for index in range(2):
+        left = 50.0 + index * side
+        draw.rectangle([left, 50.0, left + side, 50.0 + side], outline=0, width=2)
+    image.save(path)
+
+
+def test_a_reading_of_copies_that_differ_in_size(tmp_path: Path):
+    path = tmp_path / "two-squares.gif"
+    draw_two_squares(path)
+    problem = total_perimeter_problem()
+    result = catalog_approximation.reconstruct(problem, path, 2)
+    assert result is not None
+    candidate, _ = result
+    verdict = evaluate(problem, candidate)
+    assert verdict.valid
+    # The reading keeps each copy's own size: two squares side by side filling a unit square
+    # have sides of a half each, and the objective adds them up.
+    assert verdict.metrics["total_scale"] == pytest.approx(1.0, rel=0.15)

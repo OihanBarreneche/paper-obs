@@ -144,6 +144,14 @@ SHIFT_STEP = 0.2
 #: badges worse. Nothing is written for such a reading, and the run says so.
 MAX_GAP = 0.1
 
+#: How far above its record a reading may land and still be kept. A reading measures an
+#: arrangement it has just recovered from a picture, and its own accuracy is a tenth of a
+#: percent at best: one that reports beating a published record by more than this has
+#: misread the drawing, and the interface would show it as a record beaten. It is dropped,
+#: and the published value stands -- a real improvement is for the owner to confirm, not for
+#: a reader to announce.
+MAX_OVER = 0.002
+
 
 def polish_steps(count: int) -> int:
     """Return the local-search steps a reading of this many copies is worth."""
@@ -469,6 +477,113 @@ def equal_regions(regions: list[np.ndarray], count: int) -> list[np.ndarray] | N
     if best is None:
         return None
     return [regions[int(index)] for index in best[1]]
+
+
+def hull_edge_count(pixels: np.ndarray) -> int:
+    """Return how many long edges the convex hull of a region has."""
+    hull = shapely.geometry.MultiPoint(pixels).convex_hull
+    if not hasattr(hull, "exterior"):
+        return 0
+    ring = np.asarray(hull.exterior.coords, dtype=float)
+    if len(ring) < 4:
+        return 0
+    edges = np.diff(ring, axis=0)
+    lengths = np.hypot(edges[:, 0], edges[:, 1])
+    return int((lengths >= EDGE_SHARE * float(lengths.max())).sum())
+
+
+def copy_sides(problem) -> int:
+    """Return how many sides one copy's outline has."""
+    sides = getattr(problem.shape, "sides", None)
+    if sides:
+        return int(sides)
+    return int(len(base_outline(problem)))
+
+
+def varied_regions(regions: list[np.ndarray], count: int, sides: int) -> list[np.ndarray] | None:
+    """Return the copies of a drawing whose copies differ in size, or None.
+
+    A total-perimeter page draws copies of different sizes, so what they share is not their
+    area but their shape: a copy's inside is a region with as many sides as a copy has, while
+    the space around the copies -- which the strokes also enclose -- has a different outline,
+    usually more sides. The largest of the regions that pass are the copies; a small pocket
+    shaped like a copy is smaller than every real one.
+    """
+    shaped = [region for region in regions if hull_edge_count(region) == sides]
+    if len(shaped) < count:
+        return None
+    return sorted(shaped, key=len, reverse=True)[:count]
+
+
+def varied_candidate(
+    problem_id: str, layout: np.ndarray, sizes: np.ndarray, turns: list[float], factor: float
+) -> Candidate:
+    """Return a reading of copies that differ in size, at a factor of the drawing's own.
+
+    Everything is in units of the largest copy: the layout is where the centres sit relative
+    to it, and each copy carries its own size, so growing the factor grows the arrangement as
+    a whole -- positions and sizes together -- inside a container that does not move.
+    """
+    return Candidate(
+        candidate_id=f"{problem_id}-figure",
+        problem_id=problem_id,
+        scale=1.0,
+        placements=tuple(
+            Placement(
+                shape_id=f"s{index:03d}",
+                x=float(x) * factor,
+                y=float(y) * factor,
+                rotation=float(turns[index]),
+                scale=float(sizes[index]) * factor,
+            )
+            for index, (x, y) in enumerate(layout)
+        ),
+        origin="source-derived-approximation",
+    )
+
+
+def fitted_varied_scale(
+    problem, layout: np.ndarray, sizes: np.ndarray, turns: list[float]
+) -> tuple[float, Candidate] | None:
+    """Return the largest factor a reading of unlike copies may reach, and its candidate.
+
+    Containment gets harder as the arrangement grows, so the largest factor is a bisection on
+    the engine's verdict, as it is for equal copies. What differs is that the copies' own
+    sizes grow with the factor: a page of one big square and three small ones is not a layout
+    of equal copies scaled, and a fit that only moved the anchors would grow the gaps.
+    """
+    start = SEPARATION_SLACK + 0.05
+    seed = varied_candidate(problem.problem_id, layout, sizes, turns, start)
+    if not evaluate(problem, seed).valid:
+        seed = repair_overlaps(
+            problem, seed, iterations=REPAIR_STEPS, origin="source-derived-approximation"
+        )
+        if not evaluate(problem, seed).valid:
+            return None
+    low, high = start, 1.0
+    while high < 1e6 and evaluate(
+        problem, varied_candidate(problem.problem_id, layout, sizes, turns, high)
+    ).valid:
+        low, high = high, high * 2.0
+    if high >= 1e6:
+        return None
+    for _ in range(32):
+        middle = (low + high) / 2.0
+        if evaluate(problem, varied_candidate(problem.problem_id, layout, sizes, turns, middle)).valid:
+            low = middle
+        else:
+            high = middle
+    best = varied_candidate(problem.problem_id, layout, sizes, turns, low)
+    polished = polish(
+        problem, best, iterations=polish_steps(best.n_shapes), origin="source-derived-approximation"
+    )
+    if evaluate(problem, polished).valid and evaluate(problem, polished).is_better_than(
+        evaluate(problem, best)
+    ):
+        best = polished
+    if not evaluate(problem, best).valid:
+        return None
+    return best.scale, best
 
 
 def base_outline(problem) -> np.ndarray:
@@ -810,32 +925,79 @@ def derived_reading(
     return best.scale, best
 
 
+def detect_varied_copies(
+    path: Path, count: int, problem
+) -> tuple[np.ndarray, np.ndarray, list[float], float] | None:
+    """Return the relative sizes, the layout, the turns and the explained ink of a drawing
+    whose copies differ in size."""
+    ink = dark_mask(path)
+    distance = distance_to_ink(ink)
+    group = varied_regions(enclosed_regions(ink), count, copy_sides(problem))
+    if group is None:
+        return None
+    base = base_outline(problem)
+    period = symmetry_period(problem)
+    unit_area = float(problem.shape.area(1.0))
+    if unit_area <= 0.0:
+        return None
+    offset = template_edge_offset(base)
+    centres = [(float(region[:, 0].mean()), float(region[:, 1].mean())) for region in group]
+    sizes = np.array([math.sqrt(len(region) / unit_area) for region in group])
+    turns: list[float] = []
+    for region, centre, size in zip(group, centres, sizes):
+        guess = region_turn(region, period, offset) if period < 360.0 else None
+        _, turn = fit_copy(distance, base, centre, float(size), period, guess)
+        turns.append(float(turn) % 360.0)
+    biggest = float(sizes.max())
+    mean_x = float(np.mean([centre[0] for centre in centres]))
+    mean_y = float(np.mean([centre[1] for centre in centres]))
+    layout = np.array([[(cx - mean_x) / biggest, -(cy - mean_y) / biggest] for cx, cy in centres])
+    outlines = [
+        outline_at(base, float(size), turn, centre)
+        for size, turn, centre in zip(sizes, turns, centres)
+    ]
+    return sizes / biggest, layout, turns, explained_ink(ink, np.vstack(outlines))
+
+
 def reconstruct(problem, path: Path, count: int) -> tuple[Candidate, dict[str, Any]] | None:
     """Return a candidate read off one drawing, and what the reading found.
 
     A figure of discs is read by its outlines, which are the same curve wherever they sit.
     A figure of anything else is read by the regions its strokes enclose: a copy's inside is
     a closed region and equal copies are equal regions, which is what a rotated square, a
-    pentagon or a tan has instead of an invariant outline. Both readings come back as a
-    layout in copy sizes and, for the second, the turn of every copy -- all the engine needs
-    to be asked what the arrangement is worth.
+    pentagon or a tan has instead of an invariant outline. A total-perimeter page draws
+    copies of different sizes, so its copies are the regions shaped like a copy and their
+    sizes are read one by one. Every reading comes back as a layout in copy sizes and, for
+    the region ones, the turn of every copy -- all the engine needs to be asked what the
+    arrangement is worth.
     """
     turns: list[float] | None = None
-    if bool(getattr(problem.shape, "is_circle", False)):
+    sizes: np.ndarray | None = None
+    if str(problem.objective.kind) == "maximize_total_perimeter":
+        varied = detect_varied_copies(path, count, problem)
+        if varied is None:
+            return None
+        sizes, pattern, turns, explained = varied
+        size = float(sizes.max())
+        fitted = fitted_varied_scale(problem, pattern, sizes, turns)
+    elif bool(getattr(problem.shape, "is_circle", False)):
         reading = detect_discs(path, count)
         if reading is None:
             return None
         size, centres, explained = reading
         pattern = unit_pattern(centres, size)
+        fitted = None
     else:
         copies = detect_copies(path, count, problem)
         if copies is None:
             return None
         size, pattern, turns, explained = copies
-    if bool(getattr(problem.objective, "derives_region", False)):
-        fitted = derived_reading(problem, pattern, turns)
-    else:
-        fitted = fitted_scale(problem, pattern, turns)
+        fitted = None
+    if fitted is None and sizes is None:
+        if bool(getattr(problem.objective, "derives_region", False)):
+            fitted = derived_reading(problem, pattern, turns)
+        else:
+            fitted = fitted_scale(problem, pattern, turns)
     if fitted is None:
         return None
     scale, candidate = fitted
@@ -907,8 +1069,8 @@ def reconstruct_family(family: dict[str, Any], counts: list[int], *, refresh: bo
         gap = None
         if measured is not None and compared is not None and isinstance(value, (int, float)) and value:
             gap = (measured - value) / abs(value) * (1.0 if compared[1] else -1.0)
-        if gap is not None and gap < -MAX_GAP:
-            print(f"{slug} n={count}: the reading is too far off its record ({gap:.1%}), dropped")
+        if gap is not None and not -MAX_GAP <= gap <= MAX_OVER:
+            print(f"{slug} n={count}: the reading is too far off its record ({gap:+.1%}), dropped")
             continue
         save_candidate(candidate, ASSET.parent / "candidates" / f"approx-{slug}-{count}.json")
         written += 1
