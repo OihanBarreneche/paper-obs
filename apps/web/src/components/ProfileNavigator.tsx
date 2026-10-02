@@ -107,13 +107,13 @@ const SKETCH_FALLBACK = SKETCH_OUTLINES["square"] ?? "";
 function Figure({ url, alt, tinted }: { url: string; alt: string; tinted: boolean }) {
   const [failed, setFailed] = useState(false);
   if (url === "" || failed) return null;
-  // Our own drawings already wear the catalogue's pink/purple; only a figure
-  // hotlinked from the source is treated, and the perimeter section keeps its own
-  // colours because there they encode the sizes of the packed shapes.
-  const source = /^https?:/i.test(url);
+  // One plate, one ink: a figure the source hosts and a drawing of ours take the same
+  // treatment, or a family the lab can already place would stand out from its neighbours
+  // for no reason a reader cares about. The perimeter section keeps its own colours,
+  // because there they encode the sizes of the packed shapes.
   return <span className="profile-catalog__figure">
     <img src={url} alt={alt} loading="lazy" decoding="async" referrerPolicy="no-referrer"
-      className={source && tinted ? "packing-figure--source" : undefined}
+      className={tinted ? "packing-figure--tinted" : undefined}
       onError={() => setFailed(true)} />
   </span>;
 }
@@ -128,11 +128,11 @@ function Figure({ url, alt, tinted }: { url: string; alt: string; tinted: boolea
 function FamilyPicture({ preview, shape, container, tinted }: { preview: FamilyPreview | undefined; shape: string; container: string; tinted: boolean }) {
   const [failed, setFailed] = useState(false);
   if (preview !== undefined && preview.url !== "" && !failed) {
-    // A rendered tile is our own drawing and already matches; a source figure is a
-    // bitmap and takes the filter, unless it belongs to the perimeter section.
-    const source = preview.kind === "figure";
+    // Whatever the tile is -- a drawing of ours or the source's own bitmap -- it wears the
+    // catalogue's ink, so a shelf of tiles reads as one catalogue. The perimeter section
+    // keeps its colours.
     return <img src={preview.url} alt="" loading="lazy" decoding="async"
-      className={source && tinted ? "packing-figure--source" : undefined}
+      className={tinted ? "packing-figure--tinted" : undefined}
       onError={() => setFailed(true)} />;
   }
   return <CopySketch shape={shape} container={container} />;

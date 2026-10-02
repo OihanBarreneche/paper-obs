@@ -110,8 +110,8 @@
    so a column of records lines up like a shelf of plates. */
 .profile-catalog__figure { display: flex; align-items: center; justify-content: center; width: 100%; height: 104px; margin-bottom: 7px; background: #f7f3f8; border: 1px solid #eee6ee; }
 .profile-catalog__figure img { display: block; width: 100%; height: 100%; object-fit: contain; padding: 5px; }
-/* The tint itself is shared: see .packing-figure--source in styles.css. The perimeter
-   section keeps its own colours and its cards simply never apply the class. */
+/* The tint itself lives in styles.css (.packing-figure--tinted). The perimeter section
+   keeps its own colours and its cards simply never apply the class. */
 /* One short line for a subfamily whose every record is above the display limit. */
 .profile-catalog__hidden { max-width: 74ch; margin: 0 0 14px; color: var(--text-muted); font: italic 14px/1.5 var(--serif); }
 /* The one place the catalogue says the exact placements are mostly unknown. */
