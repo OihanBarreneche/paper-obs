@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { MAX_VISIBLE_COUNT, PACKING_INDEX, SQUARE_RECORDS, withinVisibleCount } from "../catalog";
 import type { SquareRecord } from "../catalog";
 import { api } from "../api";
-import { copyConfigurations, copyFigureUrl, copyNoun, copyProblem, copyProblemId, copyable, loadCopyCatalog, loadFamilyPreviews } from "../equalCopiesCatalog";
+import { containerNoun, copyConfigurations, copyFigureUrl, copyNoun, copyProblem, copyProblemId, copyable, loadCopyCatalog, loadFamilyPreviews } from "../equalCopiesCatalog";
 import type { CopyCatalog, FamilyPreview } from "../equalCopiesCatalog";
 import { useI18n } from "../i18n";
 import { decimalWords, loadVerification, verificationOf } from "../verification";
@@ -56,21 +56,6 @@ function hiddenRecordsNote(t: (english: string) => string): string {
 }
 /** The curated subfamily: 29 hand-checked records beside the generated catalogue. */
 const SQUARES = "Squares in squares";
-
-/**
- * The noun the container filter shows for a catalogue container.
- *
- * A container is not the packed shape's plural: "circles in squares" packs
- * circles into a *square*, and the two words translate differently in French
- * ("disques" against "carré"). The mapped keys are therefore distinct from the
- * shape nouns, and an unknown container keeps its asset word.
- */
-const CONTAINER_NOUNS: Record<string, string> = {
-  circle: "container circle", square: "container square", triangle: "container triangle",
-  pentagon: "container pentagon", hexagon: "container hexagon", octagon: "container octagon",
-  rectangle: "container rectangle", ellipse: "container ellipse",
-  tan: "container tan", domino: "container domino", l: "container l",
-};
 
 /**
  * Fixed navigation sketches, one outline per catalogue shape.
@@ -560,7 +545,7 @@ export function ProfileNavigator(props: Props) {
                   <label className="profile-catalog__filter"><span>{t("container")}</span>
                     <select value={containerFilter} aria-label={t("container")} onChange={(event) => changeContainerFilter(event.target.value)}>
                       <option value="">{t("All")}</option>
-                      {containerOptions.map((container) => <option key={container} value={container}>{t(CONTAINER_NOUNS[container] ?? container)}</option>)}
+                      {containerOptions.map((container) => <option key={container} value={container}>{t(containerNoun(container))}</option>)}
                     </select>
                   </label>
                   <small className="profile-catalog__filter-count">

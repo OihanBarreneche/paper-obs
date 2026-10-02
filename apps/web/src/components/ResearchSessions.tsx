@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../api";
+import { containerNoun, copyNoun } from "../equalCopiesCatalog";
 import { useI18n } from "../i18n";
 import type { CandidateDoc, ResearchEntryDoc, ResearchSessionDoc, ResearchSessionSummaryDoc } from "../types";
 
@@ -18,6 +19,11 @@ const METHODS: Record<string, string> = {
 };
 
 type Submission = Extract<ResearchEntryDoc, { kind: "submission" }>;
+
+/** Below this relative gap a session only ties the record. */
+const TIE = 1e-9;
+/** A session whose best beats the published record. */
+const beats = (item: ResearchSessionSummaryDoc) => (item.best?.record_gap ?? 0) > TIE;
 
 /**
  * Every free research session (docs/research-mode.md), read again every few seconds while
@@ -57,6 +63,13 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange
   const [session, setSession] = useState<ResearchSessionDoc | null>(null);
   const [whole, setWhole] = useState(false);
   const [deleting, setDeleting] = useState<"confirm" | "failed" | null>(null);
+  // The list of every session: which row asks to confirm a deletion, and its filters.
+  const [confirming, setConfirming] = useState<string | null>(null);
+  const [failed, setFailed] = useState<string | null>(null);
+  const [onlyRecords, setOnlyRecords] = useState(false);
+  const [order, setOrder] = useState<"recent" | "gain">("recent");
+  const [shapeFilter, setShapeFilter] = useState("");
+  const [containerFilter, setContainerFilter] = useState("");
   // Without a session of its own, the problem opens on the list of every session.
   const shown = scope ?? (here.length > 0 || sessions.length === 0 ? "problem" : "all");
   const line = shown === "problem" ? here.find((item) => item.session_id === chosen) ?? here[0] : undefined;
@@ -69,7 +82,11 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange
 
   const date = (iso: string) => new Intl.DateTimeFormat(language === "fr" ? "fr-FR" : "en-GB", {
     day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }).format(new Date(iso));
-  const gap = (value: number) => `${value > 0 ? "+" : "−"}${number(Math.abs(value) * 100, 3)} %`;
+  const remove = (sessionId: string) => api.deleteResearchSession(sessionId).then(() => {
+    setConfirming(null);
+    if (chosen === sessionId) setChosen(null);
+    onChange();
+  }, () => setFailed(sessionId));
   const scopes = <div className="run-picker__scope research-sessions__scope" role="tablist" aria-label={t("Sessions to show")}>
     <button type="button" role="tab" aria-selected={shown === "problem"} onClick={() => setScope("problem")}>
       {t("This problem")} <small>{here.length}</small></button>
@@ -78,11 +95,37 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange
   </div>;
 
   if (shown === "all") {
+    const values = (key: "shape" | "container") =>
+      [...new Set(sessions.map((item) => item[key]).filter((value): value is string => value !== null))].sort();
+    const shapes = values("shape"), containers = values("container");
+    const listed = sessions
+      .filter((item) => (!onlyRecords || beats(item))
+        && (shapeFilter === "" || item.shape === shapeFilter) && (containerFilter === "" || item.container === containerFilter))
+      .sort((a, b) => order === "gain"
+        ? (b.best?.record_gap ?? -Infinity) - (a.best?.record_gap ?? -Infinity)
+        : b.created.localeCompare(a.created));
     return <div className="research-sessions">
       {scopes}
+      <div className="research-sessions__tools">
+        <label className="research-sessions__only"><input type="checkbox" checked={onlyRecords}
+          onChange={(event) => setOnlyRecords(event.target.checked)} />{t("Records only")}</label>
+        <label>{t("Sort")}<select value={order} onChange={(event) => setOrder(event.target.value as "recent" | "gain")}>
+          <option value="recent">{t("Most recent")}</option>
+          <option value="gain">{t("Largest improvement")}</option>
+        </select></label>
+        {shapes.length > 1 && <label>{t("Shape")}<select value={shapeFilter} onChange={(event) => setShapeFilter(event.target.value)}>
+          <option value="">{t("All")}</option>
+          {shapes.map((shape) => <option key={shape} value={shape}>{t(copyNoun(shape, 2))}</option>)}
+        </select></label>}
+        {containers.length > 1 && <label>{t("Container")}<select value={containerFilter} onChange={(event) => setContainerFilter(event.target.value)}>
+          <option value="">{t("All")}</option>
+          {containers.map((container) => <option key={container} value={container}>{t(containerNoun(container))}</option>)}
+        </select></label>}
+      </div>
+      {listed.length === 0 && <p className="research-sessions__quiet">{t("No session matches these filters.")}</p>}
       <ul className="research-sessions__list">
-        {sessions.map((item) => <li key={item.session_id}>
-          <button type="button" onClick={() => {
+        {listed.map((item) => <li key={item.session_id} className={beats(item) ? "is-record" : undefined}>
+          <button type="button" className="research-sessions__open" onClick={() => {
             setChosen(item.session_id);
             setScope("problem");
             setWhole(false);
@@ -90,9 +133,19 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange
           }}>
             <span>{item.name}{item.example && <em className="run-picker__tag">{t("example")}</em>}</span>
             <small>{t(item.problem_name)} · {date(item.created)}
-              {item.best?.measure != null && <> · {number(item.best.measure, 6)}</>}
-              {item.best?.record_gap != null && <> ({gap(item.best.record_gap)})</>}</small>
+              {item.best?.measure != null && <> · {number(item.best.measure, 6)}</>}</small>
+            <Verdict gap={item.best?.record_gap ?? null} />
+            {failed === item.session_id && <small className="research-sessions__violation">{t("The session could not be deleted.")}</small>}
           </button>
+          {confirming === item.session_id
+            ? <span className="run-picker__confirm">
+                <button type="button" onClick={() => setConfirming(null)}>{t("Cancel")}</button>
+                <button type="button" className="run-picker__delete" onClick={() => void remove(item.session_id)}>{t("Delete")}</button>
+              </span>
+            : <button type="button" className="run-picker__icon" title={t("Delete session")}
+                aria-label={`${t("Delete session")}: ${item.name}`} onClick={() => { setFailed(null); setConfirming(item.session_id); }}>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3m-9 0 1 13h10l1-13M10 11v6m4-6v6" /></svg>
+              </button>}
         </li>)}
       </ul>
     </div>;
@@ -101,8 +154,7 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange
     return <div className="research-sessions__empty">
       {sessions.length > 0 && scopes}
       <p>{t("No free research session on this problem yet.")}</p>
-      <p>{t("An outside agent (Claude Code, Codex, your own scripts) opens one with")} <code>paper-obs research start</code>.
-        {" "}{t("It searches as it likes; the engine judges each arrangement it submits and this page follows it.")}
+      <p>{t("To start one, open this project in an agent such as Claude Code or Codex and ask it for a free research, on this problem or any other. The agent proposes how much of the processor to use, then searches as it likes: the engine judges every arrangement it submits, and this page follows its ideas, computations, dead ends and records live.")}
         {" "}{t("The method is in docs/research-mode.md.")}</p>
     </div>;
   }
@@ -141,8 +193,7 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange
     <dl className="research-sessions__figures">
       <div><dt>{t("Session best")}</dt><dd>{best?.measure == null ? "—" : number(best.measure, 6)}</dd></div>
       <div><dt>{t("Published record")}</dt><dd>{reference?.value == null ? "—" : number(reference.value, 6)}</dd></div>
-      <div><dt>{t("Gap")}</dt><dd className={best?.record_gap != null && best.record_gap > 0 ? "is-beaten" : ""}>
-        {best?.record_gap == null ? "—" : gap(best.record_gap)}</dd></div>
+      <div><dt>{t("Against the record")}</dt><dd>{best?.record_gap == null ? "—" : <Verdict gap={best.record_gap} />}</dd></div>
     </dl>
     {best && <p className="research-sessions__unit">{t(best.metric.replaceAll("_", " "))}</p>}
     <Track track={line.track} record={reference?.value ?? null} />
@@ -237,6 +288,17 @@ function Programs({ sessionId, journal }: { sessionId: string; journal: Research
   </>;
 }
 
+/** Whether a session beats the published record, ties it or stays short of it, at a glance. */
+function Verdict({ gap }: { gap: number | null }) {
+  const { t, number } = useI18n();
+  if (gap === null) return null;
+  const size = `${number(Math.abs(gap) * 100, 3)} %`;
+  if (gap > TIE) return <span className="research-sessions__verdict is-record">
+    <span aria-hidden="true">✓</span> {t("Record beaten by {size}").replace("{size}", size)}</span>;
+  if (gap >= -TIE) return <span className="research-sessions__verdict is-tie">{t("Ties the record")}</span>;
+  return <span className="research-sessions__verdict is-short">{t("{size} short of the record").replace("{size}", size)}</span>;
+}
+
 function MethodTag({ method }: { method?: string | null }) {
   const { t } = useI18n();
   return method ? <> · <span className={`research-sessions__method is-${method}`}>{t(METHODS[method] ?? method)}</span></> : null;
@@ -251,10 +313,13 @@ function JournalLine({ entry, when }: { entry: ResearchEntryDoc; when: string })
         {entry.path && <> · <code>{entry.path}</code></>}</small>
       <p>{entry.text}</p></li>;
   }
-  const verdict = entry.accepted ? t("new best") : entry.valid ? t("not better") : t("invalid");
-  return <li className={entry.accepted ? "research-sessions__submission is-best" : "research-sessions__submission"}>
+  const kind = entry.accepted ? "is-best" : entry.valid ? "is-worse" : "is-invalid";
+  const verdict = entry.accepted ? <><span aria-hidden="true">✓</span> {t("new best")}</>
+    : entry.valid ? t("not better") : <><span aria-hidden="true">✗</span> {t("invalid")}</>;
+  return <li className={`research-sessions__submission ${kind}`}>
     <small>{when} · #{entry.index + 1}<MethodTag method={entry.method} /></small>
-    <p><strong>{entry.measure == null ? "—" : number(entry.measure, 6)}</strong> · {verdict}
+    <p><span className={`research-sessions__outcome ${kind}`}>{verdict}</span>{" "}
+      <strong>{entry.measure == null ? "—" : number(entry.measure, 6)}</strong>
       {entry.note && <> · {entry.note}</>}</p>
     {!entry.valid && entry.violations.length > 0 && <p className="research-sessions__violation">{entry.violations[0]}</p>}
   </li>;

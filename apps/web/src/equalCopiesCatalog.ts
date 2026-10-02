@@ -145,6 +145,26 @@ export function copyNoun(shape: string, count: number): string {
   return (count === 1 ? nouns[0] : nouns[1]) ?? shape;
 }
 
+/**
+ * The noun the container filter shows for a catalogue container.
+ *
+ * A container is not the packed shape's plural: "circles in squares" packs
+ * circles into a *square*, and the two words translate differently in French
+ * ("disques" against "carré"). The mapped keys are therefore distinct from the
+ * shape nouns, and an unknown container keeps its asset word.
+ */
+const CONTAINER_NOUNS: Record<string, string> = {
+  circle: "container circle", square: "container square", triangle: "container triangle",
+  pentagon: "container pentagon", hexagon: "container hexagon", octagon: "container octagon",
+  rectangle: "container rectangle", ellipse: "container ellipse",
+  tan: "container tan", domino: "container domino", l: "container l",
+};
+
+/** The English noun a container filter shows, so the translator can render it. */
+export function containerNoun(container: string): string {
+  return CONTAINER_NOUNS[container] ?? container;
+}
+
 /** The collection's own heading for the section that covers a target region. */
 const COVERING_SECTION = "Covering";
 

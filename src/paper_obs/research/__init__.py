@@ -19,8 +19,10 @@ compared with the published value as it is.
 from __future__ import annotations
 
 import json
+import re
 import uuid
 from datetime import datetime, timezone
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -179,6 +181,7 @@ def listing(problem_id: str | None = None) -> list[dict[str, Any]]:
             "status": document["status"], "created": document["created_at"], "updated": document["updated_at"],
             "problem_id": document["problem_id"], "problem_name": document["problem"].get("name", ""),
             "submissions": len(submissions), "best": document["best"], "example": bool(document.get("example")),
+            **_family(document["problem"]),
             # Each new best as [submission index, measure, gap to the record]: how the session progressed.
             "track": [[item["index"], item["measure"], item["record_gap"]] for item in submissions if item["accepted"]],
         })
@@ -217,6 +220,26 @@ def catalog_problem(slug: str, count: int, catalog: Path | None = None) -> Probl
             "sources": [{"label": f"{family['title']} · Erich Friedman's Packing Center", "url": family["page"]}],
         }}
     return Problem.from_dict(template)
+
+
+def _family(problem: dict[str, Any]) -> dict[str, str | None]:
+    """The copies' shape and the container of a session's problem, as the catalog names them,
+    read from the family page its record cites; both none for a problem from elsewhere."""
+    sources = (problem.get("metadata", {}).get("reference") or {}).get("sources") or []
+    for source in sources:
+        match = re.search(r"/packing/([^/]+)/?$", str(source.get("url", "")))
+        if match and match.group(1) in _catalog_families():
+            return dict(zip(("shape", "container"), _catalog_families()[match.group(1)]))
+    return {"shape": None, "container": None}
+
+
+@lru_cache(maxsize=1)
+def _catalog_families() -> dict[str, tuple[str, str]]:
+    try:
+        document = json.loads(CATALOG.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return {item["slug"]: (item["shape"], item["container"]) for item in document["families"]}
 
 
 def _measure(problem: Problem, verdict: Evaluation) -> tuple[float | None, str]:

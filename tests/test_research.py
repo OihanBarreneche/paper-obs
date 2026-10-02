@@ -52,6 +52,7 @@ def test_a_session_keeps_only_improvements_and_measures_them_in_the_record_unit(
     assert document["champion"]["candidate_id"] == start.candidate_id
     line = research.listing(problem.problem_id)[0]
     assert line["submissions"] == 2 and len(line["track"]) == 1
+    assert (line["shape"], line["container"]) == ("square", "triangle")
 
 
 def test_the_command_line_answers_in_json(runs, tmp_path, capsys) -> None:
