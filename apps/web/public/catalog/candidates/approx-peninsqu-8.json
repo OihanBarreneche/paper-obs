@@ -1,0 +1,62 @@
+{
+ "kind": "candidate",
+ "candidate_id": "pentagons-8-in-smallest-square-approx",
+ "problem_id": "pentagons-8-in-smallest-square",
+ "scale": 1.0,
+ "origin": "lab-approximation",
+ "generation": 0,
+ "parents": [],
+ "placements": [
+  {
+   "shape_id": "s000",
+   "x": 0.688190960923778,
+   "y": -0.16146040637547912,
+   "rotation": 54.00000000000001
+  },
+  {
+   "shape_id": "s001",
+   "x": -0.6881909609237781,
+   "y": 0.16146040637547962,
+   "rotation": 18.000000000000036
+  },
+  {
+   "shape_id": "s002",
+   "x": 0.036077927681357015,
+   "y": 1.3819378081849247,
+   "rotation": 54.00000000000007
+  },
+  {
+   "shape_id": "s003",
+   "x": -0.036077927681357425,
+   "y": -1.381937808184925,
+   "rotation": 17.999999999999975
+  },
+  {
+   "shape_id": "s004",
+   "x": -1.5027638424451113,
+   "y": 1.3819378081849247,
+   "rotation": 54.0
+  },
+  {
+   "shape_id": "s005",
+   "x": 1.502763842445112,
+   "y": -1.3819378081849247,
+   "rotation": 18.000000000000025
+  },
+  {
+   "shape_id": "s006",
+   "x": -1.5027638424451117,
+   "y": -1.0590169954339648,
+   "rotation": 53.99999999999999
+  },
+  {
+   "shape_id": "s007",
+   "x": 1.5027638424451115,
+   "y": 1.0590169954339659,
+   "rotation": 18.000000000000025
+  }
+ ],
+ "metadata": {
+  "method": "A reading of the published figure, refined by an exact local optimisation: every pair of copies keeps a separating line, the common scale is maximised by SLSQP on the contacts, then cut back until a separating-axis check passes."
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "kind": "candidate",
+ "candidate_id": "squares-7-covering-circle-approx",
+ "problem_id": "squares-7-covering-circle",
+ "scale": 1.0,
+ "origin": "lab-approximation",
+ "generation": 0,
+ "parents": [],
+ "placements": [
+  {
+   "shape_id": "s000",
+   "x": -0.044486004884488756,
+   "y": 0.817702812471269,
+   "rotation": 340.0346985435196
+  },
+  {
+   "shape_id": "s001",
+   "x": 0.883712965177434,
+   "y": 0.44600251429669685,
+   "rotation": 340.0765730748275
+  },
+  {
+   "shape_id": "s002",
+   "x": 0.598252753821412,
+   "y": -0.4750746931621036,
+   "rotation": 342.9853444860033
+  },
+  {
+   "shape_id": "s003",
+   "x": -0.8477318637319745,
+   "y": 0.5789086618078876,
+   "rotation": 10.79933551856898
+  },
+  {
+   "shape_id": "s004",
+   "x": -0.8719350872759865,
+   "y": -0.3979898118449029,
+   "rotation": 336.99625667011185
+  },
+  {
+   "shape_id": "s005",
+   "x": -0.20158960306740345,
+   "y": -0.11053035134700244,
+   "rotation": 9.517459374265146
+  },
+  {
+   "shape_id": "s006",
+   "x": -0.04560896352036971,
+   "y": -0.9759367157767792,
+   "rotation": 312.0364867186478
+  }
+ ],
+ "metadata": {
+  "method": "The published figure read by hand, then a local search of small random moves judged by the engine's covered radius."
+ }
+}

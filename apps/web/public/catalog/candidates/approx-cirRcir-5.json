@@ -1,0 +1,44 @@
+{
+ "kind": "candidate",
+ "candidate_id": "circles-5-total-perimeter-in-circle-approx",
+ "problem_id": "circles-5-total-perimeter-in-circle",
+ "scale": 1.0,
+ "origin": "lab-approximation",
+ "generation": 0,
+ "parents": [],
+ "placements": [
+  {
+   "shape_id": "s000",
+   "x": 0.30390262980346533,
+   "y": 0.3454112435317871,
+   "scale": 0.5399285533132397
+  },
+  {
+   "shape_id": "s001",
+   "x": -0.4305069826645561,
+   "y": 0.6209005523862171,
+   "scale": 0.2444513526940592
+  },
+  {
+   "shape_id": "s002",
+   "x": -0.5804386099560508,
+   "y": -0.025393806091084804,
+   "scale": 0.41900617404108237
+  },
+  {
+   "shape_id": "s003",
+   "x": 0.0487221202947601,
+   "y": -0.5789473028065376,
+   "scale": 0.41900617480057406
+  },
+  {
+   "shape_id": "s004",
+   "x": 0.6706643225030731,
+   "y": -0.3479412643336085,
+   "scale": 0.24445135346957167
+  }
+ ],
+ "metadata": {
+  "method": "The W4 example run's best arrangement, refined by SLSQP on the sum of radii with the contacts as constraints, radii then shrunk by 1e-9."
+ }
+}

@@ -1091,7 +1091,7 @@ export function App() {
     forgetRun();
     const candidateUrl = target.metadata.catalog_candidate_url;
     if (guideCandidate || (typeof candidateUrl === "string"
-      && /^\/catalog\/candidates\/(?:squares-\d+|(?:starter|record)-[a-zA-Z0-9-]+)\.json$/.test(candidateUrl))) {
+      && /^\/catalog\/candidates\/[a-zA-Z0-9-]+\.json$/.test(candidateUrl))) {
       setBusy(true);
       try {
         const published = guideCandidate ?? await (async () => {

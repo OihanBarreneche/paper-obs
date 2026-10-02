@@ -26,23 +26,23 @@
   },
   "totals": {
     "beaten": 6,
-    "below": 90,
+    "below": 91,
     "differs": 118,
     "entries_catalog": 4245,
-    "entries_checked": 331,
+    "entries_checked": 336,
     "entries_unsupported": 89,
     "families_catalog": 107,
-    "families_checked": 30,
+    "families_checked": 31,
     "families_unsupported": 3,
     "level:approx": 57,
     "level:beaten": 6,
-    "level:exact": 2,
-    "level:far": 193,
-    "level:near": 67,
+    "level:exact": 5,
+    "level:far": 194,
+    "level:near": 68,
     "level:none": 6,
-    "reproduces": 111,
+    "reproduces": 115,
     "unmeasurable": 6,
-    "without_coordinates": 3825
+    "without_coordinates": 3820
   },
   "families": {
     "cirincir": {
@@ -2418,6 +2418,60 @@
             "approx-peninsqu-3.json"
           ],
           "candidate": "/catalog/candidates/approx-peninsqu-3.json",
+          "checked_on": "2026-10-02"
+        },
+        "5": {
+          "status": "reproduces",
+          "level": "exact",
+          "precise": true,
+          "published": false,
+          "promoted": true,
+          "value": 3.54903,
+          "unit": "container side",
+          "measured": 3.5490347573856442,
+          "gap": -1.3404749027464164e-06,
+          "decimals": 5,
+          "source_kind": "approx",
+          "files": [
+            "approx-peninsqu-5.json"
+          ],
+          "candidate": "/catalog/candidates/approx-peninsqu-5.json",
+          "checked_on": "2026-10-02"
+        },
+        "8": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 4.3819,
+          "unit": "container side",
+          "measured": 4.381909605361397,
+          "gap": -2.192053994143184e-06,
+          "decimals": 4,
+          "source_kind": "approx",
+          "files": [
+            "approx-peninsqu-8.json"
+          ],
+          "candidate": "/catalog/candidates/approx-peninsqu-8.json",
+          "checked_on": "2026-10-02"
+        },
+        "12": {
+          "status": "reproduces",
+          "level": "exact",
+          "precise": true,
+          "published": false,
+          "promoted": true,
+          "value": 5.23221,
+          "unit": "container side",
+          "measured": 5.2322143711513265,
+          "gap": -8.354311708116334e-07,
+          "decimals": 5,
+          "source_kind": "approx",
+          "files": [
+            "approx-peninsqu-12.json"
+          ],
+          "candidate": "/catalog/candidates/approx-peninsqu-12.json",
           "checked_on": "2026-10-02"
         }
       }
@@ -6214,6 +6268,24 @@
           ],
           "candidate": "/catalog/candidates/starter-cirRcir-2.json",
           "checked_on": "2026-10-02"
+        },
+        "5": {
+          "status": "reproduces",
+          "level": "exact",
+          "precise": true,
+          "published": false,
+          "promoted": true,
+          "value": 1.86684,
+          "unit": "sum of radii",
+          "measured": 1.8668436083185271,
+          "gap": 1.9328483035942435e-06,
+          "decimals": 5,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirRcir-5.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirRcir-5.json",
+          "checked_on": "2026-10-02"
         }
       }
     },
@@ -6307,6 +6379,36 @@
             "starter-triRsqu-2.json"
           ],
           "candidate": "/catalog/candidates/starter-triRsqu-2.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "sqcovcir": {
+      "title": "Squares Covering Circles",
+      "section": "Covering",
+      "shape": "square",
+      "container": "circle",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "figure"
+      },
+      "entries": {
+        "7": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 1.24188,
+          "unit": "covered radius",
+          "measured": 1.2295476321435104,
+          "gap": -0.009930402177738367,
+          "decimals": 1,
+          "source_kind": "approx",
+          "files": [
+            "approx-sqcovcir-7.json"
+          ],
+          "candidate": "/catalog/candidates/approx-sqcovcir-7.json",
           "checked_on": "2026-10-02"
         }
       }

@@ -43,7 +43,12 @@ function starterProblems(): { squares: ProblemDoc[]; variety: ProblemDoc[]; othe
     const family = demoCatalog.families.find((entry) => entry.slug === slug);
     const instance = family?.instances.find((entry) => entry.counts.includes(count));
     if (!family || !instance) throw new Error(`Missing workflow demo entry: ${slug}/${count}`);
-    return copyProblem(demoCatalog, family, instance, count, []);
+    // Each card opens on an approach to its record put together by the lab; a run still
+    // starts from the problem's own construction, so the comparison is unchanged.
+    const problem = copyProblem(demoCatalog, family, instance, count, []);
+    return { ...problem, metadata: { ...problem.metadata,
+      catalog_candidate_url: `/catalog/candidates/approx-${slug}-${count}.json`,
+    } };
   };
   return {
     squares: SQUARE_COUNTS.map((count) => {

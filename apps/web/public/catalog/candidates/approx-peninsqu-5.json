@@ -1,0 +1,44 @@
+{
+ "kind": "candidate",
+ "candidate_id": "pentagons-5-in-smallest-square-approx",
+ "problem_id": "pentagons-5-in-smallest-square",
+ "scale": 1.0,
+ "origin": "lab-approximation",
+ "generation": 0,
+ "parents": [],
+ "placements": [
+  {
+   "shape_id": "s000",
+   "x": -2.6035974401158554e-16,
+   "y": -0.08650188997652386,
+   "rotation": -35.99999999999998
+  },
+  {
+   "shape_id": "s001",
+   "x": 1.0863264184572354,
+   "y": 0.9655003841970483,
+   "rotation": 90.0
+  },
+  {
+   "shape_id": "s002",
+   "x": -1.0863264184572352,
+   "y": 0.9655003841970485,
+   "rotation": 54.00000000000001
+  },
+  {
+   "shape_id": "s003",
+   "x": -0.9655003841970483,
+   "y": -1.0863264184572348,
+   "rotation": 72.00000000000003
+  },
+  {
+   "shape_id": "s004",
+   "x": 0.965500384197048,
+   "y": -1.0863264184572352,
+   "rotation": 144.0
+  }
+ ],
+ "metadata": {
+  "method": "The W3 example run's best arrangement, refined by an exact local optimisation: every pair of copies keeps a separating line, the common scale is maximised by SLSQP on the contacts, then cut back until a separating-axis check passes."
+ }
+}
