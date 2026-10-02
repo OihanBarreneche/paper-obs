@@ -12,10 +12,6 @@ The interface is available in French and English. The code and public documentat
 
 *28 unit squares in the smallest square: the best-known construction (David Ellsworth, 2025), not a proved optimum, loaded from the catalog and judged valid by the engine.*
 
-![The diagram of the W4 research lab workflow](docs/images/agents-w4-workflow.png)
-
-*The Agents tab draws each workflow as a diagram checked against its compiled LangGraph graph: here W4, where teams of a builder and a critic work in parallel.*
-
 ## What works today
 
 - JSON problems and candidates with several objectives: fixed-count scale, fixed-size count, smallest container, covering, and maximum total perimeter.
@@ -28,6 +24,26 @@ The interface is available in French and English. The code and public documentat
 - A reference catalog snapshot with 107 families and 3,996 entries, and a verification pass that puts each published arrangement back in front of the engine and dates the check. A catalog card being present does **not** imply that its reference value has been independently proved or that the current engine supports its family. The interface distinguishes these cases.
 
 Known limits and the meaning of a reference score are in the [documentation](docs/README.md).
+
+## Agent workflows
+
+The **Agents** tab runs a LangGraph workflow on the open problem and keeps everything it did: the graph, each turn's plan, every model reply and tool call, the arrangements the engine judged and what the run spent. A run can be replayed turn by turn, resumed, compared with other runs of the same problem, and summed up in a statistics page.
+
+![The Agents tab on the W4 example run](docs/images/agents-workflows.png)
+
+*The W4 example run on 5 circles in a circle with the largest total radius: the workflow's graph, drawn from its compiled LangGraph graph, beside the best arrangement of the whole run or of each team.*
+
+![A turn of the W4 trace: the plan and the critic's answer](docs/images/agents-critique.png)
+
+*One turn of the trace: the team's plan, then the critic's attack on the builder's result, backed by the engine's numbers. The builder answers it, and the engine says whether the critique paid off.*
+
+## Free research
+
+Free research is the other way to put an agent to work: no graph and no fixed tools. Open this repository in an agent harness such as Claude Code or Codex and ask it for a free research session, on a problem you name or on one it proposes. The agent follows [research mode](docs/research-mode.md): it audits the machine and proposes how much of the processor to use before any long computation, opens a session, then searches with programs of its own. The engine judges every arrangement it submits. Run `paper-obs serve` and open **Search ▸ Free research** to follow the session live: its ideas, programs, dead ends, invalid attempts and new bests, and how its best compares with the published record. Sessions and their programs stay in the ignored `runs/research/` folder.
+
+![A free research session on 41 dominoes in a right triangle](docs/images/free-research.png)
+
+*The 41 dominoes example session: the published record beaten by 0.558 %, the progress of the session's best against the record, then how the result was found and the journal, beside the arrangement the engine judged.*
 
 ## Install and test
 
@@ -64,10 +80,6 @@ Without API credit, the `claude-code` and `codex` providers run the workflows on
 ## First visit
 
 The **Shapes** tab opens on five categories: **Start here · squares**, **Explore packing**, **Other objectives**, **Demo Workflow** (the problems the agent workflows are compared on) and **Records beaten by Claude**. The **Agents** tab ships one example run per workflow, and **Search ▸ Free research** ships two example record hunts, so a first visitor can read agent traces and a research journal without spending anything.
-
-## Free research
-
-Open this repository in an agent harness such as Claude Code or Codex and ask it for a free research session, on a problem you name or on one it proposes. The agent follows [research mode](docs/research-mode.md): it audits the machine and proposes how much of the processor to use before any long computation, opens a session, then searches with programs of its own. The engine judges every arrangement it submits. Run `paper-obs serve` and open **Search ▸ Free research** to follow the session live: its ideas, programs, dead ends, invalid attempts and new bests, and how its best compares with the published record. Sessions and their programs stay in the ignored `runs/research/` folder.
 
 ## Design
 

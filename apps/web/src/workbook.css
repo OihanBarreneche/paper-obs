@@ -560,7 +560,7 @@ body {
 .research-sessions__verdict.is-record { padding: 1px 8px; border-radius: 999px; background: #e3f2e7; color: #2f6e45; }
 .research-sessions__verdict.is-tie { color: #8a6a2a; }
 .research-sessions__verdict.is-short { color: #8a7d90; font-weight: 400; }
-.research-sessions__figures .research-sessions__verdict { font-size: 13px; }
+.research-sessions__figures .research-sessions__verdict { display: inline-block; font-size: 12px; white-space: nowrap; }
 .research-sessions__picker { width: 100%; margin: 0 0 12px; padding: 6px 8px; border: 1px solid #ddd3e0; border-radius: 6px; background: #fff; font: 13px var(--sans); }
 .research-sessions__head { position: relative; padding-right: 40px; }
 /* The trash is a bare icon, as in the problem list; it outlines nothing until it is pressed. */
@@ -573,7 +573,7 @@ body {
 .research-sessions__head p { margin: 4px 0 0; color: #806f88; font: 13px var(--sans); }
 .research-sessions__goal { font-style: italic; }
 .research-sessions__status.is-active { color: #3c7a52; }
-.research-sessions__figures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 18px 0 2px; }
+.research-sessions__figures { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; gap: 10px; margin: 18px 0 2px; }
 .research-sessions__figures div { padding: 8px 0 6px; background: url("./assets/pencil-rule.svg") bottom / 100% 4px no-repeat; }
 .research-sessions__figures dt { color: #9a819f; font: 600 10px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
 .research-sessions__figures dd { margin: 3px 0 0; font: 500 19px var(--serif); color: #3f2b4d; font-variant-numeric: tabular-nums; }

@@ -3,7 +3,7 @@
   "format": 1,
   "run_id": "example-w1-pentagons-8",
   "created_at": "2026-09-30T02:06:09+00:00",
-  "name": "Exemple · W1 · 8 pentagones dans le plus petit carré",
+  "name": "W1_8_pentagones_petit_carre",
   "workflow": "basic_agent_loop",
   "workflow_name": "W1 · Basic agent loop",
   "problem_id": "pentagons-8-in-smallest-square",

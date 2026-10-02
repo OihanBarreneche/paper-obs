@@ -3,7 +3,7 @@
   "format": 1,
   "run_id": "example-w2-squares-covering-7",
   "created_at": "2026-09-30T13:35:41+00:00",
-  "name": "Exemple · W2 · 7 carrés recouvrant un cercle",
+  "name": "W2_7_carres_recouvrant_grand_cercle",
   "workflow": "strategist_executor",
   "workflow_name": "W2 · Strategist and executor",
   "problem_id": "squares-7-covering-circle",
