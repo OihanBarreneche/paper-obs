@@ -111,9 +111,10 @@ function Figure({ url, alt, tinted }: { url: string; alt: string; tinted: boolea
   // treatment, or a family the lab can already place would stand out from its neighbours
   // for no reason a reader cares about. The perimeter section keeps its own colours,
   // because there they encode the sizes of the packed shapes.
+  const source = /^https?:/i.test(url);
   return <span className="profile-catalog__figure">
     <img src={url} alt={alt} loading="lazy" decoding="async" referrerPolicy="no-referrer"
-      className={tinted ? "packing-figure--tinted" : undefined}
+      className={tinted ? (source ? "packing-figure--tinted" : "packing-figure--pale") : undefined}
       onError={() => setFailed(true)} />
   </span>;
 }
@@ -132,10 +133,12 @@ function FamilyPicture({ preview, shape, container, tinted }: { preview: FamilyP
     // catalogue's ink, so a shelf of tiles reads as one catalogue. The perimeter section
     // keeps its colours.
     return <img src={preview.url} alt="" loading="lazy" decoding="async"
-      className={tinted ? "packing-figure--tinted" : undefined}
+      className={tinted ? (preview.kind === "figure" ? "packing-figure--tinted" : "packing-figure--pale") : undefined}
       onError={() => setFailed(true)} />;
   }
-  return <CopySketch shape={shape} container={container} />;
+  return <span className={tinted ? "packing-figure--pale" : undefined}>
+    <CopySketch shape={shape} container={container} />
+  </span>;
 }
 
 /** How a record's symbol reads as a measure; an unknown symbol keeps its letter. */
