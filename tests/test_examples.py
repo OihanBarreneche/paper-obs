@@ -48,7 +48,7 @@ def test_the_record_hunts_are_shipped_as_sessions_that_beat_their_record(tmp_pat
     runs = tmp_path / "runs"
     monkeypatch.setenv("PAPER_OBS_RUNS", str(runs))
     examples.seed(runs)
-    for problem_id in ("squares-38-in-smallest-triangle", "tans-26-in-smallest-l"):
+    for problem_id in ("squares-50-in-smallest-tan", "dominoes-41-in-smallest-tan"):
         (line,) = research.listing(problem_id)
         assert line["example"] and line["status"] == "done"
         assert line["best"]["record_gap"] > 0  # beats the record the problem carries

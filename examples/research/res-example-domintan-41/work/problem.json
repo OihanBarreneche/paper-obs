@@ -1,0 +1,76 @@
+{
+ "problem_id": "dominoes-41-in-smallest-tan",
+ "name": "41 dominoes in the smallest tan",
+ "description": "Pack 41 unit dominoes inside the smallest possible tan.",
+ "seed": 41,
+ "shape": {
+  "type": "custom_polygon",
+  "points": [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    2.0,
+    0.0
+   ],
+   [
+    2.0,
+    1.0
+   ],
+   [
+    0.0,
+    1.0
+   ]
+  ]
+ },
+ "objective": {
+  "type": "maximize_scale",
+  "count": 41
+ },
+ "rotation": {
+  "type": "rotation_policy",
+  "mode": "free",
+  "angles": [
+   0.0
+  ]
+ },
+ "constraints": [],
+ "metadata": {
+  "reference": {
+   "status": "best_known",
+   "value": 13.65685424949238,
+   "unit": "container side",
+   "note": "Joshua Wolk · September 2026 (8 + 4√2)",
+   "verified_on": "2026-10-02",
+   "preview": "https://erich-friedman.github.io/packing/domintan/41.png",
+   "sources": [
+    {
+     "label": "Dominoes in Tans · Erich Friedman's Packing Center",
+     "url": "https://erich-friedman.github.io/packing/domintan/"
+    }
+   ]
+  }
+ },
+ "arena": {
+  "name": "",
+  "shape": {
+   "type": "polygon",
+   "points": [
+    [
+     -0.3333333333333333,
+     -0.3333333333333333
+    ],
+    [
+     0.6666666666666667,
+     -0.3333333333333333
+    ],
+    [
+     -0.3333333333333333,
+     0.6666666666666667
+    ]
+   ]
+  },
+  "reference_length": 1.0
+ }
+}

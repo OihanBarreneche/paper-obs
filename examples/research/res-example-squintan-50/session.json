@@ -1,0 +1,853 @@
+{
+ "kind": "research-session",
+ "format": 1,
+ "session_id": "res-example-squintan-50",
+ "created_at": "2026-10-01T21:13:01+00:00",
+ "updated_at": "2026-10-01T23:20:55+00:00",
+ "name": "50 carrés dans un tan · escalier et quatre bandes à 45°",
+ "agent": "Claude Code · Opus 5.5",
+ "goal": "battre 10.77817 (Wolk, septembre 2026)",
+ "status": "done",
+ "problem_id": "squares-50-in-smallest-tan",
+ "problem": {
+  "problem_id": "squares-50-in-smallest-tan",
+  "name": "50 squares in the smallest tan",
+  "description": "Pack 50 unit squares inside the smallest possible tan.",
+  "seed": 50,
+  "shape": {
+   "type": "regular_polygon",
+   "sides": 4,
+   "side": 1.0
+  },
+  "objective": {
+   "type": "maximize_scale",
+   "count": 50
+  },
+  "rotation": {
+   "type": "rotation_policy",
+   "mode": "free",
+   "angles": [
+    0.0
+   ]
+  },
+  "constraints": [],
+  "metadata": {
+   "reference": {
+    "status": "best_known",
+    "value": 10.778174593052022,
+    "unit": "container side",
+    "note": "Joshua Wolk · September 2026 · 3 + 11/√2",
+    "verified_on": "2026-10-01",
+    "preview": "https://erich-friedman.github.io/packing/squintan/50.gif",
+    "sources": [
+     {
+      "label": "Squares in Tans · Erich Friedman's Packing Center",
+      "url": "https://erich-friedman.github.io/packing/squintan/"
+     }
+    ]
+   }
+  },
+  "arena": {
+   "name": "",
+   "shape": {
+    "type": "polygon",
+    "points": [
+     [
+      -0.3333333333333333,
+      -0.3333333333333333
+     ],
+     [
+      0.6666666666666667,
+      -0.3333333333333333
+     ],
+     [
+      -0.3333333333333333,
+      0.6666666666666667
+     ]
+    ]
+   },
+   "reference_length": 1.0
+  }
+ },
+ "journal": [
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:13:27+00:00",
+   "text": "Plan machine : calculs lourds sur 8 processus logiques en priorité basse (IDLE) sous Windows, jamais deux calculs lourds à la fois ; les lectures de figures et constructions exactes sont instantanées.",
+   "step": null,
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:13:27+00:00",
+   "text": "Page en ligne relue le 2026-10-01 : la table va maintenant jusqu'à n = 50, avec une série de Joshua Wolk (septembre 2026) pour n = 29 à 50, toutes à angles fixes (0° et 45°). Le catalogue livré (2026-09-27) s'arrêtait à n = 28.",
+   "step": "check",
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:13:27+00:00",
+   "text": "Les valeurs de Wolk suivent des familles : un escalier de carrés droits dans un tan de côté m, entouré de b bandes de carrés à 45° le long de l'hypoténuse, côté m + b√2, soit T(m−1) + b·⌊m√2⌋ + b(b−1) carrés. Il utilise b = 1, 2, 3 (37 = 5 + 3√2) mais jamais b = 4 : m = 5, b = 4 donne 10 + 28 + 12 = 50 carrés à 5 + 4√2 = 10,65685, sous ses 10,77817 pour n = 50.",
+   "step": "idea",
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:14:16+00:00",
+   "text": "Écrit bands.py : compte les carrés d'un escalier entouré de b bandes à 45° (et plus généralement d'une découpe récursive en bande le long d'un côté ou de l'hypoténuse), compare au tableau en ligne et construit l'arrangement correspondant. La récursion retrouve exactement les valeurs de Wolk pour n = 29 à 49, sauf 34 et 42 où il fait mieux ; pour 50 elle donne 5 + 4√2 = 10,65685.",
+   "step": "program",
+   "path": "bands.py"
+  },
+  {
+   "kind": "submission",
+   "at": "2026-10-01T21:14:16+00:00",
+   "index": 0,
+   "note": "Escalier de 10 carrés droits (tan de côté 5) entouré de 4 bandes de 7, 9, 11 et 13 carrés à 45° : côté 5 + 4√2 = 10,65685.",
+   "method": "reasoning",
+   "builds_on": "famille escalier + bandes à 45° de Wolk (septembre 2026)",
+   "programs": [
+    "bands.py"
+   ],
+   "valid": true,
+   "primary": 0.093836321262218,
+   "measure": 10.656854260149235,
+   "metric": "container side",
+   "record_gap": 0.011256111306732238,
+   "accepted": true,
+   "violations": [],
+   "candidate": {
+    "kind": "candidate",
+    "candidate_id": "layers-50",
+    "problem_id": "squares-50-in-smallest-tan",
+    "scale": 0.093836321262218,
+    "origin": "unknown",
+    "generation": 0,
+    "parents": [],
+    "placements": [
+     {
+      "shape_id": "s000",
+      "x": -0.28641517265530614,
+      "y": -0.28641517265530614
+     },
+     {
+      "shape_id": "s001",
+      "x": -0.19257885129925184,
+      "y": -0.28641517265530614
+     },
+     {
+      "shape_id": "s002",
+      "x": -0.09874252994319752,
+      "y": -0.28641517265530614
+     },
+     {
+      "shape_id": "s003",
+      "x": -0.00490620858714319,
+      "y": -0.28641517265530614
+     },
+     {
+      "shape_id": "s004",
+      "x": -0.28641517265530614,
+      "y": -0.19257885129925184
+     },
+     {
+      "shape_id": "s005",
+      "x": -0.19257885129925184,
+      "y": -0.19257885129925184
+     },
+     {
+      "shape_id": "s006",
+      "x": -0.09874252994319752,
+      "y": -0.19257885129925184
+     },
+     {
+      "shape_id": "s007",
+      "x": -0.28641517265530614,
+      "y": -0.09874252994319752
+     },
+     {
+      "shape_id": "s008",
+      "x": -0.19257885129925184,
+      "y": -0.09874252994319752
+     },
+     {
+      "shape_id": "s009",
+      "x": -0.28641517265530614,
+      "y": -0.00490620858714319
+     },
+     {
+      "shape_id": "s010",
+      "x": -0.2663915950917411,
+      "y": 0.13525883435781216,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s011",
+      "x": -0.1994498568501489,
+      "y": 0.06831709611621989,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s012",
+      "x": -0.1325081186085567,
+      "y": 0.001375357874627725,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s013",
+      "x": -0.0655663803669645,
+      "y": -0.0655663803669645,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s014",
+      "x": 0.001375357874627725,
+      "y": -0.13250811860855666,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s015",
+      "x": 0.06831709611621989,
+      "y": -0.19944985685014888,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s016",
+      "x": 0.1352588343578121,
+      "y": -0.26639159509174104,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s017",
+      "x": -0.26650948290956633,
+      "y": 0.2680813204805695,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s018",
+      "x": -0.19968563248579937,
+      "y": 0.20125747005680256,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s019",
+      "x": -0.13286178206203242,
+      "y": 0.13443361963303552,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s020",
+      "x": -0.06603793163826538,
+      "y": 0.06760976920926853,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s021",
+      "x": 0.0007859187855015493,
+      "y": 0.0007859187855015493,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s022",
+      "x": 0.06760976920926853,
+      "y": -0.06603793163826538,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s023",
+      "x": 0.13443361963303557,
+      "y": -0.13286178206203242,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s024",
+      "x": 0.20125747005680245,
+      "y": -0.1996856324857993,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s025",
+      "x": 0.2680813204805695,
+      "y": -0.2665094829095664,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s026",
+      "x": -0.2665880747881165,
+      "y": 0.40086451066405177,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s027",
+      "x": -0.19984281624289968,
+      "y": 0.3341192521188349,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s028",
+      "x": -0.13309755769768283,
+      "y": 0.2673739935736181,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s029",
+      "x": -0.0663522991524661,
+      "y": 0.20062873502840123,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s030",
+      "x": 0.0003929593927508024,
+      "y": 0.1338834764831845,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s031",
+      "x": 0.06713821793796765,
+      "y": 0.06713821793796765,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s032",
+      "x": 0.1338834764831845,
+      "y": 0.0003929593927508024,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s033",
+      "x": 0.20062873502840123,
+      "y": -0.06635229915246599,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s034",
+      "x": 0.2673739935736181,
+      "y": -0.13309755769768283,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s035",
+      "x": 0.3341192521188349,
+      "y": -0.19984281624289962,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s036",
+      "x": 0.40086451066405177,
+      "y": -0.2665880747881166,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s037",
+      "x": -0.2666442118442237,
+      "y": 0.533625246025091,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s038",
+      "x": -0.19995509035511416,
+      "y": 0.4669361245359815,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s039",
+      "x": -0.13326596886600459,
+      "y": 0.40024700304687205,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s040",
+      "x": -0.06657684737689501,
+      "y": 0.3335578815577625,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s041",
+      "x": 0.00011227411221453876,
+      "y": 0.26686876006865295,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s042",
+      "x": 0.06680139560132414,
+      "y": 0.2001796385795433,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s043",
+      "x": 0.13349051709043375,
+      "y": 0.13349051709043375,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s044",
+      "x": 0.2001796385795433,
+      "y": 0.06680139560132414,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s045",
+      "x": 0.26686876006865295,
+      "y": 0.00011227411221453876,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s046",
+      "x": 0.3335578815577625,
+      "y": -0.06657684737689501,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s047",
+      "x": 0.40024700304687205,
+      "y": -0.13326596886600459,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s048",
+      "x": 0.4669361245359815,
+      "y": -0.19995509035511413,
+      "rotation": 45.0
+     },
+     {
+      "shape_id": "s049",
+      "x": 0.5336252460250912,
+      "y": -0.2666442118442239,
+      "rotation": 45.0
+     }
+    ],
+    "metadata": {}
+   },
+   "verdict": {
+    "problem_id": "squares-50-in-smallest-tan",
+    "candidate_id": "layers-50",
+    "valid": true,
+    "score": {
+     "primary": 0.093836321262218,
+     "label": "common_scale",
+     "secondary": {
+      "shape_area": 0.008805255188026188,
+      "inradius": 0.046918160631109006,
+      "circumradius": 0.06635229908611376,
+      "n_shapes": 50.0
+     }
+    },
+    "metrics": {
+     "n_shapes": 50.0,
+     "packed_area": 0.4402627594013089,
+     "covered_area": 0.4402627594013087,
+     "arena_area": 0.5,
+     "void_area": 0.05973724059869129,
+     "density": 0.8805255188026174,
+     "boundary_contacts": 20.0,
+     "total_scale": 4.6918160631109,
+     "total_perimeter": 18.7672642524436,
+     "max_scale": 0.093836321262218,
+     "min_scale": 0.093836321262218,
+     "equivalent_container_side": 10.656854260149235
+    },
+    "promoted_metric": "common_scale",
+    "validation": {
+     "valid": true,
+     "severity": 0.0,
+     "results": [
+      {
+       "constraint": "arena_containment",
+       "valid": true,
+       "severity": 0.0,
+       "message": "all 50 shapes are inside the arena",
+       "violations": []
+      },
+      {
+       "constraint": "non_overlap",
+       "valid": true,
+       "severity": 0.0,
+       "message": "no two shapes overlap",
+       "violations": []
+      },
+      {
+       "constraint": "rotation_policy",
+       "valid": true,
+       "severity": 0.0,
+       "message": "all rotations follow the free policy",
+       "violations": []
+      },
+      {
+       "constraint": "required_shape_count",
+       "valid": true,
+       "severity": 0.0,
+       "message": "50 shapes as required",
+       "violations": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:27:26+00:00",
+   "text": "Écrit tan_read.py (avec page_reader.js et le banc polygons.py) : lit une figure de la page dans le navigateur, sans téléchargement, puis raffine exactement les carrés lus. Les figures 34 et 42 de Wolk redonnent exactement 8,949747 et 9,828427.",
+   "step": "program",
+   "path": "tan_read.py"
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:27:26+00:00",
+   "text": "Les deux gestes de Wolk hors de la récursion : pour 34, un bloc 4 × 4 de carrés droits dans le coin et trois bandes à 45° interrompues par le coin du bloc ; pour 42, un escalier, deux bandes et une pile de deux carrés droits poussée dans la pointe. Le 24 de Cantrell (2005) pousse une pile de 5 carrés dans chaque coin aigu.",
+   "step": "idea",
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:27:26+00:00",
+   "text": "Écrit tanlayers.c : énumère tous les diagrammes de Young de carrés droits dans le coin droit, toutes les piles poussées dans les deux coins aigus (colonnes et lignes 0 et 1) et remplit chaque bande à 45° de façon gloutonne, pour des côtés a + c/√2 jusqu'à 11,3.",
+   "step": "program",
+   "path": "tanlayers.c"
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:27:26+00:00",
+   "text": "tanlayers.c, 2 min sur 1 processus : ce modèle retrouve exactement les 49 valeurs en ligne de n = 1 à 49 (Friedman, Cantrell, Wolk), et pour 50 rien de mieux que 5 + 4√2. Aucun autre n ne se bat dans ce modèle : il faut un geste nouveau (inclinaisons, bandes décalées).",
+   "step": "search",
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:27:57+00:00",
+   "text": "Écrit seed.py : passe un candidat du labo au banc polygons.py et le raffine exactement. Le 50 en 5 + 4√2 est rigide : le raffinement SLSQP n'y gagne rien.",
+   "step": "program",
+   "path": "seed.py"
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:27:57+00:00",
+   "text": "Lancé polygons.py squintan 50 --hop sur 8 processus, 15 min, priorité basse : secousses aléatoires du 50 en 5 + 4√2 puis réoptimisation, pour voir si une inclinaison locale fait mieux.",
+   "step": "search",
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:43:31+00:00",
+   "text": "polygons.py --hop sur le 50, 15 min sur 8 processus : 296 essais, rien sous 10,656854. La structure à 4 bandes est rigide et les secousses aléatoires ne trouvent pas d'inclinaison utile.",
+   "step": "search",
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T21:44:25+00:00",
+   "text": "Vérifié : moteur valide ; verify exact en rationnels valide (séparation minimale 9,4e-11 après réduction de 1e-9 de l'échelle) ; page en ligne relue le 2026-10-01 vers 23 h, 50 y vaut toujours 10,77817. Dossier privé de soumission préparé (image 192 × 192 dans le style de la page, candidat, vérification).",
+   "step": "check",
+   "path": null
+  }
+ ],
+ "best": {
+  "at": "2026-10-01T21:14:16+00:00",
+  "index": 0,
+  "measure": 10.656854260149235,
+  "metric": "container side",
+  "record_gap": 0.011256111306732238,
+  "primary": 0.093836321262218
+ },
+ "champion": {
+  "kind": "candidate",
+  "candidate_id": "layers-50",
+  "problem_id": "squares-50-in-smallest-tan",
+  "scale": 0.093836321262218,
+  "origin": "unknown",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+   {
+    "shape_id": "s000",
+    "x": -0.28641517265530614,
+    "y": -0.28641517265530614
+   },
+   {
+    "shape_id": "s001",
+    "x": -0.19257885129925184,
+    "y": -0.28641517265530614
+   },
+   {
+    "shape_id": "s002",
+    "x": -0.09874252994319752,
+    "y": -0.28641517265530614
+   },
+   {
+    "shape_id": "s003",
+    "x": -0.00490620858714319,
+    "y": -0.28641517265530614
+   },
+   {
+    "shape_id": "s004",
+    "x": -0.28641517265530614,
+    "y": -0.19257885129925184
+   },
+   {
+    "shape_id": "s005",
+    "x": -0.19257885129925184,
+    "y": -0.19257885129925184
+   },
+   {
+    "shape_id": "s006",
+    "x": -0.09874252994319752,
+    "y": -0.19257885129925184
+   },
+   {
+    "shape_id": "s007",
+    "x": -0.28641517265530614,
+    "y": -0.09874252994319752
+   },
+   {
+    "shape_id": "s008",
+    "x": -0.19257885129925184,
+    "y": -0.09874252994319752
+   },
+   {
+    "shape_id": "s009",
+    "x": -0.28641517265530614,
+    "y": -0.00490620858714319
+   },
+   {
+    "shape_id": "s010",
+    "x": -0.2663915950917411,
+    "y": 0.13525883435781216,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s011",
+    "x": -0.1994498568501489,
+    "y": 0.06831709611621989,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s012",
+    "x": -0.1325081186085567,
+    "y": 0.001375357874627725,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s013",
+    "x": -0.0655663803669645,
+    "y": -0.0655663803669645,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s014",
+    "x": 0.001375357874627725,
+    "y": -0.13250811860855666,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s015",
+    "x": 0.06831709611621989,
+    "y": -0.19944985685014888,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s016",
+    "x": 0.1352588343578121,
+    "y": -0.26639159509174104,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s017",
+    "x": -0.26650948290956633,
+    "y": 0.2680813204805695,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s018",
+    "x": -0.19968563248579937,
+    "y": 0.20125747005680256,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s019",
+    "x": -0.13286178206203242,
+    "y": 0.13443361963303552,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s020",
+    "x": -0.06603793163826538,
+    "y": 0.06760976920926853,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s021",
+    "x": 0.0007859187855015493,
+    "y": 0.0007859187855015493,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s022",
+    "x": 0.06760976920926853,
+    "y": -0.06603793163826538,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s023",
+    "x": 0.13443361963303557,
+    "y": -0.13286178206203242,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s024",
+    "x": 0.20125747005680245,
+    "y": -0.1996856324857993,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s025",
+    "x": 0.2680813204805695,
+    "y": -0.2665094829095664,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s026",
+    "x": -0.2665880747881165,
+    "y": 0.40086451066405177,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s027",
+    "x": -0.19984281624289968,
+    "y": 0.3341192521188349,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s028",
+    "x": -0.13309755769768283,
+    "y": 0.2673739935736181,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s029",
+    "x": -0.0663522991524661,
+    "y": 0.20062873502840123,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s030",
+    "x": 0.0003929593927508024,
+    "y": 0.1338834764831845,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s031",
+    "x": 0.06713821793796765,
+    "y": 0.06713821793796765,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s032",
+    "x": 0.1338834764831845,
+    "y": 0.0003929593927508024,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s033",
+    "x": 0.20062873502840123,
+    "y": -0.06635229915246599,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s034",
+    "x": 0.2673739935736181,
+    "y": -0.13309755769768283,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s035",
+    "x": 0.3341192521188349,
+    "y": -0.19984281624289962,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s036",
+    "x": 0.40086451066405177,
+    "y": -0.2665880747881166,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s037",
+    "x": -0.2666442118442237,
+    "y": 0.533625246025091,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s038",
+    "x": -0.19995509035511416,
+    "y": 0.4669361245359815,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s039",
+    "x": -0.13326596886600459,
+    "y": 0.40024700304687205,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s040",
+    "x": -0.06657684737689501,
+    "y": 0.3335578815577625,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s041",
+    "x": 0.00011227411221453876,
+    "y": 0.26686876006865295,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s042",
+    "x": 0.06680139560132414,
+    "y": 0.2001796385795433,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s043",
+    "x": 0.13349051709043375,
+    "y": 0.13349051709043375,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s044",
+    "x": 0.2001796385795433,
+    "y": 0.06680139560132414,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s045",
+    "x": 0.26686876006865295,
+    "y": 0.00011227411221453876,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s046",
+    "x": 0.3335578815577625,
+    "y": -0.06657684737689501,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s047",
+    "x": 0.40024700304687205,
+    "y": -0.13326596886600459,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s048",
+    "x": 0.4669361245359815,
+    "y": -0.19995509035511413,
+    "rotation": 45.0
+   },
+   {
+    "shape_id": "s049",
+    "x": 0.5336252460250912,
+    "y": -0.2666442118442239,
+    "rotation": 45.0
+   }
+  ],
+  "metadata": {}
+ },
+ "example": true
+}

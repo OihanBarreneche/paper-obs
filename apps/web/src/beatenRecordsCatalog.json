@@ -1,7 +1,7 @@
 {
   "source": "https://erich-friedman.github.io/packing/index.html",
   "base": "https://erich-friedman.github.io/packing/",
-  "generated": "2026-10-01",
+  "generated": "2026-10-02",
   "families": [
     {
       "slug": "squintri",
@@ -146,7 +146,7 @@
             26
           ],
           "value": 2.12132,
-          "formula": "3/\u221a2",
+          "formula": "3/√2",
           "symbol": "s",
           "status": "best_known",
           "attribution": "Found by Maurizio Morandi in September 2026",
@@ -156,6 +156,197 @@
       "warnings": [
         "taninL: 2 figures for 0 values"
       ],
+      "section": "Packing Equal Copies"
+    },
+    {
+      "slug": "squintan",
+      "page": "https://erich-friedman.github.io/packing/squintan/",
+      "title": "Squares in Tans",
+      "shape": "square",
+      "container": "tan",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "square-1-in-smallest-tan",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "regular_polygon",
+          "sides": 4,
+          "side": 1.0
+        },
+        "objective": {
+          "type": "maximize_scale",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "polygon",
+            "points": [
+              [
+                -0.3333333333333333,
+                -0.3333333333333333
+              ],
+              [
+                0.6666666666666667,
+                -0.3333333333333333
+              ],
+              [
+                -0.3333333333333333,
+                0.6666666666666667
+              ]
+            ]
+          },
+          "reference_length": 1.0
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n squares with side 1 packed inside the smallest known tan (of leg length s ).",
+      "instances": [
+        {
+          "counts": [
+            50
+          ],
+          "value": 10.77817,
+          "formula": "",
+          "symbol": "s",
+          "status": "best_known",
+          "attribution": "Found by Joshua Wolk in September 2026",
+          "figure": "50.gif"
+        }
+      ],
+      "warnings": [],
+      "section": "Packing Equal Copies"
+    },
+    {
+      "slug": "domintan",
+      "page": "https://erich-friedman.github.io/packing/domintan/",
+      "title": "Dominoes in Tans",
+      "shape": "domino",
+      "container": "tan",
+      "supported": true,
+      "problem_template": {
+        "problem_id": "domino-1-in-smallest-tan",
+        "name": "",
+        "description": "",
+        "seed": null,
+        "shape": {
+          "type": "custom_polygon",
+          "points": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              2.0,
+              0.0
+            ],
+            [
+              2.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "objective": {
+          "type": "maximize_scale",
+          "count": 1
+        },
+        "rotation": {
+          "type": "rotation_policy",
+          "mode": "free",
+          "angles": [
+            0.0
+          ]
+        },
+        "constraints": [],
+        "metadata": {},
+        "arena": {
+          "name": "",
+          "shape": {
+            "type": "polygon",
+            "points": [
+              [
+                -0.3333333333333333,
+                -0.3333333333333333
+              ],
+              [
+                0.6666666666666667,
+                -0.3333333333333333
+              ],
+              [
+                -0.3333333333333333,
+                0.6666666666666667
+              ]
+            ]
+          },
+          "reference_length": 1.0
+        }
+      },
+      "unsupported_reason": "",
+      "caveat": "",
+      "intro": "The following pictures show n dominoes (with short side 1) packed inside the smallest known tan (with short side s).",
+      "instances": [
+        {
+          "counts": [
+            41
+          ],
+          "value": 13.65685,
+          "formula": "",
+          "symbol": "s",
+          "status": "best_known",
+          "attribution": "Found by Joshua Wolk in September 2026",
+          "figure": "41.png"
+        },
+        {
+          "counts": [
+            44
+          ],
+          "value": 14.02663,
+          "formula": "",
+          "symbol": "s",
+          "status": "best_known",
+          "attribution": "Found by Joshua Wolk in September 2026",
+          "figure": "44.png"
+        },
+        {
+          "counts": [
+            47
+          ],
+          "value": 14.48528,
+          "formula": "",
+          "symbol": "s",
+          "status": "best_known",
+          "attribution": "Found by Joshua Wolk in September 2026",
+          "figure": "47.png"
+        },
+        {
+          "counts": [
+            48
+          ],
+          "value": 14.65686,
+          "formula": "",
+          "symbol": "s",
+          "status": "best_known",
+          "attribution": "Found by Joshua Wolk in September 2026",
+          "figure": "48.png"
+        }
+      ],
+      "warnings": [],
       "section": "Packing Equal Copies"
     }
   ]

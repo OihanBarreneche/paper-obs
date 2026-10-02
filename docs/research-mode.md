@@ -88,9 +88,9 @@ Every submission says where its arrangement comes from:
 
 Submit each new best, and also each intermediate step that a later best builds on, even when it does not beat the session's best (a composition that a refinement then improves, for example). Then the chain from the starting point to the best arrangement is complete. Do not submit every attempt of a search: its outcome goes in a `search` note.
 
-When the search ends, set the status to `done` and write a last note on what the result owes to understanding, to composition and to search. The page draws the chain from the starting point to the best arrangement, labels each link with its method, lists the programs with their code, and shows the journal in order, with dead ends muted. Sessions written before steps and methods existed show their improvements as the chain, without labels. A session that led nowhere can be deleted from the tab: its folder moves to `runs/research/deleted/`, out of the listing, and moving it back by hand restores it.
+When the search ends, set the status to `done` and write a last note on what the result owes to understanding, to composition and to search. The page draws the chain from the starting point to the best arrangement, labels each link with its method, lists the programs with their code, and shows the journal in order: a new best wears a green mark, an invalid submission a red one, and dead ends are muted. Each session says whether it beats the published record, ties it or how far it stays. Sessions written before steps and methods existed show their improvements as the chain, without labels. The list of every session filters records, sorts by date or by improvement, and filters by shape and container. A session that led nowhere can be deleted from that list or from its own header: its folder moves to `runs/research/deleted/`, out of the listing, and moving it back by hand restores it.
 
-The two record hunts below ship as example sessions in `examples/research/`, reconstructed afterwards from the hunt's log, with steps, methods and the programs it wrote, copied as they were (some rely on a test bench that is not shipped, so they are for reading). `paper-obs serve` copies them into the runs folder once, as it does the example runs.
+Two record hunts ship as example sessions in `examples/research/`, journaled live as they ran: 50 squares in a tan, beaten by extending a construction family, and 41 dominoes in a tan, beaten by moving a published gesture to another place, with an invalid construction and its correction left in the journal. Their programs are copied as they were; some need a C compiler or files of the hunt that are not shipped, so they are for reading. `paper-obs serve` copies them into the runs folder once, as it does the example runs.
 
 ## 5. Before claiming a record
 
@@ -114,9 +114,11 @@ Extending an existing table is accepted only up to n = 50. A large batch is sort
 
 ## 7. What has worked so far
 
-These are observations from the first record hunt, not rules:
+These are observations from the record hunts so far, not rules:
 
 - **Extend a construction family.** Published records come in families: square-in-triangle sides of the form k + 2/√3, k + 0.30122 and so on. A recent record that breaks a family's pattern can be beaten by extending the family by one step. This is how n = 38 squares in a triangle went from 10.304 to 10.30122.
 - **Look for dissections.** A tan is two tans 1/√2 its size, a unit octagon holds a unit circle, a triangle of side 2s is four triangles of side s, and so on. Each fact turns one published record into a construction for another entry. An exact refinement of the assembled arrangement then helps, because the internal cuts are not walls. This is how n = 26 tans in an L went from 2.12132 to 2.12043.
 - **Start from published figures.** Reading the copies' centres and angles off a figure, then refining exactly (maximise the scale with fixed contacts), recovered every square-in-triangle record to about 1e-12. It gives exact coordinates of current records as seeds.
+- **Enumerate a structure exhaustively.** When records share a structure, a staircase in the right-angle corner and bands turned by 45 degrees for squares or dominoes in a tan, a small C program can try every combination of its parameters in seconds. Adding one band beat n = 50 squares in a tan; the same enumeration beat n = 44 dominoes.
+- **Move a published gesture.** A local trick an author used for some n, such as two dominoes leaning together in a V over a corner of the staircase, can be tried at every place it fits in other entries. Adding it to the enumeration beat n = 41, 47 and 48 dominoes in a tan.
 - **Calibrate before believing a search.** Random restarts, corner-block seeds and ruin-and-recreate did not rediscover recent records for n ≈ 20 to 26 squares in a triangle in 20 minutes. Ideas beat brute force there.

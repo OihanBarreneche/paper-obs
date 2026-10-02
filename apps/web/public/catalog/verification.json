@@ -25,24 +25,24 @@
     }
   },
   "totals": {
-    "beaten": 1,
+    "beaten": 6,
     "below": 90,
     "differs": 118,
     "entries_catalog": 4245,
-    "entries_checked": 326,
+    "entries_checked": 331,
     "entries_unsupported": 89,
     "families_catalog": 107,
-    "families_checked": 29,
+    "families_checked": 30,
     "families_unsupported": 3,
     "level:approx": 57,
-    "level:beaten": 1,
+    "level:beaten": 6,
     "level:exact": 2,
     "level:far": 193,
     "level:near": 67,
     "level:none": 6,
     "reproduces": 111,
     "unmeasurable": 6,
-    "without_coordinates": 3830
+    "without_coordinates": 3825
   },
   "families": {
     "cirincir": {
@@ -511,8 +511,8 @@
           "promoted": false,
           "value": 0.7071,
           "unit": "container radius",
-          "measured": 0.7071067811865474,
-          "gap": -9.590137954178898e-06,
+          "measured": 0.7071067811865476,
+          "gap": -9.590137954492918e-06,
           "decimals": 4,
           "source_kind": "approx",
           "files": [
@@ -529,8 +529,8 @@
           "promoted": false,
           "value": 1.11803,
           "unit": "container radius",
-          "measured": 1.141255415133448,
-          "gap": -0.020773516930178877,
+          "measured": 1.1412554151334482,
+          "gap": -0.020773516930179075,
           "decimals": 1,
           "source_kind": "approx",
           "files": [
@@ -565,8 +565,8 @@
           "promoted": false,
           "value": 1.41421,
           "unit": "container radius",
-          "measured": 1.5043101253800706,
-          "gap": -0.06371057012754161,
+          "measured": 1.5043101253800708,
+          "gap": -0.06371057012754176,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
@@ -655,8 +655,8 @@
           "promoted": false,
           "value": 2.07759,
           "unit": "container radius",
-          "measured": 2.081364905735207,
-          "gap": -0.001816963758589146,
+          "measured": 2.0813649057352075,
+          "gap": -0.0018169637585893597,
           "decimals": 2,
           "source_kind": "approx",
           "files": [
@@ -709,8 +709,8 @@
           "promoted": false,
           "value": 2.3607,
           "unit": "container radius",
-          "measured": 2.419508317651986,
-          "gap": -0.024911389694576194,
+          "measured": 2.4195083176519865,
+          "gap": -0.02491138969457638,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
@@ -799,8 +799,8 @@
           "promoted": false,
           "value": 2.91547,
           "unit": "container radius",
-          "measured": 2.9647566189307506,
-          "gap": -0.016905205311922467,
+          "measured": 2.96475661893075,
+          "gap": -0.016905205311922314,
           "decimals": 1,
           "source_kind": "approx",
           "files": [
@@ -4362,7 +4362,9 @@
       "container": "tan",
       "checked_on": "2026-10-02",
       "source": {
-        "kind": "figure"
+        "kind": "record",
+        "label": "a construction held by the lab",
+        "url": ""
       },
       "entries": {
         "1": {
@@ -5047,6 +5049,110 @@
             "approx-squintan-49.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-49.json",
+          "checked_on": "2026-10-02"
+        },
+        "50": {
+          "status": "beaten",
+          "level": "beaten",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 10.77817,
+          "unit": "container side",
+          "measured": 10.656854260149235,
+          "gap": 0.0112556899594982,
+          "decimals": 0,
+          "source_kind": "record",
+          "files": [
+            "record-squintan-50.json"
+          ],
+          "candidate": null,
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "domintan": {
+      "title": "Dominoes in Tans",
+      "section": "Packing Equal Copies",
+      "shape": "domino",
+      "container": "tan",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "record",
+        "label": "a construction held by the lab",
+        "url": ""
+      },
+      "entries": {
+        "41": {
+          "status": "beaten",
+          "level": "beaten",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 13.65685,
+          "unit": "container side",
+          "measured": 13.580639886226527,
+          "gap": 0.005580358118707745,
+          "decimals": 0,
+          "source_kind": "record",
+          "files": [
+            "record-domintan-41.json"
+          ],
+          "candidate": null,
+          "checked_on": "2026-10-02"
+        },
+        "44": {
+          "status": "beaten",
+          "level": "beaten",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 14.02663,
+          "unit": "container side",
+          "measured": 14.000000014000001,
+          "gap": 0.0018985305807595737,
+          "decimals": 1,
+          "source_kind": "record",
+          "files": [
+            "record-domintan-44.json"
+          ],
+          "candidate": null,
+          "checked_on": "2026-10-02"
+        },
+        "47": {
+          "status": "beaten",
+          "level": "beaten",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 14.48528,
+          "unit": "container side",
+          "measured": 14.47117800756857,
+          "gap": 0.0009735395126245142,
+          "decimals": 1,
+          "source_kind": "record",
+          "files": [
+            "record-domintan-47.json"
+          ],
+          "candidate": null,
+          "checked_on": "2026-10-02"
+        },
+        "48": {
+          "status": "beaten",
+          "level": "beaten",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 14.65686,
+          "unit": "container side",
+          "measured": 14.632224333045853,
+          "gap": 0.0016808284280635131,
+          "decimals": 1,
+          "source_kind": "record",
+          "files": [
+            "record-domintan-48.json"
+          ],
+          "candidate": null,
           "checked_on": "2026-10-02"
         }
       }

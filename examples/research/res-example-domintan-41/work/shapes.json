@@ -1,0 +1,1 @@
+{"domintan": {"vertices": [[1, 0.5], [-1, 0.5], [-1, -0.5], [1, -0.5]], "symmetry": 180.0, "objective": "maximize_scale", "convex": true}}

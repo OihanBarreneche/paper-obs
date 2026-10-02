@@ -1,0 +1,1169 @@
+{
+ "kind": "research-session",
+ "format": 1,
+ "session_id": "res-example-domintan-41",
+ "created_at": "2026-10-01T22:47:10+00:00",
+ "updated_at": "2026-10-01T23:20:55+00:00",
+ "name": "41 dominos dans un tan · le V de Wolk dans la bande extérieure",
+ "agent": "Claude Code · Opus 5.5",
+ "goal": "battre 13.65685 = 8 + 4√2 (Wolk, septembre 2026)",
+ "status": "done",
+ "problem_id": "dominoes-41-in-smallest-tan",
+ "problem": {
+  "problem_id": "dominoes-41-in-smallest-tan",
+  "name": "41 dominoes in the smallest tan",
+  "description": "Pack 41 unit dominoes inside the smallest possible tan.",
+  "seed": 41,
+  "shape": {
+   "type": "custom_polygon",
+   "points": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     2.0,
+     0.0
+    ],
+    [
+     2.0,
+     1.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  "objective": {
+   "type": "maximize_scale",
+   "count": 41
+  },
+  "rotation": {
+   "type": "rotation_policy",
+   "mode": "free",
+   "angles": [
+    0.0
+   ]
+  },
+  "constraints": [],
+  "metadata": {
+   "reference": {
+    "status": "best_known",
+    "value": 13.65685424949238,
+    "unit": "container side",
+    "note": "Joshua Wolk · September 2026 (8 + 4√2)",
+    "verified_on": "2026-10-02",
+    "preview": "https://erich-friedman.github.io/packing/domintan/41.png",
+    "sources": [
+     {
+      "label": "Dominoes in Tans · Erich Friedman's Packing Center",
+      "url": "https://erich-friedman.github.io/packing/domintan/"
+     }
+    ]
+   }
+  },
+  "arena": {
+   "name": "",
+   "shape": {
+    "type": "polygon",
+    "points": [
+     [
+      -0.3333333333333333,
+      -0.3333333333333333
+     ],
+     [
+      0.6666666666666667,
+      -0.3333333333333333
+     ],
+     [
+      -0.3333333333333333,
+      0.6666666666666667
+     ]
+    ]
+   },
+   "reference_length": 1.0
+  }
+ },
+ "journal": [
+  {
+   "kind": "note",
+   "at": "2026-10-01T22:47:10+00:00",
+   "text": "Plan machine : calculs lourds sur 8 processus logiques en priorité basse (IDLE) sous Windows, jamais deux à la fois ; les énumérations exactes (domv.c) tournent sur 1 processus sous WSL avec nice 19.",
+   "step": null,
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T22:47:10+00:00",
+   "text": "Page en ligne relue le 2026-10-02 : 41 vaut 13,65685 = 8 + 4√2 (Joshua Wolk, septembre 2026), une construction en couches sans domino incliné.",
+   "step": "check",
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T22:47:10+00:00",
+   "text": "Née de la session du 44 (res-dcd6049123). Wolk a un geste qu'il n'utilise que pour 32 et 38 : deux dominos debout, penchés de ±δ l'un vers l'autre, qui enjambent un coin saillant de l'escalier de dominos droits. Ce V prend environ 2,2 de longueur dans sa bande pour 2 dominos, là où un domino couché prend 2 pour 1 : +1 domino. Idée : le placer dans la bande extérieure, contre l'hypoténuse, à plusieurs coins à la fois.",
+   "step": "idea",
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T22:47:10+00:00",
+   "text": "Copié de res-dcd6049123 : énumère tous les diagrammes de Young de dominos droits dans le coin droit, remplit chaque bande à 45° de dominos couchés ou debout, et essaie un V à chaque coin saillant de profondeur convenable, dans chaque bande ; garde le meilleur sous-ensemble de V compatibles (axes séparateurs contre chaque case et entre V).",
+   "step": "program",
+   "path": "domv.c"
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T22:47:10+00:00",
+   "text": "domv.c juste sous 8 + 4√2 (quelques minutes sur 1 processus) : 41 tient encore, avec le diagramme [11,9,8,8,6,5,5,3,2,2,1], neuf bandes de dominos couchés et trois V dans la bande extérieure.",
+   "step": "search",
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T22:47:10+00:00",
+   "text": "Copiés de res-dcd6049123 : domvbuild.py construit explicitement une structure (couplage des cases du diagramme, V aux coins choisis avec δ tiré de la profondeur du coin, bandes remplies autour) ; vbisect.py cherche le plus petit côté où elle tient encore ; dombuild.py fournit le couplage et l'écriture du candidat.",
+   "step": "program",
+   "path": "domvbuild.py"
+  },
+  {
+   "kind": "submission",
+   "at": "2026-10-01T22:47:10+00:00",
+   "index": 0,
+   "note": "Construction : diagramme [11,9,8,8,6,5,5,3,2,2,1] de dominos droits, neuf bandes couchées, trois V dans la bande extérieure ; plus petit côté où elle tient : 13,642751.",
+   "method": "reasoning",
+   "builds_on": "geste en V de Wolk (domintan 32 et 38, septembre 2026), compris dans la session res-dcd6049123",
+   "programs": [
+    "domv.c",
+    "domvbuild.py",
+    "vbisect.py",
+    "dombuild.py"
+   ],
+   "valid": false,
+   "primary": 0.0732989998874549,
+   "measure": 13.642750945243792,
+   "metric": "container side",
+   "record_gap": 0.001032690544318568,
+   "accepted": false,
+   "violations": [
+    "Violation(kind='overlap', message='d004 and d030 overlap by 2.42724e-08', shape_ids=('d004', 'd030'), magnitude=2.4272394372193418e-08)",
+    "Violation(kind='overlap', message='d016 and d033 overlap by 1.13411e-08', shape_ids=('d016', 'd033'), magnitude=1.1341149422361418e-08)",
+    "Violation(kind='overlap', message='d024 and d034 overlap by 4.87553e-09', shape_ids=('d024', 'd034'), magnitude=4.875526954384313e-09)"
+   ],
+   "candidate": null,
+   "verdict": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T22:47:10+00:00",
+   "text": "Copiés de res-dcd6049123 : refine_cand.py et le banc polygons.py raffinent exactement un candidat (SLSQP sur positions, angles et taille, axes séparateurs fixés puis rechoisis jusqu'à stabilité) et l'écrivent avec l'échelle réduite de 1e-9.",
+   "step": "program",
+   "path": "refine_cand.py"
+  },
+  {
+   "kind": "submission",
+   "at": "2026-10-01T22:47:10+00:00",
+   "index": 1,
+   "note": "Raffinement exact de la construction : les dominos glissent et les V se resserrent, 13,587824.",
+   "method": "refinement",
+   "builds_on": 0,
+   "programs": [
+    "refine_cand.py",
+    "polygons.py"
+   ],
+   "valid": true,
+   "primary": 0.0735953009168608,
+   "measure": 13.58782405319167,
+   "metric": "container side",
+   "record_gap": 0.005054619097459895,
+   "accepted": true,
+   "violations": [],
+   "candidate": {
+    "kind": "candidate",
+    "candidate_id": "v41-refined",
+    "problem_id": "dominoes-41-in-smallest-tan",
+    "scale": 0.0735953009168608,
+    "origin": "unknown",
+    "generation": 0,
+    "parents": [],
+    "placements": [
+     {
+      "shape_id": "d000",
+      "x": -0.18614273135241927,
+      "y": -0.29653568283810516,
+      "rotation": -9.513915329328913e-14
+     },
+     {
+      "shape_id": "d001",
+      "x": -0.1861427313524198,
+      "y": -0.14934508085719111,
+      "rotation": 4.090473811836563e-14
+     },
+     {
+      "shape_id": "d002",
+      "x": -0.1860542623917809,
+      "y": -0.002154478876277308,
+      "rotation": 4.5061242015280863e-14
+     },
+     {
+      "shape_id": "d003",
+      "x": -0.25973803234287646,
+      "y": 0.14503612310463634,
+      "rotation": 9.249609777217421e-14
+     },
+     {
+      "shape_id": "d004",
+      "x": -0.25973803234287646,
+      "y": 0.29222672508555,
+      "rotation": 8.514379524665932e-14
+     },
+     {
+      "shape_id": "d005",
+      "x": -0.29653568283810494,
+      "y": 0.4026752302282837,
+      "rotation": 90.00000000000001
+     },
+     {
+      "shape_id": "d006",
+      "x": -0.18614273135241957,
+      "y": -0.2229403818476482,
+      "rotation": -5.861145080703805e-14
+     },
+     {
+      "shape_id": "d007",
+      "x": -0.1861427313524198,
+      "y": -0.0757497798667342,
+      "rotation": 8.826239472586749e-14
+     },
+     {
+      "shape_id": "d008",
+      "x": -0.1861427313524197,
+      "y": 0.07144082211417956,
+      "rotation": 3.9230153860159894e-14
+     },
+     {
+      "shape_id": "d009",
+      "x": -0.11250624018591954,
+      "y": 0.21875336270612555,
+      "rotation": -1.6666598621474503e-05
+     },
+     {
+      "shape_id": "d010",
+      "x": -0.03888934758920106,
+      "y": -0.29653568283810483,
+      "rotation": -2.254131729045575e-14
+     },
+     {
+      "shape_id": "d011",
+      "x": -0.038952129371505974,
+      "y": -0.1493450808571911,
+      "rotation": 5.245456585266614e-14
+     },
+     {
+      "shape_id": "d012",
+      "x": -0.03883236367021906,
+      "y": -0.0021544788762709877,
+      "rotation": 2.5496763751812085e-13
+     },
+     {
+      "shape_id": "d013",
+      "x": -0.1125474303619627,
+      "y": 0.14513763184953582,
+      "rotation": 4.11724176647354e-15
+     },
+     {
+      "shape_id": "d014",
+      "x": -0.038952129371505585,
+      "y": -0.22294038184764797,
+      "rotation": -5.078633998570427e-15
+     },
+     {
+      "shape_id": "d015",
+      "x": -0.03895212937150599,
+      "y": -0.0757497798667341,
+      "rotation": 2.847545249375327e-14
+     },
+     {
+      "shape_id": "d016",
+      "x": -0.03895212937150598,
+      "y": 0.07154233085907875,
+      "rotation": -1.070960569803008e-13
+     },
+     {
+      "shape_id": "d017",
+      "x": -0.2597380323428765,
+      "y": 0.21863142409509315,
+      "rotation": 1.0453311999447215e-13
+     },
+     {
+      "shape_id": "d018",
+      "x": 0.10832118187298906,
+      "y": -0.2965356828381046,
+      "rotation": -3.550629114673861e-15
+     },
+     {
+      "shape_id": "d019",
+      "x": 0.10823847260940767,
+      "y": -0.1493063037139711,
+      "rotation": 2.2251528703696478e-15
+     },
+     {
+      "shape_id": "d020",
+      "x": 0.10838016649806635,
+      "y": -0.0020746827289469605,
+      "rotation": 2.602325972105368e-07
+     },
+     {
+      "shape_id": "d021",
+      "x": 0.10823847260940792,
+      "y": -0.22291788283048114,
+      "rotation": 3.147681796664225e-13
+     },
+     {
+      "shape_id": "d022",
+      "x": 0.10849133603802391,
+      "y": -0.07568471360962051,
+      "rotation": -2.349140100416793e-07
+     },
+     {
+      "shape_id": "d023",
+      "x": 0.2555391922117954,
+      "y": -0.2965356828381049,
+      "rotation": -1.1346174201475111e-14
+     },
+     {
+      "shape_id": "d024",
+      "x": 0.21863142409509317,
+      "y": -0.18614273135241946,
+      "rotation": 90.00000000000024
+     },
+     {
+      "shape_id": "d025",
+      "x": -0.2965356828381048,
+      "y": 0.03464317161895086,
+      "rotation": 89.99999999999997
+     },
+     {
+      "shape_id": "d026",
+      "x": 0.3291479140113957,
+      "y": -0.2229403818476481,
+      "rotation": -3.924004559395505e-15
+     },
+     {
+      "shape_id": "d027",
+      "x": 0.4027572050529122,
+      "y": -0.29653568283810494,
+      "rotation": 9.289066890417762e-15
+     },
+     {
+      "shape_id": "d028",
+      "x": -0.2965356828381049,
+      "y": -0.25973803234287646,
+      "rotation": 90.0
+     },
+     {
+      "shape_id": "d029",
+      "x": -0.2965356828381049,
+      "y": -0.11254743036196256,
+      "rotation": 89.99999999999997
+     },
+     {
+      "shape_id": "d030",
+      "x": -0.1846052732033856,
+      "y": 0.4092588070816926,
+      "rotation": 50.62598044692195
+     },
+     {
+      "shape_id": "d031",
+      "x": -0.12259817304860071,
+      "y": 0.3401143499045263,
+      "rotation": 66.0062194709901
+     },
+     {
+      "shape_id": "d032",
+      "x": 0.03903001338478502,
+      "y": 0.19007006633990728,
+      "rotation": 45.1698163309054
+     },
+     {
+      "shape_id": "d033",
+      "x": 0.1005500695952097,
+      "y": 0.11761566937019832,
+      "rotation": 63.340538665167855
+     },
+     {
+      "shape_id": "d034",
+      "x": 0.26196842227631467,
+      "y": -0.0339014685497458,
+      "rotation": 46.33815836532422
+     },
+     {
+      "shape_id": "d035",
+      "x": 0.322475463963755,
+      "y": -0.10388670740999119,
+      "rotation": 61.993884501118934
+     },
+     {
+      "shape_id": "d036",
+      "x": -0.2552591695941119,
+      "y": 0.5365430604346593,
+      "rotation": -45.00000000000815
+     },
+     {
+      "shape_id": "d037",
+      "x": -0.013164189539759922,
+      "y": 0.29414953912854547,
+      "rotation": -44.83018366909468
+     },
+     {
+      "shape_id": "d038",
+      "x": 0.2086991980632943,
+      "y": 0.07017800810951605,
+      "rotation": -43.66184163467573
+     },
+     {
+      "shape_id": "d039",
+      "x": 0.43235724742142184,
+      "y": -0.1510926739368946,
+      "rotation": -44.99999999927708
+     },
+     {
+      "shape_id": "d040",
+      "x": 0.5364947671318504,
+      "y": -0.2552301936136386,
+      "rotation": -44.99999999905597
+     }
+    ],
+    "metadata": {}
+   },
+   "verdict": {
+    "problem_id": "dominoes-41-in-smallest-tan",
+    "candidate_id": "v41-refined",
+    "valid": true,
+    "score": {
+     "primary": 0.0735953009168608,
+     "label": "common_scale",
+     "secondary": {
+      "shape_area": 0.010832536634086584,
+      "inradius": 0.0367976504584304,
+      "circumradius": 0.08228204783732668,
+      "n_shapes": 41.0
+     }
+    },
+    "metrics": {
+     "n_shapes": 41.0,
+     "packed_area": 0.44413400199754965,
+     "covered_area": 0.44413400199754954,
+     "arena_area": 0.5,
+     "void_area": 0.05586599800245046,
+     "density": 0.8882680039950991,
+     "boundary_contacts": 20.0,
+     "total_scale": 3.0174073375912926,
+     "total_perimeter": 18.104444025547757,
+     "max_scale": 0.0735953009168608,
+     "min_scale": 0.0735953009168608,
+     "equivalent_container_side": 13.58782405319167
+    },
+    "promoted_metric": "common_scale",
+    "validation": {
+     "valid": true,
+     "severity": 0.0,
+     "results": [
+      {
+       "constraint": "arena_containment",
+       "valid": true,
+       "severity": 0.0,
+       "message": "all 41 shapes are inside the arena",
+       "violations": []
+      },
+      {
+       "constraint": "non_overlap",
+       "valid": true,
+       "severity": 0.0,
+       "message": "no two shapes overlap",
+       "violations": []
+      },
+      {
+       "constraint": "rotation_policy",
+       "valid": true,
+       "severity": 0.0,
+       "message": "all rotations follow the free policy",
+       "violations": []
+      },
+      {
+       "constraint": "required_shape_count",
+       "valid": true,
+       "severity": 0.0,
+       "message": "41 shapes as required",
+       "violations": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T22:47:10+00:00",
+   "text": "vsweep.py et vdriver.py : listent toutes les structures avec au moins un V qui tiennent 41 un peu au-dessus de la valeur en ligne (domv list), cherchent pour chacune le plus petit côté où elle tient, puis raffinent exactement les meilleures (8 processus, priorité basse).",
+   "step": "program",
+   "path": "vsweep.py"
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T22:47:10+00:00",
+   "text": "Balayage : 106 structures avec V tiennent 41 à 13,7069 ; la meilleure après raffinement est le diagramme [11,10,8,7,7,5,4,3,2,2,1] avec trois V dans la bande extérieure (aux p = −3,54, 0,71 et 3,54), 13,580640.",
+   "step": "search",
+   "path": null
+  },
+  {
+   "kind": "submission",
+   "at": "2026-10-01T22:47:10+00:00",
+   "index": 2,
+   "note": "Meilleure structure du balayage, raffinée exactement : 13,580640 contre 13,656854 en ligne.",
+   "method": "search",
+   "builds_on": 0,
+   "programs": [
+    "vsweep.py",
+    "vdriver.py",
+    "domv.c",
+    "domvbuild.py",
+    "polygons.py"
+   ],
+   "valid": true,
+   "primary": 0.07363423287692056,
+   "measure": 13.580639886226527,
+   "metric": "container side",
+   "record_gap": 0.005580667544188372,
+   "accepted": true,
+   "violations": [],
+   "candidate": {
+    "kind": "candidate",
+    "candidate_id": "vee-41-sweep",
+    "problem_id": "dominoes-41-in-smallest-tan",
+    "scale": 0.07363423287692056,
+    "origin": "unknown",
+    "generation": 0,
+    "parents": [],
+    "placements": [
+     {
+      "shape_id": "d000",
+      "x": -0.18605749362956434,
+      "y": -0.2965162168580557,
+      "rotation": -2.6055780158736754e-14
+     },
+     {
+      "shape_id": "d001",
+      "x": -0.18606486743222186,
+      "y": -0.1492477509569449,
+      "rotation": 1.9772470537198888e-14
+     },
+     {
+      "shape_id": "d002",
+      "x": -0.25969910038277777,
+      "y": -0.0019792850558341285,
+      "rotation": -2.1254567608524588e-14
+     },
+     {
+      "shape_id": "d003",
+      "x": -0.1859429970764816,
+      "y": 0.14528918084527634,
+      "rotation": 4.1809806363434935e-15
+     },
+     {
+      "shape_id": "d004",
+      "x": -0.22288198390750044,
+      "y": 0.3297575250330302,
+      "rotation": 90.00000000000004
+     },
+     {
+      "shape_id": "d005",
+      "x": -0.2965162168580558,
+      "y": 0.4034342870739876,
+      "rotation": 90.00000000000006
+     },
+     {
+      "shape_id": "d006",
+      "x": -0.18605749362956414,
+      "y": -0.2228819839075003,
+      "rotation": -4.631413741604238e-14
+     },
+     {
+      "shape_id": "d007",
+      "x": -0.18606486743222267,
+      "y": -0.07561351800638962,
+      "rotation": 6.388526696212269e-14
+     },
+     {
+      "shape_id": "d008",
+      "x": -0.1859429970764152,
+      "y": 0.07165494789472107,
+      "rotation": -3.332327861012445e-16
+     },
+     {
+      "shape_id": "d009",
+      "x": -0.18606442599878603,
+      "y": 0.21892341379583174,
+      "rotation": -9.714526022757812e-15
+     },
+     {
+      "shape_id": "d010",
+      "x": -0.2965162168580557,
+      "y": 0.25608076297897464,
+      "rotation": 90.00000000000006
+     },
+     {
+      "shape_id": "d011",
+      "x": -0.03878902772845348,
+      "y": -0.29651621685805557,
+      "rotation": 2.0012974919484456e-14
+     },
+     {
+      "shape_id": "d012",
+      "x": -0.03879640153111196,
+      "y": -0.1492477509569448,
+      "rotation": 3.3064457062417785e-14
+     },
+     {
+      "shape_id": "d013",
+      "x": -0.11243063448166717,
+      "y": -0.0019792850558343726,
+      "rotation": 7.676508195408109e-14
+     },
+     {
+      "shape_id": "d014",
+      "x": -0.03862649807810258,
+      "y": 0.1453331221020375,
+      "rotation": 0.003430184825354708
+     },
+     {
+      "shape_id": "d015",
+      "x": -0.03878902772845354,
+      "y": -0.22288198390750008,
+      "rotation": 7.249513535660525e-14
+     },
+     {
+      "shape_id": "d016",
+      "x": -0.03879640153111204,
+      "y": -0.07561351800638945,
+      "rotation": -1.3794362043722918e-14
+     },
+     {
+      "shape_id": "d017",
+      "x": -0.03856209770153069,
+      "y": 0.07167914732278108,
+      "rotation": 0.01880595751454702
+     },
+     {
+      "shape_id": "d018",
+      "x": 0.10872723891105365,
+      "y": -0.2965162168580556,
+      "rotation": 2.687036365858475e-14
+     },
+     {
+      "shape_id": "d019",
+      "x": 0.10847943817265752,
+      "y": -0.14924775095694484,
+      "rotation": -1.2098694956666275e-13
+     },
+     {
+      "shape_id": "d020",
+      "x": 0.03483783141944336,
+      "y": -0.0019792850558341094,
+      "rotation": -4.634211290346268e-14
+     },
+     {
+      "shape_id": "d021",
+      "x": -0.29651576543145,
+      "y": 0.10872723891091571,
+      "rotation": 90.00000780285902
+     },
+     {
+      "shape_id": "d022",
+      "x": 0.10847943817265761,
+      "y": -0.2228819839075003,
+      "rotation": -3.50031351514026e-14
+     },
+     {
+      "shape_id": "d023",
+      "x": 0.10847206436999889,
+      "y": -0.07561351800638948,
+      "rotation": -1.2434289251008116e-13
+     },
+     {
+      "shape_id": "d024",
+      "x": 0.256080762992362,
+      "y": -0.29651621685805557,
+      "rotation": -1.0606244651969293e-14
+     },
+     {
+      "shape_id": "d025",
+      "x": 0.21893078759849086,
+      "y": -0.18606486743222214,
+      "rotation": 90.00000000000007
+     },
+     {
+      "shape_id": "d026",
+      "x": 0.3297575250325491,
+      "y": -0.22288198390750005,
+      "rotation": 2.1128130728582517e-15
+     },
+     {
+      "shape_id": "d027",
+      "x": 0.4034342870697522,
+      "y": -0.2965162168580557,
+      "rotation": -2.9492066097036556e-15
+     },
+     {
+      "shape_id": "d028",
+      "x": -0.29651390933121263,
+      "y": -0.259699100382778,
+      "rotation": 90.00000000000004
+     },
+     {
+      "shape_id": "d029",
+      "x": -0.2965162168580557,
+      "y": -0.11243063448166707,
+      "rotation": 89.99999999999993
+     },
+     {
+      "shape_id": "d030",
+      "x": -0.10374115978477232,
+      "y": 0.3219322054229774,
+      "rotation": 26.950977574681822
+     },
+     {
+      "shape_id": "d031",
+      "x": -0.03158622215823852,
+      "y": 0.26025068501176674,
+      "rotation": 44.9999999999996
+     },
+     {
+      "shape_id": "d032",
+      "x": 0.11865094867152223,
+      "y": 0.09891832923340352,
+      "rotation": 24.54734448643488
+     },
+     {
+      "shape_id": "d033",
+      "x": 0.18839923087297725,
+      "y": 0.03698143819864467,
+      "rotation": 40.42915747727845
+     },
+     {
+      "shape_id": "d034",
+      "x": 0.25788413705032187,
+      "y": -0.0325034679786879,
+      "rotation": 49.57084252270278
+     },
+     {
+      "shape_id": "d035",
+      "x": 0.32192800327855997,
+      "y": -0.10374103097399981,
+      "rotation": 63.06256969002723
+     },
+     {
+      "shape_id": "d036",
+      "x": -0.25523229884256526,
+      "y": 0.5364982758486818,
+      "rotation": -45.000000000019355
+     },
+     {
+      "shape_id": "d037",
+      "x": -0.15061358178188353,
+      "y": 0.4318738478463474,
+      "rotation": -44.99860939206628
+     },
+     {
+      "shape_id": "d038",
+      "x": 0.07281547852847137,
+      "y": 0.20845058935805405,
+      "rotation": -45.00000000000038
+     },
+     {
+      "shape_id": "d039",
+      "x": 0.4317231701651818,
+      "y": -0.15170647851535232,
+      "rotation": -44.99636316471072
+     },
+     {
+      "shape_id": "d040",
+      "x": 0.5364887811818789,
+      "y": -0.2552262390690733,
+      "rotation": -45.000032397084624
+     }
+    ],
+    "metadata": {}
+   },
+   "verdict": {
+    "problem_id": "dominoes-41-in-smallest-tan",
+    "candidate_id": "vee-41-sweep",
+    "valid": true,
+    "score": {
+     "primary": 0.07363423287692056,
+     "label": "common_scale",
+     "secondary": {
+      "shape_area": 0.010844000502745137,
+      "inradius": 0.03681711643846028,
+      "circumradius": 0.08232557509192213,
+      "n_shapes": 41.0
+     }
+    },
+    "metrics": {
+     "n_shapes": 41.0,
+     "packed_area": 0.44460402061255083,
+     "covered_area": 0.44460402061255083,
+     "arena_area": 0.5,
+     "void_area": 0.05539597938744917,
+     "density": 0.8892080412251017,
+     "boundary_contacts": 18.0,
+     "total_scale": 3.019003547953743,
+     "total_perimeter": 18.11402128772246,
+     "max_scale": 0.07363423287692056,
+     "min_scale": 0.07363423287692056,
+     "equivalent_container_side": 13.580639886226527
+    },
+    "promoted_metric": "common_scale",
+    "validation": {
+     "valid": true,
+     "severity": 0.0,
+     "results": [
+      {
+       "constraint": "arena_containment",
+       "valid": true,
+       "severity": 0.0,
+       "message": "all 41 shapes are inside the arena",
+       "violations": []
+      },
+      {
+       "constraint": "non_overlap",
+       "valid": true,
+       "severity": 0.0,
+       "message": "no two shapes overlap",
+       "violations": []
+      },
+      {
+       "constraint": "rotation_policy",
+       "valid": true,
+       "severity": 0.0,
+       "message": "all rotations follow the free policy",
+       "violations": []
+      },
+      {
+       "constraint": "required_shape_count",
+       "valid": true,
+       "severity": 0.0,
+       "message": "41 shapes as required",
+       "violations": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T22:48:30+00:00",
+   "text": "Vérifié : la construction #0, prise au plus petit côté où elle compte encore 41 dominos, chevauche de 2,4e-8 (trois paires domino droit / domino de V) : la bissection comptait les dominos sans revérifier les V contre les cases voisines du coin. Le raffinement repart de la plus grande échelle valide et corrige ce défaut. Le #2 est valide au moteur et en arithmétique exacte (séparation minimale 7,4e-11, marge au bord 3,7e-11 après réduction de 1e-9 de l'échelle) : 13,580640 contre 13,656854 en ligne, 0,0762 de mieux.",
+   "step": "check",
+   "path": null
+  },
+  {
+   "kind": "note",
+   "at": "2026-10-01T23:14:28+00:00",
+   "text": "Correction de la note précédente : le chevauchement de la construction #0 venait de la position des V, arrondie à 6 décimales dans la liste de domv.c (un décalage de 4e-7), pas de la bissection. domvbuild.py reprend maintenant la position exacte du coin ; reconstruite, la construction est valide (#3).",
+   "step": "check",
+   "path": null
+  },
+  {
+   "kind": "submission",
+   "at": "2026-10-01T23:14:28+00:00",
+   "index": 3,
+   "note": "La construction #0 reconstruite avec les coins exacts : valide, 13,642751.",
+   "method": "reasoning",
+   "builds_on": 0,
+   "programs": [
+    "domvbuild.py",
+    "vbisect.py",
+    "domv.c",
+    "dombuild.py"
+   ],
+   "valid": true,
+   "primary": 0.07329900022728007,
+   "measure": 13.642750881993951,
+   "metric": "container side",
+   "record_gap": 0.0010326951756809422,
+   "accepted": false,
+   "violations": [],
+   "candidate": null,
+   "verdict": null
+  }
+ ],
+ "best": {
+  "at": "2026-10-01T22:47:10+00:00",
+  "index": 2,
+  "measure": 13.580639886226527,
+  "metric": "container side",
+  "record_gap": 0.005580667544188372,
+  "primary": 0.07363423287692056
+ },
+ "champion": {
+  "kind": "candidate",
+  "candidate_id": "vee-41-sweep",
+  "problem_id": "dominoes-41-in-smallest-tan",
+  "scale": 0.07363423287692056,
+  "origin": "unknown",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+   {
+    "shape_id": "d000",
+    "x": -0.18605749362956434,
+    "y": -0.2965162168580557,
+    "rotation": -2.6055780158736754e-14
+   },
+   {
+    "shape_id": "d001",
+    "x": -0.18606486743222186,
+    "y": -0.1492477509569449,
+    "rotation": 1.9772470537198888e-14
+   },
+   {
+    "shape_id": "d002",
+    "x": -0.25969910038277777,
+    "y": -0.0019792850558341285,
+    "rotation": -2.1254567608524588e-14
+   },
+   {
+    "shape_id": "d003",
+    "x": -0.1859429970764816,
+    "y": 0.14528918084527634,
+    "rotation": 4.1809806363434935e-15
+   },
+   {
+    "shape_id": "d004",
+    "x": -0.22288198390750044,
+    "y": 0.3297575250330302,
+    "rotation": 90.00000000000004
+   },
+   {
+    "shape_id": "d005",
+    "x": -0.2965162168580558,
+    "y": 0.4034342870739876,
+    "rotation": 90.00000000000006
+   },
+   {
+    "shape_id": "d006",
+    "x": -0.18605749362956414,
+    "y": -0.2228819839075003,
+    "rotation": -4.631413741604238e-14
+   },
+   {
+    "shape_id": "d007",
+    "x": -0.18606486743222267,
+    "y": -0.07561351800638962,
+    "rotation": 6.388526696212269e-14
+   },
+   {
+    "shape_id": "d008",
+    "x": -0.1859429970764152,
+    "y": 0.07165494789472107,
+    "rotation": -3.332327861012445e-16
+   },
+   {
+    "shape_id": "d009",
+    "x": -0.18606442599878603,
+    "y": 0.21892341379583174,
+    "rotation": -9.714526022757812e-15
+   },
+   {
+    "shape_id": "d010",
+    "x": -0.2965162168580557,
+    "y": 0.25608076297897464,
+    "rotation": 90.00000000000006
+   },
+   {
+    "shape_id": "d011",
+    "x": -0.03878902772845348,
+    "y": -0.29651621685805557,
+    "rotation": 2.0012974919484456e-14
+   },
+   {
+    "shape_id": "d012",
+    "x": -0.03879640153111196,
+    "y": -0.1492477509569448,
+    "rotation": 3.3064457062417785e-14
+   },
+   {
+    "shape_id": "d013",
+    "x": -0.11243063448166717,
+    "y": -0.0019792850558343726,
+    "rotation": 7.676508195408109e-14
+   },
+   {
+    "shape_id": "d014",
+    "x": -0.03862649807810258,
+    "y": 0.1453331221020375,
+    "rotation": 0.003430184825354708
+   },
+   {
+    "shape_id": "d015",
+    "x": -0.03878902772845354,
+    "y": -0.22288198390750008,
+    "rotation": 7.249513535660525e-14
+   },
+   {
+    "shape_id": "d016",
+    "x": -0.03879640153111204,
+    "y": -0.07561351800638945,
+    "rotation": -1.3794362043722918e-14
+   },
+   {
+    "shape_id": "d017",
+    "x": -0.03856209770153069,
+    "y": 0.07167914732278108,
+    "rotation": 0.01880595751454702
+   },
+   {
+    "shape_id": "d018",
+    "x": 0.10872723891105365,
+    "y": -0.2965162168580556,
+    "rotation": 2.687036365858475e-14
+   },
+   {
+    "shape_id": "d019",
+    "x": 0.10847943817265752,
+    "y": -0.14924775095694484,
+    "rotation": -1.2098694956666275e-13
+   },
+   {
+    "shape_id": "d020",
+    "x": 0.03483783141944336,
+    "y": -0.0019792850558341094,
+    "rotation": -4.634211290346268e-14
+   },
+   {
+    "shape_id": "d021",
+    "x": -0.29651576543145,
+    "y": 0.10872723891091571,
+    "rotation": 90.00000780285902
+   },
+   {
+    "shape_id": "d022",
+    "x": 0.10847943817265761,
+    "y": -0.2228819839075003,
+    "rotation": -3.50031351514026e-14
+   },
+   {
+    "shape_id": "d023",
+    "x": 0.10847206436999889,
+    "y": -0.07561351800638948,
+    "rotation": -1.2434289251008116e-13
+   },
+   {
+    "shape_id": "d024",
+    "x": 0.256080762992362,
+    "y": -0.29651621685805557,
+    "rotation": -1.0606244651969293e-14
+   },
+   {
+    "shape_id": "d025",
+    "x": 0.21893078759849086,
+    "y": -0.18606486743222214,
+    "rotation": 90.00000000000007
+   },
+   {
+    "shape_id": "d026",
+    "x": 0.3297575250325491,
+    "y": -0.22288198390750005,
+    "rotation": 2.1128130728582517e-15
+   },
+   {
+    "shape_id": "d027",
+    "x": 0.4034342870697522,
+    "y": -0.2965162168580557,
+    "rotation": -2.9492066097036556e-15
+   },
+   {
+    "shape_id": "d028",
+    "x": -0.29651390933121263,
+    "y": -0.259699100382778,
+    "rotation": 90.00000000000004
+   },
+   {
+    "shape_id": "d029",
+    "x": -0.2965162168580557,
+    "y": -0.11243063448166707,
+    "rotation": 89.99999999999993
+   },
+   {
+    "shape_id": "d030",
+    "x": -0.10374115978477232,
+    "y": 0.3219322054229774,
+    "rotation": 26.950977574681822
+   },
+   {
+    "shape_id": "d031",
+    "x": -0.03158622215823852,
+    "y": 0.26025068501176674,
+    "rotation": 44.9999999999996
+   },
+   {
+    "shape_id": "d032",
+    "x": 0.11865094867152223,
+    "y": 0.09891832923340352,
+    "rotation": 24.54734448643488
+   },
+   {
+    "shape_id": "d033",
+    "x": 0.18839923087297725,
+    "y": 0.03698143819864467,
+    "rotation": 40.42915747727845
+   },
+   {
+    "shape_id": "d034",
+    "x": 0.25788413705032187,
+    "y": -0.0325034679786879,
+    "rotation": 49.57084252270278
+   },
+   {
+    "shape_id": "d035",
+    "x": 0.32192800327855997,
+    "y": -0.10374103097399981,
+    "rotation": 63.06256969002723
+   },
+   {
+    "shape_id": "d036",
+    "x": -0.25523229884256526,
+    "y": 0.5364982758486818,
+    "rotation": -45.000000000019355
+   },
+   {
+    "shape_id": "d037",
+    "x": -0.15061358178188353,
+    "y": 0.4318738478463474,
+    "rotation": -44.99860939206628
+   },
+   {
+    "shape_id": "d038",
+    "x": 0.07281547852847137,
+    "y": 0.20845058935805405,
+    "rotation": -45.00000000000038
+   },
+   {
+    "shape_id": "d039",
+    "x": 0.4317231701651818,
+    "y": -0.15170647851535232,
+    "rotation": -44.99636316471072
+   },
+   {
+    "shape_id": "d040",
+    "x": 0.5364887811818789,
+    "y": -0.2552262390690733,
+    "rotation": -45.000032397084624
+   }
+  ],
+  "metadata": {}
+ },
+ "example": true
+}
