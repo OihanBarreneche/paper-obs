@@ -1,0 +1,89 @@
+{
+  "kind": "candidate",
+  "candidate_id": "squares-6-in-smallest-circle-figure",
+  "problem_id": "squares-6-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-ae7a9e6a17"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.10653822601870708,
+      "y": 1.0808240273397176,
+      "rotation": 358.0
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.9164490524640765,
+      "y": 0.44000956335004443,
+      "rotation": 358.0
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.07321679784836785,
+      "y": 0.08137809386733068,
+      "rotation": 358.0
+    },
+    {
+      "shape_id": "s003",
+      "x": 1.0896616716828615,
+      "y": 0.10367537118610226,
+      "rotation": 359.9120190055461
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.7784811389958461,
+      "y": -0.7743531335259914,
+      "rotation": 43.98742217482546
+    },
+    {
+      "shape_id": "s005",
+      "x": 0.4255134959099865,
+      "y": -0.931533922217204,
+      "rotation": 358.0
+    }
+  ],
+  "metadata": {
+    "figure": "squincir-6.gif",
+    "detected_size_px": 48.0,
+    "detected_turns": [
+      358.0,
+      358.0,
+      358.0,
+      358.0,
+      45.0,
+      358.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        0.089,
+        1.11
+      ],
+      [
+        -0.931,
+        0.444
+      ],
+      [
+        0.089,
+        0.089
+      ],
+      [
+        1.11,
+        0.089
+      ],
+      [
+        -0.801,
+        -0.801
+      ],
+      [
+        0.444,
+        -0.931
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

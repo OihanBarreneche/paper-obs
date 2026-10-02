@@ -26,23 +26,23 @@
   },
   "totals": {
     "beaten": 1,
-    "below": 9,
-    "differs": 40,
+    "below": 36,
+    "differs": 67,
     "entries_catalog": 4245,
-    "entries_checked": 159,
+    "entries_checked": 215,
     "entries_unsupported": 89,
     "families_catalog": 107,
-    "families_checked": 22,
+    "families_checked": 26,
     "families_unsupported": 3,
-    "level:approx": 48,
+    "level:approx": 51,
     "level:beaten": 1,
     "level:exact": 2,
-    "level:far": 38,
-    "level:near": 65,
+    "level:far": 90,
+    "level:near": 66,
     "level:none": 5,
-    "reproduces": 104,
+    "reproduces": 106,
     "unmeasurable": 5,
-    "without_coordinates": 3997
+    "without_coordinates": 3941
   },
   "families": {
     "cirincir": {
@@ -400,6 +400,421 @@
         }
       }
     },
+    "triincir": {
+      "title": "Triangles in Circles",
+      "section": "Packing Equal Copies",
+      "shape": "triangle",
+      "container": "circle",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "figure"
+      },
+      "entries": {
+        "1": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 0.577,
+          "unit": "container radius",
+          "measured": 0.5773502691896257,
+          "gap": -0.0006070523217084466,
+          "source_kind": "approx",
+          "files": [
+            "approx-triincir-1.json"
+          ],
+          "candidate": "/catalog/candidates/approx-triincir-1.json",
+          "checked_on": "2026-10-02"
+        },
+        "2": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 0.866,
+          "unit": "container radius",
+          "measured": 0.8684290533594196,
+          "gap": -0.0028049115004844852,
+          "source_kind": "approx",
+          "files": [
+            "approx-triincir-2.json"
+          ],
+          "candidate": "/catalog/candidates/approx-triincir-2.json",
+          "checked_on": "2026-10-02"
+        },
+        "25": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 2.055,
+          "unit": "container radius",
+          "measured": 2.1027466862762414,
+          "gap": -0.023234397214715926,
+          "source_kind": "approx",
+          "files": [
+            "approx-triincir-25.json"
+          ],
+          "candidate": "/catalog/candidates/approx-triincir-25.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "squincir": {
+      "title": "Squares in Circles",
+      "section": "Packing Equal Copies",
+      "shape": "square",
+      "container": "circle",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "figure"
+      },
+      "entries": {
+        "1": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 0.7071,
+          "unit": "container radius",
+          "measured": 0.7071067811865474,
+          "gap": -9.590137954178898e-06,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-1.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-1.json",
+          "checked_on": "2026-10-02"
+        },
+        "2": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 1.11803,
+          "unit": "container radius",
+          "measured": 1.141255415133448,
+          "gap": -0.020773516930178877,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-2.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-2.json",
+          "checked_on": "2026-10-02"
+        },
+        "3": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 1.28847,
+          "unit": "container radius",
+          "measured": 1.2951708249113096,
+          "gap": -0.0052006060764392134,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-3.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-3.json",
+          "checked_on": "2026-10-02"
+        },
+        "4": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 1.41421,
+          "unit": "container radius",
+          "measured": 1.5043101253800706,
+          "gap": -0.06371057012754161,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-4.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-4.json",
+          "checked_on": "2026-10-02"
+        },
+        "5": {
+          "status": "below",
+          "level": "approx",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 1.58113,
+          "unit": "container radius",
+          "measured": 1.582652292437502,
+          "gap": -0.0009627876502893597,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-5.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-5.json",
+          "checked_on": "2026-10-02"
+        },
+        "6": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 1.688,
+          "unit": "container radius",
+          "measured": 1.701444019998119,
+          "gap": -0.007964466823530183,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-6.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-6.json",
+          "checked_on": "2026-10-02"
+        },
+        "7": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 1.80277,
+          "unit": "container radius",
+          "measured": 1.820110513196438,
+          "gap": -0.009618816153163146,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-7.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-7.json",
+          "checked_on": "2026-10-02"
+        },
+        "8": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 1.97877,
+          "unit": "container radius",
+          "measured": 2.0236744537384985,
+          "gap": -0.022693114277302875,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-8.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-8.json",
+          "checked_on": "2026-10-02"
+        },
+        "9": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 2.07759,
+          "unit": "container radius",
+          "measured": 2.081364905735207,
+          "gap": -0.001816963758589146,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-9.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-9.json",
+          "checked_on": "2026-10-02"
+        },
+        "10": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 2.12132,
+          "unit": "container radius",
+          "measured": 2.1475618759838,
+          "gap": -0.012370540976279085,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-10.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-10.json",
+          "checked_on": "2026-10-02"
+        },
+        "12": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 2.23606,
+          "unit": "container radius",
+          "measured": 2.261699139911847,
+          "gap": -0.01146621285289615,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-12.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-12.json",
+          "checked_on": "2026-10-02"
+        },
+        "13": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 2.3607,
+          "unit": "container radius",
+          "measured": 2.419508317651986,
+          "gap": -0.024911389694576194,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-13.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-13.json",
+          "checked_on": "2026-10-02"
+        },
+        "15": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 2.533,
+          "unit": "container radius",
+          "measured": 2.6124100630841505,
+          "gap": -0.031350202559869936,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-15.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-15.json",
+          "checked_on": "2026-10-02"
+        },
+        "16": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 2.62309,
+          "unit": "container radius",
+          "measured": 2.6581716125960746,
+          "gap": -0.013374155136146558,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-16.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-16.json",
+          "checked_on": "2026-10-02"
+        },
+        "18": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 2.74146,
+          "unit": "container radius",
+          "measured": 2.7685349235148737,
+          "gap": -0.00987609650145314,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-18.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-18.json",
+          "checked_on": "2026-10-02"
+        },
+        "20": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 2.893,
+          "unit": "container radius",
+          "measured": 3.0672781645724183,
+          "gap": -0.06024132892237073,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-20.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-20.json",
+          "checked_on": "2026-10-02"
+        },
+        "21": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 2.91547,
+          "unit": "container radius",
+          "measured": 2.9647566189307506,
+          "gap": -0.016905205311922467,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-21.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-21.json",
+          "checked_on": "2026-10-02"
+        },
+        "36": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 3.72853,
+          "unit": "container radius",
+          "measured": 4.065898943401869,
+          "gap": -0.09048309746786781,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-36.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-36.json",
+          "checked_on": "2026-10-02"
+        },
+        "42": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 4.03113,
+          "unit": "container radius",
+          "measured": 4.367309152913552,
+          "gap": -0.08339576072057998,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-42.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-42.json",
+          "checked_on": "2026-10-02"
+        },
+        "50": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 4.30116,
+          "unit": "container radius",
+          "measured": 4.424388753607534,
+          "gap": -0.028650120806371727,
+          "source_kind": "approx",
+          "files": [
+            "approx-squincir-50.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squincir-50.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
     "penincir": {
       "title": "Pentagons in Circles",
       "section": "Packing Equal Copies",
@@ -427,6 +842,307 @@
             "starter-penincir-3.json"
           ],
           "candidate": "/catalog/candidates/starter-penincir-3.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "hexincir": {
+      "title": "Hexagons in Circles",
+      "section": "Packing Equal Copies",
+      "shape": "hexagon",
+      "container": "circle",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "figure"
+      },
+      "entries": {
+        "1": {
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 1.0,
+          "unit": "container radius",
+          "measured": 1.0000000000000002,
+          "gap": -2.220446049250313e-16,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-1.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-1.json",
+          "checked_on": "2026-10-02"
+        },
+        "3": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 2.0,
+          "unit": "container radius",
+          "measured": 2.0114313679028806,
+          "gap": -0.005715683951440287,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-3.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-3.json",
+          "checked_on": "2026-10-02"
+        },
+        "4": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 2.239,
+          "unit": "container radius",
+          "measured": 2.2620310313941827,
+          "gap": -0.010286302543181258,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-4.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-4.json",
+          "checked_on": "2026-10-02"
+        },
+        "5": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 2.47134,
+          "unit": "container radius",
+          "measured": 2.52661256654816,
+          "gap": -0.02236542383814446,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-5.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-5.json",
+          "checked_on": "2026-10-02"
+        },
+        "6": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 2.645,
+          "unit": "container radius",
+          "measured": 2.72340622397695,
+          "gap": -0.029643184868412126,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-6.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-6.json",
+          "checked_on": "2026-10-02"
+        },
+        "7": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 2.645,
+          "unit": "container radius",
+          "measured": 2.661709886032329,
+          "gap": -0.00631753725229827,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-7.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-7.json",
+          "checked_on": "2026-10-02"
+        },
+        "8": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 2.984,
+          "unit": "container radius",
+          "measured": 3.1215093099618727,
+          "gap": -0.046082208432262975,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-8.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-8.json",
+          "checked_on": "2026-10-02"
+        },
+        "9": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 3.301,
+          "unit": "container radius",
+          "measured": 3.339830307507648,
+          "gap": -0.01176319524618228,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-9.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-9.json",
+          "checked_on": "2026-10-02"
+        },
+        "11": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 3.59003,
+          "unit": "container radius",
+          "measured": 3.7356013083247737,
+          "gap": -0.04054877210629817,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-11.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-11.json",
+          "checked_on": "2026-10-02"
+        },
+        "13": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 3.82289,
+          "unit": "container radius",
+          "measured": 4.005751590455965,
+          "gap": -0.04783333824827943,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-13.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-13.json",
+          "checked_on": "2026-10-02"
+        },
+        "14": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 3.87755,
+          "unit": "container radius",
+          "measured": 4.011968713770079,
+          "gap": -0.034665887936990936,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-14.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-14.json",
+          "checked_on": "2026-10-02"
+        },
+        "16": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 4.1396,
+          "unit": "container radius",
+          "measured": 4.2529430459830175,
+          "gap": -0.027380192768146152,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-16.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-16.json",
+          "checked_on": "2026-10-02"
+        },
+        "20": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 4.62527,
+          "unit": "container radius",
+          "measured": 4.801899653350879,
+          "gap": -0.03818796596758209,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-20.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-20.json",
+          "checked_on": "2026-10-02"
+        },
+        "21": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 4.68305,
+          "unit": "container radius",
+          "measured": 4.945875413665075,
+          "gap": -0.05612270073244466,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-21.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-21.json",
+          "checked_on": "2026-10-02"
+        },
+        "23": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 4.98608,
+          "unit": "container radius",
+          "measured": 5.26547450290909,
+          "gap": -0.056034901748285106,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-23.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-23.json",
+          "checked_on": "2026-10-02"
+        },
+        "35": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 6.00084,
+          "unit": "container radius",
+          "measured": 6.358182593932011,
+          "gap": -0.059548762161965856,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-35.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-35.json",
+          "checked_on": "2026-10-02"
+        },
+        "37": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 6.08276,
+          "unit": "container radius",
+          "measured": 6.353660066641015,
+          "gap": -0.044535715142635025,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexincir-37.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexincir-37.json",
           "checked_on": "2026-10-02"
         }
       }
@@ -1260,26 +1976,71 @@
       "container": "square",
       "checked_on": "2026-10-02",
       "source": {
-        "kind": "seed",
-        "label": "the lab's own seed",
-        "url": ""
+        "kind": "figure"
       },
       "entries": {
-        "2": {
+        "1": {
           "status": "reproduces",
           "level": "approx",
           "precise": false,
           "published": false,
           "promoted": false,
+          "value": 0.965,
+          "unit": "container side",
+          "measured": 0.9659258262890686,
+          "gap": -0.0009594054809001828,
+          "source_kind": "approx",
+          "files": [
+            "approx-triinsqu-1.json"
+          ],
+          "candidate": "/catalog/candidates/approx-triinsqu-1.json",
+          "checked_on": "2026-10-02"
+        },
+        "2": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
           "value": 1.224,
           "unit": "container side",
-          "measured": 1.224744871391589,
-          "gap": -0.0006085550584877155,
-          "source_kind": "seed",
+          "measured": 1.327272218481725,
+          "gap": -0.08437272751774916,
+          "source_kind": "approx",
           "files": [
-            "starter-triinsqu-2.json"
+            "starter-triinsqu-2.json",
+            "approx-triinsqu-2.json"
           ],
-          "candidate": "/catalog/candidates/starter-triinsqu-2.json",
+          "candidate": "/catalog/candidates/approx-triinsqu-2.json",
+          "checked_on": "2026-10-02"
+        }
+      }
+    },
+    "peninsqu": {
+      "title": "Pentagons in Squares",
+      "section": "Packing Equal Copies",
+      "shape": "pentagon",
+      "container": "square",
+      "checked_on": "2026-10-02",
+      "source": {
+        "kind": "figure"
+      },
+      "entries": {
+        "3": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 2.90811,
+          "unit": "container side",
+          "measured": 3.0924489731129374,
+          "gap": -0.06338789561362439,
+          "source_kind": "approx",
+          "files": [
+            "approx-peninsqu-3.json"
+          ],
+          "candidate": "/catalog/candidates/approx-peninsqu-3.json",
           "checked_on": "2026-10-02"
         }
       }
@@ -1291,26 +2052,263 @@
       "container": "square",
       "checked_on": "2026-10-02",
       "source": {
-        "kind": "seed",
-        "label": "the lab's own seed",
-        "url": ""
+        "kind": "figure"
       },
       "entries": {
+        "1": {
+          "status": "differs",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 1.931,
+          "unit": "container side",
+          "measured": 1.9323194382282165,
+          "gap": -0.0006832927126962464,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-1.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-1.json",
+          "checked_on": "2026-10-02"
+        },
+        "2": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 3.156,
+          "unit": "container side",
+          "measured": 3.236320661744124,
+          "gap": -0.025450146306756617,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-2.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-2.json",
+          "checked_on": "2026-10-02"
+        },
+        "3": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 3.491,
+          "unit": "container side",
+          "measured": 3.5212252915269704,
+          "gap": -0.008658061164987192,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-3.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-3.json",
+          "checked_on": "2026-10-02"
+        },
         "4": {
-          "status": "reproduces",
-          "level": "near",
+          "status": "differs",
+          "level": "far",
           "precise": false,
           "published": false,
           "promoted": false,
           "value": 3.725,
           "unit": "container side",
-          "measured": 3.725002596914244,
-          "gap": -6.971581863330733e-07,
-          "source_kind": "seed",
+          "measured": 3.753821590565014,
+          "gap": -0.007737339748997043,
+          "source_kind": "approx",
           "files": [
-            "starter-hexinsqu-4.json"
+            "starter-hexinsqu-4.json",
+            "approx-hexinsqu-4.json"
           ],
-          "candidate": "/catalog/candidates/starter-hexinsqu-4.json",
+          "candidate": "/catalog/candidates/approx-hexinsqu-4.json",
+          "checked_on": "2026-10-02"
+        },
+        "5": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 4.437,
+          "unit": "container side",
+          "measured": 4.500453788343139,
+          "gap": -0.014301056647089994,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-5.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-5.json",
+          "checked_on": "2026-10-02"
+        },
+        "6": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 4.813,
+          "unit": "container side",
+          "measured": 4.971633479137374,
+          "gap": -0.03295937650890801,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-6.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-6.json",
+          "checked_on": "2026-10-02"
+        },
+        "8": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 5.196,
+          "unit": "container side",
+          "measured": 5.312432142064278,
+          "gap": -0.022408033499668634,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-8.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-8.json",
+          "checked_on": "2026-10-02"
+        },
+        "9": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 5.518,
+          "unit": "container side",
+          "measured": 5.643943623157888,
+          "gap": -0.02282414337765283,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-9.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-9.json",
+          "checked_on": "2026-10-02"
+        },
+        "12": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 6.387,
+          "unit": "container side",
+          "measured": 6.594960078111097,
+          "gap": -0.032559899500719754,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-12.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-12.json",
+          "checked_on": "2026-10-02"
+        },
+        "14": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 6.928,
+          "unit": "container side",
+          "measured": 7.180461090024092,
+          "gap": -0.03644068851387016,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-14.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-14.json",
+          "checked_on": "2026-10-02"
+        },
+        "18": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 7.702,
+          "unit": "container side",
+          "measured": 7.989035981821571,
+          "gap": -0.03726772030921463,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-18.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-18.json",
+          "checked_on": "2026-10-02"
+        },
+        "19": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 7.924,
+          "unit": "container side",
+          "measured": 8.37505873848609,
+          "gap": -0.05692311187355993,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-19.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-19.json",
+          "checked_on": "2026-10-02"
+        },
+        "20": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 7.948,
+          "unit": "container side",
+          "measured": 8.281828737256262,
+          "gap": -0.04200160257376218,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-20.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-20.json",
+          "checked_on": "2026-10-02"
+        },
+        "26": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 9.22075,
+          "unit": "container side",
+          "measured": 9.588427814046565,
+          "gap": -0.03987504422596469,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-26.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-26.json",
+          "checked_on": "2026-10-02"
+        },
+        "30": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 9.51952,
+          "unit": "container side",
+          "measured": 9.942113851639423,
+          "gap": -0.04439234873601011,
+          "source_kind": "approx",
+          "files": [
+            "approx-hexinsqu-30.json"
+          ],
+          "candidate": "/catalog/candidates/approx-hexinsqu-30.json",
           "checked_on": "2026-10-02"
         }
       }

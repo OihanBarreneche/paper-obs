@@ -19,6 +19,7 @@ from paper_obs.domain import (
     Arena,
     Candidate,
     Circle,
+    MinimizeContainer,
     MaximizeScale,
     Placement,
     Problem,
@@ -208,3 +209,54 @@ def test_a_polygonal_reading_round_trips_through_the_engine(tmp_path: Path):
     assert verdict.metrics["equivalent_container_side"] == pytest.approx(
         TRIANGLE_SIDE / SQUARE_SIDE, rel=0.06
     )
+
+#: The drawing of a two-by-two block of squares: four squares whose sides touch, drawn at
+#: this side in pixels. Nothing draws a container: the problem the reading serves measures
+#: the smallest square the arrangement needs, so the arrangement itself is all there is.
+BLOCK_SIDE = 40.0
+
+
+def square_container_problem() -> Problem:
+    """Four unit squares in the smallest square that holds them: two by two."""
+    return Problem(
+        "four-squares-in-smallest-square",
+        None,
+        RegularPolygon(sides=4, side=1.0),
+        MinimizeContainer(count=4, container="square"),
+        rotation=RotationPolicy(mode=RotationMode.FREE),
+        seed=1,
+    )
+
+
+def draw_grid_of_squares(path: Path) -> None:
+    """Draw four squares in a two-by-two block, their sides touching."""
+    from PIL import Image, ImageDraw
+
+    image = Image.new("L", (200, 200), 255)
+    draw = ImageDraw.Draw(image)
+    side = BLOCK_SIDE
+    for centre_x in (100.0 - side / 2.0, 100.0 + side / 2.0):
+        for centre_y in (100.0 - side / 2.0, 100.0 + side / 2.0):
+            draw.rectangle(
+                [centre_x - side / 2.0, centre_y - side / 2.0, centre_x + side / 2.0, centre_y + side / 2.0],
+                outline=0,
+                width=2,
+            )
+    image.save(path)
+
+
+def test_a_derived_container_is_measured_from_the_reading(tmp_path: Path):
+    path = tmp_path / "block.gif"
+    draw_grid_of_squares(path)
+    problem = square_container_problem()
+    result = catalog_approximation.reconstruct(problem, path, 4)
+    assert result is not None
+    candidate, _ = result
+    verdict = evaluate(problem, candidate)
+    assert verdict.valid
+    # A container the problem derives is measured in the copies' own size, so the candidate
+    # holds unit copies and the layout carries everything.
+    assert candidate.scale == pytest.approx(1.0)
+    # Four unit squares in a two-by-two block need a square of side two, and the engine reads
+    # that back from the arrangement the drawing shows rather than from anything printed.
+    assert verdict.metrics["container_side"] == pytest.approx(2.0, rel=0.15)

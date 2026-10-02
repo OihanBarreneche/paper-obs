@@ -1,0 +1,100 @@
+{
+  "kind": "candidate",
+  "candidate_id": "hexagons-7-in-smallest-circle-figure",
+  "problem_id": "hexagons-7-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 1,
+  "parents": [
+    "hexagons-7-in-smallest-circle-figure"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.07272676470073623,
+      "y": 1.7323041923464089,
+      "rotation": 25.0
+    },
+    {
+      "shape_id": "s001",
+      "x": -1.4638562198732568,
+      "y": 0.9291350865018289,
+      "rotation": 25.0
+    },
+    {
+      "shape_id": "s002",
+      "x": 1.5365831280361364,
+      "y": 0.8031691722130648,
+      "rotation": 25.0
+    },
+    {
+      "shape_id": "s003",
+      "x": 3.318976959073338e-10,
+      "y": -1.5802461062746695e-10,
+      "rotation": 25.0
+    },
+    {
+      "shape_id": "s004",
+      "x": -1.53658312805467,
+      "y": -0.8031691726295705,
+      "rotation": 25.0
+    },
+    {
+      "shape_id": "s005",
+      "x": 1.463856220109758,
+      "y": -0.929135086342494,
+      "rotation": 25.0
+    },
+    {
+      "shape_id": "s006",
+      "x": -0.07272676525059897,
+      "y": -1.7323041919312105,
+      "rotation": 25.0
+    }
+  ],
+  "metadata": {
+    "figure": "hexincir-7.png",
+    "detected_size_px": 34.27,
+    "detected_turns": [
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        0.001,
+        1.797
+      ],
+      [
+        -1.552,
+        0.903
+      ],
+      [
+        1.558,
+        0.903
+      ],
+      [
+        -0.0,
+        -0.002
+      ],
+      [
+        -1.569,
+        -0.904
+      ],
+      [
+        1.56,
+        -0.902
+      ],
+      [
+        0.002,
+        -1.795
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

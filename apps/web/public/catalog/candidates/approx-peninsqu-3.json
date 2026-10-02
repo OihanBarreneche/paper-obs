@@ -1,0 +1,56 @@
+{
+  "kind": "candidate",
+  "candidate_id": "pentagons-3-in-smallest-square-figure",
+  "problem_id": "pentagons-3-in-smallest-square",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 1,
+  "parents": [
+    "pentagons-3-in-smallest-square-figure"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.36141744341767373,
+      "y": 0.7602258942409084,
+      "rotation": -3.513705983027985
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.8730992586015965,
+      "y": -0.12585434316117416,
+      "rotation": 55.0
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.5116818151839231,
+      "y": -0.6343715510797341,
+      "rotation": 32.21953907072609
+    }
+  ],
+  "metadata": {
+    "figure": "peninsqu-3.png",
+    "detected_size_px": 63.95,
+    "detected_turns": [
+      0.0,
+      55.0,
+      35.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        0.317,
+        0.828
+      ],
+      [
+        -0.872,
+        -0.107
+      ],
+      [
+        0.554,
+        -0.721
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

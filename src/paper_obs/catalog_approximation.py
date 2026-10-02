@@ -557,14 +557,19 @@ def fit_copy(
     is searched around it and the turn over the copy's own symmetry period -- a square
     turned by ninety degrees being the same square, and nothing else being.
     """
-    best: tuple[float, float, float] | None = None
+    # The region's own sides give a turn to start from, but they only fix it up to the
+    # copy's symmetry: a triangle's edges say as much about the copy turned by sixty degrees
+    # as about the copy itself. The guess is therefore tried beside the coarse grid rather
+    # than instead of it, and the cost -- which sees the strokes a wrong turn would put under
+    # the copy -- decides between them.
+    candidates = [float(turn) for turn in np.arange(0.0, period, COARSE_TURN)]
     if turn_guess is not None:
-        best = (copy_cost(distance, base, guess, turn_guess, centre), guess, float(turn_guess))
-    else:
-        for turn in np.arange(0.0, period, COARSE_TURN):
-            cost = copy_cost(distance, base, guess, turn, centre)
-            if best is None or cost < best[0]:
-                best = (cost, guess, float(turn))
+        candidates.append(float(turn_guess) % period)
+    best: tuple[float, float, float] | None = None
+    for turn in candidates:
+        cost = copy_cost(distance, base, guess, turn, centre)
+        if best is None or cost < best[0]:
+            best = (cost, guess, turn)
     span = SIZE_WINDOW / 3.0
     for _ in range(4):
         _, size, turn = best  # type: ignore[misc]
@@ -745,6 +750,39 @@ def fitted_scale(
     return best.scale, best
 
 
+def derived_reading(
+    problem, pattern: np.ndarray, turns: list[float] | None = None
+) -> tuple[float, Candidate] | None:
+    """Return a reading of a problem that measures its own container.
+
+    A container the engine derives -- a smallest square, a smallest circle -- is measured
+    from the arrangement, in the copies' own size. Such a problem fixes nothing about the
+    scale, so the reading is the arrangement itself: the copies stay at size one and the
+    layout carries all of it, in copy sizes, which is the unit the value is printed in.
+    There is no scale to search and no placement to search either: translating a derived
+    container does not change it, so the reading is settled and then left to the local
+    search that knows the objective's own steps.
+    """
+    # Such a problem fixes the copies' size: the value is what the arrangement needs per
+    # unit copy, so a candidate at any other scale is not an arrangement of this problem at
+    # all. The reading is therefore laid out at size one, and the repair has only to
+    # separate copies the drawing puts a little too close.
+    unit = placed(problem.problem_id, pattern, 1.0, "source-derived-approximation", turns)
+    settled = repair_overlaps(
+        problem, unit, iterations=REPAIR_STEPS, origin="source-derived-approximation"
+    )
+    if not evaluate(problem, settled).valid:
+        return None
+    unit = settled
+    polished = polish(problem, unit, iterations=POLISH_STEPS, origin="source-derived-approximation")
+    best = unit
+    if evaluate(problem, polished).valid and evaluate(problem, polished).is_better_than(
+        evaluate(problem, unit)
+    ):
+        best = polished
+    return best.scale, best
+
+
 def reconstruct(problem, path: Path, count: int) -> tuple[Candidate, dict[str, Any]] | None:
     """Return a candidate read off one drawing, and what the reading found.
 
@@ -767,7 +805,10 @@ def reconstruct(problem, path: Path, count: int) -> tuple[Candidate, dict[str, A
         if copies is None:
             return None
         size, pattern, turns, explained = copies
-    fitted = fitted_scale(problem, pattern, turns)
+    if bool(getattr(problem.objective, "derives_region", False)):
+        fitted = derived_reading(problem, pattern, turns)
+    else:
+        fitted = fitted_scale(problem, pattern, turns)
     if fitted is None:
         return None
     scale, candidate = fitted

@@ -1,0 +1,45 @@
+{
+  "kind": "candidate",
+  "candidate_id": "squares-2-in-smallest-circle-figure",
+  "problem_id": "squares-2-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 1,
+  "parents": [
+    "squares-2-in-smallest-circle-figure"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.5088166140726893,
+      "y": 0.009756267657630411,
+      "rotation": 83.88777214888908
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.5088166140726893,
+      "y": -0.009756267657630411,
+      "rotation": -4.210227137161031
+    }
+  ],
+  "metadata": {
+    "figure": "squincir-2.gif",
+    "detected_size_px": 18.36,
+    "detected_turns": [
+      29.0,
+      29.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -4.244,
+        -0.0
+      ],
+      [
+        4.244,
+        -0.0
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

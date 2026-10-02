@@ -1,0 +1,78 @@
+{
+  "kind": "candidate",
+  "candidate_id": "hexagons-5-in-smallest-square-figure",
+  "problem_id": "hexagons-5-in-smallest-square",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 1,
+  "parents": [
+    "hexagons-5-in-smallest-square-figure"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -1.26550431230997,
+      "y": 1.330870817321243,
+      "rotation": 35.0
+    },
+    {
+      "shape_id": "s001",
+      "x": 1.2481322804131398,
+      "y": 1.3317966905089587,
+      "rotation": 37.852739522088115
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.010383038613911311,
+      "y": -0.0021509965240030867,
+      "rotation": 29.44231037608741
+    },
+    {
+      "shape_id": "s003",
+      "x": -1.2301233971311514,
+      "y": -1.3275896410584385,
+      "rotation": 35.0
+    },
+    {
+      "shape_id": "s004",
+      "x": 1.23711239041407,
+      "y": -1.3329268702477621,
+      "rotation": 25.0
+    }
+  ],
+  "metadata": {
+    "figure": "hexinsqu-5.png",
+    "detected_size_px": 41.42,
+    "detected_turns": [
+      35.0,
+      35.0,
+      26.0,
+      35.0,
+      25.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -1.255,
+        1.397
+      ],
+      [
+        1.256,
+        1.396
+      ],
+      [
+        -0.0,
+        0.008
+      ],
+      [
+        -1.247,
+        -1.4
+      ],
+      [
+        1.246,
+        -1.4
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "kind": "candidate",
+  "candidate_id": "hexagons-13-in-smallest-circle-figure",
+  "problem_id": "hexagons-13-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 31,
+  "parents": [
+    "c-cb6efe8687"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 1.3959022124830676,
+      "y": 2.729669427979261,
+      "rotation": 20.0
+    },
+    {
+      "shape_id": "s001",
+      "x": -1.5158908783890654,
+      "y": 2.6667876849013172,
+      "rotation": 20.0
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.030109915666411115,
+      "y": 1.5834277800106553,
+      "rotation": 20.0
+    },
+    {
+      "shape_id": "s003",
+      "x": 2.740178047726246,
+      "y": 1.4348344119679133,
+      "rotation": 20.0
+    },
+    {
+      "shape_id": "s004",
+      "x": -2.8030032360787573,
+      "y": 1.176814066524496,
+      "rotation": 15.0
+    },
+    {
+      "shape_id": "s005",
+      "x": 1.3146699856288608,
+      "y": 0.28720785376987096,
+      "rotation": 20.0
+    },
+    {
+      "shape_id": "s006",
+      "x": -1.3514106068486016,
+      "y": 0.14949382329689864,
+      "rotation": 20.0
+    },
+    {
+      "shape_id": "s007",
+      "x": 2.918312863428286,
+      "y": -0.6622104440201572,
+      "rotation": 10.0
+    },
+    {
+      "shape_id": "s008",
+      "x": -2.8595855314934253,
+      "y": -0.86564200844513,
+      "rotation": 30.0
+    },
+    {
+      "shape_id": "s009",
+      "x": -0.021910521033226223,
+      "y": -1.1047451573687403,
+      "rotation": 20.0
+    },
+    {
+      "shape_id": "s010",
+      "x": 1.7837744748488902,
+      "y": -2.1955461462350083,
+      "rotation": 20.0
+    },
+    {
+      "shape_id": "s011",
+      "x": -1.672629525308947,
+      "y": -2.27387551452233,
+      "rotation": 30.0
+    },
+    {
+      "shape_id": "s012",
+      "x": 0.10170263070308884,
+      "y": -2.9262157778590487,
+      "rotation": 15.0
+    }
+  ],
+  "metadata": {
+    "figure": "hexincir-13.png",
+    "detected_size_px": 23.53,
+    "detected_turns": [
+      20.0,
+      20.0,
+      20.0,
+      20.0,
+      15.0,
+      20.0,
+      20.0,
+      10.0,
+      30.0,
+      20.0,
+      20.0,
+      30.0,
+      15.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        1.377,
+        2.769
+      ],
+      [
+        -1.562,
+        2.668
+      ],
+      [
+        -0.052,
+        1.609
+      ],
+      [
+        2.747,
+        1.447
+      ],
+      [
+        -2.835,
+        1.246
+      ],
+      [
+        1.319,
+        0.285
+      ],
+      [
+        -1.323,
+        0.188
+      ],
+      [
+        2.979,
+        -0.676
+      ],
+      [
+        -2.907,
+        -0.891
+      ],
+      [
+        0.046,
+        -1.132
+      ],
+      [
+        1.821,
+        -2.242
+      ],
+      [
+        -1.72,
+        -2.315
+      ],
+      [
+        0.109,
+        -2.957
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

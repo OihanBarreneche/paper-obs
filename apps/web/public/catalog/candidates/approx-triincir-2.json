@@ -1,0 +1,45 @@
+{
+  "kind": "candidate",
+  "candidate_id": "triangles-2-in-smallest-circle-figure",
+  "problem_id": "triangles-2-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 1,
+  "parents": [
+    "triangles-2-in-smallest-circle-figure"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.2807467830452919,
+      "y": -0.07859066682766547,
+      "rotation": 109.82523450249059
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.28074678304529177,
+      "y": 0.07859066682766547,
+      "rotation": 49.30407921233477
+    }
+  ],
+  "metadata": {
+    "figure": "triincir-tc2.gif",
+    "detected_size_px": 153.4,
+    "detected_turns": [
+      89.0,
+      30.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -0.38,
+        -0.003
+      ],
+      [
+        0.38,
+        0.003
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "candidate",
+  "candidate_id": "triangles-1-in-smallest-square-figure",
+  "problem_id": "triangles-1-in-smallest-square",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 0,
+  "parents": [],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.0,
+      "y": -0.0,
+      "rotation": 105.0
+    }
+  ],
+  "metadata": {
+    "figure": "triinsqu-t1.gif",
+    "detected_size_px": 159.57,
+    "detected_turns": [
+      105.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        0.0,
+        -0.0
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

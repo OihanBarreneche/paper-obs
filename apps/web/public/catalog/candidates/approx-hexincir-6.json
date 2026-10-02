@@ -1,0 +1,89 @@
+{
+  "kind": "candidate",
+  "candidate_id": "hexagons-6-in-smallest-circle-figure",
+  "problem_id": "hexagons-6-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 1,
+  "parents": [
+    "hexagons-6-in-smallest-circle-figure"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.9516018253077866,
+      "y": 1.5193251718667558,
+      "rotation": 5.1288558899970695
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.7842298686177068,
+      "y": 1.5581154248250182,
+      "rotation": 5.084278570117583
+    },
+    {
+      "shape_id": "s002",
+      "x": -1.7234322450309305,
+      "y": -0.10461257632726564,
+      "rotation": -3.606846606279108
+    },
+    {
+      "shape_id": "s003",
+      "x": 1.762797178877889,
+      "y": 0.09919976042879913,
+      "rotation": 7.992456050626092
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.8256051519892403,
+      "y": -1.592880232453363,
+      "rotation": 56.370627347518614
+    },
+    {
+      "shape_id": "s005",
+      "x": 0.9536121748323578,
+      "y": -1.479147548339939,
+      "rotation": 2.808557626112047
+    }
+  ],
+  "metadata": {
+    "figure": "hexincir-7.png",
+    "detected_size_px": 15.74,
+    "detected_turns": [
+      33.73,
+      30.0,
+      31.0,
+      27.0,
+      29.0,
+      29.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -2.71,
+        4.688
+      ],
+      [
+        2.729,
+        4.748
+      ],
+      [
+        -5.475,
+        0.032
+      ],
+      [
+        5.427,
+        0.011
+      ],
+      [
+        -2.701,
+        -4.741
+      ],
+      [
+        2.73,
+        -4.738
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

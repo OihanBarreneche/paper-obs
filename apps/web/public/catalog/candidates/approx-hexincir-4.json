@@ -1,0 +1,67 @@
+{
+  "kind": "candidate",
+  "candidate_id": "hexagons-4-in-smallest-circle-figure",
+  "problem_id": "hexagons-4-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-8920d038c3"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.03958620542012819,
+      "y": 1.2906413690418947,
+      "rotation": 25.0
+    },
+    {
+      "shape_id": "s001",
+      "x": -1.264447129779381,
+      "y": -0.008845881703220248,
+      "rotation": 26.0
+    },
+    {
+      "shape_id": "s002",
+      "x": 1.2638216599314658,
+      "y": 0.012403174844230883,
+      "rotation": 25.0
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.03896073557221284,
+      "y": -1.2941986621829047,
+      "rotation": 25.0
+    }
+  ],
+  "metadata": {
+    "figure": "hexincir-4.png",
+    "detected_size_px": 40.88,
+    "detected_turns": [
+      25.0,
+      26.0,
+      25.0,
+      25.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        0.007,
+        1.353
+      ],
+      [
+        -1.299,
+        0.006
+      ],
+      [
+        1.286,
+        -0.006
+      ],
+      [
+        0.006,
+        -1.354
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

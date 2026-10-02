@@ -1,0 +1,109 @@
+{
+  "kind": "candidate",
+  "candidate_id": "hexagons-8-in-smallest-circle-figure",
+  "problem_id": "hexagons-8-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 21,
+  "parents": [
+    "c-9a5382d303"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.9041726869335973,
+      "y": 1.8567663742865077
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.8278781203699699,
+      "y": 1.9298422457604183
+    },
+    {
+      "shape_id": "s002",
+      "x": 2.0070248950095944,
+      "y": 0.47346491177057703,
+      "rotation": 40.0
+    },
+    {
+      "shape_id": "s003",
+      "x": -2.106556714190819,
+      "y": 0.5044490267682046,
+      "rotation": 5.0
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.009272244487952094,
+      "y": 0.02623676960988815,
+      "rotation": 25.0
+    },
+    {
+      "shape_id": "s005",
+      "x": 1.687970308941559,
+      "y": -1.3335519624931522,
+      "rotation": 35.0
+    },
+    {
+      "shape_id": "s006",
+      "x": -1.5709297310053063,
+      "y": -1.324875599737411,
+      "rotation": 15.0
+    },
+    {
+      "shape_id": "s007",
+      "x": 0.06805805229655057,
+      "y": -2.1323317659650334,
+      "rotation": 25.0
+    }
+  ],
+  "metadata": {
+    "figure": "hexincir-8.png",
+    "detected_size_px": 30.51,
+    "detected_turns": [
+      0.0,
+      0.0,
+      40.0,
+      5.0,
+      25.0,
+      35.0,
+      15.0,
+      25.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -0.962,
+        1.925
+      ],
+      [
+        0.917,
+        1.939
+      ],
+      [
+        2.097,
+        0.488
+      ],
+      [
+        -2.11,
+        0.454
+      ],
+      [
+        -0.01,
+        0.028
+      ],
+      [
+        1.702,
+        -1.322
+      ],
+      [
+        -1.669,
+        -1.361
+      ],
+      [
+        0.035,
+        -2.151
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

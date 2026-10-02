@@ -1,0 +1,56 @@
+{
+  "kind": "candidate",
+  "candidate_id": "hexagons-3-in-smallest-square-figure",
+  "problem_id": "hexagons-3-in-smallest-square",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 1,
+  "parents": [
+    "hexagons-3-in-smallest-square-figure"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.0031698405235408757,
+      "y": 1.008935885294243,
+      "rotation": 358.0
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.8840023004468072,
+      "y": -0.5129431464617961,
+      "rotation": 0.5409375787096522
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.8808324599232663,
+      "y": -0.4959927388324467,
+      "rotation": 358.3881958723609
+    }
+  ],
+  "metadata": {
+    "figure": "hexinsqu-3.png",
+    "detected_size_px": 52.79,
+    "detected_turns": [
+      358.0,
+      5.0,
+      358.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -0.0,
+        1.019
+      ],
+      [
+        -0.908,
+        -0.52
+      ],
+      [
+        0.909,
+        -0.499
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

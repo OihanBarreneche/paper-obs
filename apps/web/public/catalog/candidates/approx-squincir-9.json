@@ -1,0 +1,114 @@
+{
+  "kind": "candidate",
+  "candidate_id": "squares-9-in-smallest-circle-figure",
+  "problem_id": "squares-9-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-9ef83bffd7"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.5050700716549099,
+      "y": 1.125014213416526,
+      "rotation": 358.0
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.5120750902058884,
+      "y": 1.1208029681565945
+    },
+    {
+      "shape_id": "s002",
+      "x": -1.5032769810400324,
+      "y": 0.11208029681565941
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.4984406708233431,
+      "y": 0.10786905155572803
+    },
+    {
+      "shape_id": "s004",
+      "x": 0.5015593282500759,
+      "y": 0.11208029681565941
+    },
+    {
+      "shape_id": "s005",
+      "x": 1.501559327323495,
+      "y": 0.11208029681565941
+    },
+    {
+      "shape_id": "s006",
+      "x": -1.0028020064938103,
+      "y": -0.8966423745252756
+    },
+    {
+      "shape_id": "s007",
+      "x": -0.0028020074203915393,
+      "y": -0.8966423745252756
+    },
+    {
+      "shape_id": "s008",
+      "x": 0.9971979916530275,
+      "y": -0.8966423745252756
+    }
+  ],
+  "metadata": {
+    "figure": "squincir-9.gif",
+    "detected_size_px": 39.0,
+    "detected_turns": [
+      358.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -0.503,
+        1.14
+      ],
+      [
+        0.51,
+        1.14
+      ],
+      [
+        -1.528,
+        0.114
+      ],
+      [
+        -0.503,
+        0.114
+      ],
+      [
+        0.51,
+        0.114
+      ],
+      [
+        1.523,
+        0.114
+      ],
+      [
+        -1.016,
+        -0.912
+      ],
+      [
+        -0.003,
+        -0.912
+      ],
+      [
+        1.01,
+        -0.912
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "kind": "candidate",
+  "candidate_id": "hexagons-3-in-smallest-circle-figure",
+  "problem_id": "hexagons-3-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-f671b110d9"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.004579877455843205,
+      "y": 1.017469154345563,
+      "rotation": 2.0719116808100124
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.868493233051793,
+      "y": -0.510790180021711
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.8730731105076373,
+      "y": -0.5066789743238519,
+      "rotation": 359.6953328114167
+    }
+  ],
+  "metadata": {
+    "figure": "hexincir-3.png",
+    "detected_size_px": 45.69,
+    "detected_turns": [
+      5.0,
+      0.0,
+      358.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -0.005,
+        1.022
+      ],
+      [
+        -0.891,
+        -0.512
+      ],
+      [
+        0.896,
+        -0.509
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

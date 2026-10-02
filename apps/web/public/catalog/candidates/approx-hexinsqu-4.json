@@ -1,0 +1,67 @@
+{
+  "kind": "candidate",
+  "candidate_id": "hexagons-4-in-smallest-square-figure",
+  "problem_id": "hexagons-4-in-smallest-square",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 1,
+  "parents": [
+    "hexagons-4-in-smallest-square-figure"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.8815597674276574,
+      "y": 0.8913809214454232,
+      "rotation": 13.0
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.9091986072445924,
+      "y": 0.9096588668911811,
+      "rotation": 15.0
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.9109983105023944,
+      "y": -0.912311071095696,
+      "rotation": 15.0
+    },
+    {
+      "shape_id": "s003",
+      "x": 0.8833594706854588,
+      "y": -0.8887287172409079,
+      "rotation": 15.714581777179797
+    }
+  ],
+  "metadata": {
+    "figure": "hexinsqu-4.png",
+    "detected_size_px": 49.46,
+    "detected_turns": [
+      13.0,
+      15.0,
+      15.0,
+      13.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -0.916,
+        0.918
+      ],
+      [
+        0.919,
+        0.918
+      ],
+      [
+        -0.92,
+        -0.92
+      ],
+      [
+        0.917,
+        -0.917
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

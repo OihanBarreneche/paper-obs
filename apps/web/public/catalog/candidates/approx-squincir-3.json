@@ -1,0 +1,54 @@
+{
+  "kind": "candidate",
+  "candidate_id": "squares-3-in-smallest-circle-figure",
+  "problem_id": "squares-3-in-smallest-circle",
+  "scale": 1.0,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-79508541ab"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.0024110957900829308,
+      "y": 0.6696337902776806
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.5074428258191539,
+      "y": -0.3349267378477455,
+      "rotation": 358.0
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.5098539216092368,
+      "y": -0.33470705242993504
+    }
+  ],
+  "metadata": {
+    "figure": "squincir-3.gif",
+    "detected_size_px": 63.5,
+    "detected_turns": [
+      0.0,
+      358.0,
+      0.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -0.003,
+        0.677
+      ],
+      [
+        -0.507,
+        -0.339
+      ],
+      [
+        0.509,
+        -0.339
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}
