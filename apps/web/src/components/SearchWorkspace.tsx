@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { useI18n } from "../i18n";
 import type {
-  BestScoreDoc, CandidateDoc, ConvergenceDoc, EvaluationDoc, ProblemDoc, SummaryDoc, ViewDoc,
+  BestScoreDoc, ConvergenceDoc, EvaluationDoc, ProblemDoc, SummaryDoc, ViewDoc,
 } from "../types";
 import { BaselineGuide } from "./BaselineGuide";
 import { ConvergencePanel } from "./ConvergencePanel";
@@ -14,7 +14,6 @@ type Props = {
   searchSummary: string;
   searchError: string | null;
   onRun: (baseline: string, budget: number) => void;
-  onShowCandidate: (candidate: CandidateDoc) => void;
   onOpenSession: (sessionId: string) => void;
   canvas: ReactNode;
   evaluation: EvaluationDoc | null;
@@ -59,7 +58,7 @@ export function SearchWorkspace(props: Props) {
             onClick={() => setPicked("free")}>{t("Free research")} <small>{here}</small></button>
         </div>
         {tab === "free" ? <ResearchSessions sessions={sessions} problemId={props.problem?.problem_id}
-          onShow={props.onShowCandidate} onOpen={props.onOpenSession} onChange={readSessions} /> : <>
+          onOpen={props.onOpenSession} onChange={readSessions} /> : <>
           <div className="section-heading"><h2>{t("Classical methods")}</h2>
             <button type="button" className="search-workspace__how" onClick={() => setGuide(true)}>{t("How do they work?")}</button></div>
           {guide && <BaselineGuide onClose={() => setGuide(false)} />}

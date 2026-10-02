@@ -718,18 +718,6 @@ export function App() {
     [problem, showLoadedVerdict],
   );
 
-  /** Open a research session's best arrangement on the canvas, judged again by the engine. */
-  const showResearchCandidate = useCallback(async (shown: CandidateDoc) => {
-    if (problem === null) {
-      return;
-    }
-    try {
-      showLoadedVerdict(await api.evaluate({ problem, candidate: shown, with_union: wantsUnion(problem) }));
-    } catch (cause) {
-      setSearchError(describeError(cause));
-    }
-  }, [problem, showLoadedVerdict]);
-
   /** Open a research session, loading its problem when another one is open, then its best arrangement. */
   const openResearchSession = useCallback(async (sessionId: string) => {
     try {
@@ -2535,7 +2523,6 @@ export function App() {
         baselines={searchAvailable ? searchStrategies : []}
         convergence={convergence} searchSummary={searchSummary} searchError={searchError}
         onRun={(baseline, budget) => void runSearch(baseline, budget)}
-        onShowCandidate={(shown) => void showResearchCandidate(shown)}
         onOpenSession={(sessionId) => void openResearchSession(sessionId)}
         evaluation={evaluation} verdictSummary={summary} best={best} problem={problem}
         view={view} busy={busy} showOrientations={showOrientations}

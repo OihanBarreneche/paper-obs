@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { api } from "../api";
 import { containerNoun, copyNoun } from "../equalCopiesCatalog";
 import { useI18n } from "../i18n";
-import type { CandidateDoc, ResearchEntryDoc, ResearchSessionDoc, ResearchSessionSummaryDoc } from "../types";
+import type { ResearchEntryDoc, ResearchSessionDoc, ResearchSessionSummaryDoc } from "../types";
 
 /** How often an open session is read again while an agent may still be writing it. */
 const POLL_MS = 5000;
@@ -47,15 +47,14 @@ type Props = {
   /** Every session; the open problem's are shown one at a time, the others listed to open. */
   sessions: ResearchSessionSummaryDoc[];
   problemId: string | undefined;
-  onShow: (candidate: CandidateDoc) => void;
-  /** Open a session of another problem: its problem and its best arrangement. */
+  /** Open a session: its problem, when another one is open, and its best arrangement. */
   onOpen: (sessionId: string) => void;
   /** Read the sessions again, after one was deleted. */
   onChange: () => void;
 };
 
 /** The open problem's sessions one at a time (best, progress, journal), or every session. */
-export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange }: Props) {
+export function ResearchSessions({ sessions, problemId, onOpen, onChange }: Props) {
   const { t, number, language } = useI18n();
   const here = sessions.filter((item) => item.problem_id === problemId);
   const [scope, setScope] = useState<"problem" | "all" | null>(null);
@@ -66,12 +65,11 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange
   // The list of every session: which row asks to confirm a deletion, and its filters.
   const [confirming, setConfirming] = useState<string | null>(null);
   const [failed, setFailed] = useState<string | null>(null);
-  const [onlyRecords, setOnlyRecords] = useState(false);
   const [order, setOrder] = useState<"recent" | "gain">("recent");
   const [shapeFilter, setShapeFilter] = useState("");
   const [containerFilter, setContainerFilter] = useState("");
-  // Without a session of its own, the problem opens on the list of every session.
-  const shown = scope ?? (here.length > 0 || sessions.length === 0 ? "problem" : "all");
+  // The tab opens on the problem, so a problem without a session shows how to start one.
+  const shown = scope ?? "problem";
   const line = shown === "problem" ? here.find((item) => item.session_id === chosen) ?? here[0] : undefined;
   useEffect(() => {
     if (line === undefined) { setSession(null); return; }
@@ -99,28 +97,26 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange
       [...new Set(sessions.map((item) => item[key]).filter((value): value is string => value !== null))].sort();
     const shapes = values("shape"), containers = values("container");
     const listed = sessions
-      .filter((item) => (!onlyRecords || beats(item))
-        && (shapeFilter === "" || item.shape === shapeFilter) && (containerFilter === "" || item.container === containerFilter))
+      .filter((item) => (shapeFilter === "" || item.shape === shapeFilter)
+        && (containerFilter === "" || item.container === containerFilter))
       .sort((a, b) => order === "gain"
         ? (b.best?.record_gap ?? -Infinity) - (a.best?.record_gap ?? -Infinity)
         : b.created.localeCompare(a.created));
     return <div className="research-sessions">
       {scopes}
       <div className="research-sessions__tools">
-        <label className="research-sessions__only"><input type="checkbox" checked={onlyRecords}
-          onChange={(event) => setOnlyRecords(event.target.checked)} />{t("Records only")}</label>
         <label>{t("Sort")}<select value={order} onChange={(event) => setOrder(event.target.value as "recent" | "gain")}>
           <option value="recent">{t("Most recent")}</option>
           <option value="gain">{t("Largest improvement")}</option>
         </select></label>
-        {shapes.length > 1 && <label>{t("Shape")}<select value={shapeFilter} onChange={(event) => setShapeFilter(event.target.value)}>
+        <label>{t("Shape")}<select value={shapeFilter} onChange={(event) => setShapeFilter(event.target.value)}>
           <option value="">{t("All")}</option>
           {shapes.map((shape) => <option key={shape} value={shape}>{t(copyNoun(shape, 2))}</option>)}
-        </select></label>}
-        {containers.length > 1 && <label>{t("Container")}<select value={containerFilter} onChange={(event) => setContainerFilter(event.target.value)}>
+        </select></label>
+        <label>{t("Container")}<select value={containerFilter} onChange={(event) => setContainerFilter(event.target.value)}>
           <option value="">{t("All")}</option>
           {containers.map((container) => <option key={container} value={container}>{t(containerNoun(container))}</option>)}
-        </select></label>}
+        </select></label>
       </div>
       {listed.length === 0 && <p className="research-sessions__quiet">{t("No session matches these filters.")}</p>}
       <ul className="research-sessions__list">
@@ -129,7 +125,7 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange
             setChosen(item.session_id);
             setScope("problem");
             setWhole(false);
-            if (item.problem_id !== problemId) onOpen(item.session_id);
+            onOpen(item.session_id);
           }}>
             <span>{item.name}{item.example && <em className="run-picker__tag">{t("example")}</em>}</span>
             <small>{t(item.problem_name)} · {date(item.created)}
@@ -166,7 +162,11 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange
   return <div className="research-sessions">
     {scopes}
     {here.length > 1 && <select className="research-sessions__picker" value={line.session_id}
-      aria-label={t("Research session")} onChange={(event) => { setChosen(event.target.value); setWhole(false); }}>
+      aria-label={t("Research session")} onChange={(event) => {
+        setChosen(event.target.value);
+        setWhole(false);
+        onOpen(event.target.value);
+      }}>
       {here.map((item) => <option key={item.session_id} value={item.session_id}>
         {item.name} · {date(item.created)}</option>)}
     </select>}
@@ -197,8 +197,6 @@ export function ResearchSessions({ sessions, problemId, onShow, onOpen, onChange
     </dl>
     {best && <p className="research-sessions__unit">{t(best.metric.replaceAll("_", " "))}</p>}
     <Track track={line.track} record={reference?.value ?? null} />
-    <button type="button" className="research-sessions__show" disabled={!session?.champion}
-      onClick={() => session?.champion && onShow(session.champion)}>{t("Show the best arrangement")}</button>
     <HowFound journal={journal} bestIndex={best?.index} />
     <Programs sessionId={line.session_id} journal={journal} />
     <h4>{t("Journal")}</h4>
@@ -325,22 +323,48 @@ function JournalLine({ entry, when }: { entry: ResearchEntryDoc; when: string })
   </li>;
 }
 
-/** Each new best of the session as a step, against the published record drawn dashed. */
+/** The chart's frame, in its own units: the plot sits inside, leaving room for the axis labels. */
+const TRACK = { width: 340, height: 150, left: 62, right: 12, top: 12, bottom: 30 };
+
+/**
+ * Each new best of the session as a step, against the published record drawn dashed: the
+ * vertical axis is the session's measure, with the first and last best and the record marked,
+ * and the horizontal axis numbers the submissions.
+ */
 function Track({ track, record }: { track: ResearchSessionSummaryDoc["track"]; record: number | null }) {
-  const { t } = useI18n();
+  const { t, number } = useI18n();
   const points = track.filter((item): item is [number, number, number | null] => item[1] !== null);
   if (points.length < 2) return null;
   const values = [...points.map((item) => item[1]), ...(record === null ? [] : [record])];
   const low = Math.min(...values), high = Math.max(...values), span = high - low || 1;
-  const last = points[points.length - 1]![0] || 1;
-  const x = (index: number) => 4 + index / last * 292;
-  const y = (value: number) => 8 + (high - value) / span * 64;
+  const first = points[0]![0], last = Math.max(points[points.length - 1]![0], first + 1);
+  const right = TRACK.width - TRACK.right, bottom = TRACK.height - TRACK.bottom;
+  const x = (index: number) => TRACK.left + (index - first) / (last - first) * (right - TRACK.left);
+  const y = (value: number) => TRACK.top + (high - value) / span * (bottom - TRACK.top);
   const path = points.map(([index, value], at) => at === 0 ? `M${x(index)},${y(value)}`
-    : `H${x(index)}V${y(value)}`).join("");
-  return <svg className="research-sessions__track" viewBox="0 0 300 80" role="img"
-    aria-label={t("Each new best of the session, against the published record")}>
-    {record !== null && <line x1="0" x2="300" y1={y(record)} y2={y(record)} className="research-sessions__record" />}
-    <path d={path} />
-    {points.map(([index, value]) => <circle key={index} cx={x(index)} cy={y(value)} r="2.4" />)}
-  </svg>;
+    : `H${x(index)}V${y(value)}`).join("") + `H${right}`;
+  // The values worth reading on the axis: where the session ended, the record, and where it
+  // started, each dropped when it would print over one before it.
+  const marks = [points[points.length - 1]![1], ...(record === null ? [] : [record]), points[0]![1]]
+    .filter((value, at, all) => all.findIndex((other) => Math.abs(y(other) - y(value)) < 14) === at);
+  return <figure className="research-sessions__track">
+    <figcaption>{t("Progress of the session's best")}</figcaption>
+    <svg viewBox={`0 0 ${TRACK.width} ${TRACK.height}`} role="img"
+      aria-label={t("Each new best of the session, against the published record")}>
+      <line className="research-sessions__axis" x1={TRACK.left} x2={TRACK.left} y1={TRACK.top} y2={bottom} />
+      <line className="research-sessions__axis" x1={TRACK.left} x2={right} y1={bottom} y2={bottom} />
+      {marks.map((value) => <g key={value}>
+        <line className="research-sessions__tick" x1={TRACK.left - 4} x2={TRACK.left} y1={y(value)} y2={y(value)} />
+        <text x={TRACK.left - 7} y={y(value) + 3.5} textAnchor="end">{number(value, 5)}</text>
+      </g>)}
+      {[first, last].map((index) => <text key={index} x={x(index)} y={bottom + 14} textAnchor="middle">{index + 1}</text>)}
+      <text x={(TRACK.left + right) / 2} y={TRACK.height - 2} textAnchor="middle">{t("submission")}</text>
+      {record !== null && <>
+        <line className="research-sessions__record" x1={TRACK.left} x2={right} y1={y(record)} y2={y(record)} />
+        <text className="research-sessions__record-label" x={right} y={y(record) - 4} textAnchor="end">{t("published record")}</text>
+      </>}
+      <path d={path} />
+      {points.map(([index, value]) => <circle key={index} cx={x(index)} cy={y(value)} r="2.6" />)}
+    </svg>
+  </figure>;
 }

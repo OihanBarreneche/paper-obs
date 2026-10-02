@@ -546,9 +546,10 @@ body {
 .research-sessions__empty p:first-child { font-style: italic; }
 .research-sessions__empty code, .research-sessions code { font: 13px var(--mono); color: #5e4371; }
 .research-sessions__scope { margin-bottom: 14px; }
-.research-sessions__tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 0 0 10px; color: #806f88; font: 13px var(--sans); }
-.research-sessions__tools label { display: flex; align-items: center; gap: 6px; }
-.research-sessions__tools select { padding: 4px 6px; border: 1px solid #ddd3e0; border-radius: 6px; background: #fff; color: #3f2b4d; font: 13px var(--sans); }
+/* The three choices of the list on one line, each select as wide as its labels need. */
+.research-sessions__tools { display: flex; align-items: center; gap: 14px; margin: 0 0 10px; color: #806f88; font: 13px var(--sans); }
+.research-sessions__tools label { display: flex; flex: 1 1 auto; align-items: center; gap: 6px; min-width: 0; }
+.research-sessions__tools select { flex: 1; width: 100%; min-width: 4.5em; padding: 4px 6px; border: 1px solid #ddd3e0; border-radius: 6px; background: #fff; color: #3f2b4d; font: 13px var(--sans); }
 .research-sessions__list { margin: 0; padding: 0; list-style: none; }
 .research-sessions__list li { display: flex; align-items: center; gap: 4px; border-bottom: 1px solid #e8dfeb; border-left: 3px solid transparent; }
 .research-sessions__list li.is-record { border-left-color: #5aa874; }
@@ -562,6 +563,10 @@ body {
 .research-sessions__figures .research-sessions__verdict { font-size: 13px; }
 .research-sessions__picker { width: 100%; margin: 0 0 12px; padding: 6px 8px; border: 1px solid #ddd3e0; border-radius: 6px; background: #fff; font: 13px var(--sans); }
 .research-sessions__head { position: relative; padding-right: 40px; }
+/* The trash is a bare icon, as in the problem list; it outlines nothing until it is pressed. */
+.research-sessions .run-picker__icon { padding: 0; border: 0; background: none; cursor: pointer; }
+.research-sessions .run-picker__confirm button { background: none; color: #5e4371; cursor: pointer; font: 12px var(--sans); }
+.research-sessions .run-picker__confirm .run-picker__delete { color: #a13258; }
 .research-sessions__delete { position: absolute; top: 0; right: 0; height: 30px; }
 .research-sessions__delete.run-picker__confirm { position: static; height: auto; margin-top: 8px; padding: 0; }
 .research-sessions__head h3 { margin: 0; font: 500 22px/1.2 var(--serif); color: #3f2b4d; }
@@ -573,12 +578,15 @@ body {
 .research-sessions__figures dt { color: #9a819f; font: 600 10px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
 .research-sessions__figures dd { margin: 3px 0 0; font: 500 19px var(--serif); color: #3f2b4d; font-variant-numeric: tabular-nums; }
 .research-sessions__unit { margin: 4px 0 8px; color: #9a819f; font: italic 13px var(--serif); }
-.research-sessions__track { display: block; width: 100%; height: 80px; margin: 4px 0 10px; overflow: visible; }
+.research-sessions__track { margin: 6px 0 20px; }
+.research-sessions__track figcaption { margin-bottom: 4px; color: #806f88; font: 600 11px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+.research-sessions__track svg { display: block; width: 100%; max-width: 460px; height: auto; overflow: visible; }
+.research-sessions__track text { fill: #806f88; font: 10px var(--mono); }
 .research-sessions__track path { fill: none; stroke: #8650ba; stroke-width: 1.6; }
 .research-sessions__track circle { fill: #8650ba; }
+.research-sessions__axis, .research-sessions__tick { stroke: #cbbdd2; stroke-width: 1; }
 .research-sessions__record { stroke: #b08a3e; stroke-width: 1.2; stroke-dasharray: 4 3; }
-.research-sessions__show { margin: 2px 0 20px; padding: 7px 12px; border: 1px solid #c9b6d6; border-radius: 6px; background: #faf7fb; color: #5e4371; cursor: pointer; font: 13px var(--sans); }
-.research-sessions__show:disabled { opacity: .5; cursor: default; }
+.research-sessions__track .research-sessions__record-label { fill: #8a6a2a; }
 .research-sessions h4 { margin: 0 0 6px; color: #796487; font: 600 11px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
 .research-sessions__quiet { color: #9a819f; font: italic 14px var(--serif); }
 .research-sessions__journal { margin: 0 0 10px; padding: 0; list-style: none; }
