@@ -12,11 +12,12 @@ export type ProfileLibrary = { categories: ProfileCategory[]; problems: Record<s
 const STORAGE_KEY = "paper-obs-profile-library-v1";
 export const STARTER_CATEGORY_ID = "square-intro";
 const RECORDS_CATEGORY_ID = "beaten-records";
+const DEMO_CATEGORY_ID = "workflow-demo";
 
 /** Built-in categories a saved library has already been offered, oldest first. A library
  * saved before the list existed has seen the first four; a later built-in joins it once,
  * and stays away if the user deletes it. */
-const BUILT_IN_IDS = [STARTER_CATEGORY_ID, "packing-variety", "other-objectives", "workflow-demo", RECORDS_CATEGORY_ID];
+const BUILT_IN_IDS = [STARTER_CATEGORY_ID, "packing-variety", "other-objectives", DEMO_CATEGORY_ID, RECORDS_CATEGORY_ID];
 const FIRST_BUILT_INS = 4;
 
 const SQUARE_COUNTS = [2, 5, 10, 11, 17, 29];
@@ -77,7 +78,7 @@ export function defaultLibrary(): ProfileLibrary {
       { id: STARTER_CATEGORY_ID, name: "Start here · squares", problemIds: starters.squares.map((problem) => problem.problem_id) },
       { id: "packing-variety", name: "Explore packing", problemIds: starters.variety.map((problem) => problem.problem_id) },
       { id: "other-objectives", name: "Other objectives", problemIds: starters.other.map((problem) => problem.problem_id) },
-      { id: "workflow-demo", name: "Demo Workflow", problemIds: starters.workflowDemo.map((problem) => problem.problem_id) },
+      { id: DEMO_CATEGORY_ID, name: "Demo Workflow", problemIds: starters.workflowDemo.map((problem) => problem.problem_id) },
       { id: RECORDS_CATEGORY_ID, name: "Records beaten by Claude", problemIds: starters.records.map((problem) => problem.problem_id) },
     ],
     problems: Object.fromEntries([...starters.squares, ...starters.variety, ...starters.other, ...starters.workflowDemo,
@@ -107,9 +108,11 @@ export function readLibrary(): ProfileLibrary {
     const fresh = records.filter((id) => !offered.includes(id));
     const merged = categories.map((category) => category.id !== RECORDS_CATEGORY_ID ? category
       : { ...category, problemIds: [...category.problemIds, ...fresh.filter((id) => !category.problemIds.includes(id))] });
-    // A record's document is generated, not curated: the shipped one (its reference
-    // re-read on the page) replaces whatever copy the browser saved.
-    const shipped = Object.fromEntries(records.flatMap((id) => {
+    // A record's document is generated, not curated, and a Demo Workflow problem is the
+    // reference the workflow runs are compared on: the shipped one (its reference re-read on
+    // the page, its starting configuration) replaces whatever copy the browser saved.
+    const demo = defaults.categories.find((category) => category.id === DEMO_CATEGORY_ID)?.problemIds ?? [];
+    const shipped = Object.fromEntries([...records, ...demo].flatMap((id) => {
       const problem = defaults.problems[id];
       return problem === undefined ? [] : [[id, problem] as const];
     }));

@@ -34,10 +34,10 @@
     "families_catalog": 107,
     "families_checked": 31,
     "families_unsupported": 3,
-    "level:approx": 57,
+    "level:approx": 58,
     "level:beaten": 6,
     "level:exact": 5,
-    "level:far": 194,
+    "level:far": 193,
     "level:near": 68,
     "level:none": 6,
     "reproduces": 115,
@@ -6395,15 +6395,15 @@
       "entries": {
         "7": {
           "status": "below",
-          "level": "far",
+          "level": "approx",
           "precise": true,
           "published": false,
           "promoted": false,
           "value": 1.24188,
           "unit": "covered radius",
-          "measured": 1.2295476321435104,
-          "gap": -0.009930402177738367,
-          "decimals": 1,
+          "measured": 1.241322383397401,
+          "gap": -0.0004490100513730153,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-sqcovcir-7.json"

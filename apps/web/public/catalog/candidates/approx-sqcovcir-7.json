@@ -9,48 +9,48 @@
  "placements": [
   {
    "shape_id": "s000",
-   "x": -0.044486004884488756,
-   "y": 0.817702812471269,
-   "rotation": 340.0346985435196
+   "x": 0.07209303703472171,
+   "y": 0.7159595277341715,
+   "rotation": 341.0248672755836
   },
   {
    "shape_id": "s001",
-   "x": 0.883712965177434,
-   "y": 0.44600251429669685,
-   "rotation": 340.0765730748275
+   "x": 1.0110532958097793,
+   "y": 0.3716221110838539,
+   "rotation": 341.0137635668047
   },
   {
    "shape_id": "s002",
-   "x": 0.598252753821412,
-   "y": -0.4750746931621036,
-   "rotation": 342.9853444860033
+   "x": 0.7032909877603865,
+   "y": -0.5771555383378565,
+   "rotation": 340.6960495325475
   },
   {
    "shape_id": "s003",
-   "x": -0.8477318637319745,
-   "y": 0.5789086618078876,
-   "rotation": 10.79933551856898
+   "x": -0.7376136566959719,
+   "y": 0.5166868623441082,
+   "rotation": 9.507380445719008
   },
   {
    "shape_id": "s004",
-   "x": -0.8719350872759865,
-   "y": -0.3979898118449029,
-   "rotation": 336.99625667011185
+   "x": -0.7878152327824451,
+   "y": -0.45346501828122465,
+   "rotation": 333.0340617365957
   },
   {
    "shape_id": "s005",
-   "x": -0.20158960306740345,
-   "y": -0.11053035134700244,
-   "rotation": 9.517459374265146
+   "x": -0.05371669062902984,
+   "y": -0.20277487840928518,
+   "rotation": 14.751241834892694
   },
   {
    "shape_id": "s006",
-   "x": -0.04560896352036971,
-   "y": -0.9759367157767792,
-   "rotation": 312.0364867186478
+   "x": 0.050398734701594124,
+   "y": -1.0758151890515824,
+   "rotation": 310.98516011315854
   }
  ],
  "metadata": {
-  "method": "The published figure read by hand, then a local search of small random moves judged by the engine's covered radius."
+  "method": "The published figure: each square fitted to the drawing's ink, then SLSQP with cutting planes (the circle's centre and radius and the squares' poses as variables, sample points of the disc kept inside their squares, points of every hole shapely finds added until none is left)."
  }
 }
