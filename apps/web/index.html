@@ -11,31 +11,6 @@
     <title>Paper Obs</title>
   </head>
   <body>
-    <!--
-      One published figure, in the design's own ink.
-
-      A source page draws in whatever greys its author chose, and a filter chain over those
-      greys leaves every page a slightly different pink. This one is radical instead: the
-      figure is drained to grey and then handed to three flat bands, so a stroke becomes the
-      very colour the canvas paints a shape with, and near-black stays black. Nothing of the
-      original tint survives, which is the point -- the catalogue, a reference panel and a
-      run record then show the same page in the same colour. The bands are ten hundredths
-      wide: black below a tenth, white above ninety-five hundredths, the shape's own violet
-      everywhere between. The total-perimeter families never take this filter; there the
-      colours of the figure encode the sizes of the packed shapes (ProblemReference.figure_tint).
-    -->
-    <svg class="packing-tint-defs" width="0" height="0" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="packing-tint" color-interpolation-filters="sRGB">
-          <feColorMatrix type="saturate" values="0" />
-          <feComponentTransfer>
-            <feFuncR type="discrete" tableValues="0 0 0.667 0.667 0.667 0.667 0.667 0.667 0.667 0.667 0.667 0.667 0.667 0.667 0.667 0.667 0.667 0.667 0.667 1" />
-            <feFuncG type="discrete" tableValues="0 0 0.471 0.471 0.471 0.471 0.471 0.471 0.471 0.471 0.471 0.471 0.471 0.471 0.471 0.471 0.471 0.471 0.471 1" />
-            <feFuncB type="discrete" tableValues="0 0 0.831 0.831 0.831 0.831 0.831 0.831 0.831 0.831 0.831 0.831 0.831 0.831 0.831 0.831 0.831 0.831 0.831 1" />
-          </feComponentTransfer>
-        </filter>
-      </defs>
-    </svg>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

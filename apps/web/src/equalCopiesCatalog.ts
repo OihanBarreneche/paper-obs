@@ -420,7 +420,6 @@ function copyReference(catalog: CopyCatalog, family: CopyFamily, instance: CopyI
     // Hotlinked, never copied: the reference panel shows the source's own figure. A
     // total-perimeter page colours its copies by size, so its figure keeps its colours.
     preview: copyFigureUrl(family, instance),
-    figure_tint: !isPerimeter(family),
     sources: [{ label: `${family.title} · Erich Friedman's Packing Center`, url: family.page }],
   };
 }

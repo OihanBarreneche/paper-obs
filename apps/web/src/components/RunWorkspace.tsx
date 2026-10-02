@@ -10,7 +10,6 @@ import type {
   AgentLaneDoc, AgentRunDoc, AgentRunStepDoc, AgentRunSummaryDoc, AgentToolEventDoc,
   BestScoreDoc, CandidateDoc, EvaluationDoc, SummaryDoc, ViewDoc, WorkflowManifestDoc, WorkflowParameterDoc,
 } from "../types";
-import { sourceFigure } from "../catalog";
 import type { ProblemReference } from "../catalog";
 import { StatusPanel } from "./StatusPanel";
 import { ToolViewer } from "./ToolViewer";
@@ -304,7 +303,7 @@ export function RunWorkspace(props: Props) {
   const [cursor, setCursor] = useState<number | null>(null);
   const [scope, setScope] = useState<"problem" | "workflow" | "all" | "trash">("problem");
   const [reminder, setReminder] = useState("");
-  const [viewing, setViewing] = useState<{ src: string; title: string; caption: string; source: boolean } | null>(null);
+  const [viewing, setViewing] = useState<{ src: string; title: string; caption: string } | null>(null);
   const runPicker = useRef<HTMLDivElement | null>(null);
   const [node, setNode] = useState<string | null>(null);
   const [lane, setLane] = useState<string | null>(null);
@@ -695,8 +694,8 @@ export function RunWorkspace(props: Props) {
             caption={t(timelineMetricLabel(props.run)) + (record !== null
               ? ` · ${t("Reached at turn")} ${record.round + 1}` : "")}
             picture={reminder} alt={t("The arrangement this run retained")}
-            plate="no retained arrangement yet" published={false} tint={false}
-            onOpen={() => setViewing({ src: reminder, title: t(lane === null ? "Run record" : "Agent record"), caption: recordCaption, source: false })} />
+            plate="no retained arrangement yet" published={false}
+            onOpen={() => setViewing({ src: reminder, title: t(lane === null ? "Run record" : "Agent record"), caption: recordCaption })} />
           <RecordCard
             title="Problem reference"
             value={published === null || published.value === null ? "—"
@@ -704,10 +703,8 @@ export function RunWorkspace(props: Props) {
             caption={publishedCaption} picture={published?.preview ?? ""}
             alt={t("Published reference figure")} plate="No published figure for this problem."
             published
-            tint={published !== null && published.figure_tint !== false && sourceFigure(published.preview)}
             onOpen={() => published && setViewing({
               src: published.preview, title: t("Problem reference"), caption: publishedCaption,
-              source: published.figure_tint !== false && sourceFigure(published.preview),
             })} />
         </div>}
         <div className="run-workspace__verdict"><StatusPanel evaluation={props.evaluation} summary={props.summary} busy={props.busy} best={props.best}
@@ -723,7 +720,7 @@ export function RunWorkspace(props: Props) {
       <div className="reference-viewer__sheet">
         <div className="reference-viewer__heading"><h2>{viewing.title}</h2>
           <button type="button" aria-label={t("Close")} onClick={() => setViewing(null)}>×</button></div>
-        <img src={viewing.src} alt={viewing.title} className={viewing.source ? "packing-figure--source" : undefined} />
+        <img src={viewing.src} alt={viewing.title} />
         {viewing.caption !== "" && <p>{viewing.caption}</p>}
       </div>
     </div>, document.body)}
@@ -759,8 +756,6 @@ function RecordCard(props: {
   alt: string;
   plate: string;
   published: boolean;
-  /** Whether the picture is a hotlinked source figure that takes the catalogue's tint. */
-  tint: boolean;
   onOpen: () => void;
 }) {
   const { t } = useI18n();
@@ -770,7 +765,7 @@ function RecordCard(props: {
       aria-label={t(openable ? "Enlarge this record" : props.plate)}
       title={t(openable ? "Enlarge this record" : props.plate)} onClick={props.onOpen}>
       {openable
-        ? <img src={props.picture} alt={props.alt} className={props.tint ? "packing-figure--source" : undefined} />
+        ? <img src={props.picture} alt={props.alt} />
         : <span className="run-record__plate">{t(props.plate)}</span>}
     </button>
     <figcaption>

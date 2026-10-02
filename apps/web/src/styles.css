@@ -8,20 +8,25 @@
  */
 
 /*
- * One published figure, wherever it is shown: the catalogue's own tint.
+ * A published figure in the catalogue's own ink.
  *
- * A source figure is a grey or black-on-white bitmap we cannot recolour pixel by pixel.
- * The chain strips any colour left in it, lifts black a little so the strokes -- not
- * only the paper -- carry the hue, sepia gives it one warm tone, hue-rotate turns that
- * tone to the design's violet, and saturation deepens it. The visible cost is the paper:
- * a white background becomes a pale lavender. Every screen that shows a hotlinked
- * figure applies this one class, so the catalogue, the reference panel and the run
- * records cannot drift apart. The total-perimeter families never take it: there the
- * colours encode the sizes of the packed shapes, and the data says so
- * (ProblemReference.figure_tint).
+ * A source figure is a grey or black-on-white bitmap we cannot recolour pixel by pixel,
+ * and the pages are not drawn alike: one is black on white, another black on a light grey
+ * sheet. The chain strips whatever colour is left, lifts black a little so the strokes --
+ * not only the paper -- carry the hue, gives it one warm tone, turns that tone to the
+ * violet the canvas paints a shape with and deepens it. The parameters were solved for,
+ * not guessed: simulating the chain on a black stroke and on white paper, invert(0.36)
+ * hue-rotate(235deg) saturate(1.6) brightness(1.2) contrast(1.4) lands the strokes on
+ * #ae77cb against the canvas's #aa78d4, and leaves the paper at #fffbff -- so the tint is
+ * the design's, not the author's, and the paper stays paper.
+ *
+ * Only the catalogue applies it. A record shown beside a run, or in the reference panel,
+ * is there to be compared with the source, so it is shown exactly as its author drew it.
+ * The total-perimeter families keep their colours even in the catalogue: there the colours
+ * encode the sizes of the packed shapes, and the catalogue's own section says so.
  */
 .packing-figure--source {
-  filter: url(#packing-tint);
+  filter: grayscale(1) invert(0.36) sepia(1) hue-rotate(235deg) saturate(1.6) brightness(1.2) contrast(1.4);
 }
 
 :root {
