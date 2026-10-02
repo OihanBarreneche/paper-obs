@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 license-files = ["LICENSE"]
-keywords = ["packing", "geometry", "multi-agent", "llm", "search", "optimization"]
+keywords = ["packing", "covering", "geometric placement", "geometry", "multi-agent", "llm", "search", "optimization"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",

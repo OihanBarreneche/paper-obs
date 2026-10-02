@@ -1,4 +1,4 @@
-"""A modular laboratory for 2D geometric packing.
+"""A modular laboratory for 2D geometric placement problems.
 
 The lab exists to compare search strategies on the same problems, on the same
 exact score: a random search, a lattice construction, a local relaxation, a

@@ -1,10 +1,10 @@
 # Paper Obs
 
-An open-source visual workbench for 2D packing and covering: define problems, inspect solutions, and compare human, algorithmic and multi-agent strategies.
+An open-source visual workbench for 2D geometric placement problems: define problems, inspect solutions, and compare human, algorithmic and multi-agent strategies.
 
 **PAPER** means *Placement Analysis Platform for Experiments and Research*. **Obs** is the observatory: a place to inspect geometric problems, candidates, search traces and comparisons.
 
-Paper Obs is an experimental lab for two-dimensional packing and covering. Define a problem, edit a candidate on a canvas, let a deterministic engine judge it, and compare a human, a classical search strategy or a LangGraph workflow on the same instance. Its goal is a transparent comparison of methods, not a claim to world records.
+Paper Obs is an experimental lab for geometric placement problems in the plane: packing copies of a shape into the smallest container, covering a region, maximising a total perimeter. Define a problem, edit a candidate on a canvas, let a deterministic engine judge it, and compare a human, a classical search strategy, a LangGraph workflow or a free agent on the same instance. Its goal is a transparent comparison of methods; the few published records it has beaten are shown with the previous record beside them, as constructions to check rather than proofs.
 
 The interface is available in French and English. The code and public documentation are in English.
 
@@ -23,7 +23,8 @@ The interface is available in French and English. The code and public documentat
 - A geometry engine that reports validity, score, measurements and violations; a web editor, candidate import/export and SVG rendering.
 - Seeded generators and two classical baselines, `lattice` and `basin_hopping`, with convergence curves.
 - Four LangGraph workflows, from a basic agent loop to a research lab of builder and critic teams with an optional Python sandbox, with a live run trace, workflow diagram, replay, run comparison and statistics.
-- Separate **Agents** and **Search** workspaces: the former shows agent workflows, while the latter runs classical baselines and outlines future solver methods.
+- Separate **Agents** and **Search** workspaces: the former shows agent workflows, while the latter runs classical baselines and follows free research sessions.
+- Free research: an outside agent such as Claude Code or Codex searches with its own programs, the engine judges every arrangement it submits, and the web app follows its journal live.
 - A reference catalog snapshot with 107 families and 3,996 entries, and a verification pass that puts each published arrangement back in front of the engine and dates the check. A catalog card being present does **not** imply that its reference value has been independently proved or that the current engine supports its family. The interface distinguishes these cases.
 
 Known limits and the meaning of a reference score are in the [documentation](docs/README.md).
@@ -59,6 +60,14 @@ On Windows, use the corresponding `.venv\Scripts\` executables, or the repositor
 Agent runs require a configured provider, except for a local keyless provider such as Ollama. You can enter a key in the model dialog; it is kept in this browser and never written into a run document. `PAPER_OBS_API_KEY` is a **server operator** fallback; do not set it on a server available to untrusted visitors. If you configure token prices, the UI can estimate spend. Run documents are stored under ignored `runs/`.
 
 Without API credit, the `claude-code` and `codex` providers run the workflows on a Claude or ChatGPT **subscription**: each model call starts the Claude Code or Codex CLI installed and signed in on this machine (`claude -p` with its tools off, `codex exec` read-only in an empty folder), which answers the conversation and the lab's tool schemas with a JSON reply (`paper_obs.llm.subscription`). Name the executable with `PAPER_OBS_CLAUDE_CLI` or `PAPER_OBS_CODEX_CLI` when it is not on the server's `PATH`, for example a Windows `claude.exe` used from WSL. It is slower than an API, since every call starts a process, and records tokens without a price. Driving a subscription from a program is a grey zone of the providers' terms: use it at your own judgement. The Codex adapter follows the documented `codex exec` options but has not been run against a real Codex install yet.
+
+## First visit
+
+The **Shapes** tab opens on five categories: **Start here · squares**, **Explore packing**, **Other objectives**, **Demo Workflow** (the problems the agent workflows are compared on) and **Records beaten by Claude**. The **Agents** tab ships one example run per workflow, and **Search ▸ Free research** ships two example record hunts, so a first visitor can read agent traces and a research journal without spending anything.
+
+## Free research
+
+Open this repository in an agent harness such as Claude Code or Codex and ask it for a free research session, on a problem you name or on one it proposes. The agent follows [research mode](docs/research-mode.md): it audits the machine and proposes how much of the processor to use before any long computation, opens a session, then searches with programs of its own. The engine judges every arrangement it submits. Run `paper-obs serve` and open **Search ▸ Free research** to follow the session live: its ideas, programs, dead ends, invalid attempts and new bests, and how its best compares with the published record. Sessions and their programs stay in the ignored `runs/research/` folder.
 
 ## Design
 

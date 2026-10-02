@@ -252,7 +252,7 @@ function CatalogFamily(props: {
     </div>
     {family.intro && <p className="profile-catalog__intro" lang="en"><strong>{t("Source description")}:</strong> {family.intro}</p>}
     {!canBuild && <p className="profile-catalog__coming" role="note">
-      <strong>{t("Coming soon")}</strong> — {t("This subfamily is listed for reference; the engine cannot judge it yet.")}</p>}
+      <strong>{t("Coming soon")}.</strong> {t("This subfamily is listed for reference; the engine cannot judge it yet.")}</p>}
     {configurations.length === 0 && <p className="profile-catalog__hidden" role="note">{hiddenRecordsNote(t)}</p>}
     <div className="profile-catalog__configs">
       {configurations.map(({ count, instance }, index) => {
@@ -494,7 +494,7 @@ export function ProfileNavigator(props: Props) {
         <header><div><span className="eyebrow">PAPER OBS / {t("LIBRARY")}</span><h2>{t("Add a problem")}</h2>
           <p>{t("Choose a family, a configuration, then add it to the active category.")}</p>
           {/* One note replaces the per-card grid badge the owner found repetitive. */}
-          <p className="profile-catalog__placements" role="note">{t("The exact placements are not known for most instances: the lab opens those on a grid construction. A card that carries a badge instead holds a configuration of its own — taken from the source, or read off the published figure to approach the record visually — and the badge says how many decimals of that record it reaches.")}</p>
+          <p className="profile-catalog__placements" role="note">{t("Most instances open on a simple grid, because the lab does not have their exact placements. A card with a badge holds its own configuration: the source's own, or one read from the published figure. The badge says whether it is exact or how many decimals of the record it reaches.")}</p>
           <a className="profile-catalog__source" href={PACKING_INDEX} target="_blank" rel="noopener noreferrer">{t("Catalog source")}: Erich Friedman's Packing Center ↗</a></div>
           <button type="button" className="button" onClick={() => setCatalogOpen(false)}>{t("Close")}</button></header>
         <div className="profile-catalog__columns">

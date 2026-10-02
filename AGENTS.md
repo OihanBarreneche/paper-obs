@@ -1,6 +1,6 @@
 # Paper Obs — contributor and agent instructions
 
-Paper Obs is a modular lab for two-dimensional geometric packing and covering. It is both an open-source research tool and the teaching material for a video about multi-agent orchestration. Optimize for comparable, inspectable results and a workflow implementation short enough to explain on screen.
+Paper Obs is a modular lab for two-dimensional geometric placement problems, such as packing and covering. It is both an open-source research tool and the teaching material for a video about multi-agent orchestration. Optimize for comparable, inspectable results and a workflow implementation short enough to explain on screen.
 
 Human contributors should also read [CONTRIBUTING.md](CONTRIBUTING.md) for the fork and pull request workflow and maintainer review expectations.
 
