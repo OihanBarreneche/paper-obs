@@ -15,11 +15,6 @@ export type ProblemReference = {
   sources: ReferenceSource[];
 };
 
-/** Whether a preview is the source's own bitmap rather than the lab's own drawing. */
-export function sourceFigure(url: string): boolean {
-  return /^https?:/i.test(url);
-}
-
 export type SquareRecord = {
   count: number;
   side: number;

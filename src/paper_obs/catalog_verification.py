@@ -146,7 +146,6 @@ SOURCE_PREFIXES = {
     "seed": "starter",
     "approx": "approx",
 }
-SOURCE_KINDS = tuple(SOURCE_PREFIXES)
 
 #: The Packomania page a family's coordinates come from.
 PACKOMANIA_PAGE = "https://www.packomania.com/{code}/{code}.html"

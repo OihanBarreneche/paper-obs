@@ -68,7 +68,7 @@ const STEPS: readonly Step[] = [
   },
   {
     title: "Set the model and safeguards",
-    body: "Choose a provider and model, then enter a key if needed. Fill in both token prices, check your provider quota, and always set run limits before starting. The key stays in this tab for the run.",
+    body: "Choose a provider and model, then enter a key if needed. Fill in both token prices, check your provider quota, and always set run limits before starting. The key is kept in this browser and never written into a run file.",
     target: ".modal__panel", side: "left", cardWidth: 290, gap: 12,
   },
   {
@@ -78,7 +78,7 @@ const STEPS: readonly Step[] = [
   },
   {
     title: "Explore search methods",
-    body: "Search compares non-LLM methods using the same geometry engine. Basic methods work now; the examples below show other approaches that could be connected later.",
+    body: "Search compares methods without an LLM on the same geometry engine. It also follows free research: open this project in an agent such as Claude Code or Codex, ask it for a free research, and watch its session live here.",
     target: ".search-workspace__methods", side: "right",
   },
 ];
