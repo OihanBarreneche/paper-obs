@@ -1,64 +1,65 @@
 {
   "kind": "candidate",
-  "candidate_id": "c-d7dddbd046",
+  "candidate_id": "circles-5-in-smallest-tan-figure",
   "problem_id": "circles-5-in-smallest-tan",
-  "scale": 0.13834844319366407,
+  "scale": 0.13978387153592567,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-82105d1c9b"
+    "c-1e7ad6ae25"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": -0.19124473541540354,
-      "y": 0.04149936349842956
+      "x": -0.19350648547027546,
+      "y": 0.04957654942091448
     },
     {
       "shape_id": "s001",
-      "x": 0.09232956000017196,
-      "y": 0.044442077238865986
+      "x": 0.08751686946352995,
+      "y": 0.04813221694267905
     },
     {
       "shape_id": "s002",
-      "x": -0.18099386485150723,
-      "y": 0.31833186823362286
+      "x": -0.19354946268147513,
+      "y": 0.329198549087684
     },
     {
       "shape_id": "s003",
-      "x": 0.32543546506311305,
-      "y": -0.1944513745743368
+      "x": 0.30980708937283746,
+      "y": -0.17925187597695202
     },
     {
       "shape_id": "s004",
-      "x": -0.04706633058093352,
-      "y": -0.19498489045185377
+      "x": -0.05525523786151386,
+      "y": -0.19354946179740765
     }
   ],
   "metadata": {
     "figure": "cirintan-5.gif",
-    "detected_radius_px": 26.80168792501869,
+    "detected_size_px": 26.8,
+    "detected_turns": [],
     "explained_ink": 0.6383,
-    "detected_centres": [
+    "detected_layout": [
       [
-        26.99,
-        117.81
+        -1.335,
+        0.291
       ],
       [
-        80.03,
-        117.83
+        0.644,
+        0.291
       ],
       [
-        26.88,
-        64.68
+        -1.339,
+        2.274
       ],
       [
-        126.34,
-        163.96
+        2.372,
+        -1.43
       ],
       [
-        53.63,
-        163.85
+        -0.341,
+        -1.426
       ]
     ],
     "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"

@@ -1,57 +1,58 @@
 {
   "kind": "candidate",
-  "candidate_id": "c-a680ff68dc",
+  "candidate_id": "circles-4-in-smallest-ellipse-figure",
   "problem_id": "circles-4-in-smallest-ellipse",
-  "scale": 0.5000479503319489,
+  "scale": 0.4999217143593714,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-9e5247d55b"
+    "c-f289640279"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": -0.00036209067700803614,
-      "y": 0.4999685670133184
+      "x": -0.049842668095731645,
+      "y": 0.4998966015975823
     },
     {
       "shape_id": "s001",
-      "x": 0.8826218456761508,
-      "y": 0.00037242405410940456
+      "x": 0.8464466354683994,
+      "y": -0.030577424546179233
     },
     {
       "shape_id": "s002",
-      "x": 0.0003396103123584956,
-      "y": -0.500166475491533
+      "x": -0.04729142045579619,
+      "y": -0.4999435721739718
     },
     {
       "shape_id": "s003",
-      "x": -0.8930634946204539,
-      "y": 0.0006300816429405456
+      "x": -0.9373236491944688,
+      "y": -0.00901566630664573
     }
   ],
   "metadata": {
     "figure": "cirinel-e4.gif",
-    "detected_radius_px": 47.621906930293896,
+    "detected_size_px": 47.62,
+    "detected_turns": [],
     "explained_ink": 0.6931,
-    "detected_centres": [
+    "detected_layout": [
       [
-        129.59,
-        47.75
+        -0.001,
+        0.993
       ],
       [
-        211.76,
-        95.06
+        1.725,
+        -0.0
       ],
       [
-        129.6,
-        142.31
+        -0.001,
+        -0.992
       ],
       [
-        47.56,
-        95.06
+        -1.723,
+        -0.0
       ]
     ],
-    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
   }
 }

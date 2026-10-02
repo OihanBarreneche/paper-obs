@@ -1,64 +1,65 @@
 {
   "kind": "candidate",
-  "candidate_id": "c-d7f462b9ea",
+  "candidate_id": "circles-5-in-smallest-l-figure",
   "problem_id": "circles-5-in-smallest-l",
-  "scale": 0.16387380504574472,
+  "scale": 0.1726904365984139,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-8c89394d17"
+    "c-26496c62a7"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": -0.08054047312826268,
-      "y": 0.3887231337600848
+      "x": -0.08986441420812899,
+      "y": 0.410556010170342
     },
     {
       "shape_id": "s001",
-      "x": -0.21485670261605344,
-      "y": 0.08976218602162804
+      "x": -0.2436096378413206,
+      "y": 0.10118627130882614
     },
     {
       "shape_id": "s002",
-      "x": -0.20039537055144038,
-      "y": -0.23804255258522608
+      "x": -0.22963866228175311,
+      "y": -0.24397622919959905
     },
     {
       "shape_id": "s003",
-      "x": 0.3878013888267476,
-      "y": -0.2107450639993672
+      "x": 0.40145990669617937,
+      "y": -0.24218888093495533
     },
     {
       "shape_id": "s004",
-      "x": 0.08702695259265185,
-      "y": -0.08054047235314554
+      "x": 0.0839581287763705,
+      "y": -0.08996284615675804
     }
   ],
   "metadata": {
     "figure": "cirinl-5.gif",
-    "detected_radius_px": 28.856237440722612,
+    "detected_size_px": 28.86,
+    "detected_turns": [],
     "explained_ink": 0.626,
-    "detected_centres": [
+    "detected_layout": [
       [
-        53.93,
-        28.32
+        -0.477,
+        2.436
       ],
       [
-        28.17,
-        79.75
+        -1.37,
+        0.653
       ],
       [
-        34.1,
-        136.79
+        -1.165,
+        -1.323
       ],
       [
-        136.8,
-        136.89
+        2.394,
+        -1.327
       ],
       [
-        85.54,
-        111.25
+        0.618,
+        -0.439
       ]
     ],
     "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"

@@ -1,0 +1,67 @@
+{
+  "kind": "candidate",
+  "candidate_id": "squares-4-in-smallest-pentagon-figure",
+  "problem_id": "squares-4-in-smallest-pentagon",
+  "scale": 0.5338679786159305,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-5d9fad6486"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.000867236363729273,
+      "y": 0.4726186014911943,
+      "rotation": 44.75332068401902
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.37716807845019473,
+      "y": 0.08876620884564983,
+      "rotation": 43.9723466478797
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.36962879856267505,
+      "y": 0.07454225594674625,
+      "rotation": 46.49358641347259
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.019578169198991,
+      "y": -0.3098101494405092,
+      "rotation": 44.0
+    }
+  ],
+  "metadata": {
+    "figure": "squinpen-4.gif",
+    "detected_size_px": 78.3,
+    "detected_turns": [
+      44.0,
+      44.0,
+      44.0,
+      44.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        0.009,
+        0.736
+      ],
+      [
+        -0.699,
+        0.01
+      ],
+      [
+        0.7,
+        -0.01
+      ],
+      [
+        -0.01,
+        -0.736
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

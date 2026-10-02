@@ -13,6 +13,8 @@ from pathlib import Path
 
 import pytest
 
+import math
+
 from paper_obs.domain import (
     Arena,
     Candidate,
@@ -20,6 +22,7 @@ from paper_obs.domain import (
     MaximizeScale,
     Placement,
     Problem,
+    RegularPolygon,
     RotationMode,
     RotationPolicy,
 )
@@ -122,3 +125,86 @@ def test_a_reading_with_the_wrong_count_is_refused(tmp_path: Path):
     # outline to stand on, and a reading that keeps them must not be handed to the engine.
     reading = catalog_approximation.detect_discs(path, 6)
     assert reading is None
+
+#: The drawing of a triangle of squares: the container is an equilateral triangle of this
+#: side in pixels, and its three squares have this side. Two sit on the base and one rests
+#: between them, which is a packing at any size the reader recovers.
+TRIANGLE_SIDE = 140.0
+TRIANGLE_BASE = 200.0
+SQUARE_SIDE = 40.0
+
+
+def triangle_squares_problem() -> Problem:
+    """Three unit squares inside the smallest equilateral triangle, as the catalogue asks it."""
+    return Problem(
+        "three-squares-in-a-triangle",
+        Arena.regular_polygon(3, 1.0 / math.sqrt(3.0)),
+        RegularPolygon(sides=4, side=1.0),
+        MaximizeScale(count=3),
+        rotation=RotationPolicy(mode=RotationMode.FREE),
+        seed=1,
+    )
+
+
+def draw_triangle_of_squares(path: Path) -> None:
+    """Draw two squares on a triangle's base and one resting between them."""
+    from PIL import Image, ImageDraw
+
+    image = Image.new("L", (240, 240), 255)
+    draw = ImageDraw.Draw(image)
+    middle = 120.0
+    half = TRIANGLE_SIDE / 2.0
+    apex = TRIANGLE_BASE - TRIANGLE_SIDE * math.sqrt(3.0) / 2.0
+    draw.polygon(
+        [(middle, apex), (middle - half, TRIANGLE_BASE), (middle + half, TRIANGLE_BASE)],
+        outline=0,
+        width=2,
+    )
+    side = SQUARE_SIDE
+    for centre_x, centre_y in (
+        (middle - side / 2.0, TRIANGLE_BASE - side / 2.0),
+        (middle + side / 2.0, TRIANGLE_BASE - side / 2.0),
+        (middle, TRIANGLE_BASE - side - side / 2.0),
+    ):
+        draw.rectangle(
+            [centre_x - side / 2.0, centre_y - side / 2.0, centre_x + side / 2.0, centre_y + side / 2.0],
+            outline=0,
+            width=2,
+        )
+    image.save(path)
+
+
+def test_the_reader_finds_polygonal_copies(tmp_path: Path):
+    path = tmp_path / "triangle.gif"
+    draw_triangle_of_squares(path)
+    problem = triangle_squares_problem()
+    reading = catalog_approximation.detect_copies(path, 3, problem)
+    assert reading is not None
+    size, layout, turns, explained = reading
+    assert size == pytest.approx(SQUARE_SIDE, rel=0.12)
+    assert len(layout) == 3
+    # The three squares are what a reading explains; the container's own outline is the
+    # part of the drawing it does not.
+    assert explained > 0.5
+    # A drawn square is axis-aligned, and a square turned by ninety degrees is the same
+    # square: every turn the reader may report is a multiple of a quarter turn.
+    for turn in turns:
+        quarter = turn % 90.0
+        assert min(quarter, 90.0 - quarter) < 8.0
+
+
+def test_a_polygonal_reading_round_trips_through_the_engine(tmp_path: Path):
+    path = tmp_path / "triangle.gif"
+    draw_triangle_of_squares(path)
+    problem = triangle_squares_problem()
+    result = catalog_approximation.reconstruct(problem, path, 3)
+    assert result is not None
+    candidate, _ = result
+    verdict = evaluate(problem, candidate)
+    assert verdict.valid
+    # The engine reads the drawn container back: the figure draws a triangle a little over
+    # three and a half square sides wide, and what the reading reaches is that container,
+    # measured rather than restated.
+    assert verdict.metrics["equivalent_container_side"] == pytest.approx(
+        TRIANGLE_SIDE / SQUARE_SIDE, rel=0.06
+    )

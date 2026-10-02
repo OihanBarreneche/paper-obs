@@ -24,13 +24,21 @@ grown by the engine's own scale operator until the container rejects it. The val
 is therefore a measurement of the figure, not a restatement of the number printed beside
 it: the printed size is used for nothing here.
 
-What it handles, and what it does not
--------------------------------------
-Discs only, for now: a circle's outline is the same curve wherever it sits, which is what
-makes the accumulator work. A rotated square, pentagon or tan has no such invariant, and
-those families need a different reading of the same drawing. The families this module
-serves are the disc families the catalogue lists and Packomania does not cover:
-`cirintri`, `cirintan`, `cirinel` and `cirinl`.
+Two readers, one per kind of evidence
+------------------------------------
+A circle's outline is the same curve wherever it sits, so discs are found by the outlines
+themselves: an accumulator over radii says which radius explains the drawing and where its
+copies are. Nothing else has that invariant -- a square turned by ten degrees is a
+different curve -- so every other shape is found by the regions its strokes enclose. A
+copy's inside is a closed white region and equal copies are equal regions, which is what
+tells them from the gaps and corners around them; each copy's own outline then chooses its
+turn on the strokes, and the engine does the rest.
+
+That reading covers the four disc families the collection lists and no archive covers
+(`cirintri`, `cirintan`, `cirinel`, `cirinl`) and the square families whose drawings
+it can read. A figure whose copies cannot be told from the space between them -- and a
+drawing of copies that overlap so much that no enclosed region survives -- is reported as
+unread and left alone.
 
 Pillow is what decodes the GIF, and it is the `research` extra's own dependency; a run
 without it is told so rather than failing inside the decoder.
@@ -69,6 +77,7 @@ from paper_obs.catalog_verification import (
 from paper_obs.domain.candidate import Candidate
 from paper_obs.domain.placement import Placement
 from paper_obs.geometry.engine import evaluate
+from paper_obs.geometry.view import build_view
 from paper_obs.search.operators.polish import polish
 from paper_obs.search.operators.relaxation import fit_layout_scale
 from paper_obs.search.operators.repair import repair_overlaps
@@ -113,7 +122,14 @@ SEPARATION_SLACK = 1e-5
 
 #: Local-search steps run from the reading, to let the engine settle what pixels only
 #: approximate. Zero disables it.
-POLISH_STEPS = 12
+POLISH_STEPS = 60
+
+#: The placements a reading is tried at before the best is kept, in copy sizes. A drawing
+#: shows its arrangement where the artist put it, and the engine only ever scales a layout
+#: about the origin, so where a reading sits inside the container is a question the search
+#: has to answer rather than one the pixels can.
+SHIFT_REACH = 0.7
+SHIFT_STEP = 0.2
 
 #: How far below its record a reading may land and still be kept, as a fraction of the
 #: record. A drawing read this badly -- the copies found at the wrong radius, say -- is not
@@ -143,15 +159,42 @@ def figure_file(page: str, name: str, *, refresh: bool = False) -> Path:
     return path
 
 
+#: The darkest a drawing's ink is expected to be, on the usual black-on-white page. A page
+#: whose strokes are pale grey yields almost nothing here, which is what the fallback below
+#: is for.
+PLAIN_INK = 128
+
+#: The share of a page that must be inked before the plain threshold is believed.
+PLAIN_SHARE = 0.005
+
+#: How far below the paper the fallback threshold sits, as a fraction of the page's whole
+#: range. A pale page needs its threshold near the paper, where its strokes are.
+PALE_MARGIN = 0.15
+
+
 def dark_mask(path: Path) -> np.ndarray:
-    """Return the drawing's strokes as a boolean image."""
+    """Return the drawing's strokes as a boolean image.
+
+    The pages are not drawn alike: one is black on white, another black on a light grey
+    sheet, a third anti-aliased into a hundred shades. The paper is therefore read from the
+    image's own border -- where nothing is drawn -- and the threshold sits halfway between
+    it and the darkest ink the figure uses.
+    """
     try:
         from PIL import Image
     except ImportError as error:  # pragma: no cover - the extra is installed in CI
         raise ImportError(module_message(error)) from error
     with Image.open(path) as source:
         grey = np.asarray(source.convert("L"))
-    return grey < 128
+    plain = grey < PLAIN_INK
+    if float(plain.mean()) >= PLAIN_SHARE:
+        return plain
+    # A page drawn in pale grey: read the paper off its own border, where nothing is drawn,
+    # and look for strokes just below it rather than at the bottom of the range.
+    border = np.concatenate([grey[0, :], grey[-1, :], grey[:, 0], grey[:, -1]])
+    paper = float(np.quantile(border, 0.9))
+    darkest = float(grey.min())
+    return grey < paper - PALE_MARGIN * (paper - darkest)
 
 
 def hough(shape: tuple[int, int], dark: np.ndarray, radius: int) -> np.ndarray:
@@ -282,6 +325,282 @@ def detect_discs(path: Path, count: int) -> tuple[float, list[tuple[float, float
     return best[1], best[2], best[0]
 
 
+# --------------------------------------------------------------------------------------
+# A drawing of polygonal copies
+#
+# A circle is found by its outline alone, which is the same curve wherever it sits. A
+# square, a pentagon or a tan is not: it has to be found with its own turn. What a drawing
+# gives instead is its enclosed regions. Every copy of a line drawing is a closed white
+# region, and equal copies are equal regions, so the copies of a figure are the group of
+# enclosed regions that share one area -- the corners and gaps between them do not. Once a
+# region names a copy's centre, its turn and its size come from the strokes themselves: the
+# copy's own outline, taken from the geometry layer, is placed until it lies on them.
+# --------------------------------------------------------------------------------------
+
+#: How much two enclosed regions may differ in area and still be called copies.
+AREA_TOLERANCE = 0.12
+
+#: Turns a copy is tried at, in degrees, before the first refinement and during it. A
+#: regular polygon is only tried over one of its symmetry periods, since a square turned by
+#: ninety degrees is the same square.
+COARSE_TURN = 5.0
+FINE_TURN = 1.0
+
+#: How much of a copy the interior check looks at, and what a stroke under it costs. A
+#: drawing's copies are closed regions, so their insides are white: an outline turned the
+#: wrong way by ten degrees still lies near plenty of strokes when the copies touch, but its
+#: interior then covers a neighbour's edge, which is what settles the turn.
+INTERIOR_SHRINK = 0.6
+INTERIOR_WEIGHT = 4.0
+
+#: How far a copy's size may be wrong before the turn search, as a fraction of the area's
+#: reading: the strokes cover part of the copy, so the enclosed region is always smaller.
+SIZE_WINDOW = 0.2
+
+
+def distance_to_ink(ink: np.ndarray) -> np.ndarray:
+    """Return every pixel's distance to the nearest stroke, by a chamfer sweep."""
+    height, width = ink.shape
+    distance = np.where(ink, 0.0, 1e9)
+    straight, diagonal = 1.0, math.sqrt(2.0)
+    for y in range(height):
+        for x in range(width):
+            best = distance[y, x]
+            if best == 0.0:
+                continue
+            if y > 0:
+                best = min(best, distance[y - 1, x] + straight)
+            if x > 0:
+                best = min(best, distance[y, x - 1] + straight)
+            if y > 0 and x > 0:
+                best = min(best, distance[y - 1, x - 1] + diagonal)
+            if y > 0 and x < width - 1:
+                best = min(best, distance[y - 1, x + 1] + diagonal)
+            distance[y, x] = best
+    for y in range(height - 1, -1, -1):
+        for x in range(width - 1, -1, -1):
+            best = distance[y, x]
+            if best == 0.0:
+                continue
+            if y < height - 1:
+                best = min(best, distance[y + 1, x] + straight)
+            if x < width - 1:
+                best = min(best, distance[y, x + 1] + straight)
+            if y < height - 1 and x < width - 1:
+                best = min(best, distance[y + 1, x + 1] + diagonal)
+            if y < height - 1 and x > 0:
+                best = min(best, distance[y + 1, x - 1] + diagonal)
+            distance[y, x] = best
+    return distance
+
+
+def enclosed_regions(ink: np.ndarray) -> list[np.ndarray]:
+    """Return the coordinates of every white region the strokes enclose.
+
+    The region touching the image's edge is the paper around the figure, and is dropped:
+    what is left is the copies' insides and the space between them, and the two are told
+    apart by their size rather than by their position.
+    """
+    light = ~ink
+    height, width = light.shape
+    seen = np.zeros((height, width), dtype=bool)
+    regions: list[np.ndarray] = []
+    for y in range(height):
+        for x in range(width):
+            if not light[y, x] or seen[y, x]:
+                continue
+            stack = [(y, x)]
+            seen[y, x] = True
+            pixels: list[tuple[int, int]] = []
+            touches_edge = False
+            while stack:
+                cy, cx = stack.pop()
+                pixels.append((cx, cy))
+                if cx in (0, width - 1) or cy in (0, height - 1):
+                    touches_edge = True
+                for ny, nx in ((cy - 1, cx), (cy + 1, cx), (cy, cx - 1), (cy, cx + 1)):
+                    if 0 <= ny < height and 0 <= nx < width and light[ny, nx] and not seen[ny, nx]:
+                        seen[ny, nx] = True
+                        stack.append((ny, nx))
+            if not touches_edge:
+                regions.append(np.asarray(pixels, dtype=float))
+    return regions
+
+
+def equal_regions(regions: list[np.ndarray], count: int) -> list[np.ndarray] | None:
+    """Return the regions of nearly one area, or None when no group of them has the count.
+
+    The copies are the only congruent thing in a figure: the gaps between them and the
+    corners of the container vary with the arrangement, while every copy's inside is the
+    same shape at the same size.
+    """
+    best: tuple[float, list[np.ndarray]] | None = None
+    for region in regions:
+        area = float(len(region))
+        group = [other for other in regions if abs(len(other) - area) <= AREA_TOLERANCE * area]
+        if len(group) != count:
+            continue
+        areas = np.array([len(item) for item in group], dtype=float)
+        spread = float(areas.std() / areas.mean())
+        if best is None or spread < best[0]:
+            best = (spread, group)
+    return None if best is None else best[1]
+
+
+def base_outline(problem) -> np.ndarray:
+    """Return one copy's outline at size one, straight from the geometry layer.
+
+    Nothing here decides what a copy looks like: the domain's own shape is asked for the
+    corners a drawing would show, through the same view a canvas is drawn from.
+    """
+    probe = Candidate(
+        candidate_id="outline",
+        problem_id=problem.problem_id,
+        scale=1.0,
+        placements=(Placement(shape_id="s000", x=0.0, y=0.0),),
+    )
+    primitive = build_view(problem, probe, with_violations=False).shapes[0]
+    if primitive.kind == "circle":
+        steps = np.linspace(0.0, 2.0 * math.pi, 24, endpoint=False)
+        return np.column_stack([np.cos(steps), np.sin(steps)]) * float(primitive.radius or 0.0)
+    return np.asarray(primitive.points, dtype=float)
+
+
+def outline_at(base: np.ndarray, size: float, turn: float, centre: tuple[float, float]) -> np.ndarray:
+    """Return the outline of one copy, at a size and a turn, around a centre."""
+    radians = math.radians(turn)
+    cosine, sine = math.cos(radians), math.sin(radians)
+    turned = np.column_stack([
+        base[:, 0] * cosine - base[:, 1] * sine,
+        base[:, 0] * sine + base[:, 1] * cosine,
+    ])
+    return turned * size + np.asarray(centre, dtype=float)
+
+
+def sampled(distance: np.ndarray, points: np.ndarray) -> np.ndarray:
+    """Return the distance-to-stroke of every sampled point, clamped to the drawing."""
+    height, width = distance.shape
+    xs = np.clip(np.rint(points[:, 0]).astype(int), 0, width - 1)
+    ys = np.clip(np.rint(points[:, 1]).astype(int), 0, height - 1)
+    return distance[ys, xs]
+
+
+def stroke_cost(distance: np.ndarray, points: np.ndarray) -> float:
+    """Return the mean distance from an outline to the nearest stroke."""
+    return float(sampled(distance, points).mean())
+
+
+def copy_cost(
+    distance: np.ndarray, base: np.ndarray, size: float, turn: float, centre: tuple[float, float]
+) -> float:
+    """Return what a copy at a size and a turn costs: its outline against the strokes, and
+    the strokes its own inside would cover."""
+    outline = sampled(distance, outline_at(base, size, turn, centre))
+    inside = sampled(distance, outline_at(base, size * INTERIOR_SHRINK, turn, centre))
+    return float(outline.mean()) + INTERIOR_WEIGHT * float((inside <= 1.0).mean())
+
+
+def symmetry_period(problem) -> float:
+    """Return the turn after which a copy looks the same, in degrees."""
+    sides = getattr(problem.shape, "sides", None)
+    return 360.0 / float(sides) if sides else 360.0
+
+
+def fit_copy(
+    distance: np.ndarray, base: np.ndarray, centre: tuple[float, float], guess: float, period: float
+) -> tuple[float, float]:
+    """Return the size and the turn whose outline lies best on the drawing's strokes.
+
+    The guess comes from the region's area, which the strokes have eaten into, so the size
+    is searched around it and the turn over the copy's own symmetry period -- a square
+    turned by ninety degrees being the same square, and nothing else being.
+    """
+    best: tuple[float, float, float] | None = None
+    for turn in np.arange(0.0, period, COARSE_TURN):
+        cost = copy_cost(distance, base, guess, turn, centre)
+        if best is None or cost < best[0]:
+            best = (cost, guess, float(turn))
+    span = SIZE_WINDOW / 3.0
+    for _ in range(4):
+        _, size, turn = best  # type: ignore[misc]
+        for candidate_size in np.linspace(size * (1.0 - span), size * (1.0 + span), 7):
+            for candidate_turn in np.arange(turn - 2.0 * FINE_TURN, turn + 2.0 * FINE_TURN + 1e-9, FINE_TURN):
+                cost = copy_cost(distance, base, candidate_size, candidate_turn, centre)
+                if cost < best[0]:
+                    best = (cost, candidate_size, float(candidate_turn))
+    return best[1], best[2]
+
+
+#: How far a stroke may sit from a copy's outline and still count as explained by it.
+OUTLINE_REACH = 1.5
+
+
+def explained_ink(ink: np.ndarray, outlines: np.ndarray) -> float:
+    """Return the share of a drawing's strokes that lie on the copies' own outlines.
+
+    The container's outline is drawn too, and a reading of copies is not expected to explain
+    it: what this measures is how much of the figure the reading accounts for, which is what
+    tells a good reading of a busy drawing from a lucky one.
+    """
+    stamp = np.zeros(ink.shape, dtype=bool)
+    height, width = ink.shape
+    xs = np.clip(np.rint(outlines[:, 0]).astype(int), 0, width - 1)
+    ys = np.clip(np.rint(outlines[:, 1]).astype(int), 0, height - 1)
+    stamp[ys, xs] = True
+    near = distance_to_ink(~stamp) <= OUTLINE_REACH
+    return float((ink & near).sum()) / float(max(int(ink.sum()), 1))
+
+
+def detect_copies(
+    path: Path, count: int, problem
+) -> tuple[float, np.ndarray, list[float], float] | None:
+    """Return the copy size, the layout, the turns and the explained ink of a drawing.
+
+    The layout comes back in copy sizes with the engine's own axes, and the turns in
+    degrees: together they are the reading, and the engine is what says whether it is a
+    packing and what it is worth.
+    """
+    ink = dark_mask(path)
+    distance = distance_to_ink(ink)
+    group = equal_regions(enclosed_regions(ink), count)
+    if group is None:
+        return None
+    base = base_outline(problem)
+    period = symmetry_period(problem)
+    unit_area = float(problem.shape.area(1.0))
+    if unit_area <= 0.0:
+        return None
+    centres = [(float(item[:, 0].mean()), float(item[:, 1].mean())) for item in group]
+    guesses = [math.sqrt(len(item) / unit_area) for item in group]
+    # The layout's own unit is the region's reading and not the fitted one. The strokes eat
+    # into every region, so that reading is a little small, and a small unit spreads the
+    # layout: the value the engine then reports is a little worse than the drawing's own,
+    # which is the direction a reading should err in. The fit is kept for the turns, where
+    # the strokes are what tells one copy's corner from another's.
+    common = float(np.median(guesses))
+    fitted = [fit_copy(distance, base, centre, guess, period) for centre, guess in zip(centres, guesses)]
+    turns: list[float] = []
+    settled: list[tuple[float, float]] = []
+    for centre, (_, turn) in zip(centres, fitted):
+        best = (stroke_cost(distance, outline_at(base, common, turn, centre)), turn, centre)
+        for offset in (-1.0, 0.0, 1.0):
+            for shift_x in (-1.0, 0.0, 1.0):
+                for shift_y in (-1.0, 0.0, 1.0):
+                    moved = (centre[0] + shift_x, centre[1] + shift_y)
+                    cost = stroke_cost(distance, outline_at(base, common, turn + offset * FINE_TURN, moved))
+                    if cost < best[0]:
+                        best = (cost, turn + offset * FINE_TURN, moved)
+        turns.append(float(best[1]) % 360.0)
+        settled.append(best[2])
+    mean_x = float(np.mean([centre[0] for centre in settled]))
+    mean_y = float(np.mean([centre[1] for centre in settled]))
+    layout = np.array([[(cx - mean_x) / common, -(cy - mean_y) / common] for cx, cy in settled])
+    outlines = [
+        outline_at(base, common, turn, centre) for centre, turn in zip(settled, turns)
+    ]
+    return common, layout, turns, explained_ink(ink, np.vstack(outlines))
+
+
 def unit_pattern(centres: list[tuple[float, float]], radius: float) -> np.ndarray:
     """Return the centres in copy radii, centred on their own centroid and turned upright.
 
@@ -293,21 +612,54 @@ def unit_pattern(centres: list[tuple[float, float]], radius: float) -> np.ndarra
     return points / radius
 
 
-def placed(problem_id: str, pattern: np.ndarray, scale: float, origin: str) -> Candidate:
-    """Return the pattern as a candidate of a problem, at one common scale."""
+def placed(
+    problem_id: str, pattern: np.ndarray, scale: float, origin: str, turns: list[float] | None = None
+) -> Candidate:
+    """Return the pattern as a candidate of a problem, at one common scale.
+
+    The turns travel with the reading: a square found at forty degrees is placed at forty
+    degrees, and only its scale and the anchors of the whole layout are the engine's to set.
+    """
     return Candidate(
         candidate_id=f"{problem_id}-figure",
         problem_id=problem_id,
         scale=scale,
         placements=tuple(
-            Placement(shape_id=f"s{index:03d}", x=float(x) * scale, y=float(y) * scale)
+            Placement(
+                shape_id=f"s{index:03d}",
+                x=float(x) * scale,
+                y=float(y) * scale,
+                rotation=0.0 if turns is None else float(turns[index]),
+            )
             for index, (x, y) in enumerate(pattern)
         ),
         origin=origin,
     )
 
 
-def fitted_scale(problem, pattern: np.ndarray) -> tuple[float, Candidate] | None:
+def settled_layout(
+    problem, pattern: np.ndarray, turns: list[float] | None
+) -> np.ndarray | None:
+    """Return a reading's layout with its copies pulled apart, or None when they cannot be.
+
+    A reading is never exact: two copies that touch in a drawing come back a fraction of a
+    pixel closer than touching, and the engine rejects that at every scale. The layout comes
+    back in copy sizes and a hair wider than it was, so the copies have room at every scale
+    the search will try.
+    """
+    seed = placed(problem.problem_id, pattern, SEED_SCALE, "source-derived-approximation", turns)
+    settled = repair_overlaps(
+        problem, seed, iterations=REPAIR_STEPS, origin="source-derived-approximation"
+    )
+    if not evaluate(problem, settled).valid:
+        return None
+    layout = np.array([[item.x / SEED_SCALE, item.y / SEED_SCALE] for item in settled.placements])
+    return layout * (1.0 + SEPARATION_SLACK)
+
+
+def fitted_scale(
+    problem, pattern: np.ndarray, turns: list[float] | None = None
+) -> tuple[float, Candidate] | None:
     """Return the largest scale the engine accepts for a reading, and its candidate.
 
     A reading is never exact: two copies that touch in a drawing come back a fraction of a
@@ -316,38 +668,55 @@ def fitted_scale(problem, pattern: np.ndarray) -> tuple[float, Candidate] | None
     picture into a valid arrangement at all -- and the growth is the engine's own operator,
     which bisects on the verdict it alone can give.
     """
-    seed = placed(problem.problem_id, pattern, SEED_SCALE, "source-derived-approximation")
-    settled = repair_overlaps(
-        problem, seed, iterations=REPAIR_STEPS, origin="source-derived-approximation"
-    )
-    if not evaluate(problem, settled).valid:
+    layout = settled_layout(problem, pattern, turns)
+    if layout is None:
         return None
-    # Back in copy radii, so the layout can be laid out again at any scale: the engine's
-    # scale is a property of the copies, and positions only mean something beside it.
-    layout = np.array(
-        [[item.x / SEED_SCALE, item.y / SEED_SCALE] for item in settled.placements]
-    ) * (1.0 + SEPARATION_SLACK)
-    grown = fit_layout_scale(
-        problem,
-        placed(problem.problem_id, layout, SEED_SCALE, "source-derived-approximation"),
-        origin="source-derived-approximation",
-    )
-    polished = polish(problem, grown, iterations=POLISH_STEPS, origin="source-derived-approximation")
-    if evaluate(problem, polished).valid and polished.scale >= grown.scale:
-        return polished.scale, polished
-    if not evaluate(problem, grown).valid:
+    # The engine scales a layout about the origin and never moves it, so the placement the
+    # drawing happens to give is searched over rather than trusted: the best of a coarse
+    # grid is worth several percent of the value, and the local search then refines it.
+    best: Candidate | None = None
+    for shift_x in np.arange(-SHIFT_REACH, SHIFT_REACH + 1e-9, SHIFT_STEP):
+        for shift_y in np.arange(-SHIFT_REACH, SHIFT_REACH + 1e-9, SHIFT_STEP):
+            shifted = layout + np.array([shift_x, shift_y])
+            seed = placed(problem.problem_id, shifted, SEED_SCALE, "source-derived-approximation", turns)
+            if not evaluate(problem, seed).valid:
+                continue
+            grown = fit_layout_scale(problem, seed, origin="source-derived-approximation")
+            if best is None or grown.scale > best.scale:
+                best = grown
+    if best is None:
         return None
-    return grown.scale, grown
+    polished = polish(problem, best, iterations=POLISH_STEPS, origin="source-derived-approximation")
+    if evaluate(problem, polished).valid and polished.scale >= best.scale:
+        best = polished
+    if not evaluate(problem, best).valid:
+        return None
+    return best.scale, best
 
 
 def reconstruct(problem, path: Path, count: int) -> tuple[Candidate, dict[str, Any]] | None:
-    """Return a candidate read off one drawing, and what the reading found."""
-    reading = detect_discs(path, count)
-    if reading is None:
-        return None
-    radius, centres, explained = reading
-    pattern = unit_pattern(centres, radius)
-    fitted = fitted_scale(problem, pattern)
+    """Return a candidate read off one drawing, and what the reading found.
+
+    A figure of discs is read by its outlines, which are the same curve wherever they sit.
+    A figure of anything else is read by the regions its strokes enclose: a copy's inside is
+    a closed region and equal copies are equal regions, which is what a rotated square, a
+    pentagon or a tan has instead of an invariant outline. Both readings come back as a
+    layout in copy sizes and, for the second, the turn of every copy -- all the engine needs
+    to be asked what the arrangement is worth.
+    """
+    turns: list[float] | None = None
+    if bool(getattr(problem.shape, "is_circle", False)):
+        reading = detect_discs(path, count)
+        if reading is None:
+            return None
+        size, centres, explained = reading
+        pattern = unit_pattern(centres, size)
+    else:
+        copies = detect_copies(path, count, problem)
+        if copies is None:
+            return None
+        size, pattern, turns, explained = copies
+    fitted = fitted_scale(problem, pattern, turns)
     if fitted is None:
         return None
     scale, candidate = fitted
@@ -359,14 +728,16 @@ def reconstruct(problem, path: Path, count: int) -> tuple[Candidate, dict[str, A
         candidate_id=f"{problem.problem_id}-figure",
         metadata={
             "figure": path.name,
-            "detected_radius_px": radius,
+            "detected_size_px": round(size, 2),
+            "detected_turns": [] if turns is None else [round(turn, 2) for turn in turns],
             "explained_ink": round(explained, 4),
-            "detected_centres": [[round(cx, 2), round(cy, 2)] for cx, cy in centres],
-            "method": "Hough accumulator over stroke pixels, least-squares circle fit, "
-            "bisection on the engine's verdict, then a short local search",
+            "detected_layout": [[round(float(x), 3), round(float(y), 3)] for x, y in pattern],
+            "method": "copies found by their outlines (discs) or by the regions they enclose, "
+            "their turn from the fit or from the corners, then the engine's own scale fit "
+            "over a grid of placements and a local search",
         },
     )
-    return candidate, {"radius": radius, "scale": scale, "explained": explained}
+    return candidate, {"size": size, "scale": scale, "explained": explained}
 
 
 def cards(family: dict[str, Any]) -> list[tuple[int, dict[str, Any]]]:
@@ -423,7 +794,7 @@ def reconstruct_family(family: dict[str, Any], counts: list[int], *, refresh: bo
         save_candidate(candidate, ASSET.parent / "candidates" / f"approx-{slug}-{count}.json")
         written += 1
         print(
-            f"{slug} n={count}: radius {reading['radius']:.1f}px, ink {reading['explained']:.0%}, "
+            f"{slug} n={count}: size {reading['size']:.1f}px, ink {reading['explained']:.0%}, "
             f"scale {reading['scale']:.6g}, {'valid' if verdict.valid else 'invalid'}, "
             f"gap {gap if gap is None else round(gap, 6)}"
         )

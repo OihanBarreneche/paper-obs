@@ -1,39 +1,40 @@
 {
   "kind": "candidate",
-  "candidate_id": "c-21317f4b43",
+  "candidate_id": "circles-2-in-smallest-ellipse-figure",
   "problem_id": "circles-2-in-smallest-ellipse",
-  "scale": 0.8660553184268065,
+  "scale": 0.8658057339331025,
   "origin": "source-derived-approximation",
-  "generation": 1,
+  "generation": 2,
   "parents": [
-    "circles-2-in-smallest-ellipse-figure"
+    "c-dfa303f946"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": 0.8660639644485522,
-      "y": 0.00015865153916926536
+      "x": 0.8651783044572287,
+      "y": -0.0005873866382846891
     },
     {
       "shape_id": "s001",
-      "x": -0.8660639644485522,
-      "y": -0.00015865153916926536
+      "x": -0.8670204446316667,
+      "y": -7.836213268470579e-05
     }
   ],
   "metadata": {
     "figure": "cirinel-e2.gif",
-    "detected_radius_px": 58.04520074654964,
+    "detected_size_px": 58.05,
+    "detected_turns": [],
     "explained_ink": 0.6134,
-    "detected_centres": [
+    "detected_layout": [
       [
-        180.89,
-        71.08
+        0.999,
+        0.0
       ],
       [
-        64.9,
-        71.1
+        -0.999,
+        -0.0
       ]
     ],
-    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
   }
 }

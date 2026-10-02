@@ -1,0 +1,100 @@
+{
+  "kind": "candidate",
+  "candidate_id": "squares-7-in-smallest-triangle-figure",
+  "problem_id": "squares-7-in-smallest-triangle",
+  "scale": 0.1923175046516672,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-6da75c23af"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.040959421573404375,
+      "y": 0.2198005635047104,
+      "rotation": 354.2916182557646
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.12522339785664532,
+      "y": 0.01204179211254726,
+      "rotation": -1.6697346446130386
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.12093378511047023,
+      "y": 0.033184652687917586,
+      "rotation": -17.957523373476313
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.29222034646702055,
+      "y": -0.19185022768487428,
+      "rotation": 0.14686214802634723
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.09596180738760189,
+      "y": -0.1881236298980038,
+      "rotation": 357.96077566329274
+    },
+    {
+      "shape_id": "s005",
+      "x": 0.09732147912688653,
+      "y": -0.18961320669781376,
+      "rotation": -1.4763579384466903
+    },
+    {
+      "shape_id": "s006",
+      "x": 0.2904953860023804,
+      "y": -0.19009851458892477,
+      "rotation": -1.1905603423510582
+    }
+  ],
+  "metadata": {
+    "figure": "squintri-ts7.gif",
+    "detected_size_px": 25.5,
+    "detected_turns": [
+      358.0,
+      0.0,
+      0.0,
+      0.0,
+      358.0,
+      0.0,
+      0.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        0.0,
+        1.485
+      ],
+      [
+        -0.51,
+        0.445
+      ],
+      [
+        0.51,
+        0.445
+      ],
+      [
+        -1.549,
+        -0.594
+      ],
+      [
+        -0.51,
+        -0.594
+      ],
+      [
+        0.51,
+        -0.594
+      ],
+      [
+        1.549,
+        -0.594
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

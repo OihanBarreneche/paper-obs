@@ -1,0 +1,56 @@
+{
+  "kind": "candidate",
+  "candidate_id": "squares-3-in-smallest-pentagon-figure",
+  "problem_id": "squares-3-in-smallest-pentagon",
+  "scale": 0.5633019171551528,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-ebe2e26da4"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.40042196918449613,
+      "y": 0.20560598599828397,
+      "rotation": 36.99429200052395
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.3445618265792929,
+      "y": 0.13383201106316914,
+      "rotation": 27.650451705547226
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.06544645644082424,
+      "y": -0.3104086865381189,
+      "rotation": 26.419196709683412
+    }
+  ],
+  "metadata": {
+    "figure": "squinpen-3.gif",
+    "detected_size_px": 85.83,
+    "detected_turns": [
+      55.0,
+      36.0,
+      0.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -0.679,
+        0.345
+      ],
+      [
+        0.693,
+        0.327
+      ],
+      [
+        -0.014,
+        -0.671
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

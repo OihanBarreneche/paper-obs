@@ -2,45 +2,46 @@
   "kind": "candidate",
   "candidate_id": "circles-3-in-smallest-triangle-figure",
   "problem_id": "circles-3-in-smallest-triangle",
-  "scale": 0.18295103456238027,
+  "scale": 0.1829991500459073,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-7e673ca538"
+    "c-7d3d706b79"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": 0.18311951331393914,
-      "y": -0.10572410085216322
+      "x": 0.1830361747307186,
+      "y": -0.10567598515884845
     },
     {
       "shape_id": "s001",
-      "x": -0.18311951343316293,
-      "y": -0.10572410003243264
+      "x": -0.183036174896261,
+      "y": -0.10567598544557585
     },
     {
       "shape_id": "s002",
-      "x": 3.6245009727905364e-10,
-      "y": 0.21144820069264733
+      "x": -3.9683067152635466e-10,
+      "y": 0.21135196978514192
     }
   ],
   "metadata": {
     "figure": "cirintri-ct3.gif",
-    "detected_radius_px": 30.98177176926338,
+    "detected_size_px": 30.98,
+    "detected_turns": [],
     "explained_ink": 0.6176,
-    "detected_centres": [
+    "detected_layout": [
       [
-        120.05,
-        119.98
+        0.99,
+        -0.572
       ],
       [
-        58.7,
-        119.99
+        -0.99,
+        -0.572
       ],
       [
-        89.35,
-        66.8
+        -0.001,
+        1.145
       ]
     ],
     "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"

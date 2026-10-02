@@ -1,46 +1,47 @@
 {
   "kind": "candidate",
-  "candidate_id": "c-f50fc27317",
+  "candidate_id": "circles-3-in-smallest-tan-figure",
   "problem_id": "circles-3-in-smallest-tan",
-  "scale": 0.1767598577262523,
+  "scale": 0.18464269785023982,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-f47f73c6fe"
+    "c-f451edb4fb"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": -0.13763474834908118,
-      "y": -0.1395883545837704
+      "x": -0.14861048388135512,
+      "y": -0.1486906354830935
     },
     {
       "shape_id": "s001",
-      "x": -0.13050226721502736,
-      "y": 0.21385940838699344
+      "x": -0.14869063631510399,
+      "y": 0.22089976215547075
     },
     {
       "shape_id": "s002",
-      "x": 0.21581301395824254,
-      "y": -0.1324558726072644
+      "x": 0.22089976206331427,
+      "y": -0.14869063622294748
     }
   ],
   "metadata": {
     "figure": "cirintan-3.gif",
-    "detected_radius_px": 35.4647463968798,
+    "detected_size_px": 35.46,
+    "detected_turns": [],
     "explained_ink": 0.5873,
-    "detected_centres": [
+    "detected_layout": [
       [
-        35.13,
-        155.24
+        -0.66,
+        -0.657
       ],
       [
-        35.05,
-        85.3
+        -0.663,
+        1.315
       ],
       [
-        105.48,
-        155.3
+        1.323,
+        -0.659
       ]
     ],
     "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"

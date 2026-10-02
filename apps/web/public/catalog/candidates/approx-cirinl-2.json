@@ -1,0 +1,40 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-2-in-smallest-l-figure",
+  "problem_id": "circles-2-in-smallest-l",
+  "scale": 0.24995987150214163,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-015ff2efe2"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.16670679516452505,
+      "y": 0.33337346183119165
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.16670679516452505,
+      "y": -0.16670679516452505
+    }
+  ],
+  "metadata": {
+    "figure": "cirinl-3.gif",
+    "detected_size_px": 41.65,
+    "detected_turns": [],
+    "explained_ink": 0.4396,
+    "detected_layout": [
+      [
+        0.001,
+        0.996
+      ],
+      [
+        -0.001,
+        -0.996
+      ]
+    ],
+    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+  }
+}

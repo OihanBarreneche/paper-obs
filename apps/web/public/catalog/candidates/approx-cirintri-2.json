@@ -2,36 +2,37 @@
   "kind": "candidate",
   "candidate_id": "circles-2-in-smallest-triangle-figure",
   "problem_id": "circles-2-in-smallest-triangle",
-  "scale": 0.16080744124456797,
+  "scale": 0.18280035712355586,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-3e66d1a4fd"
+    "c-175fd7be13"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": 0.16124143187048492,
-      "y": -0.023543066225456617
+      "x": 0.18338049431974535,
+      "y": -0.10587477833638101
     },
     {
       "shape_id": "s001",
-      "x": -0.16037241051233628,
-      "y": -0.022037776339303032
+      "x": -0.18256032633771788,
+      "y": -0.10587477747125705
     }
   ],
   "metadata": {
     "figure": "cirintri-ct2.gif",
-    "detected_radius_px": 30.94953010089013,
+    "detected_size_px": 30.95,
+    "detected_turns": [],
     "explained_ink": 0.5026,
-    "detected_centres": [
+    "detected_layout": [
       [
-        120.09,
-        120.05
+        0.993,
+        0.0
       ],
       [
-        58.65,
-        120.07
+        -0.993,
+        -0.0
       ]
     ],
     "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"

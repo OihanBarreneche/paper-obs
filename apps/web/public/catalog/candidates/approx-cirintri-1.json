@@ -2,27 +2,28 @@
   "kind": "candidate",
   "candidate_id": "circles-1-in-smallest-triangle-figure",
   "problem_id": "circles-1-in-smallest-triangle",
-  "scale": 0.2886751355130597,
+  "scale": 0.28866560846168815,
   "origin": "source-derived-approximation",
-  "generation": 1,
+  "generation": 2,
   "parents": [
-    "circles-1-in-smallest-triangle-figure"
+    "c-b9abb30505"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": 0.0,
-      "y": 0.0
+      "x": -3.130769516324616e-10,
+      "y": 1.905280851447778e-05
     }
   ],
   "metadata": {
     "figure": "cirintri-ct1.gif",
-    "detected_radius_px": 48.69694624383656,
+    "detected_size_px": 48.7,
+    "detected_turns": [],
     "explained_ink": 0.4424,
-    "detected_centres": [
+    "detected_layout": [
       [
-        89.01,
-        102.12
+        0.0,
+        0.0
       ]
     ],
     "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"

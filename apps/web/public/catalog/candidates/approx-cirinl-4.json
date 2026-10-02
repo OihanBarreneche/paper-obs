@@ -1,55 +1,56 @@
 {
   "kind": "candidate",
-  "candidate_id": "c-ed449015dc",
+  "candidate_id": "circles-4-in-smallest-l-figure",
   "problem_id": "circles-4-in-smallest-l",
-  "scale": 0.18834826078072475,
+  "scale": 0.18844592000728477,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-9e467c425d"
+    "c-de88c6d1a1"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": -0.10731952106308257,
-      "y": 0.39463081972808567
+      "x": -0.10537016795522608,
+      "y": 0.39486437187384726
     },
     {
       "shape_id": "s001",
-      "x": 0.3949850725526085,
-      "y": -0.10501492744739144
+      "x": 0.39480076674501297,
+      "y": -0.10594457426404663
     },
     {
       "shape_id": "s002",
-      "x": 0.03863352290159149,
-      "y": -0.22831840588594193
+      "x": 0.038107427358734874,
+      "y": -0.22819893716100892
     },
     {
       "shape_id": "s003",
-      "x": -0.22831840588594193,
-      "y": 0.03752842278994315
+      "x": -0.22822074679361293,
+      "y": 0.038545134434756094
     }
   ],
   "metadata": {
     "figure": "cirinl-4.gif",
-    "detected_radius_px": 31.519693895922615,
+    "detected_size_px": 31.52,
+    "detected_turns": [],
     "explained_ink": 0.5936,
-    "detected_centres": [
+    "detected_layout": [
       [
-        51.54,
-        30.92
+        -0.677,
+        1.945
       ],
       [
-        134.14,
-        113.57
+        1.944,
+        -0.678
       ],
       [
-        75.07,
-        134.37
+        0.07,
+        -1.338
       ],
       [
-        30.7,
-        89.97
+        -1.338,
+        0.071
       ]
     ],
     "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"

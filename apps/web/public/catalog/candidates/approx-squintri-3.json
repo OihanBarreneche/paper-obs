@@ -1,0 +1,56 @@
+{
+  "kind": "candidate",
+  "candidate_id": "squares-3-in-smallest-triangle-figure",
+  "problem_id": "squares-3-in-smallest-triangle",
+  "scale": 0.30178590106439074,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-91712e0774"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.027044169257190675,
+      "y": 0.20294415860499654,
+      "rotation": 65.10732875679861
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.20316328087629967,
+      "y": -0.08406292672767166,
+      "rotation": 118.53215053350715
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.16125905207095856,
+      "y": -0.12280576214553508,
+      "rotation": 355.5684147248087
+    }
+  ],
+  "metadata": {
+    "figure": "squintri-ts3.gif",
+    "detected_size_px": 41.24,
+    "detected_turns": [
+      29.0,
+      59.0,
+      358.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -0.113,
+        0.696
+      ],
+      [
+        0.667,
+        -0.255
+      ],
+      [
+        -0.554,
+        -0.441
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}
