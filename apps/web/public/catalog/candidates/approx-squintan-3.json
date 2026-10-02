@@ -1,0 +1,56 @@
+{
+  "kind": "candidate",
+  "candidate_id": "squares-3-in-smallest-tan-figure",
+  "problem_id": "squares-3-in-smallest-tan",
+  "scale": 0.32385378352025196,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-2ca1869ace"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.16303026544657517,
+      "y": 0.17158149123244482,
+      "rotation": -2.871836073136965
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.16316398071104452,
+      "y": -0.15917567559259294,
+      "rotation": 357.0
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.16756565298041698,
+      "y": -0.1567177920619695,
+      "rotation": -5.231304966464712
+    }
+  ],
+  "metadata": {
+    "figure": "squintan-3.gif",
+    "detected_size_px": 62.5,
+    "detected_turns": [
+      0.0,
+      357.0,
+      0.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        -0.333,
+        0.683
+      ],
+      [
+        -0.349,
+        -0.349
+      ],
+      [
+        0.683,
+        -0.333
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

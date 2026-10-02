@@ -64,6 +64,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+import shapely
 
 from paper_obs.catalog_verification import (
     ASSET,
@@ -132,10 +133,10 @@ SHIFT_REACH = 0.7
 SHIFT_STEP = 0.2
 
 #: How far below its record a reading may land and still be kept, as a fraction of the
-#: record. A drawing read this badly -- the copies found at the wrong radius, say -- is not
-#: a starting point at all, and keeping it would only make the catalogue's own badges
-#: worse. Nothing is written for it, and the run says so.
-MAX_GAP = 0.5
+#: record. A reading a tenth of a record away is a starting point; further off, a grid the
+#: engine builds itself is as good, and keeping the file would only make the catalogue's own
+#: badges worse. Nothing is written for such a reading, and the run says so.
+MAX_GAP = 0.1
 
 
 def module_message(error: ImportError) -> str:
@@ -506,8 +507,49 @@ def symmetry_period(problem) -> float:
     return 360.0 / float(sides) if sides else 360.0
 
 
+#: The share of a region's longest hull edge that an edge must reach to be read as one of
+#: the copy's own sides rather than as one of the staircase steps a raster leaves behind.
+EDGE_SHARE = 0.3
+
+
+def template_edge_offset(base: np.ndarray) -> float:
+    """Return the angle of one copy's first edge at no turn, in degrees."""
+    return math.degrees(math.atan2(float(base[1][1] - base[0][1]), float(base[1][0] - base[0][0])))
+
+
+def region_turn(pixels: np.ndarray, period: float, offset: float) -> float:
+    """Return a region's turn, read from the directions of its own sides.
+
+    The stroke fit alone is flat for a regular polygon: near the right turn, moving the
+    outline a couple of degrees leaves it about as close to the same strokes, so it can
+    settle ten degrees away and cost the arrangement a tenth of its value. The region's own
+    outline is not flat. A copy's inside is that copy shrunk by the stroke that draws it, so
+    its sides are parallel to the copy's sides, and the long edges of its convex hull are
+    those sides: their directions, folded into one symmetry period, say where the copy is
+    turned. Short edges are the staircase a raster leaves on a slanted side and are dropped.
+    """
+    hull = shapely.geometry.MultiPoint(pixels).convex_hull
+    ring = np.asarray(hull.exterior.coords, dtype=float)
+    if len(ring) < 4:
+        return 0.0
+    edges = np.diff(ring, axis=0)
+    lengths = np.hypot(edges[:, 0], edges[:, 1])
+    keep = lengths >= EDGE_SHARE * float(lengths.max())
+    if not bool(keep.any()):
+        return 0.0
+    angles = np.degrees(np.arctan2(edges[keep, 1], edges[keep, 0]))
+    folded = np.radians([(angle - offset) % period for angle in angles])
+    turn = math.degrees(math.atan2(float(np.sin(folded).mean()), float(np.cos(folded).mean())))
+    return turn % period
+
+
 def fit_copy(
-    distance: np.ndarray, base: np.ndarray, centre: tuple[float, float], guess: float, period: float
+    distance: np.ndarray,
+    base: np.ndarray,
+    centre: tuple[float, float],
+    guess: float,
+    period: float,
+    turn_guess: float | None = None,
 ) -> tuple[float, float]:
     """Return the size and the turn whose outline lies best on the drawing's strokes.
 
@@ -516,10 +558,13 @@ def fit_copy(
     turned by ninety degrees being the same square, and nothing else being.
     """
     best: tuple[float, float, float] | None = None
-    for turn in np.arange(0.0, period, COARSE_TURN):
-        cost = copy_cost(distance, base, guess, turn, centre)
-        if best is None or cost < best[0]:
-            best = (cost, guess, float(turn))
+    if turn_guess is not None:
+        best = (copy_cost(distance, base, guess, turn_guess, centre), guess, float(turn_guess))
+    else:
+        for turn in np.arange(0.0, period, COARSE_TURN):
+            cost = copy_cost(distance, base, guess, turn, centre)
+            if best is None or cost < best[0]:
+                best = (cost, guess, float(turn))
     span = SIZE_WINDOW / 3.0
     for _ in range(4):
         _, size, turn = best  # type: ignore[misc]
@@ -578,7 +623,13 @@ def detect_copies(
     # which is the direction a reading should err in. The fit is kept for the turns, where
     # the strokes are what tells one copy's corner from another's.
     common = float(np.median(guesses))
-    fitted = [fit_copy(distance, base, centre, guess, period) for centre, guess in zip(centres, guesses)]
+    offset = template_edge_offset(base)
+    fitted: list[tuple[float, float]] = []
+    for region, centre, guess in zip(group, centres, guesses):
+        # A regular polygon's own sides say where it is turned, and the strokes refine it
+        # from there; a shape with no rotational symmetry has no such reading to start from.
+        turn_guess = region_turn(region, period, offset) if period < 360.0 else None
+        fitted.append(fit_copy(distance, base, centre, guess, period, turn_guess))
     turns: list[float] = []
     settled: list[tuple[float, float]] = []
     for centre, (_, turn) in zip(centres, fitted):

@@ -2,46 +2,46 @@
   "kind": "candidate",
   "candidate_id": "squares-4-in-smallest-pentagon-figure",
   "problem_id": "squares-4-in-smallest-pentagon",
-  "scale": 0.5338679786159305,
+  "scale": 0.5295732416651258,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-5d9fad6486"
+    "c-0ce30b4b0a"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": -0.000867236363729273,
-      "y": 0.4726186014911943,
-      "rotation": 44.75332068401902
+      "x": 0.013329628645050705,
+      "y": 0.46377015544384087,
+      "rotation": 44.43088815712283
     },
     {
       "shape_id": "s001",
-      "x": -0.37716807845019473,
-      "y": 0.08876620884564983,
-      "rotation": 43.9723466478797
+      "x": -0.38951380474628866,
+      "y": 0.1011355048199759,
+      "rotation": 41.67174984465301
     },
     {
       "shape_id": "s002",
-      "x": 0.36962879856267505,
-      "y": 0.07454225594674625,
-      "rotation": 46.49358641347259
+      "x": 0.3564123417337206,
+      "y": 0.04832675963562978,
+      "rotation": 44.42145998149265
     },
     {
       "shape_id": "s003",
-      "x": -0.019578169198991,
-      "y": -0.3098101494405092,
-      "rotation": 44.0
+      "x": -0.043830310850230834,
+      "y": -0.3122156404418288,
+      "rotation": 43.36927457144421
     }
   ],
   "metadata": {
     "figure": "squinpen-4.gif",
     "detected_size_px": 78.3,
     "detected_turns": [
-      44.0,
-      44.0,
-      44.0,
-      44.0
+      44.43,
+      44.23,
+      44.42,
+      43.37
     ],
     "explained_ink": 1.0,
     "detected_layout": [
