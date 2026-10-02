@@ -142,31 +142,25 @@ function FamilyPicture({ preview, shape, container, tinted }: { preview: FamilyP
 const MEASURES: Record<string, string> = { r: "radius", s: "side", a: "area" };
 
 /**
- * The one line a card wears when the interface can open the figure's own arrangement.
+ * The one line a card wears when a configuration was put together for it.
  *
- * "Approximate" says one thing and one thing only: the arrangement was read off the page's
- * own drawing, so it looks like the published figure. A score near a record is not a
- * resemblance -- a grid the engine builds can score close to a record while looking nothing
- * like it -- so a seed, or a construction the lab holds, wears nothing however well it
- * scores. How close the value came is stated in decimals rather than in percent: a percent
- * depends on the size of the numbers, a shared third decimal does not.
+ * A card the engine opens on a grid wears nothing, whatever its score: an arrangement
+ * nothing has placed is not a record and cannot be an approach to one either. A card that
+ * carries a configuration of its own says where that configuration came from: the source's
+ * own arrangement is the record itself, and anything the lab put together -- a reading of
+ * the published figure, a seed, a construction -- is an approach to the record, stated in
+ * decimals rather than in percent because a percent depends on the size of the numbers and
+ * a shared third decimal does not.
  */
 function verificationBadge(
   entry: VerificationEntry | null, t: (english: string) => string,
 ): { text: string; level: string } | null {
-  if (entry === null || entry.level === "beaten" || entry.level === "none") return null;
-  if (entry.published) {
-    return entry.level === "exact"
-      ? { text: `✓ ${t("Exact configuration")}`, level: "exact" }
-      : { text: `≈ ${t("Published configuration")} · ${t("printed too coarsely to confirm the record")}`, level: "near" };
-  }
-  if (entry.source_kind !== "approx") return null;
+  if (entry === null || entry.candidate === null || entry.level === "beaten") return null;
+  if (entry.published) return { text: `✓ ${t("Exact configuration")}`, level: "exact" };
   const decimals = entry.decimals ?? 0;
-  const agreement = decimals > 0
-    ? ` · ${t("agrees to")} ${decimals} ${t(decimalWords(decimals))}`
-    : "";
+  const precision = decimals > 0 ? ` · ${decimals} ${t(decimalWords(decimals))}` : "";
   return {
-    text: `≈ ${t("Approximate configuration")}${agreement}`,
+    text: `≈ ${t("Approach to the record")}${precision}`,
     level: decimals >= 3 ? "near" : "approx",
   };
 }
@@ -512,7 +506,7 @@ export function ProfileNavigator(props: Props) {
         <header><div><span className="eyebrow">PAPER OBS / {t("LIBRARY")}</span><h2>{t("Add a problem")}</h2>
           <p>{t("Choose a family, a configuration, then add it to the active category.")}</p>
           {/* One note replaces the per-card grid badge the owner found repetitive. */}
-          <p className="profile-catalog__placements" role="note">{t("The exact placements are not known for most instances: the lab opens them on a grid construction, not on the published record, except where a card says the engine confirmed the published arrangement.")}</p>
+          <p className="profile-catalog__placements" role="note">{t("The exact placements are not known for most instances: the lab opens those on a grid construction. A card that carries a badge instead holds a configuration of its own — taken from the source, or read off the published figure to approach the record visually — and the badge says how many decimals of that record it reaches.")}</p>
           <a className="profile-catalog__source" href={PACKING_INDEX} target="_blank" rel="noopener noreferrer">{t("Catalog source")}: Erich Friedman's Packing Center ↗</a></div>
           <button type="button" className="button" onClick={() => setCatalogOpen(false)}>{t("Close")}</button></header>
         <div className="profile-catalog__columns">
