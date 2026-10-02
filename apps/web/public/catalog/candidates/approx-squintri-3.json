@@ -2,42 +2,46 @@
   "kind": "candidate",
   "candidate_id": "squares-3-in-smallest-triangle-figure",
   "problem_id": "squares-3-in-smallest-triangle",
-  "scale": 0.30184761305722585,
+  "scale": 0.29851987734635127,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-89a55205d6"
+    "c-516bda2383"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": -0.027064098885880992,
-      "y": 0.20311634957614752,
-      "rotation": 64.92560808585763
+      "x": -0.16899605162123565,
+      "y": -0.11439832767509327,
+      "rotation": 349.53726397552015
     },
     {
       "shape_id": "s001",
-      "x": 0.2029679699454756,
-      "y": -0.08407819960127104,
-      "rotation": 118.47812918922011
+      "x": -0.011122371350536724,
+      "y": 0.2132506493065016,
+      "rotation": 50.25762605395923
     },
     {
       "shape_id": "s002",
-      "x": -0.16147508549819029,
-      "y": -0.12276222801253471,
-      "rotation": 355.5684147248087
+      "x": 0.17577860321228686,
+      "y": -0.12619346303300935,
+      "rotation": 4.4758524936977615
     }
   ],
   "metadata": {
     "figure": "squintri-ts3.gif",
     "detected_size_px": 41.24,
     "detected_turns": [
-      28.82,
-      58.95,
-      358.0
+      358.0,
+      29.0,
+      59.0
     ],
     "explained_ink": 1.0,
     "detected_layout": [
+      [
+        -0.554,
+        -0.441
+      ],
       [
         -0.113,
         0.696
@@ -45,10 +49,6 @@
       [
         0.667,
         -0.255
-      ],
-      [
-        -0.554,
-        -0.441
       ]
     ],
     "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"

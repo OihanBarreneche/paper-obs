@@ -1,0 +1,34 @@
+{
+  "kind": "candidate",
+  "candidate_id": "squares-1-in-smallest-tan-figure",
+  "problem_id": "squares-1-in-smallest-tan",
+  "scale": 0.497523776812182,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-2a35a9718e"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.08239511487166733,
+      "y": -0.08197463762116214,
+      "rotation": 360.5044533871867
+    }
+  ],
+  "metadata": {
+    "figure": "squintan-1.gif",
+    "detected_size_px": 94.0,
+    "detected_turns": [
+      358.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        0.0,
+        -0.0
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

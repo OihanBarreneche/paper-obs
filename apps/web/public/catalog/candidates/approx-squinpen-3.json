@@ -2,53 +2,53 @@
   "kind": "candidate",
   "candidate_id": "squares-3-in-smallest-pentagon-figure",
   "problem_id": "squares-3-in-smallest-pentagon",
-  "scale": 0.5572799347428704,
+  "scale": 0.5715379307060234,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-b5701b79e0"
+    "c-683400ea96"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": -0.3572484019923314,
-      "y": 0.17398616727914246,
-      "rotation": 22.10641482548467
+      "x": -0.010958540411447119,
+      "y": -0.2844537763514,
+      "rotation": -42.47986890825897
     },
     {
       "shape_id": "s001",
-      "x": 0.3569295421845588,
-      "y": 0.14261194308684405,
-      "rotation": 32.51341013650991
+      "x": -0.40140443081505206,
+      "y": 0.19601212257004405,
+      "rotation": 37.60928991085232
     },
     {
       "shape_id": "s002",
-      "x": -0.07718081643861793,
-      "y": -0.34197026459719865,
-      "rotation": 16.48187212102848
+      "x": 0.3881958001687115,
+      "y": 0.1702049827437168,
+      "rotation": 52.78221744617106
     }
   ],
   "metadata": {
     "figure": "squinpen-3.gif",
     "detected_size_px": 85.83,
     "detected_turns": [
-      53.03,
-      32.51,
-      0.0
+      0.0,
+      55.0,
+      36.0
     ],
     "explained_ink": 1.0,
     "detected_layout": [
       [
+        -0.014,
+        -0.671
+      ],
+      [
         -0.679,
-        0.356
+        0.345
       ],
       [
         0.693,
-        0.315
-      ],
-      [
-        -0.014,
-        -0.671
+        0.327
       ]
     ],
     "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"

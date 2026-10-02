@@ -2,18 +2,18 @@
   "kind": "candidate",
   "candidate_id": "squares-1-in-smallest-triangle-figure",
   "problem_id": "squares-1-in-smallest-triangle",
-  "scale": 0.4620466304495809,
+  "scale": 0.4620383440316238,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-fc6c508291"
+    "c-dd8278be65"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": 0.0014375631464814288,
-      "y": -0.053929743092908516,
-      "rotation": 0.9300214492083123
+      "x": 0.001439973836332713,
+      "y": -0.05392410315799951,
+      "rotation": 0.9333882075132296
     }
   ],
   "metadata": {

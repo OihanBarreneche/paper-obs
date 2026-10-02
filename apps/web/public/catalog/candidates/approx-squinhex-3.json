@@ -2,53 +2,53 @@
   "kind": "candidate",
   "candidate_id": "squares-3-in-smallest-hexagon-figure",
   "problem_id": "squares-3-in-smallest-hexagon",
-  "scale": 0.6721521492267573,
+  "scale": 0.6799244145889802,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-328d1e7887"
+    "c-f315dcb3d2"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": 0.13884528525006576,
-      "y": 0.5254591186405829,
-      "rotation": 60.440307771064916
+      "x": -0.41345674652448217,
+      "y": -0.20668578436528745,
+      "rotation": 25.25108390343945
     },
     {
       "shape_id": "s001",
-      "x": -0.4433224300182292,
-      "y": -0.19344576117543222,
-      "rotation": 107.46889601289593
+      "x": 0.025187724294556183,
+      "y": 0.44801754751112466,
+      "rotation": 119.51388591790823
     },
     {
       "shape_id": "s002",
-      "x": 0.3262636258764285,
-      "y": -0.2746789708083849,
-      "rotation": -3.085887184888028
+      "x": 0.3942301960424864,
+      "y": -0.2510070964254924,
+      "rotation": 5.118659608703142
     }
   ],
   "metadata": {
     "figure": "squinhex-3.png",
     "detected_size_px": 49.23,
     "detected_turns": [
-      41.56,
       42.24,
-      21.25
+      68.0,
+      8.0
     ],
     "explained_ink": 1.0,
     "detected_layout": [
       [
-        0.349,
-        1.312
+        -1.316,
+        -0.362
       ],
       [
-        -1.309,
-        -0.375
+        0.343,
+        1.325
       ],
       [
-        0.96,
-        -0.936
+        0.973,
+        -0.963
       ]
     ],
     "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"

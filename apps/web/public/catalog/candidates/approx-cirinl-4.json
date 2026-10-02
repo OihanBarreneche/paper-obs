@@ -6,7 +6,7 @@
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-de88c6d1a1"
+    "c-237692e35a"
   ],
   "placements": [
     {
@@ -53,6 +53,6 @@
         0.071
       ]
     ],
-    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
   }
 }

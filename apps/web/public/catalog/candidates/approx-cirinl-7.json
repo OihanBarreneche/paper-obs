@@ -1,0 +1,85 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-7-in-smallest-l-figure",
+  "problem_id": "circles-7-in-smallest-l",
+  "scale": 0.1472333456542875,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-fbfaeaa3f0"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.06391729056504042,
+      "y": 0.2250286846899695
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.26937342702857775,
+      "y": 0.01396395715237232
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.018249247401543604,
+      "y": -0.05944154936353513
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.26936527487145256,
+      "y": 0.4360967055249903
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.1886010067463867,
+      "y": -0.26936620501652964
+    },
+    {
+      "shape_id": "s005",
+      "x": 0.4360999869835532,
+      "y": -0.06396400565758743
+    },
+    {
+      "shape_id": "s006",
+      "x": 0.22499134209944252,
+      "y": -0.2693963686468902
+    }
+  ],
+  "metadata": {
+    "figure": "cirinl-7.gif",
+    "detected_size_px": 24.67,
+    "detected_turns": [],
+    "explained_ink": 0.6715,
+    "detected_layout": [
+      [
+        -0.323,
+        1.492
+      ],
+      [
+        -1.702,
+        0.072
+      ],
+      [
+        0.23,
+        -0.401
+      ],
+      [
+        -1.709,
+        2.919
+      ],
+      [
+        -1.145,
+        -1.82
+      ],
+      [
+        3.036,
+        -0.44
+      ],
+      [
+        1.613,
+        -1.822
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

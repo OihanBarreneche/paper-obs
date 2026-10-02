@@ -667,6 +667,9 @@ def region_turn(pixels: np.ndarray, period: float, offset: float) -> float:
     turned. Short edges are the staircase a raster leaves on a slanted side and are dropped.
     """
     hull = shapely.geometry.MultiPoint(pixels).convex_hull
+    if not hasattr(hull, "exterior"):
+        # A region of one or two pixels has no outline to speak of; it is not a copy.
+        return 0.0
     ring = np.asarray(hull.exterior.coords, dtype=float)
     if len(ring) < 4:
         return 0.0
@@ -831,6 +834,45 @@ def placed(
     )
 
 
+def spread_positions(candidate: Candidate, factor: float) -> Candidate:
+    """Return the same arrangement with its anchors moved apart about their own centre."""
+    count = len(candidate.placements)
+    mean_x = sum(item.x for item in candidate.placements) / count
+    mean_y = sum(item.y for item in candidate.placements) / count
+    return candidate.derive(
+        placements=tuple(
+            replace(item, x=mean_x + (item.x - mean_x) * factor, y=mean_y + (item.y - mean_y) * factor)
+            for item in candidate.placements
+        )
+    )
+
+
+def spread_until_valid(problem, candidate: Candidate) -> Candidate | None:
+    """Return a reading spread just enough for its copies to stop overlapping, or None.
+
+    A reading's centres are estimates: half a pixel on a copy twenty pixels across is two per
+    cent, and two copies that touch in the drawing come back overlapping. Overlap does not
+    shrink with the arrangement, so the engine rejects the candidate at every scale and the
+    whole drawing goes unread. Spreading the layout about its own centre until the copies
+    touch again is the smallest correction that makes it an arrangement at all; the container
+    the reading then needs is that much larger, which is the honest price of reading centres
+    off a bitmap.
+    """
+    if evaluate(problem, candidate).valid:
+        return candidate
+    low, high = 1.0, 1.5
+    if not evaluate(problem, spread_positions(candidate, high)).valid:
+        return None
+    for _ in range(28):
+        middle = (low + high) / 2.0
+        if evaluate(problem, spread_positions(candidate, middle)).valid:
+            high = middle
+        else:
+            low = middle
+    spread = spread_positions(candidate, high)
+    return spread if evaluate(problem, spread).valid else None
+
+
 def settled_layout(
     problem, pattern: np.ndarray, turns: list[float] | None
 ) -> np.ndarray | None:
@@ -846,7 +888,9 @@ def settled_layout(
         problem, seed, iterations=REPAIR_STEPS, origin="source-derived-approximation"
     )
     if not evaluate(problem, settled).valid:
-        return None
+        settled = spread_until_valid(problem, settled)
+        if settled is None:
+            return None
     layout = np.array([[item.x / SEED_SCALE, item.y / SEED_SCALE] for item in settled.placements])
     return layout * (1.0 + SEPARATION_SLACK)
 
@@ -912,7 +956,9 @@ def derived_reading(
         problem, unit, iterations=REPAIR_STEPS, origin="source-derived-approximation"
     )
     if not evaluate(problem, settled).valid:
-        return None
+        settled = spread_until_valid(problem, settled)
+        if settled is None:
+            return None
     unit = settled
     polished = polish(
         problem, unit, iterations=polish_steps(unit.n_shapes), origin="source-derived-approximation"

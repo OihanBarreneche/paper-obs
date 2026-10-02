@@ -1,0 +1,67 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-5-in-smallest-triangle-figure",
+  "problem_id": "circles-5-in-smallest-triangle",
+  "scale": 0.13377532224031063,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-7827582ab2"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.26773384522381494,
+      "y": -0.15466832054193422
+    },
+    {
+      "shape_id": "s001",
+      "x": -7.318132359588558e-05,
+      "y": -0.15477161234369918
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.26788010659084877,
+      "y": -0.15477161136062265
+    },
+    {
+      "shape_id": "s003",
+      "x": 0.13330587123945342,
+      "y": 0.07890708109784741
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.13426115320765528,
+      "y": 0.07725065893822723
+    }
+  ],
+  "metadata": {
+    "figure": "cirintri-ct5.gif",
+    "detected_size_px": 22.84,
+    "detected_turns": [],
+    "explained_ink": 0.6644,
+    "detected_layout": [
+      [
+        1.965,
+        -0.681
+      ],
+      [
+        -0.001,
+        -0.679
+      ],
+      [
+        -1.969,
+        -0.68
+      ],
+      [
+        0.988,
+        1.018
+      ],
+      [
+        -0.983,
+        1.021
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

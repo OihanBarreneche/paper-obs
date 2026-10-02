@@ -2,25 +2,25 @@
   "kind": "candidate",
   "candidate_id": "squares-1-in-smallest-pentagon-figure",
   "problem_id": "squares-1-in-smallest-pentagon",
-  "scale": 1.0662869202858531,
+  "scale": 1.0653830645228823,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-9e22ce9c0b"
+    "c-d81b814cc1"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": 0.0020990188939303536,
-      "y": 0.09333867054940441,
-      "rotation": 45.48802604538708
+      "x": 0.050922925196268135,
+      "y": -0.07578200253742598,
+      "rotation": 351.78039308642553
     }
   ],
   "metadata": {
     "figure": "squinpen-1.gif",
-    "detected_size_px": 156.96,
+    "detected_size_px": 94.07,
     "detected_turns": [
-      45.0
+      358.0
     ],
     "explained_ink": 1.0,
     "detected_layout": [

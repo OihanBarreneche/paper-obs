@@ -26,23 +26,23 @@
   },
   "totals": {
     "beaten": 1,
-    "below": 52,
-    "differs": 69,
+    "below": 90,
+    "differs": 118,
     "entries_catalog": 4245,
-    "entries_checked": 236,
+    "entries_checked": 326,
     "entries_unsupported": 89,
     "families_catalog": 107,
     "families_checked": 29,
     "families_unsupported": 3,
-    "level:approx": 53,
+    "level:approx": 57,
     "level:beaten": 1,
     "level:exact": 2,
-    "level:far": 108,
+    "level:far": 193,
     "level:near": 67,
-    "level:none": 5,
-    "reproduces": 109,
-    "unmeasurable": 5,
-    "without_coordinates": 3920
+    "level:none": 6,
+    "reproduces": 111,
+    "unmeasurable": 6,
+    "without_coordinates": 3830
   },
   "families": {
     "cirincir": {
@@ -1358,6 +1358,23 @@
           "candidate": "/catalog/candidates/approx-cirintri-4.json",
           "checked_on": "2026-10-02"
         },
+        "5": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 7.464,
+          "unit": "container side",
+          "measured": 7.475220266736678,
+          "gap": -0.0015032511705088242,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintri-5.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintri-5.json",
+          "checked_on": "2026-10-02"
+        },
         "6": {
           "status": "differs",
           "level": "approx",
@@ -1373,6 +1390,40 @@
             "approx-cirintri-6.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-6.json",
+          "checked_on": "2026-10-02"
+        },
+        "7": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 8.928,
+          "unit": "container side",
+          "measured": 8.981851656093642,
+          "gap": -0.006031771515864864,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintri-7.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintri-7.json",
+          "checked_on": "2026-10-02"
+        },
+        "8": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 9.293,
+          "unit": "container side",
+          "measured": 9.327925664262676,
+          "gap": -0.0037582765805096625,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintri-8.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintri-8.json",
           "checked_on": "2026-10-02"
         },
         "9": {
@@ -1394,19 +1445,104 @@
         },
         "10": {
           "status": "differs",
-          "level": "approx",
+          "level": "far",
           "precise": false,
           "published": false,
           "promoted": false,
           "value": 9.464,
           "unit": "container side",
-          "measured": 9.472956931613373,
-          "gap": -0.0009464213454535747,
+          "measured": 9.474412415095964,
+          "gap": -0.0011002129222277544,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-10.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-10.json",
+          "checked_on": "2026-10-02"
+        },
+        "11": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 10.73,
+          "unit": "container side",
+          "measured": 10.745648065565884,
+          "gap": -0.0014583472102408144,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintri-11.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintri-11.json",
+          "checked_on": "2026-10-02"
+        },
+        "12": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 10.928,
+          "unit": "container side",
+          "measured": 10.942772198949854,
+          "gap": -0.001351775160125624,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintri-12.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintri-12.json",
+          "checked_on": "2026-10-02"
+        },
+        "13": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 11.406,
+          "unit": "container side",
+          "measured": 11.454428944541645,
+          "gap": -0.004245918336107695,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintri-13.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintri-13.json",
+          "checked_on": "2026-10-02"
+        },
+        "14": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 11.464,
+          "unit": "container side",
+          "measured": 11.495974099394548,
+          "gap": -0.00278908752569327,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintri-14.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintri-14.json",
+          "checked_on": "2026-10-02"
+        },
+        "15": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 11.464,
+          "unit": "container side",
+          "measured": 11.485323244408779,
+          "gap": -0.0018600178304935717,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintri-15.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintri-15.json",
           "checked_on": "2026-10-02"
         }
       }
@@ -1431,8 +1567,8 @@
           "promoted": false,
           "value": 2.154,
           "unit": "container side",
-          "measured": 2.1642837196474725,
-          "gap": -0.004774243104676204,
+          "measured": 2.1643225349529778,
+          "gap": -0.004792263209367622,
           "source_kind": "approx",
           "files": [
             "approx-squintri-1.json"
@@ -1465,8 +1601,8 @@
           "promoted": false,
           "value": 3.232,
           "unit": "container side",
-          "measured": 3.3129299578407294,
-          "gap": -0.02504020972794839,
+          "measured": 3.3498606822746733,
+          "gap": -0.0364667952582528,
           "source_kind": "approx",
           "files": [
             "approx-squintri-3.json"
@@ -1482,8 +1618,8 @@
           "promoted": false,
           "value": 4.154,
           "unit": "container side",
-          "measured": 4.194102708202216,
-          "gap": -0.009653998122825243,
+          "measured": 4.172498009177537,
+          "gap": -0.004453059503499538,
           "source_kind": "approx",
           "files": [
             "approx-squintri-4.json"
@@ -1499,8 +1635,8 @@
           "promoted": false,
           "value": 5.154,
           "unit": "container side",
-          "measured": 5.199734687756261,
-          "gap": -0.008873629754804272,
+          "measured": 5.212784467472583,
+          "gap": -0.011405600984203236,
           "source_kind": "approx",
           "files": [
             "approx-squintri-7.json"
@@ -1516,8 +1652,8 @@
           "promoted": false,
           "value": 5.464,
           "unit": "container side",
-          "measured": 5.964069489724009,
-          "gap": -0.09152077044729295,
+          "measured": 5.887758492663042,
+          "gap": -0.07755462896468544,
           "source_kind": "approx",
           "files": [
             "approx-squintri-10.json"
@@ -1533,8 +1669,8 @@
           "promoted": false,
           "value": 6.154,
           "unit": "container side",
-          "measured": 6.33792513620545,
-          "gap": -0.029887087456199207,
+          "measured": 6.534191113608582,
+          "gap": -0.061779511473607746,
           "source_kind": "approx",
           "files": [
             "approx-squintri-11.json"
@@ -1542,21 +1678,21 @@
           "candidate": "/catalog/candidates/approx-squintri-11.json",
           "checked_on": "2026-10-02"
         },
-        "15": {
+        "12": {
           "status": "differs",
           "level": "far",
           "precise": false,
           "published": false,
           "promoted": false,
-          "value": 6.464,
+          "value": 6.301,
           "unit": "container side",
-          "measured": 7.080705352077239,
-          "gap": -0.09540614976442434,
+          "measured": 6.898016018820296,
+          "gap": -0.0947494078432464,
           "source_kind": "approx",
           "files": [
-            "approx-squintri-15.json"
+            "approx-squintri-12.json"
           ],
-          "candidate": "/catalog/candidates/approx-squintri-15.json",
+          "candidate": "/catalog/candidates/approx-squintri-12.json",
           "checked_on": "2026-10-02"
         },
         "16": {
@@ -1567,8 +1703,8 @@
           "promoted": false,
           "value": 7.154,
           "unit": "container side",
-          "measured": 7.277957544012873,
-          "gap": -0.017327026001240264,
+          "measured": 7.384987317568614,
+          "gap": -0.03228785540517388,
           "source_kind": "approx",
           "files": [
             "approx-squintri-16.json"
@@ -1584,8 +1720,8 @@
           "promoted": false,
           "value": 8.1547,
           "unit": "container side",
-          "measured": 8.447631945077296,
-          "gap": -0.03592185427756948,
+          "measured": 8.470752489275014,
+          "gap": -0.03875709581897731,
           "source_kind": "approx",
           "files": [
             "approx-squintri-22.json"
@@ -1593,21 +1729,21 @@
           "candidate": "/catalog/candidates/approx-squintri-22.json",
           "checked_on": "2026-10-02"
         },
-        "26": {
-          "status": "below",
+        "25": {
+          "status": "differs",
           "level": "far",
-          "precise": true,
+          "precise": false,
           "published": false,
           "promoted": false,
-          "value": 8.60805,
+          "value": 8.464,
           "unit": "container side",
-          "measured": 9.423850796207264,
-          "gap": -0.09477184684188208,
+          "measured": 9.29156238235237,
+          "gap": -0.09777438354824773,
           "source_kind": "approx",
           "files": [
-            "approx-squintri-26.json"
+            "approx-squintri-25.json"
           ],
-          "candidate": "/catalog/candidates/approx-squintri-26.json",
+          "candidate": "/catalog/candidates/approx-squintri-25.json",
           "checked_on": "2026-10-02"
         },
         "28": {
@@ -1618,8 +1754,8 @@
           "promoted": false,
           "value": 8.773,
           "unit": "container side",
-          "measured": 9.40570412563094,
-          "gap": -0.07211947174637419,
+          "measured": 9.616800342639639,
+          "gap": -0.09618150491731896,
           "source_kind": "approx",
           "files": [
             "approx-squintri-28.json"
@@ -1635,8 +1771,8 @@
           "promoted": false,
           "value": 9.154,
           "unit": "container side",
-          "measured": 9.32061431278545,
-          "gap": -0.018201257678113397,
+          "measured": 9.464852610797912,
+          "gap": -0.03395811784989211,
           "source_kind": "approx",
           "files": [
             "approx-squintri-29.json"
@@ -1659,23 +1795,6 @@
             "record-squintri-38.json"
           ],
           "candidate": null,
-          "checked_on": "2026-10-02"
-        },
-        "46": {
-          "status": "differs",
-          "level": "far",
-          "precise": false,
-          "published": false,
-          "promoted": false,
-          "value": 11.1547,
-          "unit": "container side",
-          "measured": 12.249461834127162,
-          "gap": -0.09814354793290381,
-          "source_kind": "approx",
-          "files": [
-            "approx-squintri-46.json"
-          ],
-          "candidate": "/catalog/candidates/approx-squintri-46.json",
           "checked_on": "2026-10-02"
         }
       }
@@ -3128,8 +3247,8 @@
           "promoted": false,
           "value": 0.936,
           "unit": "container side",
-          "measured": 0.9378338803329944,
-          "gap": -0.001959273860036714,
+          "measured": 0.9386295251913327,
+          "gap": -0.0028093217856117922,
           "source_kind": "approx",
           "files": [
             "approx-squinpen-1.json"
@@ -3145,8 +3264,8 @@
           "promoted": false,
           "value": 1.695,
           "unit": "container side",
-          "measured": 1.7944302991303664,
-          "gap": -0.05866094343974418,
+          "measured": 1.7496651512957249,
+          "gap": -0.032250826723141474,
           "source_kind": "approx",
           "files": [
             "approx-squinpen-3.json"
@@ -3162,8 +3281,8 @@
           "promoted": false,
           "value": 1.861,
           "unit": "container side",
-          "measured": 1.8883129307208224,
-          "gap": -0.01467648077421946,
+          "measured": 1.881198367888924,
+          "gap": -0.01085350235836858,
           "source_kind": "approx",
           "files": [
             "approx-squinpen-4.json"
@@ -3630,30 +3749,13 @@
           "promoted": false,
           "value": 1.36602,
           "unit": "container side",
-          "measured": 1.487758390939311,
-          "gap": -0.08911903994034572,
+          "measured": 1.4707517167250246,
+          "gap": -0.07666924109824495,
           "source_kind": "approx",
           "files": [
             "approx-squinhex-3.json"
           ],
           "candidate": "/catalog/candidates/approx-squinhex-3.json",
-          "checked_on": "2026-10-02"
-        },
-        "4": {
-          "status": "below",
-          "level": "far",
-          "precise": true,
-          "published": false,
-          "promoted": false,
-          "value": 1.51967,
-          "unit": "container side",
-          "measured": 1.6592461740445021,
-          "gap": -0.09184637062289974,
-          "source_kind": "approx",
-          "files": [
-            "approx-squinhex-4.json"
-          ],
-          "candidate": "/catalog/candidates/approx-squinhex-4.json",
           "checked_on": "2026-10-02"
         }
       }
@@ -3804,6 +3906,40 @@
           "candidate": "/catalog/candidates/approx-cirintan-8.json",
           "checked_on": "2026-10-02"
         },
+        "9": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 9.071,
+          "unit": "container side",
+          "measured": 9.122876605565457,
+          "gap": -0.005718951115142473,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintan-9.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintan-9.json",
+          "checked_on": "2026-10-02"
+        },
+        "10": {
+          "status": "differs",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 9.414,
+          "unit": "container side",
+          "measured": 9.421275487207337,
+          "gap": -0.0007728369669999475,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintan-10.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintan-10.json",
+          "checked_on": "2026-10-02"
+        },
         "11": {
           "status": "differs",
           "level": "far",
@@ -3812,13 +3948,81 @@
           "promoted": false,
           "value": 10.059,
           "unit": "container side",
-          "measured": 10.083279938249756,
-          "gap": -0.0024137526841392725,
+          "measured": 10.084664223533169,
+          "gap": -0.0025513692745968448,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-11.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-11.json",
+          "checked_on": "2026-10-02"
+        },
+        "12": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 10.422,
+          "unit": "container side",
+          "measured": 10.439587212799173,
+          "gap": -0.001687508424407287,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintan-12.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintan-12.json",
+          "checked_on": "2026-10-02"
+        },
+        "13": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 10.798,
+          "unit": "container side",
+          "measured": 10.825279344247422,
+          "gap": -0.0025263330475478545,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintan-13.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintan-13.json",
+          "checked_on": "2026-10-02"
+        },
+        "14": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 11.141,
+          "unit": "container side",
+          "measured": 11.159622599227598,
+          "gap": -0.0016715374946232747,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintan-14.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintan-14.json",
+          "checked_on": "2026-10-02"
+        },
+        "15": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 11.414,
+          "unit": "container side",
+          "measured": 11.42582009939367,
+          "gap": -0.0010355790602479716,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintan-15.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintan-15.json",
           "checked_on": "2026-10-02"
         },
         "16": {
@@ -3829,13 +4033,98 @@
           "promoted": false,
           "value": 11.89198,
           "unit": "container side",
-          "measured": 11.954556317864826,
-          "gap": -0.0052620604697305225,
+          "measured": 11.960095650057065,
+          "gap": -0.005727864498348027,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-16.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-16.json",
+          "checked_on": "2026-10-02"
+        },
+        "17": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 12.155,
+          "unit": "container side",
+          "measured": 12.24117547130849,
+          "gap": -0.007089713805716981,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintan-17.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintan-17.json",
+          "checked_on": "2026-10-02"
+        },
+        "18": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 12.542,
+          "unit": "container side",
+          "measured": 12.611305890019624,
+          "gap": -0.005525904163580304,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintan-18.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintan-18.json",
+          "checked_on": "2026-10-02"
+        },
+        "19": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 12.798,
+          "unit": "container side",
+          "measured": 12.821762705519822,
+          "gap": -0.001856751486155785,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintan-19.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintan-19.json",
+          "checked_on": "2026-10-02"
+        },
+        "20": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 13.092,
+          "unit": "container side",
+          "measured": 13.118482987087415,
+          "gap": -0.0020228373882840013,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintan-20.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintan-20.json",
+          "checked_on": "2026-10-02"
+        },
+        "21": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 13.414,
+          "unit": "container side",
+          "measured": 13.429780955628829,
+          "gap": -0.0011764541247076834,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirintan-21.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirintan-21.json",
           "checked_on": "2026-10-02"
         }
       }
@@ -3850,6 +4139,23 @@
         "kind": "figure"
       },
       "entries": {
+        "1": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 2.0,
+          "unit": "container side",
+          "measured": 2.0099541903451694,
+          "gap": -0.004977095172584711,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-1.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-1.json",
+          "checked_on": "2026-10-02"
+        },
         "3": {
           "status": "differs",
           "level": "far",
@@ -3858,13 +4164,625 @@
           "promoted": false,
           "value": 3.0,
           "unit": "container side",
-          "measured": 3.087813238215467,
-          "gap": -0.029271079405155682,
+          "measured": 3.0731845452792483,
+          "gap": -0.02439484842641611,
           "source_kind": "approx",
           "files": [
             "approx-squintan-3.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-3.json",
+          "checked_on": "2026-10-02"
+        },
+        "5": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 4.0,
+          "unit": "container side",
+          "measured": 4.035910088633731,
+          "gap": -0.008977522158432727,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-5.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-5.json",
+          "checked_on": "2026-10-02"
+        },
+        "6": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 4.0,
+          "unit": "container side",
+          "measured": 4.079674323516221,
+          "gap": -0.01991858087905518,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-6.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-6.json",
+          "checked_on": "2026-10-02"
+        },
+        "9": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 4.949,
+          "unit": "container side",
+          "measured": 5.028224541948859,
+          "gap": -0.016008191947637723,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-9.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-9.json",
+          "checked_on": "2026-10-02"
+        },
+        "10": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 5.0,
+          "unit": "container side",
+          "measured": 5.238857053011404,
+          "gap": -0.04777141060228072,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-10.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-10.json",
+          "checked_on": "2026-10-02"
+        },
+        "11": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 5.414,
+          "unit": "container side",
+          "measured": 5.533264757157096,
+          "gap": -0.022028954037143774,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-11.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-11.json",
+          "checked_on": "2026-10-02"
+        },
+        "13": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 5.828,
+          "unit": "container side",
+          "measured": 5.88379644955591,
+          "gap": -0.009573858880561047,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-13.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-13.json",
+          "checked_on": "2026-10-02"
+        },
+        "14": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 6.0,
+          "unit": "container side",
+          "measured": 6.1366251051631435,
+          "gap": -0.02277085086052392,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-14.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-14.json",
+          "checked_on": "2026-10-02"
+        },
+        "15": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 6.0,
+          "unit": "container side",
+          "measured": 6.164042727379029,
+          "gap": -0.02734045456317154,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-15.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-15.json",
+          "checked_on": "2026-10-02"
+        },
+        "16": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 6.363,
+          "unit": "container side",
+          "measured": 6.485049841257045,
+          "gap": -0.019181178886852897,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-16.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-16.json",
+          "checked_on": "2026-10-02"
+        },
+        "17": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 6.414,
+          "unit": "container side",
+          "measured": 6.559701716404153,
+          "gap": -0.022716201497373502,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-17.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-17.json",
+          "checked_on": "2026-10-02"
+        },
+        "18": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 6.828,
+          "unit": "container side",
+          "measured": 6.868282510647672,
+          "gap": -0.005899606128833051,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-18.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-18.json",
+          "checked_on": "2026-10-02"
+        },
+        "20": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 7.0,
+          "unit": "container side",
+          "measured": 7.071422223928445,
+          "gap": -0.010203174846920682,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-20.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-20.json",
+          "checked_on": "2026-10-02"
+        },
+        "21": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 7.0,
+          "unit": "container side",
+          "measured": 7.1990849149600695,
+          "gap": -0.02844070213715279,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-21.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-21.json",
+          "checked_on": "2026-10-02"
+        },
+        "22": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 7.363,
+          "unit": "container side",
+          "measured": 7.545078611017452,
+          "gap": -0.024728862015136695,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-22.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-22.json",
+          "checked_on": "2026-10-02"
+        },
+        "23": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 7.414,
+          "unit": "container side",
+          "measured": 7.501103232043078,
+          "gap": -0.011748480178456706,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-23.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-23.json",
+          "checked_on": "2026-10-02"
+        },
+        "24": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 7.707,
+          "unit": "container side",
+          "measured": 8.177632044691864,
+          "gap": -0.06106553064640764,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-24.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-24.json",
+          "checked_on": "2026-10-02"
+        },
+        "25": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 7.778,
+          "unit": "container side",
+          "measured": 7.993480355328086,
+          "gap": -0.027703825575737518,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-25.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-25.json",
+          "checked_on": "2026-10-02"
+        },
+        "30": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 8.41421,
+          "unit": "container side",
+          "measured": 8.967013279791175,
+          "gap": -0.06569877383511633,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-30.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-30.json",
+          "checked_on": "2026-10-02"
+        },
+        "31": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 8.48528,
+          "unit": "container side",
+          "measured": 8.942997227665183,
+          "gap": -0.0539425013276148,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-31.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-31.json",
+          "checked_on": "2026-10-02"
+        },
+        "32": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 8.77817,
+          "unit": "container side",
+          "measured": 9.140668512936912,
+          "gap": -0.04129545371494434,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-32.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-32.json",
+          "checked_on": "2026-10-02"
+        },
+        "33": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 8.82843,
+          "unit": "container side",
+          "measured": 9.2737436602591,
+          "gap": -0.050440866638700135,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-33.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-33.json",
+          "checked_on": "2026-10-02"
+        },
+        "34": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 8.94975,
+          "unit": "container side",
+          "measured": 9.440882744781327,
+          "gap": -0.054876699883385206,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-34.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-34.json",
+          "checked_on": "2026-10-02"
+        },
+        "35": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 9.0,
+          "unit": "container side",
+          "measured": 9.382082426028553,
+          "gap": -0.04245360289206149,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-35.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-35.json",
+          "checked_on": "2026-10-02"
+        },
+        "36": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 9.0,
+          "unit": "container side",
+          "measured": 9.488642762398925,
+          "gap": -0.05429364026654721,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-36.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-36.json",
+          "checked_on": "2026-10-02"
+        },
+        "37": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 9.24264,
+          "unit": "container side",
+          "measured": 9.853123594712281,
+          "gap": -0.06605078145554534,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-37.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-37.json",
+          "checked_on": "2026-10-02"
+        },
+        "38": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 9.41421,
+          "unit": "container side",
+          "measured": 10.069234080770597,
+          "gap": -0.06957823128765944,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-38.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-38.json",
+          "checked_on": "2026-10-02"
+        },
+        "39": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 9.41421,
+          "unit": "container side",
+          "measured": 9.636953856944654,
+          "gap": -0.02366038753593274,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-39.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-39.json",
+          "checked_on": "2026-10-02"
+        },
+        "40": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 9.77817,
+          "unit": "container side",
+          "measured": 10.40289793368715,
+          "gap": -0.06389006671873682,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-40.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-40.json",
+          "checked_on": "2026-10-02"
+        },
+        "41": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 9.82843,
+          "unit": "container side",
+          "measured": 10.30415985631848,
+          "gap": -0.04840344351218644,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-41.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-41.json",
+          "checked_on": "2026-10-02"
+        },
+        "42": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 9.82843,
+          "unit": "container side",
+          "measured": 10.450399544313209,
+          "gap": -0.06328269564042352,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-42.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-42.json",
+          "checked_on": "2026-10-02"
+        },
+        "43": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 9.89949,
+          "unit": "container side",
+          "measured": 10.528922217443236,
+          "gap": -0.06358228731411783,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-43.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-43.json",
+          "checked_on": "2026-10-02"
+        },
+        "45": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 10.0,
+          "unit": "container side",
+          "measured": 10.839133170811788,
+          "gap": -0.08391331708117881,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-45.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-45.json",
+          "checked_on": "2026-10-02"
+        },
+        "46": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 10.24264,
+          "unit": "container side",
+          "measured": 10.88907114026293,
+          "gap": -0.06311177003808881,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-46.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-46.json",
+          "checked_on": "2026-10-02"
+        },
+        "47": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 10.41421,
+          "unit": "container side",
+          "measured": 11.30143307804752,
+          "gap": -0.08519350752937757,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-47.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-47.json",
+          "checked_on": "2026-10-02"
+        },
+        "48": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 10.41421,
+          "unit": "container side",
+          "measured": 11.03613496331899,
+          "gap": -0.059718880579418786,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-48.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-48.json",
+          "checked_on": "2026-10-02"
+        },
+        "49": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 10.6066,
+          "unit": "container side",
+          "measured": 11.263894632363364,
+          "gap": -0.06197034227399579,
+          "source_kind": "approx",
+          "files": [
+            "approx-squintan-49.json"
+          ],
+          "candidate": "/catalog/candidates/approx-squintan-49.json",
           "checked_on": "2026-10-02"
         }
       }
@@ -3964,6 +4882,23 @@
           "candidate": "/catalog/candidates/approx-cirinl-6.json",
           "checked_on": "2026-10-02"
         },
+        "7": {
+          "status": "differs",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 6.787,
+          "unit": "container side",
+          "measured": 6.791939662554829,
+          "gap": -0.0007278123699468142,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-7.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-7.json",
+          "checked_on": "2026-10-02"
+        },
         "8": {
           "status": "differs",
           "level": "far",
@@ -4006,13 +4941,421 @@
           "promoted": false,
           "value": 7.628,
           "unit": "container side",
-          "measured": 7.703412185961503,
-          "gap": -0.009886233083574085,
+          "measured": 7.707336199237461,
+          "gap": -0.010400655379845416,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-10.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-10.json",
+          "checked_on": "2026-10-02"
+        },
+        "11": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 7.863,
+          "unit": "container side",
+          "measured": 7.879309454817697,
+          "gap": -0.002074202571244686,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-11.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-11.json",
+          "checked_on": "2026-10-02"
+        },
+        "12": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 8.0,
+          "unit": "container side",
+          "measured": 8.006684863565107,
+          "gap": -0.0008356079456384169,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-12.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-12.json",
+          "checked_on": "2026-10-02"
+        },
+        "13": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 8.812,
+          "unit": "container side",
+          "measured": 8.828614812323728,
+          "gap": -0.0018854757516714544,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-13.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-13.json",
+          "checked_on": "2026-10-02"
+        },
+        "14": {
+          "status": "differs",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 9.085,
+          "unit": "container side",
+          "measured": 9.092282719117911,
+          "gap": -0.0008016201560715595,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-14.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-14.json",
+          "checked_on": "2026-10-02"
+        },
+        "15": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 9.412,
+          "unit": "container side",
+          "measured": 9.561617050883719,
+          "gap": -0.015896414246038864,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-15.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-15.json",
+          "checked_on": "2026-10-02"
+        },
+        "16": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 9.635,
+          "unit": "container side",
+          "measured": 9.77512345294856,
+          "gap": -0.014543171037733218,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-16.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-16.json",
+          "checked_on": "2026-10-02"
+        },
+        "17": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 10.00425,
+          "unit": "container side",
+          "measured": 10.10125660032558,
+          "gap": -0.009696539003481504,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-17.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-17.json",
+          "checked_on": "2026-10-02"
+        },
+        "18": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 10.27388,
+          "unit": "container side",
+          "measured": 10.400668432803785,
+          "gap": -0.012340852025114675,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-18.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-18.json",
+          "checked_on": "2026-10-02"
+        },
+        "19": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 10.46489,
+          "unit": "container side",
+          "measured": 10.510067459589603,
+          "gap": -0.004317050593900425,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-19.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-19.json",
+          "checked_on": "2026-10-02"
+        },
+        "20": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 10.61664,
+          "unit": "container side",
+          "measured": 10.725477288772613,
+          "gap": -0.010251575712524144,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-20.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-20.json",
+          "checked_on": "2026-10-02"
+        },
+        "21": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 10.82564,
+          "unit": "container side",
+          "measured": 11.007063570928038,
+          "gap": -0.016758692412461328,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-21.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-21.json",
+          "checked_on": "2026-10-02"
+        },
+        "22": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 10.89927,
+          "unit": "container side",
+          "measured": 11.141373773753779,
+          "gap": -0.02221284303937598,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-22.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-22.json",
+          "checked_on": "2026-10-02"
+        },
+        "23": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 11.21781,
+          "unit": "container side",
+          "measured": 11.463626127244707,
+          "gap": -0.021913022884565418,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-23.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-23.json",
+          "checked_on": "2026-10-02"
+        },
+        "24": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 11.41224,
+          "unit": "container side",
+          "measured": 11.700579218686721,
+          "gap": -0.02526578644391643,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-24.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-24.json",
+          "checked_on": "2026-10-02"
+        },
+        "25": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 11.7127,
+          "unit": "container side",
+          "measured": 11.98872420031107,
+          "gap": -0.02356623155302112,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-25.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-25.json",
+          "checked_on": "2026-10-02"
+        },
+        "26": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 11.86038,
+          "unit": "container side",
+          "measured": 11.971398253481505,
+          "gap": -0.009360429723289274,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-26.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-26.json",
+          "checked_on": "2026-10-02"
+        },
+        "27": {
+          "status": "reproduces",
+          "level": "approx",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 12.0,
+          "unit": "container side",
+          "measured": 12.007991561097919,
+          "gap": -0.000665963424826573,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-27.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-27.json",
+          "checked_on": "2026-10-02"
+        },
+        "28": {
+          "status": "differs",
+          "level": "far",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 12.4968,
+          "unit": "container side",
+          "measured": 12.64810219774024,
+          "gap": -0.012107275281691277,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-28.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-28.json",
+          "checked_on": "2026-10-02"
+        },
+        "29": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 12.67553,
+          "unit": "container side",
+          "measured": 12.92838175442551,
+          "gap": -0.019948022246447306,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-29.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-29.json",
+          "checked_on": "2026-10-02"
+        },
+        "30": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 12.94284,
+          "unit": "container side",
+          "measured": 13.211605940577503,
+          "gap": -0.020765607901936687,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-30.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-30.json",
+          "checked_on": "2026-10-02"
+        },
+        "31": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 13.12408,
+          "unit": "container side",
+          "measured": 13.466271212912588,
+          "gap": -0.026073539090937316,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-31.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-31.json",
+          "checked_on": "2026-10-02"
+        },
+        "32": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 13.30282,
+          "unit": "container side",
+          "measured": 13.697437777583591,
+          "gap": -0.02966421988597836,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-32.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-32.json",
+          "checked_on": "2026-10-02"
+        },
+        "33": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 13.52754,
+          "unit": "container side",
+          "measured": 13.746256823130969,
+          "gap": -0.01616826290153039,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-33.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-33.json",
+          "checked_on": "2026-10-02"
+        },
+        "34": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 13.72415,
+          "unit": "container side",
+          "measured": 14.081296720921637,
+          "gap": -0.026023230649740586,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-34.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-34.json",
           "checked_on": "2026-10-02"
         },
         "35": {
@@ -4023,13 +5366,149 @@
           "promoted": false,
           "value": 13.8677,
           "unit": "container side",
-          "measured": 13.898902162014654,
-          "gap": -0.0022499882471249404,
+          "measured": 13.917642460637738,
+          "gap": -0.0036013513875941374,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-35.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-35.json",
+          "checked_on": "2026-10-02"
+        },
+        "36": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 14.01152,
+          "unit": "container side",
+          "measured": 14.545726076537793,
+          "gap": -0.03812620447587359,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-36.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-36.json",
+          "checked_on": "2026-10-02"
+        },
+        "37": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 14.10954,
+          "unit": "container side",
+          "measured": 14.553663196612073,
+          "gap": -0.03147680198022556,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-37.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-37.json",
+          "checked_on": "2026-10-02"
+        },
+        "38": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 14.23736,
+          "unit": "container side",
+          "measured": 14.463274710885859,
+          "gap": -0.01586773888458662,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-38.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-38.json",
+          "checked_on": "2026-10-02"
+        },
+        "39": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 14.30561,
+          "unit": "container side",
+          "measured": 14.423024169724242,
+          "gap": -0.008207561210199488,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-39.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-39.json",
+          "checked_on": "2026-10-02"
+        },
+        "40": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 14.54974,
+          "unit": "container side",
+          "measured": 14.85059461759025,
+          "gap": -0.02067766280292639,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-40.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-40.json",
+          "checked_on": "2026-10-02"
+        },
+        "41": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 14.69163,
+          "unit": "container side",
+          "measured": 14.94519047972986,
+          "gap": -0.017258839198227807,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-41.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-41.json",
+          "checked_on": "2026-10-02"
+        },
+        "42": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 14.90788,
+          "unit": "container side",
+          "measured": 15.265655386987872,
+          "gap": -0.023999078808514103,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-42.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-42.json",
+          "checked_on": "2026-10-02"
+        },
+        "43": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 15.06571,
+          "unit": "container side",
+          "measured": 15.439722416338654,
+          "gap": -0.02482540924647127,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-43.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-43.json",
           "checked_on": "2026-10-02"
         },
         "44": {
@@ -4040,8 +5519,8 @@
           "promoted": false,
           "value": 15.2702,
           "unit": "container side",
-          "measured": 15.419511200955816,
-          "gap": -0.009777946651374221,
+          "measured": 15.485042016172768,
+          "gap": -0.014069364918125963,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-44.json"
@@ -4057,8 +5536,8 @@
           "promoted": false,
           "value": 15.43184,
           "unit": "container side",
-          "measured": 15.523778931644415,
-          "gap": -0.005957742669987227,
+          "measured": 15.684640320914477,
+          "gap": -0.016381735484198762,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-45.json"
@@ -4074,8 +5553,8 @@
           "promoted": false,
           "value": 15.6991,
           "unit": "container side",
-          "measured": 15.746605771511332,
-          "gap": -0.003026018785238153,
+          "measured": 15.779146947300832,
+          "gap": -0.005098823964484125,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-46.json"
@@ -4091,13 +5570,30 @@
           "promoted": false,
           "value": 15.85331,
           "unit": "container side",
-          "measured": 15.922735429316463,
-          "gap": -0.004379238740456234,
+          "measured": 15.998235072128047,
+          "gap": -0.009141628601727108,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-47.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-47.json",
+          "checked_on": "2026-10-02"
+        },
+        "48": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 15.98311,
+          "unit": "container side",
+          "measured": 16.281398415930944,
+          "gap": -0.018662726836701008,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-48.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-48.json",
           "checked_on": "2026-10-02"
         },
         "49": {
@@ -4108,13 +5604,30 @@
           "promoted": false,
           "value": 16.13179,
           "unit": "container side",
-          "measured": 16.184140047236337,
-          "gap": -0.003245148073235399,
+          "measured": 16.25163349692518,
+          "gap": -0.007429026594394136,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-49.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-49.json",
+          "checked_on": "2026-10-02"
+        },
+        "50": {
+          "status": "below",
+          "level": "far",
+          "precise": true,
+          "published": false,
+          "promoted": false,
+          "value": 16.30078,
+          "unit": "container side",
+          "measured": 17.014235793646808,
+          "gap": -0.04376819965957509,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinl-50.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinl-50.json",
           "checked_on": "2026-10-02"
         }
       }
@@ -4192,6 +5705,23 @@
             "approx-cirinel-2.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinel-2.json",
+          "checked_on": "2026-10-02"
+        },
+        "3": {
+          "status": "unmeasurable",
+          "level": "none",
+          "precise": false,
+          "published": false,
+          "promoted": false,
+          "value": 13.680531521726552,
+          "unit": "container area",
+          "measured": null,
+          "gap": null,
+          "source_kind": "approx",
+          "files": [
+            "approx-cirinel-3.json"
+          ],
+          "candidate": "/catalog/candidates/approx-cirinel-3.json",
           "checked_on": "2026-10-02"
         },
         "4": {

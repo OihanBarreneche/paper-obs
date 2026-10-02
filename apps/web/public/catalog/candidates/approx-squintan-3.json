@@ -2,49 +2,49 @@
   "kind": "candidate",
   "candidate_id": "squares-3-in-smallest-tan-figure",
   "problem_id": "squares-3-in-smallest-tan",
-  "scale": 0.32385378352025196,
+  "scale": 0.32539536277966474,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-2ca1869ace"
+    "c-2c3d7b2c2d"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": -0.16303026544657517,
-      "y": 0.17158149123244482,
-      "rotation": -2.871836073136965
+      "x": -0.16810657845454918,
+      "y": -0.167506493894091,
+      "rotation": 359.10028486836325
     },
     {
       "shape_id": "s001",
-      "x": -0.16316398071104452,
-      "y": -0.15917567559259294,
-      "rotation": 357.0
+      "x": -0.15772495083874621,
+      "y": 0.16335610242759335,
+      "rotation": -2.1123243458053764
     },
     {
       "shape_id": "s002",
-      "x": 0.16756565298041698,
-      "y": -0.1567177920619695,
-      "rotation": -5.231304966464712
+      "x": 0.1671744693202014,
+      "y": -0.1582934025715742,
+      "rotation": -4.337759886341567
     }
   ],
   "metadata": {
     "figure": "squintan-3.gif",
     "detected_size_px": 62.5,
     "detected_turns": [
-      0.0,
       357.0,
+      0.0,
       0.0
     ],
     "explained_ink": 1.0,
     "detected_layout": [
       [
-        -0.333,
-        0.683
-      ],
-      [
         -0.349,
         -0.349
+      ],
+      [
+        -0.333,
+        0.683
       ],
       [
         0.683,

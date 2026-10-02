@@ -2,62 +2,62 @@
   "kind": "candidate",
   "candidate_id": "circles-10-in-smallest-l-figure",
   "problem_id": "circles-10-in-smallest-l",
-  "scale": 0.1298126045783158,
+  "scale": 0.12974651347101437,
   "origin": "source-derived-approximation",
   "generation": 2,
   "parents": [
-    "c-6a45124bbc"
+    "c-0d01c930c1"
   ],
   "placements": [
     {
       "shape_id": "s000",
-      "x": 0.07629232379498456,
-      "y": -0.286697534714048
+      "x": 0.07661677339405575,
+      "y": -0.2867818013116427
     },
     {
       "shape_id": "s001",
-      "x": -0.04672601964786991,
-      "y": 0.1802868099473034
+      "x": -0.04668278477513423,
+      "y": 0.178572886822386
     },
     {
       "shape_id": "s002",
-      "x": -0.0830862700978339,
-      "y": -0.0817494607090143
+      "x": -0.08440758035640575,
+      "y": -0.08329276344772558
     },
     {
       "shape_id": "s003",
-      "x": -0.28685406208835085,
-      "y": 0.0796240760722428
+      "x": -0.28692015319565234,
+      "y": 0.07918145174974735
     },
     {
       "shape_id": "s004",
-      "x": 0.17797964881502826,
-      "y": -0.046898773027954734
+      "x": 0.1765341502187046,
+      "y": -0.0468757511210471
     },
     {
       "shape_id": "s005",
-      "x": 0.4427610610150635,
-      "y": -0.047113439988263985
+      "x": 0.4393666255945674,
+      "y": -0.04680359091041234
     },
     {
       "shape_id": "s006",
-      "x": -0.046869880887645446,
-      "y": 0.4431027658925081
+      "x": -0.04680359091041234,
+      "y": 0.4412895325938255
     },
     {
       "shape_id": "s007",
-      "x": -0.28646345244568794,
-      "y": 0.3405146127000135
+      "x": -0.28652974242292106,
+      "y": 0.33954452308089667
     },
     {
       "shape_id": "s008",
-      "x": 0.33764678212906846,
-      "y": -0.28621844549408354
+      "x": 0.33673185257405436,
+      "y": -0.28652974242292106
     },
     {
       "shape_id": "s009",
-      "x": -0.28528455723039936,
-      "y": -0.2845426003470575
+      "x": -0.28511779862739806,
+      "y": -0.28511779862739806
     }
   ],
   "metadata": {
@@ -107,6 +107,6 @@
         -2.191
       ]
     ],
-    "method": "Hough accumulator over stroke pixels, least-squares circle fit, bisection on the engine's verdict, then a short local search"
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
   }
 }

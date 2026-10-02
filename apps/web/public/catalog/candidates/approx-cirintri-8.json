@@ -1,0 +1,94 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-8-in-smallest-triangle-figure",
+  "problem_id": "circles-8-in-smallest-triangle",
+  "scale": 0.10720497096489724,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-1c4d58a3d2"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.10709749621406177,
+      "y": 0.17715224007138952
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.10786870274445408,
+      "y": 0.1757547357042722
+    },
+    {
+      "shape_id": "s002",
+      "x": -5.285749512965191e-06,
+      "y": 0.3629311720731188
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.3088328060424771,
+      "y": -0.18147016362991558
+    },
+    {
+      "shape_id": "s004",
+      "x": 0.3142682364947364,
+      "y": -0.18138822555412415
+    },
+    {
+      "shape_id": "s005",
+      "x": 0.008945255584113996,
+      "y": -0.18147016362991575
+    },
+    {
+      "shape_id": "s006",
+      "x": 0.16220179238677357,
+      "y": -0.03005572247263989
+    },
+    {
+      "shape_id": "s007",
+      "x": -0.14824391302947038,
+      "y": -0.03531130871505852
+    }
+  ],
+  "metadata": {
+    "figure": "cirintri-ct8.gif",
+    "detected_size_px": 18.46,
+    "detected_turns": [],
+    "explained_ink": 0.7244,
+    "detected_layout": [
+      [
+        0.975,
+        1.488
+      ],
+      [
+        -0.976,
+        1.492
+      ],
+      [
+        0.004,
+        3.167
+      ],
+      [
+        -2.875,
+        -1.78
+      ],
+      [
+        2.866,
+        -1.764
+      ],
+      [
+        -0.002,
+        -1.765
+      ],
+      [
+        1.422,
+        -0.423
+      ],
+      [
+        -1.414,
+        -0.415
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

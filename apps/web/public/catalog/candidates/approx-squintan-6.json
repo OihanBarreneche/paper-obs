@@ -1,0 +1,88 @@
+{
+  "kind": "candidate",
+  "candidate_id": "squares-6-in-smallest-tan-figure",
+  "problem_id": "squares-6-in-smallest-tan",
+  "scale": 0.2451176051568039,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-7b909b6070"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.041381909448323734,
+      "y": 0.046993320922481124,
+      "rotation": 362.4862600247246
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.20988106763860173,
+      "y": 0.04411794762711594,
+      "rotation": -0.39348729797586834
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.04127791704253123,
+      "y": -0.20617498354034428,
+      "rotation": 1.3027421016669596
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.20627402424506008,
+      "y": 0.29458168405943047,
+      "rotation": 2.1157767104988405
+    },
+    {
+      "shape_id": "s004",
+      "x": 0.2891618691267144,
+      "y": -0.200968099434655
+    },
+    {
+      "shape_id": "s005",
+      "x": -0.20864580644203914,
+      "y": -0.20288938638745593,
+      "rotation": 359.0
+    }
+  ],
+  "metadata": {
+    "figure": "squintan-6.gif",
+    "detected_size_px": 46.5,
+    "detected_turns": [
+      357.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      359.0
+    ],
+    "explained_ink": 1.0,
+    "detected_layout": [
+      [
+        0.324,
+        0.36
+      ],
+      [
+        -0.676,
+        0.339
+      ],
+      [
+        0.346,
+        -0.683
+      ],
+      [
+        -0.676,
+        1.35
+      ],
+      [
+        1.357,
+        -0.683
+      ],
+      [
+        -0.676,
+        -0.683
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

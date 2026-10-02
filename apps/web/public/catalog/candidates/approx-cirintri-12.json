@@ -1,0 +1,130 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-12-in-smallest-triangle-figure",
+  "problem_id": "circles-12-in-smallest-triangle",
+  "scale": 0.09138452138261337,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-ba81566966"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": -0.34171736664509317,
+      "y": -0.19729061321219946
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.15832630759404875,
+      "y": -0.19729061321219968
+    },
+    {
+      "shape_id": "s002",
+      "x": 0.34171736656547747,
+      "y": -0.19729061321219976
+    },
+    {
+      "shape_id": "s003",
+      "x": -0.15869944613713777,
+      "y": -0.1972906138999985
+    },
+    {
+      "shape_id": "s004",
+      "x": -1.7167188449484106e-05,
+      "y": 0.39455149198178147
+    },
+    {
+      "shape_id": "s005",
+      "x": -0.09166478648237932,
+      "y": 0.23581316001520633
+    },
+    {
+      "shape_id": "s006",
+      "x": -0.25027417737530777,
+      "y": -0.038906364090517
+    },
+    {
+      "shape_id": "s007",
+      "x": 0.09161717276827944,
+      "y": 0.05269254404933107
+    },
+    {
+      "shape_id": "s008",
+      "x": -0.000241667055924256,
+      "y": -0.10621012618739006
+    },
+    {
+      "shape_id": "s009",
+      "x": 0.25003535436279334,
+      "y": -0.0385052144535339
+    },
+    {
+      "shape_id": "s010",
+      "x": -0.09232033690378269,
+      "y": 0.053045293173576286
+    },
+    {
+      "shape_id": "s011",
+      "x": 0.09186786635483891,
+      "y": 0.23546141431487064
+    }
+  ],
+  "metadata": {
+    "figure": "cirintri-ct12.gif",
+    "detected_size_px": 15.76,
+    "detected_turns": [],
+    "explained_ink": 0.7824,
+    "detected_layout": [
+      [
+        -3.635,
+        -2.101
+      ],
+      [
+        1.699,
+        -2.102
+      ],
+      [
+        3.642,
+        -2.111
+      ],
+      [
+        -1.69,
+        -2.11
+      ],
+      [
+        -0.01,
+        4.201
+      ],
+      [
+        -0.973,
+        2.528
+      ],
+      [
+        -2.678,
+        -0.399
+      ],
+      [
+        0.97,
+        0.547
+      ],
+      [
+        0.011,
+        -1.124
+      ],
+      [
+        2.66,
+        -0.399
+      ],
+      [
+        -0.963,
+        0.543
+      ],
+      [
+        0.969,
+        2.528
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

@@ -305,3 +305,26 @@ def test_a_reading_of_copies_that_differ_in_size(tmp_path: Path):
     # The reading keeps each copy's own size: two squares side by side filling a unit square
     # have sides of a half each, and the objective adds them up.
     assert verdict.metrics["total_scale"] == pytest.approx(1.0, rel=0.15)
+
+def test_a_reading_that_came_back_overlapping_is_spread_until_it_packs():
+    """A centre read off a bitmap is an estimate; half a pixel can make two copies overlap."""
+    problem = square_container_problem()
+    corners = ((-1.0, -1.0), (1.0, -1.0), (-1.0, 1.0), (1.0, 1.0))
+    # Four unit squares read a tenth of a side too close: at any scale they overlap, and a
+    # derived container is rejected outright.
+    tight = Candidate(
+        "tight",
+        problem.problem_id,
+        1.0,
+        tuple(
+            Placement(f"s{index:03d}", x * 0.45, y * 0.45)
+            for index, (x, y) in enumerate(corners)
+        ),
+    )
+    assert not evaluate(problem, tight).valid
+    spread = catalog_approximation.spread_until_valid(problem, tight)
+    assert spread is not None
+    assert evaluate(problem, spread).valid
+    # The correction is the smallest that packs: the two-by-two block comes back at its own
+    # size, touching and no more.
+    assert spread.placements[3].x == pytest.approx(0.5, rel=0.02)

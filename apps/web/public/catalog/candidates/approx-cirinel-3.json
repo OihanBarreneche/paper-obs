@@ -1,0 +1,49 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-3-in-smallest-ellipse-figure",
+  "problem_id": "circles-3-in-smallest-ellipse",
+  "scale": 0.664459685291096,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-1d1480ef4e"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 1.2938972618920082,
+      "y": -0.00035728989546157983
+    },
+    {
+      "shape_id": "s001",
+      "x": 0.00027562651714066575,
+      "y": -0.30461014793773544
+    },
+    {
+      "shape_id": "s002",
+      "x": -1.2930856107235362,
+      "y": 0.0012741029271195938
+    }
+  ],
+  "metadata": {
+    "figure": "cirinel-e3.gif",
+    "detected_size_px": 42.17,
+    "detected_turns": [],
+    "explained_ink": 0.634,
+    "detected_layout": [
+      [
+        1.964,
+        0.111
+      ],
+      [
+        -0.001,
+        -0.221
+      ],
+      [
+        -1.963,
+        0.11
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}

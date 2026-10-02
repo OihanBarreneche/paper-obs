@@ -1,0 +1,103 @@
+{
+  "kind": "candidate",
+  "candidate_id": "circles-9-in-smallest-tan-figure",
+  "problem_id": "circles-9-in-smallest-tan",
+  "scale": 0.10961454848462435,
+  "origin": "source-derived-approximation",
+  "generation": 2,
+  "parents": [
+    "c-b327391a77"
+  ],
+  "placements": [
+    {
+      "shape_id": "s000",
+      "x": 0.09157477172241502,
+      "y": 0.08622617605032996
+    },
+    {
+      "shape_id": "s001",
+      "x": -0.22340444532887874,
+      "y": 0.08385856639971492
+    },
+    {
+      "shape_id": "s002",
+      "x": -0.22163707505885938,
+      "y": -0.22328916923651262
+    },
+    {
+      "shape_id": "s003",
+      "x": 0.09074884564027237,
+      "y": -0.22350537197448156
+    },
+    {
+      "shape_id": "s004",
+      "x": -0.2232172576136297,
+      "y": 0.3936079447031453
+    },
+    {
+      "shape_id": "s005",
+      "x": 0.24683827439819758,
+      "y": -0.06878971451206785
+    },
+    {
+      "shape_id": "s006",
+      "x": -0.06704028896987563,
+      "y": 0.23818725217412953
+    },
+    {
+      "shape_id": "s007",
+      "x": 0.40203373794046876,
+      "y": -0.22371878570749423
+    },
+    {
+      "shape_id": "s008",
+      "x": -0.06528727784254075,
+      "y": -0.06864159127716138
+    }
+  ],
+  "metadata": {
+    "figure": "cirintan-9.gif",
+    "detected_size_px": 21.1,
+    "detected_turns": [],
+    "explained_ink": 0.7315,
+    "detected_layout": [
+      [
+        0.779,
+        0.776
+      ],
+      [
+        -2.025,
+        0.776
+      ],
+      [
+        -2.029,
+        -2.027
+      ],
+      [
+        0.778,
+        -2.025
+      ],
+      [
+        -2.025,
+        3.576
+      ],
+      [
+        2.181,
+        -0.618
+      ],
+      [
+        -0.619,
+        2.182
+      ],
+      [
+        3.58,
+        -2.023
+      ],
+      [
+        -0.62,
+        -0.617
+      ]
+    ],
+    "method": "copies found by their outlines (discs) or by the regions they enclose, their turn from the fit or from the corners, then the engine's own scale fit over a grid of placements and a local search"
+  }
+}
