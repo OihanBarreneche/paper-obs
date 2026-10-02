@@ -227,10 +227,19 @@ const fieldsOf = (parameters: WorkflowParameterDoc[], saved: Record<string, unkn
     ];
     return [[parameter.name, parameter.type === "flag" ? String(value ? 1 : 0) : shown(value)]];
   }));
-const suggestedRunName = (workflowName: string, language: string): string =>
-  `${workflowName} · ${new Intl.DateTimeFormat(language === "fr" ? "fr-FR" : "en-GB", {
-    day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit",
-  }).format(new Date())}`;
+/** The small words a run name leaves out of the problem's name, in both interface languages. */
+const NAME_FILLER = new Set(["dans", "le", "la", "les", "l", "un", "une", "de", "des", "du", "d", "plus", "avec",
+  "in", "the", "a", "an", "with", "of"]);
+
+/**
+ * A run's default name: the workflow's code, then the problem's name as the reader sees it,
+ * without accents or small words, as in W1_5_pentagones_petit_carre.
+ */
+const suggestedRunName = (workflowName: string, problemName: string): string => {
+  const words = problemName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+    .split(/[^a-z0-9]+/).filter((word) => word !== "" && !NAME_FILLER.has(word));
+  return [workflowName.split("·")[0]!.trim(), ...words].join("_").slice(0, 100);
+};
 
 function stopExplanation(run: AgentRunDoc): string {
   if (run.status === "running") return "The run is still in progress. Inspecting a step does not interrupt it.";
@@ -310,7 +319,7 @@ export function RunWorkspace(props: Props) {
   const [toolsOpen, setToolsOpen] = useState(false);
   const [openTurn, setOpenTurn] = useState<number | null>(null);
   const [eventIndex, setEventIndex] = useState<number | null>(null);
-  const [generatedName, setGeneratedName] = useState(() => suggestedRunName(t(props.workflows[0]?.name ?? "Run"), language));
+  const [generatedName, setGeneratedName] = useState(() => suggestedRunName(props.workflows[0]?.name ?? "Run", t(props.problemName ?? "")));
   const [customName, setCustomName] = useState<string | null>(null);
   const [rerunOpen, setRerunOpen] = useState(false);
   const [rerunName, setRerunName] = useState("");
@@ -372,10 +381,10 @@ export function RunWorkspace(props: Props) {
 
   useEffect(() => {
     if (workflow) {
-      setGeneratedName(suggestedRunName(t(workflow.name), language));
+      setGeneratedName(suggestedRunName(workflow.name, t(props.problemName ?? "")));
       setCustomName(null);
     }
-  }, [workflow?.id, language]);
+  }, [workflow?.id, language, props.problemName]);
 
   useEffect(() => {
     setOpenTurn(null);
@@ -444,7 +453,7 @@ export function RunWorkspace(props: Props) {
     setCostLimit(props.run.budget.max_cost == null ? "-" : String(props.run.budget.max_cost));
     const tokens = props.run.model?.max_tokens;
     setTokenLimit(typeof tokens === "number" ? String(tokens) : "-");
-    setGeneratedName(rerunName.trim() || suggestedRunName(t(props.run.workflow_name), language));
+    setGeneratedName(rerunName.trim() || suggestedRunName(props.run.workflow_name, t(props.run.problem?.name ?? "")));
     setCustomName(null);
     setRerunOpen(false);
     props.onNew();
@@ -483,7 +492,7 @@ export function RunWorkspace(props: Props) {
        <div className="run-workspace__actions">
          {/* A run goes on in the server while another starts: the picker's running list follows each one. */}
          {props.run !== null && <button type="button" className="button" disabled={props.starting} onClick={() => {
-           setRerunName(suggestedRunName(t(props.run!.workflow_name), language));
+           setRerunName(suggestedRunName(props.run!.workflow_name, t(props.run!.problem?.name ?? "")));
            setRerunOpen(true);
          }}>{t("New run")}</button>}
          {props.run !== null && props.run.status !== "running" && !props.watching && !props.run.example && <button type="button" className="button"
