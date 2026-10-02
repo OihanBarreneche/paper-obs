@@ -142,7 +142,7 @@ SHIFT_STEP = 0.2
 #: record. A reading a tenth of a record away is a starting point; further off, a grid the
 #: engine builds itself is as good, and keeping the file would only make the catalogue's own
 #: badges worse. Nothing is written for such a reading, and the run says so.
-MAX_GAP = 0.1
+MAX_GAP = 0.3
 
 #: How far above its record a reading may land and still be kept. A reading measures an
 #: arrangement it has just recovered from a picture, and its own accuracy is a tenth of a

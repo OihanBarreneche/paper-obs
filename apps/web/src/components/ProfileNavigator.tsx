@@ -6,7 +6,7 @@ import { api } from "../api";
 import { copyConfigurations, copyFigureUrl, copyNoun, copyProblem, copyProblemId, copyable, loadCopyCatalog, loadFamilyPreviews } from "../equalCopiesCatalog";
 import type { CopyCatalog, FamilyPreview } from "../equalCopiesCatalog";
 import { useI18n } from "../i18n";
-import { gapPercent, loadVerification, verificationOf } from "../verification";
+import { decimalWords, loadVerification, verificationOf } from "../verification";
 import type { CatalogVerification, VerificationEntry } from "../verification";
 import type { ProfileCategory } from "../profileLibrary";
 import type { ExampleSummaryDoc, ProblemDoc, ShapeFamilyDoc } from "../types";
@@ -142,26 +142,33 @@ function FamilyPicture({ preview, shape, container, tinted }: { preview: FamilyP
 const MEASURES: Record<string, string> = { r: "radius", s: "side", a: "area" };
 
 /**
- * The one line a card wears when the engine has judged its arrangement.
+ * The one line a card wears when the interface can open the figure's own arrangement.
  *
- * A card with no entry, or one whose only finding is a construction the lab holds, wears
- * nothing: the interface must never present a held construction as the record. The
- * published case is the interesting one -- what we hold is the source's own arrangement --
- * and the gap is shown when the arrangement is the lab's own.
+ * "Approximate" says one thing and one thing only: the arrangement was read off the page's
+ * own drawing, so it looks like the published figure. A score near a record is not a
+ * resemblance -- a grid the engine builds can score close to a record while looking nothing
+ * like it -- so a seed, or a construction the lab holds, wears nothing however well it
+ * scores. How close the value came is stated in decimals rather than in percent: a percent
+ * depends on the size of the numbers, a shared third decimal does not.
  */
 function verificationBadge(
   entry: VerificationEntry | null, t: (english: string) => string,
 ): { text: string; level: string } | null {
   if (entry === null || entry.level === "beaten" || entry.level === "none") return null;
-  if (entry.level === "exact") return { text: `✓ ${t("Exact configuration")}`, level: "exact" };
   if (entry.published) {
-    return { text: `≈ ${t("Published configuration")} · ${t("printed too coarsely to confirm the record")}`, level: "near" };
+    return entry.level === "exact"
+      ? { text: `✓ ${t("Exact configuration")}`, level: "exact" }
+      : { text: `≈ ${t("Published configuration")} · ${t("printed too coarsely to confirm the record")}`, level: "near" };
   }
-  const gap = entry.gap === null ? "" : ` · ${gapPercent(entry.gap)}`;
-  if (entry.level === "near") return { text: `≈ ${t("Close to the record")}${gap}`, level: "near" };
-  // A far reading is still an approximation, and is labelled as one: the gap beside it is
-  // what tells the two apart, not a word of its own.
-  return { text: `≈ ${t("Approximate configuration")}${gap}`, level: entry.level === "approx" ? "approx" : "far" };
+  if (entry.source_kind !== "approx") return null;
+  const decimals = entry.decimals ?? 0;
+  const agreement = decimals > 0
+    ? ` · ${t("agrees to")} ${decimals} ${t(decimalWords(decimals))}`
+    : "";
+  return {
+    text: `≈ ${t("Approximate configuration")}${agreement}`,
+    level: decimals >= 3 ? "near" : "approx",
+  };
 }
 
 function CopySketch({ shape, container }: { shape: string; container: string }) {

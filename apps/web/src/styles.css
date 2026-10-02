@@ -21,7 +21,7 @@
  * (ProblemReference.figure_tint).
  */
 .packing-figure--source {
-  filter: grayscale(1) invert(0.2) sepia(1) hue-rotate(215deg) saturate(2.4) brightness(1.04) contrast(1.05);
+  filter: url(#packing-tint);
 }
 
 :root {

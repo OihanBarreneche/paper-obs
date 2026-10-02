@@ -26,6 +26,8 @@ export type VerificationEntry = {
   unit: string;
   measured: number | null;
   gap: number | null;
+  /** Decimals of the published value the measurement reproduces, or null when unmeasured. */
+  decimals: number | null;
   source_kind: string;
   files: string[];
   /** The candidate file the interface may open, or null when none is offered. */
@@ -86,7 +88,7 @@ export function verificationOf(
   return verification?.families[family]?.entries[String(count)] ?? null;
 }
 
-/** A gap as a readable percentage of the record. */
-export function gapPercent(gap: number): string {
-  return `${(gap * 100).toPrecision(2)} %`;
+/** How a count of decimals reads: one decimal, several decimals. */
+export function decimalWords(decimals: number): string {
+  return decimals === 1 ? "decimal" : "decimals";
 }

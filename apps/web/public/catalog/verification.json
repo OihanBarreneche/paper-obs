@@ -67,6 +67,7 @@
           "unit": "container radius",
           "measured": 1.0,
           "gap": -0.0,
+          "decimals": 12,
           "source_kind": "published",
           "files": [
             "packomania-cci-1.json",
@@ -85,6 +86,7 @@
           "unit": "container radius",
           "measured": 2.0,
           "gap": -0.0,
+          "decimals": 12,
           "source_kind": "published",
           "files": [
             "packomania-cci-2.json",
@@ -103,6 +105,7 @@
           "unit": "container radius",
           "measured": 2.1547005383792515,
           "gap": -0.0003252267313145531,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cci-3.json",
@@ -122,6 +125,7 @@
           "unit": "container radius",
           "measured": 2.414213562373095,
           "gap": -8.846825728864032e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cci-4.json",
@@ -140,6 +144,7 @@
           "unit": "container radius",
           "measured": 2.7013016167040798,
           "gap": -0.00011166853168444575,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cci-5.json",
@@ -158,6 +163,7 @@
           "unit": "container radius",
           "measured": 3.0,
           "gap": -0.0,
+          "decimals": 12,
           "source_kind": "published",
           "files": [
             "packomania-cci-6.json",
@@ -176,6 +182,7 @@
           "unit": "container radius",
           "measured": 3.0,
           "gap": -0.0,
+          "decimals": 12,
           "source_kind": "published",
           "files": [
             "packomania-cci-7.json",
@@ -194,6 +201,7 @@
           "unit": "container radius",
           "measured": 3.3047648709624866,
           "gap": -0.00023149847532893025,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cci-8.json"
@@ -211,6 +219,7 @@
           "unit": "container radius",
           "measured": 3.6131259297527527,
           "gap": -3.4854622959512346e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cci-9.json"
@@ -228,6 +237,7 @@
           "unit": "container radius",
           "measured": 3.8130256313981246,
           "gap": -6.722108084026421e-06,
+          "decimals": 4,
           "source_kind": "published",
           "files": [
             "packomania-cci-10.json"
@@ -245,6 +255,7 @@
           "unit": "container radius",
           "measured": 3.923804400163087,
           "gap": -0.00020504719935945394,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cci-11.json"
@@ -262,6 +273,7 @@
           "unit": "container radius",
           "measured": 4.029601930116184,
           "gap": -0.0001493993835154386,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cci-12.json"
@@ -279,6 +291,7 @@
           "unit": "container radius",
           "measured": 4.23606797749979,
           "gap": -1.604756841124635e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cci-13.json"
@@ -296,6 +309,7 @@
           "unit": "container radius",
           "measured": 4.328428554860837,
           "gap": -9.901914529498731e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cci-14.json"
@@ -313,6 +327,7 @@
           "unit": "container radius",
           "measured": 4.521356964706165,
           "gap": -7.895702414615195e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cci-15.json"
@@ -330,6 +345,7 @@
           "unit": "container radius",
           "measured": 4.615425594873194,
           "gap": -9.221990751769387e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cci-16.json"
@@ -347,6 +363,7 @@
           "unit": "container radius",
           "measured": 4.792033748310579,
           "gap": -7.042635763565749e-06,
+          "decimals": 4,
           "source_kind": "published",
           "files": [
             "packomania-cci-17.json"
@@ -364,6 +381,7 @@
           "unit": "container radius",
           "measured": 4.863703305156274,
           "gap": -0.00014462372121596946,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cci-18.json"
@@ -381,6 +399,7 @@
           "unit": "container radius",
           "measured": 4.863703305156274,
           "gap": -0.00014462372121596946,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cci-19.json"
@@ -398,6 +417,7 @@
           "unit": "container radius",
           "measured": 5.1223207369915285,
           "gap": -6.261948292240719e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cci-20.json"
@@ -427,6 +447,7 @@
           "unit": "container radius",
           "measured": 0.5773502691896257,
           "gap": -0.0006070523217084466,
+          "decimals": 3,
           "source_kind": "approx",
           "files": [
             "approx-triincir-1.json"
@@ -444,6 +465,7 @@
           "unit": "container radius",
           "measured": 0.8684290533594196,
           "gap": -0.0028049115004844852,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-triincir-2.json"
@@ -461,6 +483,7 @@
           "unit": "container radius",
           "measured": 2.1027466862762414,
           "gap": -0.023234397214715926,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-triincir-25.json"
@@ -490,6 +513,7 @@
           "unit": "container radius",
           "measured": 0.7071067811865474,
           "gap": -9.590137954178898e-06,
+          "decimals": 4,
           "source_kind": "approx",
           "files": [
             "approx-squincir-1.json"
@@ -507,6 +531,7 @@
           "unit": "container radius",
           "measured": 1.141255415133448,
           "gap": -0.020773516930178877,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squincir-2.json"
@@ -524,6 +549,7 @@
           "unit": "container radius",
           "measured": 1.2951708249113096,
           "gap": -0.0052006060764392134,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squincir-3.json"
@@ -541,6 +567,7 @@
           "unit": "container radius",
           "measured": 1.5043101253800706,
           "gap": -0.06371057012754161,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squincir-4.json"
@@ -558,6 +585,7 @@
           "unit": "container radius",
           "measured": 1.582652292437502,
           "gap": -0.0009627876502893597,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-squincir-5.json"
@@ -575,6 +603,7 @@
           "unit": "container radius",
           "measured": 1.701444019998119,
           "gap": -0.007964466823530183,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squincir-6.json"
@@ -592,6 +621,7 @@
           "unit": "container radius",
           "measured": 1.820110513196438,
           "gap": -0.009618816153163146,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squincir-7.json"
@@ -609,6 +639,7 @@
           "unit": "container radius",
           "measured": 2.0236744537384985,
           "gap": -0.022693114277302875,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squincir-8.json"
@@ -626,6 +657,7 @@
           "unit": "container radius",
           "measured": 2.081364905735207,
           "gap": -0.001816963758589146,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-squincir-9.json"
@@ -643,6 +675,7 @@
           "unit": "container radius",
           "measured": 2.1475618759838,
           "gap": -0.012370540976279085,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squincir-10.json"
@@ -660,6 +693,7 @@
           "unit": "container radius",
           "measured": 2.261699139911847,
           "gap": -0.01146621285289615,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squincir-12.json"
@@ -677,6 +711,7 @@
           "unit": "container radius",
           "measured": 2.419508317651986,
           "gap": -0.024911389694576194,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squincir-13.json"
@@ -694,6 +729,7 @@
           "unit": "container radius",
           "measured": 2.6124100630841505,
           "gap": -0.031350202559869936,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squincir-15.json"
@@ -711,6 +747,7 @@
           "unit": "container radius",
           "measured": 2.6581716125960746,
           "gap": -0.013374155136146558,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squincir-16.json"
@@ -728,6 +765,7 @@
           "unit": "container radius",
           "measured": 2.7685349235148737,
           "gap": -0.00987609650145314,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squincir-18.json"
@@ -745,6 +783,7 @@
           "unit": "container radius",
           "measured": 3.0672781645724183,
           "gap": -0.06024132892237073,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squincir-20.json"
@@ -762,6 +801,7 @@
           "unit": "container radius",
           "measured": 2.9647566189307506,
           "gap": -0.016905205311922467,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squincir-21.json"
@@ -779,6 +819,7 @@
           "unit": "container radius",
           "measured": 4.065898943401869,
           "gap": -0.09048309746786781,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squincir-36.json"
@@ -796,6 +837,7 @@
           "unit": "container radius",
           "measured": 4.367309152913552,
           "gap": -0.08339576072057998,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squincir-42.json"
@@ -813,6 +855,7 @@
           "unit": "container radius",
           "measured": 4.424388753607534,
           "gap": -0.028650120806371727,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squincir-50.json"
@@ -844,6 +887,7 @@
           "unit": "container radius",
           "measured": 1.6187186783586687,
           "gap": -0.000425627682223811,
+          "decimals": 2,
           "source_kind": "seed",
           "files": [
             "starter-penincir-3.json"
@@ -873,6 +917,7 @@
           "unit": "container radius",
           "measured": 1.0000000000000002,
           "gap": -2.220446049250313e-16,
+          "decimals": 12,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-1.json"
@@ -890,6 +935,7 @@
           "unit": "container radius",
           "measured": 2.0114313679028806,
           "gap": -0.005715683951440287,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-3.json"
@@ -907,6 +953,7 @@
           "unit": "container radius",
           "measured": 2.2620310313941827,
           "gap": -0.010286302543181258,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-4.json"
@@ -924,6 +971,7 @@
           "unit": "container radius",
           "measured": 2.52661256654816,
           "gap": -0.02236542383814446,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-5.json"
@@ -941,6 +989,7 @@
           "unit": "container radius",
           "measured": 2.72340622397695,
           "gap": -0.029643184868412126,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-6.json"
@@ -958,6 +1007,7 @@
           "unit": "container radius",
           "measured": 2.661709886032329,
           "gap": -0.00631753725229827,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-7.json"
@@ -975,6 +1025,7 @@
           "unit": "container radius",
           "measured": 3.1215093099618727,
           "gap": -0.046082208432262975,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-8.json"
@@ -992,6 +1043,7 @@
           "unit": "container radius",
           "measured": 3.339830307507648,
           "gap": -0.01176319524618228,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-9.json"
@@ -1009,6 +1061,7 @@
           "unit": "container radius",
           "measured": 3.7356013083247737,
           "gap": -0.04054877210629817,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-11.json"
@@ -1026,6 +1079,7 @@
           "unit": "container radius",
           "measured": 4.005751590455965,
           "gap": -0.04783333824827943,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-13.json"
@@ -1043,6 +1097,7 @@
           "unit": "container radius",
           "measured": 4.011968713770079,
           "gap": -0.034665887936990936,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-14.json"
@@ -1060,6 +1115,7 @@
           "unit": "container radius",
           "measured": 4.2529430459830175,
           "gap": -0.027380192768146152,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-16.json"
@@ -1077,6 +1133,7 @@
           "unit": "container radius",
           "measured": 4.801899653350879,
           "gap": -0.03818796596758209,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-20.json"
@@ -1094,6 +1151,7 @@
           "unit": "container radius",
           "measured": 4.945875413665075,
           "gap": -0.05612270073244466,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-21.json"
@@ -1111,6 +1169,7 @@
           "unit": "container radius",
           "measured": 5.26547450290909,
           "gap": -0.056034901748285106,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-23.json"
@@ -1128,6 +1187,7 @@
           "unit": "container radius",
           "measured": 6.358182593932011,
           "gap": -0.059548762161965856,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-35.json"
@@ -1145,6 +1205,7 @@
           "unit": "container radius",
           "measured": 6.353660066641015,
           "gap": -0.044535715142635025,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-37.json"
@@ -1174,6 +1235,7 @@
           "unit": "container radius",
           "measured": 3.1973483912756198,
           "gap": -0.011092788179257258,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-domincir-12.json"
@@ -1191,6 +1253,7 @@
           "unit": "container radius",
           "measured": 3.7118794214717195,
           "gap": -0.01973308648829534,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-domincir-17.json"
@@ -1208,6 +1271,7 @@
           "unit": "container radius",
           "measured": 4.487191284837179,
           "gap": -0.0033678101569451124,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-domincir-26.json"
@@ -1225,6 +1289,7 @@
           "unit": "container radius",
           "measured": 5.0743523826175485,
           "gap": -0.09800243703641046,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-domincir-28.json"
@@ -1254,6 +1319,7 @@
           "unit": "container radius",
           "measured": 1.414213562373095,
           "gap": -0.00015103421010961797,
+          "decimals": 3,
           "source_kind": "approx",
           "files": [
             "approx-lincir-1.json"
@@ -1271,6 +1337,7 @@
           "unit": "container radius",
           "measured": 2.262165208868472,
           "gap": -0.036264410842176825,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-lincir-3.json"
@@ -1300,6 +1367,7 @@
           "unit": "container side",
           "measured": 3.4642159325076665,
           "gap": -6.233617426861841e-05,
+          "decimals": 3,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-1.json"
@@ -1317,6 +1385,7 @@
           "unit": "container side",
           "measured": 5.470448831366856,
           "gap": -0.001180240001254602,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-2.json"
@@ -1334,6 +1403,7 @@
           "unit": "container side",
           "measured": 5.4645062545325445,
           "gap": -9.265273289605566e-05,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-3.json"
@@ -1351,6 +1421,7 @@
           "unit": "container side",
           "measured": 6.930175807834113,
           "gap": -0.00031406002224491236,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-4.json"
@@ -1368,6 +1439,7 @@
           "unit": "container side",
           "measured": 7.475220266736678,
           "gap": -0.0015032511705088242,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-5.json"
@@ -1385,6 +1457,7 @@
           "unit": "container side",
           "measured": 7.4692754445132845,
           "gap": -0.0007067851705900455,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-6.json"
@@ -1402,6 +1475,7 @@
           "unit": "container side",
           "measured": 8.981851656093642,
           "gap": -0.006031771515864864,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-7.json"
@@ -1419,6 +1493,7 @@
           "unit": "container side",
           "measured": 9.327925664262676,
           "gap": -0.0037582765805096625,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-8.json"
@@ -1436,6 +1511,7 @@
           "unit": "container side",
           "measured": 9.478455290530952,
           "gap": -0.0015273975624421037,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-9.json"
@@ -1453,6 +1529,7 @@
           "unit": "container side",
           "measured": 9.474412415095964,
           "gap": -0.0011002129222277544,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-10.json"
@@ -1470,6 +1547,7 @@
           "unit": "container side",
           "measured": 10.745648065565884,
           "gap": -0.0014583472102408144,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-11.json"
@@ -1487,6 +1565,7 @@
           "unit": "container side",
           "measured": 10.942772198949854,
           "gap": -0.001351775160125624,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-12.json"
@@ -1504,6 +1583,7 @@
           "unit": "container side",
           "measured": 11.454428944541645,
           "gap": -0.004245918336107695,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-13.json"
@@ -1521,6 +1601,7 @@
           "unit": "container side",
           "measured": 11.495974099394548,
           "gap": -0.00278908752569327,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-14.json"
@@ -1538,6 +1619,7 @@
           "unit": "container side",
           "measured": 11.485323244408779,
           "gap": -0.0018600178304935717,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintri-15.json"
@@ -1569,6 +1651,7 @@
           "unit": "container side",
           "measured": 2.1643225349529778,
           "gap": -0.004792263209367622,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squintri-1.json"
@@ -1586,6 +1669,7 @@
           "unit": "container side",
           "measured": 3.1547005383792515,
           "gap": -0.00022211109044120082,
+          "decimals": 2,
           "source_kind": "seed",
           "files": [
             "starter-squintri-2.json"
@@ -1603,6 +1687,7 @@
           "unit": "container side",
           "measured": 3.3498606822746733,
           "gap": -0.0364667952582528,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintri-3.json"
@@ -1620,6 +1705,7 @@
           "unit": "container side",
           "measured": 4.172498009177537,
           "gap": -0.004453059503499538,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squintri-4.json"
@@ -1637,6 +1723,7 @@
           "unit": "container side",
           "measured": 5.212784467472583,
           "gap": -0.011405600984203236,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintri-7.json"
@@ -1654,6 +1741,7 @@
           "unit": "container side",
           "measured": 5.887758492663042,
           "gap": -0.07755462896468544,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintri-10.json"
@@ -1671,6 +1759,7 @@
           "unit": "container side",
           "measured": 6.534191113608582,
           "gap": -0.061779511473607746,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintri-11.json"
@@ -1688,6 +1777,7 @@
           "unit": "container side",
           "measured": 6.898016018820296,
           "gap": -0.0947494078432464,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintri-12.json"
@@ -1705,6 +1795,7 @@
           "unit": "container side",
           "measured": 7.384987317568614,
           "gap": -0.03228785540517388,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintri-16.json"
@@ -1722,6 +1813,7 @@
           "unit": "container side",
           "measured": 8.470752489275014,
           "gap": -0.03875709581897731,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintri-22.json"
@@ -1739,6 +1831,7 @@
           "unit": "container side",
           "measured": 9.29156238235237,
           "gap": -0.09777438354824773,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintri-25.json"
@@ -1756,6 +1849,7 @@
           "unit": "container side",
           "measured": 9.616800342639639,
           "gap": -0.09618150491731896,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintri-28.json"
@@ -1773,6 +1867,7 @@
           "unit": "container side",
           "measured": 9.464852610797912,
           "gap": -0.03395811784989211,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintri-29.json"
@@ -1790,6 +1885,7 @@
           "unit": "container side",
           "measured": 10.301221341691353,
           "gap": 0.0002696679259169025,
+          "decimals": 2,
           "source_kind": "record",
           "files": [
             "record-squintri-38.json"
@@ -1821,6 +1917,7 @@
           "unit": "container side",
           "measured": 2.0,
           "gap": -0.0,
+          "decimals": 12,
           "source_kind": "published",
           "files": [
             "packomania-csq-1.json"
@@ -1838,6 +1935,7 @@
           "unit": "container side",
           "measured": 3.4142135623783694,
           "gap": -6.255488528682639e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-csq-2.json"
@@ -1855,6 +1953,7 @@
           "unit": "container side",
           "measured": 3.9318516525819986,
           "gap": -0.0002166503642835402,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-csq-3.json"
@@ -1872,6 +1971,7 @@
           "unit": "container side",
           "measured": 4.0,
           "gap": -0.0,
+          "decimals": 12,
           "source_kind": "published",
           "files": [
             "packomania-csq-4.json"
@@ -1889,6 +1989,7 @@
           "unit": "container side",
           "measured": 4.828427124735642,
           "gap": -8.846825510388331e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-csq-5.json"
@@ -1906,6 +2007,7 @@
           "unit": "container side",
           "measured": 5.328201177364912,
           "gap": -3.77585144353912e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-csq-6.json"
@@ -1923,6 +2025,7 @@
           "unit": "container side",
           "measured": 5.732050807569188,
           "gap": -8.863846683078415e-06,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-csq-7.json"
@@ -1940,6 +2043,7 @@
           "unit": "container side",
           "measured": 5.863703305158145,
           "gap": -0.00011995653388105943,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-csq-8.json"
@@ -1957,6 +2061,7 @@
           "unit": "container side",
           "measured": 5.999999999988001,
           "gap": 1.9998817416914485e-12,
+          "decimals": 10,
           "source_kind": "published",
           "files": [
             "packomania-csq-9.json"
@@ -1974,6 +2079,7 @@
           "unit": "container side",
           "measured": 6.74744152324853,
           "gap": -6.543993605012533e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-csq-10.json"
@@ -1991,6 +2097,7 @@
           "unit": "container side",
           "measured": 7.022509503420538,
           "gap": -7.25581629930717e-05,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-csq-11.json"
@@ -2008,6 +2115,7 @@
           "unit": "container side",
           "measured": 7.144957554297116,
           "gap": -0.00013403615581135262,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-csq-12.json"
@@ -2025,6 +2133,7 @@
           "unit": "container side",
           "measured": 7.463047828859739,
           "gap": -6.408798035445548e-06,
+          "decimals": 4,
           "source_kind": "published",
           "files": [
             "packomania-csq-13.json"
@@ -2042,6 +2151,7 @@
           "unit": "container side",
           "measured": 7.732050807570912,
           "gap": -6.571077458789419e-06,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-csq-14.json"
@@ -2059,6 +2169,7 @@
           "unit": "container side",
           "measured": 7.863703305163997,
           "gap": -8.944488922763055e-05,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-csq-15.json"
@@ -2076,6 +2187,7 @@
           "unit": "container side",
           "measured": 8.0,
           "gap": -0.0,
+          "decimals": 12,
           "source_kind": "published",
           "files": [
             "packomania-csq-16.json"
@@ -2093,6 +2205,7 @@
           "unit": "container side",
           "measured": 8.53266034749436,
           "gap": -7.739656520865923e-05,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-csq-17.json"
@@ -2110,6 +2223,7 @@
           "unit": "container side",
           "measured": 8.656402354702713,
           "gap": -4.6482752161826536e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-csq-18.json"
@@ -2127,6 +2241,7 @@
           "unit": "container side",
           "measured": 8.907460939325786,
           "gap": -5.1750233051027645e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-csq-19.json"
@@ -2144,6 +2259,7 @@
           "unit": "container side",
           "measured": 8.978083352860407,
           "gap": -9.284123458188352e-06,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-csq-20.json"
@@ -2161,6 +2277,7 @@
           "unit": "container side",
           "measured": 9.3580199588784,
           "gap": -2.1328145329018766e-06,
+          "decimals": 4,
           "source_kind": "published",
           "files": [
             "packomania-csq-21.json"
@@ -2178,6 +2295,7 @@
           "unit": "container side",
           "measured": 9.463845090973571,
           "gap": -8.930476313767004e-05,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-csq-22.json"
@@ -2195,6 +2313,7 @@
           "unit": "container side",
           "measured": 9.727406610292118,
           "gap": -4.180223009326547e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-csq-23.json"
@@ -2212,6 +2331,7 @@
           "unit": "container side",
           "measured": 9.863703305118673,
           "gap": -7.130742357022349e-05,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-csq-24.json"
@@ -2243,6 +2363,7 @@
           "unit": "container side",
           "measured": 0.9659258262890686,
           "gap": -0.0009594054809001828,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-triinsqu-1.json"
@@ -2260,6 +2381,7 @@
           "unit": "container side",
           "measured": 1.224744871391589,
           "gap": -0.0006085550584877155,
+          "decimals": 2,
           "source_kind": "seed",
           "files": [
             "starter-triinsqu-2.json",
@@ -2290,6 +2412,7 @@
           "unit": "container side",
           "measured": 3.0924489731129374,
           "gap": -0.06338789561362439,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-peninsqu-3.json"
@@ -2321,6 +2444,7 @@
           "unit": "container side",
           "measured": 1.9323194382282165,
           "gap": -0.0006832927126962464,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-1.json"
@@ -2338,6 +2462,7 @@
           "unit": "container side",
           "measured": 3.2055168841562316,
           "gap": -0.01568976050577676,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-2.json"
@@ -2355,6 +2480,7 @@
           "unit": "container side",
           "measured": 3.524579674316218,
           "gap": -0.009618927045608135,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-3.json"
@@ -2372,6 +2498,7 @@
           "unit": "container side",
           "measured": 3.725002596914244,
           "gap": -6.971581863330733e-07,
+          "decimals": 5,
           "source_kind": "seed",
           "files": [
             "starter-hexinsqu-4.json",
@@ -2390,6 +2517,7 @@
           "unit": "container side",
           "measured": 4.515437987870759,
           "gap": -0.017678158185882042,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-5.json"
@@ -2407,6 +2535,7 @@
           "unit": "container side",
           "measured": 4.974790218147427,
           "gap": -0.0336152541341008,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-6.json"
@@ -2424,6 +2553,7 @@
           "unit": "container side",
           "measured": 5.312432142064277,
           "gap": -0.02240803349966846,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-8.json"
@@ -2441,6 +2571,7 @@
           "unit": "container side",
           "measured": 5.645987233751052,
           "gap": -0.02319449687405806,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-9.json"
@@ -2458,6 +2589,7 @@
           "unit": "container side",
           "measured": 6.599676484494945,
           "gap": -0.03329833795129883,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-12.json"
@@ -2475,6 +2607,7 @@
           "unit": "container side",
           "measured": 7.173993527219695,
           "gap": -0.03550714884810839,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-14.json"
@@ -2492,6 +2625,7 @@
           "unit": "container side",
           "measured": 7.996501930715446,
           "gap": -0.038237072281932794,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-18.json"
@@ -2509,6 +2643,7 @@
           "unit": "container side",
           "measured": 8.302875240836887,
           "gap": -0.047813634633630274,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-19.json"
@@ -2526,6 +2661,7 @@
           "unit": "container side",
           "measured": 8.372635892553795,
           "gap": -0.05342676051255595,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-20.json"
@@ -2543,6 +2679,7 @@
           "unit": "container side",
           "measured": 9.643696548288004,
           "gap": -0.04586899637101136,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-26.json"
@@ -2560,6 +2697,7 @@
           "unit": "container side",
           "measured": 9.962963612398898,
           "gap": -0.04658256008694746,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-30.json"
@@ -2577,6 +2715,7 @@
           "unit": "container side",
           "measured": 10.318960603308463,
           "gap": -0.03241639819553681,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-31.json"
@@ -2594,6 +2733,7 @@
           "unit": "container side",
           "measured": 10.740428261250237,
           "gap": -0.055655420019130514,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-32.json"
@@ -2611,6 +2751,7 @@
           "unit": "container side",
           "measured": 10.74430387301097,
           "gap": -0.04005047867791972,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-33.json"
@@ -2628,6 +2769,7 @@
           "unit": "container side",
           "measured": 11.133649689451472,
           "gap": -0.05393764111333092,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-35.json"
@@ -2645,6 +2787,7 @@
           "unit": "container side",
           "measured": 11.271739445437959,
           "gap": -0.046746156837063325,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-36.json"
@@ -2662,6 +2805,7 @@
           "unit": "container side",
           "measured": 11.31478069976313,
           "gap": -0.04984525266485201,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-37.json"
@@ -2679,6 +2823,7 @@
           "unit": "container side",
           "measured": 11.350818638280444,
           "gap": -0.04798392021867074,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-38.json"
@@ -2696,6 +2841,7 @@
           "unit": "container side",
           "measured": 11.728215763939861,
           "gap": -0.052949583957884766,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-40.json"
@@ -2713,6 +2859,7 @@
           "unit": "container side",
           "measured": 12.039500154297471,
           "gap": -0.07491122277991007,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-42.json"
@@ -2730,6 +2877,7 @@
           "unit": "container side",
           "measured": 12.525228170308296,
           "gap": -0.051879001292321814,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-45.json"
@@ -2747,6 +2895,7 @@
           "unit": "container side",
           "measured": 12.801497053437927,
           "gap": -0.055849302844680294,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-47.json"
@@ -2764,6 +2913,7 @@
           "unit": "container side",
           "measured": 12.716500268865383,
           "gap": -0.045216429937695764,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-48.json"
@@ -2781,6 +2931,7 @@
           "unit": "container side",
           "measured": 13.178329550598985,
           "gap": -0.06734864289414369,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-49.json"
@@ -2798,6 +2949,7 @@
           "unit": "container side",
           "measured": 12.949494901424162,
           "gap": -0.04748189293623142,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-50.json"
@@ -2829,6 +2981,7 @@
           "unit": "container side",
           "measured": 1.4530850560106274,
           "gap": -5.8538204148217565e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-1.json"
@@ -2846,6 +2999,7 @@
           "unit": "container side",
           "measured": 2.689153033510893,
           "gap": -5.691093748337566e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-2.json"
@@ -2863,6 +3017,7 @@
           "unit": "container side",
           "measured": 3.0158624782667687,
           "gap": -0.0002860624433726539,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cpt-3.json"
@@ -2880,6 +3035,7 @@
           "unit": "container side",
           "measured": 3.314449564787315,
           "gap": -0.0001356562424003735,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-4.json"
@@ -2897,6 +3053,7 @@
           "unit": "container side",
           "measured": 3.4530850560098747,
           "gap": -2.4632496343715888e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-5.json"
@@ -2914,6 +3071,7 @@
           "unit": "container side",
           "measured": 3.804226065179967,
           "gap": -5.942828074849128e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-6.json"
@@ -2931,6 +3089,7 @@
           "unit": "container side",
           "measured": 4.236120736323426,
           "gap": -2.8502437069435646e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-7.json"
@@ -2948,6 +3107,7 @@
           "unit": "container side",
           "measured": 4.564580944734847,
           "gap": -0.00012728850456771346,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cpt-8.json"
@@ -2965,6 +3125,7 @@
           "unit": "container side",
           "measured": 4.825026357961979,
           "gap": -5.462790047513137e-06,
+          "decimals": 4,
           "source_kind": "published",
           "files": [
             "packomania-cpt-9.json"
@@ -2982,6 +3143,7 @@
           "unit": "container side",
           "measured": 5.095192532974354,
           "gap": -3.778861125704024e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-10.json"
@@ -2999,6 +3161,7 @@
           "unit": "container side",
           "measured": 5.2402784936594475,
           "gap": -5.314764493269482e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-11.json"
@@ -3016,6 +3179,7 @@
           "unit": "container side",
           "measured": 5.407790089343422,
           "gap": -0.00014612342212351402,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cpt-12.json"
@@ -3033,6 +3197,7 @@
           "unit": "container side",
           "measured": 5.6517814154569646,
           "gap": -0.00013827914651650175,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cpt-13.json"
@@ -3050,6 +3215,7 @@
           "unit": "container side",
           "measured": 5.808533024460201,
           "gap": -9.177418391888265e-05,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cpt-14.json"
@@ -3067,6 +3233,7 @@
           "unit": "container side",
           "measured": 5.945158603824364,
           "gap": -2.6678523862695262e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-15.json"
@@ -3084,6 +3251,7 @@
           "unit": "container side",
           "measured": 6.129607481432297,
           "gap": -9.911591324802796e-05,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cpt-16.json"
@@ -3101,6 +3269,7 @@
           "unit": "container side",
           "measured": 6.419436752986465,
           "gap": -6.804065843055416e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-17.json"
@@ -3118,6 +3287,7 @@
           "unit": "container side",
           "measured": 6.586813629662501,
           "gap": -0.00012353927459774654,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cpt-18.json"
@@ -3135,6 +3305,7 @@
           "unit": "container side",
           "measured": 6.77789205051763,
           "gap": -0.00013162911577829835,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cpt-19.json"
@@ -3152,6 +3323,7 @@
           "unit": "container side",
           "measured": 6.944556886386339,
           "gap": -8.019677222623776e-05,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-cpt-20.json"
@@ -3169,6 +3341,7 @@
           "unit": "container side",
           "measured": 7.10726688656557,
           "gap": -3.7552633399488955e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-21.json"
@@ -3186,6 +3359,7 @@
           "unit": "container side",
           "measured": 7.271271704099905,
           "gap": -3.736818868177403e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-22.json"
@@ -3203,6 +3377,7 @@
           "unit": "container side",
           "measured": 7.397090332899114,
           "gap": -1.2212099379985696e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-23.json"
@@ -3220,6 +3395,7 @@
           "unit": "container side",
           "measured": 7.534389919349055,
           "gap": -5.175462557139062e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-cpt-24.json"
@@ -3249,6 +3425,7 @@
           "unit": "container side",
           "measured": 0.9386295251913327,
           "gap": -0.0028093217856117922,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-squinpen-1.json"
@@ -3266,6 +3443,7 @@
           "unit": "container side",
           "measured": 1.7496651512957249,
           "gap": -0.032250826723141474,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squinpen-3.json"
@@ -3283,6 +3461,7 @@
           "unit": "container side",
           "measured": 1.881198367888924,
           "gap": -0.01085350235836858,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squinpen-4.json"
@@ -3314,6 +3493,7 @@
           "unit": "container side",
           "measured": 1.1547005383785027,
           "gap": -0.00060705232105963,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-1.json"
@@ -3331,6 +3511,7 @@
           "unit": "container side",
           "measured": 2.1547005383781115,
           "gap": -0.0003252267307853159,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-2.json"
@@ -3348,6 +3529,7 @@
           "unit": "container side",
           "measured": 2.309401076759672,
           "gap": -0.0001737014983421601,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-chx-3.json"
@@ -3365,6 +3547,7 @@
           "unit": "container side",
           "measured": 2.732050807572151,
           "gap": -0.024775246651219465,
+          "decimals": 0,
           "source_kind": "published",
           "files": [
             "packomania-chx-4.json"
@@ -3382,6 +3565,7 @@
           "unit": "container side",
           "measured": 2.999355399461051,
           "gap": -0.0001185059890132668,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-chx-5.json"
@@ -3399,6 +3583,7 @@
           "unit": "container side",
           "measured": 3.154700538377068,
           "gap": -0.00022211108974887786,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-6.json"
@@ -3416,6 +3601,7 @@
           "unit": "container side",
           "measured": 3.154700538377068,
           "gap": -0.00022211108974887786,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-7.json"
@@ -3433,6 +3619,7 @@
           "unit": "container side",
           "measured": 3.7094000949844252,
           "gap": -0.00010787138970751415,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-chx-8.json"
@@ -3450,6 +3637,7 @@
           "unit": "container side",
           "measured": 4.011843395528296,
           "gap": -0.00021027063782000564,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-9.json"
@@ -3467,6 +3655,7 @@
           "unit": "container side",
           "measured": 4.119357178971543,
           "gap": -8.671497245533525e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-chx-10.json"
@@ -3484,6 +3673,7 @@
           "unit": "container side",
           "measured": 4.309401076756223,
           "gap": -9.307884804428099e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-chx-11.json"
@@ -3501,6 +3691,7 @@
           "unit": "container side",
           "measured": 4.309401076756223,
           "gap": -9.307884804428099e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-chx-12.json"
@@ -3518,6 +3709,7 @@
           "unit": "container side",
           "measured": 4.618802153519344,
           "gap": -0.0001737014983421601,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-13.json"
@@ -3535,6 +3727,7 @@
           "unit": "container side",
           "measured": 4.666558430413988,
           "gap": -0.0001196807573913079,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-14.json"
@@ -3552,6 +3745,7 @@
           "unit": "container side",
           "measured": 4.961321277782356,
           "gap": -6.476068985200564e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-chx-15.json"
@@ -3569,6 +3763,7 @@
           "unit": "container side",
           "measured": 4.999355399462685,
           "gap": -7.109411135927894e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-chx-16.json"
@@ -3586,6 +3781,7 @@
           "unit": "container side",
           "measured": 5.133119424881144,
           "gap": -2.326609802147823e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-chx-17.json"
@@ -3603,6 +3799,7 @@
           "unit": "container side",
           "measured": 5.154700538380606,
           "gap": -0.00013592130007877756,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-18.json"
@@ -3620,6 +3817,7 @@
           "unit": "container side",
           "measured": 5.154700538380606,
           "gap": -0.00013592130007877756,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-19.json"
@@ -3637,6 +3835,7 @@
           "unit": "container side",
           "measured": 5.676887316616584,
           "gap": -0.0001563278041903002,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-20.json"
@@ -3654,6 +3853,7 @@
           "unit": "container side",
           "measured": 5.709400094983435,
           "gap": -7.008144744005871e-05,
+          "decimals": 3,
           "source_kind": "published",
           "files": [
             "packomania-chx-21.json"
@@ -3671,6 +3871,7 @@
           "unit": "container side",
           "measured": 5.951749792130537,
           "gap": 3.492577191177503e-08,
+          "decimals": 6,
           "source_kind": "published",
           "files": [
             "packomania-chx-22.json"
@@ -3688,6 +3889,7 @@
           "unit": "container side",
           "measured": 6.011843395527343,
           "gap": -0.00014030868862801983,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-23.json"
@@ -3705,6 +3907,7 @@
           "unit": "container side",
           "measured": 6.117620859273004,
           "gap": -0.00010149734722974833,
+          "decimals": 2,
           "source_kind": "published",
           "files": [
             "packomania-chx-24.json"
@@ -3734,6 +3937,7 @@
           "unit": "container side",
           "measured": 0.7887158278047838,
           "gap": -5.8107706371224274e-05,
+          "decimals": 4,
           "source_kind": "approx",
           "files": [
             "approx-squinhex-1.json"
@@ -3751,6 +3955,7 @@
           "unit": "container side",
           "measured": 1.4707517167250246,
           "gap": -0.07666924109824495,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squinhex-3.json"
@@ -3780,6 +3985,7 @@
           "unit": "container side",
           "measured": 3.4143360558638514,
           "gap": -9.84346408468701e-05,
+          "decimals": 3,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-1.json"
@@ -3797,6 +4003,7 @@
           "unit": "container side",
           "measured": 4.828530828148667,
           "gap": -0.00010994783526645634,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-2.json"
@@ -3814,6 +4021,7 @@
           "unit": "container side",
           "measured": 5.4158654073126735,
           "gap": -0.00034455251434684466,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-3.json"
@@ -3831,6 +4039,7 @@
           "unit": "container side",
           "measured": 6.246692897721964,
           "gap": -0.0007518259727593392,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-4.json"
@@ -3848,6 +4057,7 @@
           "unit": "container side",
           "measured": 7.153901154776582,
           "gap": -0.0011056751716459771,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-5.json"
@@ -3865,6 +4075,7 @@
           "unit": "container side",
           "measured": 7.417594792788628,
           "gap": -0.00048486549617320963,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-6.json"
@@ -3882,6 +4093,7 @@
           "unit": "container side",
           "measured": 8.189467460513843,
           "gap": -0.0010350153421150845,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-7.json"
@@ -3899,6 +4111,7 @@
           "unit": "container side",
           "measured": 8.70075635407305,
           "gap": -0.001007403828008511,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-8.json"
@@ -3916,6 +4129,7 @@
           "unit": "container side",
           "measured": 9.122876605565457,
           "gap": -0.005718951115142473,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-9.json"
@@ -3933,6 +4147,7 @@
           "unit": "container side",
           "measured": 9.421275487207337,
           "gap": -0.0007728369669999475,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-10.json"
@@ -3950,6 +4165,7 @@
           "unit": "container side",
           "measured": 10.084664223533169,
           "gap": -0.0025513692745968448,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-11.json"
@@ -3967,6 +4183,7 @@
           "unit": "container side",
           "measured": 10.439587212799173,
           "gap": -0.001687508424407287,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-12.json"
@@ -3984,6 +4201,7 @@
           "unit": "container side",
           "measured": 10.825279344247422,
           "gap": -0.0025263330475478545,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-13.json"
@@ -4001,6 +4219,7 @@
           "unit": "container side",
           "measured": 11.159622599227598,
           "gap": -0.0016715374946232747,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-14.json"
@@ -4018,6 +4237,7 @@
           "unit": "container side",
           "measured": 11.42582009939367,
           "gap": -0.0010355790602479716,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-15.json"
@@ -4035,6 +4255,7 @@
           "unit": "container side",
           "measured": 11.960095650057065,
           "gap": -0.005727864498348027,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-16.json"
@@ -4052,6 +4273,7 @@
           "unit": "container side",
           "measured": 12.24117547130849,
           "gap": -0.007089713805716981,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-17.json"
@@ -4069,6 +4291,7 @@
           "unit": "container side",
           "measured": 12.611305890019624,
           "gap": -0.005525904163580304,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-18.json"
@@ -4086,6 +4309,7 @@
           "unit": "container side",
           "measured": 12.821762705519822,
           "gap": -0.001856751486155785,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-19.json"
@@ -4103,6 +4327,7 @@
           "unit": "container side",
           "measured": 13.118482987087415,
           "gap": -0.0020228373882840013,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-20.json"
@@ -4120,6 +4345,7 @@
           "unit": "container side",
           "measured": 13.429780955628829,
           "gap": -0.0011764541247076834,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirintan-21.json"
@@ -4149,6 +4375,7 @@
           "unit": "container side",
           "measured": 2.0099541903451694,
           "gap": -0.004977095172584711,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squintan-1.json"
@@ -4166,6 +4393,7 @@
           "unit": "container side",
           "measured": 3.0731845452792483,
           "gap": -0.02439484842641611,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-3.json"
@@ -4183,6 +4411,7 @@
           "unit": "container side",
           "measured": 4.035910088633731,
           "gap": -0.008977522158432727,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squintan-5.json"
@@ -4200,6 +4429,7 @@
           "unit": "container side",
           "measured": 4.079674323516221,
           "gap": -0.01991858087905518,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-6.json"
@@ -4217,6 +4447,7 @@
           "unit": "container side",
           "measured": 5.028224541948859,
           "gap": -0.016008191947637723,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-9.json"
@@ -4234,6 +4465,7 @@
           "unit": "container side",
           "measured": 5.238857053011404,
           "gap": -0.04777141060228072,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-10.json"
@@ -4251,6 +4483,7 @@
           "unit": "container side",
           "measured": 5.533264757157096,
           "gap": -0.022028954037143774,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-11.json"
@@ -4268,6 +4501,7 @@
           "unit": "container side",
           "measured": 5.88379644955591,
           "gap": -0.009573858880561047,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-13.json"
@@ -4285,6 +4519,7 @@
           "unit": "container side",
           "measured": 6.1366251051631435,
           "gap": -0.02277085086052392,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-14.json"
@@ -4302,6 +4537,7 @@
           "unit": "container side",
           "measured": 6.164042727379029,
           "gap": -0.02734045456317154,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-15.json"
@@ -4319,6 +4555,7 @@
           "unit": "container side",
           "measured": 6.485049841257045,
           "gap": -0.019181178886852897,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-16.json"
@@ -4336,6 +4573,7 @@
           "unit": "container side",
           "measured": 6.559701716404153,
           "gap": -0.022716201497373502,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-17.json"
@@ -4353,6 +4591,7 @@
           "unit": "container side",
           "measured": 6.868282510647672,
           "gap": -0.005899606128833051,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-squintan-18.json"
@@ -4370,6 +4609,7 @@
           "unit": "container side",
           "measured": 7.071422223928445,
           "gap": -0.010203174846920682,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-20.json"
@@ -4387,6 +4627,7 @@
           "unit": "container side",
           "measured": 7.1990849149600695,
           "gap": -0.02844070213715279,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-21.json"
@@ -4404,6 +4645,7 @@
           "unit": "container side",
           "measured": 7.545078611017452,
           "gap": -0.024728862015136695,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-22.json"
@@ -4421,6 +4663,7 @@
           "unit": "container side",
           "measured": 7.501103232043078,
           "gap": -0.011748480178456706,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-23.json"
@@ -4438,6 +4681,7 @@
           "unit": "container side",
           "measured": 8.177632044691864,
           "gap": -0.06106553064640764,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-24.json"
@@ -4455,6 +4699,7 @@
           "unit": "container side",
           "measured": 7.993480355328086,
           "gap": -0.027703825575737518,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-25.json"
@@ -4472,6 +4717,7 @@
           "unit": "container side",
           "measured": 8.967013279791175,
           "gap": -0.06569877383511633,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-30.json"
@@ -4489,6 +4735,7 @@
           "unit": "container side",
           "measured": 8.942997227665183,
           "gap": -0.0539425013276148,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-31.json"
@@ -4506,6 +4753,7 @@
           "unit": "container side",
           "measured": 9.140668512936912,
           "gap": -0.04129545371494434,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-32.json"
@@ -4523,6 +4771,7 @@
           "unit": "container side",
           "measured": 9.2737436602591,
           "gap": -0.050440866638700135,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-33.json"
@@ -4540,6 +4789,7 @@
           "unit": "container side",
           "measured": 9.440882744781327,
           "gap": -0.054876699883385206,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-34.json"
@@ -4557,6 +4807,7 @@
           "unit": "container side",
           "measured": 9.382082426028553,
           "gap": -0.04245360289206149,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-35.json"
@@ -4574,6 +4825,7 @@
           "unit": "container side",
           "measured": 9.488642762398925,
           "gap": -0.05429364026654721,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-36.json"
@@ -4591,6 +4843,7 @@
           "unit": "container side",
           "measured": 9.853123594712281,
           "gap": -0.06605078145554534,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-37.json"
@@ -4608,6 +4861,7 @@
           "unit": "container side",
           "measured": 10.069234080770597,
           "gap": -0.06957823128765944,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-38.json"
@@ -4625,6 +4879,7 @@
           "unit": "container side",
           "measured": 9.636953856944654,
           "gap": -0.02366038753593274,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-39.json"
@@ -4642,6 +4897,7 @@
           "unit": "container side",
           "measured": 10.40289793368715,
           "gap": -0.06389006671873682,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-40.json"
@@ -4659,6 +4915,7 @@
           "unit": "container side",
           "measured": 10.30415985631848,
           "gap": -0.04840344351218644,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-41.json"
@@ -4676,6 +4933,7 @@
           "unit": "container side",
           "measured": 10.450399544313209,
           "gap": -0.06328269564042352,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-42.json"
@@ -4693,6 +4951,7 @@
           "unit": "container side",
           "measured": 10.528922217443236,
           "gap": -0.06358228731411783,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-43.json"
@@ -4710,6 +4969,7 @@
           "unit": "container side",
           "measured": 10.839133170811788,
           "gap": -0.08391331708117881,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-45.json"
@@ -4727,6 +4987,7 @@
           "unit": "container side",
           "measured": 10.88907114026293,
           "gap": -0.06311177003808881,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-46.json"
@@ -4744,6 +5005,7 @@
           "unit": "container side",
           "measured": 11.30143307804752,
           "gap": -0.08519350752937757,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-47.json"
@@ -4761,6 +5023,7 @@
           "unit": "container side",
           "measured": 11.03613496331899,
           "gap": -0.059718880579418786,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-48.json"
@@ -4778,6 +5041,7 @@
           "unit": "container side",
           "measured": 11.263894632363364,
           "gap": -0.06197034227399579,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-49.json"
@@ -4807,6 +5071,7 @@
           "unit": "container side",
           "measured": 4.000642159041245,
           "gap": -0.00016053976031127348,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-2.json"
@@ -4824,6 +5089,7 @@
           "unit": "container side",
           "measured": 4.000366736011876,
           "gap": -9.16840029689947e-05,
+          "decimals": 3,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-3.json"
@@ -4841,6 +5107,7 @@
           "unit": "container side",
           "measured": 5.306562221996331,
           "gap": -0.0004830735287199899,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-4.json"
@@ -4858,6 +5125,7 @@
           "unit": "container side",
           "measured": 5.790708621146567,
           "gap": -0.0018527026205132082,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-5.json"
@@ -4875,6 +5143,7 @@
           "unit": "container side",
           "measured": 6.4204084765608,
           "gap": -0.0006871066958852022,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-6.json"
@@ -4892,6 +5161,7 @@
           "unit": "container side",
           "measured": 6.791939662554829,
           "gap": -0.0007278123699468142,
+          "decimals": 2,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-7.json"
@@ -4909,6 +5179,7 @@
           "unit": "container side",
           "measured": 7.1334951737847065,
           "gap": -0.0024585685475979322,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-8.json"
@@ -4926,6 +5197,7 @@
           "unit": "container side",
           "measured": 7.358764343519067,
           "gap": -0.004198190982405429,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-9.json"
@@ -4943,6 +5215,7 @@
           "unit": "container side",
           "measured": 7.707336199237461,
           "gap": -0.010400655379845416,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-10.json"
@@ -4960,6 +5233,7 @@
           "unit": "container side",
           "measured": 7.879309454817697,
           "gap": -0.002074202571244686,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-11.json"
@@ -4977,6 +5251,7 @@
           "unit": "container side",
           "measured": 8.006684863565107,
           "gap": -0.0008356079456384169,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-12.json"
@@ -4994,6 +5269,7 @@
           "unit": "container side",
           "measured": 8.828614812323728,
           "gap": -0.0018854757516714544,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-13.json"
@@ -5011,6 +5287,7 @@
           "unit": "container side",
           "measured": 9.092282719117911,
           "gap": -0.0008016201560715595,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-14.json"
@@ -5028,6 +5305,7 @@
           "unit": "container side",
           "measured": 9.561617050883719,
           "gap": -0.015896414246038864,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-15.json"
@@ -5045,6 +5323,7 @@
           "unit": "container side",
           "measured": 9.77512345294856,
           "gap": -0.014543171037733218,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-16.json"
@@ -5062,6 +5341,7 @@
           "unit": "container side",
           "measured": 10.10125660032558,
           "gap": -0.009696539003481504,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-17.json"
@@ -5079,6 +5359,7 @@
           "unit": "container side",
           "measured": 10.400668432803785,
           "gap": -0.012340852025114675,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-18.json"
@@ -5096,6 +5377,7 @@
           "unit": "container side",
           "measured": 10.510067459589603,
           "gap": -0.004317050593900425,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-19.json"
@@ -5113,6 +5395,7 @@
           "unit": "container side",
           "measured": 10.725477288772613,
           "gap": -0.010251575712524144,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-20.json"
@@ -5130,6 +5413,7 @@
           "unit": "container side",
           "measured": 11.007063570928038,
           "gap": -0.016758692412461328,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-21.json"
@@ -5147,6 +5431,7 @@
           "unit": "container side",
           "measured": 11.141373773753779,
           "gap": -0.02221284303937598,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-22.json"
@@ -5164,6 +5449,7 @@
           "unit": "container side",
           "measured": 11.463626127244707,
           "gap": -0.021913022884565418,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-23.json"
@@ -5181,6 +5467,7 @@
           "unit": "container side",
           "measured": 11.700579218686721,
           "gap": -0.02526578644391643,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-24.json"
@@ -5198,6 +5485,7 @@
           "unit": "container side",
           "measured": 11.98872420031107,
           "gap": -0.02356623155302112,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-25.json"
@@ -5215,6 +5503,7 @@
           "unit": "container side",
           "measured": 11.971398253481505,
           "gap": -0.009360429723289274,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-26.json"
@@ -5232,6 +5521,7 @@
           "unit": "container side",
           "measured": 12.007991561097919,
           "gap": -0.000665963424826573,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-27.json"
@@ -5249,6 +5539,7 @@
           "unit": "container side",
           "measured": 12.64810219774024,
           "gap": -0.012107275281691277,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-28.json"
@@ -5266,6 +5557,7 @@
           "unit": "container side",
           "measured": 12.92838175442551,
           "gap": -0.019948022246447306,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-29.json"
@@ -5283,6 +5575,7 @@
           "unit": "container side",
           "measured": 13.211605940577503,
           "gap": -0.020765607901936687,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-30.json"
@@ -5300,6 +5593,7 @@
           "unit": "container side",
           "measured": 13.466271212912588,
           "gap": -0.026073539090937316,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-31.json"
@@ -5317,6 +5611,7 @@
           "unit": "container side",
           "measured": 13.697437777583591,
           "gap": -0.02966421988597836,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-32.json"
@@ -5334,6 +5629,7 @@
           "unit": "container side",
           "measured": 13.746256823130969,
           "gap": -0.01616826290153039,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-33.json"
@@ -5351,6 +5647,7 @@
           "unit": "container side",
           "measured": 14.081296720921637,
           "gap": -0.026023230649740586,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-34.json"
@@ -5368,6 +5665,7 @@
           "unit": "container side",
           "measured": 13.917642460637738,
           "gap": -0.0036013513875941374,
+          "decimals": 1,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-35.json"
@@ -5385,6 +5683,7 @@
           "unit": "container side",
           "measured": 14.545726076537793,
           "gap": -0.03812620447587359,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-36.json"
@@ -5402,6 +5701,7 @@
           "unit": "container side",
           "measured": 14.553663196612073,
           "gap": -0.03147680198022556,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-37.json"
@@ -5419,6 +5719,7 @@
           "unit": "container side",
           "measured": 14.463274710885859,
           "gap": -0.01586773888458662,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-38.json"
@@ -5436,6 +5737,7 @@
           "unit": "container side",
           "measured": 14.423024169724242,
           "gap": -0.008207561210199488,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-39.json"
@@ -5453,6 +5755,7 @@
           "unit": "container side",
           "measured": 14.85059461759025,
           "gap": -0.02067766280292639,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-40.json"
@@ -5470,6 +5773,7 @@
           "unit": "container side",
           "measured": 14.94519047972986,
           "gap": -0.017258839198227807,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-41.json"
@@ -5487,6 +5791,7 @@
           "unit": "container side",
           "measured": 15.265655386987872,
           "gap": -0.023999078808514103,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-42.json"
@@ -5504,6 +5809,7 @@
           "unit": "container side",
           "measured": 15.439722416338654,
           "gap": -0.02482540924647127,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-43.json"
@@ -5521,6 +5827,7 @@
           "unit": "container side",
           "measured": 15.485042016172768,
           "gap": -0.014069364918125963,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-44.json"
@@ -5538,6 +5845,7 @@
           "unit": "container side",
           "measured": 15.684640320914477,
           "gap": -0.016381735484198762,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-45.json"
@@ -5555,6 +5863,7 @@
           "unit": "container side",
           "measured": 15.779146947300832,
           "gap": -0.005098823964484125,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-46.json"
@@ -5572,6 +5881,7 @@
           "unit": "container side",
           "measured": 15.998235072128047,
           "gap": -0.009141628601727108,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-47.json"
@@ -5589,6 +5899,7 @@
           "unit": "container side",
           "measured": 16.281398415930944,
           "gap": -0.018662726836701008,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-48.json"
@@ -5606,6 +5917,7 @@
           "unit": "container side",
           "measured": 16.25163349692518,
           "gap": -0.007429026594394136,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-49.json"
@@ -5623,6 +5935,7 @@
           "unit": "container side",
           "measured": 17.014235793646808,
           "gap": -0.04376819965957509,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-50.json"
@@ -5654,6 +5967,7 @@
           "unit": "container side",
           "measured": 2.1204281051926324,
           "gap": 0.0002602074547461567,
+          "decimals": 2,
           "source_kind": "record",
           "files": [
             "record-taninL-26.json"
@@ -5683,6 +5997,7 @@
           "unit": "container area",
           "measured": null,
           "gap": null,
+          "decimals": null,
           "source_kind": "approx",
           "files": [
             "approx-cirinel-1.json"
@@ -5700,6 +6015,7 @@
           "unit": "container area",
           "measured": null,
           "gap": null,
+          "decimals": null,
           "source_kind": "approx",
           "files": [
             "approx-cirinel-2.json"
@@ -5717,6 +6033,7 @@
           "unit": "container area",
           "measured": null,
           "gap": null,
+          "decimals": null,
           "source_kind": "approx",
           "files": [
             "approx-cirinel-3.json"
@@ -5734,6 +6051,7 @@
           "unit": "container area",
           "measured": null,
           "gap": null,
+          "decimals": null,
           "source_kind": "approx",
           "files": [
             "approx-cirinel-4.json"
@@ -5751,6 +6069,7 @@
           "unit": "container area",
           "measured": null,
           "gap": null,
+          "decimals": null,
           "source_kind": "approx",
           "files": [
             "approx-cirinel-7.json"
@@ -5782,6 +6101,7 @@
           "unit": "sum of radii",
           "measured": 1.0,
           "gap": 0.0,
+          "decimals": 12,
           "source_kind": "seed",
           "files": [
             "starter-cirRcir-2.json"
@@ -5811,6 +6131,7 @@
           "unit": "sum of sides",
           "measured": 5.60619441050579,
           "gap": -0.01989608207940735,
+          "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squRcir-13.json"
@@ -5842,6 +6163,7 @@
           "unit": "sum of radii",
           "measured": 0.5857864376269049,
           "gap": 0.001344337823769043,
+          "decimals": 2,
           "source_kind": "seed",
           "files": [
             "starter-cirRsqu-2.json"
@@ -5873,6 +6195,7 @@
           "unit": "sum of sides",
           "measured": 1.632993161855452,
           "gap": 1.9362368735432103e-06,
+          "decimals": 5,
           "source_kind": "seed",
           "files": [
             "starter-triRsqu-2.json"
@@ -5904,6 +6227,7 @@
           "unit": "covered area",
           "measured": null,
           "gap": null,
+          "decimals": null,
           "source_kind": "seed",
           "files": [
             "starter-squcosqu-3.json"
@@ -5935,6 +6259,7 @@
           "unit": "covered radius",
           "measured": 1.1547352604781038,
           "gap": 0.0006371407955839733,
+          "decimals": 2,
           "source_kind": "seed",
           "files": [
             "starter-circovcir-3.json"
@@ -5966,6 +6291,7 @@
           "unit": "covered side",
           "measured": 1.788922628084816,
           "gap": 0.0005160112331185817,
+          "decimals": 2,
           "source_kind": "seed",
           "files": [
             "starter-circovsqu-2.json"

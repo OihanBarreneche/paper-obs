@@ -374,6 +374,21 @@ def measure_of(reference: dict[str, Any], verdict: Any) -> float | None:
     return None
 
 
+def matched_decimals(measured: float, value: float) -> int:
+    """Return how many decimals of a published number a measurement reproduces.
+
+    A difference is stated in decimals rather than in percent because a percentage depends on
+    the magnitude of the number: a tenth of a percent of 5.3 is a different quantity from a
+    tenth of a percent of 0.53, while a shared third decimal means the same thing on both.
+    """
+    if value <= 0.0:
+        return 0
+    for decimals in range(12, 0, -1):
+        if abs(measured - value) <= 0.5 * 10.0**-decimals:
+            return decimals
+    return 0
+
+
 def judge(
     problem: Problem, candidate: Candidate, reference: dict[str, Any]
 ) -> tuple[dict[str, Any], Any]:
@@ -409,6 +424,7 @@ def judge(
     entry["status"] = status
     entry["gap"] = gap
     entry["precise"] = precise
+    entry["decimals"] = matched_decimals(measured, float(value))
     return entry, verdict
 
 
@@ -537,6 +553,7 @@ def verify_family(
             "unit": reference.get("unit"),
             "measured": best.get("measured"),
             "gap": best.get("gap"),
+            "decimals": best.get("decimals"),
             "source_kind": best["kind"],
             "files": files,
             "candidate": None,
