@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="280" viewBox="0 0 320 280">
   <title>packomania-chx-9 — packomania-chx-9-published</title>
-  <rect x="0" y="0" width="320" height="280" fill="#fffdfb"/>
+  <rect x="0" y="0" width="320" height="280" fill="#ffffff"/>
   <g transform="translate(160 139.9) scale(150 -150)">
-  <path d="M -0.5 0.866 L -1 4.441e-16 L -0.5 -0.866 L 0.5 -0.866 L 1 -6.106e-16 L 0.5 0.866 Z" fill="#f6f1fa" fill-rule="evenodd" stroke="#6f607b" stroke-width="0.01067"/>
-  <circle cx="-0" cy="-0.6168" r="0.2493" fill="#b68ae6" stroke="#7651a7" stroke-width="0.005333"/>
-  <circle cx="-0.4629" cy="-0.4317" r="0.2493" fill="#b68ae6" stroke="#7651a7" stroke-width="0.005333"/>
-  <circle cx="0.4629" cy="-0.4317" r="0.2493" fill="#b68ae6" stroke="#7651a7" stroke-width="0.005333"/>
-  <circle cx="-0.7122" cy="0" r="0.2493" fill="#b68ae6" stroke="#7651a7" stroke-width="0.005333"/>
-  <circle cx="-0.2137" cy="0" r="0.2493" fill="#b68ae6" stroke="#7651a7" stroke-width="0.005333"/>
-  <circle cx="0.7122" cy="0" r="0.2493" fill="#b68ae6" stroke="#7651a7" stroke-width="0.005333"/>
-  <circle cx="0.2493" cy="0.185" r="0.2493" fill="#b68ae6" stroke="#7651a7" stroke-width="0.005333"/>
-  <circle cx="-0.4629" cy="0.4317" r="0.2493" fill="#b68ae6" stroke="#7651a7" stroke-width="0.005333"/>
-  <circle cx="0" cy="0.6168" r="0.2493" fill="#b68ae6" stroke="#7651a7" stroke-width="0.005333"/>
+  <path d="M -0.5 0.866 L -1 4.441e-16 L -0.5 -0.866 L 0.5 -0.866 L 1 -6.106e-16 L 0.5 0.866 Z" fill="#ffffff" fill-rule="evenodd" stroke="#000000" stroke-width="0.01067"/>
+  <circle cx="-0" cy="-0.6168" r="0.2493" fill="#bfbfbf" stroke="#000000" stroke-width="0.005333"/>
+  <circle cx="-0.4629" cy="-0.4317" r="0.2493" fill="#bfbfbf" stroke="#000000" stroke-width="0.005333"/>
+  <circle cx="0.4629" cy="-0.4317" r="0.2493" fill="#bfbfbf" stroke="#000000" stroke-width="0.005333"/>
+  <circle cx="-0.7122" cy="0" r="0.2493" fill="#bfbfbf" stroke="#000000" stroke-width="0.005333"/>
+  <circle cx="-0.2137" cy="0" r="0.2493" fill="#bfbfbf" stroke="#000000" stroke-width="0.005333"/>
+  <circle cx="0.7122" cy="0" r="0.2493" fill="#bfbfbf" stroke="#000000" stroke-width="0.005333"/>
+  <circle cx="0.2493" cy="0.185" r="0.2493" fill="#bfbfbf" stroke="#000000" stroke-width="0.005333"/>
+  <circle cx="-0.4629" cy="0.4317" r="0.2493" fill="#bfbfbf" stroke="#000000" stroke-width="0.005333"/>
+  <circle cx="0" cy="0.6168" r="0.2493" fill="#bfbfbf" stroke="#000000" stroke-width="0.005333"/>
   </g>
 </svg>

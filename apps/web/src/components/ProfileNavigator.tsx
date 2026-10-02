@@ -93,13 +93,12 @@ function Figure({ url, alt, tinted }: { url: string; alt: string; tinted: boolea
   const [failed, setFailed] = useState(false);
   if (url === "" || failed) return null;
   // One plate, one ink: a figure the source hosts and a drawing of ours take the same
-  // treatment, or a family the lab can already place would stand out from its neighbours
+  // filter, or a family the lab can already place would stand out from its neighbours
   // for no reason a reader cares about. The perimeter section keeps its own colours,
   // because there they encode the sizes of the packed shapes.
-  const source = /^https?:/i.test(url);
   return <span className="profile-catalog__figure">
     <img src={url} alt={alt} loading="lazy" decoding="async" referrerPolicy="no-referrer"
-      className={tinted ? (source ? "packing-figure--tinted" : "packing-figure--pale") : undefined}
+      className={tinted ? "packing-figure--tinted" : undefined}
       onError={() => setFailed(true)} />
   </span>;
 }
@@ -118,10 +117,10 @@ function FamilyPicture({ preview, shape, container, tinted }: { preview: FamilyP
     // catalogue's ink, so a shelf of tiles reads as one catalogue. The perimeter section
     // keeps its colours.
     return <img src={preview.url} alt="" loading="lazy" decoding="async"
-      className={tinted ? (preview.kind === "figure" ? "packing-figure--tinted" : "packing-figure--pale") : undefined}
+      className={tinted ? "packing-figure--tinted" : undefined}
       onError={() => setFailed(true)} />;
   }
-  return <span className={tinted ? "packing-figure--pale" : undefined}>
+  return <span className={tinted ? "packing-figure--tinted" : undefined}>
     <CopySketch shape={shape} container={container} />
   </span>;
 }

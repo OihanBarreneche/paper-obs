@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
   <title>4 squares in the smallest square — squares-4-published</title>
-  <rect x="0" y="0" width="320" height="320" fill="#fffdfb"/>
+  <rect x="0" y="0" width="320" height="320" fill="#ffffff"/>
   <g transform="translate(8 312) scale(152 -152)">
-  <path d="M 2 0 L 2 2 L 0 2 L 0 0 Z" fill="#f6f1fa" fill-rule="evenodd" stroke="#6f607b" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
-  <polygon points="1,2 0,2 -1.11e-16,1 1,1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="1,1 0,1 -1.11e-16,0 1,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="2,2 1,2 1,1 2,1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="2,1 1,1 1,0 2,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <path d="M 2 0 L 2 2 L 0 2 L 0 0 Z" fill="#ffffff" fill-rule="evenodd" stroke="#000000" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+  <polygon points="1,2 0,2 -1.11e-16,1 1,1" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1,1 0,1 -1.11e-16,0 1,-1.11e-16" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2,2 1,2 1,1 2,1" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2,1 1,1 1,0 2,-1.11e-16" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
   </g>
 </svg>

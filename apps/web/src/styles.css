@@ -20,6 +20,9 @@
  * #ae77cb against the canvas's #aa78d4, and leaves the paper at #fffbff -- so the tint is
  * the design's, not the author's, and the paper stays paper.
  *
+ * Our own drawings are made like a source plate, black strokes and grey copies on white,
+ * and take the same filter, so a shelf of the two reads as one catalogue.
+ *
  * Only the catalogue applies it. A record shown beside a run, or in the reference panel,
  * is there to be compared with the source, so it is shown exactly as its author drew it.
  * The total-perimeter families keep their colours even in the catalogue: there the colours
@@ -27,20 +30,6 @@
  */
 .packing-figure--tinted {
   filter: grayscale(1) invert(0.36) sepia(1) hue-rotate(235deg) saturate(1.6) brightness(1.2) contrast(1.4);
-}
-
-/*
- * Our own drawing of a family the lab can already place, faded into the same ink.
- *
- * It is painted in the canvas colours -- a solid #aa78d4 shape on a light sheet -- where a
- * source plate is thin strokes on white, so the two cannot be made equal by hue alone: a
- * filled plate of the same violet reads far heavier than a drawn one. The fill is therefore
- * washed out to #c1a8d6, paler than the strokes the source plate lands on (#ae77cb), which
- * is what makes a shelf of the two read as one catalogue rather than as a set of plaques and
- * a set of drawings.
- */
-.packing-figure--pale {
-  filter: saturate(0.4) brightness(1.3) contrast(0.96);
 }
 
 :root {

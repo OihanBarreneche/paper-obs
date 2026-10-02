@@ -1,35 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
   <title>28 squares in the smallest square — squares-28-published</title>
-  <rect x="0" y="0" width="320" height="320" fill="#fffdfb"/>
+  <rect x="0" y="0" width="320" height="320" fill="#ffffff"/>
   <g transform="translate(8 312) scale(52.19 -52.19)">
-  <path d="M 5.824 0 L 5.824 5.824 L 0 5.824 L 0 0 Z" fill="#f6f1fa" fill-rule="evenodd" stroke="#6f607b" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
-  <polygon points="1,5.824 0,5.824 -1.11e-16,4.824 1,4.824" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="2,5.824 1,5.824 1,4.824 2,4.824" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="3,5.824 2,5.824 2,4.824 3,4.824" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="1,4.824 0,4.824 -1.11e-16,3.824 1,3.824" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="1.145,4.073 0.6409,3.21 1.504,2.705 2.009,3.569" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="2.009,3.569 1.504,2.705 2.368,2.201 2.872,3.064" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="1.504,2.705 1,1.842 1.863,1.337 2.368,2.201" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="5.824,1 4.824,1 4.824,0 5.824,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="4.824,1 3.824,1 3.824,0 4.824,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="3.824,1 2.824,1 2.824,0 3.824,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="5.824,2 4.824,2 4.824,1 5.824,1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="4.32,3.119 3.816,2.256 4.679,1.751 5.184,2.615" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="3.457,3.623 2.952,2.76 3.816,2.256 4.32,3.119" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="3.961,4.487 3.457,3.623 4.32,3.119 4.824,3.983" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="5.824,5.824 4.824,5.824 4.824,4.824 5.824,4.824" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="5.824,4.824 4.824,4.824 4.824,3.824 5.824,3.824" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="5.824,3.824 4.824,3.824 4.824,2.824 5.824,2.824" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="4.824,5.824 3.824,5.824 3.824,4.824 4.824,4.824" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="3.21,5.184 2.705,4.32 3.569,3.816 4.073,4.679" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="2.705,4.32 2.201,3.457 3.064,2.952 3.569,3.816" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="1.842,4.824 1.337,3.961 2.201,3.457 2.705,4.32" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="1,1 0,1 -1.11e-16,0 1,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="1,2 0,2 -1.11e-16,1 1,1" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="1,3 0,3 -1.11e-16,2 1,2" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="2,1 1,1 1,0 2,-1.11e-16" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="2.256,2.009 1.751,1.145 2.615,0.6409 3.119,1.504" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="2.76,2.872 2.256,2.009 3.119,1.504 3.623,2.368" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
-  <polygon points="3.623,2.368 3.119,1.504 3.983,1 4.487,1.863" fill="#b68ae6" stroke="#7651a7" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <path d="M 5.824 0 L 5.824 5.824 L 0 5.824 L 0 0 Z" fill="#ffffff" fill-rule="evenodd" stroke="#000000" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+  <polygon points="1,5.824 0,5.824 -1.11e-16,4.824 1,4.824" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2,5.824 1,5.824 1,4.824 2,4.824" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="3,5.824 2,5.824 2,4.824 3,4.824" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1,4.824 0,4.824 -1.11e-16,3.824 1,3.824" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1.145,4.073 0.6409,3.21 1.504,2.705 2.009,3.569" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2.009,3.569 1.504,2.705 2.368,2.201 2.872,3.064" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1.504,2.705 1,1.842 1.863,1.337 2.368,2.201" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="5.824,1 4.824,1 4.824,0 5.824,-1.11e-16" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="4.824,1 3.824,1 3.824,0 4.824,-1.11e-16" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="3.824,1 2.824,1 2.824,0 3.824,-1.11e-16" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="5.824,2 4.824,2 4.824,1 5.824,1" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="4.32,3.119 3.816,2.256 4.679,1.751 5.184,2.615" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="3.457,3.623 2.952,2.76 3.816,2.256 4.32,3.119" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="3.961,4.487 3.457,3.623 4.32,3.119 4.824,3.983" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="5.824,5.824 4.824,5.824 4.824,4.824 5.824,4.824" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="5.824,4.824 4.824,4.824 4.824,3.824 5.824,3.824" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="5.824,3.824 4.824,3.824 4.824,2.824 5.824,2.824" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="4.824,5.824 3.824,5.824 3.824,4.824 4.824,4.824" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="3.21,5.184 2.705,4.32 3.569,3.816 4.073,4.679" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2.705,4.32 2.201,3.457 3.064,2.952 3.569,3.816" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1.842,4.824 1.337,3.961 2.201,3.457 2.705,4.32" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1,1 0,1 -1.11e-16,0 1,-1.11e-16" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1,2 0,2 -1.11e-16,1 1,1" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="1,3 0,3 -1.11e-16,2 1,2" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2,1 1,1 1,0 2,-1.11e-16" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2.256,2.009 1.751,1.145 2.615,0.6409 3.119,1.504" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="2.76,2.872 2.256,2.009 3.119,1.504 3.623,2.368" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
+  <polygon points="3.623,2.368 3.119,1.504 3.983,1 4.487,1.863" fill="#bfbfbf" stroke="#000000" stroke-width="0.7" vector-effect="non-scaling-stroke"/>
   </g>
 </svg>
