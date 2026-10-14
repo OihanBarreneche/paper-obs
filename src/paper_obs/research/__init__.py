@@ -215,9 +215,9 @@ def catalog_problem(slug: str, count: int, catalog: Path | None = None) -> Probl
             "status": instance["status"], "value": instance["value"],
             "unit": f"container {'radius' if symbol == 'r' else 'area' if symbol == 'a' else 'side'}",
             "note": " · ".join(part for part in (instance["attribution"], instance.get("formula", "")) if part),
-            "verified_on": document.get("generated", ""),
+            "verified_on": family.get("source_checked_on", document.get("generated", "")),
             "preview": family["page"] + instance["figure"] if instance.get("figure") else "",
-            "sources": [{"label": f"{family['title']} · Erich Friedman's Packing Center", "url": family["page"]}],
+            "sources": [{"label": f"{family['title']} · Erich's Packing Center", "url": family["page"]}],
         }}
     return Problem.from_dict(template)
 

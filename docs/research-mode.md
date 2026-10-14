@@ -9,7 +9,7 @@ Read this page when the owner asks for a research session or a record hunt. Noth
 - A family of the shipped catalog: `paper-obs research problem squintri 38 -o problem.json`. The problem carries the published record (`metadata.reference`: value, unit, author, figure, page) for that count.
 - Any other problem: build or open it in the web app and use **Export ▸ Problem**.
 
-The catalog is a snapshot, dated in `reference.verified_on`, and Friedman's tables change within days. Before working on a record, read the current value on the family page for that count. Read only the pages a claim depends on: no crawler or automatic refresh of the Packing Center may be built without its author's permission.
+The catalog is a snapshot, dated in `reference.verified_on`, and Friedman's tables change within days. Before working on a record, read the current value on the family page for that count. Source consultation and engine validation have separate dates. During a hunt, read only the pages a claim depends on. A complete catalog check is a separate, owner-requested maintenance task; do not turn it into periodic crawling.
 
 ## 2. Plan the machine
 
@@ -58,7 +58,9 @@ paper-obs research picture -p problem.json -c refined.json -o 26.gif --like old2
 - **`refine`** closes an arrangement's contacts. It keeps each nearby pair apart by one fixed separating axis, keeps every copy in the arena, and maximises the scale with SLSQP, choosing the axes again until they settle. The engine then accepts the largest scale it judges valid. It covers `maximize_scale` problems with equal convex polygonal copies. A non-convex arena (an L, a frame, holes) is its convex hull minus convex obstacles, and a disc arena is its exact circle. From Python: `paper_obs.search.refine.exact_refine(problem, candidate)`.
 - **`leads`** scans the shipped catalog for entries that a construction from other entries beats. A copy can hold copies (a square holds two tans, a tan is two tans 1/√2 its size), and a container can split into containers (a triangle of side 2s is four of side s). A printed value counts at the upper end of its last digit, since it is truncated. A lead is a hint to check on the live page, not a record.
 - **`verify`** judges the arrangement again on a code path of its own (`paper_obs.geometry.exact_check`): every corner becomes an exact fraction, and the separating-axis theorem decides overlaps and containment in rational arithmetic, with no tolerance. It reports the overlapping pairs, the copies out and the smallest margins, and exits 1 when the arrangement is invalid.
-- **`picture`** draws the arrangement for a submission as an SVG, written beside the picture, then renders it with resvg in the format the file name asks for. With `--like`, it copies the picture it replaces: its pixel size; crisp edges in its exact palette when it has a handful of colours, anti-aliased edges otherwise; a transparent outside when it has one; white as empty space, the most common other colour for the copies and the darkest for the lines. `--size`, `--rotate` and the file suffix set the rest. The owner downloads the original picture; the agent never fetches pages in bulk.
+- **`picture`** draws an SVG and renders it in the requested format. `--like` reads the original's size, colours and transparency; `--rotate` matches its orientation. The agent can download the specific image being replaced while checking the claim's page.
+- **`prepare`** creates a private submission dossier from a session's best, judged against the current bundled reference and independently where supported. Dimensions and format come from the downloaded original; its exact filename comes from the source URL, including letters such as `ts38.gif`. Compare the original and output visually.
+- **`batch`** packages selected prepared dossiers. Images retain their exact names inside one folder per source page, with measurements and an email draft. Coordinates, SVG working files and engine checks stay local.
 
 ### The journal
 
@@ -88,7 +90,7 @@ Every submission says where its arrangement comes from:
 
 Submit each new best, and also each intermediate step that a later best builds on, even when it does not beat the session's best (a composition that a refinement then improves, for example). Then the chain from the starting point to the best arrangement is complete. Do not submit every attempt of a search: its outcome goes in a `search` note.
 
-When the search ends, set the status to `done` and write a last note on what the result owes to understanding, to composition and to search. The page draws the chain from the starting point to the best arrangement, labels each link with its method, lists the programs with their code, and shows the journal in order: a new best wears a green mark, an invalid submission a red one, and dead ends are muted. Each session says whether it beats the published record, ties it or how far it stays. Sessions written before steps and methods existed show their improvements as the chain, without labels. Opening a session shows its best arrangement on the canvas, and a chart draws each new best against the record. The list of every session sorts by date or by improvement, which brings records first, and filters by shape and container. A session that led nowhere can be deleted from that list or from its own header: its folder moves to `runs/research/deleted/`, out of the listing, and moving it back by hand restores it.
+When the search ends, first complete the submission step in section 6, then set the status to `done` and write a last note on what the result owes to understanding, to composition and to search. The page draws the chain from the starting point to the best arrangement, labels each link with its method, lists the programs with their code, and shows the journal in order: a new best wears a green mark, an invalid submission a red one, and dead ends are muted. Each session says whether it beats the published record, ties it or how far it stays. Sessions written before steps and methods existed show their improvements as the chain, without labels. Opening a session shows its best arrangement on the canvas, and a chart draws each new best against the record. The list of every session sorts by date or by improvement, which brings records first, and filters by shape and container. A session that led nowhere can be deleted from that list or from its own header: its folder moves to `runs/research/deleted/`, out of the listing, and moving it back by hand restores it.
 
 Two record hunts ship as example sessions in `examples/research/`, journaled live as they ran: 50 squares in a tan, beaten by extending a construction family, and 41 dominoes in a tan, beaten by moving a published gesture to another place, with an invalid construction and its correction left in the journal. Their programs are copied as they were; some need a C compiler or files of the hunt that are not shipped, so they are for reading. `paper-obs serve` copies them into the runs folder once, as it does the example runs.
 
@@ -102,7 +104,22 @@ Two record hunts ship as example sessions in `examples/research/`, journaled liv
 
 ## 6. Submitting to the source
 
-Only the owner contacts Erich Friedman; the agent prepares the material in a private folder (the owner's is `.private/submissions/`, ignored by Git) and never sends anything. Keep it to the essentials, since the owner writes the email: per record the page, the count, the previous and new values, a one-line method, the picture from `paper-obs research picture`, the candidate and the `verify` output. The Packing Center asks for an email with:
+Preparing the dossier is the final step of every successful record hunt, before
+marking the session `done`. Re-read the live reference on that day; if it is newer
+than the bundled catalog, update the catalog before preparation. Visually check
+the output against the original for orientation and colours, and journal the
+prepared dossier. If no record is improved, or preparation is blocked, record why.
+
+Only the owner sends the email. Use `.private/submissions/` (ignored by Git) for
+the dossiers. In his reply supplied by the owner on 2026-10-14, Erich clarified
+that coordinates are **not required**, and permitted reuse of the packings with
+credit to **Erich's Packing Center** and a link. Keep coordinates and verification
+results as local research evidence, outside the recipient attachments. Exact
+coordinates and an exact expression for the measured value are different things:
+the latter remains welcome when available.
+
+The [public submission guidelines](https://erich-friedman.github.io/packing/submit.html)
+request:
 
 1. a descriptive title, in a new email rather than a reply to an earlier exchange;
 2. a picture of the packing in the same orientation, colours, pixel size, file type and name as the picture it replaces, with no border or text. In the "Maximize Total Perimeter" pages, any rainbow palette in which close sizes get close colours is accepted;
@@ -111,6 +128,34 @@ Only the owner contacts Erich Friedman; the agent prepares the material in a pri
 5. for a new submitter, a description of the program or method used.
 
 Extending an existing table is accepted only up to n = 50. A large batch is sorted by page into named folders, with the values in one text file per page or in the email itself.
+
+```bash
+.venv/bin/paper-obs research prepare res-SESSION \
+  --like runs/research/res-SESSION/work/ts38.gif \
+  --author "Full name" --method "Short explanation" --rotate 0
+.venv/bin/paper-obs research status res-SESSION --set done
+.venv/bin/paper-obs research batch res-SESSION res-ANOTHER \
+  -o .private/submissions/batch.zip
+```
+
+The filename comes from the current source image, not from the count or the session
+name. Do not prefix filenames with family names inside the attachments: the page
+folder already distinguishes two images both called `26.gif`. `prepare` requires
+the original image format and derives its pixel dimensions and palette; for total
+perimeter it uses the guidelines' rainbow exception, mapping close sizes to close
+colours. Orientation is selected with `--rotate` and still requires visual review.
+
+In **Search ▸ Free research ▸ All sessions**, check the prepared sessions and use
+**Download selected submissions**. The ZIP contains images, one `values.txt` per
+page and `email.txt`; it never sends mail. Review the five-decimal values and add
+any useful exact expression before sending. A changed best candidate invalidates
+its prepared dossier; a batch also refuses a candidate that no longer beats the
+current catalog or two dossiers replacing the same image.
+
+Automatic dossiers cover supported catalog families with an existing raster image
+to replace. New counts and externally hosted families need a manual submission
+plan. Image orientation and the inferred fill style still require visual review;
+source-value checks and geometric validity do not establish those visual choices.
 
 ## 7. What has worked so far
 

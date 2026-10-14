@@ -268,6 +268,15 @@ def _add_research(subparsers: Any) -> None:
     picture.add_argument("--like", type=Path, default=None, help="the picture it replaces: size and colours are read from it")
     picture.add_argument("--size", type=int, nargs=2, default=None, metavar=("WIDTH", "HEIGHT"))
     picture.add_argument("--rotate", type=float, default=0.0, help="degrees counter-clockwise, to match the page")
+    prepare = actions.add_parser("prepare", help="prepare a private submission dossier for the session's best")
+    prepare.add_argument("session")
+    prepare.add_argument("--like", type=Path, required=True, help="downloaded original image being replaced")
+    prepare.add_argument("--author", required=True, help="submitter's full name")
+    prepare.add_argument("--method", required=True, help="short method description for the recipient")
+    prepare.add_argument("--rotate", type=float, default=0.0)
+    batch = actions.add_parser("batch", help="zip selected prepared sessions, grouped by source page")
+    batch.add_argument("sessions", nargs="+")
+    batch.add_argument("--out", "-o", type=Path, required=True)
     research.set_defaults(handler=_cmd_research)
 
 
@@ -314,6 +323,15 @@ def _cmd_research(args: argparse.Namespace) -> int:
         answer = {"wrote": str(submission_picture(load_problem(args.problem), load_candidate(args.candidate), args.out,
                                                   like=args.like, size=tuple(args.size) if args.size else None,
                                                   rotate=args.rotate))}
+    elif args.action == "prepare":
+        from paper_obs.research.submission import prepare
+        answer = prepare(args.session, original=args.like, author=args.author, method=args.method, rotate=args.rotate)
+    elif args.action == "batch":
+        from paper_obs.research.submission import batch
+        content = batch(args.sessions)
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_bytes(content)
+        answer = {"wrote": str(args.out), "sessions": args.sessions}
     else:
         answer = research_sessions.listing(args.problem_id)
     print(json.dumps(answer, indent=2, ensure_ascii=False))

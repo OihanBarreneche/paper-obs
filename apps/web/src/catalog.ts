@@ -10,6 +10,9 @@ export type ProblemReference = {
   proved_by: string;
   proof_date: string;
   verified_on: string;
+  /** Source consultation and engine validation are distinct checks. */
+  source_checked_on?: string;
+  engine_checked_on?: string;
   note: string;
   preview: string;
   sources: ReferenceSource[];
@@ -269,7 +272,7 @@ const NOTES: Record<number, string> = {
   29: "Found by Thomas Schadt in December 2025, then optimized by David Ellsworth in December 2025.",
 };
 
-const VERIFIED_ON = "2026-09-26";
+const VERIFIED_ON = "2026-10-14";
 
 export const SQUARE_RECORDS: SquareRecord[] = [...ROWS, ...EXTRA_ROWS].map(([count, side, author = "", date = "", provedBy = "", proofDate = "", figure = ""]) => {
   const hasCandidate = count <= LOCAL_CANDIDATE_MAX;
@@ -286,6 +289,7 @@ export const SQUARE_RECORDS: SquareRecord[] = [...ROWS, ...EXTRA_ROWS].map(([cou
       proved_by: provedBy,
       proof_date: proofDate,
       verified_on: VERIFIED_ON,
+      source_checked_on: VERIFIED_ON,
       note: NOTES[count] ?? "",
       // The lab's own drawing where the layout ships with the interface, the
       // page's own SVG otherwise; a record with neither shows no picture at all.
@@ -346,6 +350,8 @@ export function readReference(value: unknown): ProblemReference | null {
     proved_by: typeof record.proved_by === "string" ? record.proved_by : "",
     proof_date: typeof record.proof_date === "string" ? record.proof_date : "",
     verified_on: typeof record.verified_on === "string" ? record.verified_on : "",
+    source_checked_on: typeof record.source_checked_on === "string" ? record.source_checked_on : undefined,
+    engine_checked_on: typeof record.engine_checked_on === "string" ? record.engine_checked_on : undefined,
     note: typeof record.note === "string" ? record.note : "",
     preview: typeof record.preview === "string" ? record.preview : "",
 

@@ -44,6 +44,7 @@ export type CopyInstance = {
 };
 
 export type CopyFamily = {
+  source_checked_on?: string;
   slug: string;
   page: string;
   title: string;
@@ -435,12 +436,14 @@ function copyReference(catalog: CopyCatalog, family: CopyFamily, instance: CopyI
     proof_date: proved?.[2] ?? "",
     // A date a check happened on, when one did: the entry's own, otherwise the date the
     // catalogue's values were last read from the source pages.
-    verified_on: checked?.checked_on ?? catalog.generated,
+    verified_on: family.source_checked_on ?? catalog.generated,
+    source_checked_on: family.source_checked_on ?? catalog.generated,
+    engine_checked_on: checked?.checked_on,
     note: instance.formula === "" ? instance.attribution : `${instance.attribution} · ${instance.formula}`,
     // Hotlinked, never copied: the reference panel shows the source's own figure. A
     // total-perimeter page colours its copies by size, so its figure keeps its colours.
     preview: copyFigureUrl(family, instance),
-    sources: [{ label: `${family.title} · Erich Friedman's Packing Center`, url: family.page }],
+    sources: [{ label: `${family.title} · Erich's Packing Center`, url: family.page }],
   };
 }
 
@@ -560,6 +563,7 @@ function readFamily(value: unknown): CopyFamily | null {
   if (typeof value.slug !== "string" || typeof value.title !== "string" || instances.length === 0) return null;
   return {
     slug: value.slug,
+    source_checked_on: text(value.source_checked_on) || undefined,
     page: text(value.page),
     title: value.title,
     shape: text(value.shape),

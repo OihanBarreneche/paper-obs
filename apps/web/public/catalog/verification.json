@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-02",
+  "generated": "2026-10-14",
   "asset": "packing_equal_copies.json",
-  "catalog_generated": "2026-10-02",
+  "catalog_generated": "2026-10-14",
   "tolerance": 1e-06,
   "required_decimals": 5,
   "near_gap": 0.0001,
@@ -25,24 +25,22 @@
     }
   },
   "totals": {
-    "beaten": 6,
-    "below": 91,
-    "differs": 118,
-    "entries_catalog": 4245,
+    "below": 93,
+    "differs": 117,
+    "entries_catalog": 4747,
     "entries_checked": 336,
     "entries_unsupported": 89,
     "families_catalog": 107,
     "families_checked": 31,
     "families_unsupported": 3,
     "level:approx": 58,
-    "level:beaten": 6,
     "level:exact": 5,
     "level:far": 193,
-    "level:near": 68,
+    "level:near": 74,
     "level:none": 6,
-    "reproduces": 115,
+    "reproduces": 120,
     "unmeasurable": 6,
-    "without_coordinates": 3820
+    "without_coordinates": 4322
   },
   "families": {
     "cirincir": {
@@ -50,7 +48,7 @@
       "section": "Packing Equal Copies",
       "shape": "circle",
       "container": "circle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "published",
         "label": "Packomania (cci)",
@@ -74,7 +72,7 @@
             "approx-cirincir-1.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "reproduces",
@@ -93,7 +91,7 @@
             "approx-cirincir-2.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "reproduces",
@@ -113,7 +111,7 @@
             "approx-cirincir-3.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "reproduces",
@@ -132,7 +130,7 @@
             "approx-cirincir-4.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "reproduces",
@@ -151,7 +149,7 @@
             "approx-cirincir-5.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "6": {
           "status": "reproduces",
@@ -170,7 +168,7 @@
             "approx-cirincir-6.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-6.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "7": {
           "status": "reproduces",
@@ -189,7 +187,7 @@
             "approx-cirincir-7.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "8": {
           "status": "reproduces",
@@ -207,7 +205,7 @@
             "packomania-cci-8.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-8.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "9": {
           "status": "reproduces",
@@ -225,7 +223,7 @@
             "packomania-cci-9.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-9.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "10": {
           "status": "reproduces",
@@ -243,7 +241,7 @@
             "packomania-cci-10.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-10.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "11": {
           "status": "reproduces",
@@ -261,7 +259,7 @@
             "packomania-cci-11.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-11.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "12": {
           "status": "reproduces",
@@ -279,7 +277,7 @@
             "packomania-cci-12.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "13": {
           "status": "reproduces",
@@ -297,7 +295,7 @@
             "packomania-cci-13.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-13.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "14": {
           "status": "reproduces",
@@ -315,7 +313,7 @@
             "packomania-cci-14.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-14.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "15": {
           "status": "reproduces",
@@ -333,7 +331,7 @@
             "packomania-cci-15.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-15.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "16": {
           "status": "reproduces",
@@ -351,7 +349,7 @@
             "packomania-cci-16.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-16.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "17": {
           "status": "reproduces",
@@ -369,7 +367,7 @@
             "packomania-cci-17.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-17.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "18": {
           "status": "reproduces",
@@ -387,7 +385,7 @@
             "packomania-cci-18.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-18.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "19": {
           "status": "reproduces",
@@ -405,7 +403,7 @@
             "packomania-cci-19.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-19.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "20": {
           "status": "reproduces",
@@ -423,7 +421,7 @@
             "packomania-cci-20.json"
           ],
           "candidate": "/catalog/candidates/published-cirincir-20.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -432,7 +430,7 @@
       "section": "Packing Equal Copies",
       "shape": "triangle",
       "container": "circle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -453,7 +451,7 @@
             "approx-triincir-1.json"
           ],
           "candidate": "/catalog/candidates/approx-triincir-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "differs",
@@ -471,7 +469,7 @@
             "approx-triincir-2.json"
           ],
           "candidate": "/catalog/candidates/approx-triincir-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "25": {
           "status": "differs",
@@ -489,7 +487,7 @@
             "approx-triincir-25.json"
           ],
           "candidate": "/catalog/candidates/approx-triincir-25.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -498,7 +496,7 @@
       "section": "Packing Equal Copies",
       "shape": "square",
       "container": "circle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -519,7 +517,7 @@
             "approx-squincir-1.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "below",
@@ -537,7 +535,7 @@
             "approx-squincir-2.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "below",
@@ -555,7 +553,7 @@
             "approx-squincir-3.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "below",
@@ -573,7 +571,7 @@
             "approx-squincir-4.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "below",
@@ -591,7 +589,7 @@
             "approx-squincir-5.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "6": {
           "status": "differs",
@@ -609,7 +607,7 @@
             "approx-squincir-6.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-6.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "7": {
           "status": "below",
@@ -627,7 +625,7 @@
             "approx-squincir-7.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "8": {
           "status": "below",
@@ -645,7 +643,7 @@
             "approx-squincir-8.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-8.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "9": {
           "status": "below",
@@ -663,7 +661,7 @@
             "approx-squincir-9.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-9.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "10": {
           "status": "below",
@@ -681,7 +679,7 @@
             "approx-squincir-10.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-10.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "12": {
           "status": "below",
@@ -699,7 +697,7 @@
             "approx-squincir-12.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "13": {
           "status": "differs",
@@ -717,7 +715,7 @@
             "approx-squincir-13.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-13.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "15": {
           "status": "differs",
@@ -735,7 +733,7 @@
             "approx-squincir-15.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-15.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "16": {
           "status": "below",
@@ -753,7 +751,7 @@
             "approx-squincir-16.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-16.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "18": {
           "status": "below",
@@ -771,7 +769,7 @@
             "approx-squincir-18.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-18.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "20": {
           "status": "differs",
@@ -789,7 +787,7 @@
             "approx-squincir-20.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-20.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "21": {
           "status": "below",
@@ -807,7 +805,7 @@
             "approx-squincir-21.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-21.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "36": {
           "status": "below",
@@ -825,7 +823,7 @@
             "approx-squincir-36.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-36.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "42": {
           "status": "below",
@@ -833,17 +831,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 4.03113,
+          "value": 4.03112,
           "unit": "container radius",
           "measured": 4.367309152913552,
-          "gap": -0.08339576072057998,
+          "gap": -0.0833984483006093,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squincir-42.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-42.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "50": {
           "status": "below",
@@ -861,7 +859,7 @@
             "approx-squincir-50.json"
           ],
           "candidate": "/catalog/candidates/approx-squincir-50.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -870,7 +868,7 @@
       "section": "Packing Equal Copies",
       "shape": "pentagon",
       "container": "circle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "seed",
         "label": "the lab's own seed",
@@ -893,7 +891,7 @@
             "starter-penincir-3.json"
           ],
           "candidate": "/catalog/candidates/starter-penincir-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -902,7 +900,7 @@
       "section": "Packing Equal Copies",
       "shape": "hexagon",
       "container": "circle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -923,7 +921,7 @@
             "approx-hexincir-1.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "differs",
@@ -941,7 +939,7 @@
             "approx-hexincir-3.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "differs",
@@ -959,7 +957,7 @@
             "approx-hexincir-4.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "below",
@@ -977,7 +975,7 @@
             "approx-hexincir-5.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "6": {
           "status": "differs",
@@ -995,7 +993,7 @@
             "approx-hexincir-6.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-6.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "7": {
           "status": "differs",
@@ -1013,7 +1011,7 @@
             "approx-hexincir-7.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "8": {
           "status": "differs",
@@ -1031,7 +1029,7 @@
             "approx-hexincir-8.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-8.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "9": {
           "status": "differs",
@@ -1049,7 +1047,7 @@
             "approx-hexincir-9.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-9.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "11": {
           "status": "below",
@@ -1067,7 +1065,7 @@
             "approx-hexincir-11.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-11.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "13": {
           "status": "below",
@@ -1085,7 +1083,7 @@
             "approx-hexincir-13.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-13.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "14": {
           "status": "below",
@@ -1103,7 +1101,7 @@
             "approx-hexincir-14.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-14.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "16": {
           "status": "differs",
@@ -1121,7 +1119,7 @@
             "approx-hexincir-16.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-16.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "20": {
           "status": "below",
@@ -1129,17 +1127,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 4.62527,
+          "value": 4.62526,
           "unit": "container radius",
           "measured": 4.801899653350879,
-          "gap": -0.03818796596758209,
+          "gap": -0.03819021057213626,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-20.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-20.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "21": {
           "status": "below",
@@ -1157,7 +1155,7 @@
             "approx-hexincir-21.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-21.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "23": {
           "status": "below",
@@ -1175,7 +1173,7 @@
             "approx-hexincir-23.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-23.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "35": {
           "status": "below",
@@ -1183,17 +1181,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 6.00084,
+          "value": 6.00083,
           "unit": "container radius",
           "measured": 6.358182593932011,
-          "gap": -0.059548762161965856,
+          "gap": -0.05955052783231848,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexincir-35.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-35.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "37": {
           "status": "below",
@@ -1211,7 +1209,7 @@
             "approx-hexincir-37.json"
           ],
           "candidate": "/catalog/candidates/approx-hexincir-37.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -1220,7 +1218,7 @@
       "section": "Packing Equal Copies",
       "shape": "domino",
       "container": "circle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -1241,7 +1239,7 @@
             "approx-domincir-12.json"
           ],
           "candidate": "/catalog/candidates/approx-domincir-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "17": {
           "status": "below",
@@ -1259,7 +1257,7 @@
             "approx-domincir-17.json"
           ],
           "candidate": "/catalog/candidates/approx-domincir-17.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "26": {
           "status": "below",
@@ -1277,7 +1275,7 @@
             "approx-domincir-26.json"
           ],
           "candidate": "/catalog/candidates/approx-domincir-26.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "28": {
           "status": "below",
@@ -1295,7 +1293,7 @@
             "approx-domincir-28.json"
           ],
           "candidate": "/catalog/candidates/approx-domincir-28.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -1304,7 +1302,7 @@
       "section": "Packing Equal Copies",
       "shape": "l",
       "container": "circle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -1325,7 +1323,7 @@
             "approx-lincir-1.json"
           ],
           "candidate": "/catalog/candidates/approx-lincir-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "differs",
@@ -1343,7 +1341,7 @@
             "approx-lincir-3.json"
           ],
           "candidate": "/catalog/candidates/approx-lincir-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -1352,7 +1350,7 @@
       "section": "Packing Equal Copies",
       "shape": "circle",
       "container": "triangle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -1373,7 +1371,7 @@
             "approx-cirintri-1.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "differs",
@@ -1391,7 +1389,7 @@
             "approx-cirintri-2.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "reproduces",
@@ -1409,7 +1407,7 @@
             "approx-cirintri-3.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "differs",
@@ -1427,7 +1425,7 @@
             "approx-cirintri-4.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "differs",
@@ -1445,7 +1443,7 @@
             "approx-cirintri-5.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "6": {
           "status": "differs",
@@ -1463,7 +1461,7 @@
             "approx-cirintri-6.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-6.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "7": {
           "status": "differs",
@@ -1481,7 +1479,7 @@
             "approx-cirintri-7.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "8": {
           "status": "differs",
@@ -1499,7 +1497,7 @@
             "approx-cirintri-8.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-8.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "9": {
           "status": "differs",
@@ -1517,7 +1515,7 @@
             "approx-cirintri-9.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-9.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "10": {
           "status": "differs",
@@ -1535,7 +1533,7 @@
             "approx-cirintri-10.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-10.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "11": {
           "status": "differs",
@@ -1553,7 +1551,7 @@
             "approx-cirintri-11.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-11.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "12": {
           "status": "differs",
@@ -1571,7 +1569,7 @@
             "approx-cirintri-12.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "13": {
           "status": "differs",
@@ -1589,7 +1587,7 @@
             "approx-cirintri-13.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-13.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "14": {
           "status": "differs",
@@ -1607,7 +1605,7 @@
             "approx-cirintri-14.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-14.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "15": {
           "status": "differs",
@@ -1625,7 +1623,7 @@
             "approx-cirintri-15.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintri-15.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -1634,7 +1632,7 @@
       "section": "Packing Equal Copies",
       "shape": "square",
       "container": "triangle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "record",
         "label": "a construction held by the lab",
@@ -1657,7 +1655,7 @@
             "approx-squintri-1.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "reproduces",
@@ -1675,7 +1673,7 @@
             "starter-squintri-2.json"
           ],
           "candidate": "/catalog/candidates/starter-squintri-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "differs",
@@ -1693,7 +1691,7 @@
             "approx-squintri-3.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "differs",
@@ -1711,7 +1709,7 @@
             "approx-squintri-4.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "7": {
           "status": "differs",
@@ -1729,7 +1727,7 @@
             "approx-squintri-7.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "10": {
           "status": "differs",
@@ -1747,7 +1745,7 @@
             "approx-squintri-10.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-10.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "11": {
           "status": "differs",
@@ -1765,7 +1763,7 @@
             "approx-squintri-11.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-11.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "12": {
           "status": "differs",
@@ -1783,7 +1781,7 @@
             "approx-squintri-12.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "16": {
           "status": "differs",
@@ -1801,7 +1799,7 @@
             "approx-squintri-16.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-16.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "22": {
           "status": "differs",
@@ -1819,7 +1817,7 @@
             "approx-squintri-22.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-22.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "25": {
           "status": "differs",
@@ -1837,7 +1835,7 @@
             "approx-squintri-25.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-25.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "28": {
           "status": "differs",
@@ -1855,7 +1853,7 @@
             "approx-squintri-28.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-28.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "29": {
           "status": "differs",
@@ -1873,25 +1871,25 @@
             "approx-squintri-29.json"
           ],
           "candidate": "/catalog/candidates/approx-squintri-29.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "38": {
-          "status": "differs",
-          "level": "approx",
-          "precise": false,
+          "status": "reproduces",
+          "level": "near",
+          "precise": true,
           "published": false,
           "promoted": false,
-          "value": 10.304,
+          "value": 10.30122,
           "unit": "container side",
           "measured": 10.301221341691353,
-          "gap": 0.0002696679259169025,
-          "decimals": 2,
+          "gap": -1.3024586911037534e-07,
+          "decimals": 5,
           "source_kind": "record",
           "files": [
             "record-squintri-38.json"
           ],
           "candidate": null,
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -1900,7 +1898,7 @@
       "section": "Packing Equal Copies",
       "shape": "circle",
       "container": "square",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "published",
         "label": "Packomania (csq)",
@@ -1923,7 +1921,7 @@
             "packomania-csq-1.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "reproduces",
@@ -1941,7 +1939,7 @@
             "packomania-csq-2.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "reproduces",
@@ -1959,7 +1957,7 @@
             "packomania-csq-3.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "reproduces",
@@ -1977,7 +1975,7 @@
             "packomania-csq-4.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "reproduces",
@@ -1995,7 +1993,7 @@
             "packomania-csq-5.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "6": {
           "status": "reproduces",
@@ -2013,7 +2011,7 @@
             "packomania-csq-6.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-6.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "7": {
           "status": "reproduces",
@@ -2031,7 +2029,7 @@
             "packomania-csq-7.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "8": {
           "status": "reproduces",
@@ -2049,7 +2047,7 @@
             "packomania-csq-8.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-8.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "9": {
           "status": "reproduces",
@@ -2067,7 +2065,7 @@
             "packomania-csq-9.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-9.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "10": {
           "status": "reproduces",
@@ -2085,7 +2083,7 @@
             "packomania-csq-10.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-10.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "11": {
           "status": "reproduces",
@@ -2103,7 +2101,7 @@
             "packomania-csq-11.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-11.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "12": {
           "status": "reproduces",
@@ -2121,7 +2119,7 @@
             "packomania-csq-12.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "13": {
           "status": "reproduces",
@@ -2139,7 +2137,7 @@
             "packomania-csq-13.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-13.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "14": {
           "status": "reproduces",
@@ -2157,7 +2155,7 @@
             "packomania-csq-14.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-14.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "15": {
           "status": "reproduces",
@@ -2175,7 +2173,7 @@
             "packomania-csq-15.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-15.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "16": {
           "status": "reproduces",
@@ -2193,7 +2191,7 @@
             "packomania-csq-16.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-16.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "17": {
           "status": "reproduces",
@@ -2211,7 +2209,7 @@
             "packomania-csq-17.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-17.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "18": {
           "status": "reproduces",
@@ -2229,7 +2227,7 @@
             "packomania-csq-18.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-18.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "19": {
           "status": "reproduces",
@@ -2247,7 +2245,7 @@
             "packomania-csq-19.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-19.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "20": {
           "status": "reproduces",
@@ -2265,7 +2263,7 @@
             "packomania-csq-20.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-20.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "21": {
           "status": "reproduces",
@@ -2283,7 +2281,7 @@
             "packomania-csq-21.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-21.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "22": {
           "status": "reproduces",
@@ -2301,7 +2299,7 @@
             "packomania-csq-22.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-22.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "23": {
           "status": "reproduces",
@@ -2319,7 +2317,7 @@
             "packomania-csq-23.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-23.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "24": {
           "status": "reproduces",
@@ -2337,7 +2335,7 @@
             "packomania-csq-24.json"
           ],
           "candidate": "/catalog/candidates/published-cirinsqu-24.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -2346,7 +2344,7 @@
       "section": "Packing Equal Copies",
       "shape": "triangle",
       "container": "square",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "seed",
         "label": "the lab's own seed",
@@ -2369,7 +2367,7 @@
             "approx-triinsqu-1.json"
           ],
           "candidate": "/catalog/candidates/approx-triinsqu-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "reproduces",
@@ -2388,7 +2386,7 @@
             "approx-triinsqu-2.json"
           ],
           "candidate": "/catalog/candidates/starter-triinsqu-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -2397,7 +2395,7 @@
       "section": "Packing Equal Copies",
       "shape": "pentagon",
       "container": "square",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -2418,7 +2416,7 @@
             "approx-peninsqu-3.json"
           ],
           "candidate": "/catalog/candidates/approx-peninsqu-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "reproduces",
@@ -2436,7 +2434,7 @@
             "approx-peninsqu-5.json"
           ],
           "candidate": "/catalog/candidates/approx-peninsqu-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "8": {
           "status": "reproduces",
@@ -2454,7 +2452,7 @@
             "approx-peninsqu-8.json"
           ],
           "candidate": "/catalog/candidates/approx-peninsqu-8.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "12": {
           "status": "reproduces",
@@ -2472,7 +2470,7 @@
             "approx-peninsqu-12.json"
           ],
           "candidate": "/catalog/candidates/approx-peninsqu-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -2481,7 +2479,7 @@
       "section": "Packing Equal Copies",
       "shape": "hexagon",
       "container": "square",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "seed",
         "label": "the lab's own seed",
@@ -2504,7 +2502,7 @@
             "approx-hexinsqu-1.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "differs",
@@ -2522,7 +2520,7 @@
             "approx-hexinsqu-2.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "differs",
@@ -2540,7 +2538,7 @@
             "approx-hexinsqu-3.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "reproduces",
@@ -2559,7 +2557,7 @@
             "approx-hexinsqu-4.json"
           ],
           "candidate": "/catalog/candidates/starter-hexinsqu-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "differs",
@@ -2577,7 +2575,7 @@
             "approx-hexinsqu-5.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "6": {
           "status": "differs",
@@ -2595,7 +2593,7 @@
             "approx-hexinsqu-6.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-6.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "8": {
           "status": "differs",
@@ -2613,7 +2611,7 @@
             "approx-hexinsqu-8.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-8.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "9": {
           "status": "differs",
@@ -2631,7 +2629,7 @@
             "approx-hexinsqu-9.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-9.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "12": {
           "status": "differs",
@@ -2649,7 +2647,7 @@
             "approx-hexinsqu-12.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "14": {
           "status": "differs",
@@ -2667,7 +2665,7 @@
             "approx-hexinsqu-14.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-14.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "18": {
           "status": "differs",
@@ -2685,7 +2683,7 @@
             "approx-hexinsqu-18.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-18.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "19": {
           "status": "differs",
@@ -2703,7 +2701,7 @@
             "approx-hexinsqu-19.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-19.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "20": {
           "status": "differs",
@@ -2721,7 +2719,7 @@
             "approx-hexinsqu-20.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-20.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "26": {
           "status": "below",
@@ -2739,7 +2737,7 @@
             "approx-hexinsqu-26.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-26.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "30": {
           "status": "below",
@@ -2747,17 +2745,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 9.51952,
+          "value": 9.51951,
           "unit": "container side",
           "measured": 9.962963612398898,
-          "gap": -0.04658256008694746,
+          "gap": -0.04658365949496326,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-30.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-30.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "31": {
           "status": "below",
@@ -2765,17 +2763,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 9.99496,
+          "value": 9.99495,
           "unit": "container side",
           "measured": 10.318960603308463,
-          "gap": -0.03241639819553681,
+          "gap": -0.032417431133568854,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-31.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-31.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "32": {
           "status": "below",
@@ -2793,7 +2791,7 @@
             "approx-hexinsqu-32.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-32.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "33": {
           "status": "below",
@@ -2811,7 +2809,7 @@
             "approx-hexinsqu-33.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-33.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "35": {
           "status": "below",
@@ -2819,17 +2817,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 10.56386,
+          "value": 10.56385,
           "unit": "container side",
           "measured": 11.133649689451472,
-          "gap": -0.05393764111333092,
+          "gap": -0.053938638796600824,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-35.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-35.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "36": {
           "status": "below",
@@ -2847,7 +2845,7 @@
             "approx-hexinsqu-36.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-36.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "37": {
           "status": "below",
@@ -2855,17 +2853,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 10.77757,
+          "value": 10.77756,
           "unit": "container side",
           "measured": 11.31478069976313,
-          "gap": -0.04984525266485201,
+          "gap": -0.049846226767759176,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-37.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-37.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "38": {
           "status": "differs",
@@ -2883,7 +2881,7 @@
             "approx-hexinsqu-38.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-38.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "40": {
           "status": "below",
@@ -2891,17 +2889,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 11.13844,
+          "value": 11.13843,
           "unit": "container side",
           "measured": 11.728215763939861,
-          "gap": -0.052949583957884766,
+          "gap": -0.052950529288226585,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-40.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-40.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "42": {
           "status": "below",
@@ -2919,7 +2917,7 @@
             "approx-hexinsqu-42.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-42.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "45": {
           "status": "below",
@@ -2927,17 +2925,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 11.90748,
+          "value": 11.90747,
           "unit": "container side",
           "measured": 12.525228170308296,
-          "gap": -0.051879001292321814,
+          "gap": -0.05187988466973217,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-45.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-45.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "47": {
           "status": "below",
@@ -2945,17 +2943,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 12.12436,
+          "value": 12.12435,
           "unit": "container side",
           "measured": 12.801497053437927,
-          "gap": -0.055849302844680294,
+          "gap": -0.055850173694913754,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-47.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-47.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "48": {
           "status": "below",
@@ -2963,17 +2961,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 12.16638,
+          "value": 12.16637,
           "unit": "container side",
           "measured": 12.716500268865383,
-          "gap": -0.045216429937695764,
+          "gap": -0.04521728904064093,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-hexinsqu-48.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-48.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "49": {
           "status": "below",
@@ -2991,7 +2989,7 @@
             "approx-hexinsqu-49.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-49.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "50": {
           "status": "differs",
@@ -3009,7 +3007,7 @@
             "approx-hexinsqu-50.json"
           ],
           "candidate": "/catalog/candidates/approx-hexinsqu-50.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -3018,7 +3016,7 @@
       "section": "Packing Equal Copies",
       "shape": "circle",
       "container": "pentagon",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "published",
         "label": "Packomania (cpt)",
@@ -3041,7 +3039,7 @@
             "packomania-cpt-1.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "reproduces",
@@ -3059,7 +3057,7 @@
             "packomania-cpt-2.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "reproduces",
@@ -3077,7 +3075,7 @@
             "packomania-cpt-3.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "reproduces",
@@ -3095,7 +3093,7 @@
             "packomania-cpt-4.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "reproduces",
@@ -3113,7 +3111,7 @@
             "packomania-cpt-5.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "6": {
           "status": "reproduces",
@@ -3131,7 +3129,7 @@
             "packomania-cpt-6.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-6.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "7": {
           "status": "reproduces",
@@ -3149,7 +3147,7 @@
             "packomania-cpt-7.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "8": {
           "status": "reproduces",
@@ -3167,7 +3165,7 @@
             "packomania-cpt-8.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-8.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "9": {
           "status": "reproduces",
@@ -3185,7 +3183,7 @@
             "packomania-cpt-9.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-9.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "10": {
           "status": "reproduces",
@@ -3203,7 +3201,7 @@
             "packomania-cpt-10.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-10.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "11": {
           "status": "reproduces",
@@ -3221,7 +3219,7 @@
             "packomania-cpt-11.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-11.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "12": {
           "status": "reproduces",
@@ -3239,7 +3237,7 @@
             "packomania-cpt-12.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "13": {
           "status": "reproduces",
@@ -3257,7 +3255,7 @@
             "packomania-cpt-13.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-13.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "14": {
           "status": "reproduces",
@@ -3275,7 +3273,7 @@
             "packomania-cpt-14.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-14.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "15": {
           "status": "reproduces",
@@ -3293,7 +3291,7 @@
             "packomania-cpt-15.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-15.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "16": {
           "status": "reproduces",
@@ -3311,7 +3309,7 @@
             "packomania-cpt-16.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-16.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "17": {
           "status": "reproduces",
@@ -3329,7 +3327,7 @@
             "packomania-cpt-17.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-17.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "18": {
           "status": "reproduces",
@@ -3347,7 +3345,7 @@
             "packomania-cpt-18.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-18.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "19": {
           "status": "reproduces",
@@ -3365,7 +3363,7 @@
             "packomania-cpt-19.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-19.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "20": {
           "status": "reproduces",
@@ -3383,7 +3381,7 @@
             "packomania-cpt-20.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-20.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "21": {
           "status": "reproduces",
@@ -3401,7 +3399,7 @@
             "packomania-cpt-21.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-21.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "22": {
           "status": "reproduces",
@@ -3419,7 +3417,7 @@
             "packomania-cpt-22.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-22.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "23": {
           "status": "reproduces",
@@ -3437,7 +3435,7 @@
             "packomania-cpt-23.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-23.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "24": {
           "status": "reproduces",
@@ -3455,7 +3453,7 @@
             "packomania-cpt-24.json"
           ],
           "candidate": "/catalog/candidates/published-cirinpen-24.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -3464,7 +3462,7 @@
       "section": "Packing Equal Copies",
       "shape": "square",
       "container": "pentagon",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -3485,7 +3483,7 @@
             "approx-squinpen-1.json"
           ],
           "candidate": "/catalog/candidates/approx-squinpen-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "differs",
@@ -3503,7 +3501,7 @@
             "approx-squinpen-3.json"
           ],
           "candidate": "/catalog/candidates/approx-squinpen-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "differs",
@@ -3521,7 +3519,7 @@
             "approx-squinpen-4.json"
           ],
           "candidate": "/catalog/candidates/approx-squinpen-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -3530,7 +3528,7 @@
       "section": "Packing Equal Copies",
       "shape": "circle",
       "container": "hexagon",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "published",
         "label": "Packomania (chx)",
@@ -3553,7 +3551,7 @@
             "packomania-chx-1.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "reproduces",
@@ -3571,7 +3569,7 @@
             "packomania-chx-2.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "reproduces",
@@ -3589,7 +3587,7 @@
             "packomania-chx-3.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "differs",
@@ -3607,7 +3605,7 @@
             "packomania-chx-4.json"
           ],
           "candidate": null,
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "reproduces",
@@ -3625,7 +3623,7 @@
             "packomania-chx-5.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "6": {
           "status": "reproduces",
@@ -3643,7 +3641,7 @@
             "packomania-chx-6.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-6.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "7": {
           "status": "reproduces",
@@ -3661,7 +3659,7 @@
             "packomania-chx-7.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "8": {
           "status": "reproduces",
@@ -3679,7 +3677,7 @@
             "packomania-chx-8.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-8.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "9": {
           "status": "reproduces",
@@ -3697,7 +3695,7 @@
             "packomania-chx-9.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-9.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "10": {
           "status": "reproduces",
@@ -3715,7 +3713,7 @@
             "packomania-chx-10.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-10.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "11": {
           "status": "reproduces",
@@ -3733,7 +3731,7 @@
             "packomania-chx-11.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-11.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "12": {
           "status": "reproduces",
@@ -3751,7 +3749,7 @@
             "packomania-chx-12.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "13": {
           "status": "reproduces",
@@ -3769,7 +3767,7 @@
             "packomania-chx-13.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-13.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "14": {
           "status": "reproduces",
@@ -3787,7 +3785,7 @@
             "packomania-chx-14.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-14.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "15": {
           "status": "reproduces",
@@ -3805,7 +3803,7 @@
             "packomania-chx-15.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-15.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "16": {
           "status": "reproduces",
@@ -3823,7 +3821,7 @@
             "packomania-chx-16.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-16.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "17": {
           "status": "reproduces",
@@ -3841,7 +3839,7 @@
             "packomania-chx-17.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-17.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "18": {
           "status": "reproduces",
@@ -3859,7 +3857,7 @@
             "packomania-chx-18.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-18.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "19": {
           "status": "reproduces",
@@ -3877,7 +3875,7 @@
             "packomania-chx-19.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-19.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "20": {
           "status": "reproduces",
@@ -3895,7 +3893,7 @@
             "packomania-chx-20.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-20.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "21": {
           "status": "reproduces",
@@ -3913,7 +3911,7 @@
             "packomania-chx-21.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-21.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "22": {
           "status": "reproduces",
@@ -3931,7 +3929,7 @@
             "packomania-chx-22.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-22.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "23": {
           "status": "reproduces",
@@ -3949,7 +3947,7 @@
             "packomania-chx-23.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-23.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "24": {
           "status": "reproduces",
@@ -3967,7 +3965,7 @@
             "packomania-chx-24.json"
           ],
           "candidate": "/catalog/candidates/published-cirinhex-24.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -3976,7 +3974,7 @@
       "section": "Packing Equal Copies",
       "shape": "square",
       "container": "hexagon",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -3997,7 +3995,7 @@
             "approx-squinhex-1.json"
           ],
           "candidate": "/catalog/candidates/approx-squinhex-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "below",
@@ -4015,7 +4013,7 @@
             "approx-squinhex-3.json"
           ],
           "candidate": "/catalog/candidates/approx-squinhex-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -4024,7 +4022,7 @@
       "section": "Packing Equal Copies",
       "shape": "circle",
       "container": "tan",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -4045,7 +4043,7 @@
             "approx-cirintan-1.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "reproduces",
@@ -4063,7 +4061,7 @@
             "approx-cirintan-2.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "differs",
@@ -4081,7 +4079,7 @@
             "approx-cirintan-3.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "differs",
@@ -4099,7 +4097,7 @@
             "approx-cirintan-4.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "differs",
@@ -4117,7 +4115,7 @@
             "approx-cirintan-5.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "6": {
           "status": "differs",
@@ -4135,7 +4133,7 @@
             "approx-cirintan-6.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-6.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "7": {
           "status": "differs",
@@ -4153,7 +4151,7 @@
             "approx-cirintan-7.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "8": {
           "status": "differs",
@@ -4171,7 +4169,7 @@
             "approx-cirintan-8.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-8.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "9": {
           "status": "differs",
@@ -4189,7 +4187,7 @@
             "approx-cirintan-9.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-9.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "10": {
           "status": "differs",
@@ -4207,7 +4205,7 @@
             "approx-cirintan-10.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-10.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "11": {
           "status": "differs",
@@ -4225,7 +4223,7 @@
             "approx-cirintan-11.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-11.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "12": {
           "status": "differs",
@@ -4243,7 +4241,7 @@
             "approx-cirintan-12.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "13": {
           "status": "differs",
@@ -4261,7 +4259,7 @@
             "approx-cirintan-13.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-13.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "14": {
           "status": "differs",
@@ -4279,7 +4277,7 @@
             "approx-cirintan-14.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-14.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "15": {
           "status": "differs",
@@ -4297,7 +4295,7 @@
             "approx-cirintan-15.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-15.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "16": {
           "status": "below",
@@ -4315,7 +4313,7 @@
             "approx-cirintan-16.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-16.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "17": {
           "status": "differs",
@@ -4333,7 +4331,7 @@
             "approx-cirintan-17.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-17.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "18": {
           "status": "differs",
@@ -4351,7 +4349,7 @@
             "approx-cirintan-18.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-18.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "19": {
           "status": "differs",
@@ -4369,7 +4367,7 @@
             "approx-cirintan-19.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-19.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "20": {
           "status": "differs",
@@ -4387,7 +4385,7 @@
             "approx-cirintan-20.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-20.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "21": {
           "status": "differs",
@@ -4405,7 +4403,7 @@
             "approx-cirintan-21.json"
           ],
           "candidate": "/catalog/candidates/approx-cirintan-21.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -4414,7 +4412,7 @@
       "section": "Packing Equal Copies",
       "shape": "square",
       "container": "tan",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "record",
         "label": "a construction held by the lab",
@@ -4437,7 +4435,7 @@
             "approx-squintan-1.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "differs",
@@ -4455,7 +4453,7 @@
             "approx-squintan-3.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "differs",
@@ -4473,7 +4471,7 @@
             "approx-squintan-5.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "6": {
           "status": "differs",
@@ -4491,7 +4489,7 @@
             "approx-squintan-6.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-6.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "9": {
           "status": "differs",
@@ -4509,7 +4507,7 @@
             "approx-squintan-9.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-9.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "10": {
           "status": "differs",
@@ -4527,7 +4525,7 @@
             "approx-squintan-10.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-10.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "11": {
           "status": "differs",
@@ -4545,7 +4543,7 @@
             "approx-squintan-11.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-11.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "13": {
           "status": "differs",
@@ -4563,7 +4561,7 @@
             "approx-squintan-13.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-13.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "14": {
           "status": "differs",
@@ -4581,7 +4579,7 @@
             "approx-squintan-14.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-14.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "15": {
           "status": "differs",
@@ -4599,7 +4597,7 @@
             "approx-squintan-15.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-15.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "16": {
           "status": "differs",
@@ -4617,7 +4615,7 @@
             "approx-squintan-16.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-16.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "17": {
           "status": "differs",
@@ -4635,7 +4633,7 @@
             "approx-squintan-17.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-17.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "18": {
           "status": "differs",
@@ -4653,7 +4651,7 @@
             "approx-squintan-18.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-18.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "20": {
           "status": "differs",
@@ -4671,7 +4669,7 @@
             "approx-squintan-20.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-20.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "21": {
           "status": "differs",
@@ -4689,7 +4687,7 @@
             "approx-squintan-21.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-21.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "22": {
           "status": "differs",
@@ -4707,7 +4705,7 @@
             "approx-squintan-22.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-22.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "23": {
           "status": "differs",
@@ -4725,7 +4723,7 @@
             "approx-squintan-23.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-23.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "24": {
           "status": "differs",
@@ -4743,7 +4741,7 @@
             "approx-squintan-24.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-24.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "25": {
           "status": "differs",
@@ -4761,7 +4759,7 @@
             "approx-squintan-25.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-25.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "30": {
           "status": "below",
@@ -4779,7 +4777,7 @@
             "approx-squintan-30.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-30.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "31": {
           "status": "below",
@@ -4797,7 +4795,7 @@
             "approx-squintan-31.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-31.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "32": {
           "status": "below",
@@ -4815,7 +4813,7 @@
             "approx-squintan-32.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-32.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "33": {
           "status": "below",
@@ -4823,17 +4821,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 8.82843,
+          "value": 8.82842,
           "unit": "container side",
           "measured": 9.2737436602591,
-          "gap": -0.050440866638700135,
+          "gap": -0.050442056478860416,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-33.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-33.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "34": {
           "status": "below",
@@ -4841,17 +4839,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 8.94975,
+          "value": 8.94974,
           "unit": "container side",
           "measured": 9.440882744781327,
-          "gap": -0.054876699883385206,
+          "gap": -0.05487787855081001,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-34.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-34.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "35": {
           "status": "differs",
@@ -4869,7 +4867,7 @@
             "approx-squintan-35.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-35.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "36": {
           "status": "differs",
@@ -4887,7 +4885,7 @@
             "approx-squintan-36.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-36.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "37": {
           "status": "below",
@@ -4905,7 +4903,7 @@
             "approx-squintan-37.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-37.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "38": {
           "status": "below",
@@ -4923,7 +4921,7 @@
             "approx-squintan-38.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-38.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "39": {
           "status": "below",
@@ -4941,7 +4939,7 @@
             "approx-squintan-39.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-39.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "40": {
           "status": "below",
@@ -4959,7 +4957,7 @@
             "approx-squintan-40.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-40.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "41": {
           "status": "below",
@@ -4967,17 +4965,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 9.82843,
+          "value": 9.82842,
           "unit": "container side",
           "measured": 10.30415985631848,
-          "gap": -0.04840344351218644,
+          "gap": -0.04840451021817139,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-41.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-41.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "42": {
           "status": "below",
@@ -4985,17 +4983,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 9.82843,
+          "value": 9.82842,
           "unit": "container side",
           "measured": 10.450399544313209,
-          "gap": -0.06328269564042352,
+          "gap": -0.0632837774854157,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-squintan-42.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-42.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "43": {
           "status": "below",
@@ -5013,7 +5011,7 @@
             "approx-squintan-43.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-43.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "45": {
           "status": "differs",
@@ -5031,7 +5029,7 @@
             "approx-squintan-45.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-45.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "46": {
           "status": "below",
@@ -5049,7 +5047,7 @@
             "approx-squintan-46.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-46.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "47": {
           "status": "below",
@@ -5067,7 +5065,7 @@
             "approx-squintan-47.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-47.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "48": {
           "status": "below",
@@ -5085,7 +5083,7 @@
             "approx-squintan-48.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-48.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "49": {
           "status": "differs",
@@ -5103,25 +5101,25 @@
             "approx-squintan-49.json"
           ],
           "candidate": "/catalog/candidates/approx-squintan-49.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "50": {
-          "status": "beaten",
-          "level": "beaten",
+          "status": "reproduces",
+          "level": "near",
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 10.77817,
+          "value": 10.65685,
           "unit": "container side",
           "measured": 10.656854260149235,
-          "gap": 0.0112556899594982,
-          "decimals": 0,
+          "gap": -3.997568919774381e-07,
+          "decimals": 5,
           "source_kind": "record",
           "files": [
             "record-squintan-50.json"
           ],
           "candidate": null,
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -5130,7 +5128,7 @@
       "section": "Packing Equal Copies",
       "shape": "domino",
       "container": "tan",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "record",
         "label": "a construction held by the lab",
@@ -5138,76 +5136,76 @@
       },
       "entries": {
         "41": {
-          "status": "beaten",
-          "level": "beaten",
+          "status": "reproduces",
+          "level": "near",
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 13.65685,
+          "value": 13.58063,
           "unit": "container side",
           "measured": 13.580639886226527,
-          "gap": 0.005580358118707745,
-          "decimals": 0,
+          "gap": -7.279652363108628e-07,
+          "decimals": 4,
           "source_kind": "record",
           "files": [
             "record-domintan-41.json"
           ],
           "candidate": null,
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "44": {
-          "status": "beaten",
-          "level": "beaten",
-          "precise": true,
+          "status": "reproduces",
+          "level": "near",
+          "precise": false,
           "published": false,
           "promoted": false,
-          "value": 14.02663,
+          "value": 14.0,
           "unit": "container side",
           "measured": 14.000000014000001,
-          "gap": 0.0018985305807595737,
-          "decimals": 1,
+          "gap": -1.000000082740371e-09,
+          "decimals": 7,
           "source_kind": "record",
           "files": [
             "record-domintan-44.json"
           ],
           "candidate": null,
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "47": {
-          "status": "beaten",
-          "level": "beaten",
+          "status": "below",
+          "level": "approx",
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 14.48528,
+          "value": 14.46066,
           "unit": "container side",
           "measured": 14.47117800756857,
-          "gap": 0.0009735395126245142,
+          "gap": -0.0007273532168358244,
           "decimals": 1,
           "source_kind": "record",
           "files": [
             "record-domintan-47.json"
           ],
           "candidate": null,
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "48": {
-          "status": "beaten",
-          "level": "beaten",
+          "status": "reproduces",
+          "level": "near",
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 14.65686,
+          "value": 14.63222,
           "unit": "container side",
           "measured": 14.632224333045853,
-          "gap": 0.0016808284280635131,
-          "decimals": 1,
+          "gap": -2.961304472451235e-07,
+          "decimals": 5,
           "source_kind": "record",
           "files": [
             "record-domintan-48.json"
           ],
           "candidate": null,
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -5216,7 +5214,7 @@
       "section": "Packing Equal Copies",
       "shape": "circle",
       "container": "l",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -5237,7 +5235,7 @@
             "approx-cirinl-2.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "reproduces",
@@ -5255,7 +5253,7 @@
             "approx-cirinl-3.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "differs",
@@ -5273,7 +5271,7 @@
             "approx-cirinl-4.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "differs",
@@ -5291,7 +5289,7 @@
             "approx-cirinl-5.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "6": {
           "status": "differs",
@@ -5309,7 +5307,7 @@
             "approx-cirinl-6.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-6.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "7": {
           "status": "differs",
@@ -5327,7 +5325,7 @@
             "approx-cirinl-7.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "8": {
           "status": "differs",
@@ -5345,7 +5343,7 @@
             "approx-cirinl-8.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-8.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "9": {
           "status": "differs",
@@ -5363,7 +5361,7 @@
             "approx-cirinl-9.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-9.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "10": {
           "status": "differs",
@@ -5381,7 +5379,7 @@
             "approx-cirinl-10.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-10.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "11": {
           "status": "differs",
@@ -5399,7 +5397,7 @@
             "approx-cirinl-11.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-11.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "12": {
           "status": "reproduces",
@@ -5417,7 +5415,7 @@
             "approx-cirinl-12.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-12.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "13": {
           "status": "differs",
@@ -5435,7 +5433,7 @@
             "approx-cirinl-13.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-13.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "14": {
           "status": "differs",
@@ -5453,7 +5451,7 @@
             "approx-cirinl-14.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-14.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "15": {
           "status": "differs",
@@ -5471,7 +5469,7 @@
             "approx-cirinl-15.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-15.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "16": {
           "status": "differs",
@@ -5489,7 +5487,7 @@
             "approx-cirinl-16.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-16.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "17": {
           "status": "below",
@@ -5507,7 +5505,7 @@
             "approx-cirinl-17.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-17.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "18": {
           "status": "below",
@@ -5525,7 +5523,7 @@
             "approx-cirinl-18.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-18.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "19": {
           "status": "below",
@@ -5543,7 +5541,7 @@
             "approx-cirinl-19.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-19.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "20": {
           "status": "below",
@@ -5561,7 +5559,7 @@
             "approx-cirinl-20.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-20.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "21": {
           "status": "below",
@@ -5579,7 +5577,7 @@
             "approx-cirinl-21.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-21.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "22": {
           "status": "below",
@@ -5597,7 +5595,7 @@
             "approx-cirinl-22.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-22.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "23": {
           "status": "below",
@@ -5615,7 +5613,7 @@
             "approx-cirinl-23.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-23.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "24": {
           "status": "below",
@@ -5633,7 +5631,7 @@
             "approx-cirinl-24.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-24.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "25": {
           "status": "differs",
@@ -5651,7 +5649,7 @@
             "approx-cirinl-25.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-25.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "26": {
           "status": "below",
@@ -5669,7 +5667,7 @@
             "approx-cirinl-26.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-26.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "27": {
           "status": "reproduces",
@@ -5687,7 +5685,7 @@
             "approx-cirinl-27.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-27.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "28": {
           "status": "differs",
@@ -5705,7 +5703,7 @@
             "approx-cirinl-28.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-28.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "29": {
           "status": "below",
@@ -5723,7 +5721,7 @@
             "approx-cirinl-29.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-29.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "30": {
           "status": "below",
@@ -5741,7 +5739,7 @@
             "approx-cirinl-30.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-30.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "31": {
           "status": "below",
@@ -5759,7 +5757,7 @@
             "approx-cirinl-31.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-31.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "32": {
           "status": "below",
@@ -5777,7 +5775,7 @@
             "approx-cirinl-32.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-32.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "33": {
           "status": "below",
@@ -5795,7 +5793,7 @@
             "approx-cirinl-33.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-33.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "34": {
           "status": "below",
@@ -5813,7 +5811,7 @@
             "approx-cirinl-34.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-34.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "35": {
           "status": "differs",
@@ -5831,7 +5829,7 @@
             "approx-cirinl-35.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-35.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "36": {
           "status": "below",
@@ -5849,7 +5847,7 @@
             "approx-cirinl-36.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-36.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "37": {
           "status": "below",
@@ -5867,7 +5865,7 @@
             "approx-cirinl-37.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-37.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "38": {
           "status": "below",
@@ -5885,7 +5883,7 @@
             "approx-cirinl-38.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-38.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "39": {
           "status": "below",
@@ -5903,7 +5901,7 @@
             "approx-cirinl-39.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-39.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "40": {
           "status": "below",
@@ -5921,7 +5919,7 @@
             "approx-cirinl-40.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-40.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "41": {
           "status": "below",
@@ -5939,7 +5937,7 @@
             "approx-cirinl-41.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-41.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "42": {
           "status": "below",
@@ -5957,7 +5955,7 @@
             "approx-cirinl-42.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-42.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "43": {
           "status": "below",
@@ -5975,25 +5973,25 @@
             "approx-cirinl-43.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-43.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "44": {
-          "status": "differs",
+          "status": "below",
           "level": "far",
-          "precise": false,
+          "precise": true,
           "published": false,
           "promoted": false,
-          "value": 15.2702,
+          "value": 15.27019,
           "unit": "container side",
           "measured": 15.485042016172768,
-          "gap": -0.014069364918125963,
+          "gap": -0.01407002900243995,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-44.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-44.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "45": {
           "status": "below",
@@ -6001,17 +5999,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 15.43184,
+          "value": 15.43183,
           "unit": "container side",
           "measured": 15.684640320914477,
-          "gap": -0.016381735484198762,
+          "gap": -0.016382394111033975,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-45.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-45.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "46": {
           "status": "differs",
@@ -6029,7 +6027,7 @@
             "approx-cirinl-46.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-46.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "47": {
           "status": "below",
@@ -6047,25 +6045,25 @@
             "approx-cirinl-47.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-47.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "48": {
-          "status": "below",
+          "status": "differs",
           "level": "far",
-          "precise": true,
+          "precise": false,
           "published": false,
           "promoted": false,
-          "value": 15.98311,
+          "value": 15.9831,
           "unit": "container side",
           "measured": 16.281398415930944,
-          "gap": -0.018662726836701008,
+          "gap": -0.018663364174092877,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-48.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-48.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "49": {
           "status": "below",
@@ -6083,7 +6081,7 @@
             "approx-cirinl-49.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-49.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "50": {
           "status": "below",
@@ -6091,17 +6089,17 @@
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 16.30078,
+          "value": 16.30077,
           "unit": "container side",
           "measured": 17.014235793646808,
-          "gap": -0.04376819965957509,
+          "gap": -0.04376883997791565,
           "decimals": 0,
           "source_kind": "approx",
           "files": [
             "approx-cirinl-50.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinl-50.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -6110,7 +6108,7 @@
       "section": "Packing Equal Copies",
       "shape": "tan",
       "container": "l",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "record",
         "label": "a construction held by the lab",
@@ -6118,22 +6116,22 @@
       },
       "entries": {
         "26": {
-          "status": "beaten",
-          "level": "beaten",
+          "status": "below",
+          "level": "near",
           "precise": true,
           "published": false,
           "promoted": false,
-          "value": 2.12098,
+          "value": 2.12022,
           "unit": "container side",
           "measured": 2.1204281051926324,
-          "gap": 0.0002602074547461567,
-          "decimals": 2,
+          "gap": -9.815264106184566e-05,
+          "decimals": 3,
           "source_kind": "record",
           "files": [
             "record-taninL-26.json"
           ],
           "candidate": null,
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -6142,7 +6140,7 @@
       "section": "Packing Equal Copies",
       "shape": "circle",
       "container": "ellipse",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -6163,7 +6161,7 @@
             "approx-cirinel-1.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinel-1.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "2": {
           "status": "unmeasurable",
@@ -6181,7 +6179,7 @@
             "approx-cirinel-2.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinel-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "3": {
           "status": "unmeasurable",
@@ -6199,7 +6197,7 @@
             "approx-cirinel-3.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinel-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "4": {
           "status": "unmeasurable",
@@ -6217,7 +6215,7 @@
             "approx-cirinel-4.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinel-4.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "7": {
           "status": "unmeasurable",
@@ -6235,7 +6233,7 @@
             "approx-cirinel-7.json"
           ],
           "candidate": "/catalog/candidates/approx-cirinel-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -6244,7 +6242,7 @@
       "section": "Packing Copies to Maximize Total Perimeter",
       "shape": "circle",
       "container": "circle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "seed",
         "label": "the lab's own seed",
@@ -6267,7 +6265,7 @@
             "starter-cirRcir-2.json"
           ],
           "candidate": "/catalog/candidates/starter-cirRcir-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         },
         "5": {
           "status": "reproduces",
@@ -6285,7 +6283,7 @@
             "approx-cirRcir-5.json"
           ],
           "candidate": "/catalog/candidates/approx-cirRcir-5.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -6294,7 +6292,7 @@
       "section": "Packing Copies to Maximize Total Perimeter",
       "shape": "square",
       "container": "circle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -6315,7 +6313,7 @@
             "approx-squRcir-13.json"
           ],
           "candidate": "/catalog/candidates/approx-squRcir-13.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -6324,7 +6322,7 @@
       "section": "Packing Copies to Maximize Total Perimeter",
       "shape": "circle",
       "container": "square",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "seed",
         "label": "the lab's own seed",
@@ -6347,7 +6345,7 @@
             "starter-cirRsqu-2.json"
           ],
           "candidate": "/catalog/candidates/starter-cirRsqu-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -6356,7 +6354,7 @@
       "section": "Packing Copies to Maximize Total Perimeter",
       "shape": "triangle",
       "container": "square",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "seed",
         "label": "the lab's own seed",
@@ -6379,7 +6377,7 @@
             "starter-triRsqu-2.json"
           ],
           "candidate": "/catalog/candidates/starter-triRsqu-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -6388,7 +6386,7 @@
       "section": "Covering",
       "shape": "square",
       "container": "circle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "figure"
       },
@@ -6409,7 +6407,7 @@
             "approx-sqcovcir-7.json"
           ],
           "candidate": "/catalog/candidates/approx-sqcovcir-7.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -6418,7 +6416,7 @@
       "section": "Covering",
       "shape": "square",
       "container": "square",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "seed",
         "label": "the lab's own seed",
@@ -6441,7 +6439,7 @@
             "starter-squcosqu-3.json"
           ],
           "candidate": "/catalog/candidates/starter-squcosqu-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -6450,7 +6448,7 @@
       "section": "Covering",
       "shape": "circle",
       "container": "circle",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "seed",
         "label": "the lab's own seed",
@@ -6473,7 +6471,7 @@
             "starter-circovcir-3.json"
           ],
           "candidate": "/catalog/candidates/starter-circovcir-3.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     },
@@ -6482,7 +6480,7 @@
       "section": "Covering",
       "shape": "circle",
       "container": "square",
-      "checked_on": "2026-10-02",
+      "checked_on": "2026-10-14",
       "source": {
         "kind": "seed",
         "label": "the lab's own seed",
@@ -6505,7 +6503,7 @@
             "starter-circovsqu-2.json"
           ],
           "candidate": "/catalog/candidates/starter-circovsqu-2.json",
-          "checked_on": "2026-10-02"
+          "checked_on": "2026-10-14"
         }
       }
     }

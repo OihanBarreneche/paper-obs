@@ -206,6 +206,13 @@ export const api = {
 
   researchSession: (sessionId: string) =>
     request<ResearchSessionDoc>(`/research-sessions/${encodeURIComponent(sessionId)}`),
+  researchSubmissionBatch: async (sessions: string[]): Promise<Blob> => {
+    const response = await fetch("/api/research-submission-batch", {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ sessions }),
+    });
+    if (!response.ok) throw new ApiError(await errorMessage(response), response.status);
+    return response.blob();
+  },
   deleteResearchSession: (sessionId: string) =>
     request<{ session_id: string; status: string }>(`/research-sessions/${encodeURIComponent(sessionId)}`, {
       method: "DELETE",

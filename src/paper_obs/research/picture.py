@@ -18,8 +18,7 @@ from __future__ import annotations
 import io
 from pathlib import Path
 
-from shapely import affinity
-from shapely.geometry import Polygon
+from paper_obs.geometry.submission import submission_svg
 
 from paper_obs.domain.candidate import Candidate
 from paper_obs.domain.problem import Problem
@@ -52,39 +51,6 @@ def submission_picture(problem: Problem, candidate: Candidate, path: Path, *, li
     return path
 
 
-def submission_svg(problem: Problem, candidate: Candidate, style: dict, rotate: float = 0.0) -> str:
-    """The SVG of a submission picture: the arena's bounding box fills it, its edge on the outer pixels."""
-    width, height = style["size"]
-    region = problem.arena.geometry if problem.arena is not None else None
-    arena = [] if region is None else [affinity.rotate(part, rotate, origin=(0, 0))
-                                      for part in getattr(region, "geoms", [region])]
-    copies = [affinity.rotate(affinity.translate(problem.shape.footprint(item.resolved_scale(candidate.scale),
-                                                                          item.rotation), item.x, item.y),
-                              rotate, origin=(0, 0)) for item in candidate.placements]
-    boxes = [shape.bounds for shape in (arena or copies)]
-    left, bottom = min(box[0] for box in boxes), min(box[1] for box in boxes)
-    right, top = max(box[2] for box in boxes), max(box[3] for box in boxes)
-    # A one-pixel line centred half a pixel in from the border fills the picture's outer pixels.
-    zoom = min((width - 1) / (right - left), (height - 1) / (top - bottom))
-    dx = (width - zoom * (right - left)) / 2 - zoom * left
-    dy = (height + zoom * (top - bottom)) / 2 + zoom * bottom
-
-    def outline(shape: Polygon) -> str:
-        return " ".join("M" + " L".join(f"{dx + zoom * x:.3f},{dy - zoom * y:.3f}" for x, y in ring.coords[:-1]) + " Z"
-                        for ring in (shape.exterior, *shape.interiors))
-
-    def colour(rgb) -> str:
-        return "none" if rgb is None else "#%02x%02x%02x" % tuple(rgb)
-
-    stroke = f'stroke="{colour(style["outline"])}" stroke-width="1"'
-    lines = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
-             f'shape-rendering="{"crispEdges" if style["crisp"] else "geometricPrecision"}">',
-             f'<rect width="{width}" height="{height}" fill="{colour(style["outside"])}"/>']
-    lines += [f'<path d="{outline(part)}" fill="{colour(style["inside"])}" fill-rule="evenodd" {stroke}/>' for part in arena]
-    lines += [f'<path d="{outline(shape)}" fill="{colour(style["fill"])}" {stroke}/>' for shape in copies]
-    return "\n".join(lines + ["</svg>", ""])
-
-
 def _render(svg: str, style: dict, path: Path) -> None:
     """Render the SVG with resvg and save it: a flat picture in its exact palette, else the full render."""
     import resvg_py
@@ -101,11 +67,26 @@ def _render(svg: str, style: dict, path: Path) -> None:
         if style["outside"] is None:
             flat.info["transparency"] = 3
         image = flat
+    elif path.suffix.lower() == ".gif" and style["outside"] is None:
+        rgba = image
+        opaque = Image.new("RGB", rgba.size, (255, 255, 255))
+        opaque.paste(rgba, mask=rgba)
+        image = opaque.quantize(colors=255)
+        pixels = getattr(image, "get_flattened_data", image.getdata)()
+        alpha = getattr(rgba, "get_flattened_data", rgba.getdata)()
+        image.putdata([255 if colour[3] < 128 else index for index, colour in zip(pixels, alpha)])
+        palette = image.getpalette()
+        palette[765:768] = [255, 255, 255]
+        image.putpalette(palette)
+        image.info["transparency"] = 255
     elif path.suffix.lower() != ".png":
         opaque = Image.new("RGB", image.size, style["outside"] or (255, 255, 255))
         opaque.paste(image, mask=image)
         image = opaque.quantize(colors=256) if path.suffix.lower() == ".gif" else opaque
-    image.save(path)
+    if path.suffix.lower() in {".jpg", ".jpeg"}:
+        image.convert("RGB").save(path, quality=100, subsampling=0)
+    else:
+        image.save(path)
 
 
 def _read_style(picture: Path) -> dict:
@@ -124,10 +105,12 @@ def _read_style(picture: Path) -> dict:
     corner = image.getpixel((0, 0))[:3]
     empty = (255, 255, 255) if (255, 255, 255) in opaque else corner
     others = [colour for colour in opaque if colour != empty]
+    outline = min(opaque, key=sum) if opaque else DEFAULT["outline"]
+    fills = [colour for colour in others if colour != outline]
     return {"size": image.size, "crisp": len(counts) <= FLAT_COLOURS,
             "outside": None if any(colour[3] == 0 for _, colour in counts) else corner, "inside": empty,
-            "fill": others[0] if others else DEFAULT["fill"],
-            "outline": min(opaque, key=sum) if opaque else DEFAULT["outline"]}
+            "fill": fills[0] if fills else empty,
+            "outline": outline}
 
 
 __all__ = ["DEFAULT", "submission_picture", "submission_svg"]

@@ -16,18 +16,29 @@ Shapes include discs, regular polygons and connected custom polygons. The editor
 
 ## Reference catalog snapshot
 
-The bundled catalog at `apps/web/public/catalog/packing_equal_copies.json` was generated on 2026-10-02 from [Erich Friedman's packing collection](https://erich-friedman.github.io/packing/index.html) and linked problem pages. It currently contains **107 families and 3,996 entries**:
+The bundled catalog at `apps/web/public/catalog/packing_equal_copies.json` was checked on 2026-10-14 against [Erich's Packing Center](https://erich-friedman.github.io/packing/index.html) and its 107 hosted family pages. It contains **107 families and 4,445 entries**. The linked external squares-in-squares page was also checked and its curated records were unchanged. See the [dated audit](catalog-update-2026-10-14.md) for changes and source anomalies.
 
 | Section | Families | Entries | Supported families |
 | --- | ---: | ---: | ---: |
-| Packing equal copies | 80 | 3,098 | 79 |
-| Maximum total perimeter | 16 | 701 | 16 |
+| Packing equal copies | 80 | 3,487 | 79 |
+| Maximum total perimeter | 16 | 761 | 16 |
 | Covering | 9 | 139 | 9 |
 | Other, currently unsupported | 2 | 58 | 0 |
 
 “Supported” means the current engine can construct and judge that family's problem. It does **not** promise a useful initializer, a baseline, a verified optimum or a complete candidate. Total-perimeter search currently has a varied initializer but no dedicated classical baseline. Four catalog families carry explicit caveats (`cirinel`, `cirRell`, `cirRrec`, `squcosqu`): published and engine quantities or container assumptions are not directly interchangeable.
 
-The catalog stores source links, attributions, stated proof status and a last-check date; `generated` is when its values were last read from the sources, and a card whose arrangement the engine has judged carries the date of that check instead. A published construction must not be labeled a proved optimum unless its source says so. These are snapshot records, not live queries; a record can be superseded. Some previews link to source-hosted images, so they may be unavailable offline. Candidate coordinate files under `apps/web/public/catalog/candidates/` are separate from reference values and must be judged by the engine after import.
+The catalog stores source links, attributions, proof status and check dates. `generated` dates the source snapshot, and each family now has `source_checked_on`. References keep `verified_on` for compatibility and additionally expose `source_checked_on` and, when available, `engine_checked_on`. The interface labels these separately. None of these dates is the date a construction was discovered. A published construction is a proved optimum only if its source says so. Source previews may be unavailable offline; local candidate coordinates are separate evidence and must be judged after import.
+
+Maximized source entries additionally carry `value_upper_bound`: the next printed
+digit above a decimal marked `+`, or the printed value when it is not truncated.
+Submission preparation uses this bound, rather than claiming an improvement that
+could lie inside the source's unpublished last digit. These catalog fields are
+additive; stored problems, candidates and research journals keep their existing
+JSON representation, and old catalogs remain readable.
+
+Two references in `cirRpen` carry `source_ambiguous: true`, a null numeric value
+and the source's three-value group in `formula` and `source_values`. They remain
+readable and launchable, but no record claim can be made against an unknown value.
 
 Reference units matter: squares in a smallest triangle are solved by enlarging copies inside a unit triangle; the engine also reports the equivalent triangle side for unit copies. Every fixed catalog container is normalised so that the length its page prints is 1: a regular polygon's side, a tan's leg, a domino's short side, and an L's short side, except on the circle and square pages, which print the L's long side. A non-regular arena declares that length as `reference_length`, so the engine reports `equivalent_container_side` for it too. The three-square covering source publishes **area**, while the covering objective searches over target side; the UI leads with the engine's target area for that reference. Two triangles maximizing total side in a square have a continuum of optimal placements, including the bundled equal-size pair.
 
@@ -65,7 +76,7 @@ What the reader does not do yet is as much a part of this as what it does. The d
 
 The browser starts with five editable categories. **Start here · squares** visits 2, 5, 10, 11, 17 and 29 equal squares in that order. **Explore packing** samples five shape and container combinations. **Other objectives** has three total-perimeter and three covering examples. All 17 starters ship editable candidate coordinates that are judged by the engine when loaded. Most reproduce an elementary construction from the source; the three-pentagon and three-square covering layouts are close reconstructions of published figures, explicitly marked approximate in the UI. The maintainers' starter builder regenerates and validates the eleven non-square candidates. These are small entry points into the full catalog, not a claim that every published construction is bundled. The compact snapshot in `apps/web/src/starterCatalog.json` is drawn from the main catalog and supplies the same problem templates and references to these examples. **Demo Workflow** holds the problems the agent workflows are compared on: 5, 8 and 12 pentagons in the smallest square, 5 circles in a circle with the largest total radius and 7 squares covering the largest circle. Each card opens on an `approx-<family>-<n>.json` approach to its record that the lab put together (a figure reading or a hand reading refined by an exact local optimisation, or a run's best arrangement polished the same way); an agent run still starts from the problem's own construction, so these do not change what the workflows are compared on. **Records beaten by Claude** opens each card on an arrangement that beats the published record: the reference panel keeps the previous record (value, author, source figure) and the verdict measures the new one, from `record-<family>-<n>.json` candidates and the compact `apps/web/src/beatenRecordsCatalog.json`. The library is saved in the browser, so edits and additional categories persist; a built-in category added later joins a saved library once and stays deleted if the user removes it.
 
-The catalog is built by the maintainers' own tools, kept outside the repository; the checked-in asset is what the app reads. Check upstream attribution and redistribution terms before publishing generated images or imported coordinates. Keep a reference's original units, status and verification date when adding a source.
+The catalog is maintained with the owner's local tools; the checked-in asset is what the app reads. In the reply supplied by the owner on 2026-10-14, Erich permits reuse with credit to **Erich's Packing Center** and a link. This permission covers his packings; independently hosted material still carries its own attribution. Keep the reference's units, status and source date when adding it. A historical record-hunt category preserves its local arrangements, while its reference values follow the current source snapshot; an old improvement may now tie or trail the published record.
 
 ## Current limits
 

@@ -116,8 +116,16 @@ export function readLibrary(): ProfileLibrary {
       const problem = defaults.problems[id];
       return problem === undefined ? [] : [[id, problem] as const];
     }));
-    return { categories: [...merged, ...added],
-      problems: { ...defaults.problems, ...saved.problems as Record<string, ProblemDoc>, ...shipped } };
+    const problems = { ...defaults.problems, ...saved.problems as Record<string, ProblemDoc>, ...shipped };
+    // Refresh shipped reference metadata without replacing the owner's edited
+    // geometry or categories. Explicit reference edits remain in their own store.
+    for (const [id, current] of Object.entries(defaults.problems)) {
+      const stored = problems[id];
+      if (stored && current.metadata.reference) {
+        problems[id] = { ...stored, metadata: { ...stored.metadata, reference: current.metadata.reference } };
+      }
+    }
+    return { categories: [...merged, ...added], problems };
   } catch {
     return defaultLibrary();
   }

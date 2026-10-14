@@ -75,6 +75,23 @@ def test_every_record_carries_a_readable_measure_and_an_attribution():
             assert record["attribution"].strip(), family["slug"]
 
 
+def test_malformed_source_cells_keep_their_own_values_and_ambiguities():
+    families = {family["slug"]: family for family in asset()["families"]}
+    def record(slug, count):
+        return next(row for row in families[slug]["instances"] if count in row["counts"])
+    assert record("taninoct", 36)["value"] == 1.98857
+    assert record("taninoct", 37)["value"] == 1.99877
+    for count in (1, 2):
+        assert record("triindom", count)["value"] == pytest.approx(math.sqrt(3) / 2)
+        assert record("triindom", count)["status"] == "proved"
+    assert record("triindom", 3)["value"] == 0.96796
+    assert record("triindom", 4)["value"] == 1.12036
+    for count in (49, 50):
+        row = record("cirRpen", count)
+        assert row["value"] is None and row["source_ambiguous"] is True
+        assert row["source_values"] == [4.66314, 4.81437, 4.86154]
+
+
 def test_the_two_measured_sections_are_judged_while_the_other_problems_stay_references():
     """Covering and total-perimeter are judged now; "Other Packing Problems" is not."""
     for family in asset()["families"]:
@@ -415,9 +432,9 @@ def test_every_launchable_family_composes_a_distinct_problem_id() -> None:
 def test_a_within_family_duplicate_count_is_qualified_by_its_figure() -> None:
     """A source typo may print one count twice; the two cards now stay distinct.
 
-    The dominoes-in-squares page prints "3." beside figure 5.png as well as beside
-    its real n = 3 record (figure 4.png), and the asset records exactly that in the
-    family's own warnings. Reproducing what the site prints means both cards keep
+    The dominoes-in-squares page previously printed "3." beside figure 5.png as
+    well as beside its real n = 3 record (figure 4.png). Keeping this historical
+    fixture exercises a source duplicate after the live typo was corrected. Both cards keep
     that count, so the frontend qualifies an ambiguous count with the card's figure
     stem: the two cards compose different identifiers and can coexist in a category
     instead of the second overwriting the first. The React key still adds the card's
@@ -425,8 +442,15 @@ def test_a_within_family_duplicate_count_is_qualified_by_its_figure() -> None:
     apps/web/src/components/ProfileNavigator.tsx), so a duplicated count can never
     make two siblings share a key either.
     """
-    family = next(entry for entry in asset()["families"] if entry["slug"] == "dominsqu")
-    assert any("label '3.'" in warning and "5.png" in warning for warning in family["warnings"])
+    family = copy.deepcopy(next(entry for entry in asset()["families"] if entry["slug"] == "dominsqu"))
+    # The live page corrected this typo in October 2026. Keep a historical
+    # duplicate fixture so the identifier contract remains covered independently.
+    three = copy.deepcopy(next(record for record in family["instances"] if 3 in record["counts"]))
+    four = copy.deepcopy(next(record for record in family["instances"] if 4 in record["counts"]))
+    three.update(counts=[3], figure="4.png")
+    duplicate = {**three, "figure": "5.png"}
+    four.update(counts=[4], figure="6.png")
+    family["instances"] = [three, duplicate, four]
 
     cards = [(record, count) for record in family["instances"] for count in record["counts"]]
     keys = [f"{index}:{record['figure']}:{count}" for index, (record, count) in enumerate(cards)]

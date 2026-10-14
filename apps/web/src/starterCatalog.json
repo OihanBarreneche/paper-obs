@@ -1,7 +1,7 @@
 {
   "source": "https://erich-friedman.github.io/packing/index.html",
   "base": "https://erich-friedman.github.io/packing/",
-  "generated": "2026-09-27",
+  "generated": "2026-10-14",
   "families": [
     {
       "slug": "cirincir",
@@ -51,7 +51,8 @@
         }
       ],
       "warnings": [],
-      "section": "Packing Equal Copies"
+      "section": "Packing Equal Copies",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "triinsqu",
@@ -102,7 +103,8 @@
         }
       ],
       "warnings": [],
-      "section": "Packing Equal Copies"
+      "section": "Packing Equal Copies",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "penincir",
@@ -153,7 +155,8 @@
         }
       ],
       "warnings": [],
-      "section": "Packing Equal Copies"
+      "section": "Packing Equal Copies",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "hexinsqu",
@@ -204,7 +207,8 @@
         }
       ],
       "warnings": [],
-      "section": "Packing Equal Copies"
+      "section": "Packing Equal Copies",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "squintri",
@@ -253,7 +257,7 @@
           "counts": [
             2
           ],
-          "value": 3.1547005383792515,
+          "value": 3.154,
           "formula": "2 + 2 / √3",
           "symbol": "s",
           "status": "proved",
@@ -262,7 +266,8 @@
         }
       ],
       "warnings": [],
-      "section": "Packing Equal Copies"
+      "section": "Packing Equal Copies",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "cirRcir",
@@ -318,7 +323,8 @@
         }
       ],
       "warnings": [],
-      "section": "Packing Copies to Maximize Total Perimeter"
+      "section": "Packing Copies to Maximize Total Perimeter",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "cirRsqu",
@@ -375,7 +381,8 @@
         }
       ],
       "warnings": [],
-      "section": "Packing Copies to Maximize Total Perimeter"
+      "section": "Packing Copies to Maximize Total Perimeter",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "triRsqu",
@@ -433,7 +440,8 @@
         }
       ],
       "warnings": [],
-      "section": "Packing Copies to Maximize Total Perimeter"
+      "section": "Packing Copies to Maximize Total Perimeter",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "circovcir",
@@ -489,7 +497,8 @@
         }
       ],
       "warnings": [],
-      "section": "Covering"
+      "section": "Covering",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "circovsqu",
@@ -546,7 +555,8 @@
         }
       ],
       "warnings": [],
-      "section": "Covering"
+      "section": "Covering",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "squcosqu",
@@ -604,7 +614,8 @@
         }
       ],
       "warnings": [],
-      "section": "Covering"
+      "section": "Covering",
+      "source_checked_on": "2026-10-14"
     }
   ],
   "warnings": []

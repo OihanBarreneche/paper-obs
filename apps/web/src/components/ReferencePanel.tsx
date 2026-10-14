@@ -44,13 +44,16 @@ export function ReferencePanel({ problemId, reference, candidateOrigin, onChange
       <div className="reference-panel__facts">
         {value.status !== "none" && <span className="reference-panel__status">{t(value.status === "proved" ? "Proved optimum" : "Best known")}</span>}
         {value.value !== null && <strong>{number(value.value, 8)} <small>{t(value.unit)}</small></strong>}
-        <span className="reference-panel__checked">{value.verified_on ? `${t("Last checked")}: ${value.verified_on}` : t("Verification date unknown")}</span>
+        <span className="reference-panel__checked">{value.source_checked_on
+          ? `${t("Source checked")}: ${value.source_checked_on}`
+          : value.verified_on ? `${t("Last checked")}: ${value.verified_on}` : t("Verification date unknown")}</span>
+        {value.engine_checked_on && <span className="reference-panel__checked">{t("Engine checked")}: {value.engine_checked_on}</span>}
         {value.author && <span>{t("Construction")}: {value.author}{value.date ? ` · ${value.date}` : ""}</span>}
         {value.proved_by && <span>{t("Proof")}: {value.proved_by}{value.proof_date ? ` · ${value.proof_date}` : ""}</span>}
       </div>
       {value.note && <p className="reference-panel__note">{t(value.note)}</p>}
       {candidateOrigin === "source-derived-approximation" && <p className="reference-panel__approximation">{t("Loaded arrangement approximates the published figure; compare its measurements with the reference.")}</p>}
-      {candidateOrigin === "beaten-record" && <p className="reference-panel__record">{t("The loaded arrangement beats this published record: the figure and value above are the previous record, the verdict is the engine's measurement of the new one.")}</p>}
+      {candidateOrigin === "beaten-record" && <p className="reference-panel__record">{t("This arrangement came from a record hunt. The reference above is the current source snapshot; the engine compares the arrangement with it.")}</p>}
       {value.sources.length > 0 && <ul className="reference-panel__sources">{value.sources.map((source, index) => {
         const href = externalUrl(source.url);
         return href && <li key={index}><a href={href} target="_blank" rel="noopener noreferrer">{source.label} ↗</a></li>;

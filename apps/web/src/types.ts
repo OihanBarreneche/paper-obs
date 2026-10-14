@@ -759,6 +759,7 @@ export type ResearchBestDoc = { at: string; index: number; measure: number | nul
 
 /** A session as the picker lists it; `track` holds each new best as [submission, measure, gap]. */
 export type ResearchSessionSummaryDoc = {
+  submission_prepared?: boolean;
   session_id: string; name: string; agent: string; status: string; created: string; updated: string;
   problem_id: string; problem_name: string; submissions: number; best: ResearchBestDoc | null;
   track: [number, number | null, number | null][];

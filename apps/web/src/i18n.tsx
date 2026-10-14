@@ -6,6 +6,15 @@ export type Language = "fr" | "en";
 // English source strings are stable keys; French is the default presentation.
 // Dynamic engine prose is kept as data and translated only when a known key exists.
 const fr: Record<string, string> = {
+  "Session gains use the reference saved during the search. Submission dossiers are checked against the current catalog.": "Les gains indiqués portent sur la référence enregistrée pendant la recherche. Les dossiers de soumission sont vérifiés avec le catalogue actuel.",
+  "This arrangement came from a record hunt. The reference above is the current source snapshot; the engine compares the arrangement with it.": "Cette disposition provient d’une recherche de record. La référence ci-dessus est le relevé actuel de la source ; le moteur compare la disposition à cette référence.",
+  "Prepared dossiers keep coordinates and checks locally. The batch contains replacement images, values and an email draft.": "Les dossiers préparés gardent les coordonnées et les vérifications en local. Le lot contient les images de remplacement, les valeurs et un brouillon de mail.",
+  "Download selected submissions": "Télécharger les soumissions sélectionnées",
+  "Preparing batch…": "Préparation du lot…",
+  "Include in submission batch": "Inclure dans le lot de soumission",
+  "Submission dossier ready. Select it in All sessions to download a batch.": "Dossier de soumission prêt. Sélectionnez-le dans Toutes les sessions pour télécharger un lot.",
+  "Source checked": "Source consultée",
+  "Engine checked": "Vérification par le moteur",
   "problem": "problème", "shapes": "formes",
   "Create": "Créer",
   "arena": "arène", "run": "exécution", "Agents": "Agents", "Search": "Recherche", "workspace": "espace de travail",

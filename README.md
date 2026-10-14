@@ -21,7 +21,7 @@ The interface is available in French and English. The code and public documentat
 - Four LangGraph workflows, from a basic agent loop to a research lab of builder and critic teams with an optional Python sandbox, with a live run trace, workflow diagram, replay, run comparison and statistics.
 - Separate **Agents** and **Search** workspaces: the former shows agent workflows, while the latter runs classical baselines and follows free research sessions.
 - Free research: an outside agent such as Claude Code or Codex searches with its own programs, the engine judges every arrangement it submits, and the web app follows its journal live.
-- A reference catalog snapshot with 107 families and 3,996 entries, and a verification pass that puts each published arrangement back in front of the engine and dates the check. A catalog card being present does **not** imply that its reference value has been independently proved or that the current engine supports its family. The interface distinguishes these cases.
+- A reference catalog checked on 2026-10-14 with 107 families and 4,445 entries, plus a [dated source audit](docs/catalog-update-2026-10-14.md). Source consultation and engine validation have separate dates; ambiguous source values remain explicitly unknown. A catalog card being present does **not** imply that its reference value has been independently proved or that the current engine supports its family.
 
 Known limits and the meaning of a reference score are in the [documentation](docs/README.md).
 
@@ -44,6 +44,15 @@ Free research is the other way to put an agent to work: no graph and no fixed to
 ![A free research session on 41 dominoes in a right triangle](docs/images/free-research.png)
 
 *The 41 dominoes example session: the published record beaten by 0.558 %, the progress of the session's best against the record, then how the result was found and the journal, beside the arrangement the engine judged.*
+
+
+Packing references and published constructions are credited to [Erich's Packing Center](https://erich-friedman.github.io/packing/index.html), reused with Erich's permission. Independently hosted sources retain their own attribution.
+
+A successful record hunt ends by preparing a private submission dossier. Select
+prepared sessions in **Search ▸ Free research ▸ All sessions** to download a batch
+of correctly named images, page-level values and an email draft. Coordinates and
+checks stay local; the [research guide](docs/research-mode.md#6-submitting-to-the-source)
+explains the required image review and recipient requirements.
 
 ## Install and test
 

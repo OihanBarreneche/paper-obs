@@ -1,7 +1,7 @@
 {
   "source": "https://erich-friedman.github.io/packing/index.html",
   "base": "https://erich-friedman.github.io/packing/",
-  "generated": "2026-10-02",
+  "generated": "2026-10-14",
   "families": [
     {
       "slug": "squintri",
@@ -50,16 +50,24 @@
           "counts": [
             38
           ],
-          "value": 10.304,
+          "value": 10.30122,
           "formula": "",
           "symbol": "s",
           "status": "best_known",
-          "attribution": "Found by Gianluca Costantino in April 2026",
-          "figure": "ts38.gif"
+          "attribution": "Found by Oihan Barreneche in October 2026",
+          "figure": "ts38.gif",
+          "historical_reference": {
+            "value": 10.304,
+            "formula": "",
+            "symbol": "s",
+            "attribution": "Found by Gianluca Costantino in April 2026",
+            "figure": "ts38.gif"
+          }
         }
       ],
       "warnings": [],
-      "section": "Packing Equal Copies"
+      "section": "Packing Equal Copies",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "taninL",
@@ -145,18 +153,24 @@
           "counts": [
             26
           ],
-          "value": 2.12132,
-          "formula": "3/√2",
+          "value": 2.12022,
+          "formula": "",
           "symbol": "s",
           "status": "best_known",
-          "attribution": "Found by Maurizio Morandi in September 2026",
-          "figure": "26.gif"
+          "attribution": "Found by Yanis Gomes in October 2026",
+          "figure": "26.gif",
+          "historical_reference": {
+            "value": 2.12132,
+            "formula": "3/√2",
+            "symbol": "s",
+            "attribution": "Found by Maurizio Morandi in September 2026",
+            "figure": "26.gif"
+          }
         }
       ],
-      "warnings": [
-        "taninL: 2 figures for 0 values"
-      ],
-      "section": "Packing Equal Copies"
+      "warnings": [],
+      "section": "Packing Equal Copies",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "squintan",
@@ -218,16 +232,24 @@
           "counts": [
             50
           ],
-          "value": 10.77817,
+          "value": 10.65685,
           "formula": "",
           "symbol": "s",
           "status": "best_known",
-          "attribution": "Found by Joshua Wolk in September 2026",
-          "figure": "50.gif"
+          "attribution": "Found by Oihan Barreneche in October 2026",
+          "figure": "50.gif",
+          "historical_reference": {
+            "value": 10.77817,
+            "formula": "",
+            "symbol": "s",
+            "attribution": "Found by Joshua Wolk in September 2026",
+            "figure": "50.gif"
+          }
         }
       ],
       "warnings": [],
-      "section": "Packing Equal Copies"
+      "section": "Packing Equal Copies",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "domintan",
@@ -305,49 +327,78 @@
           "counts": [
             41
           ],
-          "value": 13.65685,
+          "value": 13.58063,
           "formula": "",
           "symbol": "s",
           "status": "best_known",
-          "attribution": "Found by Joshua Wolk in September 2026",
-          "figure": "41.png"
+          "attribution": "Found by Oihan Barreneche in October 2026",
+          "figure": "41.png",
+          "historical_reference": {
+            "value": 13.65685,
+            "formula": "",
+            "symbol": "s",
+            "attribution": "Found by Joshua Wolk in September 2026",
+            "figure": "41.png"
+          }
         },
         {
           "counts": [
             44
           ],
-          "value": 14.02663,
+          "value": 14.0,
           "formula": "",
           "symbol": "s",
           "status": "best_known",
-          "attribution": "Found by Joshua Wolk in September 2026",
-          "figure": "44.png"
+          "attribution": "Found by Oihan Barreneche in October 2026",
+          "figure": "44.png",
+          "historical_reference": {
+            "value": 14.02663,
+            "formula": "",
+            "symbol": "s",
+            "attribution": "Found by Joshua Wolk in September 2026",
+            "figure": "44.png"
+          }
         },
         {
           "counts": [
             47
           ],
-          "value": 14.48528,
+          "value": 14.46066,
           "formula": "",
           "symbol": "s",
           "status": "best_known",
-          "attribution": "Found by Joshua Wolk in September 2026",
-          "figure": "47.png"
+          "attribution": "Found by Yanis Gomes in October 2026",
+          "figure": "47.png",
+          "historical_reference": {
+            "value": 14.48528,
+            "formula": "",
+            "symbol": "s",
+            "attribution": "Found by Joshua Wolk in September 2026",
+            "figure": "47.png"
+          }
         },
         {
           "counts": [
             48
           ],
-          "value": 14.65686,
+          "value": 14.63222,
           "formula": "",
           "symbol": "s",
           "status": "best_known",
-          "attribution": "Found by Joshua Wolk in September 2026",
-          "figure": "48.png"
+          "attribution": "Found by Oihan Barreneche in October 2026",
+          "figure": "48.png",
+          "historical_reference": {
+            "value": 14.65686,
+            "formula": "",
+            "symbol": "s",
+            "attribution": "Found by Joshua Wolk in September 2026",
+            "figure": "48.png"
+          }
         }
       ],
       "warnings": [],
-      "section": "Packing Equal Copies"
+      "section": "Packing Equal Copies",
+      "source_checked_on": "2026-10-14"
     }
   ]
 }

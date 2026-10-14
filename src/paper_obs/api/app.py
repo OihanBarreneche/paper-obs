@@ -307,7 +307,25 @@ def _register_routes(app: FastAPI, *, processes: bool) -> None:
     @app.get("/api/research-sessions")
     def list_research_sessions(problem_id: str | None = None) -> JSON:
         """List the free research sessions (docs/research-mode.md), optionally one problem's."""
-        return {"sessions": research.listing(problem_id)}
+        from paper_obs.research.submission import ROOT, prepared
+        sessions = research.listing(problem_id)
+        for session in sessions:
+            session["submission_prepared"] = prepared(session["session_id"], root=ROOT) is not None
+        return {"sessions": sessions}
+
+    @app.post("/api/research-submission-batch")
+    def research_submission_batch(body: dict = Body(...)) -> Response:
+        """Download only the selected prepared dossiers' recipient attachments."""
+        from paper_obs.research.submission import ROOT, batch
+        sessions = body.get("sessions")
+        if not isinstance(sessions, list) or not all(isinstance(item, str) for item in sessions):
+            raise HTTPException(status_code=422, detail="select prepared session ids")
+        try:
+            content = batch(sessions, root=ROOT)
+        except (OSError, ValueError) as error:
+            raise HTTPException(status_code=422, detail=str(error)) from error
+        return Response(content, media_type="application/zip", headers={
+            "Content-Disposition": 'attachment; filename="packing-submissions.zip"'})
 
     @app.get("/api/research-sessions/{session_id}")
     def read_research_session(session_id: str) -> JSON:

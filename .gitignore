@@ -6,7 +6,7 @@ __pycache__/
 .uv-cache/
 *.egg-info/
 .pytest_cache/
-.pytest-tmp/
+.pytest-tmp*/
 .coverage
 htmlcov/
 
@@ -22,6 +22,8 @@ runs/
 out/
 *.local.json
 .private/
+# Legacy local submission packages; new dossiers live under .private/submissions/.
+/submissions/
 # Catalog builders and their tests: the maintainers' tools, not part of the lab
 scripts/
 

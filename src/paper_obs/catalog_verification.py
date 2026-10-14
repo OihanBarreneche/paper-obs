@@ -535,6 +535,10 @@ def verify_family(
         value = reference.get("value")
         status = str(best["status"])
         level = level_of(status, best.get("gap"), reference.get("value"))
+        # A source update may now print the lab's value. Numerical agreement
+        # alone never changes the provenance of a construction held locally.
+        if best["kind"] == "record" and level == "exact":
+            level = "near"
         repos = status == "reproduces"
         published = repos and best["kind"] == "published"
         target = None

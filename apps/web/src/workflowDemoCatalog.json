@@ -1,7 +1,7 @@
 {
   "source": "https://erich-friedman.github.io/packing/index.html",
   "base": "https://erich-friedman.github.io/packing/",
-  "generated": "2026-09-27",
+  "generated": "2026-10-14",
   "families": [
     {
       "slug": "peninsqu",
@@ -74,7 +74,8 @@
         }
       ],
       "warnings": [],
-      "section": "Packing Equal Copies"
+      "section": "Packing Equal Copies",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "cirRcir",
@@ -130,7 +131,8 @@
         }
       ],
       "warnings": [],
-      "section": "Packing Copies to Maximize Total Perimeter"
+      "section": "Packing Copies to Maximize Total Perimeter",
+      "source_checked_on": "2026-10-14"
     },
     {
       "slug": "sqcovcir",
@@ -187,7 +189,8 @@
         }
       ],
       "warnings": [],
-      "section": "Covering"
+      "section": "Covering",
+      "source_checked_on": "2026-10-14"
     }
   ]
 }

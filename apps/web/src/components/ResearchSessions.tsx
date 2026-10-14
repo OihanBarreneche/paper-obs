@@ -68,6 +68,20 @@ export function ResearchSessions({ sessions, problemId, onOpen, onChange }: Prop
   const [order, setOrder] = useState<"recent" | "gain">("recent");
   const [shapeFilter, setShapeFilter] = useState("");
   const [containerFilter, setContainerFilter] = useState("");
+  const [batchSelection, setBatchSelection] = useState<string[]>([]);
+  const [batchBusy, setBatchBusy] = useState(false);
+  const [batchError, setBatchError] = useState("");
+  const downloadBatch = async () => {
+    setBatchBusy(true); setBatchError("");
+    try {
+      const valid = batchSelection.filter((id) => sessions.some((item) => item.session_id === id && item.submission_prepared));
+      const blob = await api.researchSubmissionBatch(valid);
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a"); link.href = url; link.download = "packing-submissions.zip";
+      link.click(); window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch (error) { setBatchError(error instanceof Error ? error.message : String(error)); }
+    finally { setBatchBusy(false); }
+  };
   // The tab opens on the problem, so a problem without a session shows how to start one.
   const shown = scope ?? "problem";
   const line = shown === "problem" ? here.find((item) => item.session_id === chosen) ?? here[0] : undefined;
@@ -104,6 +118,11 @@ export function ResearchSessions({ sessions, problemId, onOpen, onChange }: Prop
         : b.created.localeCompare(a.created));
     return <div className="research-sessions">
       {scopes}
+      <p className="research-sessions__quiet">{t("Session gains use the reference saved during the search. Submission dossiers are checked against the current catalog.")}</p>
+      <p>{t("Prepared dossiers keep coordinates and checks locally. The batch contains replacement images, values and an email draft.")}</p>
+      <button type="button" disabled={batchBusy || !batchSelection.some((id) => sessions.some((item) => item.session_id === id && item.submission_prepared))}
+        onClick={() => void downloadBatch()}>{t(batchBusy ? "Preparing batch…" : "Download selected submissions")}</button>
+      {batchError && <p role="alert">{batchError}</p>}
       <div className="research-sessions__tools">
         <label>{t("Sort")}<select value={order} onChange={(event) => setOrder(event.target.value as "recent" | "gain")}>
           <option value="recent">{t("Most recent")}</option>
@@ -121,6 +140,9 @@ export function ResearchSessions({ sessions, problemId, onOpen, onChange }: Prop
       {listed.length === 0 && <p className="research-sessions__quiet">{t("No session matches these filters.")}</p>}
       <ul className="research-sessions__list">
         {listed.map((item) => <li key={item.session_id} className={beats(item) ? "is-record" : undefined}>
+          {item.submission_prepared && <input type="checkbox" aria-label={`${t("Include in submission batch")}: ${item.name}`}
+            checked={batchSelection.includes(item.session_id)} onChange={(event) => setBatchSelection((selected) =>
+              event.target.checked ? [...selected, item.session_id] : selected.filter((id) => id !== item.session_id))} />}
           <button type="button" className="research-sessions__open" onClick={() => {
             setChosen(item.session_id);
             setScope("problem");
@@ -148,14 +170,14 @@ export function ResearchSessions({ sessions, problemId, onOpen, onChange }: Prop
   }
   if (line === undefined) {
     return <div className="research-sessions__empty">
-      {sessions.length > 0 && scopes}
+      {scopes}
       <p>{t("No free research session on this problem yet.")}</p>
       <p>{t("To start one, open this project in an agent such as Claude Code or Codex and ask it for a free research, on this problem or any other. The agent proposes how much of the processor to use, then searches as it likes: the engine judges every arrangement it submits, and this page follows its ideas, computations, dead ends and records live.")}
         {" "}{t("The method is in docs/research-mode.md.")}</p>
     </div>;
   }
   const reference = session?.session_id === line.session_id ? session.problem.metadata?.reference as
-    { value?: number; unit?: string } | undefined : undefined;
+    { value?: number; unit?: string; verified_on?: string } | undefined : undefined;
   const best = line.best;
   const journal = session?.session_id === line.session_id ? session.journal : [];
   const hidden = whole ? 0 : Math.max(0, journal.length - JOURNAL_LINES);
@@ -175,6 +197,7 @@ export function ResearchSessions({ sessions, problemId, onOpen, onChange }: Prop
       <p>{line.agent || t("unnamed agent")} · <span className={`research-sessions__status is-${line.status}`}>{t(line.status)}</span>
         {" "}· {line.submissions} {t(line.submissions === 1 ? "submission" : "submissions")}</p>
       {session?.goal && <p className="research-sessions__goal">{session.goal}</p>}
+      {line.submission_prepared && <p>{t("Submission dossier ready. Select it in All sessions to download a batch.")}</p>}
       {deleting === "confirm"
         ? <span className="run-picker__confirm research-sessions__delete">
             <button type="button" onClick={() => setDeleting(null)}>{t("Cancel")}</button>
@@ -195,6 +218,8 @@ export function ResearchSessions({ sessions, problemId, onOpen, onChange }: Prop
       <div><dt>{t("Published record")}</dt><dd>{reference?.value == null ? "—" : number(reference.value, 6)}</dd></div>
       <div><dt>{t("Against the record")}</dt><dd>{best?.record_gap == null ? "—" : <Verdict gap={best.record_gap} />}</dd></div>
     </dl>
+    <p className="research-sessions__quiet">{t("Session gains use the reference saved during the search. Submission dossiers are checked against the current catalog.")}
+      {reference?.verified_on && <> {t("Source checked")}: {reference.verified_on}.</>}</p>
     {best && <p className="research-sessions__unit">{t(best.metric.replaceAll("_", " "))}</p>}
     <Track track={line.track} record={reference?.value ?? null} />
     <HowFound journal={journal} bestIndex={best?.index} />
