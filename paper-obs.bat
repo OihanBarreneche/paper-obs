@@ -30,6 +30,17 @@ if errorlevel 1 (
 )
 
 cd /d "%~dp0"
+wsl.exe --cd "%~dp0" --exec .venv/bin/python -c "import paper_obs"
+if errorlevel 1 (
+  echo.
+  echo   The WSL Python environment cannot import Paper Obs.
+  echo   A WSL Python upgrade can make an existing .venv unusable.
+  echo   See docs/development.md, Repairing a WSL environment.
+  echo.
+  pause
+  exit /b 1
+)
+
 wsl.exe --cd "%~dp0" --exec .venv/bin/paper-obs serve
 set EXITCODE=%ERRORLEVEL%
 

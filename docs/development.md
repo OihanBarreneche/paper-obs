@@ -21,6 +21,42 @@ Do not commit `.venv/`, `node_modules/`, `dist/`, `runs/`, `out/`, `.env` or `.p
 
 Use `PAPER_OBS_API_KEY`, `PAPER_OBS_EXAMPLES`, and `PAPER_OBS_RUNS` for local overrides.
 
+## Repairing a WSL environment
+
+If the launcher reports `ModuleNotFoundError: No module named 'paper_obs'`, first
+check the environment from a WSL terminal in the repository:
+
+```bash
+.venv/bin/python --version
+cat .venv/pyvenv.cfg
+.venv/bin/python -m pip --version
+```
+
+An editable installation must point to this checkout's `src/` directory. If
+Python and pip work, reinstall it with
+`.venv/bin/python -m pip install -e ".[dev,api,agents]"`.
+
+A WSL distribution upgrade can also change `/usr/bin/python3`, which an existing
+virtual environment may reference through a symlink. For example, an environment
+created with Python 3.11 then runs Python 3.14, which does not load the packages in
+`.venv/lib/python3.11/site-packages`. Both the project and pip can appear missing.
+Recreate the environment with the current interpreter; keep the old environment
+inside the ignored `.venv/` directory until the new one works:
+
+```bash
+mv .venv .venv-repair-backup
+python3 -m venv .venv
+mv .venv-repair-backup .venv/previous-environment
+.venv/bin/python -m pip install -e ".[dev,api,agents]"
+.venv/bin/paper-obs --help
+```
+
+Use an unused backup name if `.venv-repair-backup` already exists, and never stage
+the backup. If environment creation reports that `ensurepip` is unavailable,
+install Ubuntu's `python3-venv` package first. Add the `research` extra if the
+previous environment included the research tools. The frontend build and stored
+runs do not need to be recreated.
+
 ## A reliable change
 
 1. Keep data, geometry, search, workflow and UI responsibilities separate; use the engine for every geometric verdict.
