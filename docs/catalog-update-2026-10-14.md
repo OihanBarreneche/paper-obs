@@ -20,7 +20,7 @@ Compared with the 2026-10-02 snapshot, the count-level changes are:
 | Ambiguous source reference, retained without a scalar value | 2 |
 
 These are changes in published references, not proofs of optimality. The
-machine-readable [audit](../apps/web/public/catalog/source_audit.json) lists the
+machine-readable [audit](../apps/web/public/catalog/source_audit.json), including its retained history, lists the
 page, count and before/after fields for every change, and a check record for every
 family. A changed attribution is evidence of a revised published construction;
 the audit does not independently establish when it was found.
@@ -44,6 +44,14 @@ The final `cirRpen` table has figures for n=49 and n=50 but three values:
 ambiguous group, with `value: null` and `source_ambiguous: true`. They are not used
 for numerical comparisons or automatic submission claims until the source is
 clarified. No value is silently assigned to an orphaned cell.
+
+A subsequent replay with the maintained parser corrected two further readings:
+`taninL` n=1 prints the exact fraction 1/2, previously read as 1; and `linsqu`
+n=29 has a 9.93198+ construction alongside the older 29–33 group with value 10.
+The individual construction now wins for n=29 and the old group covers n=30–33.
+The catalog consequently covers 4,746 distinct counts, rather than counting
+n=29 twice. These corrections concern existing source cells, not new discoveries.
+The original source comparison above is preserved in the audit history.
 
 The engine was rerun against the new snapshot for all 336 cards with available
 configurations: 120 reproduce the printed number, 117 differ on a rounded number,

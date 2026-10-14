@@ -8,6 +8,7 @@ Human contributors should also read [CONTRIBUTING.md](CONTRIBUTING.md) for the f
 
 - Keep all task files and generated environments inside this repository. Do not publish `.private/`, `runs/`, local keys, working screenshots or build output; the only published screenshots are the README's, in `docs/images/`. `.private/` holds the owner's personal notes and design history; it is ignored by Git.
 - Read the relevant public [documentation](docs/README.md) and code before editing. Record major implementation decisions and known limits in the public docs when they change.
+- For an owner-requested reference refresh, use the existing [catalog maintenance command](docs/catalog-maintenance.md). Do not replace the parsers with one-off scripts or rebuild coordinates and previews for a source-only update.
 - Preserve the JSON representation of stored domain objects. Use explicit `to_dict`/`from_dict` and migrate intentionally when a public field must change.
 - Make a Git commit after a **significant, verified milestone**: a coherent feature, bug-fix set or documentation step. Keep commits meaningful rather than committing every small edit. Review the staged diff first and never stage private files or unrelated work. Do not push or publish without the owner's request.
 

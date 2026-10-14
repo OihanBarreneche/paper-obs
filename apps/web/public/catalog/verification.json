@@ -27,7 +27,7 @@
   "totals": {
     "below": 93,
     "differs": 117,
-    "entries_catalog": 4747,
+    "entries_catalog": 4746,
     "entries_checked": 336,
     "entries_unsupported": 89,
     "families_catalog": 107,
@@ -40,7 +40,7 @@
     "level:none": 6,
     "reproduces": 120,
     "unmeasurable": 6,
-    "without_coordinates": 4322
+    "without_coordinates": 4321
   },
   "families": {
     "cirincir": {

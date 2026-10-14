@@ -7,6 +7,7 @@ This is the public, implementation-oriented documentation. It describes the curr
 | [Architecture](architecture.md) | Layer boundaries, JSON data flow and where to extend the system |
 | [Problems and catalog](problems-and-catalog.md) | Objectives, shapes, catalog support and reference provenance |
 | [Catalog check: 2026-10-14](catalog-update-2026-10-14.md) | Source changes, removed counts, corrections and remaining source anomalies |
+| [Catalog maintenance](catalog-maintenance.md) | One refresh command, cache, timing and source review limits |
 | [Precision and performance](precision-and-performance.md) | Exact paths, polygon approximations, tolerances and current measurements |
 | [Strategies and runs](strategies-and-runs.md) | Baselines, the LangGraph workflows, budgets and a future solver interface |
 | [Research mode](research-mode.md) | Free sessions: an outside agent searches, the engine judges and the lab keeps the journal |

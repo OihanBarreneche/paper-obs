@@ -13572,7 +13572,6 @@
         },
         {
           "counts": [
-            29,
             30,
             31,
             32,
@@ -13683,7 +13682,9 @@
           "figure": "50.gif"
         }
       ],
-      "warnings": [],
+      "warnings": [
+        "linsqu: overlapping count 29; retained best printed value"
+      ],
       "section": "Packing Equal Copies",
       "source_checked_on": "2026-10-14"
     },
@@ -27407,9 +27408,7 @@
           "figure": "50.gif"
         }
       ],
-      "warnings": [
-        "taninoct: missing equals sign in n=36 read from its own source cell; n=37 retained separately"
-      ],
+      "warnings": [],
       "section": "Packing Equal Copies",
       "source_checked_on": "2026-10-14"
     },
@@ -34235,9 +34234,7 @@
           "figure": "50.png"
         }
       ],
-      "warnings": [
-        "triindom: formula-only n=1-2 read from its own source cell; n=3 and n=4 retain their own values"
-      ],
+      "warnings": [],
       "section": "Packing Equal Copies",
       "source_checked_on": "2026-10-14"
     },
@@ -41237,11 +41234,11 @@
           "counts": [
             1
           ],
-          "value": 1.0,
-          "formula": "",
+          "value": 0.5,
+          "formula": "1/2",
           "symbol": "s",
-          "status": "none",
-          "attribution": "/2 Trivial",
+          "status": "proved",
+          "attribution": "Trivial",
           "figure": "1.gif"
         },
         {
@@ -51133,7 +51130,7 @@
         }
       ],
       "warnings": [
-        "cirRpen: last table has three values for two figures (49,50); both references are ambiguous"
+        "cirRpen: 2 figures for 3 values"
       ],
       "section": "Packing Copies to Maximize Total Perimeter",
       "source_checked_on": "2026-10-14"
@@ -55881,10 +55878,9 @@
   "template_convention": "unit shapes: circle radius 1, regular polygon side 1, tan leg 1, domino short side 1, L unit square. A square or circle container keeps minimize_container; every other container is a fixed arena normalised to the length the source publishes (regular polygon side 1, domino short side 1, tan leg 1, L long side 1) and the objective is maximize_scale, free rotation, count 1. The published size of a maximize_scale template is 1 / primary. An ellipse container is a fixed 2 x 1 arena: the equal-copies ellipse family publishes the area of a free-ratio ellipse, so its template is launchable and the family carries a caveat saying the engine's size is not that area. A covering template uses cover_region instead: the arena is the covered shape at unit size (circle radius 1, regular polygon side 1), the shape is the same unit copy, rotation is free, count is 1, and the published size is the promoted covered_size, the reciprocal of the common scale. The one covering family whose published size is an area (squares covering squares) carries a caveat saying A = covered_size ** 2. A total-perimeter template uses maximize_total_perimeter: the arena is the family's container at the source's own length (unit square, unit circle of radius 1, unit regular polygon of side 1), the shape is the source's unit copy, rotation is free, count is 1, the common scale is fixed at 1, and the published number is the promoted total_scale -- the sum of the copies' local scales, which for these unit copies is the page's own sum of radii or of sides. The free-ratio ellipse of perimeter 2*pi and the free-ratio rectangle of perimeter 4 are fixed to their circular and square cases and carry a caveat saying so.",
   "warnings": [
     "lincir: label '49.' is drawn from figure '48.gif'",
-    "taninoct: missing equals sign in n=36 read from its own source cell; n=37 retained separately",
-    "triindom: formula-only n=1-2 read from its own source cell; n=3 and n=4 retain their own values",
+    "linsqu: overlapping count 29; retained best printed value",
     "dominL: label '46.-54.' is drawn from figure '50.gif'",
-    "cirRpen: last table has three values for two figures (49,50); both references are ambiguous",
+    "cirRpen: 2 figures for 3 values",
     "penRpen: label '1.-2.' is drawn from figure '1.png'"
   ]
 }

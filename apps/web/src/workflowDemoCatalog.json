@@ -127,7 +127,8 @@
           "symbol": "r",
           "status": "best_known",
           "attribution": "Found by Haowei Lin in July 2026",
-          "figure": "5.gif"
+          "figure": "5.gif",
+          "value_upper_bound": 1.8668500000000001
         }
       ],
       "warnings": [],
@@ -185,7 +186,8 @@
           "symbol": "r",
           "status": "best_known",
           "attribution": "Found by Abdulfayyod Mukhamedov in September 2026",
-          "figure": "scc7.gif"
+          "figure": "scc7.gif",
+          "value_upper_bound": 1.2418900000000002
         }
       ],
       "warnings": [],

@@ -319,7 +319,8 @@
           "symbol": "r",
           "status": "proved",
           "attribution": "Trivial. A continuum of solutions",
-          "figure": "2.gif"
+          "figure": "2.gif",
+          "value_upper_bound": 1.0
         }
       ],
       "warnings": [],
@@ -377,7 +378,8 @@
           "symbol": "r",
           "status": "proved",
           "attribution": "Trivial. A continuum of solutions",
-          "figure": "2.gif"
+          "figure": "2.gif",
+          "value_upper_bound": 0.586
         }
       ],
       "warnings": [],
@@ -436,7 +438,8 @@
           "symbol": "s",
           "status": "proved",
           "attribution": "Trivial. A continuum of solutions",
-          "figure": "2.png"
+          "figure": "2.png",
+          "value_upper_bound": 1.633
         }
       ],
       "warnings": [],
@@ -493,7 +496,8 @@
           "symbol": "r",
           "status": "proved",
           "attribution": "Trivial",
-          "figure": "3.gif"
+          "figure": "3.gif",
+          "value_upper_bound": 1.1549999999999998
         }
       ],
       "warnings": [],
@@ -551,7 +555,8 @@
           "symbol": "s",
           "status": "proved",
           "attribution": "Trivial",
-          "figure": "2.gif"
+          "figure": "2.gif",
+          "value_upper_bound": 1.789
         }
       ],
       "warnings": [],
@@ -610,7 +615,8 @@
           "symbol": "a",
           "status": "best_known",
           "attribution": "Found by Dudeney in 1931",
-          "figure": "scs3.gif"
+          "figure": "scs3.gif",
+          "value_upper_bound": 1.6180400000000001
         }
       ],
       "warnings": [],

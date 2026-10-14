@@ -24,8 +24,11 @@ out/
 .private/
 # Legacy local submission packages; new dossiers live under .private/submissions/.
 /submissions/
-# Catalog builders and their tests: the maintainers' tools, not part of the lab
-scripts/
+# Keep local builders private; publish the repeatable reference refresh tools.
+/scripts/*
+!/scripts/build_packing_catalog.py
+!/scripts/build_squares_records.py
+!/scripts/update_catalog.py
 
 # Secrets (LLM providers)
 .env

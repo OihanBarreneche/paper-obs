@@ -70,7 +70,7 @@ Commit coherent, verified changes with [Conventional Commits](https://www.conven
 
 ## Data, sources and deployment
 
-The maintainers generate the reference JSON, candidate files and previews with builders kept outside the repository; the catalog is maintained here, not rebuilt by contributors. Generated assets should keep source links, attribution, proof status and a last-verification date. Do not silently promote a source construction into a proved optimum. The collection includes linked images and coordinates from third-party sites; review their reuse terms before a public release.
+Maintainers refresh source records with `.venv/bin/python scripts/update_catalog.py`; see [catalog maintenance](catalog-maintenance.md) for previews, caching, timing and review limits. The two existing source parsers and this refresh command are versioned. Candidate and preview builders remain local maintainer tools. Generated assets should keep source links, attribution, proof status and a last-verification date. Do not silently promote a source construction into a proved optimum. The collection includes linked images and coordinates from third-party sites; review their reuse terms before a public release.
 
 The server is designed for local use. Do not bind it publicly or set a server-wide paid-provider key for untrusted visitors without authentication, rate limits and a deployment review. A user-entered provider key is intended for that run only. Uploaded or dropped user code is **not** a safe extension mechanism for a shared server; external heuristics should initially run as trusted local processes under a documented adapter.
 
