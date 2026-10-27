@@ -86,10 +86,12 @@ def test_malformed_source_cells_keep_their_own_values_and_ambiguities():
         assert record("triindom", count)["status"] == "proved"
     assert record("triindom", 3)["value"] == 0.96796
     assert record("triindom", 4)["value"] == 1.12036
-    for count in (49, 50):
-        row = record("cirRpen", count)
-        assert row["value"] is None and row["source_ambiguous"] is True
-        assert row["source_values"] == [4.66314, 4.81437, 4.86154]
+    # The page once printed three values for 49 and 50; since October 2026 each count has
+    # its own figure and value. The parser's handling of such cells is tested on fixtures
+    # in tests/catalog/test_update.py.
+    assert record("cirRpen", 49)["value"] == 4.81492
+    assert record("cirRpen", 50)["value"] == 4.86154
+    assert not record("cirRpen", 49).get("source_ambiguous")
 
 
 def test_the_two_measured_sections_are_judged_while_the_other_problems_stay_references():

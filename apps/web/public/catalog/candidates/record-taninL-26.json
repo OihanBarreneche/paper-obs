@@ -165,8 +165,8 @@
   ],
   "metadata": {
     "new_value": 2.120428105,
-    "previous_value": 2.12132,
-    "previous_attribution": "Found by Maurizio Morandi in September 2026",
+    "previous_value": 2.12098,
+    "previous_attribution": "Found by Joost de Winter in September 2026",
     "found_by": "Claude (Paper Obs harness)",
     "found_on": "2026-10-01",
     "method": "Morandi's 2012 packing of 13 tans (side 1.4999998) enlarged by sqrt 2, every tan cut along its altitude into two unit tans (a tan is two tans 1/sqrt 2 its size), which gives 26 tans at 2.1213201; then refined exactly in the L (SLSQP on the contacts, the L read as its bounding square minus an obstacle square).",

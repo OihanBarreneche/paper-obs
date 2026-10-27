@@ -272,7 +272,7 @@ const NOTES: Record<number, string> = {
   29: "Found by Thomas Schadt in December 2025, then optimized by David Ellsworth in December 2025.",
 };
 
-const VERIFIED_ON = "2026-10-14";
+const VERIFIED_ON = "2026-10-27";
 
 export const SQUARE_RECORDS: SquareRecord[] = [...ROWS, ...EXTRA_ROWS].map(([count, side, author = "", date = "", provedBy = "", proofDate = "", figure = ""]) => {
   const hasCandidate = count <= LOCAL_CANDIDATE_MAX;

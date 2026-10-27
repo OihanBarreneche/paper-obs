@@ -1,7 +1,7 @@
 {
   "source": "https://erich-friedman.github.io/packing/index.html",
   "base": "https://erich-friedman.github.io/packing/",
-  "generated": "2026-10-14",
+  "generated": "2026-10-27",
   "families": [
     {
       "slug": "squintri",
@@ -67,7 +67,7 @@
       ],
       "warnings": [],
       "section": "Packing Equal Copies",
-      "source_checked_on": "2026-10-14"
+      "source_checked_on": "2026-10-27"
     },
     {
       "slug": "taninL",
@@ -153,24 +153,24 @@
           "counts": [
             26
           ],
-          "value": 2.12022,
-          "formula": "",
+          "value": 2.12014,
+          "formula": "10/41+50√2/41+4√(1+√2)/41 s",
           "symbol": "s",
           "status": "best_known",
           "attribution": "Found by Yanis Gomes in October 2026",
           "figure": "26.gif",
           "historical_reference": {
-            "value": 2.12132,
-            "formula": "3/√2",
+            "value": 2.12098,
+            "formula": "",
             "symbol": "s",
-            "attribution": "Found by Maurizio Morandi in September 2026",
+            "attribution": "Found by Joost de Winter in September 2026",
             "figure": "26.gif"
           }
         }
       ],
       "warnings": [],
       "section": "Packing Equal Copies",
-      "source_checked_on": "2026-10-14"
+      "source_checked_on": "2026-10-27"
     },
     {
       "slug": "squintan",
@@ -249,7 +249,7 @@
       ],
       "warnings": [],
       "section": "Packing Equal Copies",
-      "source_checked_on": "2026-10-14"
+      "source_checked_on": "2026-10-27"
     },
     {
       "slug": "domintan",
@@ -398,7 +398,7 @@
       ],
       "warnings": [],
       "section": "Packing Equal Copies",
-      "source_checked_on": "2026-10-14"
+      "source_checked_on": "2026-10-27"
     }
   ]
 }
